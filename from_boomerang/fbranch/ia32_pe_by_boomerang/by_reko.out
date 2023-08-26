@@ -1,53 +1,48 @@
 === Using options:--aggressive-branch-removal
 Signature of 'Microsoft Visual C++ 7.0' detected.
-fn004030AF: error: An internal error occurred while building the expressions of fn004030AF
-    The given key 'esp_62' was not present in the dictionary.
-       at System.Collections.Generic.Dictionary`2.get_Item(TKey key) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs:line 181
-   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 168
-   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 139
-   at Reko.Analysis.UnreachableBlockRemover.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 75
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 381
-l004030BF: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
-00404D14: error: An error occurred while processing the statement (dwArg04 - 4<32>)[(dwArg0C >>u 2<32>) * 4<32>] = (dwArg08 - 4<32>)[(dwArg0C >>u 2<32>) * 4<32>].
-    Not handling (ptr32 (struct (0 (arr T_13132) a0000))) and (union (uint32 u0) (ptr32 u1)) yet
-       at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType(DataType dtDiff, DataType dtMin) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 422
-   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 257
-   at Reko.Core.Expressions.BinaryExpression.Accept[T,C](ExpressionVisitor`2 v, C context) in /home/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 54
-   at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess(ArrayAccess acc, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 188
-   at Reko.Core.Expressions.ArrayAccess.Accept[T,C](ExpressionVisitor`2 v, C context) in /home/runner/work/reko/reko/src/Core/Expressions/ArrayAccess.cs:line 48
-   at Reko.Typing.TypeCollector.VisitStore(Store store) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 289
-   at Reko.Core.Code.Store.Accept(InstructionVisitor v) in /home/runner/work/reko/reko/src/Core/Code/Assignment.cs:line 87
-   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
-00405B34: error: An error occurred while processing the statement (dwArg04 - 4<32>)[(dwArg0C >>u 2<32>) * 4<32>] = (dwArg08 - 4<32>)[(dwArg0C >>u 2<32>) * 4<32>].
-    Not handling (ptr32 (struct (0 (arr T_13173) a0000))) and (union (uint32 u0) (ptr32 u1)) yet
-       at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType(DataType dtDiff, DataType dtMin) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 422
-   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 257
-   at Reko.Core.Expressions.BinaryExpression.Accept[T,C](ExpressionVisitor`2 v, C context) in /home/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 54
-   at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess(ArrayAccess acc, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 188
-   at Reko.Core.Expressions.ArrayAccess.Accept[T,C](ExpressionVisitor`2 v, C context) in /home/runner/work/reko/reko/src/Core/Expressions/ArrayAccess.cs:line 48
-   at Reko.Typing.TypeCollector.VisitStore(Store store) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 289
-   at Reko.Core.Code.Store.Accept(InstructionVisitor v) in /home/runner/work/reko/reko/src/Core/Code/Assignment.cs:line 87
-   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+00403B06: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
 fn004014C0: error: An error occurred while rewriting procedure to high-level language.
     Index was outside the bounds of the array.
-       at Reko.Structure.StructureAnalysis.ReduceIfRegion(Region n) in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 323
-   at Reko.Structure.StructureAnalysis.ReduceAcyclic(Region n) in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 233
-   at Reko.Structure.StructureAnalysis.Execute() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 155
-   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 81
-   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 535
-l00405BE8: warning: Non-integral switch expression
-fn00408A26: error: An error occurred while rewriting procedure to high-level language.
+       at Reko.Structure.StructureAnalysis.ReduceIfRegion(Region n) in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 324
+   at Reko.Structure.StructureAnalysis.ReduceAcyclic(Region n) in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 234
+   at Reko.Structure.StructureAnalysis.Execute() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 156
+   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 80
+   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 551
+fn004030AF: error: An error occurred while rewriting procedure to high-level language.
     Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
-       at System.Collections.Generic.List`1.get_Item(Int32 index) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/List.cs:line 150
+       at System.Collections.Generic.List`1.get_Item(Int32 index)
    at Reko.Core.Block.get_ThenBlock() in /home/runner/work/reko/reko/src/Core/Block.cs:line 91
    at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block) in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 96
    at Reko.Structure.CompoundConditionCoalescer.Transform() in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 62
-   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 79
-   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 535
+   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 78
+   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 551
+fn00403119: error: An error occurred while rewriting procedure to high-level language.
+    Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+       at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at Reko.Core.Block.get_ThenBlock() in /home/runner/work/reko/reko/src/Core/Block.cs:line 91
+   at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block) in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 96
+   at Reko.Structure.CompoundConditionCoalescer.Transform() in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 62
+   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 78
+   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 551
+l00405A54: warning: Non-integral switch expression
+l00405BB8: warning: Non-integral switch expression
+l00405BE8: warning: Non-integral switch expression
+fn00408A26: error: An error occurred while rewriting procedure to high-level language.
+    Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+       at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at Reko.Core.Block.get_ThenBlock() in /home/runner/work/reko/reko/src/Core/Block.cs:line 91
+   at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block) in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 96
+   at Reko.Structure.CompoundConditionCoalescer.Transform() in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 62
+   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 78
+   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 551
 00401C9A: warning: Expected sizes of arrays to have been determined by now
+00404C40: warning: Expected sizes of arrays to have been determined by now
 00404D2C: warning: Expected sizes of arrays to have been determined by now
+00404DCC: warning: Expected sizes of arrays to have been determined by now
 00404EC8: warning: Expected sizes of arrays to have been determined by now
+00405A60: warning: Expected sizes of arrays to have been determined by now
 00405B4C: warning: Expected sizes of arrays to have been determined by now
+00405BEC: warning: Expected sizes of arrays to have been determined by now
 00405CE8: warning: Expected sizes of arrays to have been determined by now
 00409708: warning: Expected sizes of arrays to have been determined by now
 0040B360: warning: Expected sizes of arrays to have been determined by now
@@ -57,9 +52,13 @@ fn00408A26: error: An error occurred while rewriting procedure to high-level lan
 0040BCA0: warning: Expected sizes of arrays to have been determined by now
 0040BEE4: warning: Expected sizes of arrays to have been determined by now
 00401C9A: warning: Expected sizes of arrays to have been determined by now
+00404C40: warning: Expected sizes of arrays to have been determined by now
 00404D2C: warning: Expected sizes of arrays to have been determined by now
+00404DCC: warning: Expected sizes of arrays to have been determined by now
 00404EC8: warning: Expected sizes of arrays to have been determined by now
+00405A60: warning: Expected sizes of arrays to have been determined by now
 00405B4C: warning: Expected sizes of arrays to have been determined by now
+00405BEC: warning: Expected sizes of arrays to have been determined by now
 00405CE8: warning: Expected sizes of arrays to have been determined by now
 00409708: warning: Expected sizes of arrays to have been determined by now
 0040B360: warning: Expected sizes of arrays to have been determined by now

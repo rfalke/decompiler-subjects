@@ -1,4 +1,7 @@
 === Using options:--aggressive-branch-removal
+08049090: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
 080485A0: warning: Call target address 00000000 is invalid.
 0804854D: warning: Call target address 00000000 is invalid.
 08048513: warning: Call target address 00000000 is invalid.
+0804AF08: warning: Expected sizes of arrays to have been determined by now
+0804AF08: warning: Expected sizes of arrays to have been determined by now

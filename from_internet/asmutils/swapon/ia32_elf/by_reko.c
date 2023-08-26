@@ -4,98 +4,92 @@
 
 #include "subject.h"
 
-// 0804804C: void fn0804804C(Stack (ptr32 Eq_2) dwArg04)
-void fn0804804C(struct Eq_2 * dwArg04)
+// 0804804C: void fn0804804C(Register word24 eax_24_8, Register int32 ecx, Register Eq_4 edx, Stack (ptr32 Eq_5) dwArg04)
+void fn0804804C(word24 eax_24_8, int32 ecx, Eq_4 edx, struct Eq_5 * dwArg04)
 {
-	struct Eq_2 * esi_11 = dwArg04;
-	struct Eq_4 * esp_136 = fp + 8;
+	ptr32 fp;
+	struct Eq_5 * esi_12 = dwArg04;
+	struct Eq_8 * esp_164 = fp + 8;
 	do
 	{
-		esi_11 = esi_152 + 1;
-		esi_152 = esi_11;
-	} while (esi_152->b0000 != 0x00);
+		byte al_11 = esi_12->b0000;
+		++esi_12;
+		Eq_17 eax_134 = SEQ(eax_24_8, al_11);
+	} while (al_11 != 0x00);
 	while (true)
 	{
-		struct Eq_4 * esp_119;
-		Eq_17 eax_47;
-		struct Eq_4 * esp_127 = esp_136 + 1;
-		if (esp_136->dw0000 == 0x00)
+		char * ebx_20 = esp_164->dw0000;
+		struct Eq_8 * esp_132 = esp_164 + 1;
+		if (ebx_20 == null)
 			break;
-		if (esi_11->wFFFFFFF9 == 0x6B6D)
+		if (esi_12->wFFFFFFF9 == 0x6B6D)
 		{
-			esp_127->dwFFFFFFFC = 0x02;
-			esp_127->dwFFFFFFFC = 0x05;
-			int32 eax_33 = esp_127->dwFFFFFFFC;
-			__syscall(0x80);
-			if (eax_33 < 0x00)
+			esp_132->dwFFFFFFFC = 0x02;
+			int32 ecx_32 = esp_132->dwFFFFFFFC;
+			esp_132->dwFFFFFFFC = 0x05;
+			eax_134 = sys_open(ebx_20, ecx_32, edx);
+			if (eax_134 < 0x00)
 				break;
-			esp_127->dwFFFFFFFC = 0x02;
-			esp_127->dwFFFFFFFC = 0x13;
-			eax_47 = esp_127->dwFFFFFFFC;
-			__syscall(0x80);
-			esp_119 = esp_127;
-			if (eax_47 < 0x00)
-				goto l08048094;
-			goto l080480AD;
+			esp_132->dwFFFFFFFC = 0x02;
+			word32 edx_47 = esp_132->dwFFFFFFFC;
+			esp_132->dwFFFFFFFC = 0x13;
+			struct Eq_8 * esp_122 = esp_132;
+			Eq_98 eax_56 = sys_lseek(eax_134, (uint64) edx_47, esi_12);
+			if (eax_56 >= 0x00)
+			{
+				esp_132->dwFFFFFFFC = 0x13;
+				uint32 edi_63 = (eax_56 >> 0x0C) - 0x01;
+				esp_122 = esp_132;
+				if (sys_lseek(eax_134, 0x40000000000, esi_12) >= 0x00)
+				{
+					esp_132->dwFFFFFFFC = 0x01;
+					esp_132->dwFFFFFFF8 = 0x04;
+					Eq_147 edx_86 = esp_132->dwFFFFFFF8;
+					esp_132->dwFFFFFFF8 = 0x04;
+					sys_write(eax_134, esp_132 - 4, edx_86);
+					esp_132->dwFFFFFFF8 = edi_63;
+					esp_132->dwFFFFFFF4 = 0x04;
+					Eq_147 edx_99 = esp_132->dwFFFFFFF4;
+					esp_132->dwFFFFFFF4 = 0x04;
+					sys_write(eax_134, esp_132 - 8, edx_99);
+					esp_132->dwFFFFFFF4 = 0x13;
+					sys_lseek(eax_134, 0xFF600000000, esi_12);
+					esp_132->dwFFFFFFF4 = 0x04;
+					esp_122 = esp_132 - 8;
+					if (sys_write(eax_134, "SWAPSPACE2i/o error.", 0x0A) >= 0x00)
+					{
+						esp_132->dwFFFFFFF4 = 0x06;
+						sys_close(eax_134);
+						esp_132 -= 8;
+						eax_134.u0 = 0x00;
+						break;
+					}
+				}
+			}
+			uint32 * esp_141 = esp_122 - 4;
+			*esp_141 = 0x02;
+			uint32 ebx_143 = *esp_141;
+			*esp_141 = 0x04;
+			esp_132 = (struct Eq_8 *) (esp_141 + 1);
+			eax_134 = sys_write(ebx_143, "i/o error.", 11);
+			break;
 		}
-		if (esi_11->wFFFFFFFD == 0x6666)
+		if (esi_12->wFFFFFFFD == 0x6666)
 		{
-			esp_127->dwFFFFFFFC = 115;
-			__syscall(0x80);
-			esp_136 = esp_127;
+			esp_132->dwFFFFFFFC = 115;
+			esp_164 = esp_132;
+			eax_134 = sys_swapoff(ebx_20);
 		}
 		else
 		{
-			esp_127->dwFFFFFFFC = 0x57;
-			__syscall(0x80);
-			esp_136 = esp_127;
+			esp_132->dwFFFFFFFC = 0x57;
+			esp_164 = esp_132;
+			eax_134 = sys_swapon(ebx_20, ecx);
 		}
 	}
-	while (true)
-	{
-l080480A6:
-		union Eq_17 * esp_66 = esp_127 - 4;
-		*esp_66 = 0x01;
-		eax_47 = *esp_66;
-		__syscall(0x80);
-		esp_119 = (struct Eq_4 *) ((char *) esp_66 + 4);
-l080480AD:
-		struct Eq_100 * esp_81 = esp_119 - 4;
-		esp_81->dw0000 = 0x13;
-		int32 eax_83 = esp_81->dw0000;
-		__syscall(0x80);
-		uint32 edi_72 = eax_47 >> 0x0C;
-		esp_119 = (struct Eq_4 *) (&esp_81->dw0000 + 1);
-		if (eax_83 >= 0x00)
-		{
-			esp_81->dw0000 = 0x01;
-			esp_81->dwFFFFFFFC = 0x04;
-			esp_81->dwFFFFFFFC = 0x04;
-			__syscall(0x80);
-			esp_81->dwFFFFFFFC = edi_72 - 0x01;
-			esp_81->dwFFFFFFF8 = 0x04;
-			esp_81->dwFFFFFFF8 = 0x04;
-			__syscall(0x80);
-			esp_81->dwFFFFFFF8 = 0x13;
-			__syscall(0x80);
-			esp_81->dwFFFFFFF8 = 0x04;
-			int32 eax_118 = esp_81->dwFFFFFFF8;
-			__syscall(0x80);
-			esp_119 = esp_81 - 4;
-			if (eax_118 >= 0x00)
-			{
-				esp_81->dwFFFFFFF8 = 0x06;
-				__syscall(0x80);
-				esp_127 = esp_81 - 4;
-				goto l080480A6;
-			}
-		}
-l08048094:
-		word32 * esp_55 = esp_119 - 4;
-		*esp_55 = 0x02;
-		*esp_55 = 0x04;
-		__syscall(0x80);
-		esp_127 = (struct Eq_4 *) (esp_55 + 1);
-	}
+	esp_132->dwFFFFFFFC = 0x01;
+	sys_exit(eax_134);
 }
 
+char g_str804810D[] = "SWAPSPACE2i/o error."; // 0804810D
+char g_str8048117[] = "i/o error."; // 08048117

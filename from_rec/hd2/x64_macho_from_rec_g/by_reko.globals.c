@@ -5,18 +5,18 @@
 #include "subject.h"
 
 <anonymous> * g_ptr1000; // 0000000000001000
-word64 * g_ptr1010; // 0000000000001010
-<anonymous> * g_ptr1018; // 0000000000001018
-<anonymous> * g_ptr1020; // 0000000000001020
-<anonymous> * g_ptr1028; // 0000000000001028
-<anonymous> * g_ptr1030; // 0000000000001030
-<anonymous> * g_ptr1038; // 0000000000001038
-<anonymous> * g_ptr1040; // 0000000000001040
-<anonymous> * g_ptr1048; // 0000000000001048
-<anonymous> * g_ptr1050; // 0000000000001050
-<anonymous> * g_ptr1058; // 0000000000001058
-<anonymous> * g_ptr1060; // 0000000000001060
-<anonymous> * g_ptr1068; // 0000000000001068
-<anonymous> * g_ptr1070; // 0000000000001070
+<anonymous> * __imp____stack_chk_guard; // 0000000000001010
+<anonymous> * __imp____sprintf_chk; // 0000000000001018
+<anonymous> * __imp____stack_chk_fail; // 0000000000001020
+<anonymous> * __imp____strcat_chk; // 0000000000001028
+<anonymous> * __imp____strcpy_chk; // 0000000000001030
+<anonymous> * __imp__exit; // 0000000000001038
+<anonymous> * __imp__fclose; // 0000000000001040
+<anonymous> * __imp__fopen; // 0000000000001048
+<anonymous> * __imp__fread; // 0000000000001050
+<anonymous> * __imp__perror; // 0000000000001058
+<anonymous> * __imp__puts; // 0000000000001060
+<anonymous> * __imp__stat$INODE64; // 0000000000001068
+<anonymous> * __imp__strlen; // 0000000000001070
 byte g_b1000010; // 0000000001000010
 byte g_b1000020; // 0000000001000020

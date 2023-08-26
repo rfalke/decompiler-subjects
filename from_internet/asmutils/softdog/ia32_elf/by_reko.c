@@ -4,66 +4,65 @@
 
 #include "subject.h"
 
-// 0804804C: void fn0804804C(Stack word32 dwArg00, Stack (ptr32 byte) dwArg08)
-void fn0804804C(word32 dwArg00, byte * dwArg08)
+// 0804804C: void fn0804804C(Register Eq_2 edx, Stack word32 dwArg00, Stack (ptr32 byte) dwArg08)
+void fn0804804C(Eq_2 edx, word32 dwArg00, byte * dwArg08)
 {
-	Eq_4 ebp_45 = 0x0A;
-	struct Eq_6 * esp_15 = fp + 4;
+	ptr32 fp;
+	Eq_6 ebp_48 = 0x0A;
+	struct Eq_8 * esp_16 = fp + 4;
 	if (dwArg00 != 0x01)
 	{
-		byte * esi_14 = dwArg08;
-		esp_15 = fp + 0x0C;
-		Eq_4 ebx_17 = 0x00;
+		byte * esi_15 = dwArg08;
+		esp_16 = fp + 0x0C;
+		Eq_6 ebx_116 = 0x00;
 		while (true)
 		{
-			cu8 al_22 = *esi_14;
-			++esi_14;
-			if (al_22 < 0x30)
+			cu8 al_24 = *esi_15;
+			++esi_15;
+			if (al_24 < 0x30)
 				break;
-			uint32 eax_96 = (uint32) (al_22 - 0x30);
-			if (al_22 > 0x39)
+			uint32 eax_115 = (uint32) (al_24 - 0x30);
+			if (al_24 > 0x39 || al_24 < 0x30)
 				break;
-			ebx_17 = ebx_17 *s 0x0A + eax_96;
+			ebx_116 = ebx_116 *s 0x0A + eax_115;
 		}
-		Eq_4 ebx_31 = ebx_17;
-		if (ebx_17 != 0x00)
+		Eq_6 ebx_33 = ebx_116;
+		if (ebx_116 != 0x00)
 		{
-			esp_15 = fp + 0x0C;
-			if (ebx_17 >= 0x3C)
-				ebx_31.u0 = 0x3C;
-			ebp_45 = ebx_31;
+			esp_16 = fp + 0x0C;
+			if (ebx_116 >= 0x3C)
+				ebx_33.u0 = 0x3C;
+			ebp_48 = ebx_33;
 		}
 	}
-	g_t80480CB = ebp_45;
-	int32 * esp_52 = esp_15 - 4;
-	*esp_52 = 0x01;
-	*esp_52 = 0x05;
-	int32 eax_59 = *esp_52;
-	__syscall(0x80);
-	if (eax_59 >= 0x00)
+	g_t80480CB.u0 = (int32) ebp_48;
+	int32 * esp_55 = esp_16 - 4;
+	*esp_55 = 0x01;
+	int32 ecx_57 = *esp_55;
+	*esp_55 = 0x05;
+	Eq_30 eax_69 = sys_open(&g_b80480BD, ecx_57, edx);
+	if (eax_69 >= 0x00)
 	{
-		*esp_52 = 0x02;
-		int32 eax_67 = *esp_52;
-		__syscall(0x80);
-		if (eax_67 == 0x00)
+		*esp_55 = 0x02;
+		if (sys_fork() == 0x00)
 		{
-l0804809F:
 			while (true)
 			{
-				word32 * esp_79 = esp_15 - 4;
-				*esp_79 = 0x01;
-				*esp_79 = 0x04;
-				__syscall(0x80);
-				__syscall(0x80);
+				size_t * esp_86 = esp_16 - 4;
+				*esp_86 = (uint32) 0x01;
+				Eq_87 edx_88 = *esp_86;
+				*esp_86 = (uint32) 0x04;
+				sys_write(eax_69, &g_b80480BD, edx_88);
+				sys_nanosleep(&g_t80480CB, null);
 			}
 		}
 	}
-	esp_15->dwFFFFFFFC = 0x01;
-	__syscall(0x80);
-	goto l0804809F;
+	esp_16->dwFFFFFFFC = 0x01;
+	sys_exit(0x080480BD);
 }
 
-Eq_4 g_t80480CB = // 080480CB
+char g_b80480BD = '/'; // 080480BD
+Eq_6 g_t80480CB = // 080480CB
 	{
 		0
 	};

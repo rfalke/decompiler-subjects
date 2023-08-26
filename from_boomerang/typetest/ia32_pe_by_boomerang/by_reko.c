@@ -4,10 +4,10 @@
 
 #include "subject.h"
 
-Eq_55 g_t403000 = null; // 00403000
-Eq_56 g_t40300C = null; // 0040300C
-Eq_55 g_t403010 = null; // 00403010
-Eq_56 g_t403014 = null; // 00403014
+Eq_79 g_t403000 = null; // 00403000
+Eq_80 g_t40300C = null; // 0040300C
+Eq_60 g_t403010 = null; // 00403010
+Eq_61 g_t403014 = null; // 00403014
 word32 g_dw403040 = 0x01; // 00403040
 int32 g_dw403114 = 0; // 00403114
 word32 g_dw40311C = 0x00; // 0040311C
@@ -276,6 +276,12 @@ word32 g_dw404270 = 0x45B4; // 00404270
 // 004019E0: Register Eq_2 Win32CrtStartup()
 Eq_2 Win32CrtStartup()
 {
+	ptr32 fp;
+	struct Eq_4 * fs;
+	char ** ptrLoc74;
+	char ** ptrLoc68;
+	int32 dwLoc64;
+	Eq_8 tLoc60;
 	fs->ptr0000 = fp - 20;
 	__set_app_type(0x02);
 	g_dw40312C = ~0x00;
@@ -288,45 +294,48 @@ Eq_2 Win32CrtStartup()
 		__setusermatherr(&g_t401BD0);
 	fn00401BB0();
 	_initterm(&g_t403010, &g_t403014);
-	__getmainargs(fp - 100, fp - 116, fp - 0x68, g_dw403114);
+	__getmainargs(&dwLoc64, &ptrLoc74, &ptrLoc68, g_dw403114);
 	_initterm(&g_t403000, &g_t40300C);
-	struct Eq_79 * esp_96;
-	cu8 ** eax_97;
-	_p__acmdln();
-	cu8 * esi_102 = *eax_97;
-	if (*esi_102 == 0x22)
+	cu8 * esi_103 = *_p__acmdln();
+	if (*esi_103 == 0x22)
 	{
 		do
 		{
-			++esi_102;
-			cu8 al_118 = *esi_102;
-		} while (al_118 != 0x00 && al_118 != 0x22);
-		if (*esi_102 == 0x22)
-			++esi_102;
+			++esi_103;
+			cu8 al_119 = *esi_103;
+		} while (al_119 != 0x00 && al_119 != 0x22);
+		if (*esi_103 == 0x22)
+			++esi_103;
 	}
 	else
 	{
-		while (*esi_102 > 0x20)
-			++esi_102;
+		while (*esi_103 > 0x20)
+			++esi_103;
 	}
 	while (true)
 	{
-		cu8 al_134 = *esi_102;
-		if (al_134 == 0x00 || al_134 > 0x20)
+		cu8 al_136 = *esi_103;
+		if (al_136 == 0x00 || al_136 > 0x20)
 			break;
-		++esi_102;
+		++esi_103;
 	}
-	esp_96->tFFFFFFFC = fp - 0x60;
-	GetStartupInfoA(esp_96->tFFFFFFFC);
-	&esp_96->tFFFFFFFC.u0->unused = 0x0A;
-	esp_96->ptrFFFFFFF8 = esi_102;
-	esp_96->dwFFFFFFF4 = 0x00;
-	&esp_96->tFFFFFFF0.u0->unused = 0x00;
-	Eq_128 eax_169 = GetModuleHandleA(esp_96->tFFFFFFF0);
-	esp_96->tFFFFFFF0 = eax_169;
-	fn00401BFC(esp_96->tFFFFFFF0, esp_96->dwFFFFFFF4, esp_96->ptrFFFFFFF8, esp_96->tFFFFFFFC);
-	esp_96->tFFFFFFFC = eax_169;
-	exit(esp_96->tFFFFFFFC);
+	Eq_131 eax_156;
+	tLoc60.dwFlags = (DWORD) 0x00;
+	esp_97->tFFFFFFFC.u1 = (HMODULE) &tLoc60;
+	GetStartupInfoA(esp_97->tFFFFFFFC);
+	if ((tLoc60.dwFlags & 0x01) != 0x00)
+		eax_156 = tLoc60.wShowWindow & 0xFFFF;
+	else
+		eax_156.u0 = 0x0A;
+	esp_97->tFFFFFFFC.u1 = (HMODULE) eax_156;
+	esp_97->ptrFFFFFFF8 = esi_103;
+	esp_97->dwFFFFFFF4 = 0x00;
+	esp_97->tFFFFFFF0.u1 = (HMODULE) 0x00;
+	Eq_131 eax_174 = GetModuleHandleA(esp_97->tFFFFFFF0);
+	esp_97->tFFFFFFF0.u1 = (HMODULE) eax_174;
+	fn00401BFC(esp_97->tFFFFFFF0.u1, esp_97->dwFFFFFFF4, esp_97->ptrFFFFFFF8, esp_97->tFFFFFFFC.u1);
+	esp_97->tFFFFFFFC.u1 = (HMODULE) eax_174;
+	exit(esp_97->tFFFFFFFC.u1);
 }
 
 // 00401BB0: void fn00401BB0()
@@ -345,11 +354,11 @@ void fn00401BE0()
 {
 }
 
-// 00401BFC: void fn00401BFC(Stack Eq_128 dwArg04, Stack word32 dwArg08, Stack (ptr32 cu8) dwArg0C, Stack Eq_128 dwArg10)
+// 00401BFC: void fn00401BFC(Stack Eq_131 dwArg04, Stack word32 dwArg08, Stack (ptr32 cu8) dwArg0C, Stack Eq_131 dwArg10)
 // Called from:
 //      Win32CrtStartup
-void fn00401BFC(Eq_128 dwArg04, word32 dwArg08, cu8 * dwArg0C, Eq_128 dwArg10)
+void fn00401BFC(Eq_131 dwArg04, word32 dwArg08, cu8 * dwArg0C, Eq_131 dwArg10)
 {
-	MFC42.DLL!Ordinal_1576();
+	MFC42.DLL!Ordinal_1576(dwArg04, dwArg08, dwArg0C, dwArg10);
 }
 

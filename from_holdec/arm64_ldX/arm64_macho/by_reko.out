@@ -1,23 +1,22 @@
 === Using options:--aggressive-branch-removal
-0000000100002998: warning: AArch64 instruction Nyi is not supported yet.
 00000001000029F4: warning: AArch64 instruction Nyi is not supported yet.
 0000000100002A50: error: Rewriting A64 mnemonic 'ld1' (D400000) is not supported yet.
 0000000100002AAC: error: Rewriting A64 mnemonic 'ld1' (D400C00) is not supported yet.
-0000000100002B08: warning: AArch64 instruction Nyi is not supported yet.
-0000000100002B64: warning: AArch64 instruction Nyi is not supported yet.
-0000000100002E44: warning: AArch64 instruction Nyi is not supported yet.
+0000000100002B08: error: Rewriting A64 mnemonic 'ld1' (D408400) is not supported yet.
+0000000100002B64: error: Rewriting A64 mnemonic 'ld1' (4D408400) is not supported yet.
+0000000100002E44: error: Rewriting A64 mnemonic 'ld2' (4D600400) is not supported yet.
 0000000100002EA0: warning: AArch64 instruction Nyi is not supported yet.
 0000000100002EFC: warning: AArch64 instruction Nyi is not supported yet.
-0000000100002F58: warning: AArch64 instruction Nyi is not supported yet.
-0000000100002FB4: warning: AArch64 instruction Nyi is not supported yet.
-0000000100003124: warning: AArch64 instruction Nyi is not supported yet.
-0000000100003180: warning: AArch64 instruction Nyi is not supported yet.
-00000001000031DC: warning: AArch64 instruction Nyi is not supported yet.
-0000000100003238: warning: AArch64 instruction Nyi is not supported yet.
-0000000100003294: warning: AArch64 instruction Nyi is not supported yet.
-0000000100003404: warning: AArch64 instruction Nyi is not supported yet.
-0000000100003460: warning: AArch64 instruction Nyi is not supported yet.
-00000001000034BC: warning: AArch64 instruction Nyi is not supported yet.
-0000000100003518: warning: AArch64 instruction Nyi is not supported yet.
-0000000100003574: warning: AArch64 instruction Nyi is not supported yet.
+0000000100002F58: warning: AArch64 instruction ld2r	{v0.16b,v1.16b},[x0] is not supported yet.
+0000000100002FB4: warning: AArch64 instruction ld2r	{v0.4h,v1.4h},[x0] is not supported yet.
+0000000100003124: error: Rewriting A64 mnemonic 'ld3' (4D402400) is not supported yet.
+0000000100003180: error: Rewriting A64 mnemonic 'ld3' (D40A400) is not supported yet.
+00000001000031DC: error: Rewriting A64 mnemonic 'ld3' (4D40A400) is not supported yet.
+0000000100003238: warning: AArch64 instruction ld3r	{v0.16b-v2.16b},[x0] is not supported yet.
+0000000100003294: warning: AArch64 instruction ld3r	{v0.4h-v2.4h},[x0] is not supported yet.
+0000000100003404: error: Rewriting A64 mnemonic 'ld4' (4D602400) is not supported yet.
+0000000100003460: error: Rewriting A64 mnemonic 'ld4' (D60A400) is not supported yet.
+00000001000034BC: error: Rewriting A64 mnemonic 'ld4' (4D60A400) is not supported yet.
+0000000100003518: warning: AArch64 instruction ld4r	{v0.16b-v3.16b},[x0] is not supported yet.
+0000000100003574: warning: AArch64 instruction ld4r	{v0.4h-v3.4h},[x0] is not supported yet.
 000000010000801C: warning: Call target address 00000000FC58D46C is invalid.

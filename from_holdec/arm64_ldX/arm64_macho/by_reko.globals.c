@@ -4,15 +4,16 @@
 
 #include "subject.h"
 
-Eq_196 g_t0001;
-<anonymous> * g_ptr8000; // 0000000000008000
-<anonymous> * g_ptr8008; // 0000000000008008
-Eq_1232 (* g_ptr8018)[]; // 0000000000008018
+<anonymous> * __imp__dyld_stub_binder; // 0000000000004000
+<anonymous> * __imp__printf; // 0000000000008000
+<anonymous> * __imp__putchar; // 0000000000008008
+word128 g_ow8018;
 Eq_11 g_t8090;
 ui64 g_qw8098; // 0000000000008098
-Eq_11 g_t80A0;
+Eq_14 g_t80A0;
 ui64 g_qw80A8; // 00000000000080A8
-Eq_11 g_t80B0;
+Eq_17 g_t80B0;
 ui64 g_qw80B8; // 00000000000080B8
-Eq_11 g_t80C0;
+Eq_20 g_t80C0;
 ui64 g_qw80C8; // 00000000000080C8
+Eq_240 g_tFFFFFFFF;

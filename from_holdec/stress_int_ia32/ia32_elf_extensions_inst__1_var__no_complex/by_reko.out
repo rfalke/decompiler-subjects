@@ -1,3 +1,11 @@
 === Using options:--aggressive-branch-removal
+0804A068: warning: x86 instruction 'crc32' is not supported yet.
+0804A020: warning: x86 instruction 'crc32' is not supported yet.
+08049FC0: warning: x86 instruction 'crc32' is not supported yet.
+08049F77: warning: x86 instruction 'crc32' is not supported yet.
+08049F18: warning: x86 instruction 'crc32' is not supported yet.
+08049ED0: warning: x86 instruction 'crc32' is not supported yet.
 0804929D: warning: Call target address 00000000 is invalid.
 08049250: warning: Call target address 00000000 is invalid.
+0804CF0C: warning: Expected sizes of arrays to have been determined by now
+0804CF0C: warning: Expected sizes of arrays to have been determined by now

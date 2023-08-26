@@ -1,5 +1,17 @@
 === Using options:--aggressive-branch-removal
 0000000000000910: warning: Unable to resolve imported reference __gmon_start__.
 00000000000008B0: warning: Unable to resolve imported reference __cxa_finalize.
+0000000000000C18: warning: Unable to determine format string for call to 'sprintf'.
+/home/hawk/kza/decompiler-subjects.clean/from_rec/hd/arm64_elf_gcc_Os_from_rfalke/subject.exe: error: An internal error occurred while analyzing /home/hawk/kza/decompiler-subjects.clean/from_rec/hd/arm64_elf_gcc_Os_from_rfalke/subject.exe.
+    An item with the same key has already been added. Key: w2
+       at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Linq.Enumerable.ToDictionary[TSource,TKey,TElement](IEnumerable`1 source, Func`2 keySelector, Func`2 elementSelector, IEqualityComparer`1 comparer)
+   at Reko.Analysis.CallRewriter.ProcessInputStorages(SsaState ssa, ProcedureFlow flow, SignatureBuilder sb) in /home/runner/work/reko/reko/src/Decompiler/Analysis/CallRewriter.cs:line 122
+   at Reko.Analysis.CallRewriter.MakeSignature(SsaState ssa, ProcedureFlow flow) in /home/runner/work/reko/reko/src/Decompiler/Analysis/CallRewriter.cs:line 103
+   at Reko.Analysis.CallRewriter.EnsureSignature(SsaState ssa, ProcedureFlow flow) in /home/runner/work/reko/reko/src/Decompiler/Analysis/CallRewriter.cs:line 90
+   at Reko.Analysis.CallRewriter.Rewrite(IPlatform platform, IReadOnlyCollection`1 ssts, ProgramDataFlow summaries, IDecompilerEventListener eventListener) in /home/runner/work/reko/reko/src/Decompiler/Analysis/CallRewriter.cs:line 64
+   at Reko.Analysis.DataFlowAnalysis.UntangleProcedures() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 149
+   at Reko.Decompiler.AnalyzeDataFlow() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 111
+l0000000000000990: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
 0000000000011DA8: warning: Expected sizes of arrays to have been determined by now
 0000000000011DA8: warning: Expected sizes of arrays to have been determined by now

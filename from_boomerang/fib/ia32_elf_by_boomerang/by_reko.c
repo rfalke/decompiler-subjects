@@ -96,12 +96,13 @@ char g_str8048468[] = "%i\n"; // 08048468
 
 #include "subject.h"
 
-// 08048280: void fn08048280(Register (ptr32 Eq_11) edx, Stack int32 dwArg00)
-void fn08048280(void (* edx)(), int32 dwArg00)
+// 08048280: void fn08048280(Register (ptr32 Eq_11) edx, Stack int32 dwArg00, Stack (ptr32 char) ptrArg04)
+void fn08048280(void (* edx)(), int32 dwArg00, char * ptrArg04)
 {
-	__align((char *) fp + 4);
-	__libc_start_main(&g_t80483CF, dwArg00, (char *) fp + 4, &g_t8048230, &g_t8048440, edx, fp);
-	__hlt();
+	void * fp;
+	__align_stack<word32>(&ptrArg04);
+	__libc_start_main(&g_t80483CF, dwArg00, &ptrArg04, &g_t8048230, &g_t8048440, edx, fp);
+	__halt();
 }
 
 // 080482A4: void call_gmon_start()
@@ -125,8 +126,8 @@ void __do_global_dtors_aux()
 		<anonymous> * edx_12 = *eax_11;
 		while (edx_12 != null)
 		{
-			<anonymous> ** eax_19 = (char *) eax_11 + 4;
-			g_ptr8049474 = eax_19;
+			<anonymous> ** eax_20 = (char *) eax_11 + 4;
+			g_ptr8049474 = eax_20;
 			edx_12();
 			eax_11 = g_ptr8049474;
 			edx_12 = (<anonymous> *) *eax_11;
@@ -159,7 +160,8 @@ int32 fib(int32 dwArg04)
 // 080483CF: void main()
 void main()
 {
-	__align(fp - 0x0C);
+	ptr32 fp;
+	__align_stack<word32>(fp - 0x0C);
 	printf("%i\n", fib(0x0A));
 }
 
@@ -168,6 +170,7 @@ void main()
 //      _init
 void __do_global_ctors_aux()
 {
+	word32 dwLoc0C;
 	<anonymous> * eax_12 = g_ptr8049544;
 	word32 * ebx_13 = &g_ptr8049544;
 	while (eax_12 != (<anonymous> *) ~0x00)

@@ -4,107 +4,122 @@
 
 #include "subject.h"
 
-// 0804804C: void fn0804804C(Stack word32 dwArg00)
-void fn0804804C(word32 dwArg00)
+// 0804804C: void fn0804804C(Register Eq_2 edx, Stack word32 dwArg00)
+void fn0804804C(Eq_2 edx, word32 dwArg00)
 {
-	g_dw804811E = 0x00;
-	g_dw804811A = 0x0A;
-	word16 * edi_133 = null;
-	int32 ebp_140 = 0x00;
-	struct Eq_13 * esp_13 = fp + 8;
+	ptr32 fp;
+	g_t804811E.u0 = 0x00;
+	g_t804811A.u0 = 0x0A;
+	int32 edi_6 = 0x00;
+	Eq_13 ebp_101 = 0x00;
+	struct Eq_15 * esp_14 = fp + 8;
 	if (dwArg00 != 0x01)
 	{
+l0804808D:
 		while (true)
 		{
-			while (true)
-			{
-l0804808D:
-				word16 * ebx_17 = esp_13->dw0000;
-				++esp_13;
-				word16 * ebx_19 = ebx_17;
-				if (ebx_17 == null)
-				{
-					if (ebp_140 == 0x00)
-						goto l080480BA;
-					esp_13->dwFFFFFFFC = 0x01;
-					__syscall(0x80);
-					ebx_19 = edi_133;
-				}
-				if (*ebx_19 != 28205)
-					break;
-				g_dw804811A = fn08048106(esp_13->dw0000);
-				++esp_13;
-			}
-			if (*ebx_19 != 0x632D)
+			char * ebx_18 = esp_14->dw0000;
+			++esp_14;
+			if (ebx_18 == null)
 				break;
-			g_dw804811E = fn08048106(esp_13->dw0000);
-			++esp_13;
+			if (*ebx_18 != 28205)
+			{
+				if (*ebx_18 == 0x632D)
+				{
+					g_t804811E.u0 = (size_t) fn08048106(esp_14->dw0000);
+					++esp_14;
+					continue;
+				}
+				else
+				{
+					esp_14->dwFFFFFFFC = 0x05;
+					Eq_13 eax_57 = sys_open(ebx_18, 0x00, edx);
+					ebp_101 = eax_57;
+					if (eax_57 < 0x00)
+						goto l080480B7;
+					goto l080480BA;
+				}
+			}
+			g_t804811A.u0 = (size_t) fn08048106(esp_14->dw0000);
+			++esp_14;
 		}
-		esp_13->dwFFFFFFFC = 0x05;
-		int32 eax_64 = esp_13->dwFFFFFFFC;
-		__syscall(0x80);
-		ebp_140 = eax_64;
-		if (eax_64 < 0x00)
+		if (ebp_101 != 0x00)
 		{
-l080480B7:
-			edi_133 = (word16 *) ((char *) edi_133 + 1);
-			goto l0804808D;
+			esp_14->dwFFFFFFFC = 0x01;
+			sys_exit(edi_6);
 		}
 	}
 l080480BA:
-	struct Eq_22 ** esp_79 = esp_13 - 4;
-	*esp_79 = (struct Eq_22 **) (struct Eq_22 *) 0x03;
-	struct Eq_22 * eax_81 = *esp_79;
-	__syscall(0x80);
-	esp_13 = (struct Eq_13 *) ((char *) esp_79 + 4);
-	if (eax_81 < null)
-		goto l080480B7;
-	if (eax_81 != null)
+	uint32 * esp_77 = esp_14 - 4;
+	*esp_77 = 0x03;
+	esp_14 = (struct Eq_15 *) (esp_77 + 1);
+	edx.u0 = 0x2000;
+	struct Eq_30 * eax_84 = sys_read(ebp_101, &g_b8048122, 0x2000);
+	if (eax_84 >= null)
 	{
-		if (g_dw804811E <= 0x00)
+		if (eax_84 != null)
 		{
-			struct Eq_22 * esi_102 = (struct Eq_22 *) ~0x00;
-			do
+			Eq_2 esi_103 = g_t804811E.u0;
+			if (esi_103 <= 0x00)
 			{
-				++esi_102;
-				if (esi_102 > eax_81)
-					break;
-				if (esi_102[0x08048122] != 0x0A)
-					continue;
-				--g_dw804811A;
-			} while (g_dw804811A != 0x00);
+				struct Eq_30 * esi_111 = (struct Eq_30 *) ~0x00;
+				do
+				{
+					++esi_111;
+					if (esi_111 > eax_84)
+						break;
+					if (esi_111[0x08048122] != 0x0A)
+						continue;
+					g_t804811A.u0 = (size_t) (g_t804811A.u0 - 0x01);
+				} while (g_t804811A.u0 != 0x00);
+				esi_103 = esi_111 + 1;
+			}
+			*esp_77 = 0x01;
+			uint32 ebx_140 = *esp_77;
+			*esp_77 = 0x04;
+			sys_write(ebx_140, &g_b8048122, esi_103);
+			edx = esi_103;
+			esp_14 = (struct Eq_15 *) (esp_77 + 1);
 		}
-		*esp_79 = (struct Eq_22 **) (struct Eq_22 *) 0x01;
-		*esp_79 = (struct Eq_22 **) (struct Eq_22 *) 0x04;
-		__syscall(0x80);
-		esp_13 = (struct Eq_13 *) ((char *) esp_79 + 4);
+		else
+		{
+			*esp_77 = 0x06;
+			sys_close(ebp_101);
+			esp_14 = (struct Eq_15 *) (esp_77 + 1);
+			ebp_101 = (word32) ebp_101 + 1;
+		}
 	}
 	else
 	{
-		*esp_79 = (struct Eq_22 **) (struct Eq_22 *) 0x06;
-		__syscall(0x80);
-		esp_13 = (struct Eq_13 *) ((char *) esp_79 + 4);
-		++ebp_140;
+l080480B7:
+		++edi_6;
 	}
 	goto l0804808D;
 }
 
-// 08048106: Register Eq_152 fn08048106(Register (ptr32 byte) esi)
+// 08048106: Register Eq_161 fn08048106(Register (ptr32 byte) esi)
 // Called from:
 //      fn0804804C
-Eq_152 fn08048106(byte * esi)
+Eq_161 fn08048106(byte * esi)
 {
-	Eq_152 ebx_14 = 0x00;
+	Eq_161 ebx_17 = 0x00;
 	while (true)
 	{
-		byte al_9 = *esi;
+		byte al_11 = *esi;
 		++esi;
-		if (al_9 == 0x00)
+		if (al_11 == 0x00)
 			break;
-		ebx_14 = ebx_14 *s 0x0A + (uint32) (al_9 - 0x30);
+		ebx_17 = ebx_17 *s 0x0A + (uint32) (al_11 - 0x30);
 	}
-	return ebx_14;
+	return ebx_17;
 }
 
-int32 g_dw804811A = 0; // 0804811A
-int32 g_dw804811E = 0; // 0804811E
+Eq_2 g_t804811A = // 0804811A
+	{
+		0x00
+	};
+Eq_2 g_t804811E = // 0804811E
+	{
+		0x00
+	};
+char g_b8048122 = '\0'; // 08048122

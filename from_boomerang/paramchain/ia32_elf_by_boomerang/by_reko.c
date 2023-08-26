@@ -138,7 +138,9 @@ void passem(word32 dwArg04, word32 dwArg08, word32 dwArg0C, word32 * dwArg10)
 //      _start
 word32 main()
 {
-	passem(0x05, 0x0A, 0x28, fp - 0x08);
+	ptr32 fp;
+	int32 dwLoc08;
+	passem(0x05, 0x0A, 0x28, fp - 8);
 	printf(&g_b8049B2C, dwLoc08);
 	return 0x00;
 }

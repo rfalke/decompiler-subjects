@@ -7,29 +7,29 @@
 // 0000000000400144: void vowels(Register (ptr64 charconst ) rdi)
 void vowels(const char * rdi)
 {
-	const char * qwLoc20_75 = rdi;
-	while ((int8) (*qwLoc20_75 != 0x00) != 0x00)
+	const char * qwLoc20_77 = rdi;
+	while ((int8) (*qwLoc20_77 != 0x00) != 0x00)
 	{
-		int32 eax_28 = (int32) *qwLoc20_75;
-		if (eax_28 != 111)
+		int32 eax_29 = (int32) *qwLoc20_77;
+		if (eax_29 != 111)
 		{
-			if (eax_28 <= 111)
+			if (eax_29 <= 111)
 			{
-				if (eax_28 == 101)
+				if (eax_29 == 101)
 					goto l0000000000400194;
-				if (eax_28 <= 101)
+				if (eax_29 <= 101)
 				{
-					if (eax_28 == 0x00)
+					if (eax_29 == 0x00)
 						return;
-					if (eax_28 != 0x61)
+					if (eax_29 != 0x61)
 						goto l00000000004001A1;
 					goto l0000000000400194;
 				}
-				if (eax_28 != 0x69)
+				if (eax_29 != 0x69)
 					goto l00000000004001A1;
 				goto l0000000000400194;
 			}
-			if (eax_28 == 117 || (eax_28 == 121 || eax_28 == 114))
+			if (eax_29 == 117 || (eax_29 == 121 || eax_29 == 114))
 				goto l0000000000400194;
 l00000000004001A1:
 		}
@@ -37,7 +37,7 @@ l00000000004001A1:
 		{
 l0000000000400194:
 		}
-		++qwLoc20_75;
+		++qwLoc20_77;
 	}
 }
 

@@ -85,7 +85,6 @@ word32 g_dw1001088C = 0x00; // 1001088C
 
 Eq_39 g_t10000808 = ??/* Unexpected function type (fn void ()) */ ; // 10000808
 word32 _IO_stdin_used = 0x00020001; // 10000818
-char g_str1000081C[] = "Many parameters: %d, %.1f, %d, %.1f, %d, %.1f, %d, %.1f\n"; // 1000081C
 real64 g_r10000858 = 1.1; // 10000858
 real64 g_r10000860 = 2.2; // 10000860
 real64 g_r10000868 = 3.3; // 10000868
@@ -115,6 +114,7 @@ void printf()
 // 100002C0: void _start(Register (ptr32 Eq_15) r3, Register int32 r4, Register (ptr32 (ptr32 char)) r5, Register (ptr32 Eq_18) r6, Register (ptr32 Eq_19) r7)
 void _start(int32 (* r3)(int32 r3, char ** r4, char ** r5), int32 r4, char ** r5, void (* r6)(), void (* r7)())
 {
+	void * fp;
 	(fp & ~0x0F)->dwFFFFFFF0 = fp & ~0x0F;
 	(fp & ~0x0F)->dwFFFFFFF0 = 0x00;
 	__libc_start_main(r3, r4, r5, r6, r7, &g_t10000808, fp);
@@ -125,6 +125,7 @@ void _start(int32 (* r3)(int32 r3, char ** r4, char ** r5), int32 r4, char ** r5
 //      _init
 struct Eq_3 * call_gmon_start(struct Eq_3 * lr)
 {
+	struct Eq_3 * r30;
 	fn10010970();
 	if (lr->dw000C == 0x00)
 		return r30;

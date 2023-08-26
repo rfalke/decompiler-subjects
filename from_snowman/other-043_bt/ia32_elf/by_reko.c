@@ -7,7 +7,7 @@
 // 08048098: void fn08048098(Register word32 eax)
 void fn08048098(word32 eax)
 {
-	if (!__bt(eax, 0x03))
+	if (!__bt<word32>(eax, 0x03))
 		*(word32 *) 500 = 0x0A;
 }
 

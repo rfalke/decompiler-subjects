@@ -4,5 +4,4 @@
 
 #include "subject.h"
 
-Eq_12 g_tFFFB8000;
-
+Eq_4 g_tFFFB8000;

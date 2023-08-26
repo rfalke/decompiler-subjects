@@ -4,25 +4,26 @@
 
 #include "subject.h"
 
-// 0804804C: void fn0804804C(Register word32 edi)
-void fn0804804C(word32 edi)
+// 0804804C: void fn0804804C()
+void fn0804804C()
 {
-	__syscall(0x80);
-	struct Eq_8 * esi_17 = &g_t804808F;
-	do
+	int32 eax_15 = sys_readlink(&g_b8048080, &g_b804808F, 0x1000);
+	if (eax_15 >= 0x00)
 	{
-		esi_17 = esi_4183 + 1;
-		esi_4183 = esi_17;
-	} while (esi_4183->b0000 != 0x00);
-	esi_17->bFFFFFFFF = 0x0A;
-	__syscall(0x80);
+		struct Eq_18 * esi_23 = &g_b804808F;
+		do
+		{
+			esi_23 = esi_58 + 1;
+			esi_58 = esi_23;
+		} while (esi_58->b0000 != 0x00);
+		esi_23->bFFFFFFFF = 0x0A;
+		eax_15 = sys_write(0x01, &g_b804808F, eax_15 + 0x01);
+	}
+	sys_exit(eax_15);
 }
 
+char g_b8048080 = '/'; // 08048080
 byte g_a804808E[] = // 0804808E
 	{
 	};
-Eq_8 g_t804808F = // 0804808F
-	{
-		0x30,
-		0x00,
-	};
+char g_b804808F = '\0'; // 0804808F

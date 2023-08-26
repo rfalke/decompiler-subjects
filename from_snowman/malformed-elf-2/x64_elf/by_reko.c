@@ -103,7 +103,6 @@ word64 g_qw600E20 = 0x00; // 0000000000600E20
 
 #include "subject.h"
 
-char g_str400BB8[] = "%s"; // 0000000000400BB8
 char g_str400BBB[] = "...\n"; // 0000000000400BBB
 char g_str400BC0[] = "And I'm happy. I live free ! :-)"; // 0000000000400BC0
 // subject_text.c
@@ -112,12 +111,14 @@ char g_str400BC0[] = "And I'm happy. I live free ! :-)"; // 0000000000400BC0
 
 #include "subject.h"
 
-// 0000000000400800: void _start(Register (ptr64 Eq_8) rdx, Stack word32 dwArg00)
-void _start(void (* rdx)(), word32 dwArg00)
+// 0000000000400800: void _start(Register (ptr64 Eq_9) rdx, Stack word32 dwArg00, Stack (ptr64 char) ptrArg08)
+void _start(void (* rdx)(), word32 dwArg00, char * ptrArg08)
 {
-	__align((char *) fp + 8);
-	__libc_start_main(&g_t4008ED, (int32) qwArg00, (char *) fp + 8, &g_t400B10, &g_t400BA0, rdx, fp);
-	__hlt();
+	void * fp;
+	word64 qwArg00;
+	__align_stack<word64>(&ptrArg08);
+	__libc_start_main(&g_t4008ED, (int32) qwArg00, &ptrArg08, &g_t400B10, &g_t400BA0, rdx, fp);
+	__halt();
 }
 
 // 0000000000400830: void deregister_tm_clones()
@@ -178,11 +179,16 @@ void main(struct Eq_53 * fs)
 //      main
 void help(struct Eq_53 * fs)
 {
+	ptr64 fp;
+	char bLoc88;
+	char bLoc68;
 	word64 rax_25 = fs->qw0028;
-	size_t rax_52 = strlen(fp - 0x88) + strlen(fp - 0x68);
+	bLoc68 = (char) 0x202C657361656C50;
+	bLoc88 = (char) 0x6F63206C6C276548;
+	size_t rax_52 = strlen(&bLoc88) + strlen(&bLoc68);
 	char * rsp_75 = fp - 0xA8 - (uint64) ((uint128) ((word64) rax_52 + 16) /u 0x10) *s 0x10;
-	strncpy(rsp_75, fp - 0x68, (int32) rax_52);
-	strncat(rsp_75, fp - 0x88, rax_52);
+	strncpy(rsp_75, &bLoc68, (int32) rax_52);
+	strncat(rsp_75, &bLoc88, rax_52);
 	fputs(rsp_75, stdout);
 	if ((rax_25 ^ fs->qw0028) == 0x00)
 		return;
@@ -192,10 +198,11 @@ void help(struct Eq_53 * fs)
 // 0000000000400B10: void __libc_csu_init(Register word64 rdx, Register word64 rsi, Register word32 edi)
 void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 {
+	word64 rdi;
 	word32 edi = (word32) rdi;
 	_init();
-	int64 rbp_19 = 0x00600E18 - 0x00600E10;
-	Eq_195 rbx_29 = 0x00;
+	int64 rbp_19 = 0x00600E18 - g_a600E10;
+	Eq_208 rbx_29 = 0x00;
 	if (rbp_19 >> 0x03 != 0x00)
 	{
 		do

@@ -1,2 +1,4 @@
 === Using options:--aggressive-branch-removal
 subject.exe: warning: Win32 ARM main procedure finder not implemented yet.
+000116F8: warning: Expected sizes of arrays to have been determined by now
+000116F8: warning: Expected sizes of arrays to have been determined by now

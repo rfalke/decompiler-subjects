@@ -1,12 +1,93 @@
 === Using options:--aggressive-branch-removal
-Error: An error occurred during decompilation.
-    Source array was not long enough. Check the source index, length, and the array's lower bounds. (Parameter 'sourceArray')
-       at System.Array.Copy(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length, Boolean reliable) in /_/src/coreclr/src/System.Private.CoreLib/src/System/Array.CoreCLR.cs:line 218
-   at System.Array.Copy(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length) in /_/src/coreclr/src/System.Private.CoreLib/src/System/Array.CoreCLR.cs:line 191
-   at System.Array.Copy(Array sourceArray, Int64 sourceIndex, Array destinationArray, Int64 destinationIndex, Int64 length) in /_/src/libraries/System.Private.CoreLib/src/System/Array.cs:line 124
-   at Reko.ImageLoaders.HpSom.HpSomLoader.MakeSegmentMapFromSubspaces(List`1 spaces, List`1 subspaces) in /home/runner/work/reko/reko/src/ImageLoaders/HpSom/HpSomLoader.cs:line 109
-   at Reko.ImageLoaders.HpSom.HpSomLoader.LoadProgram(Address addrLoad) in /home/runner/work/reko/reko/src/ImageLoaders/HpSom/HpSomLoader.cs:line 67
-   at Reko.Core.Loading.ProgramImageLoader.Load(Address addrLoad) in /home/runner/work/reko/reko/src/Core/Loading/ProgramImageLoader.cs:line 46
-   at Reko.Loading.Loader.LoadBinaryImage(ImageLocation imageLocation, Byte[] image, String loader, Address addrLoad) in /home/runner/work/reko/reko/src/Decompiler/Loading/Loader.cs:line 171
-   at Reko.Loading.Loader.Load(ImageLocation imageLocation, String loaderName, Address addrLoad) in /home/runner/work/reko/reko/src/Decompiler/Loading/Loader.cs:line 117
-   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs) in /home/runner/work/reko/reko/src/Drivers/CmdLine/CmdLineDriver.cs:line 166
+00114C00: error: Address 00114C00 is outside of image. (Parameter 'addr')
+0010D840: error: Address 0010D840 is outside of image. (Parameter 'addr')
+0010D040: error: Address 0010D040 is outside of image. (Parameter 'addr')
+00000040: error: Address 00000040 is outside of image. (Parameter 'addr')
+Error: An error occurred while writing assembly language output.
+    Address 00000040 is outside of image. (Parameter 'addr')
+       at Reko.Core.Memory.ByteImageReader..ctor(ByteMemoryArea mem, Address addr, Int64 cUnits) in /home/runner/work/reko/reko/src/Core/Memory/ByteImageReader.cs:line 65
+   at Reko.Core.Memory.EndianByteImageReader..ctor(ByteMemoryArea img, Address addr, Int64 cUnits) in /home/runner/work/reko/reko/src/Core/Memory/EndianImageReader.cs:line 71
+   at Reko.Core.Memory.BeImageReader..ctor(ByteMemoryArea image, Address addr, Int64 cUnits) in /home/runner/work/reko/reko/src/Core/Memory/EndianImageReader.cs:line 256
+   at Reko.Core.Memory.ByteMemoryArea.CreateBeReader(Address addr, Int64 cUnits) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 77
+   at Reko.Core.EndianServices.BeServices.CreateImageReader(MemoryArea mem, Address addr, Int64 cUnits) in /home/runner/work/reko/reko/src/Core/EndianServices.cs:line 293
+   at Reko.Core.ProcessorArchitecture.CreateImageReader(MemoryArea mem, Address addr, Int64 cbUnits) in /home/runner/work/reko/reko/src/Core/IProcessorArchitecture.cs:line 622
+   at Reko.Core.Output.Dumper.DumpData(IProcessorArchitecture arch, MemoryArea mem, Address address, Int64 cUnits, Formatter stm) in /home/runner/work/reko/reko/src/Core/Output/Dumper.cs:line 181
+   at Reko.Core.Output.Dumper.DumpData(SegmentMap map, IProcessorArchitecture arch, Address address, Int64 cbBytes, Formatter stm) in /home/runner/work/reko/reko/src/Core/Output/Dumper.cs:line 168
+   at Reko.Core.Output.Dumper.DumpItem(ImageSegment segment, ImageMapItem i, Formatter formatter) in /home/runner/work/reko/reko/src/Core/Output/Dumper.cs:line 119
+   at Reko.Core.Output.Dumper.Dump(Dictionary`2 segmentItems, Formatter formatter) in /home/runner/work/reko/reko/src/Core/Output/Dumper.cs:line 67
+   at Reko.Decompiler.DumpAssembler(Program program, String filename, Dictionary`2 segmentItems, Formatter wr) in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 144
+/home/hawk/kza/decompiler-subjects.clean/from_boomerang/hello/hppa_sharedexec_by_boomerang/subject.exe: error: An internal error occurred while analyzing /home/hawk/kza/decompiler-subjects.clean/from_boomerang/hello/hppa_sharedexec_by_boomerang/subject.exe.
+    Argument must have non-zero flag group bits. (Parameter 'grf')
+       at Reko.Core.Frame.EnsureFlagGroup(FlagGroupStorage grf) in /home/runner/work/reko/reko/src/Core/Frame.cs:line 193
+   at Reko.Analysis.SsaTransform.GenerateUseDefsForKnownCallee(CallInstruction ci, Procedure callee, ProcedureFlow calleeFlow) in /home/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.cs:line 668
+   at Reko.Analysis.SsaTransform.TransformCallInstruction(CallInstruction ci) in /home/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.cs:line 589
+   at Reko.Core.Code.CallInstruction.Accept(InstructionTransformer xform) in /home/runner/work/reko/reko/src/Core/Code/CallInstruction.cs:line 64
+   at Reko.Analysis.SsaTransform.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.cs:line 142
+   at Reko.Analysis.SccWorker.ConvertToSsa(Procedure proc) in /home/runner/work/reko/reko/src/Decompiler/Analysis/SccWorker.cs:line 167
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Analysis.SccWorker.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/SccWorker.cs:line 85
+   at Reko.Analysis.DataFlowAnalysis.RewriteProceduresToSsa() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 178
+   at Reko.Analysis.DataFlowAnalysis.UntangleProcedures() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 128
+   at Reko.Decompiler.AnalyzeDataFlow() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 111
+l0000130C: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
+fn00001570: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+$$remoI: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+L$0004: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+40000FFC: error: An error occurred while tracing the object at 40001000.
+    An error occurred following a pointer at address 40000FFC.
+       at Reko.Core.Output.GlobalObjectTracer.VisitPointer(Pointer ptr) in /home/runner/work/reko/reko/src/Core/Output/GlobalObjectTracer.cs:line 170
+   at Reko.Core.Types.Pointer.Accept[T](IDataTypeVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Types/Pointer.cs:line 75
+   at Reko.Core.Output.GlobalObjectTracer.VisitStructure(StructureType str) in /home/runner/work/reko/reko/src/Core/Output/GlobalObjectTracer.cs:line 192
+   at Reko.Core.Types.StructureType.Accept[T](IDataTypeVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Types/StructureType.cs:line 60
+   at Reko.Core.Output.GlobalObjectTracer.VisitEquivalenceClass(EquivalenceClass eq) in /home/runner/work/reko/reko/src/Core/Output/GlobalObjectTracer.cs:line 115
+   at Reko.Core.Types.EquivalenceClass.Accept[T](IDataTypeVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Types/EquivalenceClass.cs:line 56
+   at Reko.Core.Output.GlobalObjectTracer.TraceObject(DataType dataType, Address addr) in /home/runner/work/reko/reko/src/Core/Output/GlobalObjectTracer.cs:line 74
+       at Reko.Core.Memory.ByteMemoryArea.TryReadBeUInt32(Byte[] abImage, Int64 off, UInt32& value) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 473
+   at Reko.Core.Memory.ByteMemoryArea.TryReadBe(Byte[] abImage, Int64 imageOffset, DataType type, Constant& value) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 316
+   at Reko.Core.Memory.ByteMemoryArea.TryReadBe(Int64 imageOffset, DataType type, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 222
+   at Reko.Core.Memory.ByteImageReader.TryReadBe(DataType dataType, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteImageReader.cs:line 241
+   at Reko.Core.Memory.BeImageReader.TryRead(PrimitiveType dataType, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/EndianImageReader.cs:line 300
+   at Reko.Core.Output.GlobalObjectTracer.VisitPointer(Pointer ptr) in /home/runner/work/reko/reko/src/Core/Output/GlobalObjectTracer.cs:line 135
+40001000: error: Failed to write global variable g_t40001000.
+    Specified argument was out of the range of valid values.
+       at Reko.Core.Memory.ByteMemoryArea.TryReadBeUInt32(Byte[] abImage, Int64 off, UInt32& value) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 473
+   at Reko.Core.Memory.ByteMemoryArea.TryReadBe(Byte[] abImage, Int64 imageOffset, DataType type, Constant& value) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 316
+   at Reko.Core.Memory.ByteMemoryArea.TryReadBe(Int64 imageOffset, DataType type, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 222
+   at Reko.Core.Memory.ByteImageReader.TryReadBe(DataType dataType, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteImageReader.cs:line 241
+   at Reko.Core.Memory.BeImageReader.TryRead(PrimitiveType dataType, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/EndianImageReader.cs:line 300
+   at Reko.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 329
+   at Reko.Core.Types.Pointer.Accept[T](IDataTypeVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Types/Pointer.cs:line 75
+   at Reko.Core.Output.GlobalDataWriter.VisitStructure(StructureType str) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 390
+   at Reko.Core.Types.StructureType.Accept[T](IDataTypeVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Types/StructureType.cs:line 60
+   at Reko.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 253
+   at Reko.Core.Types.EquivalenceClass.Accept[T](IDataTypeVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Types/EquivalenceClass.cs:line 56
+   at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable(Address address, DataType dataType, String name) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 154
+40000FFC: error: An error occurred while tracing the object at 40001000.
+    An error occurred following a pointer at address 40000FFC.
+       at Reko.Core.Output.GlobalObjectTracer.VisitPointer(Pointer ptr) in /home/runner/work/reko/reko/src/Core/Output/GlobalObjectTracer.cs:line 170
+   at Reko.Core.Types.Pointer.Accept[T](IDataTypeVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Types/Pointer.cs:line 75
+   at Reko.Core.Output.GlobalObjectTracer.VisitStructure(StructureType str) in /home/runner/work/reko/reko/src/Core/Output/GlobalObjectTracer.cs:line 192
+   at Reko.Core.Types.StructureType.Accept[T](IDataTypeVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Types/StructureType.cs:line 60
+   at Reko.Core.Output.GlobalObjectTracer.VisitEquivalenceClass(EquivalenceClass eq) in /home/runner/work/reko/reko/src/Core/Output/GlobalObjectTracer.cs:line 115
+   at Reko.Core.Types.EquivalenceClass.Accept[T](IDataTypeVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Types/EquivalenceClass.cs:line 56
+   at Reko.Core.Output.GlobalObjectTracer.TraceObject(DataType dataType, Address addr) in /home/runner/work/reko/reko/src/Core/Output/GlobalObjectTracer.cs:line 74
+       at Reko.Core.Memory.ByteMemoryArea.TryReadBeUInt32(Byte[] abImage, Int64 off, UInt32& value) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 473
+   at Reko.Core.Memory.ByteMemoryArea.TryReadBe(Byte[] abImage, Int64 imageOffset, DataType type, Constant& value) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 316
+   at Reko.Core.Memory.ByteMemoryArea.TryReadBe(Int64 imageOffset, DataType type, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 222
+   at Reko.Core.Memory.ByteImageReader.TryReadBe(DataType dataType, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteImageReader.cs:line 241
+   at Reko.Core.Memory.BeImageReader.TryRead(PrimitiveType dataType, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/EndianImageReader.cs:line 300
+   at Reko.Core.Output.GlobalObjectTracer.VisitPointer(Pointer ptr) in /home/runner/work/reko/reko/src/Core/Output/GlobalObjectTracer.cs:line 135
+40001000: error: Failed to write global variable g_t40001000.
+    Specified argument was out of the range of valid values.
+       at Reko.Core.Memory.ByteMemoryArea.TryReadBeUInt32(Byte[] abImage, Int64 off, UInt32& value) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 473
+   at Reko.Core.Memory.ByteMemoryArea.TryReadBe(Byte[] abImage, Int64 imageOffset, DataType type, Constant& value) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 316
+   at Reko.Core.Memory.ByteMemoryArea.TryReadBe(Int64 imageOffset, DataType type, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 222
+   at Reko.Core.Memory.ByteImageReader.TryReadBe(DataType dataType, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteImageReader.cs:line 241
+   at Reko.Core.Memory.BeImageReader.TryRead(PrimitiveType dataType, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/EndianImageReader.cs:line 300
+   at Reko.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 329
+   at Reko.Core.Types.Pointer.Accept[T](IDataTypeVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Types/Pointer.cs:line 75
+   at Reko.Core.Output.GlobalDataWriter.VisitStructure(StructureType str) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 390
+   at Reko.Core.Types.StructureType.Accept[T](IDataTypeVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Types/StructureType.cs:line 60
+   at Reko.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 253
+   at Reko.Core.Types.EquivalenceClass.Accept[T](IDataTypeVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Types/EquivalenceClass.cs:line 56
+   at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable(Address address, DataType dataType, String name) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 154

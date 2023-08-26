@@ -1,30 +1,22 @@
 === Using options:--aggressive-branch-removal --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0 --entry 0C00:0100
-: warning: Selector 0C00 has no known segment.
-: warning: Selector 0C00 has no known segment.
-: warning: Selector 0C00 has no known segment.
-: warning: Selector 0C00 has no known segment.
-: warning: Selector 0C00 has no known segment.
-: warning: Selector 0C00 has no known segment.
-: warning: Selector 0C00 has no known segment.
-: warning: Selector 0C00 has no known segment.
-: warning: Selector 0C00 has no known segment.
-: warning: Selector 0C00 has no known segment.
-: warning: Selector 0C00 has no known segment.
-: warning: Selector 0C00 has no known segment.
-: warning: Selector 0C00 has no known segment.
-: warning: Selector 0C00 has no known segment.
-: warning: Selector 0C00 has no known segment.
-: warning: Selector 0C00 has no known segment.
-: warning: Selector 0C00 has no known segment.
-: warning: Selector 0C00 has no known segment.
-: warning: Selector 0C00 has no known segment.
-: warning: Selector 0C00 has no known segment.
-: warning: Selector 0C00 has no known segment.
-: warning: Selector 0C00 has no known segment.
-: warning: Selector 0C00 has no known segment.
-: warning: Selector 0C00 has no known segment.
-: warning: Selector 0C00 has no known segment.
-: warning: Selector 0C00 has no known segment.
-: warning: Selector 0C00 has no known segment.
-: warning: Selector 0C00 has no known segment.
-: warning: Selector 0C00 has no known segment.
+Warning: Selector A000 has no known segment.
+0C00:0503: error: An error occurred while tracing the object at 0C00:0503.
+    The method or operation is not implemented.
+       at Reko.Core.Output.GlobalObjectTracer.VisitMemberPointer(MemberPointer memptr) in /home/runner/work/reko/reko/src/Core/Output/GlobalObjectTracer.cs:line 127
+   at Reko.Core.Types.MemberPointer.Accept[T](IDataTypeVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Types/MemberPointer.cs:line 50
+   at Reko.Core.Output.GlobalObjectTracer.TraceObject(DataType dataType, Address addr) in /home/runner/work/reko/reko/src/Core/Output/GlobalObjectTracer.cs:line 74
+0C00:0503: error: Failed to write global variable g_ptr0403.
+    The method or operation is not implemented.
+       at Reko.Core.Output.GlobalDataWriter.VisitMemberPointer(MemberPointer memptr) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 324
+   at Reko.Core.Types.MemberPointer.Accept[T](IDataTypeVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Types/MemberPointer.cs:line 50
+   at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable(Address address, DataType dataType, String name) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 154
+0C00:0503: error: An error occurred while tracing the object at 0C00:0503.
+    The method or operation is not implemented.
+       at Reko.Core.Output.GlobalObjectTracer.VisitMemberPointer(MemberPointer memptr) in /home/runner/work/reko/reko/src/Core/Output/GlobalObjectTracer.cs:line 127
+   at Reko.Core.Types.MemberPointer.Accept[T](IDataTypeVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Types/MemberPointer.cs:line 50
+   at Reko.Core.Output.GlobalObjectTracer.TraceObject(DataType dataType, Address addr) in /home/runner/work/reko/reko/src/Core/Output/GlobalObjectTracer.cs:line 74
+0C00:0503: error: Failed to write global variable g_ptr0403.
+    The method or operation is not implemented.
+       at Reko.Core.Output.GlobalDataWriter.VisitMemberPointer(MemberPointer memptr) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 324
+   at Reko.Core.Types.MemberPointer.Accept[T](IDataTypeVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Types/MemberPointer.cs:line 50
+   at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable(Address address, DataType dataType, String name) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 154

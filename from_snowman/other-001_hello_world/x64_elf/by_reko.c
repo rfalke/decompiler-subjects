@@ -93,12 +93,14 @@ char g_str4005EC[] = "Hello, World!"; // 00000000004005EC
 
 #include "subject.h"
 
-// 0000000000400400: void _start(Register (ptr64 Eq_11) rdx, Stack word32 dwArg00)
-void _start(void (* rdx)(), word32 dwArg00)
+// 0000000000400400: void _start(Register (ptr64 Eq_11) rdx, Stack word32 dwArg00, Stack (ptr64 char) ptrArg08)
+void _start(void (* rdx)(), word32 dwArg00, char * ptrArg08)
 {
-	__align((char *) fp + 8);
-	__libc_start_main(&g_t4004E4, (int32) qwArg00, (char *) fp + 8, &g_t400510, &g_t400500, rdx, fp);
-	__hlt();
+	void * fp;
+	word64 qwArg00;
+	__align_stack<word64>(&ptrArg08);
+	__libc_start_main(&g_t4004E4, (int32) qwArg00, &ptrArg08, &g_t400510, &g_t400500, rdx, fp);
+	__halt();
 }
 
 // 000000000040042C: void call_gmon_start()
@@ -151,15 +153,15 @@ void __libc_csu_fini()
 void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 {
 	_init();
-	int64 rbp_19 = 0x0060069C - 0x0060069C;
+	int64 rbp_19 = (<anonymous> * (*)[]) 0x0060069C - (<anonymous> * (*)[]) 0x0060069C;
 	if (rbp_19 >> 0x03 != 0x00)
 	{
-		Eq_92 rbx_39 = 0x00;
+		Eq_89 rbx_42 = 0x00;
 		do
 		{
-			((<anonymous> *[]) 0x0060069C)[rbx_39]();
-			rbx_39 = (word64) rbx_39.u1 + 1;
-		} while (rbx_39 < rbp_19 >> 0x03);
+			((<anonymous> *[]) 0x0060069C)[rbx_42]();
+			rbx_42 = (word64) rbx_42.u1 + 1;
+		} while (rbx_42 < rbp_19 >> 0x03);
 	}
 }
 

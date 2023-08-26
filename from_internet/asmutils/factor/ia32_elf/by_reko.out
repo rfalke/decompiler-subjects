@@ -1,3 +1,2 @@
 === Using options:--aggressive-branch-removal
-0804816C: warning: Expected a use of FPU status. Last test instruction at 0804816C
-080480B2: warning: Unexpected 1 fstsw;cmp mask for jnz mnemonic.
+080480B2: warning: Unexpected 1 fstsw;cmp mask for NE mnemonic.

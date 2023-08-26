@@ -4,49 +4,48 @@
 
 #include "subject.h"
 
-// 0804804C: void fn0804804C(Stack up32 dwArg00, Stack (ptr32 Eq_3) dwArg04, Stack (ptr32 word16) dwArg08)
-void fn0804804C(up32 dwArg00, struct Eq_3 * dwArg04, word16 * dwArg08)
+// 0804804C: void fn0804804C(Register word24 eax_24_8, Stack up32 dwArg00, Stack (ptr32 Eq_4) dwArg04, Stack (ptr32 char) dwArg08, Stack (ptr32 char) dwArg0C, Stack (ptr32 char) dwArg10)
+void fn0804804C(word24 eax_24_8, up32 dwArg00, struct Eq_4 * dwArg04, char * dwArg08, char * dwArg0C, char * dwArg10)
 {
-	struct Eq_3 * esi_11 = dwArg04;
-	ptr32 esp_33 = fp + 8;
+	ptr32 fp;
+	struct Eq_4 * esi_12 = dwArg04;
+	struct Eq_10 * esp_44 = fp + 8;
 	do
 	{
-		esi_11 = esi_81 + 1;
-		esi_81 = esi_11;
-	} while (esi_81->b0000 != 0x00);
-	ptr32 esp_23;
-	ptr32 esp_35;
+		byte al_11 = esi_12->b0000;
+		++esi_12;
+		int32 eax_45 = SEQ(eax_24_8, al_11);
+	} while (al_11 != 0x00);
 	if (dwArg00 >= 0x03)
 	{
-		esp_23 = fp + 16;
-		if (esi_11->bFFFFFFFC == 115)
+		ptr32 esp_35;
+		char * edi_29;
+		char * ebp_24 = dwArg0C;
+		if (esi_12->bFFFFFFFC != 115)
 		{
-l08048078:
-			word32 * esp_68 = esp_23 - 4;
-			*esp_68 = 0x0A;
-			__syscall(0x80);
-			esp_35 = esp_68 + 1;
-			goto l08048068;
-		}
-		if (*dwArg08 == 0x732D)
-		{
+			if (*dwArg08 != 0x732D)
+			{
+				esp_44 = fp + 16;
+				eax_45 = sys_link(dwArg08, dwArg0C);
+				goto l08048071;
+			}
+			edi_29 = dwArg10;
 			esp_35 = fp + 20;
-l08048068:
-			word32 * esp_41 = esp_35 - 4;
-			*esp_41 = 0x53;
-			__syscall(0x80);
-			esp_33 = esp_41 + 1;
 		}
 		else
 		{
-			__syscall(0x80);
-			esp_33 = fp + 16;
+			sys_unlink(dwArg0C);
+			edi_29 = dwArg0C;
+			ebp_24 = dwArg08;
+			esp_35 = fp + 16;
 		}
+		word32 * esp_53 = esp_35 - 4;
+		*esp_53 = 0x53;
+		esp_44 = (struct Eq_10 *) (esp_53 + 1);
+		eax_45 = sys_symlink(ebp_24, edi_29);
 	}
-	word32 * esp_51 = esp_33 - 4;
-	*esp_51 = 0x01;
-	__syscall(0x80);
-	esp_23 = esp_51 + 1;
-	goto l08048078;
+l08048071:
+	esp_44->dwFFFFFFFC = 0x01;
+	sys_exit(eax_45);
 }
 

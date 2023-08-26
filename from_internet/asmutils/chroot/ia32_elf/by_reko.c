@@ -4,10 +4,28 @@
 
 #include "subject.h"
 
-// 0804804C: void fn0804804C(Register word32 ecx, Stack word32 dwArg00, Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
-void fn0804804C(word32 ecx, word32 dwArg00, word32 dwArg04, word32 dwArg08, word32 dwArg0C)
+// 0804804C: void fn0804804C(Register int32 eax, Stack ui32 dwArg00, Stack (ptr32 char) dwArg08, Stack (ptr32 char) ptrArg0C)
+void fn0804804C(int32 eax, ui32 dwArg00, char * dwArg08, char * ptrArg0C)
 {
-	__syscall(0x80);
-	__syscall(0x80);
+	ptr32 fp;
+	struct Eq_7 * esp_17 = fp + 4;
+	if (dwArg00 != 0x01)
+	{
+		int32 eax_18 = sys_chroot(dwArg08);
+		esp_17 = &ptrArg0C;
+		eax = eax_18;
+		if (eax_18 >= 0x00)
+		{
+			char * ebx_24 = ptrArg0C;
+			char * ebx_25 = ebx_24;
+			if (ebx_24 == null)
+				ebx_25 = (char *) "/bin/s";
+			esp_17 = &ptrArg0C;
+			eax = sys_execve(ebx_25, &ptrArg0C, fp + 16 + (dwArg00 - 0x01) * 0x04);
+		}
+	}
+	esp_17->dwFFFFFFFC = 0x01;
+	sys_exit(eax);
 }
 
+char g_str8048079[] = "/bin/s"; // 08048079

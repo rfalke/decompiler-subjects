@@ -4,4 +4,4 @@
 
 #include "subject.h"
 
-Eq_371 g_a404300[];
+Eq_367 g_a404300[];

@@ -101,12 +101,13 @@ char g_str8048474[] = "MinMax result %d\n"; // 08048474
 
 #include "subject.h"
 
-// 08048278: void _start(Register (ptr32 Eq_13) edx, Stack int32 dwArg00)
-void _start(void (* edx)(), int32 dwArg00)
+// 08048278: void _start(Register (ptr32 Eq_13) edx, Stack int32 dwArg00, Stack (ptr32 char) ptrArg04)
+void _start(void (* edx)(), int32 dwArg00, char * ptrArg04)
 {
-	__align((char *) fp + 4);
-	__libc_start_main(&g_t804836F, dwArg00, (char *) fp + 4, &g_t80483C8, &g_t80483F8, edx, fp);
-	__hlt();
+	void * fp;
+	__align_stack<word32>(&ptrArg04);
+	__libc_start_main(&g_t804836F, dwArg00, &ptrArg04, &g_t80483C8, &g_t80483F8, edx, fp);
+	__halt();
 }
 
 // 0804829C: void call_gmon_start()
@@ -130,8 +131,8 @@ void __do_global_dtors_aux()
 		<anonymous> * edx_12 = *eax_11;
 		while (edx_12 != null)
 		{
-			<anonymous> ** eax_19 = (char *) eax_11 + 4;
-			g_ptr8049494 = eax_19;
+			<anonymous> ** eax_20 = (char *) eax_11 + 4;
+			g_ptr8049494 = eax_20;
 			edx_12();
 			eax_11 = g_ptr8049494;
 			edx_12 = (<anonymous> *) *eax_11;
@@ -147,20 +148,21 @@ void frame_dummy()
 {
 }
 
-// 08048328: void test(Stack Eq_76 dwArg04)
+// 08048328: void test(Stack Eq_73 dwArg04)
 // Called from:
 //      main
-void test(Eq_76 dwArg04)
+void test(Eq_73 dwArg04)
 {
-	ui64 ecx_ebx_39 = ~0x01 - SEQ(dwArg04 >> 0x1F, dwArg04);
-	Eq_83 edx_19 = ~0x01 - ((word32) ecx_ebx_39 & SLICE(ecx_ebx_39, word32, 32));
-	printf("MinMax result %d\n", (edx_19 - 0x03 & (edx_19 >> 0x1F) - (word32) (edx_19 < 0x03)) + 0x03);
+	ui64 ecx_ebx_40 = ~0x01 - SEQ(dwArg04 >> 0x1F, dwArg04);
+	Eq_80 edx_19 = ~0x01 - ((word32) ecx_ebx_40 & SLICE(ecx_ebx_40, word32, 32));
+	printf("MinMax result %d\n", (edx_19 - 0x03 & SLICE(SEQ(edx_19 >> 0x1F, edx_19) - 0x03, word32, 32)) + 0x03);
 }
 
-// 0804836F: void main(Stack Eq_76 dwArg04)
-void main(Eq_76 dwArg04)
+// 0804836F: void main(Stack Eq_73 dwArg04)
+void main(Eq_73 dwArg04)
 {
-	__align(fp - 0x0C);
+	ptr32 fp;
+	__align_stack<word32>(fp - 0x0C);
 	test(~0x04);
 	test(~0x01);
 	test(0x00);

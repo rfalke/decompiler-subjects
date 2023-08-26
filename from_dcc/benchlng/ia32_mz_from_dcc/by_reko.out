@@ -1,21 +1,19 @@
 === Using options:--aggressive-branch-removal
 Borland v2 detected
 0800:1B15: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
-0800:13EC: error: An error occurred while processing the statement word16 di_327 = di_312 - (fp - 0x8A<16>).
-    Not handling (memptr T_545 (struct (0 T_1285 t0000))) and (memptr T_7 <unknown>) yet.
-       at Reko.Typing.ExpressionTypeDescender.PushMinuendDataType(DataType dtDiff, DataType dtSub) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 409
-   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 255
-   at Reko.Core.Expressions.BinaryExpression.Accept[T,C](ExpressionVisitor`2 v, C context) in /home/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 54
-   at Reko.Typing.TypeCollector.VisitDeclaration(Declaration decl) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 228
-   at Reko.Core.Code.Declaration.Accept(InstructionVisitor v) in /home/runner/work/reko/reko/src/Core/Code/Declaration.cs:line 49
-   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
-l0800_11D0: warning: Non-integral switch expression
+__VPRINTER: error: An error occurred while renaming variables.
+    Sequence contains no matching element
+       at System.Linq.ThrowHelper.ThrowNoMatchException()
+   at Reko.Analysis.SsaLivenessAnalysis.BuildInterferenceGraph(SsaIdentifierCollection ssaIds) in /home/runner/work/reko/reko/src/Decompiler/Analysis/SsaLiveness.cs:line 90
+   at Reko.Analysis.SsaLivenessAnalysis..ctor(SsaState ssa) in /home/runner/work/reko/reko/src/Decompiler/Analysis/SsaLiveness.cs:line 61
+   at Reko.Analysis.LiveCopyInserter..ctor(SsaState ssa) in /home/runner/work/reko/reko/src/Decompiler/Analysis/LiveCopyInserter.cs:line 40
+   at Reko.Analysis.WebBuilder.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/WebBuilder.cs:line 108
 l0800_1842: warning: Non-integral switch expression
 fn0800_1DEB: error: An error occurred while rewriting procedure to high-level language.
     Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
-       at System.Collections.Generic.List`1.get_Item(Int32 index) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/List.cs:line 150
+       at System.Collections.Generic.List`1.get_Item(Int32 index)
    at Reko.Core.Block.get_ThenBlock() in /home/runner/work/reko/reko/src/Core/Block.cs:line 91
    at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block) in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 96
    at Reko.Structure.CompoundConditionCoalescer.Transform() in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 62
-   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 79
-   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 535
+   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 78
+   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 551

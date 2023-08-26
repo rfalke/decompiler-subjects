@@ -4,23 +4,8 @@
 
 #include "subject.h"
 
-struct Eq_4 * g_ptr0004;
-Eq_213 g_t1018 = 
-	{
-		
-		{
-		},
-	};
-word32 g_dw1058 = ~0x0F08204C;
-word16 g_w1182 = 0x00;
-word16 g_w1186 = 0x00;
-word16 g_w118A = 0x00;
-word16 g_w118E = 0x00;
-word16 g_w1192 = 0x00;
-word16 g_w1196 = 0x00;
-ui8 g_b119B = 0x00;
-byte g_bBFE001;
-byte g_bDFF006;
-ptr32 g_ptrDFF080;
-word16 g_wDFF09A;
-
+struct Eq_6 * g_ptr0004; // 00000004
+byte g_bBFE001; // 00BFE001
+byte g_bDFF006; // 00DFF006
+ptr32 g_ptrDFF080; // 00DFF080
+word16 g_wDFF09A; // 00DFF09A

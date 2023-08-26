@@ -5,4 +5,3 @@
 #include "subject.h"
 
 <anonymous> ** g_ptr0010; // 00000010
-Eq_1307 g_t010B;

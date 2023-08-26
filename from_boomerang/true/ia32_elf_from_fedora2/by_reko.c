@@ -174,12 +174,13 @@ word32 _IO_stdin_used = 0x00020001; // 08049F04
 
 #include "subject.h"
 
-// 08048980: void fn08048980(Register (ptr32 Eq_2) edx, Stack int32 dwArg00)
-void fn08048980(void (* edx)(), int32 dwArg00)
+// 08048980: void fn08048980(Register (ptr32 Eq_2) edx, Stack int32 dwArg00, Stack (ptr32 char) ptrArg04)
+void fn08048980(void (* edx)(), int32 dwArg00, char * ptrArg04)
 {
-	__align((char *) fp + 4);
-	__libc_start_main(&g_t8048B10, dwArg00, (char *) fp + 4, &g_t8049E04, &g_t8049E4C, edx, fp);
-	__hlt();
+	void * fp;
+	__align_stack<word32>(&ptrArg04);
+	__libc_start_main(&g_t8048B10, dwArg00, &ptrArg04, &g_t8049E04, &g_t8049E4C, edx, fp);
+	__halt();
 }
 
 Eq_13 g_t8048B10 = ??/* Unexpected function type (fn int32 (int32, (ptr32 (ptr32 char)), (ptr32 (ptr32 char)))) */ ; // 08048B10

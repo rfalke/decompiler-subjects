@@ -98,12 +98,13 @@ char g_str80483D8[] = "world!\n"; // 080483D8
 
 #include "subject.h"
 
-// 08048278: void _start(Register (ptr32 Eq_13) edx, Stack int32 dwArg00)
-void _start(void (* edx)(), int32 dwArg00)
+// 08048278: void _start(Register (ptr32 Eq_13) edx, Stack int32 dwArg00, Stack (ptr32 char) ptrArg04)
+void _start(void (* edx)(), int32 dwArg00, char * ptrArg04)
 {
-	__align((char *) fp + 4);
-	__libc_start_main(&g_t8048358, dwArg00, (char *) fp + 4, &g_t8048230, &g_t80483AC, edx, fp);
-	__hlt();
+	void * fp;
+	__align_stack<word32>(&ptrArg04);
+	__libc_start_main(&g_t8048358, dwArg00, &ptrArg04, &g_t8048230, &g_t80483AC, edx, fp);
+	__halt();
 }
 
 // 0804829C: void call_gmon_start()
@@ -127,8 +128,8 @@ void __do_global_dtors_aux()
 		<anonymous> * edx_12 = *eax_11;
 		while (edx_12 != null)
 		{
-			<anonymous> ** eax_19 = (char *) eax_11 + 4;
-			g_ptr80493E8 = eax_19;
+			<anonymous> ** eax_20 = (char *) eax_11 + 4;
+			g_ptr80493E8 = eax_20;
 			edx_12();
 			eax_11 = g_ptr80493E8;
 			edx_12 = (<anonymous> *) *eax_11;
@@ -163,7 +164,8 @@ void world()
 // 08048358: void main()
 void main()
 {
-	__align(fp - 0x0C);
+	ptr32 fp;
+	__align_stack<word32>(fp - 0x0C);
 	hello();
 	world();
 }

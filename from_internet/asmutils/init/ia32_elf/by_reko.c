@@ -4,91 +4,110 @@
 
 #include "subject.h"
 
-// 0804804C: void fn0804804C(Register word16 ebp_16_16, Register word32 esi)
-void fn0804804C(word16 ebp_16_16, word32 esi)
+// 0804804C: void fn0804804C()
+void fn0804804C()
 {
-fn0804804C_entry:
-	__syscall(0x80)
-	__syscall(0x80)
-	uint32 ebp_18 = 0x00
-	goto l08048080
-l0804804C:
-l08048071:
-l08048080:
-	ebp_18 = ebp_18 + 0x01
-	fn080480B7(ebp_18)
-	branch ebp_18 < 0x04 l08048080
-	goto l08048080
-}
-
-// 080480B7: void fn080480B7(Register uint32 ebp)
-// Called from:
-//      fn0804804C
-void fn080480B7(uint32 ebp)
-{
-	cu8 al_5 = (byte) ebp;
-	if (al_5 > 0x09)
-		al_5 = 0x09;
-	g_b8048208 = al_5 + 0x30;
-	__syscall(0x80);
-	g_dw804821C = 0x05;
-	__syscall(0x80);
-	__syscall(0x80);
-	__syscall(0x80);
-	__syscall(0x80);
-	__syscall(0x80);
-	__syscall(0x80);
-	__syscall(0x80);
-	__syscall(0x80);
-	if (g_dw804821C > 0x02)
-		__syscall(0x80);
-	__syscall(0x80);
-	fn08048173(ebp);
-}
-
-// 08048173: void fn08048173(Register uint32 ebp)
-// Called from:
-//      fn080480B7
-//      fn080481C7
-void fn08048173(uint32 ebp)
-{
-	if (S)
-		fn080481BA(ebp);
-	else
-		fn08048175(ebp);
-}
-
-// 08048175: void fn08048175(Register uint32 ebp)
-// Called from:
-//      fn080480B7
-//      fn08048173
-void fn08048175(uint32 ebp)
-{
-	if (Z)
-		fn080481BA(ebp);
+	Eq_2 eax_8 = sys_fork();
+	if (eax_8 != 0x00)
+	{
+		sys_wait4(eax_8, null, 0x00, null);
+		Eq_18 edx_14 = 0x00;
+		uint32 ebp_22 = 0x00;
+		do
+		{
+			++ebp_22;
+			edx_14 = fn080480B7(edx_14, ebp_22);
+		} while (ebp_22 < 0x04);
+		while (true)
+		{
+l0804808B:
+			do
+			{
+				int32 eax_50 = sys_wait4(~0x00, null, 0x00, null);
+			} while (eax_50 < 0x00);
+			uint32 ebp_55 = 0x00;
+			do
+			{
+				++ebp_55;
+				if (ebp_55 > 0x04)
+					goto l0804808B;
+			} while ((&g_b8048208)[ebp_55 * 0x04] != eax_50);
+			fn080480B7(0x00, ebp_55);
+		}
+	}
 	else
 	{
-		__syscall(0x80);
-		fn080481C7(ecx, edx, bx, ebp_16_16, esi);
+		int32 eax_84 = sys_execve(g_ptr80481F0, &g_ptr80481F0, &g_ptr80481EC);
+		fn080481C7(eax_84);
 	}
 }
 
-// 080481BA: void fn080481BA(Register uint32 ebp)
+// 080480B7: Register Eq_18 fn080480B7(Register Eq_18 edx, Register uint32 ebp)
 // Called from:
-//      fn080480B7
-//      fn08048173
-void fn080481BA(uint32 ebp)
+//      fn0804804C
+Eq_18 fn080480B7(Eq_18 edx, uint32 ebp)
 {
-	(&g_b8048208)[ebp * 0x04] = (cu8) ~0x00;
+	cu8 al_10 = (byte) ebp;
+	if (al_10 > 0x09)
+		al_10 = 0x09;
+	int32 eax_133;
+	g_b8048208 = al_10 + 0x30;
+	Eq_83 eax_25 = sys_open(&g_b8048200, 0x02, edx);
+	if (eax_25 >= 0x00)
+	{
+		g_t804821C.u0 = (int32) eax_25;
+		sys_dup2(eax_25, 0x00);
+		sys_dup2(g_t804821C.u0, 0x01);
+		sys_dup2(g_t804821C.u0, 0x02);
+		sys_fcntl(0x00, 0x04, 0x00);
+		sys_fcntl(0x01, 0x04, 0x01);
+		sys_fcntl(0x02, 0x04, 0x01);
+		sys_ioctl(g_t804821C.u0, 0x5401, 0x08048220);
+		sys_ioctl(g_t804821C.u0, 0x5403, 0x08048220);
+		edx = 0x08048220;
+		if (g_t804821C.u0 > 0x02)
+			sys_close(g_t804821C.u0);
+		eax_133 = sys_fork();
+		if (eax_133 >= 0x00)
+		{
+			if (eax_133 == 0x00)
+			{
+				if (sys_execve(g_ptr80481E8, &g_ptr80481E8, &g_ptr80481EC) >= 0x00)
+					fn080481C7(0x00);
+				else
+				{
+					sys_write(0x02, &g_b80481CC, 0x14);
+					sys__newselect();
+					fn080481C7(0x01);
+				}
+			}
+l080481BD:
+			(&g_b8048208)[ebp * 0x04] = (cu8) eax_133;
+			return edx;
+		}
+	}
+	eax_133 = ~0x00;
+	goto l080481BD;
 }
 
-// 080481C7: void fn080481C7(Register (ptr32 Eq_90) ecx, Register (ptr32 byte) edx, Register word16 bx, Register word16 ebp_16_16, Register (ptr32 Eq_94) esi)
+// 080481C7: void fn080481C7(Register int32 ebx)
 // Called from:
 //      fn0804804C
 //      fn080480B7
-void fn080481C7(struct Eq_90 * ecx, byte * edx, word16 bx, word16 ebp_16_16, struct Eq_94 * esi)
+void fn080481C7(int32 ebx)
 {
+	sys_exit(ebx);
 }
 
+char g_b80481CC = 'c'; // 080481CC
+char g_str80481D7[] = "/bin/sh"; // 080481D7
+char g_str80481E0[] = "/etc/rc"; // 080481E0
+char * g_ptr80481E8 = &g_str80481D7; // 080481E8
+char * g_ptr80481EC = null; // 080481EC
+char * g_ptr80481F0 = &g_str80481E0; // 080481F0
+char g_b8048200 = '/'; // 08048200
 cu8 g_b8048208 = 0x00; // 08048208
-up32 g_dw804821C = 0x00; // 0804821C
+Eq_83 g_t804821C = // 0804821C
+	{
+		0
+	};

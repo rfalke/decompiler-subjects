@@ -89,12 +89,14 @@ word64 g_qw6007B8 = 0x00; // 00000000006007B8
 
 #include "subject.h"
 
-// 0000000000400390: void _start(Register (ptr64 Eq_11) rdx, Stack word32 dwArg00)
-void _start(void (* rdx)(), word32 dwArg00)
+// 0000000000400390: void _start(Register (ptr64 Eq_11) rdx, Stack word32 dwArg00, Stack (ptr64 char) ptrArg08)
+void _start(void (* rdx)(), word32 dwArg00, char * ptrArg08)
 {
-	__align((char *) fp + 8);
-	__libc_start_main(&g_t40047C, (int32) qwArg00, (char *) fp + 8, &g_t400560, &g_t400550, rdx, fp);
-	__hlt();
+	void * fp;
+	word64 qwArg00;
+	__align_stack<word64>(&ptrArg08);
+	__libc_start_main(&g_t40047C, (int32) qwArg00, &ptrArg08, &g_t400560, &g_t400550, rdx, fp);
+	__halt();
 }
 
 // 00000000004003BC: void call_gmon_start()
@@ -116,7 +118,7 @@ void __do_global_dtors_aux()
 		uint64 rdx_16 = dtor_idx.6070;
 		while (rdx_16 < 0x00)
 		{
-			uint64 rax_23 = rdx_16 + 0x01;
+			uint64 rax_23 = rdx_16 + 1;
 			dtor_idx.6070 = rax_23;
 			(*((char *) g_a6007A8 + rax_23 * 0x08))();
 			rdx_16 = dtor_idx.6070;
@@ -169,15 +171,16 @@ void loop1()
 // 00000000004004E3: void loop2()
 void loop2()
 {
+	word32 dwLoc0C;
 	enter();
 	do
 	{
 		do
 		{
-			word32 v9_25 = dwLoc0C + (g_a6009C0[(int64) g_dw600B50 * 0x04] + g_dw600B54);
-			dwLoc0C = v9_25;
-			if (v9_25 == 0x0A)
-				dwLoc0C = v9_25 + 0x0C;
+			word32 v10_25 = dwLoc0C + (g_a6009C0[(int64) g_dw600B50 * 0x04] + g_dw600B54);
+			dwLoc0C = v10_25;
+			if (v10_25 == 0x0A)
+				dwLoc0C = v10_25 + 0x0C;
 		} while (g_dw600B54 <= 99);
 		g_dw600B54 = 0x00;
 	} while (g_dw600B50 <= 99);
@@ -193,15 +196,15 @@ void __libc_csu_fini()
 void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 {
 	_init();
-	int64 rbp_19 = 6293396 - 6293396;
+	int64 rbp_19 = (<anonymous> * (*)[]) 6293396 - (<anonymous> * (*)[]) 6293396;
 	if (rbp_19 >> 0x03 != 0x00)
 	{
-		Eq_147 rbx_40 = 0x00;
+		Eq_135 rbx_43 = 0x00;
 		do
 		{
-			((<anonymous> *[]) 6293396)[rbx_40]();
-			rbx_40 = (word64) rbx_40.u1 + 1;
-		} while (rbx_40 < rbp_19 >> 0x03);
+			((<anonymous> *[]) 6293396)[rbx_43]();
+			rbx_43 = (word64) rbx_43.u1 + 1;
+		} while (rbx_43 < rbp_19 >> 0x03);
 	}
 }
 

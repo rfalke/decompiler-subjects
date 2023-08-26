@@ -4,49 +4,52 @@
 
 #include "subject.h"
 
-// 0804804C: void fn0804804C(Stack word32 dwArg00, Stack (ptr32 byte) dwArg08)
-void fn0804804C(word32 dwArg00, byte * dwArg08)
+// 0804804C: void fn0804804C(Register Eq_2 ebx, Stack word32 dwArg00, Stack (ptr32 byte) dwArg08)
+void fn0804804C(Eq_2 ebx, word32 dwArg00, byte * dwArg08)
 {
-	Eq_4 ebp_35 = 0x1E;
-	struct Eq_6 * esp_15 = fp + 4;
+	ptr32 fp;
+	Eq_2 ebp_38 = 0x1E;
+	struct Eq_8 * esp_16 = fp + 4;
 	if (dwArg00 != 0x01)
 	{
-		byte * esi_14 = dwArg08;
-		esp_15 = fp + 0x0C;
-		Eq_4 ebx_17 = 0x00;
+		byte * esi_15 = dwArg08;
+		esp_16 = fp + 0x0C;
+		Eq_2 ebx_18 = 0x00;
 		while (true)
 		{
-			cu8 al_22 = *esi_14;
-			++esi_14;
-			if (al_22 < 0x30)
+			cu8 al_24 = *esi_15;
+			++esi_15;
+			if (al_24 < 0x30)
 				break;
-			uint32 eax_69 = (uint32) (al_22 - 0x30);
-			if (al_22 > 0x39)
+			uint32 eax_80 = (uint32) (al_24 - 0x30);
+			if (al_24 > 0x39 || al_24 < 0x30)
 				break;
-			ebx_17 = ebx_17 *s 0x0A + eax_69;
+			ebx_18 = ebx_18 *s 0x0A + eax_80;
 		}
-		if (ebx_17 != 0x00)
-			ebp_35 = ebx_17;
+		ebx = ebx_18;
+		if (ebx_18 != 0x00)
+			ebp_38 = ebx_18;
 	}
-	g_t804809B = ebp_35;
-	word32 * esp_43 = esp_15 - 4;
-	*esp_43 = 0x02;
-	word32 eax_45 = *esp_43;
-	__syscall(0x80);
-	if (eax_45 != 0x00)
+	g_t804809B.u0 = (int32) ebp_38;
+	word32 * esp_46 = esp_16 - 4;
+	*esp_46 = 0x02;
+	if (sys_fork() == 0x00)
 	{
-		*esp_43 = 0x01;
-		__syscall(0x80);
+		while (true)
+		{
+			esp_16->dwFFFFFFFC = 0x01;
+			sys_bdflush();
+			sys_nanosleep(&g_t804809B, null);
+		}
 	}
-	while (true)
+	else
 	{
-		esp_15->dwFFFFFFFC = 0x01;
-		__syscall(0x80);
-		__syscall(0x80);
+		*esp_46 = 0x01;
+		sys_exit(ebx);
 	}
 }
 
-Eq_4 g_t804809B = // 0804809B
+Eq_2 g_t804809B = // 0804809B
 	{
 		0
 	};

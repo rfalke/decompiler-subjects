@@ -108,12 +108,13 @@ char g_str80484EA[] = "fibonacci(%d) = %d\n"; // 080484EA
 
 #include "subject.h"
 
-// 080482AC: void _start(Register (ptr32 Eq_13) edx, Stack int32 dwArg00)
-void _start(void (* edx)(), int32 dwArg00)
+// 080482AC: void _start(Register (ptr32 Eq_13) edx, Stack int32 dwArg00, Stack (ptr32 char) ptrArg04)
+void _start(void (* edx)(), int32 dwArg00, char * ptrArg04)
 {
-	__align((char *) fp + 4);
-	__libc_start_main(&g_t804835C, dwArg00, (char *) fp + 4, &g_t804842C, &g_t804845C, edx, fp);
-	__hlt();
+	void * fp;
+	__align_stack<word32>(&ptrArg04);
+	__libc_start_main(&g_t804835C, dwArg00, &ptrArg04, &g_t804842C, &g_t804845C, edx, fp);
+	__halt();
 }
 
 // 080482D0: void call_gmon_start()
@@ -137,8 +138,8 @@ void __do_global_dtors_aux()
 		<anonymous> * edx_12 = *eax_11;
 		while (edx_12 != null)
 		{
-			<anonymous> ** eax_19 = (char *) eax_11 + 4;
-			g_ptr804950C = eax_19;
+			<anonymous> ** eax_20 = (char *) eax_11 + 4;
+			g_ptr804950C = eax_20;
 			edx_12();
 			eax_11 = g_ptr804950C;
 			edx_12 = (<anonymous> *) *eax_11;
@@ -154,29 +155,31 @@ void frame_dummy()
 {
 }
 
-// 0804835C: void main(Register int32 eax)
-void main(int32 eax)
+// 0804835C: void main(Register word32 eax)
+void main(word32 eax)
 {
+	int32 dwLoc0C;
 	int32 eax_67;
-	__align(fp - 0x0C);
+	dwLoc0C = eax;
+	__align_stack<word32>(&dwLoc0C);
 	printf("Input number: ");
-	scanf("%d", fp - 0x0C);
-	int32 ebx_28 = eax;
-	if (eax <= 0x01)
+	scanf("%d", &dwLoc0C);
+	int32 ebx_28 = dwLoc0C;
+	if (ebx_28 <= 0x01)
 	{
 		eax_67 = 0x01;
-		if (eax == 0x01)
+		if (ebx_28 == 0x01)
 			goto l08048398;
 	}
 	else
 	{
-		int32 eax_37 = fib(eax - 0x01);
-		printf("%d", fib(eax_37 - 0x01) + eax_37);
+		int32 eax_37 = fib(ebx_28 - 1);
+		printf("%d", fib(eax_37 - 1) + eax_37);
 		ebx_28 = eax_37;
 	}
 	eax_67 = ebx_28;
 l08048398:
-	printf("fibonacci(%d) = %d\n", eax, eax_67);
+	printf("fibonacci(%d) = %d\n", dwLoc0C, eax_67);
 }
 
 // 080483E0: Register int32 fib(Stack int32 dwArg04)
@@ -195,8 +198,8 @@ int32 fib(int32 dwArg04)
 	}
 	else
 	{
-		int32 eax_21 = fib(dwArg04 - 0x01);
-		printf("%d", fib(eax_21 - 0x01) + eax_21);
+		int32 eax_21 = fib(dwArg04 - 1);
+		printf("%d", fib(eax_21 - 1) + eax_21);
 		ebx_13 = eax_21;
 	}
 	eax_43 = ebx_13;

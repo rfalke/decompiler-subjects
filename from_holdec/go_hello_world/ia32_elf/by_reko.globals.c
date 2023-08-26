@@ -4,45 +4,32 @@
 
 #include "subject.h"
 
-Eq_4 g_t0000;
-Eq_4 g_a0001[];
-Eq_4 g_t0004;
-Eq_118347 g_t0005;
+Eq_109 g_t0000;
+Eq_26227 g_t0002;
+ui32 g_dw0004; // 00000004
 byte g_b0007; // 00000007
-Eq_4 g_t0008;
-Eq_4 g_t000C;
-Eq_4 g_t0010;
-ui32 g_dw0014; // 00000014
-Eq_111824 g_t0016;
-Eq_94630 g_t0017;
-Eq_4 g_t0018;
-Eq_111824 g_t0019;
-Eq_4 g_t001C;
+Eq_22555 g_t0008;
+Eq_32 g_t000C;
+Eq_26227 g_t0014;
+Eq_32 g_t0018;
+Eq_32 g_t001C;
 word32 g_dw0020; // 00000020
 word32 g_dw0024; // 00000024
-byte g_b0028; // 00000028
 word32 g_dw0030; // 00000030
-Eq_4 g_t0038;
+Eq_32 g_t0038;
 word32 g_dw003C; // 0000003C
-Eq_4 g_t0040;
-byte g_b0041; // 00000041
-byte g_b0042; // 00000042
+Eq_32 g_t0040;
 word32 g_dw0050; // 00000050
 word32 g_dw0054; // 00000054
-byte g_b0064; // 00000064
-Eq_4 g_t0068;
-<anonymous> * g_ptr006B; // 0000006B
-word32 g_dw006D; // 0000006D
+Eq_25169 g_t0064;
+Eq_32 g_t0068;
 byte g_b006F; // 0000006F
 byte g_b0070; // 00000070
-Eq_19162 g_t0080;
-Eq_8377 g_t0081;
-Eq_4 g_t0088;
-Eq_8370 g_t00F9;
+Eq_41509 g_t0080;
+Eq_2987 g_t0081;
+Eq_32 g_t0088;
+Eq_2980 g_t00F9;
 word32 g_dw1003; // 00001003
 word32 g_dw1006; // 00001006
-Eq_205 g_t10C8;
-word32 g_dw1388; // 00001388
-byte g_bFFFFFFD9; // FFFFFFD9
-byte g_bFFFFFFF4; // FFFFFFF4
-Eq_12112 g_tFFFFFFFF;
+Eq_23343 g_t50F00;
+Eq_5953 g_tFFFFFFFF;

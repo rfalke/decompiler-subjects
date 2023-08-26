@@ -114,12 +114,13 @@ void g_v8048745 = ??void??; // 08048745
 
 #include "subject.h"
 
-// 08048300: void fn08048300(Register (ptr32 Eq_11) edx, Stack int32 dwArg00)
-void fn08048300(void (* edx)(), int32 dwArg00)
+// 08048300: void fn08048300(Register (ptr32 Eq_11) edx, Stack int32 dwArg00, Stack (ptr32 char) ptrArg04)
+void fn08048300(void (* edx)(), int32 dwArg00, char * ptrArg04)
 {
-	__align((char *) fp + 4);
-	__libc_start_main(&g_t8048410, dwArg00, (char *) fp + 4, &g_t804829C, &g_t8048690, edx, fp);
-	__hlt();
+	void * fp;
+	__align_stack<word32>(&ptrArg04);
+	__libc_start_main(&g_t8048410, dwArg00, &ptrArg04, &g_t804829C, &g_t8048690, edx, fp);
+	__halt();
 }
 
 // 08048324: void call_gmon_start()
@@ -143,8 +144,8 @@ void __do_global_dtors_aux()
 		<anonymous> * edx_12 = *eax_11;
 		while (edx_12 != null)
 		{
-			<anonymous> ** eax_19 = (char *) eax_11 + 4;
-			g_ptr8049754 = eax_19;
+			<anonymous> ** eax_20 = (char *) eax_11 + 4;
+			g_ptr8049754 = eax_20;
 			edx_12();
 			eax_11 = g_ptr8049754;
 			edx_12 = (<anonymous> *) *eax_11;
@@ -163,18 +164,24 @@ void frame_dummy()
 // 08048410: void main()
 void main()
 {
-	__align(fp - 44);
-	scanf("%d", fp - 0x0C);
-	scanf("%d", fp - 0x10);
+	ptr32 fp;
+	int32 dwLoc10;
+	int32 dwLoc0C;
+	int32 eax_29;
+	__align_stack<word32>(fp - 44);
+	scanf("%d", &dwLoc0C);
+	scanf("%d", &dwLoc10);
 	if (dwLoc0C == 0x05)
 	{
 		fwrite(&g_v8048745, 0x01, 0x06, stdout);
-		if (dwLoc0C == 0x05)
+		eax_29 = dwLoc0C;
+		if (eax_29 == 0x05)
 			goto l08048476;
 	}
 	fwrite(&g_v80486BB, 0x01, 0x0A, stdout);
+	eax_29 = dwLoc0C;
 l08048476:
-	if (dwLoc0C < 0x05)
+	if (eax_29 < 0x05)
 	{
 		fwrite(&g_v80486C6, 0x01, 0x08, stdout);
 		if (dwLoc0C < 0x05)
@@ -198,9 +205,13 @@ l08048576:
 l080485A0:
 					fwrite(&g_v804872D, 0x01, 0x0A, stdout);
 l080485C5:
-					if (dwLoc0C <= 0x05)
+					int32 eax_133 = dwLoc0C;
+					if (eax_133 <= 0x05)
+					{
 						fwrite(&g_v8048738, 0x01, 0x06, stdout);
-					if (dwLoc0C > 0x05)
+						eax_133 = dwLoc0C;
+					}
+					if (eax_133 > 0x05)
 						fwrite(&g_v804873F, 0x01, 0x05, stdout);
 					return;
 				}
@@ -222,6 +233,7 @@ l080485C5:
 //      _init
 void __do_global_ctors_aux()
 {
+	word32 dwLoc0C;
 	<anonymous> * eax_12 = g_ptr8049824;
 	word32 * ebx_13 = &g_ptr8049824;
 	while (eax_12 != (<anonymous> *) ~0x00)

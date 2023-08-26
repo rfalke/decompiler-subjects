@@ -3,11 +3,7 @@
 00000000004005C8: warning: Call target address 0000000000000000 is invalid.
 l0000000000400608: warning: Non-integral switch expression
 l0000000000400670: warning: Non-integral switch expression
-0000000000400A10: warning: Expected sizes of arrays to have been determined by now
-0000000000400A30: warning: Expected sizes of arrays to have been determined by now
 0000000000400A70: warning: Expected sizes of arrays to have been determined by now
 0000000000410DE0: warning: Expected sizes of arrays to have been determined by now
-0000000000400A10: warning: Expected sizes of arrays to have been determined by now
-0000000000400A30: warning: Expected sizes of arrays to have been determined by now
 0000000000400A70: warning: Expected sizes of arrays to have been determined by now
 0000000000410DE0: warning: Expected sizes of arrays to have been determined by now

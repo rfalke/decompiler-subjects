@@ -4,35 +4,4 @@
 
 #include "subject.h"
 
-<anonymous> g_tFFFFFFFF;
-Eq_27 g_t80487FC = Unexpected function type (fn void ())
-;
-Eq_24 g_t8048CBE = Unexpected function type (fn int32 (int32, (ptr32 (ptr32 char)), (ptr32 (ptr32 char))))
-;
-Eq_28 g_t8048DE8 = Unexpected function type (fn void ())
-;
-char g_str8048E11[] = "MikMod: %s\n";
-char g_str8048E26[] = "MikMod Error: %s\n";
-real32 g_r8048E40 = 300.0F;
-real64 g_r8048E48 = 20.0;
-real64 g_r8048E50 = 60.0;
-real32 g_r8048E58 = 2.0F;
-real32 g_r8048E5C = 400.0F;
-real64 g_r8048E60 = 0.1;
-real32 g_r8048E68 = 50.0F;
-<anonymous> ** g_ptr8049008 = &g_ptr804A450;
-char g_b8049020 = 'H';
-<anonymous> * g_ptr804A444 = &g_tFFFFFFFF;
-<anonymous> * g_ptr804A450 = null;
-word32 g_dw804A454 = 0x00;
-<anonymous> * g_ptr804A4C4 = null;
-FILE * g_ptr804A4E0 = &g_t100949C0;
-byte g_b804A4E8 = 0x00;
-word32 g_dw804A500 = 0x00;
-word32 g_dw804A504 = 0x00;
-word32 g_dw804A514 = 0x00;
-Display * g_ptr804A580 = null;
-real32 g_r804A584 = 0.0F;
-real32 g_r804A588 = 0.0F;
-Eq_185 g_t100949C0;
-
+<anonymous> g_tFFFFFFFF; // FFFFFFFF

@@ -69,12 +69,14 @@ void main(word32 edi)
 	with_array(edi);
 }
 
-// 00000000004003D0: void _start(Register (ptr64 Eq_16) rdx, Stack word32 dwArg00)
-void _start(void (* rdx)(), word32 dwArg00)
+// 00000000004003D0: void _start(Register (ptr64 Eq_17) rdx, Stack word32 dwArg00, Stack (ptr64 char) ptrArg08)
+void _start(void (* rdx)(), word32 dwArg00, char * ptrArg08)
 {
-	__align((char *) fp + 8);
-	__libc_start_main(&g_t4003B0, (int32) qwArg00, (char *) fp + 8, &g_t400590, &g_t400600, rdx, fp);
-	__hlt();
+	void * fp;
+	word64 qwArg00;
+	__align_stack<word64>(&ptrArg08);
+	__libc_start_main(&g_t4003B0, (int32) qwArg00, &ptrArg08, &g_t400590, &g_t400600, rdx, fp);
+	__halt();
 }
 
 // 0000000000400400: void deregister_tm_clones()
@@ -107,26 +109,26 @@ void frame_dummy()
 	register_tm_clones();
 }
 
-// 00000000004004C6: void use(Register (ptr64 byte) rdi)
+// 00000000004004C6: void use(Register (ptr64 Eq_61) rdi)
 // Called from:
 //      with_array
 //      with_alloca
-void use(byte * rdi)
+void use(union Eq_61 * rdi)
 {
-	g_dw601020 += *rdi;
+	g_dw601020 = (word32) (&(*rdi)->u0 + g_dw601020);
 }
 
-// 00000000004004CF: void fill(Register word32 esi, Register (ptr64 byte) rdi)
+// 00000000004004CF: void fill(Register word32 esi, Register (ptr64 Eq_61) rdi)
 // Called from:
 //      with_array
 //      with_alloca
-void fill(word32 esi, byte * rdi)
+void fill(word32 esi, union Eq_61 * rdi)
 {
 	ui64 rcx_14;
 	for (rcx_14 = (int64) esi << 0x02; rcx_14 != 0x00; --rcx_14)
 	{
-		*rdi = 0x78;
-		++rdi;
+		rdi->u0 = 0x78;
+		rdi = (union Eq_61 *) ((char *) rdi + 1);
 	}
 }
 
@@ -135,12 +137,17 @@ void fill(word32 esi, byte * rdi)
 //      main
 void with_array(word32 edi)
 {
+	ptr64 fp;
+	Eq_86 tLoc10;
+	Eq_87 tLoc0C;
+	tLoc10 = (Eq_86) 0x07;
+	tLoc0C = (Eq_87) 0x08;
 	int64 rax_5 = (int64) edi;
-	byte * rsp_16 = fp - 0x18 - (rax_5 * 0x04 + 18 & ~0x0F);
+	union Eq_61 * rsp_16 = fp - 0x18 - (rax_5 * 0x04 + 18 & ~0x0F);
 	fill((word32) rax_5, rsp_16);
-	use(fp - 0x10);
+	use(&tLoc10);
 	use(rsp_16);
-	use(fp - 0x0C);
+	use(&tLoc0C);
 }
 
 // 000000000040052A: void with_alloca(Register word32 edi)
@@ -148,28 +155,34 @@ void with_array(word32 edi)
 //      main
 void with_alloca(word32 edi)
 {
+	Eq_123 fp;
+	Eq_124 tLoc10;
+	Eq_125 tLoc0C;
+	tLoc10 = (Eq_124) 0x07;
+	tLoc0C = (Eq_125) 0x08;
 	int64 rax_5 = (int64) edi;
-	byte * rdx_18 = (word64) (fp - 0x18 - (rax_5 * 0x04 + 30 & ~0x0F)) + 0x0F & ~0x0F;
+	union Eq_61 * rdx_18 = (word64) (fp - 0x18 - (rax_5 * 0x04 + 30 & ~0x0F)) + 0x0F & ~0x0F;
 	fill((word32) rax_5, rdx_18);
-	use(fp - 0x10);
+	use(&tLoc10);
 	use(rdx_18);
-	use(fp - (byte *) 0x0C);
+	use(&tLoc0C);
 }
 
 // 0000000000400590: void __libc_csu_init(Register word64 rdx, Register word64 rsi, Register word32 edi)
 void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 {
+	word64 rdi;
 	word32 edi = (word32) rdi;
 	_init();
-	int64 rbp_31 = 0x00600E50 - 0x00600E48;
+	int64 rbp_31 = 0x00600E50 - g_a600E48;
 	if (rbp_31 >> 0x03 != 0x00)
 	{
-		Eq_160 rbx_44 = 0x00;
+		Eq_179 rbx_47 = 0x00;
 		do
 		{
-			(*((char *) g_a600E48 + rbx_44 * 0x08))();
-			rbx_44 = (word64) rbx_44.u1 + 1;
-		} while (rbp_31 >> 0x03 != rbx_44);
+			(*((char *) g_a600E48 + rbx_47 * 0x08))();
+			rbx_47 = (word64) rbx_47.u1 + 1;
+		} while (rbp_31 >> 0x03 != rbx_47);
 	}
 }
 

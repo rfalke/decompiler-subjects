@@ -76,12 +76,14 @@ word64 g_qw600E18 = 0x00; // 0000000000600E18
 
 #include "subject.h"
 
-// 0000000000400400: void _start(Register (ptr64 Eq_7) rdx, Stack word32 dwArg00)
-void _start(void (* rdx)(), word32 dwArg00)
+// 0000000000400400: void _start(Register (ptr64 Eq_8) rdx, Stack word32 dwArg00, Stack (ptr64 char) ptrArg08)
+void _start(void (* rdx)(), word32 dwArg00, char * ptrArg08)
 {
-	__align((char *) fp + 8);
-	__libc_start_main(&g_t4005E0, (int32) qwArg00, (char *) fp + 8, &g_t400600, &g_t400670, rdx, fp);
-	__hlt();
+	void * fp;
+	word64 qwArg00;
+	__align_stack<word64>(&ptrArg08);
+	__libc_start_main(&g_t4005E0, (int32) qwArg00, &ptrArg08, &g_t400600, &g_t400670, rdx, fp);
+	__halt();
 }
 
 // 0000000000400430: void deregister_tm_clones()
@@ -131,9 +133,10 @@ void fill(word32 esi, void * rdi)
 //      main
 void with_array(word32 edi)
 {
+	ptr64 fp;
 	ui64 rax_17 = (uint64) edi * 0x04 + 0x0F;
 	memset(fp - 24 - (rax_17 & 0x7FFFFFFF0), 0x0078, (int64) edi << 0x02);
-	g_dw601028 = (word32) ((&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 24)[-(rax_17 & 0x7FFFFFFF0) /64 4].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000 + (g_dw601028 + 0x0F) / 4).a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000;
+	g_dw601028 = g_dw601028 + 0x0F + (fp - 24)[-(rax_17 & 0x7FFFFFFF0) /64 4];
 }
 
 // 0000000000400590: void with_alloca(Register word32 edi)
@@ -141,10 +144,11 @@ void with_array(word32 edi)
 //      main
 void with_alloca(word32 edi)
 {
+	ptr64 fp;
 	int64 rdx_15 = (int64) edi;
 	ui64 rbx_17 = rdx_15 * 0x04 + 0x0F;
 	memset(fp - 24 - (rbx_17 & ~0x0F), 0x0078, rdx_15 << 0x02);
-	g_dw601028 = (word32) ((&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 24)[-(rbx_17 & ~0x0F) /64 4].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000 + (g_dw601028 + 0x0F) / 4).a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000;
+	g_dw601028 = g_dw601028 + 0x0F + (fp - 24)[-(rbx_17 & ~0x0F) /64 4];
 }
 
 // 00000000004005E0: void main(Register word32 edi)
@@ -157,17 +161,18 @@ void main(word32 edi)
 // 0000000000400600: void __libc_csu_init(Register word64 rdx, Register word64 rsi, Register word32 edi)
 void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 {
+	word64 rdi;
 	word32 edi = (word32) rdi;
 	_init();
-	int64 rbp_31 = 0x00600E10 - 0x00600E08;
+	int64 rbp_31 = 0x00600E10 - g_a600E08;
 	if (rbp_31 >> 0x03 != 0x00)
 	{
-		Eq_158 rbx_44 = 0x00;
+		Eq_161 rbx_47 = 0x00;
 		do
 		{
-			(*((char *) g_a600E08 + rbx_44 * 0x08))();
-			rbx_44 = (word64) rbx_44.u1 + 1;
-		} while (rbp_31 >> 0x03 != rbx_44);
+			(*((char *) g_a600E08 + rbx_47 * 0x08))();
+			rbx_47 = (word64) rbx_47.u1 + 1;
+		} while (rbp_31 >> 0x03 != rbx_47);
 	}
 }
 

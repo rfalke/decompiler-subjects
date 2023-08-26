@@ -4,28 +4,30 @@
 
 #include "subject.h"
 
-// 0804804C: void fn0804804C(Register (ptr32 byte) esi, Stack up32 dwArg00, Stack (ptr32 byte) dwArg08)
-void fn0804804C(byte * esi, up32 dwArg00, byte * dwArg08)
+// 0804804C: void fn0804804C(Register Eq_2 eax, Stack up32 dwArg00, Stack (ptr32 byte) dwArg08)
+void fn0804804C(Eq_2 eax, up32 dwArg00, byte * dwArg08)
 {
+	ptr32 fp;
+	struct Eq_6 * esp_12 = fp + 4;
 	if (dwArg00 >= 0x03)
 	{
-		esi = dwArg08;
-		struct Eq_12 * esp_11 = fp + 0x0C;
-		if (fn08048073(dwArg08) != ~0x00)
+		esp_12 = fp + 0x0C;
+		eax = fn08048073(dwArg08);
+		if (eax != ~0x00)
 		{
 			while (true)
 			{
-				struct Eq_12 * esp_23 = esp_11 + 1;
-				if (esp_11->dw0000 == 0x00)
+				char * ebx_23 = esp_12->dw0000;
+				++esp_12;
+				if (ebx_23 == null)
 					break;
-				esp_23->dwFFFFFFFC = 0x0F;
-				__syscall(0x80);
-				esp_11 = esp_23;
+				esp_12->dwFFFFFFFC = 0x0F;
+				eax = sys_chmod(ebx_23, eax);
 			}
 		}
 	}
-	__syscall(0x80);
-	fn08048073(esi);
+	esp_12->dwFFFFFFFC = 0x01;
+	sys_exit(eax);
 }
 
 // 08048073: Register uipr32 fn08048073(Register (ptr32 byte) esi)
@@ -33,31 +35,31 @@ void fn0804804C(byte * esi, up32 dwArg00, byte * dwArg08)
 //      fn0804804C
 uipr32 fn08048073(byte * esi)
 {
-	byte * edx_18 = esi;
-	uipr32 eax_115 = 0x00;
+	byte * edx_19 = esi;
+	uipr32 eax_121 = 0x00;
 	while (true)
 	{
-		word16 eax_16_16_64 = SLICE(eax_115, word16, 16);
-		uint16 ax_62 = (word16) eax_115;
-		word16 edx_16_16_73 = SLICE(edx_18, word16, 16);
-		cu8 cl_29 = *esi;
-		uipr32 eax_105 = eax_115;
-		if (cl_29 == 0x00)
+		word16 eax_16_16_67 = SLICE(eax_121, word16, 16);
+		uint16 ax_65 = (word16) eax_121;
+		word16 edx_16_16_76 = SLICE(edx_19, word16, 16);
+		cu8 cl_31 = *esi;
+		uipr32 eax_108 = eax_121;
+		if (cl_31 == 0x00)
 			break;
-		if (cl_29 < 0x30)
+		if (cl_31 < 0x30)
 			goto l0804809D;
-		uint32 ecx_68 = (uint32) (cl_29 - 0x30);
-		if (cl_29 > 55)
+		uint32 ecx_71 = (uint32) (cl_31 - 0x30);
+		if (cl_31 > 55 || cl_31 < 0x30)
 			goto l0804809D;
-		eax_115 = SEQ(eax_16_16_64, ax_62 * 0x08) + ecx_68;
+		eax_121 = SEQ(eax_16_16_67, ax_65 * 0x08) + ecx_71;
 		++esi;
-		edx_18 = SEQ(edx_16_16_73, SLICE(ax_62 *32 0x08, word16, 16));
+		edx_19 = SEQ(edx_16_16_76, SLICE(ax_65 *32 0x08, word16, 16));
 	}
-	if (edx_18 == esi)
+	if (edx_19 == esi)
 	{
 l0804809D:
-		eax_105 = ~0x00;
+		eax_108 = ~0x00;
 	}
-	return eax_105;
+	return eax_108;
 }
 

@@ -9,26 +9,27 @@
 //      _main
 void multMatrix(struct Eq_5 * ds, Eq_6 wArg02, Eq_7 wArg04, Eq_8 wArg06)
 {
-	Eq_9 si_16 = 0x00;
-	while (si_16 < 0x05)
+	Eq_9 si_101 = 0x00;
+	while (si_101 < 0x05)
 	{
-		int16 di_22;
-		for (di_22 = 0x00; di_22 < 0x04; ++di_22)
+		int16 di_23;
+		for (di_23 = 0x00; di_23 < 0x04; ++di_23)
 		{
-			Eq_17 wLoc04_119 = 0x00;
-			while (wLoc04_119 < 0x04)
+			Eq_17 wLoc04_121 = 0x00;
+			while (wLoc04_121 < 0x04)
 			{
-				SEQ(ds, si_16 *u 0x0A + wArg06)[di_22 * 0x02] = SEQ(ds, wLoc04_119 *u 0x0A + wArg04)[di_22 * 0x02] *u SEQ(ds, (si_16 << 0x03) + wArg02)[wLoc04_119 * 0x02] + SEQ(ds, si_16 *u 0x0A + wArg06)[di_22 * 0x02];
-				wLoc04_119 = (word16) wLoc04_119 + 1;
+				ds:si_101 *u 0x0A + wArg06[di_23 * 0x02] = ds:wLoc04_121 *u 0x0A + wArg04[di_23 * 0x02] *u ds:(si_101 << 0x03) + wArg02[wLoc04_121 * 0x02] + ds:si_101 *u 0x0A + wArg06[di_23 * 0x02];
+				wLoc04_121 = (word16) wLoc04_121 + 1;
 			}
 		}
-		si_16 = (word16) si_16 + 1;
+		si_101 = (word16) si_101 + 1;
 	}
 }
 
 // 0800:0283: void _main(Register (ptr16 Eq_5) ds)
 void _main(struct Eq_5 * ds)
 {
-	multMatrix(ds, fp - 122, fp - 0x52, fp - 0x2A);
+	mp16 fp;
+	multMatrix(ds, fp - 122, fp - 82, fp - 42);
 }
 

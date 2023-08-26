@@ -4,5 +4,4 @@
 
 #include "subject.h"
 
-struct Eq_93 * g_ptrFFFB8000;
-
+struct Eq_105 * g_ptrFFFB8000; // FFFB8000

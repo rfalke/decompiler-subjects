@@ -5,3 +5,4 @@
 #include "subject.h"
 
 byte g_b8048161; // 08048161
+char g_b8048162; // 08048162

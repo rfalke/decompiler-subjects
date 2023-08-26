@@ -11,11 +11,12 @@ byte g_b1103D = 0x00; // 000000000001103D
 
 #include "subject.h"
 
-Eq_25 g_t11038 = // 0000000000011038
+word64 g_qw11030 = 0x00011030; // 0000000000011030
+Eq_19 g_t11038 = // 0000000000011038
 	{
 		0x02
 	};
-Eq_46 g_t11039 = // 0000000000011039
+Eq_36 g_t11039 = // 0000000000011039
 	{
 		0x04
 	};
@@ -53,7 +54,7 @@ word64 g_qw10FC0 = 0x00; // 0000000000010FC0
 
 #include "subject.h"
 
-struct Eq_119 g_t11000 = // 0000000000011000
+struct Eq_103 g_t11000 = // 0000000000011000
 	{
 		0x00,
 	};
@@ -63,14 +64,12 @@ struct Eq_119 g_t11000 = // 0000000000011000
 
 #include "subject.h"
 
-// 0000000000000660: Register word64 _init(Register out ptr64 x30Out)
+// 0000000000000660: void _init()
 // Called from:
 //      __libc_csu_init
-word64 _init(ptr64 & x30Out)
+void _init()
 {
 	call_weak_fn();
-	x30Out = qwArg00;
-	return x30;
 }
 
 // subject_init_array.c
@@ -98,15 +97,17 @@ word64 g_qw10DB8 = 0x00; // 0000000000010DB8
 // 00000000000006F0: void main()
 void main()
 {
-	x0_23 = (uint64) printf("Middle elment is %d\n", (word32) g_b1103A);
-	x0_30 = (uint64) printf("First element is %d\n", (word32) g_t11038);
-	x0_49 = CONVERT(printf("Sum is %d\n", CONVERT(Mem16[0x000000000001103C<p64>:byte], byte, word32) + (CONVERT(Mem16[0x000000000001103B<p64>:byte], byte, word32) + (CONVERT(Mem16[0x000000000001103A<p64>:byte], byte, word32) + (Mem16[0x0000000000011038<p64>:byte] + Mem16[0x0000000000011039<p64>:byte])))), int32, uint64);
+	printf("Middle elment is %d\n", (word32) g_b1103A);
+	printf("First element is %d\n", (word32) g_t11038.u0);
+	printf("Sum is %d\n", (word32) g_b1103C + ((word32) g_b1103B + ((byte) (g_t11038.u0 + g_t11039.u0) + (word32) g_b1103A)));
 }
 
-// 0000000000000764: void _start(Register (ptr64 Eq_54) x0, Stack word32 dwArg00)
-void _start(void (* x0)(), word32 dwArg00)
+// 0000000000000764: void _start(Register (ptr64 Eq_42) x0, Stack word32 dwArg00, Stack (ptr64 char) ptrArg08)
+void _start(void (* x0)(), word32 dwArg00, char * ptrArg08)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	void * fp;
+	word64 qwArg00;
+	__libc_start_main(main_GOT, (int32) qwArg00, &ptrArg08, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -138,7 +139,7 @@ void deregister_tm_clones()
 //      frame_dummy
 void register_tm_clones()
 {
-	int64 x1_7 = 69696 - 69696;
+	Eq_85 x1_7 = 69696 - 69696;
 	if ((x1_7 >> 3) + ((x1_7 >> 3) >>u 63) >> 1 == 0x00)
 		return;
 	<anonymous> * x2_13 = g_ptr10FE0;
@@ -148,25 +149,23 @@ void register_tm_clones()
 	x2_13();
 }
 
-// 0000000000000828: void __do_global_dtors_aux(Register word64 x30)
-void __do_global_dtors_aux(word64 x30)
+// 0000000000000828: void __do_global_dtors_aux()
+void __do_global_dtors_aux()
 {
-	struct Eq_119 * x19_12 = &g_t11000;
+	struct Eq_103 * x19_11 = &g_t11000;
 	if ((word32) g_b1103D == 0x00)
 	{
 		if (g_qw10FB8 != 0x00)
-		{
-			word64 x1_45;
-			__cxa_finalize();
-		}
+			__cxa_finalize(&g_t11000, g_qw11030);
 		deregister_tm_clones();
-		x19_12->b003D = 0x01;
+		x19_11->b003D = 0x01;
 	}
 }
 
 // 0000000000000870: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
+	ptr64 fp;
 	if (g_qw10DB8 != 0x00)
 	{
 		<anonymous> * x1_8 = g_ptr10FD8;
@@ -180,39 +179,40 @@ void frame_dummy(word64 x29, word64 x30)
 	register_tm_clones();
 }
 
-// 00000000000008A8: void mid(Register (ptr64 Eq_156) x0)
-void mid(struct Eq_156 * x0)
+// 00000000000008A8: void mid(Register (ptr64 Eq_143) x0)
+void mid(struct Eq_143 * x0)
 {
-	x0_11 = (uint64) printf("Middle elment is %d\n", (word32) x0->b0002);
+	printf("Middle elment is %d\n", (word32) x0->b0002);
 }
 
-// 00000000000008B8: void fst(Register (ptr64 Eq_168) x0)
-void fst(struct Eq_168 * x0)
+// 00000000000008B8: void fst(Register (ptr64 Eq_152) x0)
+void fst(struct Eq_152 * x0)
 {
-	x0_11 = (uint64) printf("First element is %d\n", (word32) x0->b000A);
+	printf("First element is %d\n", (word32) x0->b000A);
 }
 
-// 00000000000008C8: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)
-void __libc_csu_init(word32 w0, word64 x1, word64 x2, word64 x24)
+// 00000000000008C8: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24, Register word64 x30)
+void __libc_csu_init(word32 w0, word64 x1, word64 x2, word64 x24, word64 x30)
 {
-	word32 x24_32_32_100 = SLICE(x24, word32, 32);
-	int64 x20_26 = 0x00010DB0 - 0x00010DA8;
-	<anonymous> * x21_24[] = g_a10DA8;
-	word64 x22_34 = x2;
-	word64 x23_38 = x1;
-	word64 x30_42;
-	word64 x29_41 = _init(out x30_42);
-	int64 x20_43 = x20_26 >> 3;
-	if (x20_26 >> 3 != 0x00)
+	ptr64 fp;
+	word32 x24_32_32_89 = SLICE(x24, word32, 32);
+	_init();
+	int64 x20_23 = 0x00010DB0 - g_a10DA8;
+	ptr64 x29_49 = fp + -64;
+	<anonymous> * x21_21[] = g_a10DA8;
+	word64 x22_30 = x2;
+	word64 x23_34 = x1;
+	int64 x20_36 = x20_23 >> 3;
+	if (x20_23 >> 3 != 0x00)
 	{
-		int64 x19_44 = 0x00;
-		word64 x24_145 = SEQ(x24_32_32_100, w0);
+		int64 x19_37 = 0x00;
+		word64 x24_133 = SEQ(x24_32_32_89, w0);
 		do
 		{
-			word64 x3_74;
-			x21_24[x19_44]();
-			int64 x31_77 = x20_43 - x19_44;
-		} while (x31_77 != 0x00);
+			word64 x3_67;
+			x21_21[x19_37]();
+			int64 x31_70 = x20_36 - x19_37;
+		} while (x31_70 != 0x00);
 	}
 }
 

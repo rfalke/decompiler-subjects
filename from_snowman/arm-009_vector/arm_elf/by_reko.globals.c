@@ -4,4 +4,4 @@
 
 #include "subject.h"
 
-Eq_114 g_t0001;
+void g_v0001; // 00000001

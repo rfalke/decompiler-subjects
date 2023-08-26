@@ -4,34 +4,34 @@
 
 #include "subject.h"
 
-// 0804804C: void fn0804804C()
-void fn0804804C()
+// 0804804C: void fn0804804C(Register Eq_2 edx)
+void fn0804804C(Eq_2 edx)
 {
-	__syscall(0x80);
-	__syscall(0x80);
-	byte * edi_26 = (byte *) 0xC0;
-	word32 ecx_27;
-	for (ecx_27 = 0x01E0; ecx_27 != 0x00; --ecx_27)
+	sys_open("/dev/fb", 0x02, edx);
+	byte * edi_29 = sys_mmap2();
+	word32 ecx_30;
+	for (ecx_30 = 0x01E0; ecx_30 != 0x00; --ecx_30)
 	{
-		int32 esi_28;
-		for (esi_28 = 0x0280; esi_28 != 0x00; --esi_28)
+		int32 esi_31;
+		for (esi_31 = 0x0280; esi_31 != 0x00; --esi_31)
 		{
-			word32 ebp_32;
-			int32 ebx_34 = 0x00;
-			int32 edx_35 = 0x00;
-			for (ebp_32 = 0x7F; ebp_32 != 0x00; --ebp_32)
+			word32 ebp_35;
+			int32 ebx_37 = 0x00;
+			int32 edx_38 = 0x00;
+			for (ebp_35 = 0x7F; ebp_35 != 0x00; --ebp_35)
 			{
-				int64 edx_eax_56 = edx_35 *s64 ebx_34;
-				edx_35 = __shld(SLICE(edx_eax_56, word32, 32), (word32) edx_eax_56, 0x19) - ecx_27;
-				ebx_34 = ((edx_35 + ebx_34) *s (ebx_34 - edx_35) >> 0x08) - esi_28;
-				if (SLICE(edx_35, byte, 8) > 0x00)
+				int64 edx_eax_60 = edx_38 *s64 ebx_37;
+				edx_38 = __shld<word32>(SLICE(edx_eax_60, word32, 32), (word32) edx_eax_60, 0x19) - ecx_30;
+				ebx_37 = ((edx_38 + ebx_37) *s (ebx_37 - edx_38) >> 0x08) - esi_31;
+				if (SLICE(edx_38, byte, 8) > 0x00)
 					break;
 			}
-			*edi_26 = (byte) ebp_32;
-			++edi_26;
+			*edi_29 = (byte) ebp_35;
+			++edi_29;
 		}
 	}
 	while (true)
 		;
 }
 
+char g_str80480A7[] = "/dev/fb"; // 080480A7

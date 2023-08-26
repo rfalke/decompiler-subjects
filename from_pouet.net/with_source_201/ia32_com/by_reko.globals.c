@@ -4,5 +4,5 @@
 
 #include "subject.h"
 
-Eq_56 g_tFFFA0000;
-
+<anonymous> g_t01E1; // 0C00:02E1
+Eq_63 g_tFFFA0000;

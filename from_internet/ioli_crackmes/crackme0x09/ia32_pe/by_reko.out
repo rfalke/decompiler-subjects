@@ -4,7 +4,6 @@ Signature of 'MingWin32 - Dev C++ v4.x (h)' detected.
 004011B8: warning: Unable to guess parameters of msvcrt.dll!_iob.
 004011C3: warning: Unable to guess parameters of msvcrt.dll!_setmode.
 004011C9: warning: Unable to guess parameters of msvcrt.dll!_iob.
-00401205: warning: Unable to guess parameters of msvcrt.dll!__p__environ.
 004015E0: warning: Call target address 90909090 is invalid.
 00401229: warning: Unable to guess parameters of msvcrt.dll!_cexit.
 004011DD: warning: Unable to guess parameters of msvcrt.dll!_iob.

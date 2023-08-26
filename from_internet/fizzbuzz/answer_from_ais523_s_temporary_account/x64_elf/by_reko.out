@@ -1,6 +1,4 @@
 === Using options:--aggressive-branch-removal
-0000000000401111: warning: x86 instruction 'vpmaxub' is not supported yet.
+0000000000401115: warning: x86 instruction 'vpaddb' is not supported yet.
 0000000000402240: warning: Expected sizes of arrays to have been determined by now
-0000000000C00010: warning: Expected sizes of arrays to have been determined by now
 0000000000402240: warning: Expected sizes of arrays to have been determined by now
-0000000000C00010: warning: Expected sizes of arrays to have been determined by now

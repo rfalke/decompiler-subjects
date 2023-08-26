@@ -1,30 +1,20 @@
 === Using options:--aggressive-branch-removal
-0804846F: warning: Procedure fn08048233 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 6 bytes on the stack.
-0804846F: warning: Multiple different values of stack delta in procedure fn08048233 when processing RET instruction; was 4 previously.
 080482B9: warning: Unable to determine size of call or jump table; there may be more than 2 entries.
-fn08048493: error: An error occurred while renaming variables.
-    Value cannot be null. (Parameter 'key')
-       at System.Collections.Generic.Dictionary`2.FindValue(TKey key) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs:line 341
-   at System.Collections.Generic.Dictionary`2.TryGetValue(TKey key, TValue& value) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs:line 905
-   at Reko.Core.Lib.DominatorGraph`1.CommonDominator(IEnumerable`1 blocks) in /home/runner/work/reko/reko/src/Core/Lib/DominatorGraph.cs:line 99
-   at Reko.Analysis.DeclarationInserter.InsertDeclaration(Web web) in /home/runner/work/reko/reko/src/Decompiler/Analysis/DeclarationInserter.cs:line 60
-   at Reko.Analysis.WebBuilder.InsertDeclarations() in /home/runner/work/reko/reko/src/Decompiler/Analysis/WebBuilder.cs:line 86
-   at Reko.Analysis.WebBuilder.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/WebBuilder.cs:line 112
-fn08048493: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+08048269: error: Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+080482B9: warning: Unable to determine size of call or jump table; there may be more than 2 entries.
+080482B9: error: Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
 fn080484FD: error: An error occurred while rewriting procedure to high-level language.
     Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
-       at System.Collections.Generic.List`1.get_Item(Int32 index) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/List.cs:line 150
+       at System.Collections.Generic.List`1.get_Item(Int32 index)
    at Reko.Core.Block.get_ThenBlock() in /home/runner/work/reko/reko/src/Core/Block.cs:line 91
    at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block) in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 96
    at Reko.Structure.CompoundConditionCoalescer.Transform() in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 62
-   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 79
-   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 532
-0804846F: warning: Expected sizes of arrays to have been determined by now
+   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 78
+   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 551
 080489B3: warning: Expected sizes of arrays to have been determined by now
 08048AB7: warning: Expected sizes of arrays to have been determined by now
 08048B4B: warning: Expected sizes of arrays to have been determined by now
 08048C10: warning: Expected sizes of arrays to have been determined by now
-0804846F: warning: Expected sizes of arrays to have been determined by now
 080489B3: warning: Expected sizes of arrays to have been determined by now
 08048AB7: warning: Expected sizes of arrays to have been determined by now
 08048B4B: warning: Expected sizes of arrays to have been determined by now

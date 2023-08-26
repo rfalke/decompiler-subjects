@@ -7,7 +7,8 @@
 // 0000000000000060: void EH_frame0(Register byte al, Register word56 rax_56_8, Register (ptr64 ci8) rcx, Register (ptr64 Eq_5) rdx, Register byte bl, Register word32 edi)
 void EH_frame0(byte al, word56 rax_56_8, ci8 * rcx, struct Eq_5 * rdx, byte bl, word32 edi)
 {
-	Eq_8 edx_28 = (word32) rdx;
+	bool C;
+	Eq_9 edx_28 = (word32) rdx;
 	byte dl_33 = (byte) rdx;
 	byte al_5 = al + (byte) C;
 	struct Eq_16 * rax_7 = SEQ(rax_56_8, al_5);
@@ -15,9 +16,9 @@ void EH_frame0(byte al, word56 rax_56_8, ci8 * rcx, struct Eq_5 * rdx, byte bl, 
 	rax_7->b0000 += al_5;
 	rax_7->b0000 += al_5;
 	rdx->dw0052 += edi;
-	ci8 v14_20 = *rcx + al_5;
-	*rcx = v14_20;
-	if (v14_20 < 0x00)
+	ci8 v15_20 = *rcx + al_5;
+	*rcx = v15_20;
+	if (v15_20 < 0x00)
 		SEQ(rax_56_8, al_5)->bFFFFFFFF = rax_7->bFFFFFFFF + al_5;
 	else
 	{
@@ -31,13 +32,13 @@ void EH_frame0(byte al, word56 rax_56_8, ci8 * rcx, struct Eq_5 * rdx, byte bl, 
 	}
 }
 
-// 0000000000000078: void _f.eh(Register word56 rax_56_8)
-void _f.eh(word56 rax_56_8)
+// 0000000000000078: void f.eh(Register word56 rax_56_8)
+void f.eh(word56 rax_56_8)
 {
 	cu8 * rax_6 = SEQ(rax_56_8, 0x00);
-	cu8 v7_8 = *rax_6;
-	*rax_6 = v7_8;
-	byte al_12 = 0x00 - (byte) (v7_8 < 0x00);
+	cu8 v9_8 = *rax_6;
+	*rax_6 = v9_8;
+	byte al_12 = 0x00 - (byte) (v9_8 < 0x00);
 	byte * rax_13 = SEQ(rax_56_8, al_12);
 	*rax_13 += al_12;
 	fn0000000000000080();
@@ -46,7 +47,7 @@ void _f.eh(word56 rax_56_8)
 // 0000000000000080: void fn0000000000000080()
 // Called from:
 //      EH_frame0
-//      _f.eh
+//      f.eh
 void fn0000000000000080()
 {
 }

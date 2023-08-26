@@ -7,40 +7,45 @@
 // 0804804C: void fn0804804C()
 void fn0804804C()
 {
+	char bLoc50;
 	while (true)
 	{
-		__syscall(0x80);
-		word32 ecx_26;
-		byte * esi_27 = fp - 0x50;
-		byte * edi_28 = fp - 0x50;
-		for (ecx_26 = 0x03; ecx_26 != 0x00; --ecx_26)
+		Eq_5 eax_17 = sys_read(0x00, &bLoc50, 0x50);
+		if (eax_17 == 0x00)
+			break;
+		Eq_5 ecx_30 = eax_17;
+		char * esi_31 = &bLoc50;
+		char * edi_32 = &bLoc50;
+		do
 		{
-			ci8 al_31 = *esi_27;
-			++esi_27;
-			if (al_31 >= 0x41 && (al_31 <= 122 && (al_31 <= 0x5A || al_31 >= 0x61)))
+			ci8 al_35 = *esi_31;
+			++esi_31;
+			if (al_35 >= 0x41 && (al_35 <= 122 && (al_35 <= 0x5A || al_35 >= 0x61)))
 			{
-				if (al_31 > 77)
+				if (al_35 > 77)
 				{
-					if (al_31 > 0x5A)
+					if (al_35 > 0x5A)
 					{
-						if (al_31 <= 0x6D)
+						if (al_35 <= 0x6D)
 							goto l08048090;
-						if (al_31 > 122)
+						if (al_35 > 122)
 							goto l08048069;
 					}
-					al_31 -= 0x0D;
+					al_35 -= 0x0D;
 				}
 				else
 				{
 l08048090:
-					al_31 += 0x0D;
+					al_35 += 0x0D;
 				}
 			}
 l08048069:
-			*edi_28 = al_31;
-			++edi_28;
-		}
-		__syscall(0x80);
+			*edi_32 = al_35;
+			++edi_32;
+			--ecx_30;
+		} while (ecx_30 != 0x00);
+		sys_write(0x01, &bLoc50, eax_17);
 	}
+	sys_exit(eax_17);
 }
 

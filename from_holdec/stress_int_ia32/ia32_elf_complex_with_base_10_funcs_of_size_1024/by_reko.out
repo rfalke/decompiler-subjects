@@ -1,19 +1,5 @@
 === Using options:--aggressive-branch-removal
 080491AD: warning: Call target address 00000000 is invalid.
 08049160: warning: Call target address 00000000 is invalid.
-0804ED6A: error: An error occurred while eliminating condition codes in procedure log_size_10_var_007.
-    Argument size mismatch between bool and byte.
-       at Reko.Core.Expressions.Conversion..ctor(Expression exp, DataType dtFrom, DataType dtTo) in /home/runner/work/reko/reko/src/Core/Expressions/Conversion.cs:line 54
-   at Reko.Core.Code.InstructionTransformer.VisitConversion(Conversion conversion) in /home/runner/work/reko/reko/src/Core/Code/InstructionTransformer.cs:line 194
-   at Reko.Core.Expressions.Conversion.Accept[T](ExpressionVisitor`1 visitor) in /home/runner/work/reko/reko/src/Core/Expressions/Conversion.cs:line 82
-   at Reko.Analysis.ConditionCodeEliminator.TransformAssignment(Assignment a) in /home/runner/work/reko/reko/src/Decompiler/Analysis/ConditionCodeEliminator.cs:line 308
-   at Reko.Core.Code.Assignment.Accept(InstructionTransformer xform) in /home/runner/work/reko/reko/src/Core/Code/Assignment.cs:line 44
-   at Reko.Analysis.ConditionCodeEliminator.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/ConditionCodeEliminator.cs:line 102
-0804ED6A: error: An error occurred while eliminating condition codes in procedure log_size_10_var_007.
-    Argument size mismatch between bool and byte.
-       at Reko.Core.Expressions.Conversion..ctor(Expression exp, DataType dtFrom, DataType dtTo) in /home/runner/work/reko/reko/src/Core/Expressions/Conversion.cs:line 54
-   at Reko.Core.Code.InstructionTransformer.VisitConversion(Conversion conversion) in /home/runner/work/reko/reko/src/Core/Code/InstructionTransformer.cs:line 194
-   at Reko.Core.Expressions.Conversion.Accept[T](ExpressionVisitor`1 visitor) in /home/runner/work/reko/reko/src/Core/Expressions/Conversion.cs:line 82
-   at Reko.Analysis.ConditionCodeEliminator.TransformAssignment(Assignment a) in /home/runner/work/reko/reko/src/Decompiler/Analysis/ConditionCodeEliminator.cs:line 308
-   at Reko.Core.Code.Assignment.Accept(InstructionTransformer xform) in /home/runner/work/reko/reko/src/Core/Code/Assignment.cs:line 44
-   at Reko.Analysis.ConditionCodeEliminator.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/ConditionCodeEliminator.cs:line 102
+08052F0C: warning: Expected sizes of arrays to have been determined by now
+08052F0C: warning: Expected sizes of arrays to have been determined by now

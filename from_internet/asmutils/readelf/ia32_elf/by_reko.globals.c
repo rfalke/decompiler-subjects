@@ -4,11 +4,8 @@
 
 #include "subject.h"
 
-byte g_b0001; // 00000001
-byte g_b0004; // 00000004
-byte g_b0006; // 00000006
-Eq_258 g_t00BE;
-Eq_508 g_t01A4;
+Eq_291 g_t00BE;
+Eq_863 g_t00E7;
+Eq_599 g_t01A4;
+Eq_891 g_t0240;
 cu8 g_bF7FB67C4; // F7FB67C4
-Eq_729 g_tF7FB736E;
-Eq_744 g_tF7FB73E0;

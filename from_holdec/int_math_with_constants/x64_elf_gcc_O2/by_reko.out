@@ -1,4 +1,10 @@
 === Using options:--aggressive-branch-removal
 0000000000400394: warning: Unable to resolve imported reference __gmon_start__.
 00000000004005BE: warning: Call target address 0000000000000000 is invalid.
+signed_char_modulo: warning: Stopping value propagation after iterating 10000 times.
+unsigned_char_modulo: warning: Stopping value propagation after iterating 10000 times.
+signed_short_modulo: warning: Stopping value propagation after iterating 10000 times.
+signed_int_modulo: warning: Stopping value propagation after iterating 10000 times.
+signed_long_int_modulo: warning: Stopping value propagation after iterating 10000 times.
+signed_long_long_modulo: warning: Stopping value propagation after iterating 10000 times.
 === Killed because of CPU time limit

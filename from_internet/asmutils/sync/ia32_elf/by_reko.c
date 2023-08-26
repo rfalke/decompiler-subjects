@@ -7,7 +7,6 @@
 // 0804804C: void fn0804804C()
 void fn0804804C()
 {
-	__syscall(0x80);
-	__syscall(0x80);
+	sys_exit(sys_sync());
 }
 

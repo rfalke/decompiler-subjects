@@ -4,7 +4,17 @@
 
 #include "subject.h"
 
-struct Eq_33 * g_ptrFFFA0000;
-Eq_2 g_t0F0F;
-struct Eq_2 * g_ptr8000 = &g_t0F0F;
-
+uint16 g_wFFFFDB5E; // F800:DB5E
+word16 g_wFFFFDB60; // F800:DB60
+word16 g_wFFFFDB62; // F800:DB62
+uint16 g_wFFFFDB64; // F800:DB64
+struct Eq_399 seg0800_t::* g_ptrFFFFDB66; // F800:DB66
+struct Eq_390 seg0800_t::* g_ptrFFFFDB68; // F800:DB68
+struct Eq_174 seg0800_t::* g_ptrFFFFDB6A; // F800:DB6A
+word16 g_wFFFFDB6C; // F800:DB6C
+byte Eq_68::* g_ptrFFFFDB6E; // F800:DB6E
+word16 g_wFFFFDB72; // F800:DB72
+byte g_bFFFFDB77; // F800:DB77
+Eq_561 g_tFFFFDB78;
+byte g_bFFFFDB7B; // F800:DB7B
+struct Eq_68 * g_ptrFFFA0000; // FFFA0000

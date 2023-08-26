@@ -104,12 +104,14 @@ void main()
 {
 }
 
-// 0000000000400594: void _start(Register (ptr64 Eq_11) rdx, Stack word32 dwArg00)
-void _start(void (* rdx)(), word32 dwArg00)
+// 0000000000400594: void _start(Register (ptr64 Eq_11) rdx, Stack word32 dwArg00, Stack (ptr64 charconst ) ptrArg08)
+void _start(void (* rdx)(), word32 dwArg00, const char * ptrArg08)
 {
-	__align((const char *) fp + 8);
-	__libc_start_main(&g_t400590, (int32) qwArg00, (const char *) fp + 8, &g_t4009B0, &g_t4009A0, rdx, fp);
-	__hlt();
+	void * fp;
+	word64 qwArg00;
+	__align_stack<word64>(&ptrArg08);
+	__libc_start_main(&g_t400590, (int32) qwArg00, &ptrArg08, &g_t4009B0, &g_t4009A0, rdx, fp);
+	__halt();
 }
 
 // 00000000004005C0: void call_gmon_start()
@@ -147,56 +149,56 @@ void frame_dummy()
 {
 }
 
-// 0000000000400680: void _Z1fRSt6vectorIiSaIiEES2_(Register (ptr64 Eq_73) rsi, Register (ptr64 Eq_74) rdi, Register word128 xmm0)
-void _Z1fRSt6vectorIiSaIiEES2_(struct Eq_73 * rsi, struct Eq_74 * rdi, word128 xmm0)
+// 0000000000400680: void _Z1fRSt6vectorIiSaIiEES2_(Register (ptr64 Eq_71) rsi, Register (ptr64 Eq_72) rdi, Register word128 xmm0)
+void _Z1fRSt6vectorIiSaIiEES2_(struct Eq_71 * rsi, struct Eq_72 * rdi, word128 xmm0)
 {
 	_ZNSt6vectorIiSaIiEE15_M_range_insertIN9__gnu_cxx17__normal_iteratorIPiS1_EEEEvS6_T_S7_St20forward_iterator_tag(rsi->ptr0008, rsi->ptr0000, rdi->ptr0008, rdi, xmm0);
 }
 
-// 00000000004006A0: void _ZNSt6vectorIiSaIiEE15_M_range_insertIN9__gnu_cxx17__normal_iteratorIPiS1_EEEEvS6_T_S7_St20forward_iterator_tag(Register (ptr64 void) rcx, Register (ptr64 void) rdx, Register (ptr64 void) rsi, Register (ptr64 Eq_74) rdi, Register word128 xmm0)
+// 00000000004006A0: void _ZNSt6vectorIiSaIiEE15_M_range_insertIN9__gnu_cxx17__normal_iteratorIPiS1_EEEEvS6_T_S7_St20forward_iterator_tag(Register (ptr64 void) rcx, Register (ptr64 void) rdx, Register (ptr64 void) rsi, Register (ptr64 Eq_72) rdi, Register word128 xmm0)
 // Called from:
 //      _Z1fRSt6vectorIiSaIiEES2_
-void _ZNSt6vectorIiSaIiEE15_M_range_insertIN9__gnu_cxx17__normal_iteratorIPiS1_EEEEvS6_T_S7_St20forward_iterator_tag(void * rcx, void * rdx, void * rsi, struct Eq_74 * rdi, word128 xmm0)
+void _ZNSt6vectorIiSaIiEE15_M_range_insertIN9__gnu_cxx17__normal_iteratorIPiS1_EEEEvS6_T_S7_St20forward_iterator_tag(void * rcx, void * rdx, void * rsi, struct Eq_72 * rdi, word128 xmm0)
 {
 	if (rdx == rcx)
 		return;
 	int64 r13_29 = rcx - rdx;
 	void * r14_26 = rdi->ptr0008;
-	Eq_100 r13_260 = r13_29 >> 0x02;
-	if (r13_29 >> 0x02 <= rdi->t0010 - r14_26 >> 0x02)
+	Eq_98 r13_271 = r13_29 >> 0x02;
+	if (r13_29 >> 0x02 <= (rdi->t0010).u0 - r14_26 >> 0x02)
 	{
-		Eq_100 rdx_130;
+		Eq_98 rdx_136;
 		int64 r15_36 = r14_26 - rsi;
 		if (r13_29 >> 0x02 < r15_36 >> 0x02)
 		{
-			Eq_100 r15_92 = (r13_29 >> 0x02) * 0x04;
-			void * rax_107 = r14_26;
-			void * rcx_96 = r14_26 - r15_92;
-			if (r15_92 >> 0x02 != 0x00)
+			Eq_98 r15_95 = (r13_29 >> 0x02) * 0x04;
+			void * rax_111 = r14_26;
+			void * rcx_99 = r14_26 - r15_95;
+			if (r15_95 >> 0x02 != 0x00)
 			{
-				memmove(r14_26, rcx_96, __align(r15_92, 4));
-				rax_107 = rdi->ptr0008;
+				memmove(r14_26, rcx_99, __align(r15_95, 4));
+				rax_111 = rdi->ptr0008;
 			}
-			Mem117[rdi + 0x08:word64] = rax_107 + r15_92;
-			int64 rcx_111 = rcx_96 - rsi;
-			if (rcx_111 >> 0x02 == 0x00)
+			Mem121[rdi + 8:word64] = rax_111 + r15_95;
+			int64 rcx_115 = rcx_99 - rsi;
+			if (rcx_115 >> 0x02 == 0x00)
 			{
-				rdx_130 = r15_92;
+				rdx_136 = r15_95;
 				if (r13_29 >> 0x02 == 0x00)
 					return;
 			}
 			else
 			{
-				Eq_100 rdx_121 = (rcx_111 >> 0x02) * 0x04;
-				memmove(r14_26 - rdx_121, rsi, rdx_121);
-				rdx_130 = r15_92;
+				Eq_98 rdx_126 = (rcx_115 >> 0x02) * 0x04;
+				memmove(r14_26 - rdx_126, rsi, rdx_126);
+				rdx_136 = r15_95;
 				if (r13_29 >> 0x02 == 0x00)
 					return;
 			}
 		}
 		else
 		{
-			Eq_100 r8_40 = (r15_36 >> 0x02) * 0x04;
+			Eq_98 r8_40 = (r15_36 >> 0x02) * 0x04;
 			word64 r9_41 = rdx + r8_40;
 			int64 rcx_42 = rcx - r9_41;
 			if (rcx_42 >> 0x02 != 0x00)
@@ -204,87 +206,84 @@ void _ZNSt6vectorIiSaIiEE15_M_range_insertIN9__gnu_cxx17__normal_iteratorIPiS1_E
 				memmove(r14_26, r9_41, (rcx_42 >> 0x02) * 0x04);
 				r14_26 = rdi->ptr0008;
 			}
-			void * rdi_62 = (const char *) r14_26 + ((r13_29 >> 0x02) - (r15_36 >> 0x02)) * 0x04;
-			rdi->ptr0008 = rdi_62;
+			void * rdi_64 = (const char *) r14_26 + ((r13_29 >> 0x02) - (r15_36 >> 0x02)) * 0x04;
+			rdi->ptr0008 = rdi_64;
 			if (r15_36 >> 0x02 != 0x00)
 			{
-				memmove(rdi_62, rsi, r8_40);
-				rdi_62 = rdi->ptr0008;
+				memmove(rdi_64, rsi, r8_40);
+				rdi_64 = rdi->ptr0008;
 			}
-			Mem87[rdi + 0x08:word64] = r8_40 + rdi_62;
-			int64 r9_81 = r9_41 - rdx;
-			if (r9_81 >> 0x02 == 0x00)
+			Mem89[rdi + 8:word64] = r8_40 + rdi_64;
+			int64 r9_83 = r9_41 - rdx;
+			if (r9_83 >> 0x02 == 0x00)
 				return;
-			rdx_130 = (r9_81 >> 0x02) * 0x04;
+			rdx_136 = (r9_83 >> 0x02) * 0x04;
 		}
-		memmove(rsi, rdx, rdx_130);
+		memmove(rsi, rdx, rdx_136);
 		return;
 	}
-	Eq_118 r15_168;
-	void * r14_187;
-	void * rsi_156 = rdi->ptr0000;
-	int64 r14_159 = r14_26 - rsi_156;
-	Eq_126 r14_160 = r14_159 >> 0x02;
-	if (r13_29 >> 0x02 <= 0x3FFFFFFFFFFFFFFF - (r14_159 >> 0x02))
+	Eq_116 r15_175;
+	void * r14_195;
+	void * rsi_163 = rdi->ptr0000;
+	int64 r14_166 = r14_26 - rsi_163;
+	Eq_124 r14_167 = r14_166 >> 0x02;
+	if (r13_29 >> 0x02 <= 0x3FFFFFFFFFFFFFFF - (r14_166 >> 0x02))
 	{
-		int64 rax_167 = r13_29 >> 0x02;
-		r15_168.u0 = ~0x03;
-		if (r14_159 >> 0x02 >= r13_29 >> 0x02)
-			rax_167 = r14_159 >> 0x02;
-		r14_160 = (r14_159 >> 0x02) + rax_167;
-		if (r14_160 < 0x00 || r14_160 > 0x3FFFFFFFFFFFFFFF)
+		int64 rax_174 = r13_29 >> 0x02;
+		r15_175.u0 = ~0x03;
+		if (r14_166 >> 0x02 >= r13_29 >> 0x02)
+			rax_174 = r14_166 >> 0x02;
+		r14_167 = (r14_166 >> 0x02) + rax_174;
+		if (r14_167 < 0x00 || r14_167 > 0x3FFFFFFFFFFFFFFF)
 		{
 l0000000000400738:
-			void * rax_225;
-			word64 r8_226;
-			word64 r9_227;
-			_Znwm();
-			rsi_156 = rdi->ptr0000;
-			r14_187 = rax_225;
+			_Znwm(r15_175);
+			rsi_163 = rdi->ptr0000;
+			r14_195 = rax_234;
 			goto l0000000000400746;
 		}
-		if (r14_160 == 0x00)
+		if (r14_167 == 0x00)
 		{
-			r15_168.u1 = 0x00;
-			r14_187 = null;
+			r15_175.u1 = 0x00;
+			r14_195 = null;
 l0000000000400746:
-			Eq_100 rcx_237 = 0x00;
-			int64 rax_239 = rsi - rsi_156;
-			if (rax_239 >> 0x02 != 0x00)
+			Eq_98 rcx_246 = 0x00;
+			int64 rax_248 = rsi - rsi_163;
+			if (rax_248 >> 0x02 != 0x00)
 			{
-				Eq_100 rcx_244 = (rax_239 >> 0x02) * 0x04;
-				memmove(r14_187, rsi_156, rcx_244);
-				rcx_237 = rcx_244;
+				Eq_98 rcx_254 = (rax_248 >> 0x02) * 0x04;
+				memmove(r14_195, rsi_163, rcx_254);
+				rcx_246 = rcx_254;
 			}
-			word64 rcx_254 = rcx_237 + r14_187;
+			word64 rcx_264 = rcx_246 + r14_195;
 			if (r13_29 >> 0x02 != 0x00)
 			{
-				r13_260 = __align(r13_29, 4);
-				memmove(rcx_254, rdx, r13_260);
-				rsi_156 = rdx;
+				r13_271 = __align(r13_29, 4);
+				memmove(rcx_264, rdx, r13_271);
+				rsi_163 = rdx;
 			}
-			word64 r13_280 = r13_260 + rcx_254;
-			Eq_100 rbp_282 = 0x00;
-			int64 rax_285 = rdi->ptr0008 - rsi;
-			if (rax_285 >> 0x02 != 0x00)
+			word64 r13_291 = r13_271 + rcx_264;
+			Eq_98 rbp_293 = 0x00;
+			int64 rax_296 = rdi->ptr0008 - rsi;
+			if (rax_296 >> 0x02 != 0x00)
 			{
-				rbp_282 = (rax_285 >> 0x02) * 0x04;
-				memmove(r13_280, rsi, rbp_282);
-				rsi_156 = rsi;
+				rbp_293 = (rax_296 >> 0x02) * 0x04;
+				memmove(r13_291, rsi, rbp_293);
+				rsi_163 = rsi;
 			}
-			void * rdi_297 = rdi->ptr0000;
-			word64 rbp_300 = rbp_282 + r13_280;
-			if (rdi_297 != null)
-				((real64) xmm0, rdi_297, rsi_156);
-			rdi->ptr0000 = r14_187;
-			rdi->ptr0008 = rbp_300;
-			Mem329[rdi + 0x10:word64] = r14_187 + r15_168;
+			void * rdi_309 = rdi->ptr0000;
+			word64 rbp_312 = rbp_293 + r13_291;
+			if (rdi_309 != null)
+				((real64) xmm0, rdi_309, rsi_163);
+			rdi->ptr0000 = r14_195;
+			rdi->ptr0008 = rbp_312;
+			Mem342[rdi + 16:word64] = r14_195 + r15_175;
 			return;
 		}
 	}
 	else
 		std::__throw_length_error("vector::_M_range_insert");
-	r15_168 = r14_160 * 0x04;
+	r15_175 = r14_167 * 0x04;
 	goto l0000000000400738;
 }
 
@@ -297,15 +296,15 @@ void __libc_csu_fini()
 void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 {
 	_init();
-	int64 rbp_19 = 0x00600BCC - 0x00600BCC;
+	int64 rbp_19 = (<anonymous> * (*)[]) 0x00600BCC - (<anonymous> * (*)[]) 0x00600BCC;
 	if (rbp_19 >> 0x03 != 0x00)
 	{
-		Eq_352 rbx_39 = 0x00;
+		Eq_376 rbx_42 = 0x00;
 		do
 		{
-			((<anonymous> *[]) 0x00600BCC)[rbx_39]();
-			rbx_39 = (word64) rbx_39.u1 + 1;
-		} while (rbx_39 < rbp_19 >> 0x03);
+			((<anonymous> *[]) 0x00600BCC)[rbx_42]();
+			rbx_42 = (word64) rbx_42.u1 + 1;
+		} while (rbx_42 < rbp_19 >> 0x03);
 	}
 }
 

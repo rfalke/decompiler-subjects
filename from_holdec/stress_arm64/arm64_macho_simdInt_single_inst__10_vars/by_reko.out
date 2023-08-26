@@ -1,0 +1,23 @@
+=== Using options:--aggressive-branch-removal
+00000001002A7F48: warning: Unable to resolve imported reference __assert_rtn.
+00000001002A7F48: warning: Unable to resolve imported reference __assert_rtn.
+/home/hawk/kza/decompiler-subjects.clean/from_holdec/stress_arm64/arm64_macho_simdInt_single_inst__10_vars/subject.exe: error: An internal error occurred while analyzing /home/hawk/kza/decompiler-subjects.clean/from_holdec/stress_arm64/arm64_macho_simdInt_single_inst__10_vars/subject.exe.
+    Call to __tbx<byte[16]> had 5 arguments instead of the expected 1.
+       at Reko.Typing.ExpressionTypeDescender.BindActualTypesToFormalTypes(Application appl) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 118
+   at Reko.Typing.ExpressionTypeDescender.VisitApplication(Application appl, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 92
+   at Reko.Analysis.LocalTypeDescender.Visit(Expression exp) in /home/runner/work/reko/reko/src/Decompiler/Analysis/LocalTypeDescender.cs:line 97
+   at Reko.Analysis.UsedRegisterFinder.DataTypeOf(SsaIdentifier sidParam, LocalTypeDescender typeDescender) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UsedRegisterFinder.cs:line 171
+   at Reko.Analysis.UsedRegisterFinder.ComputeLiveIn(SsaState ssaState, Boolean ignoreUse) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UsedRegisterFinder.cs:line 102
+   at Reko.Analysis.SccWorker.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/SccWorker.cs:line 132
+   at Reko.Analysis.DataFlowAnalysis.RewriteProceduresToSsa() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 178
+   at Reko.Analysis.DataFlowAnalysis.UntangleProcedures() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 128
+   at Reko.Decompiler.AnalyzeDataFlow() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 111
+/home/hawk/kza/decompiler-subjects.clean/from_holdec/stress_arm64/arm64_macho_simdInt_single_inst__10_vars/subject.exe: error: An internal error occurred while reconstructing data types in /home/hawk/kza/decompiler-subjects.clean/from_holdec/stress_arm64/arm64_macho_simdInt_single_inst__10_vars/subject.exe.
+    Parameter count must match.
+       at Reko.Typing.EquivalenceClassBuilder.VisitApplication(Application appl) in /home/runner/work/reko/reko/src/Decompiler/Typing/EquivalenceClassBuilder.cs:line 148
+   at Reko.Typing.EquivalenceClassBuilder.VisitAssignment(Assignment a) in /home/runner/work/reko/reko/src/Decompiler/Typing/EquivalenceClassBuilder.cs:line 178
+   at Reko.Typing.EquivalenceClassBuilder.Build(Program program) in /home/runner/work/reko/reko/src/Decompiler/Typing/EquivalenceClassBuilder.cs:line 82
+   at Reko.Typing.TypeAnalyzer.<>c__DisplayClass12_0.<RewriteProgram>b__1() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeAnalyzer.cs:line 90
+   at Reko.Typing.TypeAnalyzer.Time(String message, Action action) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeAnalyzer.cs:line 113
+   at Reko.Typing.TypeAnalyzer.RewriteProgram(Program program) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeAnalyzer.cs:line 90
+   at Reko.Decompiler.ReconstructTypes() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 298

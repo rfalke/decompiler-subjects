@@ -4,10 +4,11 @@
 
 #include "subject.h"
 
-<anonymous> * g_ptr8000; // 0000000000008000
-<anonymous> * g_ptr8008; // 0000000000008008
-<anonymous> * g_ptr8010; // 0000000000008010
-Eq_2 g_t8040;
-Eq_2 g_t8050;
-Eq_2 g_t8060;
-Eq_2 g_t8070;
+<anonymous> * __imp__dyld_stub_binder; // 0000000000004000
+<anonymous> * __imp__printf; // 0000000000008000
+<anonymous> * __imp__putchar; // 0000000000008008
+<anonymous> * __imp__puts; // 0000000000008010
+word128 g_ow8040;
+word128 g_ow8050;
+word128 g_ow8060;
+word128 g_ow8070;

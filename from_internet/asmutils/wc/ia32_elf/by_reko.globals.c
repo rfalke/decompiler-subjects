@@ -4,4 +4,4 @@
 
 #include "subject.h"
 
-word32 g_dw0003; // 00000003
+Eq_3 g_t0003;

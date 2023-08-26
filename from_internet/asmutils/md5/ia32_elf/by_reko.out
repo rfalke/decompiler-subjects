@@ -1,10 +1,14 @@
 === Using options:--aggressive-branch-removal
 08048195: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
+08048275: warning: Expected sizes of arrays to have been determined by now
+08048279: warning: Expected sizes of arrays to have been determined by now
 0804827D: warning: Expected sizes of arrays to have been determined by now
 0804828D: warning: Expected sizes of arrays to have been determined by now
 080482CD: warning: Expected sizes of arrays to have been determined by now
 080483CD: warning: Expected sizes of arrays to have been determined by now
 080483E3: warning: Expected sizes of arrays to have been determined by now
+08048275: warning: Expected sizes of arrays to have been determined by now
+08048279: warning: Expected sizes of arrays to have been determined by now
 0804827D: warning: Expected sizes of arrays to have been determined by now
 0804828D: warning: Expected sizes of arrays to have been determined by now
 080482CD: warning: Expected sizes of arrays to have been determined by now

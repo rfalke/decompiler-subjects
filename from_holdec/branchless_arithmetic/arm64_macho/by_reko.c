@@ -4,22 +4,14 @@
 
 #include "subject.h"
 
-// 0000000100003E24: void _printf()
-// Called from:
-//      _main
-void _printf()
+// 0000000100003E24: void printf()
+void printf()
 {
-	<anonymous> * x16_5 = g_ptr4000;
-	x16_5();
 }
 
-// 0000000100003E30: void _puts()
-// Called from:
-//      _main
-void _puts()
+// 0000000100003E30: void puts()
+void puts()
 {
-	<anonymous> * x16_5 = g_ptr4008;
-	x16_5();
 }
 
 // subject_TEXT_text.c
@@ -28,136 +20,136 @@ void _puts()
 
 #include "subject.h"
 
-// 00000001000039F4: void _sat_addu32b()
+// 00000001000039F4: void sat_addu32b()
 // Called from:
-//      _main
-void _sat_addu32b()
+//      main
+void sat_addu32b()
 {
 }
 
-// 0000000100003A00: void _sat_subu32b()
+// 0000000100003A00: void sat_subu32b()
 // Called from:
-//      _main
-void _sat_subu32b()
+//      main
+void sat_subu32b()
 {
 }
 
-// 0000000100003A0C: void _sat_divu32b()
+// 0000000100003A0C: void sat_divu32b()
 // Called from:
-//      _main
-void _sat_divu32b()
+//      main
+void sat_divu32b()
 {
 }
 
-// 0000000100003A14: void _sat_mulu32b()
+// 0000000100003A14: void sat_mulu32b()
 // Called from:
-//      _main
-void _sat_mulu32b()
+//      main
+void sat_mulu32b()
 {
 }
 
-// 0000000100003A24: Register word64 _sat_addu64b(Register word64 x0, Register word64 x1)
+// 0000000100003A24: Register word64 sat_addu64b(Register word64 x0, Register word64 x1)
 // Called from:
-//      _main
-word64 _sat_addu64b(word64 x0, word64 x1)
+//      main
+word64 sat_addu64b(word64 x0, word64 x1)
 {
 	up64 x8_5 = x0 + x1;
 	return x8_5 < 0x00 ? x8_5 : ~0x00;
 }
 
-// 0000000100003A30: Register word64 _sat_subu64b(Register word64 x0, Register word64 x1)
+// 0000000100003A30: Register word64 sat_subu64b(Register word64 x0, Register word64 x1)
 // Called from:
-//      _main
-word64 _sat_subu64b(word64 x0, word64 x1)
+//      main
+word64 sat_subu64b(word64 x0, word64 x1)
 {
 	up64 x8_5 = x0 - x1;
 	return x8_5 < 0x00 ? 0x00 : x8_5;
 }
 
-// 0000000100003A3C: Register uint64 _sat_divu64b(Register uint64 x0, Register uint64 x1)
+// 0000000100003A3C: Register uint64 sat_divu64b(Register uint64 x0, Register uint64 x1)
 // Called from:
-//      _main
-uint64 _sat_divu64b(uint64 x0, uint64 x1)
+//      main
+uint64 sat_divu64b(uint64 x0, uint64 x1)
 {
 	return x0 /u x1;
 }
 
-// 0000000100003A44: Register ui64 _sat_mulu64b(Register ui64 x0, Register ui64 x1)
+// 0000000100003A44: Register ui64 sat_mulu64b(Register ui64 x0, Register ui64 x1)
 // Called from:
-//      _main
-ui64 _sat_mulu64b(ui64 x0, ui64 x1)
+//      main
+ui64 sat_mulu64b(ui64 x0, ui64 x1)
 {
 	uint32 w0_6 = (word32) x0;
 	uint32 w1_7 = (word32) x1;
 	return SLICE(w0_6 * w1_7, uint64, 64) == 0x00 ? x0 * x1 : ~0x00;
 }
 
-// 0000000100003A58: void _sat_adds32b_var1()
+// 0000000100003A58: void sat_adds32b_var1()
 // Called from:
-//      _main
-void _sat_adds32b_var1()
+//      main
+void sat_adds32b_var1()
 {
 }
 
-// 0000000100003A74: void _sat_adds32b_var2(Register word32 w0, Register word32 w1)
+// 0000000100003A74: void sat_adds32b_var2(Register word32 w0, Register word32 w1)
 // Called from:
-//      _main
-void _sat_adds32b_var2(word32 w0, word32 w1)
+//      main
+void sat_adds32b_var2(word32 w0, word32 w1)
 {
 }
 
-// 0000000100003A9C: void _sat_adds32b_var3()
+// 0000000100003A9C: void sat_adds32b_var3()
 // Called from:
-//      _main
-void _sat_adds32b_var3()
+//      main
+void sat_adds32b_var3()
 {
 }
 
-// 0000000100003AC0: void _sat_subs32b()
+// 0000000100003AC0: void sat_subs32b()
 // Called from:
-//      _main
-void _sat_subs32b()
+//      main
+void sat_subs32b()
 {
 }
 
-// 0000000100003AE0: void _sat_divs32b(Register word32 w0, Register word32 w1)
+// 0000000100003AE0: void sat_divs32b(Register word32 w0, Register word32 w1)
 // Called from:
-//      _main
-void _sat_divs32b(word32 w0, word32 w1)
+//      main
+void sat_divs32b(word32 w0, word32 w1)
 {
 }
 
-// 0000000100003AFC: void _sat_muls32b()
+// 0000000100003AFC: void sat_muls32b()
 // Called from:
-//      _main
-void _sat_muls32b()
+//      main
+void sat_muls32b()
 {
 }
 
-// 0000000100003B1C: Register uint64 _sat_adds64b(Register uint64 x0, Register word64 x1)
+// 0000000100003B1C: Register uint64 sat_adds64b(Register uint64 x0, Register word64 x1)
 // Called from:
-//      _main
-uint64 _sat_adds64b(uint64 x0, word64 x1)
+//      main
+uint64 sat_adds64b(uint64 x0, word64 x1)
 {
 	uint64 x8_5 = (x0 >> 63) + 0x7FFFFFFFFFFFFFFF;
 	word64 x10_8 = x1 + x0;
 	return (x8_5 ^ x1 | ~(x10_8 ^ x1)) >= 0x00 ? x8_5 : x10_8;
 }
 
-// 0000000100003B40: Register uint64 _sat_subs64b(Register uint64 x0, Register uint64 x1)
+// 0000000100003B40: Register uint64 sat_subs64b(Register uint64 x0, Register uint64 x1)
 // Called from:
-//      _main
-uint64 _sat_subs64b(uint64 x0, uint64 x1)
+//      main
+uint64 sat_subs64b(uint64 x0, uint64 x1)
 {
 	uint64 x8_5 = (x0 >> 63) + 0x7FFFFFFFFFFFFFFF;
 	uint64 x10_8 = x0 - x1;
 	return ((x8_5 ^ x1) & (x8_5 ^ x10_8)) < 0x00 ? x8_5 : x10_8;
 }
 
-// 0000000100003B60: Register int64 _sat_divs64b(Register int64 x0, Register int64 x1)
+// 0000000100003B60: Register int64 sat_divs64b(Register int64 x0, Register int64 x1)
 // Called from:
-//      _main
-int64 _sat_divs64b(int64 x0, int64 x1)
+//      main
+int64 sat_divs64b(int64 x0, int64 x1)
 {
 	int64 x8_10 = x1 + 0x01 | x0 ^ 0x8000000000000000;
 	if (x8_10 != 0x00)
@@ -165,73 +157,77 @@ int64 _sat_divs64b(int64 x0, int64 x1)
 	return x8_10 / x1;
 }
 
-// 0000000100003B7C: Register int64 _sat_muls64b(Register int64 x0, Register int64 x1)
+// 0000000100003B7C: Register int64 sat_muls64b(Register int64 x0, Register int64 x1)
 // Called from:
-//      _main
-int64 _sat_muls64b(int64 x0, int64 x1)
+//      main
+int64 sat_muls64b(int64 x0, int64 x1)
 {
 	int64 x8_5 = x1 * x0;
-	return SLICE(x1 *s128 x0, int64, 64) - (x8_5 >> 63) == 0x00 ? x8_5 : ((x1 ^ x0) >> 63) + 0x7FFFFFFFFFFFFFFF;
+	return SLICE(x1 *s128 x0, int64, 64) == x8_5 >> 63 ? x8_5 : ((x1 ^ x0) >> 63) + 0x7FFFFFFFFFFFFFFF;
 }
 
-// 0000000100003B9C: void _abs32()
+// 0000000100003B9C: void abs32()
 // Called from:
-//      _main
-void _abs32()
+//      main
+void abs32()
 {
 }
 
-// 0000000100003BA8: Register int64 _abs64(Register int64 x0)
+// 0000000100003BA8: Register int64 abs64(Register int64 x0)
 // Called from:
-//      _main
-int64 _abs64(int64 x0)
+//      main
+int64 abs64(int64 x0)
 {
 	return x0 >= 0x00 ? x0 : -x0;
 }
 
-// 0000000100003BB4: void _sgn32(Register int32 w0)
+// 0000000100003BB4: void sgn32(Register int32 w0)
 // Called from:
-//      _main
-void _sgn32(int32 w0)
+//      main
+void sgn32(int32 w0)
 {
 }
 
-// 0000000100003BC4: Register int64 _sgn64(Register int64 x0)
+// 0000000100003BC4: Register int64 sgn64(Register int64 x0)
 // Called from:
-//      _main
-int64 _sgn64(int64 x0)
+//      main
+int64 sgn64(int64 x0)
 {
 	if (x0 <= 0x00)
 		x0 = (x0 >> 63) + 0x01;
 	return x0;
 }
 
-// 0000000100003BD4: void _main()
-void _main()
+// 0000000100003BD4: void main(Register word32 w2, Register word32 w3, Register word32 w4, Register word32 w5)
+void main(word32 w2, word32 w3, word32 w4, word32 w5)
 {
-	_sat_addu32b();
-	_printf();
-	_sat_subu32b();
-	_printf();
-	_sat_mulu32b();
-	_printf();
-	_sat_divu32b();
-	_printf();
-	_sat_adds32b_var1();
-	_sat_adds32b_var2(0x7FFFFFFF, 0x02);
-	_sat_adds32b_var3();
-	_printf();
-	_sat_subs32b();
-	_printf();
-	_sat_muls32b();
-	_printf();
-	_sat_divs32b(0x80000000, ~0x00);
-	_printf();
-	_abs32();
-	_printf();
-	_sgn32(0x03);
-	_printf();
-	if (_sat_subu64b(0x00, 0x00) + _sat_addu64b(0x00, 0x00) + _sat_divu64b(0x00, 0x01) + _sat_mulu64b(0x00, 0x00) + _sat_muls64b(0x00, 0x00) + _sat_adds64b(0x00, 0x00) + _sat_subs64b(0x00, 0x00) + _sat_divs64b(0x00, 0x01) + _abs64(0x00) + _sgn64(0x00) == 0x2A)
-		_puts();
+	word64 x2;
+	word64 x3;
+	word64 x4;
+	word64 x5;
+	sat_addu32b();
+	printf("sat_addu32b(0x%08x,0x%08x) = 0x%08x\n", 0x03, (uint32) x2, (uint32) x3);
+	sat_subu32b();
+	printf("sat_subu32b(0x%08x,0x%08x) = 0x%08x\n", 0x03, (uint32) x2, (uint32) x3);
+	sat_mulu32b();
+	printf("sat_mulu32b(0x%08x,0x%08x) = 0x%08x\n", 0x03, (uint32) x2, (uint32) x3);
+	sat_divu32b();
+	printf("sat_divu32b(0x%08x,0x%08x) = 0x%08x\n", 0x03, (uint32) x2, (uint32) x3);
+	sat_adds32b_var1();
+	sat_adds32b_var2(0x7FFFFFFF, 0x02);
+	sat_adds32b_var3();
+	printf("sat_adds32b(0x%08x,0x%08x) = 0x%08x 0x%08x 0x%08x\n", 0x02, (uint32) x2, (uint32) x3, (uint32) x4, (uint32) x5);
+	sat_subs32b();
+	printf("sat_subs32b(0x%08x,0x%08x) = 0x%08x\n", 0x02, (uint32) x2, (uint32) x3);
+	sat_muls32b();
+	printf("sat_muls32b(0x%08x,0x%08x) = 0x%08x\n", 0x02, (uint32) x2, (uint32) x3);
+	sat_divs32b(0x80000000, ~0x00);
+	printf("sat_divs32b(0x%08x,0x%08x) = 0x%08x\n", ~0x00, (uint32) x2, (uint32) x3);
+	abs32();
+	printf("abs32(0x%08x) = 0x%08x\n", ~0x00, (uint32) x2);
+	sgn32(0x03);
+	printf("sgn32(0x%08x) = 0x%08x\n", ~0x00, (uint32) x2);
+	if (sat_subu64b(0x00, 0x00) + sat_addu64b(0x00, 0x00) + sat_divu64b(0x00, 0x01) + sat_mulu64b(0x00, 0x00) + sat_muls64b(0x00, 0x00) + sat_adds64b(0x00, 0x00) + sat_subs64b(0x00, 0x00) + sat_divs64b(0x00, 0x01) + abs64(0x00) + sgn64(0x00) == 0x2A)
+		puts("not reached");
 }
 

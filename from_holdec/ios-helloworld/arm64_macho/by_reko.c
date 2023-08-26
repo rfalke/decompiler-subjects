@@ -4,158 +4,158 @@
 
 #include "subject.h"
 
-// 0000000100005F68: void _$s10ObjectiveC22_convertBoolToObjCBoolyAA0eF0VSbF()
-void _$s10ObjectiveC22_convertBoolToObjCBoolyAA0eF0VSbF()
+// 0000000100005F68: void $s10ObjectiveC22_convertBoolToObjCBoolyAA0eF0VSbF()
+void $s10ObjectiveC22_convertBoolToObjCBoolyAA0eF0VSbF()
 {
-	__imp___$s10ObjectiveC22_convertBoolToObjCBoolyAA0eF0VSbF();
+	__imp__$s10ObjectiveC22_convertBoolToObjCBoolyAA0eF0VSbF();
 }
 
-// 0000000100005F74: void _$s7SwiftUI19UIHostingControllerC8rootViewACyxGx_tcfc()
-void _$s7SwiftUI19UIHostingControllerC8rootViewACyxGx_tcfc()
+// 0000000100005F74: void $s7SwiftUI19UIHostingControllerC8rootViewACyxGx_tcfc()
+void $s7SwiftUI19UIHostingControllerC8rootViewACyxGx_tcfc()
 {
-	__imp___$s7SwiftUI19UIHostingControllerC8rootViewACyxGx_tcfc();
+	__imp__$s7SwiftUI19UIHostingControllerC8rootViewACyxGx_tcfc();
 }
 
-// 0000000100005F80: void _$s7SwiftUI19UIHostingControllerCMa()
-void _$s7SwiftUI19UIHostingControllerCMa()
+// 0000000100005F80: void $s7SwiftUI19UIHostingControllerCMa()
+void $s7SwiftUI19UIHostingControllerCMa()
 {
-	__imp___$s7SwiftUI19UIHostingControllerCMa();
+	__imp__$s7SwiftUI19UIHostingControllerCMa();
 }
 
-// 0000000100005F8C: void _$s7SwiftUI4TextVyACxcSyRzlufC()
-void _$s7SwiftUI4TextVyACxcSyRzlufC()
+// 0000000100005F8C: void $s7SwiftUI4TextVyACxcSyRzlufC()
+void $s7SwiftUI4TextVyACxcSyRzlufC()
 {
-	__imp___$s7SwiftUI4TextVyACxcSyRzlufC();
+	__imp__$s7SwiftUI4TextVyACxcSyRzlufC();
 }
 
-// 0000000100005F98: void _$s7SwiftUI4ViewPAAE05_makeC04view6inputsAA01_C7OutputsVAA11_GraphValueVyxG_AA01_C6InputsVtFZ()
-void _$s7SwiftUI4ViewPAAE05_makeC04view6inputsAA01_C7OutputsVAA11_GraphValueVyxG_AA01_C6InputsVtFZ()
+// 0000000100005F98: void $s7SwiftUI4ViewPAAE05_makeC04view6inputsAA01_C7OutputsVAA11_GraphValueVyxG_AA01_C6InputsVtFZ()
+void $s7SwiftUI4ViewPAAE05_makeC04view6inputsAA01_C7OutputsVAA11_GraphValueVyxG_AA01_C6InputsVtFZ()
 {
-	__imp___$s7SwiftUI4ViewPAAE05_makeC04view6inputsAA01_C7OutputsVAA11_GraphValueVyxG_AA01_C6InputsVtFZ();
+	__imp__$s7SwiftUI4ViewPAAE05_makeC04view6inputsAA01_C7OutputsVAA11_GraphValueVyxG_AA01_C6InputsVtFZ();
 }
 
-// 0000000100005FA4: void _$s7SwiftUI4ViewPAAE05_makeC4List4view6inputsAA01_cE7OutputsVAA11_GraphValueVyxG_AA01_cE6InputsVtFZ()
-void _$s7SwiftUI4ViewPAAE05_makeC4List4view6inputsAA01_cE7OutputsVAA11_GraphValueVyxG_AA01_cE6InputsVtFZ()
+// 0000000100005FA4: void $s7SwiftUI4ViewPAAE05_makeC4List4view6inputsAA01_cE7OutputsVAA11_GraphValueVyxG_AA01_cE6InputsVtFZ()
+void $s7SwiftUI4ViewPAAE05_makeC4List4view6inputsAA01_cE7OutputsVAA11_GraphValueVyxG_AA01_cE6InputsVtFZ()
 {
-	__imp___$s7SwiftUI4ViewPAAE05_makeC4List4view6inputsAA01_cE7OutputsVAA11_GraphValueVyxG_AA01_cE6InputsVtFZ();
+	__imp__$s7SwiftUI4ViewPAAE05_makeC4List4view6inputsAA01_cE7OutputsVAA11_GraphValueVyxG_AA01_cE6InputsVtFZ();
 }
 
-// 0000000100005FB0: void _$sSS10FoundationE19_bridgeToObjectiveCSo8NSStringCyF()
-void _$sSS10FoundationE19_bridgeToObjectiveCSo8NSStringCyF()
+// 0000000100005FB0: void $sSS10FoundationE19_bridgeToObjectiveCSo8NSStringCyF()
+void $sSS10FoundationE19_bridgeToObjectiveCSo8NSStringCyF()
 {
-	__imp___$sSS10FoundationE19_bridgeToObjectiveCSo8NSStringCyF();
+	__imp__$sSS10FoundationE19_bridgeToObjectiveCSo8NSStringCyF();
 }
 
-// 0000000100005FBC: void _$sSS6appendyySSF()
-void _$sSS6appendyySSF()
+// 0000000100005FBC: void $sSS6appendyySSF()
+void $sSS6appendyySSF()
 {
-	__imp___$sSS6appendyySSF();
+	__imp__$sSS6appendyySSF();
 }
 
-// 0000000100005FC8: void _$sSzsE11descriptionSSvg()
-void _$sSzsE11descriptionSSvg()
+// 0000000100005FC8: void $sSzsE11descriptionSSvg()
+void $sSzsE11descriptionSSvg()
 {
-	__imp___$sSzsE11descriptionSSvg();
+	__imp__$sSzsE11descriptionSSvg();
 }
 
-// 0000000100005FD4: void _NSStringFromClass()
+// 0000000100005FD4: void NSStringFromClass()
 // Called from:
 //      fn0000000100005870
-void _NSStringFromClass()
+void NSStringFromClass()
 {
-	__imp___NSStringFromClass();
+	__imp__NSStringFromClass();
 }
 
-// 0000000100005FE0: void _UIApplicationMain()
+// 0000000100005FE0: void UIApplicationMain()
 // Called from:
 //      fn0000000100005870
-void _UIApplicationMain()
+void UIApplicationMain()
 {
-	__imp___UIApplicationMain();
+	__imp__UIApplicationMain();
 }
 
-// 0000000100005FEC: void _objc_allocWithZone()
-void _objc_allocWithZone()
+// 0000000100005FEC: void objc_allocWithZone()
+void objc_allocWithZone()
 {
-	__imp___objc_allocWithZone();
+	__imp__objc_allocWithZone();
 }
 
-// 0000000100005FF8: void _objc_autoreleaseReturnValue()
-void _objc_autoreleaseReturnValue()
+// 0000000100005FF8: void objc_autoreleaseReturnValue()
+void objc_autoreleaseReturnValue()
 {
-	__imp___objc_autoreleaseReturnValue();
+	__imp__objc_autoreleaseReturnValue();
 }
 
-// 0000000100006004: void _objc_msgSend()
-void _objc_msgSend()
+// 0000000100006004: void objc_msgSend()
+void objc_msgSend()
 {
-	__imp___objc_msgSend();
+	__imp__objc_msgSend();
 }
 
-// 0000000100006010: void _objc_msgSendSuper2()
-void _objc_msgSendSuper2()
+// 0000000100006010: void objc_msgSendSuper2()
+void objc_msgSendSuper2()
 {
-	__imp___objc_msgSendSuper2();
+	__imp__objc_msgSendSuper2();
 }
 
-// 000000010000601C: void _objc_release()
+// 000000010000601C: void objc_release()
 // Called from:
 //      fn0000000100005870
-void _objc_release()
+void objc_release()
 {
-	__imp___objc_release();
+	__imp__objc_release();
 }
 
-// 0000000100006028: void _objc_retain()
-void _objc_retain()
+// 0000000100006028: void objc_retain()
+void objc_retain()
 {
-	__imp___objc_retain();
+	__imp__objc_retain();
 }
 
-// 0000000100006034: void _objc_retainAutoreleasedReturnValue()
+// 0000000100006034: void objc_retainAutoreleasedReturnValue()
 // Called from:
 //      fn0000000100005870
-void _objc_retainAutoreleasedReturnValue()
+void objc_retainAutoreleasedReturnValue()
 {
-	__imp___objc_retainAutoreleasedReturnValue();
+	__imp__objc_retainAutoreleasedReturnValue();
 }
 
-// 0000000100006040: void _swift_bridgeObjectRelease()
-void _swift_bridgeObjectRelease()
+// 0000000100006040: void swift_bridgeObjectRelease()
+void swift_bridgeObjectRelease()
 {
-	__imp___swift_bridgeObjectRelease();
+	__imp__swift_bridgeObjectRelease();
 }
 
-// 000000010000604C: void _swift_bridgeObjectRetain()
-void _swift_bridgeObjectRetain()
+// 000000010000604C: void swift_bridgeObjectRetain()
+void swift_bridgeObjectRetain()
 {
-	__imp___swift_bridgeObjectRetain();
+	__imp__swift_bridgeObjectRetain();
 }
 
-// 0000000100006058: void _swift_dynamicCastObjCClass()
-void _swift_dynamicCastObjCClass()
+// 0000000100006058: void swift_dynamicCastObjCClass()
+void swift_dynamicCastObjCClass()
 {
-	__imp___swift_dynamicCastObjCClass();
+	__imp__swift_dynamicCastObjCClass();
 }
 
-// 0000000100006064: void _swift_getInitializedObjCClass()
+// 0000000100006064: void swift_getInitializedObjCClass()
 // Called from:
 //      fn0000000100005870
-void _swift_getInitializedObjCClass()
+void swift_getInitializedObjCClass()
 {
-	__imp___swift_getInitializedObjCClass();
+	__imp__swift_getInitializedObjCClass();
 }
 
-// 0000000100006070: void _swift_getOpaqueTypeConformance()
-void _swift_getOpaqueTypeConformance()
+// 0000000100006070: void swift_getOpaqueTypeConformance()
+void swift_getOpaqueTypeConformance()
 {
-	__imp___swift_getOpaqueTypeConformance();
+	__imp__swift_getOpaqueTypeConformance();
 }
 
-// 000000010000607C: void _swift_getWitnessTable()
-void _swift_getWitnessTable()
+// 000000010000607C: void swift_getWitnessTable()
+void swift_getWitnessTable()
 {
-	__imp___swift_getWitnessTable();
+	__imp__swift_getWitnessTable();
 }
 
 // subject_TEXT_text.c
@@ -169,12 +169,12 @@ void fn0000000100005870()
 {
 	if (g_qwDA40 == 0x00)
 	{
-		_swift_getInitializedObjCClass();
-		__store_release_64(&g_qwDA40, 0x10000D8F8);
+		swift_getInitializedObjCClass();
+		__store_release<word64>(&g_qwDA40, 0x10000D8F8);
 	}
-	_NSStringFromClass();
-	_objc_retainAutoreleasedReturnValue();
-	_UIApplicationMain();
-	_objc_release();
+	NSStringFromClass();
+	objc_retainAutoreleasedReturnValue();
+	UIApplicationMain();
+	objc_release();
 }
 

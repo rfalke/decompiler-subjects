@@ -4,221 +4,221 @@
 
 #include "subject.h"
 
-// 0804804C: void fn0804804C(Register word32 esi)
-void fn0804804C(word32 esi)
+// 0804804C: void fn0804804C(Register Eq_2 edx)
+void fn0804804C(Eq_2 edx)
 {
-	__syscall(0x80);
-	__syscall(0x80);
-	__syscall(0x80);
-	fn080482DF(&g_b8048316);
-	fn0804809D(0x03, &g_b804839B);
+	Eq_3 eax_16 = sys_open(&g_b8048300, 0x00, edx);
+	if (eax_16 >= 0x00)
+	{
+		eax_16 = sys_read(eax_16, &g_b804839B, 0x00040000);
+		if (eax_16 != 0x00)
+		{
+			sys_close(eax_16);
+			eax_16 = fn080482DF(&g_b8048316);
+			fn0804809D(eax_16, &g_b804839B);
+		}
+	}
+	sys_exit(eax_16);
 }
 
-// 0804809D: void fn0804809D(Register word32 ecx, Register (ptr32 byte) esi)
+// 0804809D: void fn0804809D(Register Eq_3 ecx, Register (ptr32 byte) esi)
 // Called from:
 //      fn0804804C
-void fn0804809D(word32 ecx, byte * esi)
+void fn0804809D(Eq_3 ecx, byte * esi)
 {
-	byte * dwLoc08_470 = esi;
-	word32 dwLoc0C_471 = ecx;
-	up32 dwLoc10_472 = 0x00;
+	byte * dwLoc08_500 = esi;
+	Eq_3 dwLoc0C_501 = ecx;
+	up32 dwLoc10_502 = 0x00;
 	while (true)
 	{
-		word32 ecx_16 = dwLoc0C_471;
-		if (dwLoc0C_471 == 0x00)
+		Eq_3 ecx_17 = dwLoc0C_501;
+		if (dwLoc0C_501 == 0x00)
 			break;
-		byte * esi_23 = dwLoc08_470;
-		byte * edi_24 = g_a808839B;
+		byte * esi_25 = dwLoc08_500;
+		byte * edi_26 = g_a808839B;
 		do
 		{
-			byte al_27 = *esi_23;
-			*edi_24 = al_27;
-			++esi_23;
-			++edi_24;
-			if (al_27 == 0x0A)
+			byte al_29 = *esi_25;
+			*edi_26 = al_29;
+			++esi_25;
+			++edi_26;
+			if (al_29 == 0x0A)
 				break;
-			--ecx_16;
-		} while (ecx_16 != 0x00);
-		*edi_24 = 0x00;
-		dwLoc08_470 = esi_23;
-		dwLoc0C_471 = ecx_16;
-		if (fn080482CF(0x08, esi_23, &g_b8048379) == 0x00)
+			--ecx_17;
+		} while (ecx_17 != 0x00);
+		*edi_26 = 0x00;
+		dwLoc08_500 = esi_25;
+		dwLoc0C_501 = ecx_17;
+		if (fn080482CF(0x08, esi_25, &g_t8048379) == 0x00)
 		{
-			dwLoc10_472 = 0x01;
-			struct Eq_72 * esi_275 = esi_23 + 8;
+			dwLoc10_502 = 0x01;
+			struct Eq_89 * esi_294 = esi_25 + 8;
 			do
 			{
-				esi_275 = esi_590 + 1;
-				esi_590 = esi_275;
-			} while (esi_590->b0000 != 0x20);
-			esi_275->bFFFFFFFF = 0x00;
-			fn080482DF(esi_23 + 8);
+				esi_294 = esi_636 + 1;
+				esi_636 = esi_294;
+			} while (esi_636->b0000 != 0x20);
+			esi_294->bFFFFFFFF = 0x00;
+			fn080482DF(esi_25 + 8);
 			fn080482DF(&g_b8048389);
-			struct Eq_93 * esi_310 = esi_23 + 31;
+			struct Eq_110 * esi_331 = esi_25 + 31;
 			do
 			{
-				esi_310 = esi_591 + 1;
-				esi_591 = esi_310;
-			} while (esi_591->b0000 != 0x20);
-			esi_310->bFFFFFFFF = 0x00;
-			fn080482DF(esi_23 + 31);
+				esi_331 = esi_637 + 1;
+				esi_637 = esi_331;
+			} while (esi_637->b0000 != 0x20);
+			esi_331->bFFFFFFFF = 0x00;
+			fn080482DF(esi_25 + 31);
 			fn080482DF(&g_b8048389);
-			struct Eq_115 * esi_345 = esi_23 + 46;
+			struct Eq_132 * esi_368 = esi_25 + 46;
 			do
 			{
-				esi_345 = esi_592 + 1;
-				esi_592 = esi_345;
-			} while (esi_592->b0000 == 0x20);
+				esi_368 = esi_638 + 1;
+				esi_638 = esi_368;
+			} while (esi_638->b0000 == 0x20);
 			do
 			{
-				esi_345 = esi_593 + 1;
-				esi_593 = esi_345;
-			} while (esi_593->b0000 != 0x20);
-			esi_345->bFFFFFFFF = 0x00;
-			fn080482DF(esi_23 + 46);
+				esi_368 = esi_639 + 1;
+				esi_639 = esi_368;
+			} while (esi_639->b0000 != 0x20);
+			esi_368->bFFFFFFFF = 0x00;
+			fn080482DF(esi_25 + 46);
 			fn080482DF(&g_b8048390);
-			struct Eq_145 * esi_387 = esi_23 + 54;
+			struct Eq_162 * esi_412 = esi_25 + 54;
 			do
 			{
-				esi_387 = esi_594 + 1;
-				esi_594 = esi_387;
-			} while (esi_594->b0000 != 0x20);
-			esi_387->bFFFFFFFF = 0x00;
-			int32 ecx_413 = 0x04 - fn080482DF(esi_23 + 54);
-			if (ecx_413 > 0x00)
+				esi_412 = esi_640 + 1;
+				esi_640 = esi_412;
+			} while (esi_640->b0000 != 0x20);
+			esi_412->bFFFFFFFF = 0x00;
+			int32 ecx_439 = 0x04 - fn080482DF(esi_25 + 54);
+			if (ecx_439 > 0x00)
 			{
 				do
 				{
 					fn080482DF(&g_b804838B);
-					--ecx_413;
-				} while (ecx_413 != 0x00);
+					--ecx_439;
+				} while (ecx_439 != 0x00);
 			}
 			fn080482DF(&g_b8048398);
 			fn080482DF(&g_b8048392);
 			fn080482DF(&g_b804838B);
 		}
-		else if (fn080482CF(0x09, esi_23, &g_b8048370) == 0x00)
+		else if (fn080482CF(0x09, esi_25, &g_t8048370) == 0x00)
 		{
-			struct Eq_193 * esi_225 = esi_23 + 9;
+			struct Eq_210 * esi_241 = esi_25 + 9;
 			do
 			{
-				esi_225 = esi_589 + 1;
-				esi_589 = esi_225;
-			} while (esi_589->b0000 != 0x20);
-			esi_225->bFFFFFFFF = 0x00;
-			if (dwLoc10_472 <= 0x00)
+				esi_241 = esi_635 + 1;
+				esi_635 = esi_241;
+			} while (esi_635->b0000 != 0x20);
+			esi_241->bFFFFFFFF = 0x00;
+			if (dwLoc10_502 <= 0x00)
 			{
-				word32 ecx_240;
-				for (ecx_240 = 0x12; ecx_240 != 0x00; --ecx_240)
+				word32 ecx_256;
+				for (ecx_256 = 0x12; ecx_256 != 0x00; --ecx_256)
 					fn080482DF(&g_b804838B);
 			}
-			fn080482DF(esi_23 + 9);
+			fn080482DF(esi_25 + 9);
 			fn080482DF(&g_b804838B);
 		}
-		else if (fn080482CF(0x11, esi_23, &g_b8048349) == 0x00)
+		else if (fn080482CF(0x11, esi_25, &g_t8048349) == 0x00)
 		{
-			struct Eq_231 * esi_184 = esi_23 + 0x0011;
+			struct Eq_248 * esi_197 = esi_25 + 0x0011;
 			do
 			{
-				esi_184 = esi_588 + 1;
-				esi_588 = esi_184;
-			} while (esi_588->b0000 != 0x0A);
-			esi_184->bFFFFFFFF = 0x00;
+				esi_197 = esi_634 + 1;
+				esi_634 = esi_197;
+			} while (esi_634->b0000 != 0x0A);
+			esi_197->bFFFFFFFF = 0x00;
 			fn080482DF(&g_b8048390);
-			fn080482DF(esi_23 + 0x0011);
-			esi_184->bFFFFFFFF = 0x0A;
+			fn080482DF(esi_25 + 0x0011);
+			esi_197->bFFFFFFFF = 0x0A;
 			fn080482DF(&g_b8048392);
 		}
-		else if (fn080482CF(0x0C, esi_23, &g_b804835A) == 0x00)
+		else if (fn080482CF(0x0C, esi_25, &g_t804835A) == 0x00)
 		{
-			struct Eq_265 * esi_159 = esi_23 + 0x0C;
+			struct Eq_282 * esi_171 = esi_25 + 0x0C;
 			do
 			{
-				esi_159 = esi_587 + 1;
-				esi_587 = esi_159;
-			} while (esi_587->b0000 != 0x0A);
-			esi_159->bFFFFFFFF = 0x00;
-			fn080482DF(esi_23 + 0x0C);
-			esi_159->bFFFFFFFF = 0x0A;
+				esi_171 = esi_633 + 1;
+				esi_633 = esi_171;
+			} while (esi_633->b0000 != 0x0A);
+			esi_171->bFFFFFFFF = 0x00;
+			fn080482DF(esi_25 + 0x0C);
+			esi_171->bFFFFFFFF = 0x0A;
 		}
-		else if (fn080482CF(0x0A, esi_23, &g_b8048366) == 0x00)
+		else if (fn080482CF(0x0A, esi_25, &g_t8048366) == 0x00)
 		{
-			struct Eq_287 * esi_107 = esi_23 + 62;
+			struct Eq_304 * esi_115 = esi_25 + 62;
 			do
 			{
-				esi_107 = esi_586 + 1;
-				esi_586 = esi_107;
-			} while (esi_586->b0000 != 0x0A);
-			esi_107->bFFFFFFFF = 0x00;
+				esi_115 = esi_632 + 1;
+				esi_632 = esi_115;
+			} while (esi_632->b0000 != 0x0A);
+			esi_115->bFFFFFFFF = 0x00;
 			fn080482DF(&g_b8048394);
-			fn080482DF(esi_23 + 62);
-			esi_107->bFFFFFFFF = 0x0A;
+			fn080482DF(esi_25 + 62);
+			esi_115->bFFFFFFFF = 0x0A;
 			fn080482DF(&g_b8048396);
 			fn080482DF(&g_b8048387);
 		}
 	}
 }
 
-// 080482CF: Register word32 fn080482CF(Register word32 ecx, Register (ptr32 byte) esi, Register (ptr32 byte) edi)
+// 080482CF: Register ui32 fn080482CF(Register uint32 ecx, Register (ptr32 byte) esi, Register (ptr32 Eq_59) edi)
 // Called from:
 //      fn0804809D
-word32 fn080482CF(word32 ecx, byte * esi, byte * edi)
+ui32 fn080482CF(uint32 ecx, byte * esi, <unknown>* edi)
 {
-	word32 eax_28 = 0x00;
-	bool v11_41 = true;
-	while (ecx != 0x00)
-	{
-		v11_41 = *esi_73 == *edi_74;
-		esi = esi_73 + 1;
-		edi = edi_74 + 1;
-		--ecx;
-		esi_73 = esi;
-		edi_74 = edi;
-		if (*esi_73 == *edi_74)
-			break;
-	}
-	if (!v11_41)
-		eax_28 = 0x01;
-	return eax_28;
+	ui32 eax_10 = 0x00;
+	Eq_338 cmpResult_12 = memcmp(esi, edi, ecx);
+	if (cmpResult_12 != 0x00)
+		eax_10 = 0x00 - (word32) (cmpResult_12 < 0x00) | 0x01;
+	return eax_10;
 }
 
-// 080482DF: Register word32 fn080482DF(Register (ptr32 byte) esi)
+// 080482DF: Register Eq_22 fn080482DF(Register (ptr32 char) esi)
 // Called from:
 //      fn0804804C
 //      fn0804809D
-word32 fn080482DF(byte * esi)
+Eq_22 fn080482DF(char * esi)
 {
+	Eq_22 eax;
 	if (esi != null)
 	{
-		word32 ecx_12 = 0x00;
+		size_t ecx_14 = 0x00;
+		esi_18 = esi;
 		while (true)
 		{
-			++esi;
-			if (*esi == 0x00)
+			char * esi_18;
+			++esi_18;
+			if (*esi_18 == 0x00)
 				break;
-			++ecx_12;
+			ecx_14 = (Eq_22) ((word32) ecx_14 + 1);
 		}
-		__syscall(0x80);
-		eax = ecx_12;
+		sys_write(0x01, esi, ecx_14);
+		eax = ecx_14;
 	}
 	return eax;
 }
 
-byte g_b8048316 = 66; // 08048316
-byte g_b8048349 = 0x53; // 08048349
-byte g_b804835A = 0x53; // 0804835A
-byte g_b8048366 = 0x49; // 08048366
-byte g_b8048370 = 0x44; // 08048370
-byte g_b8048379 = 0x54; // 08048379
-byte g_b8048387 = 0x0A; // 08048387
-byte g_b8048389 = 0x2E; // 08048389
-byte g_b804838B = 0x20; // 0804838B
-byte g_b8048390 = 0x5B; // 08048390
-byte g_b8048392 = 0x5D; // 08048392
-byte g_b8048394 = 0x7B; // 08048394
-byte g_b8048396 = 0x7D; // 08048396
-byte g_b8048398 = 77; // 08048398
-byte g_b804839B = 0x00; // 0804839B
+char g_b8048300 = '/'; // 08048300
+char g_b8048316 = 'B'; // 08048316
+Eq_59 g_t8048349 = // 08048349;
+Eq_59 g_t804835A = // 0804835A;
+Eq_59 g_t8048366 = // 08048366;
+Eq_59 g_t8048370 = // 08048370;
+Eq_59 g_t8048379 = // 08048379;
+char g_b8048387 = '\n'; // 08048387
+char g_b8048389 = '.'; // 08048389
+char g_b804838B = ' '; // 0804838B
+char g_b8048390 = '['; // 08048390
+char g_b8048392 = ']'; // 08048392
+char g_b8048394 = '{'; // 08048394
+char g_b8048396 = '}'; // 08048396
+char g_b8048398 = 'M'; // 08048398
+char g_b804839B = '\0'; // 0804839B
 // subject_seg08048000_0004.c
 // Generated by decompiling subject.exe
 // using Reko decompiler version VERSION

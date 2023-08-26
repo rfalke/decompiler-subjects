@@ -1,5 +1,6 @@
 === Using options:--aggressive-branch-removal
 subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
+MSVC RTTI scan found 151 complete object locators
 0000000140060D66: warning: Unable to resolve imported reference KERNEL32.dll!RtlVirtualUnwind.
 0000000140060D66: warning: Unable to resolve imported reference KERNEL32.dll!RtlVirtualUnwind.
 0000000140052E21: warning: Call target address 0000000000000000 is invalid.
@@ -32,18 +33,6 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 000000014008F5D3: warning: Unable to resolve imported reference USERENV.dll!ExpandEnvironmentStringsForUserW.
 000000014008F552: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_23.
 000000014008F552: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_23.
-000000014007F3C1: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
-000000014007F3C1: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
-000000014007F3DA: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
-000000014007F3DA: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
-000000014007F455: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
-000000014007F455: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
-000000014007F46C: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
-000000014007F46C: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
-000000014007F4BB: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
-000000014007F4BB: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
-000000014007F4D2: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
-000000014007F4D2: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
 0000000140060D60: warning: Unable to resolve imported reference KERNEL32.dll!RtlUnwindEx.
 00000001400DA9C3: warning: Unable to resolve imported reference USER32.dll!GetWindowLongPtrW.
 000000014007E0BD: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
@@ -108,6 +97,23 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 00000001400821FC: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveBlanksW.
 000000014008223E: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveBlanksW.
 00000001400C2166: warning: Unable to resolve imported reference USER32.dll!GetWindowLongPtrW.
+000000014007F3C1: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
+000000014007F3C1: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
+000000014007F3DA: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
+000000014007F3DA: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
+000000014007F455: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
+000000014007F455: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
+000000014007F46C: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
+000000014007F46C: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
+000000014007F4BB: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
+000000014007F4BB: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
+000000014007F4D2: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
+000000014007F4D2: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
+00000001400B5AC3: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00000001400B5AC3: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00000001400B0214: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00000001400B0214: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00000001400B12EE: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
 00000001400B5836: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
 00000001400B5836: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
 000000014007E22B: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
@@ -124,6 +130,7 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 00000001400C1264: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
 00000001400C12AA: warning: Unable to resolve imported reference SHLWAPI.dll!PathFindExtensionW.
 00000001400C12CB: warning: Unable to resolve imported reference SHLWAPI.dll!PathFindExtensionW.
+00000001400BDDF0: error: Argument size mismatch between word32 and int64.
 00000001400B63C6: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
 00000001400B63C6: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
 00000001400B63F5: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
@@ -153,9 +160,34 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 000000014007D066: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
 000000014007D07B: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
 000000014007D0A1: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveFileSpecW.
+00000001400927C7: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+00000001400927C7: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+00000001400B4714: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+00000001400D8D5A: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+00000001400D8D76: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+00000001400D8D91: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+00000001400D8DAC: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+00000001400D8DC8: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+00000001400D8DE4: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+00000001400D8DEF: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+00000001400B0A53: warning: Unable to resolve imported reference PSAPI.DLL!GetModuleFileNameExW.
+00000001400D3836: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+00000001400D3847: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+00000001400D3881: warning: Unable to resolve imported reference SHLWAPI.dll!PathRenameExtensionW.
+0000000140092A16: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0000000140092A16: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+00000001400928DD: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+00000001400928DD: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+00000001400D89B0: warning: Unable to resolve imported reference PSAPI.DLL!GetModuleFileNameExW.
+00000001400D89C6: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveFileSpecW.
+00000001400D89DA: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+00000001400D3618: warning: Unable to resolve imported reference SHELL32.dll!SHBrowseForFolderW.
+00000001400D3639: warning: Unable to resolve imported reference SHELL32.dll!SHGetPathFromIDListW.
+000000014009337D: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+000000014009337D: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0000000140081894: warning: Unable to resolve imported reference SHELL32.dll!SHGetSpecialFolderPathW.
+00000001400818B0: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
 00000001400D7ACE: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
-000000014009337D: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
-000000014009337D: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
 00000001400B1177: warning: Unable to resolve imported reference PSAPI.DLL!GetModuleFileNameExW.
 00000001400DAA16: warning: Unable to resolve imported reference USER32.dll!SetWindowLongPtrW.
 00000001400D70EF: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_71.
@@ -165,11 +197,6 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 00000001400D68D8: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
 00000001400D691B: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
 00000001400D6990: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
-00000001400D3618: warning: Unable to resolve imported reference SHELL32.dll!SHBrowseForFolderW.
-00000001400D3639: warning: Unable to resolve imported reference SHELL32.dll!SHGetPathFromIDListW.
-00000001400D3836: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
-00000001400D3847: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
-00000001400D3881: warning: Unable to resolve imported reference SHLWAPI.dll!PathRenameExtensionW.
 0000000140083515: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripToRootW.
 00000001400D2BD1: warning: Unable to resolve imported reference SHELL32.dll!SHBrowseForFolderW.
 00000001400D2A49: warning: Unable to resolve imported reference COMCTL32.dll!Ordinal_412.
@@ -182,12 +209,6 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 00000001400D1F59: warning: Unable to resolve imported reference PSAPI.DLL!GetModuleFileNameExW.
 00000001400D1D6D: warning: Unable to resolve imported reference SHLWAPI.dll!SHDeleteKeyW.
 00000001400D1C24: warning: Unable to resolve imported reference SHLWAPI.dll!SHDeleteKeyW.
-00000001400928DD: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
-00000001400928DD: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
-0000000140092A16: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
-0000000140092A16: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
-00000001400927C7: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
-00000001400927C7: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
 000000014007E640: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
 000000014007E6A0: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
 000000014007E700: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
@@ -250,7 +271,6 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 00000001400C2CA0: warning: Unable to resolve imported reference USER32.dll!SetClassLongPtrW.
 00000001400C2114: warning: Unable to resolve imported reference USER32.dll!GetWindowLongPtrW.
 00000001400BE66F: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
-00000001400B12EE: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
 00000001400C1837: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripToRootW.
 0000000140077049: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveFileSpecW.
 0000000140077149: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
@@ -277,8 +297,6 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 000000014007F6B4: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
 000000014007F6D8: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
 00000001400BDED4: warning: Unable to resolve imported reference USER32.dll!GetWindowLongPtrW.
-00000001400B0214: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
-00000001400B0214: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
 00000001400BC2D3: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
 00000001400BB607: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveExtensionW.
 00000001400BB61C: warning: Unable to resolve imported reference SHLWAPI.dll!PathFindExtensionW.
@@ -313,15 +331,12 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 00000001400B610B: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsUNCW.
 00000001400B6121: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripToRootW.
 00000001400B5DE3: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
-00000001400B5AC3: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
-00000001400B5AC3: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
 00000001400B58F4: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
 00000001400B58F4: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
 0000000140020C20: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
 0000000140020C20: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
 00000001400B575F: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
 00000001400B512F: warning: Unable to resolve imported reference PSAPI.DLL!GetModuleFileNameExW.
-00000001400B4714: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
 00000001400B4345: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
 00000001400B435E: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_23.
 00000001400B435E: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_23.
@@ -345,9 +360,9 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 00000001400B232B: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
 00000001400B0F0C: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
 00000001400B0EAA: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveFileSpecW.
-00000001400B0A53: warning: Unable to resolve imported reference PSAPI.DLL!GetModuleFileNameExW.
 00000001400AF50D: warning: Unable to resolve imported reference USER32.dll!SetWindowLongPtrW.
 00000001400AF4D3: warning: Unable to resolve imported reference USER32.dll!GetWindowLongPtrW.
+00000001400ACC19: warning: Unable to resolve imported reference SHELL32.dll!SHBrowseForFolderW.
 00000001400AC58C: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
 00000001400AC910: warning: Unable to resolve imported reference PSAPI.DLL!GetModuleFileNameExW.
 00000001400AC927: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveFileSpecW.
@@ -355,7 +370,6 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 00000001400AC6E7: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
 000000014008053C: warning: Unable to resolve imported reference USER32.dll!GetWindowLongPtrW.
 0000000140080581: warning: Unable to resolve imported reference USER32.dll!SetWindowLongPtrW.
-00000001400ACC19: warning: Unable to resolve imported reference SHELL32.dll!SHBrowseForFolderW.
 00000001400A8C63: warning: Unable to resolve imported reference SHLWAPI.dll!SHDeleteKeyW.
 00000001400A5E73: warning: Unable to resolve imported reference SHLWAPI.dll!SHDeleteKeyW.
 00000001400A5F95: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
@@ -440,6 +454,7 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 000000014007E066: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_17.
 000000014007E06F: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
 000000014007E06F: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0000000140095385: error: Argument size mismatch between word32 and uint64.
 000000014009655A: warning: Unable to resolve imported reference USER32.dll!GetWindowLongPtrW.
 0000000140096578: warning: Unable to resolve imported reference USER32.dll!SetWindowLongPtrW.
 00000001400948BC: warning: Unable to resolve imported reference gdiplus.dll!GdipCreateBitmapFromScan0.
@@ -476,8 +491,6 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 000000014008E992: warning: Unable to resolve imported reference SHLWAPI.dll!SHDeleteKeyW.
 000000014008D879: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
 000000014008D879: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
-000000014008D414: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
-000000014008D414: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
 000000014008D01C: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
 000000014008D01C: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
 000000014008D03A: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
@@ -494,6 +507,8 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 000000014007BDBD: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
 000000014007BE59: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_9.
 000000014007BE59: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_9.
+000000014008D414: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008D414: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
 000000014008CF3E: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
 000000014008CF3E: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
 000000014008CBEC: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
@@ -546,6 +561,28 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 000000014008C137: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
 000000014008C137: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
 000000014007C00D: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
+000000014008A9DF: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008A9DF: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008A9FD: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008A9FD: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008A29E: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008A29E: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008A36F: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008A36F: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008A452: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008A452: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008A460: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_8.
+000000014008A460: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_8.
+000000014008A46D: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008A46D: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008A51B: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_9.
+000000014008A51B: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_9.
+000000014008A680: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008A680: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008A6F4: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008A6F4: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008A8AF: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008A8AF: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
 000000014008C03B: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
 000000014008C03B: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
 000000014008C059: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
@@ -618,36 +655,10 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 000000014008BC61: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
 000000014008BD1C: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_9.
 000000014008BD1C: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_9.
-000000014008AFA2: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
-000000014008AFA2: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
-000000014008A9DF: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
-000000014008A9DF: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
-000000014008A9FD: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
-000000014008A9FD: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
-000000014008A29E: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
-000000014008A29E: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
-000000014008A36F: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
-000000014008A36F: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
-000000014008A452: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
-000000014008A452: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
-000000014008A460: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_8.
-000000014008A460: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_8.
-000000014008A46D: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
-000000014008A46D: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
-000000014008A51B: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_9.
-000000014008A51B: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_9.
-000000014008A680: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
-000000014008A680: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
-000000014008A6F4: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
-000000014008A6F4: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
-000000014008A8AF: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
-000000014008A8AF: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
 000000014008A18B: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
 000000014008A18B: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
 000000014008A19B: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
 000000014008A19B: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
-0000000140089C5E: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
-0000000140089C5E: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
 00000001400898AB: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
 00000001400898AB: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
 00000001400898C9: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
@@ -656,6 +667,10 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 000000014008968C: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
 000000014008973C: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
 000000014008973C: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008AFA2: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008AFA2: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0000000140089C5E: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0000000140089C5E: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
 000000014008692F: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
 000000014008692F: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
 0000000140086940: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
@@ -777,8 +792,6 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 0000000140082418: warning: Unable to resolve imported reference gdiplus.dll!GdipLoadImageFromFile.
 0000000140082459: warning: Unable to resolve imported reference gdiplus.dll!GdipGetImageWidth.
 0000000140082480: warning: Unable to resolve imported reference gdiplus.dll!GdipGetImageHeight.
-0000000140081894: warning: Unable to resolve imported reference SHELL32.dll!SHGetSpecialFolderPathW.
-00000001400818B0: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
 000000014008163A: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
 00000001400812D9: warning: Unable to resolve imported reference USER32.dll!SetWindowLongPtrW.
 0000000140080706: warning: Unable to resolve imported reference SHLWAPI.dll!PathFindExtensionW.
@@ -832,6 +845,10 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 000000014007297B: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
 00000001400726F8: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
 00000001400726F8: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0000000140072652: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0000000140072652: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0000000140072620: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0000000140072620: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
 00000001400722B3: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
 00000001400722B3: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
 0000000140071FE3: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
@@ -985,6 +1002,8 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 000000014006EB41: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
 000000014006E93A: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
 000000014006E968: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+000000014006E854: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+000000014006E854: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
 000000014006E49C: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
 000000014006E49C: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
 000000014006E3AB: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
@@ -1090,6 +1109,9 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 0000000140053622: warning: Unable to resolve imported reference KERNEL32.dll!RtlUnwindEx.
 0000000140060D60: warning: Unable to resolve imported reference KERNEL32.dll!RtlUnwindEx.
 0000000140055986: warning: Call target address 0000000000000000 is invalid.
+0000000140047BE2: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
+000000014003C15A: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
+000000014003B88E: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
 000000014002B27D: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
 000000014002B27D: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
 000000014002B2FE: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
@@ -1212,359 +1234,847 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 0000000140017C6D: warning: Unable to resolve imported reference gdiplus.dll!GdipAlloc.
 0000000140017B9D: warning: Unable to resolve imported reference gdiplus.dll!GdipDisposeImage.
 0000000140017BAB: warning: Unable to resolve imported reference gdiplus.dll!GdipFree.
-00000001400048C2: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
-fn000000014005BFA8: error: An internal error occurred while building the expressions of fn000000014005BFA8
-    The given key 'rax_243' was not present in the dictionary.
-       at System.Collections.Generic.Dictionary`2.get_Item(TKey key) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs:line 181
-   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 168
-   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 139
-   at Reko.Analysis.UnreachableBlockRemover.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 75
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 381
-fn00000001400106A0: error: An internal error occurred while building the expressions of fn00000001400106A0
-    The given key 'rcx_140' was not present in the dictionary.
-       at System.Collections.Generic.Dictionary`2.get_Item(TKey key) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs:line 181
-   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 168
-   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 139
-   at Reko.Analysis.UnreachableBlockRemover.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 77
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 381
-fn000000014002D0E4: error: An internal error occurred while building the expressions of fn000000014002D0E4
-    The given key 'rbx_67' was not present in the dictionary.
-       at System.Collections.Generic.Dictionary`2.get_Item(TKey key) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs:line 181
-   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 168
-   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 139
-   at Reko.Analysis.UnreachableBlockRemover.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 77
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 381
-fn000000014001FE90: error: An internal error occurred while building the expressions of fn000000014001FE90
-    The given key 'r13_926' was not present in the dictionary.
-       at System.Collections.Generic.Dictionary`2.get_Item(TKey key) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs:line 181
-   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 168
-   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 139
-   at Reko.Analysis.UnreachableBlockRemover.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 77
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 381
-fn0000000140077B00: error: An internal error occurred while building the expressions of fn0000000140077B00
-    The given key 'r9_447' was not present in the dictionary.
-       at System.Collections.Generic.Dictionary`2.get_Item(TKey key) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs:line 181
-   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 168
-   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 139
-   at Reko.Analysis.UnreachableBlockRemover.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 77
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 381
-fn00000001400257F4: error: An internal error occurred while building the expressions of fn00000001400257F4
-    The given key 'rbx_110' was not present in the dictionary.
-       at System.Collections.Generic.Dictionary`2.get_Item(TKey key) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs:line 181
-   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 168
-   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 139
-   at Reko.Analysis.UnreachableBlockRemover.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 77
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 381
-fn0000000140060574: error: An internal error occurred while building the expressions of fn0000000140060574
-    The given key 'r11_898' was not present in the dictionary.
-       at System.Collections.Generic.Dictionary`2.get_Item(TKey key) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs:line 181
-   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 168
-   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 139
-   at Reko.Analysis.UnreachableBlockRemover.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 77
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 381
-fn0000000140083DE0: error: An internal error occurred while building the expressions of fn0000000140083DE0
-    The given key 'xmm6_239' was not present in the dictionary.
-       at System.Collections.Generic.Dictionary`2.get_Item(TKey key) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs:line 181
-   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 168
-   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 139
-   at Reko.Analysis.UnreachableBlockRemover.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 77
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 381
-fn000000014002F708: error: An internal error occurred while building the expressions of fn000000014002F708
-    The given key 'bLocD7_7196' was not present in the dictionary.
-       at System.Collections.Generic.Dictionary`2.get_Item(TKey key) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs:line 181
-   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 168
-   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 139
-   at Reko.Analysis.UnreachableBlockRemover.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 77
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 381
-fn0000000140030CFC: error: An internal error occurred while building the expressions of fn0000000140030CFC
-    The given key 'bLocC8_6045' was not present in the dictionary.
-       at System.Collections.Generic.Dictionary`2.get_Item(TKey key) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs:line 181
-   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 168
-   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 139
-   at Reko.Analysis.UnreachableBlockRemover.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 77
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 381
-fn00000001400399B4: error: An internal error occurred while building the expressions of fn00000001400399B4
-    The given key 'dwLocF4_7945' was not present in the dictionary.
-       at System.Collections.Generic.Dictionary`2.get_Item(TKey key) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs:line 181
-   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 168
-   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 139
-   at Reko.Analysis.UnreachableBlockRemover.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 77
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 381
-fn000000014003CB40: error: An internal error occurred while building the expressions of fn000000014003CB40
-    The given key 'r9_2263' was not present in the dictionary.
-       at System.Collections.Generic.Dictionary`2.get_Item(TKey key) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs:line 181
-   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 168
-   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 139
-   at Reko.Analysis.UnreachableBlockRemover.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 77
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 381
-fn00000001400405C0: error: An internal error occurred while building the expressions of fn00000001400405C0
-    The given key 'rdx_790' was not present in the dictionary.
-       at System.Collections.Generic.Dictionary`2.get_Item(TKey key) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs:line 181
-   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 168
-   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 139
-   at Reko.Analysis.UnreachableBlockRemover.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 77
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 381
-fn0000000140043178: error: An internal error occurred while building the expressions of fn0000000140043178
-    The given key 'rdx_799' was not present in the dictionary.
-       at System.Collections.Generic.Dictionary`2.get_Item(TKey key) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs:line 181
-   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 168
-   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 139
-   at Reko.Analysis.UnreachableBlockRemover.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 77
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 381
-fn0000000140043E60: error: An internal error occurred while building the expressions of fn0000000140043E60
-    The given key 'r14b_2254' was not present in the dictionary.
-       at System.Collections.Generic.Dictionary`2.get_Item(TKey key) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs:line 181
-   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 168
-   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 139
-   at Reko.Analysis.UnreachableBlockRemover.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 77
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 381
-fn0000000140048AC4: error: An internal error occurred while building the expressions of fn0000000140048AC4
-    The given key 'r9_56_8_2099' was not present in the dictionary.
-       at System.Collections.Generic.Dictionary`2.get_Item(TKey key) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs:line 181
-   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 168
-   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 139
-   at Reko.Analysis.UnreachableBlockRemover.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 77
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 381
-fn000000014005F580: error: An internal error occurred while building the expressions of fn000000014005F580
-    The given key 'r9w_1244' was not present in the dictionary.
-       at System.Collections.Generic.Dictionary`2.get_Item(TKey key) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs:line 181
-   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 168
-   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 139
-   at Reko.Analysis.UnreachableBlockRemover.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 77
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 381
-fn0000000140096670: error: An internal error occurred while building the expressions of fn0000000140096670
-    The given key 'Mem235' was not present in the dictionary.
-       at System.Collections.Generic.Dictionary`2.get_Item(TKey key) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs:line 181
-   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 168
-   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 139
-   at Reko.Analysis.UnreachableBlockRemover.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 77
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 381
-fn00000001400D6FB0: error: An internal error occurred while building the expressions of fn00000001400D6FB0
-    Dominator graph calculation timed out.
-       at Reko.Core.Lib.DominatorGraph`1.Intersect(Dictionary`2 postdoms, T b1, T b2) in /home/runner/work/reko/reko/src/Core/Lib/DominatorGraph.cs:line 233
-   at Reko.Core.Lib.DominatorGraph`1.Build(DirectedGraph`1 graph, T entryNode) in /home/runner/work/reko/reko/src/Core/Lib/DominatorGraph.cs:line 161
-   at Reko.Core.Lib.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode) in /home/runner/work/reko/reko/src/Core/Lib/DominatorGraph.cs:line 46
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 397
-0000000140005811: error: An error occurred while processing the statement Mem72[Mem54[rcx + 0<64>:word64] + 0<64>:word16] = 0<16>.
-    Invalid pointer size. (Parameter 'bitSize')
-       at Reko.Core.Types.Pointer..ctor(DataType pointee, Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/Pointer.cs:line 37
-   at Reko.Typing.ExpressionTypeDescender.StructField(Expression eBase, Expression eStructPtr, Int32 offset, DataType dtField, Int32 structPtrBitSize) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 234
-   at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess(Expression basePointer, TypeVariable tvAccess, Expression effectiveAddress, Expression globals) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 608
-   at Reko.Typing.TypeCollector.VisitStore(Store store) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
-   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
-0000000140005D60: error: An error occurred while processing the statement Mem5584[qwLocE0_6140 + 0<64>:byte] = Mem5543[CONVERT(ebx_1588, word32, int64) + 0x00000001400F6818<p64>:byte].
-    Object reference not set to an instance of an object.
-       at Reko.Typing.ExpressionTypeDescender.MeetDataType(TypeVariable tvExp, DataType dt) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 450
-   at Reko.Typing.ExpressionTypeDescender.ArrayField(Expression expBase, Expression expStruct, Int32 structPtrBitSize, Int32 offset, Int32 elementSize, Int32 length, TypeVariable tvField) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 212
-   at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess(Expression basePointer, TypeVariable tvAccess, Expression effectiveAddress, Expression globals) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 608
-   at Reko.Typing.TypeCollector.VisitStore(Store store) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
-   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
-00000001400060C8: error: An error occurred while processing the statement Mem1164[r13_1165 + 0<64>:byte] = Mem1009[CONVERT(ebx_1087, word32, int64) + 0x00000001400F6818<p64>:byte].
-    Object reference not set to an instance of an object.
-       at Reko.Typing.ExpressionTypeDescender.MeetDataType(TypeVariable tvExp, DataType dt) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 450
-   at Reko.Typing.ExpressionTypeDescender.ArrayField(Expression expBase, Expression expStruct, Int32 structPtrBitSize, Int32 offset, Int32 elementSize, Int32 length, TypeVariable tvField) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 212
-   at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess(Expression basePointer, TypeVariable tvAccess, Expression effectiveAddress, Expression globals) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 608
-   at Reko.Typing.TypeCollector.VisitStore(Store store) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
-   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
-00000001400065DA: error: An error occurred while processing the statement Mem5254[r13_1165 + 0<64>:byte] = Mem3156[CONVERT(ecx_3226, word32, int64) + 0x00000001400F6818<p64>:byte].
-    Object reference not set to an instance of an object.
-       at Reko.Typing.ExpressionTypeDescender.MeetDataType(TypeVariable tvExp, DataType dt) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 450
-   at Reko.Typing.ExpressionTypeDescender.ArrayField(Expression expBase, Expression expStruct, Int32 structPtrBitSize, Int32 offset, Int32 elementSize, Int32 length, TypeVariable tvField) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 212
-   at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess(Expression basePointer, TypeVariable tvAccess, Expression effectiveAddress, Expression globals) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 608
-   at Reko.Typing.TypeCollector.VisitStore(Store store) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
-   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
-l0000000140010809: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
-000000014002C6D1: error: An error occurred while processing the statement word64 rcx_298 = rbx_210 - CONVERT(Mem258[CONVERT(esi_154, word32, int64) + 0x00000001400E4420<p64>:byte], byte, int64) - rbx_136.
-    Object reference not set to an instance of an object.
-       at Reko.Typing.ExpressionTypeDescender.MeetDataType(TypeVariable tvExp, DataType dt) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 450
-   at Reko.Typing.ExpressionTypeDescender.ArrayField(Expression expBase, Expression expStruct, Int32 structPtrBitSize, Int32 offset, Int32 elementSize, Int32 length, TypeVariable tvField) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 213
-   at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess(Expression basePointer, TypeVariable tvAccess, Expression effectiveAddress, Expression globals) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 608
-   at Reko.Typing.ExpressionTypeDescender.VisitConversion(Conversion conversion, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 500
-   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 352
-   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 352
-   at Reko.Typing.TypeCollector.VisitDeclaration(Declaration decl) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 239
-   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
-000000014004D46E: error: An error occurred while processing the statement branch (Mem39[rdx + 0<64>:byte] & 8<8>) == 0<8> l000000014004D475.
+/home/hawk/kza/decompiler-subjects.clean/from_explorerplusplus.com/version_1.3.4/x64_pe_from_website/subject.exe: error: An internal error occurred while analyzing /home/hawk/kza/decompiler-subjects.clean/from_explorerplusplus.com/version_1.3.4/x64_pe_from_website/subject.exe.
+    Invalid bit size. (Parameter 'dt')
+       at Reko.Core.Expressions.Constant.Slice(DataType dt, Int32 offset) in /home/runner/work/reko/reko/src/Core/Expressions/Constant.cs:line 435
+   at Reko.Evaluation.SliceConstant_Rule.Match(Slice slice) in /home/runner/work/reko/reko/src/Decompiler/Evaluation/SliceConstant_Rule.cs:line 46
+   at Reko.Evaluation.ExpressionSimplifier.VisitSlice(Slice slice) in /home/runner/work/reko/reko/src/Decompiler/Evaluation/ExpressionSimplifier.Slice.cs:line 65
+   at Reko.Analysis.TrashedRegisterFinder.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Analysis/TrashedRegisterFinder.cs:line 335
+   at Reko.Analysis.TrashedRegisterFinder.ProcessBlock(Block block) in /home/runner/work/reko/reko/src/Decompiler/Analysis/TrashedRegisterFinder.cs:line 262
+   at Reko.Analysis.TrashedRegisterFinder.Compute() in /home/runner/work/reko/reko/src/Decompiler/Analysis/TrashedRegisterFinder.cs:line 99
+   at Reko.Analysis.SccWorker.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/SccWorker.cs:line 91
+   at Reko.Analysis.DataFlowAnalysis.RewriteProceduresToSsa() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 178
+   at Reko.Analysis.DataFlowAnalysis.UntangleProcedures() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 128
+   at Reko.Decompiler.AnalyzeDataFlow() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 111
+fn0000000140001000_exit: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
+00000001400195C9: error: An error occurred while processing the statement SCZO = cond(rdx - rax).
     Specified argument was out of the range of valid values. (Parameter 'bitSize')
-       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 159
-   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 180
-   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 180
-   at Reko.Typing.TypeCollector.VisitBranch(Branch branch) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 203
-   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
-00000001400520F1: error: An error occurred while processing the statement ecx_129 = CONVERT(Mem106[CONVERT(r13w_111, word16, uint64) - 0x20<64> + 0x00000001400E82A0<p64>:byte], byte, int32) & 0xF<32> (alias).
-    Not handling (ptr64 (struct (400E82A0 T_161976 t400E82A0))) and uint64 yet
-       at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType(DataType dtDiff, DataType dtMin) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 428
-   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 352
-   at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess(Expression basePointer, TypeVariable tvAccess, Expression effectiveAddress, Expression globals) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 608
-   at Reko.Typing.ExpressionTypeDescender.VisitConversion(Conversion conversion, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 500
-   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 352
-   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 196
-   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
-fn000000014000102E: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0000000140002680: error: An error occurred while rewriting procedure to high-level language.
-    Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
-       at System.Collections.Generic.List`1.get_Item(Int32 index) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/List.cs:line 148
-   at Reko.Core.Block.get_ThenBlock() in /home/runner/work/reko/reko/src/Core/Block.cs:line 91
-   at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block) in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 96
-   at Reko.Structure.CompoundConditionCoalescer.Transform() in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 62
-   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 79
-   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 535
-fn0000000140008079: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn000000014000808F: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0000000140009952: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0000000140009968: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn000000014000A215: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn000000014000A65D: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn000000014000A9EA: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn000000014000AA56: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn000000014000AABA: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn000000014000AC06: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn000000014000AD14: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn000000014000B5DD: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn000000014000C5F6: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn000000014000CC0D: error: An error occurred while rewriting procedure to high-level language.
-    Can't collapse fn000000014000CC0D_entry (Tail) => l000000014000CC14) in procedure fn000000014000CC0D
-       at Reko.Structure.StructureAnalysis.CollapseToTailRegion(Region from, Region to, AbsynStatement stm) in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 957
-   at Reko.Structure.StructureAnalysis.VirtualizeEdge(VirtualEdge vEdge) in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 903
-   at Reko.Structure.StructureAnalysis.VirtualizeReturn(Region n) in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 309
-   at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 282
-   at Reko.Structure.StructureAnalysis.Execute() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 169
-   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 81
-   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 535
-fn000000014000CC7C: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0000000140013406: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0000000140013F1A: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0000000140013FC2: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0000000140013FF0: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn000000014001506D: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0000000140016016: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn000000014001622A: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0000000140018D1D: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0000000140018EBC: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn000000014001A34D: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn000000014001A581: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn000000014001FE90: error: An error occurred while rewriting procedure to high-level language.
-    The given key 'l0000000140020216' was not present in the dictionary.
-       at System.Collections.Generic.Dictionary`2.get_Item(TKey key) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs:line 181
-   at Reko.Core.Lib.DominatorGraph`1.BuildDominanceFrontiers(DirectedGraph`1 graph, Dictionary`2 idoms) in /home/runner/work/reko/reko/src/Core/Lib/DominatorGraph.cs:line 192
-   at Reko.Core.Lib.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode) in /home/runner/work/reko/reko/src/Core/Lib/DominatorGraph.cs:line 46
-   at Reko.Structure.StructureAnalysis.Execute() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 144
-   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 94
-   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 535
-fn00000001400216E1: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn000000014002604C: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn000000014002927D: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn00000001400297B3: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn000000014002A5E5: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn000000014002B461: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn000000014002BE14: error: An error occurred while rewriting procedure to high-level language.
-    Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
-       at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block) in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 95
-   at Reko.Structure.CompoundConditionCoalescer.Transform() in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 62
-   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 94
-   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 535
-fn000000014002F708: error: An error occurred while rewriting procedure to high-level language.
-    Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
-       at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block) in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 95
-   at Reko.Structure.CompoundConditionCoalescer.Transform() in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 62
-   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 94
-   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 535
-fn0000000140030CFC: error: An error occurred while rewriting procedure to high-level language.
-    Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
-       at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block) in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 95
-   at Reko.Structure.CompoundConditionCoalescer.Transform() in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 62
-   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 94
-   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 535
-fn00000001400399B4: error: An error occurred while rewriting procedure to high-level language.
-    The given key 'l000000014003A151' was not present in the dictionary.
-       at System.Collections.Generic.Dictionary`2.get_Item(TKey key) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs:line 181
-   at Reko.Core.Lib.DominatorGraph`1.BuildDominanceFrontiers(DirectedGraph`1 graph, Dictionary`2 idoms) in /home/runner/work/reko/reko/src/Core/Lib/DominatorGraph.cs:line 192
-   at Reko.Core.Lib.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode) in /home/runner/work/reko/reko/src/Core/Lib/DominatorGraph.cs:line 46
-   at Reko.Structure.StructureAnalysis.Execute() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 144
-   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 94
-   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 535
-fn0000000140043E60: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0000000140048AC4: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn00000001400504D8: error: An error occurred while rewriting procedure to high-level language.
-    Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
-       at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block) in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 95
-   at Reko.Structure.CompoundConditionCoalescer.Transform() in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 62
-   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 94
-   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 535
-fn0000000140060574: error: An error occurred while rewriting procedure to high-level language.
-    Index was outside the bounds of the array.
-       at Reko.Structure.StructureAnalysis.ReduceIfRegion(Region n) in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 323
-   at Reko.Structure.StructureAnalysis.ReduceAcyclic(Region n) in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 245
-   at Reko.Structure.StructureAnalysis.Execute() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 155
-   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 94
-   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 535
-fn0000000140061036: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0000000140061166: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0000000140062A9E: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0000000140066060: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn000000014006A0F6: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn000000014006A186: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn000000014006B98F: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn000000014006FA69: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0000000140070873: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0000000140070889: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0000000140070984: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0000000140070FC6: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0000000140073B02: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn00000001400748D1: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0000000140075E8A: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0000000140077B00: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0000000140079C79: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn000000014007A3BA: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn000000014007DCCA: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn000000014007F375: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn000000014007F695: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0000000140080A55: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0000000140084579: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0000000140084C21: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0000000140084CF3: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0000000140085657: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn000000014008573F: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0000000140085BA6: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0000000140090A9C: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0000000140091AD0: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0000000140092897: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0000000140092D64: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn00000001400945E5: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0000000140095E05: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0000000140096670: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn000000014009C02A: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn00000001400A30DE: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn00000001400A47A0: error: An error occurred while rewriting procedure to high-level language.
-    Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
-       at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block) in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 95
-   at Reko.Structure.CompoundConditionCoalescer.Transform() in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 62
-   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 94
-   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 535
-fn00000001400A8181: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn00000001400A82A8: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn00000001400A82C0: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn00000001400AB360: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn00000001400AB90A: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn00000001400AC83C: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn00000001400B651F: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn00000001400B7CE1: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn00000001400BDA93: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn00000001400BE5B4: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn00000001400BE648: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn00000001400C4FB3: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn00000001400CB39C: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn00000001400CB3AB: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn00000001400CCEC9: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn00000001400CD66E: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn00000001400CD70C: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn00000001400D27B1: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn00000001400D294A: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn00000001400D33F3: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn00000001400D3500: error: An error occurred while rewriting procedure to high-level language.
-    Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
-       at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block) in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 95
-   at Reko.Structure.CompoundConditionCoalescer.Transform() in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 62
-   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 94
-   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 535
-fn00000001400D6A29: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 186
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 194
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0000000140019F01: error: An error occurred while processing the statement SCZO = cond(rdx - rax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 186
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 194
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+000000014001AF00: error: An error occurred while processing the statement SCZO = cond(rdx - rax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 186
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 194
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+000000014004D466: error: An error occurred while processing the statement SZP_45 = cond(Mem40[rdx + 0<64>:byte] & 8<8>).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 186
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 194
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+000000014004D46E: error: An error occurred while processing the statement branch (Mem40[rdx + 0<64>:byte] & 8<8>) == 0<8> l000000014004D475.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 186
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 186
+   at Reko.Typing.TypeCollector.VisitBranch(Branch branch) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 201
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+000000014004FF90: error: An error occurred while processing the statement SZP = cond(Mem0[rax + 0<64>:word32] & 0x240<32>).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 186
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 194
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+000000014004FFA6: error: An error occurred while processing the statement SZP = cond(Mem0[rax + 0<64>:byte] & 0x81<8>).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 186
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 194
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+000000014004FFC2: error: An error occurred while processing the statement SZP = cond(Mem0[rax + 0<64>:word32] & 0x100<32>).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 186
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 194
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+00000001400E24B5: error: An error occurred while processing the statement rcx = rcx[rax * 8<64>].
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 399
+   at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess(ArrayAccess acc, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 193
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 194
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+00000001400E24C9: error: An error occurred while processing the statement SZP = cond(rax & rax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 186
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 194
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+=== Killed because of CPU time limit

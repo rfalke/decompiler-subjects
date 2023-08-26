@@ -4,5 +4,4 @@
 
 #include "subject.h"
 
-struct Eq_4 * g_ptr70000;
-
+struct Eq_5 * g_ptr70000; // 00070000

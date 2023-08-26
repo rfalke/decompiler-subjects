@@ -1,3 +1,3 @@
 === Using options:--aggressive-branch-removal
-Packer 'UPX v0.71 - v0.72' detected.
-warning: Unable to unpack executable file packed with 'UPX v0.71 - v0.72'.
+Signature of 'UPX v0.71 - v0.72' detected.
+00407139: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.

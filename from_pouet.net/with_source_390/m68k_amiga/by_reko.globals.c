@@ -4,5 +4,4 @@
 
 #include "subject.h"
 
-ui32 g_dw0FFC;
-
+ui32 g_dw0FFC; // 00000FFC

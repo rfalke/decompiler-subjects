@@ -4,35 +4,31 @@
 
 #include "subject.h"
 
-// 0804804C: void fn0804804C(Stack word32 dwArg00, Stack (ptr32 Eq_3) dwArg04)
-void fn0804804C(word32 dwArg00, struct Eq_3 * dwArg04)
+// 0804804C: void fn0804804C(Stack (ptr32 Eq_2) dwArg04)
+void fn0804804C(struct Eq_2 * dwArg04)
 {
-	struct Eq_3 * esi_11 = dwArg04;
+	struct Eq_2 * esi_12 = dwArg04;
 	do
 	{
-		esi_11 = esi_78 + 1;
-		esi_78 = esi_11;
-	} while (esi_78->b0000 != 0x00);
-	esi_11->bFFFFFFF8 == 0x69;
-	fn08048070();
-	__syscall(0x80);
-	__syscall(0x80);
-	g_b8188569 = 0x00;
-	g_dw818856A = 0x03;
-	g_ptr804806C();
+		esi_12 = esi_42 + 1;
+		esi_42 = esi_12;
+	} while (esi_42->b0000 != 0x00);
+	esi_12->bFFFFFFF8 == 0x69;
+	sys_exit(fn08048070());
 }
 
 <anonymous> * g_ptr804806C = &g_t80480F6; // 0804806C
-// 08048070: void fn08048070()
+// 08048070: Register word32 fn08048070()
 // Called from:
 //      fn0804804C
-void fn08048070()
+word32 fn08048070()
 {
 	fn080480E2();
-	__syscall(0x80);
+	int32 eax_16 = sys_read(0x00, g_a8088569, 0x00100000);
 	g_b8188569 = 0x00;
-	g_dw818856A = 0x03;
+	g_dw818856A = eax_16;
 	g_ptr804806C();
+	return 0x00;
 }
 
 // 080480E2: void fn080480E2()
@@ -40,12 +36,12 @@ void fn08048070()
 //      fn08048070
 void fn080480E2()
 {
-	word32 ecx_28;
-	word32 * edi_29 = g_a8088569;
-	for (ecx_28 = 0x00080000; ecx_28 != 0x00; --ecx_28)
+	word32 ecx_29;
+	word32 * edi_30 = g_a8088569;
+	for (ecx_29 = 0x00080000; ecx_29 != 0x00; --ecx_29)
 	{
-		*edi_29 = ~0x08265FC0;
-		++edi_29;
+		*edi_30 = ~0x08265FC0;
+		++edi_30;
 	}
 }
 
@@ -66,4 +62,4 @@ word32 g_a8088569[] = // 08088569
 #include "subject.h"
 
 byte g_b8188569 = 0x00; // 08188569
-word32 g_dw818856A = 0x00; // 0818856A
+int32 g_dw818856A = 0; // 0818856A

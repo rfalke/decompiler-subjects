@@ -1,5 +1,5 @@
 === Using options:--aggressive-branch-removal
-08048791: warning: Unable to resolve imported reference __gmon_start__.
+080487E4: warning: Unable to resolve imported reference __gmon_start__.
 080489DF: warning: Call target address 00000000 is invalid.
 080487C4: warning: Unable to resolve imported reference glEnableClientState.
 08048804: warning: Unable to resolve imported reference SDL_ShowCursor.

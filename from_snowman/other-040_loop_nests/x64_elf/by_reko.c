@@ -26,37 +26,37 @@ void f(word32 ecx, word32 edx, word32 esi, word32 edi)
 	word32 esi;
 	edx = (word32) rdx;
 	word32 ecx;
-	dwLoc0C_115 = edi;
-	dwLoc10_116 = esi;
-	dwLoc18_118 = ecx;
+	dwLoc0C_121 = edi;
+	dwLoc10_122 = esi;
+	dwLoc18_124 = ecx;
 	while (true)
 	{
-		dwLoc10_147 = ϕ(dwLoc10_116, dwLoc10_123);
+		dwLoc10_153 = ϕ(dwLoc10_122, dwLoc10_129);
 		if (edi == 0x00)
 			break;
-		dwLoc10_120 = ϕ(dwLoc10_147, dwLoc10_121);
+		dwLoc10_126 = ϕ(dwLoc10_153, dwLoc10_127);
 		h();
-		v14_37 = dwLoc10_120 + 0x01;
-		dwLoc10_123 = v14_37;
+		v16_38 = dwLoc10_126 + 0x01;
+		dwLoc10_129 = v16_38;
 	}
 l000000000040020B:
-	dwLoc18_160 = ϕ(dwLoc18_118, dwLoc18_135, dwLoc18_135, dwLoc18_135);
-	dwLoc0C_125 = ϕ(dwLoc0C_115, dwLoc0C_133, dwLoc0C_133, dwLoc0C_134);
-	rax_43 = (uint64) dwLoc10_147;
-	eax_46 = (word32) rax_43;
-	rdx_45 = (uint64) dwLoc0C_125;
-	edx_47 = (word32) rdx_45;
-	eax_48 = eax_46 + edx_47;
-	rax_49 = (uint64) eax_48;
-	eax_50 = (word32) rax_49;
-	if (eax_50 == edx)
+	dwLoc18_166 = ϕ(dwLoc18_124, dwLoc18_141, dwLoc18_141, dwLoc18_141);
+	dwLoc0C_131 = ϕ(dwLoc0C_121, dwLoc0C_139, dwLoc0C_139, dwLoc0C_140);
+	rax_44 = (uint64) dwLoc10_153;
+	eax_47 = (word32) rax_44;
+	rdx_46 = (uint64) dwLoc0C_131;
+	edx_48 = (word32) rdx_46;
+	eax_49 = eax_47 + edx_48;
+	rax_50 = (uint64) eax_49;
+	eax_51 = (word32) rax_50;
+	if (eax_51 == edx)
 		return;
 l00000000004001C2:
-	dwLoc18_159 = ϕ(dwLoc18_160, dwLoc18_164);
-	dwLoc0C_158 = ϕ(dwLoc0C_125, dwLoc0C_132);
+	dwLoc18_165 = ϕ(dwLoc18_166, dwLoc18_170);
+	dwLoc0C_164 = ϕ(dwLoc0C_131, dwLoc0C_138);
 	h();
-	dwLoc18_135 = ϕ(dwLoc18_159, dwLoc18_136, dwLoc18_135);
-	dwLoc0C_133 = ϕ(dwLoc0C_158, dwLoc0C_134, dwLoc0C_134);
+	dwLoc18_141 = ϕ(dwLoc18_165, dwLoc18_142, dwLoc18_141);
+	dwLoc0C_139 = ϕ(dwLoc0C_164, dwLoc0C_140, dwLoc0C_140);
 	g();
 	goto l000000000040020B;
 }

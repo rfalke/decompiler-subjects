@@ -4,6 +4,5 @@
 
 #include "subject.h"
 
-struct Eq_248 * g_ptrFFFA0000;
-Eq_228 g_t0001;
-
+Eq_235 g_t0001;
+struct Eq_255 * g_ptrFFFA0000; // FFFA0000

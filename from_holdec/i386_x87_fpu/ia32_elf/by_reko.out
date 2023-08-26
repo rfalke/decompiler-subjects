@@ -1,8 +1,22 @@
 === Using options:--aggressive-branch-removal
-0804B711: warning: Expected a use of FPU status. Last test instruction at 0804B711
-0804B6B0: warning: Expected a use of FPU status. Last test instruction at 0804B6B0
-0804ABCE: warning: Expected a use of FPU status. Last test instruction at 0804ABCE
 0804915D: warning: Call target address 00000000 is invalid.
 08049110: warning: Call target address 00000000 is invalid.
-080500F4: warning: Expected sizes of arrays to have been determined by now
-080500F4: warning: Expected sizes of arrays to have been determined by now
+/home/hawk/kza/decompiler-subjects.clean/from_holdec/i386_x87_fpu/ia32_elf/subject.exe: error: An internal error occurred while analyzing /home/hawk/kza/decompiler-subjects.clean/from_holdec/i386_x87_fpu/ia32_elf/subject.exe.
+    Fstsw of eax_6 = CONVERT(ax_5, word16, word32) not implemented yet.
+       at Reko.Arch.X86.Analysis.FstswAnalysis.TransformFststw(SsaIdentifier sid, SsaIdentifier sidFpuf) in /home/runner/work/reko/reko/src/Arch/X86/Analysis/FstswAnalysis.cs:line 214
+   at Reko.Arch.X86.Analysis.FstswAnalysis.Transform(SsaState ssa) in /home/runner/work/reko/reko/src/Arch/X86/Analysis/FstswAnalysis.cs:line 100
+   at Reko.Analysis.DataFlowAnalysis.RunAnalyses(IAnalysisFactory analysisFactory, AnalysisContext context, AnalysisStage stage, SsaState ssa) in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 299
+   at Reko.Analysis.SccWorker.ConvertToSsa(Procedure proc) in /home/runner/work/reko/reko/src/Decompiler/Analysis/SccWorker.cs:line 167
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Analysis.SccWorker.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/SccWorker.cs:line 85
+   at Reko.Analysis.DataFlowAnalysis.RewriteProceduresToSsa() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 178
+   at Reko.Analysis.DataFlowAnalysis.UntangleProcedures() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 128
+   at Reko.Decompiler.AnalyzeDataFlow() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 111
+l0804901F: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
+0804ABA6: error: An error occurred while processing the statement ST[Top + 0<8>:real64] = ST[Top + 0<8>:real64] % ST[Top + 1<i8>:real64].
+    Not implemented: ST[Top + 0<8>:real64] % ST[Top + 1<i8>:real64]
+       at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 184
+   at Reko.Core.Expressions.BinaryExpression.Accept[T](ExpressionVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 57
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 281
+   at Reko.Core.Code.Store.Accept(InstructionVisitor v) in /home/runner/work/reko/reko/src/Core/Code/Assignment.cs:line 98
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74

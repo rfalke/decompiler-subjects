@@ -4,67 +4,106 @@
 
 #include "subject.h"
 
-// 0804804C: void fn0804804C(Stack (ptr32 byte) dwArg08, Stack (ptr32 byte) dwArg0C, Stack (ptr32 byte) dwArg10)
-void fn0804804C(byte * dwArg08, byte * dwArg0C, byte * dwArg10)
+// 0804804C: void fn0804804C(Stack uint32 dwArg04, Stack uint32 dwArg08, Stack (ptr32 byte) dwArg0C, Stack (ptr32 byte) dwArg10)
+void fn0804804C(uint32 dwArg04, uint32 dwArg08, byte * dwArg0C, byte * dwArg10)
 {
-	byte * esi_110 = dwArg08;
-	if (dwArg08 != null)
+	ptr32 fp;
+	Eq_7 ebp_170 = 0x00;
+	uint32 edi_110 = 0x01;
+	byte * esi_117 = dwArg08;
+	ptr32 esp_112 = fp + 0x0C;
+	if (esi_117 != null)
 	{
 		g_dw804816C = 0x02;
-		if (*dwArg08 == 0x6C2D)
+		if (*esi_117 != 0x6C2D)
 		{
-			struct Eq_23 * ebx_22 = fn0804813D();
-			word32 esi_236;
-			uint32 edx_30 = (uint32) fn08048157(dwArg0C, out esi_236);
-			ebx_22->b0002 = SLICE(edx_30, byte, 8);
-			ebx_22->b0003 = (byte) edx_30;
-			__syscall(0x80);
-			__syscall(0x80);
-			__syscall(0x80);
-			esi_110 = dwArg10;
-			if (dwArg10 == null)
-				goto l08048113;
+l080480D4:
+			uint32 eax_103 = fn0804813D();
+			struct Eq_51 * esp_113 = esp_112 - 4;
+			esp_113->dw0000 = 0x04;
+			edi_110 = eax_103;
+			struct Eq_58 * ebx_111 = g_a8048170;
+			word32 ecx_115 = esp_113->dw0000;
+			do
+			{
+				ebx_111->b0000 = (byte) fn08048157(esi_117, out esi_117);
+				++ebx_111;
+				--ecx_115;
+			} while (ecx_115 != 0x00);
+			word32 esi_212;
+			uint32 edx_134 = (uint32) fn08048157(esp_113->ptr0004, out esi_212);
+			ebx_111->bFFFFFFFA = SLICE(edx_134, byte, 8);
+			ebx_111->bFFFFFFFB = (byte) edx_134;
+			esp_113->ptr0004 = (byte *) 0x10;
+			esp_113->dw0000 = 134513004;
+			esp_113->dwFFFFFFFC = eax_103;
+			esp_113->tFFFFFFF8.u0 = 0x03;
+			Eq_7 ebx_154 = esp_113->tFFFFFFF8.u0;
+			esp_113->tFFFFFFF8.u0 = 0x66;
+			esp_112 = (char *) &esp_113->ptr0004 + 4;
+			if (sys_socketcall(ebx_154, esp_113 - 4) < 0x00)
+				fn08048138(ebx_154);
+			goto l08048113;
 		}
-		fn0804813D();
-		struct Eq_24 * ebx_104 = g_a8048170;
-		word32 ecx_108;
-		for (ecx_108 = 0x04; ecx_108 != 0x00; --ecx_108)
-		{
-			ebx_104->b0000 = (byte) fn08048157(esi_110, out esi_110);
-			++ebx_104;
-		}
-		word32 esi_237;
-		uint32 edx_127 = (uint32) fn08048157((byte *) 0x01, out esi_237);
-		ebx_104->bFFFFFFFA = SLICE(edx_127, byte, 8);
-		ebx_104->bFFFFFFFB = (byte) edx_127;
-		__syscall(0x80);
+		uint32 eax_23 = fn0804813D();
+		word32 esi_211;
+		uint32 edx_32 = (uint32) fn08048157(dwArg0C, out esi_211);
+		g_b804816E = SLICE(edx_32, byte, 8);
+		g_b804816F = (byte) edx_32;
+		dwArg08 = 134513004;
+		dwArg04 = eax_23;
+		if (sys_socketcall(0x02, &dwArg04) < 0x00)
+			fn08048138(0x02);
+		dwArg08 = eax_23;
+		dwArg04 = 0x04;
+		int32 ebx_71 = dwArg04;
+		dwArg04 = 0x66;
+		sys_socketcall(ebx_71, &dwArg08);
+		dwArg08 = 134514044;
+		dwArg04 = eax_23;
+		ebp_170 = sys_socketcall(0x05, &dwArg04);
+		esi_117 = dwArg10;
+		esp_112 = fp + 0x14;
+		if (dwArg10 != null)
+			goto l080480D4;
 	}
 l08048113:
 	while (true)
 	{
-		__syscall(0x80);
-		__syscall(0x80);
+		word32 * esp_173 = esp_112 - 4;
+		*esp_173 = 0x03;
+		Eq_28 eax_180 = sys_read(ebp_170, &g_b804817C, 0x0400);
+		if (eax_180 < 0x00)
+			break;
+		if (eax_180 == 0x00)
+			fn08048138(ebp_170);
+		*esp_173 = 0x04;
+		sys_write(edi_110, &g_b804817C, eax_180);
+		esp_112 = esp_173 + 1;
 	}
+	fn08048138(ebp_170);
 }
 
-// 08048138: void fn08048138()
+// 08048138: void fn08048138(Register Eq_7 ebx)
 // Called from:
 //      fn0804804C
 //      fn0804813D
-void fn08048138()
+void fn08048138(Eq_7 ebx)
 {
-	__syscall(0x80);
-	fn0804813D();
+	sys_exit(ebx);
 }
 
-// 0804813D: Register word32 fn0804813D()
+// 0804813D: Register int32 fn0804813D()
 // Called from:
 //      fn0804804C
-//      fn08048138
-word32 fn0804813D()
+int32 fn0804813D()
 {
-	__syscall(0x80);
-	return;
+	uint32 dwLoc10;
+	dwLoc10 = 0x02;
+	int32 eax_22 = sys_socketcall(0x01, &dwLoc10);
+	if (eax_22 >= 0x00)
+		return eax_22;
+	fn08048138(0x01);
 }
 
 // 08048157: Register word16 fn08048157(Register (ptr32 byte) esi, Register out (ptr32 byte) esiOut)
@@ -72,18 +111,18 @@ word32 fn0804813D()
 //      fn0804804C
 word16 fn08048157(byte * esi, byte & esiOut)
 {
-	ui32 edx_20 = 0x00;
+	ui32 edx_22 = 0x00;
 	while (true)
 	{
-		cu8 al_12 = *esi;
+		cu8 al_14 = *esi;
 		++esi;
-		uint32 eax_24 = (uint32) (al_12 - 0x30);
-		if (al_12 < 0x30)
+		uint32 eax_26 = (uint32) (al_14 - 0x30);
+		if (al_14 < 0x30)
 			break;
-		edx_20 = edx_20 * 0x0A + eax_24;
+		edx_22 = edx_22 * 0x0A + eax_26;
 	}
 	esiOut = esi;
-	return (word16) edx_20;
+	return (word16) edx_22;
 }
 
 byte g_a804816A[] = // 0804816A
@@ -93,6 +132,9 @@ byte g_a804816B[] = // 0804816B
 	{
 	};
 word32 g_dw804816C = 0x00; // 0804816C
+byte g_b804816E = 0x00; // 0804816E
+byte g_b804816F = 0x00; // 0804816F
 byte g_a8048170[] = // 08048170
 	{
 	};
+char g_b804817C = '\0'; // 0804817C

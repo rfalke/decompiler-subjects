@@ -24,14 +24,14 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 0000000140001AC8: warning: Unable to guess parameters of MSVCR90D.dll!_configthreadlocale.
 0000000140002878: warning: Unable to guess parameters of MSVCR90D.dll!_CRT_RTC_INITW.
 0000000140002878: warning: Unable to guess parameters of MSVCR90D.dll!_CRT_RTC_INITW.
-00000001400030FA: error: An error occurred while processing the statement branch edi_414 <u Mem399[rax_381 + 0<64>:word32] l0000000140003161.
+00000001400030FA: error: An error occurred while processing the statement branch edi_437 <u Mem421[rax_401 + 0<64>:word32] l0000000140003161.
     Specified argument was out of the range of valid values. (Parameter 'bitSize')
-       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 159
-   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 313
-   at Reko.Core.Expressions.BinaryExpression.Accept[T,C](ExpressionVisitor`2 v, C context) in /home/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 54
-   at Reko.Typing.TypeCollector.VisitBranch(Branch branch) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 202
-   at Reko.Core.Code.Branch.Accept(InstructionVisitor v) in /home/runner/work/reko/reko/src/Core/Code/Branch.cs:line 55
-   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 127
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 347
+   at Reko.Core.Expressions.BinaryExpression.Accept[T,C](ExpressionVisitor`2 v, C context) in /home/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 52
+   at Reko.Typing.TypeCollector.VisitBranch(Branch branch) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 200
+   at Reko.Core.Code.Branch.Accept(InstructionVisitor v) in /home/runner/work/reko/reko/src/Core/Code/Branch.cs:line 60
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
 fn00000001400017DB: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
 fn00000001400018BC: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
 fn0000000140001914: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko

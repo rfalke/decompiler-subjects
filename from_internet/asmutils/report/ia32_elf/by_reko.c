@@ -4,306 +4,257 @@
 
 #include "subject.h"
 
-struct Eq_43 g_t804804C = // 0804804C
+struct Eq_21 g_t804804C = // 0804804C
 	{
 		
 		{
 			0x007D
 		},
-		0x1F,
 	};
-// 0804922A: void fn0804922A(Register (ptr32 Eq_2) esi, Stack word32 dwArg00, Stack uint32 dwArg04)
-void fn0804922A(union Eq_2 * esi, word32 dwArg00, uint32 dwArg04)
+word32 g_dw8049194 = 0x1F; // 08049194
+union Eq_2 g_u80491B6 = // 080491B6
+	{
+		'r'
+	};
+// 0804922A: void fn0804922A(Register (ptr32 Eq_2) esi, Stack word32 dwArg00)
+void fn0804922A(union Eq_2 * esi, word32 dwArg00)
 {
-	int32 ebx_58 = dwArg00 - 0x01;
+	ptr32 fp;
+	int32 ebx_10 = dwArg00 - 0x01;
 	if (dwArg00 == 0x01)
-		fn08049250(&g_t804804C, esi, dwArg04);
+		fn08049250(&g_t804804C, esi);
 	else
 	{
-		union Eq_2 * esi_24 = fp + 0x08;
-		uint32 dwArg00_75 = 0x00;
+		union Eq_2 * esi_14 = fp + 8;
+		uint32 dwArg00_100 = 0x00;
 		do
 		{
-			byte bArg00_77 = (byte) dwArg00_75;
-			word24 nArg01_79 = SLICE(dwArg00_75, word24, 8);
-			word32 * eax_29 = *esi_24;
-			esi_24 = (union Eq_2 *) ((char *) esi_24 + 4);
-			if (eax_29 == null)
+			byte bArg00_104 = (byte) dwArg00_100;
+			word24 nArg01_106 = SLICE(dwArg00_100, word24, 8);
+			word32 * eax_19 = esi_14->u1.dw0000;
+			esi_14 = (union Eq_2 *) ((char *) esi_14 + 4);
+			if (eax_19 == null)
 			{
-				fn08049250(&g_t804804C, esi_24, dwArg00_75);
-				return;
+				union Eq_2 * esi_25 = esi_14->u2.dwFFFFFFF8;
+				Eq_18 ecx_32 = fn08049319(&g_t804804C, esi_25);
+				if (dwArg00_100 >> 0x01 < 0x00)
+					fn08049265(&g_u80491B6);
+				if (dwArg00_100 >> 0x02 < 0x00)
+					fn08049250(&g_t804804C, esi_25);
+				if (dwArg00_100 >> 0x03 >= 0x00)
+				{
+					fn080492A1(ecx_32, &g_t804804C, esi_25);
+					return;
+				}
+				else
+				{
+					word32 edx_68 = g_dw8049194;
+					fn080492AD(ecx_32, 134517074, edx_68 + 0x01, esi_25);
+					return;
+				}
 			}
-			--ebx_58;
-			dwArg00_75 = SEQ(nArg01_79, bArg00_77 | SLICE((uint32) fn080492F1(eax_29, 0x0804804C), byte, 8));
-		} while (ebx_58 >= 0x00);
-		fn08049250(&g_t804804C, esi_24, dwArg00_75);
+			--ebx_10;
+			dwArg00_100 = SEQ(nArg01_106, bArg00_104 | SLICE((uint32) fn080492F1(eax_19, &g_t804804C), byte, 8));
+		} while (ebx_10 >= 0x00);
+		fn08049250(&g_t804804C, esi_14);
 	}
 }
 
-// 08049250: Register word32 fn08049250(Register (ptr32 Eq_43) ebp, Register (ptr32 Eq_2) esi, Stack uint32 dwArg00)
+// 08049250: void fn08049250(Register (ptr32 Eq_21) ebp, Register (ptr32 Eq_2) esi)
 // Called from:
 //      fn0804922A
 //      fn08049319
-word32 fn08049250(struct Eq_43 * ebp, union Eq_2 * esi, uint32 dwArg00)
+void fn08049250(struct Eq_21 * ebp, union Eq_2 * esi)
 {
-	do
-	{
-		word32 ebp_9;
-		fn080492A1(0x00, ebp, esi, out ebp_9);
-		union Eq_2 * ecx_19 = ebp_9 + 0x1187;
-		while (true)
-		{
-			struct Eq_68 * esi_27;
-			fn080492D9(ecx_19, out esi_27);
-			__syscall(0x80);
-			union Eq_2 * esi_40 = esi_27->ptrFFFFFFF8;
-			Eq_58 ecx_46 = fn08049319(esi_40, out ebp);
-			esi = esi_40;
-			dwArg00 = (char *) &ebp->dw1148 + 0x00D6;
-			if (dwArg00 >> 0x01 >= 0x00)
-				break;
-			ecx_19 = (union Eq_2 *) (ebp + 1);
-		}
-	} while (dwArg00 >> 0x02 < 0x00);
-	if (dwArg00 >> 0x03 >= 0x00)
-	{
-		word32 ebp_117;
-		return fn080492A1(ecx_46, ebp, esi_40, out ebp_117);
-	}
-	else
-	{
-		word32 edx_81 = ebp->dw1148;
-		word32 ebp_119;
-		return fn080492AD(eax, edx_81 + 0x01, esi_40, out ebp_119);
-	}
+	word32 ebp_11 = fn080492A1(0x00, ebp, esi);
+	fn08049265(ebp_11 + 0x1187);
 }
 
-// 080492A1: Register word32 fn080492A1(Register Eq_58 eax, Register (ptr32 Eq_43) ebp, Register (ptr32 Eq_2) esi, Register out ptr32 ebpOut)
+// 08049265: void fn08049265(Register (ptr32 Eq_2) ecx)
 // Called from:
 //      fn0804922A
 //      fn08049250
-word32 fn080492A1(Eq_58 eax, struct Eq_43 * ebp, union Eq_2 * esi, ptr32 & ebpOut)
+void fn08049265(union Eq_2 * ecx)
 {
-	Eq_58 edx_6 = ebp->t0E40;
-	ptr32 ebp_10;
-	word32 ecx_12 = fn080492AD(eax, edx_6, esi, out ebp_10);
-	ebpOut = ebp_10;
-	return ecx_12;
+	fn080492D9(ecx);
+	sys_exit(0x00);
 }
 
-// 080492AD: Register word32 fn080492AD(Register Eq_58 eax, Register Eq_58 edx, Register (ptr32 Eq_2) esi, Register out ptr32 ebpOut)
+// 080492A1: Register (ptr32 Eq_21) fn080492A1(Register Eq_18 eax, Register (ptr32 Eq_21) ebp, Register (ptr32 Eq_2) esi)
 // Called from:
-//      fn08049250
+//      fn0804922A
+struct Eq_21 * fn080492A1(Eq_18 eax, struct Eq_21 * ebp, union Eq_2 * esi)
+{
+	Eq_18 edx_7 = ebp->t0E40.u0;
+	return fn080492AD(eax, (char *) ebp + 3398, edx_7, esi);
+}
+
+// 080492AD: Register word32 fn080492AD(Register Eq_18 eax, Register ptr32 ecx, Register Eq_18 edx, Register (ptr32 Eq_2) esi)
+// Called from:
+//      fn0804922A
 //      fn080492A1
-word32 fn080492AD(Eq_58 eax, Eq_58 edx, union Eq_2 * esi, ptr32 & ebpOut)
+word32 fn080492AD(Eq_18 eax, ptr32 ecx, Eq_18 edx, union Eq_2 * esi)
 {
 	if (eax >= 0x00)
-	{
-		ptr32 ebp_41;
-		word32 ecx_43 = fn080492B3(eax, edx, esi, out ebp_41);
-		ebpOut = ebp_41;
-		return ecx_43;
-	}
-	else
-	{
-		ptr32 ebp_52;
-		word32 ecx_54 = fn080492B1(eax, edx, esi, out ebp_52);
-		ebpOut = ebp_52;
-		return ecx_54;
-	}
+		return fn080492B3(eax, ecx, edx, esi);
+	return fn080492B1(eax, ecx, edx, esi);
 }
 
-// 080492B1: Register word32 fn080492B1(Register Eq_58 eax, Register Eq_58 edx, Register (ptr32 Eq_2) esi, Register out ptr32 ebpOut)
+// 080492B1: Register word32 fn080492B1(Register Eq_18 eax, Register ptr32 ecx, Register Eq_18 edx, Register (ptr32 Eq_2) esi)
 // Called from:
 //      fn080492A1
 //      fn080492AD
-word32 fn080492B1(Eq_58 eax, Eq_58 edx, union Eq_2 * esi, ptr32 & ebpOut)
+word32 fn080492B1(Eq_18 eax, ptr32 ecx, Eq_18 edx, union Eq_2 * esi)
 {
-	Eq_58 eax_5 = -eax;
-	ptr32 ebp_11;
-	word32 ecx_13 = fn080492B3(eax_5, edx, esi, out ebp_11);
-	ebpOut = ebp_11;
-	return ecx_13;
+	Eq_18 eax_6 = -eax;
+	return fn080492B3(eax_6, ecx, edx, esi);
 }
 
-// 080492B3: Register word32 fn080492B3(Register Eq_58 eax, Register Eq_58 edx, Register (ptr32 Eq_2) esi, Register out ptr32 ebpOut)
+// 080492B3: Register word32 fn080492B3(Register Eq_18 eax, Register ptr32 ecx, Register Eq_18 edx, Register (ptr32 Eq_2) esi)
 // Called from:
 //      fn080492A1
 //      fn080492AD
-word32 fn080492B3(Eq_58 eax, Eq_58 edx, union Eq_2 * esi, ptr32 & ebpOut)
+word32 fn080492B3(Eq_18 eax, ptr32 ecx, Eq_18 edx, union Eq_2 * esi)
 {
 	if (eax >= edx)
-	{
-		word32 esi_84;
-		fn080492D9(esi, out esi_84);
-	}
-	ptr32 ebp_63;
-	word32 edx_85;
-	word32 esi_86;
-	word32 ecx_65 = fn080492E5(out edx_85, out ebp_63, out esi_86);
-	ebpOut = ebp_63;
-	return ecx_65;
+		eax = fn080492D9(esi);
+	word16 * ecx_33 = ecx + (int32) (ecx - 2)[eax];
+	int32 edx_34 = (int32) *ecx_33;
+	fn080492E5((char *) ecx_33 + 3, edx_34 - 0x01);
+	return ebp_65;
 }
 
-// 080492D9: Register word32 fn080492D9(Register (ptr32 Eq_2) ecx, Register out ptr32 esiOut)
+// 080492D9: Register word32 fn080492D9(Register (ptr32 Eq_2) ecx)
 // Called from:
 //      fn0804922A
 //      fn080492A1
-word32 fn080492D9(union Eq_2 * ecx, ptr32 & esiOut)
+word32 fn080492D9(union Eq_2 * ecx)
 {
-	byte * edx_27 = ecx - 0x01;
+	byte * edx_28 = ecx - 1;
 	do
-		++edx_27;
-	while (*edx_27 != 0x00);
-	word32 edx_42;
-	ptr32 esi_43;
-	word32 ebp_58;
-	fn080492E5(out edx_42, out ebp_58, out esi_43);
-	esiOut = esi_43;
-	return edx_42;
+		++edx_28;
+	while (*edx_28 != 0x00);
+	Eq_162 edx_37 = edx_28 - ecx;
+	return fn080492E5(ecx, edx_37);
 }
 
-// 080492E5: Register word32 fn080492E5(Register out ptr32 edxOut, Register out ptr32 ebpOut, Register out ptr32 esiOut)
+// 080492E5: Register Eq_162 fn080492E5(Register (ptr32 Eq_2) ecx, Register Eq_162 edx)
 // Called from:
 //      fn080492A1
 //      fn080492D9
-word32 fn080492E5(ptr32 & edxOut, ptr32 & ebpOut, ptr32 & esiOut)
+Eq_162 fn080492E5(union Eq_2 * ecx, Eq_162 edx)
 {
+	Eq_184 SZO;
+	Eq_162 dwArg14;
 	if (SZO)
-	{
-		edxOut = dwArg14;
-		ebpOut = dwArg08;
-		esiOut = dwArg04;
-		return dwArg18;
-	}
-	else
-	{
-		ptr32 ebp_37;
-		ptr32 edx_41;
-		ptr32 esi_42;
-		word32 ecx_39 = fn080492E7(out edx_41, out ebp_37, out esi_42);
-		edxOut = edx_41;
-		ebpOut = ebp_37;
-		esiOut = esi_42;
-		return ecx_39;
-	}
+		return dwArg14;
+	return fn080492E7(ecx, edx);
 }
 
-// 080492E7: Register word32 fn080492E7(Register out ptr32 edxOut, Register out ptr32 ebpOut, Register out ptr32 esiOut)
+// 080492E7: Register Eq_162 fn080492E7(Register (ptr32 Eq_2) ecx, Register Eq_162 edx)
 // Called from:
 //      fn080492D9
 //      fn080492E5
-word32 fn080492E7(ptr32 & edxOut, ptr32 & ebpOut, ptr32 & esiOut)
+Eq_162 fn080492E7(union Eq_2 * ecx, Eq_162 edx)
 {
-	__syscall(0x80);
-	edxOut = dwArg14;
-	ebpOut = dwArg08;
-	esiOut = dwArg04;
-	return dwArg18;
+	Eq_162 dwArg14;
+	sys_write(0x01, ecx, edx);
+	return dwArg14;
 }
 
-// 080492F1: Register byte fn080492F1(Register (ptr32 word32) eax, Register ptr32 ebp)
+// 080492F1: Register byte fn080492F1(Register (ptr32 word32) eax, Register (ptr32 Eq_21) ebp)
 // Called from:
 //      fn0804922A
-byte fn080492F1(word32 * eax, ptr32 ebp)
+byte fn080492F1(word32 * eax, struct Eq_21 * ebp)
 {
-	word32 ebx_10 = *eax;
-	word16 bx_65 = (word16) ebx_10;
-	byte dh_38 = 0x00;
-	uint8 dl_40 = 0x08;
-	word16 * esi_16 = ebp + 0x114C;
+	word32 ebx_11 = *eax;
+	word16 bx_68 = (word16) ebx_11;
+	byte dh_40 = 0x00;
+	uint8 dl_42 = 0x08;
+	word16 * esi_17 = (char *) &ebp->t0E40 + 780;
 	do
 	{
-		word32 * esi_20 = esi_16 + 1;
-		word16 ax_19 = *esi_16;
-		word32 eax_24 = *esi_20;
-		esi_16 = (word16 *) (esi_20 + 1);
-		word32 edx_100 = SEQ(0x00, dh_38, dl_40);
-		if (eax_24 == 0x00)
-			return SLICE(edx_100, byte, 8);
-		if (bx_65 == ax_19 || ebx_10 == eax_24)
-			dh_38 |= dl_40;
-		dl_40 >>= 0x01;
-		edx_100 = SEQ(0x00, dh_38, dl_40);
-	} while (dl_40 != 0x00);
-	return SLICE(edx_100, byte, 8);
+		word32 * esi_21 = esi_17 + 1;
+		word16 ax_20 = *esi_17;
+		word32 eax_25 = *esi_21;
+		esi_17 = (word16 *) (esi_21 + 1);
+		word32 edx_103 = SEQ(0x00, dh_40, dl_42);
+		if (eax_25 == 0x00)
+			return SLICE(edx_103, byte, 8);
+		if (bx_68 == ax_20 || ebx_11 == eax_25)
+			dh_40 |= dl_42;
+		dl_42 >>= 0x01;
+		edx_103 = SEQ(0x00, dh_40, dl_42);
+	} while (dl_42 != 0x00);
+	return SLICE(edx_103, byte, 8);
 }
 
-// 08049319: Register uint32 fn08049319(Register (ptr32 Eq_2) esi, Register out ptr32 ebpOut)
+// 08049319: Register uint32 fn08049319(Register (ptr32 Eq_21) ebp, Register (ptr32 Eq_2) esi)
 // Called from:
-//      fn08049250
-uint32 fn08049319(union Eq_2 * esi, ptr32 & ebpOut)
+//      fn0804922A
+uint32 fn08049319(struct Eq_21 * ebp, union Eq_2 * esi)
 {
-	uint32 eax_5 = *esi;
-	char al_13 = (byte) eax_5;
-	byte ah_20 = SLICE(eax_5, byte, 8);
-	uint32 ecx_6 = 0x00;
-	if (al_13 == 0x2D)
+	uint32 eax_6 = esi->u1.dw0000;
+	char al_14 = (byte) eax_6;
+	byte ah_21 = SLICE(eax_6, byte, 8);
+	uint32 ecx_7 = 0x00;
+	if (al_14 == 0x2D)
 	{
 		esi = (union Eq_2 *) ((char *) esi + 1);
-		al_13 = (byte) (eax_5 >> 0x08);
-		ah_20 = SLICE(eax_5 >> 0x08, byte, 8);
+		al_14 = (byte) (eax_6 >> 0x08);
+		ah_21 = SLICE(eax_6 >> 0x08, byte, 8);
 	}
-	if (al_13 == 0x30)
+	if (al_14 == 0x30)
 	{
-		uint32 ebx_100 = 0x00;
-		Eq_299 ch_41 = 0x08;
-		byte cl_101 = 0x03;
-		if (ah_20 == 0x78)
+		uint32 ebx_19 = 0x00;
+		Eq_265 ch_42 = 0x08;
+		byte cl_55 = 0x03;
+		if (ah_21 == 0x78)
 		{
 			esi = (union Eq_2 *) ((char *) esi + 2);
-			ch_41.u0 = 0x10;
-			cl_101 = 0x04;
+			ch_42.u0 = 0x10;
+			cl_55 = 0x04;
 		}
 		while (true)
 		{
-			Eq_319 al_31 = *esi;
+			Eq_284 al_32 = esi->u0;
 			esi = (union Eq_2 *) ((char *) esi + 1);
-			Eq_299 al_33 = al_31 - 0x30;
-			if (al_31 < 0x30)
+			Eq_265 al_34 = al_32 - 0x30;
+			if (al_32 < 0x30)
 				break;
-			if (al_31 >= 0x3A)
+			if (al_32 >= 0x3A)
 			{
-				al_33 = al_31 - 55;
-				if (al_31 < 55)
-					break;
-				if (al_31 - 55 < ch_41)
+				al_34 = al_32 - 55;
+				if (al_32 < 55)
+					return ebx_19;
+				if (al_32 - 55 < ch_42)
 					goto l08049374;
-				al_33 = al_31 - 0x57;
+				al_34 = al_32 - 0x57;
 			}
-			if (al_33 >= ch_41)
-				break;
+			if (al_34 >= ch_42)
+				return ebx_19;
 l08049374:
-			ui32 ebx_56 = ebx_100 << cl_101;
-			ebx_100 = SEQ(SLICE(ebx_56, word24, 8), (byte) ebx_56 | al_33);
+			ui32 ebx_57 = ebx_19 << cl_55;
+			ebx_19 = SEQ(SLICE(ebx_57, word24, 8), (byte) ebx_57 | al_34);
 		}
-		ebpOut = <invalid>;
-		return ebx_100;
+		return ebx_19;
 	}
-	else if (al_13 < 0x30 || al_13 > 0x39)
-	{
-		// Failed to bind call argument.
-		// Please report this issue at https://github.com/uxmal/reko
-		uint32 stackArg0 = <invalid>;
-		uint32 ecx_73 = fn08049250(ebp, esi, stackArg0);
-		ebpOut = <invalid>;
-		return ecx_73;
-	}
+	else if (al_14 < 0x30 || al_14 > 0x39)
+		fn08049250(ebp, esi);
 	else
 	{
 		while (true)
 		{
-			Eq_310 al_79 = *esi;
+			Eq_275 al_76 = esi->u0;
 			esi = (union Eq_2 *) ((char *) esi + 1);
-			if (al_79 < 0x30)
+			if (al_76 < 0x30)
 				break;
-			uint32 eax_89 = (uint32) (al_79 - 0x30);
-			if (al_79 >= 0x3A)
-				break;
-			ecx_6 = eax_89 + ecx_6 * 0x0A;
+			uint32 eax_86 = (uint32) (al_76 - 0x30);
+			if (al_76 >= 0x3A)
+				return ecx_7;
+			ecx_7 = eax_86 + ecx_7 * 0x0A;
 		}
-		ebpOut = <invalid>;
-		return ecx_6;
+		return ecx_7;
 	}
 }
 

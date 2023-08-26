@@ -1,7 +1,5 @@
 === Using options:--aggressive-branch-removal
 Signature of 'InstallShield 2000' detected.
-0040533C: warning: Expected sizes of arrays to have been determined by now
-0040535C: warning: Expected sizes of arrays to have been determined by now
 0040638C: warning: Expected sizes of arrays to have been determined by now
 00406390: warning: Expected sizes of arrays to have been determined by now
 00406394: warning: Expected sizes of arrays to have been determined by now
@@ -9,8 +7,6 @@ Signature of 'InstallShield 2000' detected.
 00408908: warning: Expected sizes of arrays to have been determined by now
 00408A78: warning: Expected sizes of arrays to have been determined by now
 00408BE4: warning: Expected sizes of arrays to have been determined by now
-0040533C: warning: Expected sizes of arrays to have been determined by now
-0040535C: warning: Expected sizes of arrays to have been determined by now
 0040638C: warning: Expected sizes of arrays to have been determined by now
 00406390: warning: Expected sizes of arrays to have been determined by now
 00406394: warning: Expected sizes of arrays to have been determined by now

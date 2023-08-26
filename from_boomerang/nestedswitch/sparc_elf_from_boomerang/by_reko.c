@@ -80,6 +80,7 @@ char g_str107E8[] = "Other!"; // 000107E8
 // 000104A8: void _start(Register (ptr32 Eq_2) g1, Register word32 o1, Register word32 o2, Register word32 o3, Register word32 o4, Register word32 o5, Register word32 o7)
 void _start(void (* g1)(), word32 o1, word32 o2, word32 o3, word32 o4, word32 o5, word32 o7)
 {
+	ptr32 fp;
 	if (g1 == null)
 	{
 		atexit(&g_t107D0);
@@ -105,10 +106,10 @@ word32 fn0001051C(word32 o7, word32 l7)
 //      _fini
 void __do_global_dtors_aux(word32 o0, word32 o1, word32 o2, word32 o3, word32 o7)
 {
-	struct Eq_54 * l7_23 = fn0001051C(o7, 66288);
+	struct Eq_56 * l7_23 = fn0001051C(o7, 66288);
 	ui32 l1_20 = 0x00;
-	ui32 o4_129 = (ui32) *l7_23->ptr0010;
-	if (o4_129 != 0x00)
+	ui32 o4_27 = (ui32) *l7_23->ptr0010;
+	if (o4_27 != 0x00)
 		return;
 	<anonymous> *** g1_34 = l7_23->ptr000C;
 	<anonymous> * o5_36 = **g1_34;
@@ -127,14 +128,10 @@ void __do_global_dtors_aux(word32 o0, word32 o1, word32 o2, word32 o3, word32 o7
 			g1_43 = (<anonymous> **) ((char *) g1_77 + 4);
 		}
 	}
-	word32 o5_89 = l7_23->dw0024;
-	if (o5_89 == 0x00)
+	if (l7_23->dw0024 == 0x00)
 		l7_23[(l1_20 | 0x10) / 40].a0000[0] = (byte *) 0x01;
 	else
-	{
-		word32 l0_152;
-		__deregister_frame_info();
-	}
+		__deregister_frame_info(l7_23->dw0004);
 }
 
 // 000105D0: void call___do_global_dtors_aux()
@@ -147,17 +144,16 @@ void call___do_global_dtors_aux()
 //      _init
 word32 * frame_dummy(word32 o1, word32 o2, word32 o3, word32 o4, word32 o5, word32 o7)
 {
-	struct Eq_54 * l7_23 = fn0001051C(o7, 66104);
-	word32 o5_28 = l7_23->dw0020;
-	if (o5_28 == 0x00)
+	struct Eq_56 * l7_23 = fn0001051C(o7, 66104);
+	if (l7_23->dw0020 == 0x00)
 	{
 		word32 * i0_36 = l7_23->ptr0008;
 		if (*i0_36 == 0x00 || l7_23->dw001C == 0x00)
 			return i0_36;
-		_Jv_RegisterClasses();
+		_Jv_RegisterClasses(i0_36, o1, o2, o3, o4, o5);
 	}
 	else
-		__register_frame_info();
+		__register_frame_info(l7_23->dw0004, l7_23->dw0014);
 }
 
 // 00010660: void call_frame_dummy()
@@ -190,7 +186,7 @@ word32 fn00010754(word32 o7, word32 l7)
 word32 * __do_global_ctors_aux(word32 o0, word32 o1, word32 o2, word32 o3, word32 o4, word32 o7)
 {
 	word32 * l0_31;
-	struct Eq_178 * o5_26 = fn00010754(o7, 0x000100B8)->ptr0018;
+	struct Eq_189 * o5_26 = fn00010754(o7, 0x000100B8)->ptr0018;
 	<anonymous> * g1_27 = o5_26->ptrFFFFFFFC;
 	if (g1_27 != (<anonymous> *) ~0x00)
 	{

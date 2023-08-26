@@ -91,7 +91,7 @@ void _IO_putc()
 
 word32 _fp_hw = 0x03; // 08048520
 word32 _IO_stdin_used = 0x00020001; // 08048524
-Eq_76 g_t8048540 = // 08048540
+Eq_73 g_t8048540 = // 08048540
 	{
 		33,
 		0x0A,
@@ -102,12 +102,13 @@ Eq_76 g_t8048540 = // 08048540
 
 #include "subject.h"
 
-// 080482A0: void _start(Register (ptr32 Eq_13) edx, Stack int32 dwArg00)
-void _start(void (* edx)(), int32 dwArg00)
+// 080482A0: void _start(Register (ptr32 Eq_13) edx, Stack int32 dwArg00, Stack (ptr32 char) ptrArg04)
+void _start(void (* edx)(), int32 dwArg00, char * ptrArg04)
 {
-	__align((char *) fp + 4);
-	__libc_start_main(&g_t8048350, dwArg00, (char *) fp + 4, &g_t8048258, &g_t80484F0, edx, fp);
-	__hlt();
+	void * fp;
+	__align_stack<word32>(&ptrArg04);
+	__libc_start_main(&g_t8048350, dwArg00, &ptrArg04, &g_t8048258, &g_t80484F0, edx, fp);
+	__halt();
 }
 
 // 080482C4: void call_gmon_start()
@@ -131,8 +132,8 @@ void __do_global_dtors_aux()
 		<anonymous> * edx_12 = *eax_11;
 		while (edx_12 != null)
 		{
-			<anonymous> ** eax_19 = (char *) eax_11 + 4;
-			g_ptr8049724 = eax_19;
+			<anonymous> ** eax_20 = (char *) eax_11 + 4;
+			g_ptr8049724 = eax_20;
 			edx_12();
 			eax_11 = g_ptr8049724;
 			edx_12 = (<anonymous> *) *eax_11;
@@ -148,42 +149,43 @@ void frame_dummy()
 {
 }
 
-// 08048350: Register (ptr32 Eq_76) main(Stack (ptr32 Eq_76) dwArg04, Stack (ptr32 Eq_76) dwArg08, Stack (ptr32 Eq_76) dwArg0C)
+// 08048350: Register (ptr32 Eq_73) main(Stack (ptr32 Eq_73) dwArg04, Stack (ptr32 Eq_73) dwArg08, Stack (ptr32 Eq_73) dwArg0C)
 // Called from:
 //      main
-struct Eq_76 * main(struct Eq_76 * dwArg04, struct Eq_76 * dwArg08, struct Eq_76 * dwArg0C)
+struct Eq_73 * main(struct Eq_73 * dwArg04, struct Eq_73 * dwArg08, struct Eq_73 * dwArg0C)
 {
-	struct Eq_76 * ebx_114;
-	struct Eq_76 * eax_258;
-	__align(fp - 0x1C);
-	if (dwArg04 > (struct Eq_76 *) 0x01)
+	ptr32 fp;
+	struct Eq_73 * ebx_119;
+	struct Eq_73 * eax_264;
+	__align_stack<word32>(fp - 0x1C);
+	if (dwArg04 > (struct Eq_73 *) 0x01)
 	{
-		if (dwArg04 <= (struct Eq_76 *) 0x02)
-			main((struct Eq_76 *) ~0x4E, (struct Eq_76 *) ~0x0C, main((struct Eq_76 *) ~0x56, 0x01 - dwArg08, main((struct Eq_76 *) ~0x55, null, &dwArg0C->b0000 + 1) + dwArg0C) + dwArg0C);
+		if (dwArg04 <= (struct Eq_73 *) 0x02)
+			main((struct Eq_73 *) ~0x4E, (struct Eq_73 *) ~0x0C, main((struct Eq_73 *) ~0x56, 0x01 - dwArg08, main((struct Eq_73 *) ~0x55, null, &dwArg0C->b0000 + 1) + dwArg0C) + dwArg0C);
 		if (dwArg04 < dwArg08)
 			main(&dwArg04->b0000 + 1, dwArg08, dwArg0C);
-		if (main((struct Eq_76 *) ~0x5D, dwArg04 - 0x1B, dwArg0C) == null || dwArg04 != (struct Eq_76 *) 0x02)
+		if (main((struct Eq_73 *) ~0x5D, dwArg04 - 27, dwArg0C) == null || dwArg04 != (struct Eq_73 *) 0x02)
 		{
-			ebx_114 = (struct Eq_76 *) 0x10;
-			return ebx_114;
+			ebx_119 = (struct Eq_73 *) 0x10;
+			return ebx_119;
 		}
-		if (dwArg08 > (struct Eq_76 *) 0x0C)
+		if (dwArg08 > (struct Eq_73 *) 0x0C)
 		{
-			ebx_114 = (struct Eq_76 *) 0x09;
-			return ebx_114;
+			ebx_119 = (struct Eq_73 *) 0x09;
+			return ebx_119;
 		}
 	}
 	else
 	{
 		if (dwArg04 < null)
 		{
-			if (dwArg04 >= (struct Eq_76 *) ~0x47)
+			if (dwArg04 >= (struct Eq_73 *) ~0x47)
 			{
-				if (dwArg04 < (struct Eq_76 *) ~0x31)
+				if (dwArg04 < (struct Eq_73 *) ~0x31)
 				{
 					if (dwArg08 == (int32) dwArg0C->b0000)
 					{
-						eax_258 = _IO_putc((int32) dwArg0C->b001F, stdout);
+						eax_264 = _IO_putc((int32) dwArg0C->b001F, stdout);
 						goto l080483BF;
 					}
 				}
@@ -194,18 +196,18 @@ struct Eq_76 * main(struct Eq_76 * dwArg04, struct Eq_76 * dwArg08, struct Eq_76
 		}
 		if (dwArg04 <= null)
 		{
-			byte dl_77 = dwArg0C->b0000;
-			ebx_114 = null;
-			if (dl_77 != 0x2F)
+			byte dl_81 = dwArg0C->b0000;
+			ebx_119 = null;
+			if (dl_81 != 0x2F)
 			{
 				// Failed to bind call argument.
 				// Please report this issue at https://github.com/uxmal/reko
-				struct Eq_76 * stackArg12 = (struct Eq_76 *) <invalid>;
-				if (main(null, main((struct Eq_76 *) ~0x3C, (int32) dl_77, &g_t8048540), stackArg12) == null)
-					return ebx_114;
+				struct Eq_73 * stackArg12 = (struct Eq_73 *) <invalid>;
+				if (main(null, main((struct Eq_73 *) ~0x3C, (int32) dl_81, &g_t8048540), stackArg12) == null)
+					return ebx_119;
 			}
-			ebx_114 = (struct Eq_76 *) 0x01;
-			return ebx_114;
+			ebx_119 = (struct Eq_73 *) 0x01;
+			return ebx_119;
 		}
 	}
 l080483BA:
@@ -215,13 +217,13 @@ l080483BA:
 	// Please report this issue at https://github.com/uxmal/reko
 	// Failed to bind call argument.
 	// Please report this issue at https://github.com/uxmal/reko
-	struct Eq_76 * stackArg4 = (struct Eq_76 *) <invalid>;
-	struct Eq_76 * stackArg8 = (struct Eq_76 *) <invalid>;
-	struct Eq_76 * stackArg12 = (struct Eq_76 *) <invalid>;
-	eax_258 = main(stackArg4, stackArg8, stackArg12);
+	struct Eq_73 * stackArg4 = (struct Eq_73 *) <invalid>;
+	struct Eq_73 * stackArg8 = (struct Eq_73 *) <invalid>;
+	struct Eq_73 * stackArg12 = (struct Eq_73 *) <invalid>;
+	eax_264 = main(stackArg4, stackArg8, stackArg12);
 l080483BF:
-	ebx_114 = eax_258;
-	return ebx_114;
+	ebx_119 = eax_264;
+	return ebx_119;
 }
 
 // 080484CC: void __do_global_ctors_aux(Register word32 edx)

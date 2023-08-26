@@ -1,123 +1,120 @@
 === Using options:--aggressive-branch-removal
-0804E6A2: warning: Expected a use of FPU status. Last test instruction at 0804E6A2
-0804EAE6: warning: Expected conditinal branch instruction after fstsw;test ah,0x45<8>.
-08051011: warning: Expected a use of FPU status. Last test instruction at 08051011
-0805102E: warning: Expected a use of FPU status. Last test instruction at 0805102E
-08051060: warning: Expected a use of FPU status. Last test instruction at 08051060
-08051095: warning: Expected a use of FPU status. Last test instruction at 08051095
-08050E54: warning: Expected a use of FPU status. Last test instruction at 08050E54
-08050E71: warning: Expected a use of FPU status. Last test instruction at 08050E71
-08050EA1: warning: Expected a use of FPU status. Last test instruction at 08050EA1
-08050ED6: warning: Expected a use of FPU status. Last test instruction at 08050ED6
-08050C5B: warning: Expected a use of FPU status. Last test instruction at 08050C5B
-08050C78: warning: Expected a use of FPU status. Last test instruction at 08050C78
-08050CA8: warning: Expected a use of FPU status. Last test instruction at 08050CA8
-08050CDD: warning: Expected a use of FPU status. Last test instruction at 08050CDD
-08050A93: warning: Expected a use of FPU status. Last test instruction at 08050A93
-080509F1: warning: Expected a use of FPU status. Last test instruction at 080509F1
-08050948: warning: Expected a use of FPU status. Last test instruction at 08050948
-08050815: warning: Expected a use of FPU status. Last test instruction at 08050815
-0805087F: warning: Expected a use of FPU status. Last test instruction at 0805087F
-08050712: warning: Expected a use of FPU status. Last test instruction at 08050712
-0805077A: warning: Expected a use of FPU status. Last test instruction at 0805077A
-08050615: warning: Expected a use of FPU status. Last test instruction at 08050615
-0805067F: warning: Expected a use of FPU status. Last test instruction at 0805067F
-0805059D: warning: Expected a use of FPU status. Last test instruction at 0805059D
-0805052F: warning: Expected a use of FPU status. Last test instruction at 0805052F
-080504A5: warning: Expected a use of FPU status. Last test instruction at 080504A5
-080501C3: warning: Expected a use of FPU status. Last test instruction at 080501C3
-0804FF06: warning: Expected a use of FPU status. Last test instruction at 0804FF06
-08050129: warning: Expected a use of FPU status. Last test instruction at 08050129
-0804FE3C: warning: Expected a use of FPU status. Last test instruction at 0804FE3C
-08050096: warning: Expected a use of FPU status. Last test instruction at 08050096
-0804FD5A: warning: Expected a use of FPU status. Last test instruction at 0804FD5A
-08050056: warning: Expected a use of FPU status. Last test instruction at 08050056
-08050019: warning: Expected a use of FPU status. Last test instruction at 08050019
-0804FFCD: warning: Expected a use of FPU status. Last test instruction at 0804FFCD
-0804F8D1: warning: Unexpected 1 fstsw;cmp mask for jz mnemonic.
-0804F8AF: warning: Unexpected 1 fstsw;cmp mask for jz mnemonic.
-0804F872: warning: Unexpected 1 fstsw;cmp mask for jz mnemonic.
-0804F5F3: warning: Unexpected 4 fstsw mask for jz mnemonic.
-0804F602: warning: Unexpected 4 fstsw mask for jnz mnemonic.
-0804F5CD: warning: Unexpected 4 fstsw mask for jz mnemonic.
-0804F5DC: warning: Unexpected 4 fstsw mask for jnz mnemonic.
-0804F598: warning: Unexpected 4 fstsw mask for jz mnemonic.
-0804F5A7: warning: Unexpected 4 fstsw mask for jnz mnemonic.
-0804F574: warning: Unexpected 4 fstsw mask for jz mnemonic.
-0804F583: warning: Unexpected 4 fstsw mask for jnz mnemonic.
-0804F550: warning: Unexpected 4 fstsw mask for jz mnemonic.
-0804F55F: warning: Unexpected 4 fstsw mask for jnz mnemonic.
-0804F51D: warning: Unexpected 4 fstsw mask for jz mnemonic.
-0804F52C: warning: Unexpected 4 fstsw mask for jnz mnemonic.
-0804F4F9: warning: Unexpected 4 fstsw mask for jz mnemonic.
-0804F508: warning: Unexpected 4 fstsw mask for jnz mnemonic.
-0804F4D5: warning: Unexpected 4 fstsw mask for jz mnemonic.
-0804F4E4: warning: Unexpected 4 fstsw mask for jnz mnemonic.
-0804F4A2: warning: Unexpected 4 fstsw mask for jz mnemonic.
-0804F4B1: warning: Unexpected 4 fstsw mask for jnz mnemonic.
-0804F452: warning: Expected a use of FPU status. Last test instruction at 0804F452
-0804F3F9: warning: Expected a use of FPU status. Last test instruction at 0804F3F9
-0804F392: warning: Expected a use of FPU status. Last test instruction at 0804F392
-0804F140: warning: Expected a use of FPU status. Last test instruction at 0804F140
-0804F14C: warning: Expected a use of FPU status. Last test instruction at 0804F14C
-0804F0F2: warning: Expected a use of FPU status. Last test instruction at 0804F0F2
-0804F0FE: warning: Expected a use of FPU status. Last test instruction at 0804F0FE
-0804F089: warning: Expected a use of FPU status. Last test instruction at 0804F089
-0804F095: warning: Expected a use of FPU status. Last test instruction at 0804F095
-0804EFDD: warning: Expected a use of FPU status. Last test instruction at 0804EFDD
-0804EF8C: warning: Expected a use of FPU status. Last test instruction at 0804EF8C
-0804EF2C: warning: Expected a use of FPU status. Last test instruction at 0804EF2C
-0804EEDD: warning: Expected a use of FPU status. Last test instruction at 0804EEDD
-0804EE8E: warning: Expected a use of FPU status. Last test instruction at 0804EE8E
-0804EE30: warning: Expected a use of FPU status. Last test instruction at 0804EE30
-0804ECCB: warning: Expected conditinal branch instruction after fstsw;test ah,0x44<8>.
-0804ECAE: warning: Expected conditinal branch instruction after fstsw;test ah,0x44<8>.
-0804EC76: warning: Expected conditinal branch instruction after fstsw;test ah,0x44<8>.
-0804EC59: warning: Expected conditinal branch instruction after fstsw;test ah,5<8>.
-0804EC3C: warning: Expected conditinal branch instruction after fstsw;test ah,5<8>.
-0804EC04: warning: Expected conditinal branch instruction after fstsw;test ah,5<8>.
-0804EBE7: warning: Expected conditinal branch instruction after fstsw;test ah,0x45<8>.
-0804EBCA: warning: Expected conditinal branch instruction after fstsw;test ah,0x45<8>.
-0804EB92: warning: Expected conditinal branch instruction after fstsw;test ah,0x45<8>.
-0804EB75: warning: Expected conditinal branch instruction after fstsw;test ah,5<8>.
-0804EB58: warning: Expected conditinal branch instruction after fstsw;test ah,5<8>.
-0804EB20: warning: Expected conditinal branch instruction after fstsw;test ah,5<8>.
-0804EB03: warning: Expected conditinal branch instruction after fstsw;test ah,0x45<8>.
-0804EAAE: warning: Expected conditinal branch instruction after fstsw;test ah,0x45<8>.
-0804EA33: warning: Expected a use of FPU status. Last test instruction at 0804EA33
-0804E9BD: warning: Expected a use of FPU status. Last test instruction at 0804E9BD
-0804E939: warning: Expected a use of FPU status. Last test instruction at 0804E939
-0804E8FC: warning: Expected a use of FPU status. Last test instruction at 0804E8FC
-0804E8C4: warning: Expected a use of FPU status. Last test instruction at 0804E8C4
-0804E880: warning: Expected a use of FPU status. Last test instruction at 0804E880
-0804E857: warning: Expected a use of FPU status. Last test instruction at 0804E857
-0804E82F: warning: Expected a use of FPU status. Last test instruction at 0804E82F
-0804E7F8: warning: Expected a use of FPU status. Last test instruction at 0804E7F8
-0804E7B8: warning: Expected a use of FPU status. Last test instruction at 0804E7B8
-0804E778: warning: Expected a use of FPU status. Last test instruction at 0804E778
-0804E729: warning: Expected a use of FPU status. Last test instruction at 0804E729
-0804E701: warning: Expected a use of FPU status. Last test instruction at 0804E701
-0804E6D9: warning: Expected a use of FPU status. Last test instruction at 0804E6D9
-0804A050: warning: Unexpected 4 fstsw mask for jz mnemonic.
-0804A455: warning: Expected conditinal branch instruction after fstsw;test ah,0x45<8>.
-0804A4AC: warning: Expected conditinal branch instruction after fstsw;test ah,0x45<8>.
-0804A515: warning: Expected conditinal branch instruction after fstsw;test ah,0x45<8>.
-0804A56C: warning: Expected conditinal branch instruction after fstsw;test ah,0x45<8>.
-0804A676: warning: Expected conditinal branch instruction after fstsw;test ah,0x45<8>.
-0804A6CD: warning: Expected conditinal branch instruction after fstsw;test ah,0x45<8>.
-0804A86F: warning: Expected conditinal branch instruction after fstsw;test ah,0x45<8>.
-0804A8C6: warning: Expected conditinal branch instruction after fstsw;test ah,0x45<8>.
-0804AA68: warning: Expected conditinal branch instruction after fstsw;test ah,0x45<8>.
-0804AABF: warning: Expected conditinal branch instruction after fstsw;test ah,0x45<8>.
-0804C039: warning: Unexpected 4 fstsw mask for jz mnemonic.
-0804C49B: warning: Unexpected 4 fstsw mask for jz mnemonic.
-0804D0C7: warning: Unexpected 4 fstsw mask for jz mnemonic.
-0804D110: warning: Unexpected 4 fstsw mask for jz mnemonic.
-0804D75F: warning: Unexpected 4 fstsw mask for jz mnemonic.
-0804D7AC: warning: Unexpected 4 fstsw mask for jz mnemonic.
-0804D955: warning: Unexpected 4 fstsw mask for jz mnemonic.
-0804D9A2: warning: Unexpected 4 fstsw mask for jz mnemonic.
-0804DCAA: warning: Unexpected 4 fstsw mask for jz mnemonic.
-0804E261: warning: Unexpected 4 fstsw mask for jz mnemonic.
 0804915D: warning: Call target address 00000000 is invalid.
 08049110: warning: Call target address 00000000 is invalid.
+/home/hawk/kza/decompiler-subjects.clean/from_internet/asmutils/testm/ia32_elf_static/subject.exe: error: An internal error occurred while analyzing /home/hawk/kza/decompiler-subjects.clean/from_internet/asmutils/testm/ia32_elf_static/subject.exe.
+    Fstsw of dh_19 = dh_17 & ah_18 not implemented yet.
+       at Reko.Arch.X86.Analysis.FstswAnalysis.TransformFststw(SsaIdentifier sid, SsaIdentifier sidFpuf) in /home/runner/work/reko/reko/src/Arch/X86/Analysis/FstswAnalysis.cs:line 214
+   at Reko.Arch.X86.Analysis.FstswAnalysis.Transform(SsaState ssa) in /home/runner/work/reko/reko/src/Arch/X86/Analysis/FstswAnalysis.cs:line 100
+   at Reko.Analysis.DataFlowAnalysis.RunAnalyses(IAnalysisFactory analysisFactory, AnalysisContext context, AnalysisStage stage, SsaState ssa) in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 299
+   at Reko.Analysis.SccWorker.ConvertToSsa(Procedure proc) in /home/runner/work/reko/reko/src/Decompiler/Analysis/SccWorker.cs:line 167
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Analysis.SccWorker.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/SccWorker.cs:line 85
+   at Reko.Analysis.DataFlowAnalysis.RewriteProceduresToSsa() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 178
+   at Reko.Analysis.DataFlowAnalysis.UntangleProcedures() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 128
+   at Reko.Decompiler.AnalyzeDataFlow() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 111
+l0804901F: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
+0804F1FC: error: An error occurred while processing the statement ST[Top + 0<8>:real64] = ST[Top + 0<8>:real64] % ST[Top + 1<i8>:real64].
+    Not implemented: ST[Top + 0<8>:real64] % ST[Top + 1<i8>:real64]
+       at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 184
+   at Reko.Core.Expressions.BinaryExpression.Accept[T](ExpressionVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 57
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 281
+   at Reko.Core.Code.Store.Accept(InstructionVisitor v) in /home/runner/work/reko/reko/src/Core/Code/Assignment.cs:line 98
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804F22C: error: An error occurred while processing the statement ST[Top + 0<8>:real64] = ST[Top + 0<8>:real64] % ST[Top + 1<i8>:real64].
+    Not implemented: ST[Top + 0<8>:real64] % ST[Top + 1<i8>:real64]
+       at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 184
+   at Reko.Core.Expressions.BinaryExpression.Accept[T](ExpressionVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 57
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 281
+   at Reko.Core.Code.Store.Accept(InstructionVisitor v) in /home/runner/work/reko/reko/src/Core/Code/Assignment.cs:line 98
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804F241: error: An error occurred while processing the statement ST[Top + 0<8>:real64] = ST[Top + 0<8>:real64] % ST[Top + 1<i8>:real64].
+    Not implemented: ST[Top + 0<8>:real64] % ST[Top + 1<i8>:real64]
+       at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 184
+   at Reko.Core.Expressions.BinaryExpression.Accept[T](ExpressionVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 57
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 281
+   at Reko.Core.Code.Store.Accept(InstructionVisitor v) in /home/runner/work/reko/reko/src/Core/Code/Assignment.cs:line 98
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804F256: error: An error occurred while processing the statement ST[Top + 0<8>:real64] = ST[Top + 0<8>:real64] % ST[Top + 1<i8>:real64].
+    Not implemented: ST[Top + 0<8>:real64] % ST[Top + 1<i8>:real64]
+       at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 184
+   at Reko.Core.Expressions.BinaryExpression.Accept[T](ExpressionVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 57
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 281
+   at Reko.Core.Code.Store.Accept(InstructionVisitor v) in /home/runner/work/reko/reko/src/Core/Code/Assignment.cs:line 98
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804F286: error: An error occurred while processing the statement ST[Top + 0<8>:real64] = ST[Top + 0<8>:real64] % ST[Top + 1<i8>:real64].
+    Not implemented: ST[Top + 0<8>:real64] % ST[Top + 1<i8>:real64]
+       at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 184
+   at Reko.Core.Expressions.BinaryExpression.Accept[T](ExpressionVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 57
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 281
+   at Reko.Core.Code.Store.Accept(InstructionVisitor v) in /home/runner/work/reko/reko/src/Core/Code/Assignment.cs:line 98
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804F29B: error: An error occurred while processing the statement ST[Top + 0<8>:real64] = ST[Top + 0<8>:real64] % ST[Top + 1<i8>:real64].
+    Not implemented: ST[Top + 0<8>:real64] % ST[Top + 1<i8>:real64]
+       at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 184
+   at Reko.Core.Expressions.BinaryExpression.Accept[T](ExpressionVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 57
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 281
+   at Reko.Core.Code.Store.Accept(InstructionVisitor v) in /home/runner/work/reko/reko/src/Core/Code/Assignment.cs:line 98
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804F4AA: error: An error occurred while processing the statement ST[Top + 0<8>:real64] = ST[Top + 0<8>:real64] % ST[Top + 1<i8>:real64].
+    Not implemented: ST[Top + 0<8>:real64] % ST[Top + 1<i8>:real64]
+       at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 184
+   at Reko.Core.Expressions.BinaryExpression.Accept[T](ExpressionVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 57
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 281
+   at Reko.Core.Code.Store.Accept(InstructionVisitor v) in /home/runner/work/reko/reko/src/Core/Code/Assignment.cs:line 98
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804F4DD: error: An error occurred while processing the statement ST[Top + 0<8>:real64] = ST[Top + 0<8>:real64] % ST[Top + 1<i8>:real64].
+    Not implemented: ST[Top + 0<8>:real64] % ST[Top + 1<i8>:real64]
+       at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 184
+   at Reko.Core.Expressions.BinaryExpression.Accept[T](ExpressionVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 57
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 281
+   at Reko.Core.Code.Store.Accept(InstructionVisitor v) in /home/runner/work/reko/reko/src/Core/Code/Assignment.cs:line 98
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804F501: error: An error occurred while processing the statement ST[Top + 0<8>:real64] = ST[Top + 0<8>:real64] % ST[Top + 1<i8>:real64].
+    Not implemented: ST[Top + 0<8>:real64] % ST[Top + 1<i8>:real64]
+       at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 184
+   at Reko.Core.Expressions.BinaryExpression.Accept[T](ExpressionVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 57
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 281
+   at Reko.Core.Code.Store.Accept(InstructionVisitor v) in /home/runner/work/reko/reko/src/Core/Code/Assignment.cs:line 98
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804F525: error: An error occurred while processing the statement ST[Top + 0<8>:real64] = ST[Top + 0<8>:real64] % ST[Top + 1<i8>:real64].
+    Not implemented: ST[Top + 0<8>:real64] % ST[Top + 1<i8>:real64]
+       at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 184
+   at Reko.Core.Expressions.BinaryExpression.Accept[T](ExpressionVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 57
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 281
+   at Reko.Core.Code.Store.Accept(InstructionVisitor v) in /home/runner/work/reko/reko/src/Core/Code/Assignment.cs:line 98
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804F558: error: An error occurred while processing the statement ST[Top + 0<8>:real64] = ST[Top + 0<8>:real64] % ST[Top + 1<i8>:real64].
+    Not implemented: ST[Top + 0<8>:real64] % ST[Top + 1<i8>:real64]
+       at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 184
+   at Reko.Core.Expressions.BinaryExpression.Accept[T](ExpressionVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 57
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 281
+   at Reko.Core.Code.Store.Accept(InstructionVisitor v) in /home/runner/work/reko/reko/src/Core/Code/Assignment.cs:line 98
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804F57C: error: An error occurred while processing the statement ST[Top + 0<8>:real64] = ST[Top + 0<8>:real64] % ST[Top + 1<i8>:real64].
+    Not implemented: ST[Top + 0<8>:real64] % ST[Top + 1<i8>:real64]
+       at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 184
+   at Reko.Core.Expressions.BinaryExpression.Accept[T](ExpressionVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 57
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 281
+   at Reko.Core.Code.Store.Accept(InstructionVisitor v) in /home/runner/work/reko/reko/src/Core/Code/Assignment.cs:line 98
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804F5A0: error: An error occurred while processing the statement ST[Top + 0<8>:real64] = ST[Top + 0<8>:real64] % ST[Top + 1<i8>:real64].
+    Not implemented: ST[Top + 0<8>:real64] % ST[Top + 1<i8>:real64]
+       at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 184
+   at Reko.Core.Expressions.BinaryExpression.Accept[T](ExpressionVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 57
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 281
+   at Reko.Core.Code.Store.Accept(InstructionVisitor v) in /home/runner/work/reko/reko/src/Core/Code/Assignment.cs:line 98
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804F5D5: error: An error occurred while processing the statement ST[Top + 0<8>:real64] = ST[Top + 0<8>:real64] % ST[Top + 1<i8>:real64].
+    Not implemented: ST[Top + 0<8>:real64] % ST[Top + 1<i8>:real64]
+       at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 184
+   at Reko.Core.Expressions.BinaryExpression.Accept[T](ExpressionVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 57
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 281
+   at Reko.Core.Code.Store.Accept(InstructionVisitor v) in /home/runner/work/reko/reko/src/Core/Code/Assignment.cs:line 98
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804F5FB: error: An error occurred while processing the statement ST[Top + 0<8>:real64] = ST[Top + 0<8>:real64] % ST[Top + 1<i8>:real64].
+    Not implemented: ST[Top + 0<8>:real64] % ST[Top + 1<i8>:real64]
+       at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 184
+   at Reko.Core.Expressions.BinaryExpression.Accept[T](ExpressionVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 57
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 281
+   at Reko.Core.Code.Store.Accept(InstructionVisitor v) in /home/runner/work/reko/reko/src/Core/Code/Assignment.cs:line 98
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74

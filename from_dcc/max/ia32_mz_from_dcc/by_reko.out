@@ -1,13 +1,11 @@
 === Using options:--aggressive-branch-removal
 Borland v2 detected
 0800:1A0E: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
-0800:12E5: error: An error occurred while processing the statement word16 di_327 = di_312 - (fp - 0x8A<16>).
-    Not handling (memptr T_192 (struct (0 T_932 t0000))) and (memptr T_5 <unknown>) yet.
-       at Reko.Typing.ExpressionTypeDescender.PushMinuendDataType(DataType dtDiff, DataType dtSub) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 409
-   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 255
-   at Reko.Core.Expressions.BinaryExpression.Accept[T,C](ExpressionVisitor`2 v, C context) in /home/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 54
-   at Reko.Typing.TypeCollector.VisitDeclaration(Declaration decl) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 228
-   at Reko.Core.Code.Declaration.Accept(InstructionVisitor v) in /home/runner/work/reko/reko/src/Core/Code/Declaration.cs:line 49
-   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
-l0800_10C9: warning: Non-integral switch expression
+fn0800_1000: error: An error occurred while renaming variables.
+    Sequence contains no matching element
+       at System.Linq.ThrowHelper.ThrowNoMatchException()
+   at Reko.Analysis.SsaLivenessAnalysis.BuildInterferenceGraph(SsaIdentifierCollection ssaIds) in /home/runner/work/reko/reko/src/Decompiler/Analysis/SsaLiveness.cs:line 90
+   at Reko.Analysis.SsaLivenessAnalysis..ctor(SsaState ssa) in /home/runner/work/reko/reko/src/Decompiler/Analysis/SsaLiveness.cs:line 61
+   at Reko.Analysis.LiveCopyInserter..ctor(SsaState ssa) in /home/runner/work/reko/reko/src/Decompiler/Analysis/LiveCopyInserter.cs:line 40
+   at Reko.Analysis.WebBuilder.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/WebBuilder.cs:line 108
 l0800_173B: warning: Non-integral switch expression

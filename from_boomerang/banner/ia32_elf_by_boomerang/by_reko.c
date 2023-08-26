@@ -114,12 +114,13 @@ char g_str8049B04[] = ""; // 08049B04
 
 #include "subject.h"
 
-// 080482E0: void _start(Register (ptr32 Eq_13) edx, Stack int32 dwArg00)
-void _start(void (* edx)(), int32 dwArg00)
+// 080482E0: void _start(Register (ptr32 Eq_13) edx, Stack int32 dwArg00, Stack (ptr32 char) ptrArg04)
+void _start(void (* edx)(), int32 dwArg00, char * ptrArg04)
 {
-	__align((char *) fp + 4);
-	__libc_start_main(&g_t8048390, dwArg00, (char *) fp + 4, &g_t804856C, &g_t804859C, edx, fp);
-	__hlt();
+	void * fp;
+	__align_stack<word32>(&ptrArg04);
+	__libc_start_main(&g_t8048390, dwArg00, &ptrArg04, &g_t804856C, &g_t804859C, edx, fp);
+	__halt();
 }
 
 // 08048304: void call_gmon_start()
@@ -143,8 +144,8 @@ void __do_global_dtors_aux()
 		<anonymous> * edx_12 = *eax_11;
 		while (edx_12 != null)
 		{
-			<anonymous> ** eax_19 = (char *) eax_11 + 4;
-			g_ptr804AB28 = eax_19;
+			<anonymous> ** eax_20 = (char *) eax_11 + 4;
+			g_ptr804AB28 = eax_20;
 			edx_12();
 			eax_11 = g_ptr804AB28;
 			edx_12 = (<anonymous> *) *eax_11;
@@ -163,58 +164,60 @@ void frame_dummy()
 // 08048390: void main()
 void main()
 {
-	__align(fp - 0x9C);
-	struct Eq_81 * eax_14 = malloc(0x0C);
+	ptr32 fp;
+	char bLoc7C;
+	__align_stack<word32>(fp - 0x9C);
+	struct Eq_79 * eax_14 = malloc(0x0C);
 	eax_14->dw0004 = 134519545;
-	word32 dwLoc10_192 = 0x02;
-	int32 * dwLoc14_193 = &eax_14->dw0004;
+	word32 dwLoc10_194 = 0x02;
+	int32 * dwLoc14_195 = &eax_14->dw0004;
 	while (true)
 	{
-		word32 v7_28 = dwLoc10_192 - 0x01;
-		dwLoc10_192 = v7_28;
-		if (v7_28 == 0x00)
+		word32 v8_28 = dwLoc10_194 - 0x01;
+		dwLoc10_194 = v8_28;
+		if (v8_28 == 0x00)
 			break;
-		Eq_84 eax_38 = strlen(*dwLoc14_193);
-		Eq_84 dwLoc24_198 = eax_38;
+		Eq_82 eax_38 = strlen(*dwLoc14_195);
+		Eq_82 dwLoc24_200 = eax_38;
 		if (eax_38 > 0x0A)
-			dwLoc24_198.u0 = 0x0A;
-		int32 dwLoc18_200;
-		for (dwLoc18_200 = 0x00; dwLoc18_200 <= 0x06; ++dwLoc18_200)
+			dwLoc24_200.u0 = 0x0A;
+		int32 dwLoc18_202;
+		for (dwLoc18_202 = 0x00; dwLoc18_202 <= 0x06; ++dwLoc18_202)
 		{
-			Eq_84 dwLoc1C_202 = 0x00;
-			while (dwLoc1C_202 < dwLoc24_198)
+			Eq_82 dwLoc1C_204 = 0x00;
+			while (dwLoc1C_204 < dwLoc24_200)
 			{
-				int32 eax_59 = (int32) *((word32) dwLoc1C_202 + *dwLoc14_193);
-				int32 dwLoc28_206 = eax_59 - 0x20;
+				int32 eax_59 = (int32) *((word32) dwLoc1C_204 + *dwLoc14_195);
+				int32 dwLoc28_208 = eax_59 - 0x20;
 				if (eax_59 < 0x20)
-					dwLoc28_206 = 0x00;
-				Eq_153 dwLoc20_208 = 0x00;
-				while (dwLoc20_208 <= 0x06)
+					dwLoc28_208 = 0x00;
+				Eq_151 dwLoc20_210 = 0x00;
+				while (dwLoc20_210 <= 0x06)
 				{
-					struct Eq_158 * eax_77 = (word32) dwLoc20_208 + ((dwLoc1C_202 << 0x03) + (fp - 0x0C));
-					int32 dwLoc84_213 = dwLoc28_206;
-					if (dwLoc28_206 < 0x00)
-						dwLoc84_213 = dwLoc28_206 + 0x07;
-					int32 edx_95 = dwLoc18_200 + (__align(dwLoc84_213, 8) - (dwLoc84_213 >> 0x03));
-					int32 dwLoc90_221 = dwLoc28_206;
-					if (dwLoc28_206 < 0x00)
-						dwLoc90_221 = dwLoc28_206 + 0x07;
-					Mem122[eax_77 + -112:byte] = Mem107[(dwLoc28_206 - __align(dwLoc90_221, 8)) * 0x07 + dwLoc20_208 + 0x0804AB40[edx_95 * 0x04]:byte];
-					dwLoc20_208 = (word32) dwLoc20_208 + 1;
+					struct Eq_156 * eax_78 = (word32) dwLoc20_210 + ((dwLoc1C_204 << 0x03) + (fp - 0x0C));
+					int32 dwLoc84_215 = dwLoc28_208;
+					if (dwLoc28_208 < 0x00)
+						dwLoc84_215 = dwLoc28_208 + 0x07;
+					int32 edx_96 = dwLoc18_202 + (__align(dwLoc84_215, 8) - (dwLoc84_215 >> 0x03));
+					int32 dwLoc90_223 = dwLoc28_208;
+					if (dwLoc28_208 < 0x00)
+						dwLoc90_223 = dwLoc28_208 + 0x07;
+					Mem123[eax_78 + -112:byte] = Mem108[(dwLoc28_208 - __align(dwLoc90_223, 8)) * 0x07 + dwLoc20_210 + 0x0804AB40[edx_96 * 0x04]:byte];
+					dwLoc20_210 = (word32) dwLoc20_210 + 1;
 				}
-				(fp - 117)[dwLoc1C_202].b0000 = 0x20;
-				dwLoc1C_202 = (word32) dwLoc1C_202 + 1;
+				(fp - 117)[dwLoc1C_204].b0000 = 0x20;
+				dwLoc1C_204 = (word32) dwLoc1C_204 + 1;
 			}
-			int32 dwLoc1C_232 = (dwLoc24_198 << 0x03) - 0x01;
-			while (dwLoc1C_232 >= 0x00 && (&((&((&((&((&((&((&((&((&((&((&((&((&((&((&((&((&((&((&((fp - 0x7C))[dwLoc1C_232].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000)[0] == 0x20)
+			int32 dwLoc1C_234 = (dwLoc24_200 << 0x03) - 0x01;
+			while (dwLoc1C_234 >= 0x00 && ((&bLoc7C))[dwLoc1C_234].u0 == 0x20)
 			{
-				(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x7C)[dwLoc1C_232].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (Eq_218) 0x00;
-				--dwLoc1C_232;
+				(&bLoc7C)[dwLoc1C_234].u0 = 0x00;
+				--dwLoc1C_234;
 			}
-			puts(fp - 0x7C);
+			puts(&bLoc7C);
 		}
 		puts("");
-		++dwLoc14_193;
+		++dwLoc14_195;
 	}
 }
 

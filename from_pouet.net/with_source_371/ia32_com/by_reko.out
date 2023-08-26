@@ -1,13 +1,12 @@
 === Using options:--aggressive-branch-removal --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0 --entry 0C00:0100
 0C00:10C0: warning: Call target address 0C00:1100 is invalid.
-0C00:10B8: error: Translation needed for return.
 0C00:10D7: warning: Call target address 0C00:1113 is invalid.
-0C00:10CB: error: Translation needed for return.
-0C00:10D9: error: Translation needed for return.
-: warning: Selector 0C00 has no known segment.
-: warning: Selector 0C00 has no known segment.
-: warning: Selector 0C00 has no known segment.
-: warning: Selector 0C00 has no known segment.
-: warning: Selector 0C00 has no known segment.
-: warning: Selector 0C00 has no known segment.
-fn0C00_0100: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+0C00:10DB: warning: Call target address 0C00:111D is invalid.
+fn0C00_0100: error: An error occurred while rewriting procedure to high-level language.
+    The given key 'l0C00_10E5' was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Reko.Core.Graphs.DominatorGraph`1.BuildDominanceFrontiers(DirectedGraph`1 graph, Dictionary`2 idoms) in /home/runner/work/reko/reko/src/Core/Graphs/DominatorGraph.cs:line 193
+   at Reko.Core.Graphs.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode) in /home/runner/work/reko/reko/src/Core/Graphs/DominatorGraph.cs:line 46
+   at Reko.Structure.StructureAnalysis.Execute() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 145
+   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 80
+   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 551

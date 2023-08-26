@@ -7,84 +7,85 @@
 // 0804804C: void fn0804804C(Register word24 eax_24_8, Stack word32 dwArg00, Stack (ptr32 Eq_4) dwArg04)
 void fn0804804C(word24 eax_24_8, word32 dwArg00, struct Eq_4 * dwArg04)
 {
-	word32 edi_126 = 0x00;
-	word32 ebp_100 = dwArg00;
-	struct Eq_4 * esi_105 = dwArg04;
-	word32 * esp_10 = fp + 8;
+	ptr32 fp;
+	word32 edi_155 = 0x00;
+	word32 ebp_25 = dwArg00;
+	struct Eq_4 * esi_100 = dwArg04;
+	word32 * esp_116 = fp + 8;
 	do
 	{
-		byte al_13 = esi_105->b0000;
-		++esi_105;
-		word16 * eax_154 = SEQ(eax_24_8, al_13);
-	} while (al_13 != 0x00);
-	word16 * ebx_19 = (word16 *) ~0x011E2152;
-	word32 ecx_137 = 672274793;
-	word32 edx_135 = 19088743;
+		byte al_15 = esi_100->b0000;
+		++esi_100;
+		word16 * eax_162 = SEQ(eax_24_8, al_15);
+	} while (al_15 != 0x00);
+	int32 ebx_105 = ~0x011E2152;
+	int32 ecx_109 = 672274793;
+	uint32 edx_107 = 19088743;
 	while (true)
 	{
-		word32 edx_41;
-		--ebp_100;
-		if (ebp_100 == 0x00)
+		uint32 edx_118;
+		--ebp_25;
+		if (ebp_25 == 0x00)
 			break;
-		eax_154 = *esp_10;
-		++esp_10;
-		if (*eax_154 == 0x702D)
+		eax_162 = *esp_116;
+		++esp_116;
+		if (*eax_162 == 0x702D)
 			goto l08048091;
-		if (*eax_154 != 0x662D)
+		if (*eax_162 != 0x662D)
 			break;
-		++edi_126;
+		++edi_155;
 	}
-	if (esi_105->dwFFFFFFFB == 0x746C6168)
-		edx_41 = 3454992675;
+	if (esi_100->dwFFFFFFFB == 0x746C6168)
+		edx_118 = 3454992675;
 	else
 	{
-		if (esi_105->wFFFFFFFD != 0x6666)
-			goto l080480AE;
-l08048091:
-		edx_41 = 1126301404;
-	}
-	struct Eq_160 * esp_46 = esp_10 - 4;
-	esp_46->dw0000 = edx_41;
-	esp_46->dwFFFFFFFC = 88;
-	__syscall(0x80);
-	edx_135 = esp_46->dw0000;
-	esp_10 = (word32 *) (&esp_46->dw0000 + 1);
+		if (esi_100->wFFFFFFFD != 0x6666)
+		{
+			if (edi_155 == 0x00)
+			{
+				struct Eq_113 * esp_53 = esp_116 - 4;
+				esp_53->ptr0000 = eax_162;
+				esp_53->dwFFFFFFFC = 672274793;
+				esp_53->dwFFFFFFF8 = 19088743;
+				esp_53->dwFFFFFFF4 = ~0x011E2152;
+				esp_53->ptrFFFFFFF0 = esp_116;
+				esp_53->dwFFFFFFEC = ebp_25;
+				esp_53->ptrFFFFFFE8 = esi_100;
+				esp_53->dwFFFFFFE4 = edi_155;
+				esp_53->tFFFFFFE0 = (struct __kernel_timespec *) 0x02;
+				Eq_143 ecx_80 = esp_53->tFFFFFFE0;
+				esp_53->tFFFFFFE0 = (struct __kernel_timespec *) 0x01;
+				Eq_143 ebx_84 = esp_53->tFFFFFFE0;
+				esp_53->tFFFFFFE0 = (struct __kernel_timespec *) 0x25;
+				sys_kill(ebx_84, ecx_80);
+				sys_nanosleep(&g_t80480D1, ecx_80);
+				esi_100 = esp_53->ptrFFFFFFE8;
+				ebx_105 = esp_53->dwFFFFFFF4;
+				edx_107 = esp_53->dwFFFFFFF8;
+				ecx_109 = esp_53->dwFFFFFFFC;
+				esp_53->ptr0000 = (word16 *) 0x24;
+				sys_sync();
+				esp_116 = (word32 *) ((char *) &esp_53->ptr0000 + 4);
+			}
 l080480A2:
-	word16 ** esp_56 = esp_10 - 4;
-	*esp_56 = (word16 **) (word16 *) 88;
-	word16 * eax_58 = *esp_56;
-	__syscall(0x80);
-	*esp_56 = (word16 **) (word16 *) 0x01;
-	eax_154 = (word16 *) *esp_56;
-	__syscall(0x80);
-	ebx_19 = eax_58;
-	esp_10 = (word32 *) ((char *) esp_56 + 4);
-l080480AE:
-	if (edi_126 == 0x00)
-	{
-		struct Eq_85 * esp_75 = esp_10 - 4;
-		esp_75->ptr0000 = eax_154;
-		esp_75->dwFFFFFFFC = ecx_137;
-		esp_75->dwFFFFFFF8 = edx_135;
-		esp_75->ptrFFFFFFF4 = ebx_19;
-		esp_75->ptrFFFFFFF0 = esp_10;
-		esp_75->dwFFFFFFEC = ebp_100;
-		esp_75->ptrFFFFFFE8 = esi_105;
-		esp_75->dwFFFFFFE4 = edi_126;
-		esp_75->dwFFFFFFE0 = 0x02;
-		esp_75->dwFFFFFFE0 = 0x01;
-		esp_75->dwFFFFFFE0 = 0x25;
-		__syscall(0x80);
-		__syscall(0x80);
-		edi_126 = esp_75->dwFFFFFFE4;
-		esi_105 = esp_75->ptrFFFFFFE8;
-		ebp_100 = esp_75->dwFFFFFFEC;
-		edx_135 = esp_75->dwFFFFFFF8;
-		ecx_137 = esp_75->dwFFFFFFFC;
-		esp_75->ptr0000 = (word16 *) 0x24;
-		__syscall(0x80);
-		esp_10 = (word32 *) ((char *) &esp_75->ptr0000 + 4);
+			word32 * esp_140 = esp_116 - 4;
+			*esp_140 = 88;
+			int32 eax_148 = sys_reboot(ebx_105, ecx_109, edx_107, esi_100);
+			*esp_140 = 0x01;
+			sys_exit(eax_148);
+		}
+l08048091:
+		edx_118 = 1126301404;
 	}
+	struct Eq_63 * esp_122 = esp_116 - 4;
+	esp_122->dw0000 = edx_118;
+	esp_122->dwFFFFFFFC = 88;
+	sys_reboot(~0x011E2152, 672274793, 2309737967, esi_100);
+	edx_107 = esp_122->dw0000;
+	esp_116 = (word32 *) (&esp_122->dw0000 + 1);
 	goto l080480A2;
 }
 
+Eq_170 g_t80480D1 = // 080480D1
+	{
+	};

@@ -1,7 +1,10 @@
 === Using options:--aggressive-branch-removal
-error: An error occurred during decompilation. System.NullReferenceException: Object reference not set to an instance of an object
-  at Reko.ImageLoaders.MzExe.PeImageLoader.Relocate (Reko.Core.Program program, Reko.Core.Address addrLoad) [0x00013] in <f8d4e12fa66a4df390f24a097a0a1f84>:0 
-  at Reko.ImageLoaders.MzExe.ExeImageLoader.Relocate (Reko.Core.Program program, Reko.Core.Address addrLoad) [0x00006] in <f8d4e12fa66a4df390f24a097a0a1f84>:0 
-  at Reko.Loading.Loader.LoadExecutable (System.String filename, System.Byte[] image, System.String loader, Reko.Core.Address addrLoad) [0x0008f] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Decompiler.Load (System.String fileName, System.String loaderName) [0x0005e] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x00024] in <46a9a108998349f9975ff5dd656c4cb0>:0 
+Error: An error occurred during decompilation.
+    Object reference not set to an instance of an object.
+       at Reko.ImageLoaders.MzExe.PeImageLoader.Relocate(Program program, Address addrLoad) in /home/runner/work/reko/reko/src/ImageLoaders/MzExe/PeImageLoader.cs:line 440
+   at Reko.ImageLoaders.MzExe.PeImageLoader.LoadProgram(Address addrLoad) in /home/runner/work/reko/reko/src/ImageLoaders/MzExe/PeImageLoader.cs:line 201
+   at Reko.ImageLoaders.MzExe.ExeImageLoader.LoadProgram(Address addrLoad) in /home/runner/work/reko/reko/src/ImageLoaders/MzExe/ExeImageLoader.cs:line 124
+   at Reko.Core.Loading.ProgramImageLoader.Load(Address addrLoad) in /home/runner/work/reko/reko/src/Core/Loading/ProgramImageLoader.cs:line 45
+   at Reko.Loading.Loader.LoadBinaryImage(ImageLocation imageLocation, Byte[] image, String loader, Address addrLoad) in /home/runner/work/reko/reko/src/Decompiler/Loading/Loader.cs:line 173
+   at Reko.Loading.Loader.Load(ImageLocation imageLocation, String loaderName, Address addrLoad) in /home/runner/work/reko/reko/src/Decompiler/Loading/Loader.cs:line 133
+   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs) in /home/runner/work/reko/reko/src/Drivers/CmdLine/CmdLineDriver.cs:line 172

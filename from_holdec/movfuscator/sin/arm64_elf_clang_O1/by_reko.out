@@ -2,5 +2,18 @@
 00000000004005A0: warning: Unable to resolve imported reference __gmon_start__.
 0000000000400718: warning: Call target address 0000000000000000 is invalid.
 00000000004005C0: warning: Unable to resolve imported reference sinf.
-0000000000410DD0: warning: Expected sizes of arrays to have been determined by now
-0000000000410DD0: warning: Expected sizes of arrays to have been determined by now
+/home/hawk/kza/decompiler-subjects.clean/from_holdec/movfuscator/sin/arm64_elf_clang_O1/subject.exe: error: An internal error occurred while analyzing /home/hawk/kza/decompiler-subjects.clean/from_holdec/movfuscator/sin/arm64_elf_clang_O1/subject.exe.
+    Object reference not set to an instance of an object.
+       at Reko.Analysis.ProjectionPropagator.ProjectionFilter.<>c.<FuseIdentifiers>b__18_0(SsaIdentifier a, SsaIdentifier b) in /home/runner/work/reko/reko/src/Decompiler/Analysis/ProjectionPropagator.cs:line 226
+   at Reko.Analysis.ProjectionPropagator.ProjectionFilter.AllSame[T](T[] items, Func`3 cmp) in /home/runner/work/reko/reko/src/Decompiler/Analysis/ProjectionPropagator.cs:line 104
+   at Reko.Analysis.ProjectionPropagator.ProjectionFilter.FuseIdentifiers(DataType dtWide, SsaIdentifier[] sids) in /home/runner/work/reko/reko/src/Decompiler/Analysis/ProjectionPropagator.cs:line 225
+   at Reko.Analysis.ProjectionPropagator.ProjectionFilter.VisitMkSequence(MkSequence seq) in /home/runner/work/reko/reko/src/Decompiler/Analysis/ProjectionPropagator.cs:line 209
+   at Reko.Core.Expressions.MkSequence.Accept[T](ExpressionVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Expressions/MkSequence.cs:line 56
+   at Reko.Core.Code.InstructionTransformer.TransformAssignment(Assignment a) in /home/runner/work/reko/reko/src/Core/Code/InstructionTransformer.cs:line 50
+   at Reko.Core.Code.Assignment.Accept(InstructionTransformer xform) in /home/runner/work/reko/reko/src/Core/Code/Assignment.cs:line 44
+   at Reko.Analysis.ProjectionPropagator.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/ProjectionPropagator.cs:line 73
+   at Reko.Analysis.SccWorker.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/SccWorker.cs:line 115
+   at Reko.Analysis.DataFlowAnalysis.RewriteProceduresToSsa() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 178
+   at Reko.Analysis.DataFlowAnalysis.UntangleProcedures() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 128
+   at Reko.Decompiler.AnalyzeDataFlow() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 111
+call_weak_fn_exit: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.

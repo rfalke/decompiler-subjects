@@ -119,12 +119,13 @@ char g_str8048572[] = "ctime: %i\n"; // 08048572
 
 #include "subject.h"
 
-// 080482AC: void _start(Register (ptr32 Eq_13) edx, Stack int32 dwArg00)
-void _start(void (* edx)(), int32 dwArg00)
+// 080482AC: void _start(Register (ptr32 Eq_13) edx, Stack int32 dwArg00, Stack (ptr32 char) ptrArg04)
+void _start(void (* edx)(), int32 dwArg00, char * ptrArg04)
 {
-	__align((char *) fp + 4);
-	__libc_start_main(&g_t804835C, dwArg00, (char *) fp + 4, &g_t8048454, &g_t8048484, edx, fp);
-	__hlt();
+	void * fp;
+	__align_stack<word32>(&ptrArg04);
+	__libc_start_main(&g_t804835C, dwArg00, &ptrArg04, &g_t8048454, &g_t8048484, edx, fp);
+	__halt();
 }
 
 // 080482D0: void call_gmon_start()
@@ -148,8 +149,8 @@ void __do_global_dtors_aux()
 		<anonymous> * edx_12 = *eax_11;
 		while (edx_12 != null)
 		{
-			<anonymous> ** eax_19 = (char *) eax_11 + 4;
-			g_ptr804958C = eax_19;
+			<anonymous> ** eax_20 = (char *) eax_11 + 4;
+			g_ptr804958C = eax_20;
 			edx_12();
 			eax_11 = g_ptr804958C;
 			edx_12 = (<anonymous> *) *eax_11;
@@ -165,11 +166,24 @@ void frame_dummy()
 {
 }
 
-// 0804835C: void main(Stack (ptr32 Eq_76) dwArg08)
-void main(struct Eq_76 * dwArg08)
+// 0804835C: void main(Stack (ptr32 Eq_73) dwArg08)
+void main(struct Eq_73 * dwArg08)
 {
-	__align(fp - 0x6C);
-	printf("res: %i\n", __xstat(0x03, dwArg08->ptr0004, fp - 0x6C));
+	word32 dwLoc6C;
+	int32 dwLoc60;
+	int32 dwLoc5C;
+	int32 dwLoc58;
+	int32 dwLoc54;
+	int32 dwLoc50;
+	int32 dwLoc4C;
+	int32 dwLoc40;
+	int32 dwLoc3C;
+	int32 dwLoc38;
+	int32 dwLoc34;
+	int32 dwLoc2C;
+	int32 dwLoc24;
+	__align_stack<word32>(&dwLoc6C);
+	printf("res: %i\n", __xstat(0x03, dwArg08->ptr0004, &dwLoc6C));
 	printf("dev: %i\n", dwLoc6C);
 	printf("ino: %i\n", dwLoc60);
 	printf("mode: %i\n", dwLoc5C);

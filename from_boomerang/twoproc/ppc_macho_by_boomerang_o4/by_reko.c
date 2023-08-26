@@ -4,88 +4,88 @@
 
 #include "subject.h"
 
-// 00002080: void __cplus_init()
-void __cplus_init()
+// 00002080: void _cplus_init()
+void _cplus_init()
 {
 }
 
-// 00002084: void __objcInit()
-void __objcInit()
+// 00002084: void _objcInit()
+void _objcInit()
 {
 }
 
-// 00002088: void _catch_exception_raise()
-void _catch_exception_raise()
+// 00002088: void catch_exception_raise()
+void catch_exception_raise()
 {
 }
 
-// 0000208C: void _catch_exception_raise_state()
-void _catch_exception_raise_state()
+// 0000208C: void catch_exception_raise_state()
+void catch_exception_raise_state()
 {
 }
 
-// 00002090: void _catch_exception_raise_state_identity()
-void _catch_exception_raise_state_identity()
+// 00002090: void catch_exception_raise_state_identity()
+void catch_exception_raise_state_identity()
 {
 }
 
-// 00002094: void _clock_alarm_reply()
-void _clock_alarm_reply()
+// 00002094: void clock_alarm_reply()
+void clock_alarm_reply()
 {
 }
 
-// 00002098: void _do_mach_notify_dead_name()
-void _do_mach_notify_dead_name()
+// 00002098: void do_mach_notify_dead_name()
+void do_mach_notify_dead_name()
 {
 }
 
-// 0000209C: void _do_mach_notify_no_senders()
-void _do_mach_notify_no_senders()
+// 0000209C: void do_mach_notify_no_senders()
+void do_mach_notify_no_senders()
 {
 }
 
-// 000020A0: void _do_mach_notify_port_deleted()
-void _do_mach_notify_port_deleted()
+// 000020A0: void do_mach_notify_port_deleted()
+void do_mach_notify_port_deleted()
 {
 }
 
-// 000020A4: void _do_mach_notify_send_once()
-void _do_mach_notify_send_once()
+// 000020A4: void do_mach_notify_send_once()
+void do_mach_notify_send_once()
 {
-	_do_seqnos_mach_notify_dead_name();
+	do_seqnos_mach_notify_dead_name();
 }
 
-// 000020A8: void _do_seqnos_mach_notify_dead_name()
+// 000020A8: void do_seqnos_mach_notify_dead_name()
 // Called from:
-//      _do_mach_notify_send_once
-void _do_seqnos_mach_notify_dead_name()
+//      do_mach_notify_send_once
+void do_seqnos_mach_notify_dead_name()
 {
 	__syscall();
-	_do_seqnos_mach_notify_no_senders();
+	do_seqnos_mach_notify_no_senders();
 }
 
-// 000020AC: void _do_seqnos_mach_notify_no_senders()
+// 000020AC: void do_seqnos_mach_notify_no_senders()
 // Called from:
-//      _do_seqnos_mach_notify_dead_name
-void _do_seqnos_mach_notify_no_senders()
+//      do_seqnos_mach_notify_dead_name
+void do_seqnos_mach_notify_no_senders()
 {
-	_do_seqnos_mach_notify_port_deleted();
+	do_seqnos_mach_notify_port_deleted();
 }
 
-// 000020B0: void _do_seqnos_mach_notify_port_deleted()
+// 000020B0: void do_seqnos_mach_notify_port_deleted()
 // Called from:
-//      _do_seqnos_mach_notify_no_senders
-void _do_seqnos_mach_notify_port_deleted()
+//      do_seqnos_mach_notify_no_senders
+void do_seqnos_mach_notify_port_deleted()
 {
 }
 
-// 000020B4: void _do_seqnos_mach_notify_send_once()
-void _do_seqnos_mach_notify_send_once()
+// 000020B4: void do_seqnos_mach_notify_send_once()
+void do_seqnos_mach_notify_send_once()
 {
 }
 
-// 000020B8: void _receive_samples()
-void _receive_samples()
+// 000020B8: void receive_samples()
+void receive_samples()
 {
 }
 
@@ -95,23 +95,23 @@ void _receive_samples()
 
 #include "subject.h"
 
-// 00002000: void _NXArgc()
-void _NXArgc()
+// 00002000: void NXArgc()
+void NXArgc()
 {
 }
 
-// 00002004: void _NXArgv()
-void _NXArgv()
+// 00002004: void NXArgv()
+void NXArgv()
 {
 }
 
-// 00002008: void _environ()
-void _environ()
+// 00002008: void environ()
+void environ()
 {
 }
 
-// 0000200C: void ___progname()
-void ___progname()
+// 0000200C: void __progname()
+void __progname()
 {
 }
 
@@ -147,28 +147,28 @@ void dyld_func_lookup_pointer()
 
 #include "subject.h"
 
-<anonymous> * __imp___exit = dyld_stub_binding_helper; // 00002020
-<anonymous> * __imp___atexit = dyld_stub_binding_helper; // 00002024
-<anonymous> * __imp_____keymgr_dwarf2_register_sections = dyld_stub_binding_helper; // 00002028
-<anonymous> * __imp____dyld_register_func_for_remove_image = dyld_stub_binding_helper; // 0000202C
-<anonymous> * __imp____dyld_register_func_for_add_image = dyld_stub_binding_helper; // 00002030
-<anonymous> * __imp____init_keymgr = dyld_stub_binding_helper; // 00002034
-<anonymous> * __imp___free = dyld_stub_binding_helper; // 00002038
-<anonymous> * __imp___abort = dyld_stub_binding_helper; // 0000203C
-<anonymous> * __imp____keymgr_set_and_unlock_processwide_ptr = dyld_stub_binding_helper; // 00002040
-<anonymous> * __imp____keymgr_get_and_lock_processwide_ptr = dyld_stub_binding_helper; // 00002044
-<anonymous> * __imp___calloc = dyld_stub_binding_helper; // 00002048
-<anonymous> * __imp___printf = dyld_stub_binding_helper; // 0000204C
+<anonymous> * __imp__exit = dyld_stub_binding_helper; // 00002020
+<anonymous> * __imp__atexit = dyld_stub_binding_helper; // 00002024
+<anonymous> * __imp____keymgr_dwarf2_register_sections = dyld_stub_binding_helper; // 00002028
+<anonymous> * __imp___dyld_register_func_for_remove_image = dyld_stub_binding_helper; // 0000202C
+<anonymous> * __imp___dyld_register_func_for_add_image = dyld_stub_binding_helper; // 00002030
+<anonymous> * __imp___init_keymgr = dyld_stub_binding_helper; // 00002034
+<anonymous> * __imp__free = dyld_stub_binding_helper; // 00002038
+<anonymous> * __imp__abort = dyld_stub_binding_helper; // 0000203C
+<anonymous> * __imp___keymgr_set_and_unlock_processwide_ptr = dyld_stub_binding_helper; // 00002040
+<anonymous> * __imp___keymgr_get_and_lock_processwide_ptr = dyld_stub_binding_helper; // 00002044
+<anonymous> * __imp__calloc = dyld_stub_binding_helper; // 00002048
+<anonymous> * __imp__printf = dyld_stub_binding_helper; // 0000204C
 // subject_DATA_nl_symbol_ptr.c
 // Generated by decompiling subject.exe
 // using Reko decompiler version VERSION
 
 #include "subject.h"
 
-<anonymous> * __imp___errno = null; // 00002050
-<anonymous> * __imp____cthread_init_routine = null; // 00002054
-<anonymous> * __imp___mach_init_routine = null; // 00002058
-<anonymous> * __imp_____keymgr_global = null; // 0000205C
+<anonymous> * __imp__errno = null; // 00002050
+<anonymous> * __imp___cthread_init_routine = null; // 00002054
+<anonymous> * __imp__mach_init_routine = null; // 00002058
+<anonymous> * __imp____keymgr_global = null; // 0000205C
 // subject_TEXT_cstring.c
 // Generated by decompiling subject.exe
 // using Reko decompiler version VERSION
@@ -186,34 +186,34 @@ void error_message()
 
 #include "subject.h"
 
-// 00001DD4: void _exit(Register word32 lr)
+// 00001DD4: void exit(Register word32 lr)
 // Called from:
 //      fn00001AC8
-void _exit(word32 lr)
+void exit(word32 lr)
 {
-	<anonymous> * r12_10 = __imp___exit;
+	<anonymous> * r12_10 = __imp__exit;
 	word32 ctr_18;
 	r12_10();
 }
 
-// 00001DF8: Register word32 _atexit(Register word32 lr)
+// 00001DF8: Register word32 atexit(Register word32 lr)
 // Called from:
 //      fn00001A34
-word32 _atexit(word32 lr)
+word32 atexit(word32 lr)
 {
-	<anonymous> * r12_10 = __imp___atexit;
+	<anonymous> * r12_10 = __imp__atexit;
 	word32 lr_15;
 	word32 ctr_18;
 	r12_10();
 	return lr_15;
 }
 
-// 00001E1C: void ___keymgr_dwarf2_register_sections(Register word32 lr)
+// 00001E1C: void __keymgr_dwarf2_register_sections(Register word32 lr)
 // Called from:
 //      fn000019A0
-void ___keymgr_dwarf2_register_sections(word32 lr)
+void __keymgr_dwarf2_register_sections(word32 lr)
 {
-	<anonymous> * r12_10 = __imp_____keymgr_dwarf2_register_sections;
+	<anonymous> * r12_10 = __imp____keymgr_dwarf2_register_sections;
 	word32 ctr_18;
 	r12_10();
 }
@@ -226,20 +226,20 @@ void ___keymgr_dwarf2_register_sections(word32 lr)
 
 // 00001EE0: void fn00001EE0(Register word32 lr)
 // Called from:
-//      ___darwin_gcc3_preregister_frame_info
+//      __darwin_gcc3_preregister_frame_info
 void fn00001EE0(word32 lr)
 {
-	<anonymous> * r12_10 = __imp____dyld_register_func_for_remove_image;
+	<anonymous> * r12_10 = __imp___dyld_register_func_for_remove_image;
 	word32 ctr_18;
 	r12_10();
 }
 
 // 00001F00: Register word32 fn00001F00(Register word32 lr)
 // Called from:
-//      ___darwin_gcc3_preregister_frame_info
+//      __darwin_gcc3_preregister_frame_info
 word32 fn00001F00(word32 lr)
 {
-	<anonymous> * r12_10 = __imp____dyld_register_func_for_add_image;
+	<anonymous> * r12_10 = __imp___dyld_register_func_for_add_image;
 	word32 lr_15;
 	word32 ctr_18;
 	r12_10();
@@ -248,10 +248,10 @@ word32 fn00001F00(word32 lr)
 
 // 00001F20: Register ptr32 fn00001F20(Register ptr32 lr)
 // Called from:
-//      ___darwin_gcc3_preregister_frame_info
+//      __darwin_gcc3_preregister_frame_info
 ptr32 fn00001F20(ptr32 lr)
 {
-	<anonymous> * r12_10 = __imp____init_keymgr;
+	<anonymous> * r12_10 = __imp___init_keymgr;
 	ptr32 lr_15;
 	word32 ctr_18;
 	r12_10();
@@ -260,20 +260,20 @@ ptr32 fn00001F20(ptr32 lr)
 
 // 00001F40: void fn00001F40(Register word32 lr)
 // Called from:
-//      _darwin_unwind_dyld_remove_image_hook
+//      darwin_unwind_dyld_remove_image_hook
 void fn00001F40(word32 lr)
 {
-	<anonymous> * r12_10 = __imp___free;
+	<anonymous> * r12_10 = __imp__free;
 	word32 ctr_18;
 	r12_10();
 }
 
 // 00001F60: Register word32 fn00001F60(Register word32 lr)
 // Called from:
-//      _darwin_unwind_dyld_remove_image_hook
+//      darwin_unwind_dyld_remove_image_hook
 word32 fn00001F60(word32 lr)
 {
-	<anonymous> * r12_10 = __imp___abort;
+	<anonymous> * r12_10 = __imp__abort;
 	word32 lr_15;
 	word32 ctr_18;
 	r12_10();
@@ -282,11 +282,11 @@ word32 fn00001F60(word32 lr)
 
 // 00001F80: Register word32 fn00001F80(Register word32 lr)
 // Called from:
-//      _darwin_unwind_dyld_add_image_hook
-//      _darwin_unwind_dyld_remove_image_hook
+//      darwin_unwind_dyld_add_image_hook
+//      darwin_unwind_dyld_remove_image_hook
 word32 fn00001F80(word32 lr)
 {
-	<anonymous> * r12_10 = __imp____keymgr_set_and_unlock_processwide_ptr;
+	<anonymous> * r12_10 = __imp___keymgr_set_and_unlock_processwide_ptr;
 	word32 lr_15;
 	word32 ctr_18;
 	r12_10();
@@ -295,11 +295,11 @@ word32 fn00001F80(word32 lr)
 
 // 00001FA0: Register word32 fn00001FA0(Register word32 lr)
 // Called from:
-//      _darwin_unwind_dyld_add_image_hook
-//      _darwin_unwind_dyld_remove_image_hook
+//      darwin_unwind_dyld_add_image_hook
+//      darwin_unwind_dyld_remove_image_hook
 word32 fn00001FA0(word32 lr)
 {
-	<anonymous> * r12_10 = __imp____keymgr_get_and_lock_processwide_ptr;
+	<anonymous> * r12_10 = __imp___keymgr_get_and_lock_processwide_ptr;
 	word32 lr_15;
 	word32 ctr_18;
 	r12_10();
@@ -308,10 +308,10 @@ word32 fn00001FA0(word32 lr)
 
 // 00001FC0: Register word32 fn00001FC0(Register word32 lr)
 // Called from:
-//      _darwin_unwind_dyld_add_image_hook
+//      darwin_unwind_dyld_add_image_hook
 word32 fn00001FC0(word32 lr)
 {
-	<anonymous> * r12_10 = __imp___calloc;
+	<anonymous> * r12_10 = __imp__calloc;
 	word32 lr_15;
 	word32 ctr_18;
 	r12_10();
@@ -327,7 +327,8 @@ word32 fn00001FC0(word32 lr)
 // 0000192C: void start(Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31, Stack ptr32 dwArg00)
 void start(word32 r28, word32 r29, word32 r30, word32 r31, ptr32 dwArg00)
 {
-	struct Eq_7 * r1_5 = (word32) fp - 4 & ~0x1F;
+	Eq_7 fp;
+	struct Eq_8 * r1_5 = (word32) fp - 4 & ~0x1F;
 	r1_5->dw0000 = 0x00;
 	r1_5->ptrFFFFFFC0 = r1_5;
 	word32 r28_25;
@@ -336,7 +337,7 @@ void start(word32 r28, word32 r29, word32 r30, word32 r31, ptr32 dwArg00)
 	word32 r31_29;
 	Eq_24 r4_30;
 	Eq_25 r5_31;
-	ptr32 r3_27 = __start(dwArg00, (word32) fp + 4, (word32) (dwArg00 + 0x01 << 0x02) + ((word32) fp + 4), r28, r29, r30, r31, out r4_30, out r5_31, out r28_25, out r29_26, out r30_28, out r31_29);
+	ptr32 r3_27 = _start(dwArg00, (word32) fp + 4, (word32) (dwArg00 + 0x01 << 0x02) + ((word32) fp + 4), r28, r29, r30, r31, out r4_30, out r5_31, out r28_25, out r29_26, out r30_28, out r31_29);
 	__trap();
 	word32 r4_50;
 	word32 r5_51;
@@ -344,18 +345,19 @@ void start(word32 r28, word32 r29, word32 r30, word32 r31, ptr32 dwArg00)
 	word32 r29_53;
 	word32 r30_54;
 	word32 r31_55;
-	__start(r3_27, r4_30, r5_31, r28_25, r29_26, r30_28, r31_29, out r4_50, out r5_51, out r28_52, out r29_53, out r30_54, out r31_55);
+	_start(r3_27, r4_30, r5_31, r28_25, r29_26, r30_28, r31_29, out r4_50, out r5_51, out r28_52, out r29_53, out r30_54, out r31_55);
 }
 
-// 00001960: Register ptr32 __start(Register ptr32 r3, Register Eq_24 r4, Register Eq_25 r5, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31, Register out ptr32 r4Out, Register out ptr32 r5Out, Register out ptr32 r28Out, Register out Eq_25 r29Out, Register out Eq_24 r30Out, Register out ptr32 r31Out)
+// 00001960: Register ptr32 _start(Register ptr32 r3, Register Eq_24 r4, Register Eq_25 r5, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31, Register out ptr32 r4Out, Register out ptr32 r5Out, Register out ptr32 r28Out, Register out Eq_25 r29Out, Register out Eq_24 r30Out, Register out (ptr32 Eq_41) r31Out)
 // Called from:
 //      start
-ptr32 __start(ptr32 r3, Eq_24 r4, Eq_25 r5, word32 r28, word32 r29, word32 r30, word32 r31, ptr32 & r4Out, ptr32 & r5Out, ptr32 & r28Out, union Eq_25 & r29Out, union Eq_24 & r30Out, ptr32 & r31Out)
+ptr32 _start(ptr32 r3, Eq_24 r4, Eq_25 r5, word32 r28, word32 r29, word32 r30, word32 r31, ptr32 & r4Out, ptr32 & r5Out, ptr32 & r28Out, union Eq_25 & r29Out, union Eq_24 & r30Out, struct Eq_41 & r31Out)
 {
-	v5->dw0000 = r28;
-	v5->dw0004 = r29;
-	v5->dw0008 = r30;
-	v5->dw000C = r31;
+	struct Eq_74 * v6;
+	v6->dw0000 = r28;
+	v6->dw0004 = r29;
+	v6->dw0008 = r30;
+	v6->dw000C = r31;
 	ptr32 r4_34;
 	ptr32 r5_35;
 	ptr32 r3_33 = fn00001984(r3, r5, r4, &g_t1974, out r4_34, out r5_35);
@@ -364,70 +366,70 @@ ptr32 __start(ptr32 r3, Eq_24 r4, Eq_25 r5, word32 r28, word32 r29, word32 r30, 
 	r28Out = r3;
 	r29Out = r5;
 	r30Out = r4;
-	r31Out = 6516;
+	r31Out = (struct Eq_41 *) &g_t1974;
 	return r3_33;
 }
 
-struct Eq_95 g_t1974 = // 00001974
+struct Eq_41 g_t1974 = // 00001974
 	{
-		?? /* Can't read address 00002000 */ ,
+		?? /* Can't read ptr32 at address 00002000 */ ,
 		
 		{
-			?? /* Can't read address 00002004 */ 
+			?? /* Can't read ui32 at address 00002004 */ 
 		},
 		
 		{
-			?? /* Can't read address 00002008 */ 
+			?? /* Can't read ui32 at address 00002008 */ 
 		},
 		,
 		,
 		,
 	};
-// 00001984: Register word32 fn00001984(Register ptr32 r28, Register Eq_25 r29, Register Eq_24 r30, Register (ptr32 Eq_95) r31, Register out ptr32 r4Out, Register out ptr32 r5Out)
+// 00001984: Register word32 fn00001984(Register ptr32 r28, Register Eq_25 r29, Register Eq_24 r30, Register (ptr32 Eq_41) r31, Register out ptr32 r4Out, Register out ptr32 r5Out)
 // Called from:
-//      __start
-word32 fn00001984(ptr32 r28, Eq_25 r29, Eq_24 r30, struct Eq_95 * r31, ptr32 & r4Out, ptr32 & r5Out)
+//      _start
+word32 fn00001984(ptr32 r28, Eq_25 r29, Eq_24 r30, struct Eq_41 * r31, ptr32 & r4Out, ptr32 & r5Out)
 {
 	ptr32 r4_8;
 	ptr32 r5_9;
-	word32 r3_7 = __dyld_init_check(out r4_8, out r5_9);
+	word32 r3_7 = _dyld_init_check(out r4_8, out r5_9);
 	fn00001988(r28, r29, r30, r31);
 	r4Out = r4_8;
 	r5Out = r5_9;
 	return r3_7;
 }
 
-// 00001988: void fn00001988(Register ptr32 r28, Register Eq_25 r29, Register Eq_24 r30, Register (ptr32 Eq_95) r31)
+// 00001988: void fn00001988(Register ptr32 r28, Register Eq_25 r29, Register Eq_24 r30, Register (ptr32 Eq_41) r31)
 // Called from:
 //      fn00001984
-void fn00001988(ptr32 r28, Eq_25 r29, Eq_24 r30, struct Eq_95 * r31)
+void fn00001988(ptr32 r28, Eq_25 r29, Eq_24 r30, struct Eq_41 * r31)
 {
 	r31->ptr068C = r28;
 	fn00001990(r29, r30, r31);
 }
 
-// 00001990: void fn00001990(Register Eq_25 r29, Register Eq_24 r30, Register (ptr32 Eq_95) r31)
+// 00001990: void fn00001990(Register Eq_25 r29, Register Eq_24 r30, Register (ptr32 Eq_41) r31)
 // Called from:
 //      fn00001988
-void fn00001990(Eq_25 r29, Eq_24 r30, struct Eq_95 * r31)
+void fn00001990(Eq_25 r29, Eq_24 r30, struct Eq_41 * r31)
 {
-	r31->t0690 = r30;
+	r31->t0690.u0 = (ui32) r30;
 	fn00001998(r29, r31);
 }
 
-// 00001998: void fn00001998(Register Eq_25 r29, Register (ptr32 Eq_95) r31)
+// 00001998: void fn00001998(Register Eq_25 r29, Register (ptr32 Eq_41) r31)
 // Called from:
 //      fn00001990
-void fn00001998(Eq_25 r29, struct Eq_95 * r31)
+void fn00001998(Eq_25 r29, struct Eq_41 * r31)
 {
-	r31->t0694 = r29;
+	r31->t0694.u0 = (ui32) r29;
 	fn000019A0(r31);
 }
 
-// 000019A0: void fn000019A0(Register (ptr32 Eq_95) r31)
+// 000019A0: void fn000019A0(Register (ptr32 Eq_41) r31)
 // Called from:
 //      fn00001998
-void fn000019A0(struct Eq_95 * r31)
+void fn000019A0(struct Eq_41 * r31)
 {
 	<anonymous> * r12_7 = *r31->ptr06E4;
 	if (r12_7 == null)
@@ -441,17 +443,19 @@ void fn000019A0(struct Eq_95 * r31)
 //      fn000019A0
 void fn000019B4(<anonymous> * r12)
 {
+	struct Eq_41 * r31;
 	<anonymous> * r12_6;
 	word32 ctr_7;
 	r12();
 	fn000019B4(r12_6);
 }
 
-// 000019BC: void fn000019BC(Register (ptr32 Eq_95) r31)
+// 000019BC: void fn000019BC(Register (ptr32 Eq_41) r31)
 // Called from:
 //      fn000019A0
-void fn000019BC(struct Eq_95 * r31)
+void fn000019BC(struct Eq_41 * r31)
 {
+	word32 lr;
 	<anonymous> * r12_7 = *r31->ptr06E0;
 	if (r12_7 == null)
 		fn000019D8(r31, lr);
@@ -464,25 +468,27 @@ void fn000019BC(struct Eq_95 * r31)
 //      fn000019A0
 void fn000019D0(<anonymous> * r12)
 {
+	struct Eq_41 * r31;
+	word32 lr;
 	<anonymous> * r12_6;
 	word32 ctr_7;
 	r12();
 	fn000019D0(r12_6);
 }
 
-// 000019D8: void fn000019D8(Register (ptr32 Eq_95) r31, Register word32 lr)
+// 000019D8: void fn000019D8(Register (ptr32 Eq_41) r31, Register word32 lr)
 // Called from:
 //      fn000019A0
-void fn000019D8(struct Eq_95 * r31, word32 lr)
+void fn000019D8(struct Eq_41 * r31, word32 lr)
 {
-	___keymgr_dwarf2_register_sections(lr);
+	__keymgr_dwarf2_register_sections(lr);
 	fn000019DC(r31);
 }
 
-// 000019DC: void fn000019DC(Register (ptr32 Eq_95) r31)
+// 000019DC: void fn000019DC(Register (ptr32 Eq_41) r31)
 // Called from:
 //      fn000019A0
-void fn000019DC(struct Eq_95 * r31)
+void fn000019DC(struct Eq_41 * r31)
 {
 	<anonymous> * r12_6 = r31->ptr06A0;
 	if (*r12_6 == 0x00)
@@ -507,14 +513,14 @@ void fn000019F0(<anonymous> * r12)
 //      fn000019F0
 void fn000019F8()
 {
-	struct Eq_223 * r31_10 = fn00001AE0();
+	struct Eq_222 * r31_10 = fn00001AE0();
 	fn000019FC(r31_10);
 }
 
-// 000019FC: void fn000019FC(Register (ptr32 Eq_223) r31)
+// 000019FC: void fn000019FC(Register (ptr32 Eq_222) r31)
 // Called from:
 //      fn000019F8
-void fn000019FC(struct Eq_223 * r31)
+void fn000019FC(struct Eq_222 * r31)
 {
 	<anonymous> * r12_6 = r31->ptr069C;
 	if (*r12_6 == 0x00)
@@ -539,13 +545,13 @@ void fn00001A10(<anonymous> * r12)
 //      fn000019FC
 void fn00001A18()
 {
-	__dyld_func_lookup();
+	_dyld_func_lookup();
 }
 
-// 00001A28: void fn00001A28(Register (ptr32 word32) r29, Register (ptr32 (ptr32 byte)) r30, Register (ptr32 Eq_258) r31, Register word32 lr, Stack word32 dwArg40)
+// 00001A28: void fn00001A28(Register (ptr32 word32) r29, Register (ptr32 (ptr32 byte)) r30, Register (ptr32 Eq_257) r31, Register word32 lr, Stack word32 dwArg40)
 // Called from:
 //      fn000019FC
-void fn00001A28(word32 * r29, byte ** r30, struct Eq_258 * r31, word32 lr, word32 dwArg40)
+void fn00001A28(word32 * r29, byte ** r30, struct Eq_257 * r31, word32 lr, word32 dwArg40)
 {
 	if (dwArg40 == 0x00)
 		fn00001A38(r29, r30, r31, lr);
@@ -553,29 +559,29 @@ void fn00001A28(word32 * r29, byte ** r30, struct Eq_258 * r31, word32 lr, word3
 		fn00001A34(r29, r30, r31, lr);
 }
 
-// 00001A34: void fn00001A34(Register (ptr32 word32) r29, Register (ptr32 (ptr32 byte)) r30, Register (ptr32 Eq_258) r31, Register word32 lr)
+// 00001A34: void fn00001A34(Register (ptr32 word32) r29, Register (ptr32 (ptr32 byte)) r30, Register (ptr32 Eq_257) r31, Register word32 lr)
 // Called from:
 //      fn00001A28
-void fn00001A34(word32 * r29, byte ** r30, struct Eq_258 * r31, word32 lr)
+void fn00001A34(word32 * r29, byte ** r30, struct Eq_257 * r31, word32 lr)
 {
-	word32 lr_5 = _atexit(lr);
+	word32 lr_5 = atexit(lr);
 	fn00001A38(r29, r30, r31, lr_5);
 }
 
-// 00001A38: void fn00001A38(Register (ptr32 word32) r29, Register (ptr32 (ptr32 byte)) r30, Register (ptr32 Eq_258) r31, Register word32 lr)
+// 00001A38: void fn00001A38(Register (ptr32 word32) r29, Register (ptr32 (ptr32 byte)) r30, Register (ptr32 Eq_257) r31, Register word32 lr)
 // Called from:
 //      fn00001A28
 //      fn00001A34
-void fn00001A38(word32 * r29, byte ** r30, struct Eq_258 * r31, word32 lr)
+void fn00001A38(word32 * r29, byte ** r30, struct Eq_257 * r31, word32 lr)
 {
 	*r31->ptr06DC = 0x00;
 	fn00001A48(r29, r30, r31, lr);
 }
 
-// 00001A48: void fn00001A48(Register (ptr32 word32) r29, Register (ptr32 (ptr32 byte)) r30, Register (ptr32 Eq_258) r31, Register word32 lr)
+// 00001A48: void fn00001A48(Register (ptr32 word32) r29, Register (ptr32 (ptr32 byte)) r30, Register (ptr32 Eq_257) r31, Register word32 lr)
 // Called from:
 //      fn00001A38
-void fn00001A48(word32 * r29, byte ** r30, struct Eq_258 * r31, word32 lr)
+void fn00001A48(word32 * r29, byte ** r30, struct Eq_257 * r31, word32 lr)
 {
 	byte * r11_5 = *r30;
 	if (r11_5 == null)
@@ -584,18 +590,18 @@ void fn00001A48(word32 * r29, byte ** r30, struct Eq_258 * r31, word32 lr)
 		fn00001A58(r11_5, r11_5, r29, r30, r31, lr);
 }
 
-// 00001A58: void fn00001A58(Register (ptr32 byte) r9, Register (ptr32 byte) r11, Register (ptr32 word32) r29, Register (ptr32 (ptr32 byte)) r30, Register (ptr32 Eq_258) r31, Register word32 lr)
+// 00001A58: void fn00001A58(Register (ptr32 byte) r9, Register (ptr32 byte) r11, Register (ptr32 word32) r29, Register (ptr32 (ptr32 byte)) r30, Register (ptr32 Eq_257) r31, Register word32 lr)
 // Called from:
 //      fn00001A48
-void fn00001A58(byte * r9, byte * r11, word32 * r29, byte ** r30, struct Eq_258 * r31, word32 lr)
+void fn00001A58(byte * r9, byte * r11, word32 * r29, byte ** r30, struct Eq_257 * r31, word32 lr)
 {
 	fn00001A5C(0x00, r9, r11, r29, r30, r31, lr);
 }
 
-// 00001A5C: void fn00001A5C(Register word32 r8, Register (ptr32 byte) r9, Register (ptr32 byte) r11, Register (ptr32 word32) r29, Register (ptr32 (ptr32 byte)) r30, Register (ptr32 Eq_258) r31, Register word32 lr)
+// 00001A5C: void fn00001A5C(Register word32 r8, Register (ptr32 byte) r9, Register (ptr32 byte) r11, Register (ptr32 word32) r29, Register (ptr32 (ptr32 byte)) r30, Register (ptr32 Eq_257) r31, Register word32 lr)
 // Called from:
 //      fn00001A58
-void fn00001A5C(word32 r8, byte * r9, byte * r11, word32 * r29, byte ** r30, struct Eq_258 * r31, word32 lr)
+void fn00001A5C(word32 r8, byte * r9, byte * r11, word32 * r29, byte ** r30, struct Eq_257 * r31, word32 lr)
 {
 	if ((word32) *r11 == 0x00)
 		fn00001A90(r8, r29, r30, r31, lr);
@@ -609,6 +615,11 @@ void fn00001A5C(word32 r8, byte * r9, byte * r11, word32 * r29, byte ** r30, str
 //      fn00001A7C
 void fn00001A6C(byte * r9, int32 r10)
 {
+	word32 r8;
+	word32 * r29;
+	byte ** r30;
+	struct Eq_257 * r31;
+	word32 lr;
 	if ((word32) r9[r10] != 0x2F)
 		fn00001A7C(r8, r10, r29, r30, r31, lr);
 	else
@@ -620,25 +631,31 @@ void fn00001A6C(byte * r9, int32 r10)
 //      fn00001A6C
 void fn00001A78(byte * r9, int32 r10)
 {
+	word32 r8;
+	word32 * r29;
+	byte ** r30;
+	struct Eq_257 * r31;
+	word32 lr;
 	fn00001A78(r9, r10);
 }
 
-// 00001A7C: void fn00001A7C(Register word32 r8, Register int32 r10, Register (ptr32 word32) r29, Register (ptr32 (ptr32 byte)) r30, Register (ptr32 Eq_258) r31, Register word32 lr)
+// 00001A7C: void fn00001A7C(Register word32 r8, Register int32 r10, Register (ptr32 word32) r29, Register (ptr32 (ptr32 byte)) r30, Register (ptr32 Eq_257) r31, Register word32 lr)
 // Called from:
 //      fn00001A6C
-void fn00001A7C(word32 r8, int32 r10, word32 * r29, byte ** r30, struct Eq_258 * r31, word32 lr)
+void fn00001A7C(word32 r8, int32 r10, word32 * r29, byte ** r30, struct Eq_257 * r31, word32 lr)
 {
+	byte * r9;
 	if ((word32) *((char *) *r30 + (r10 + 0x01)) != 0x00)
 		fn00001A6C(r9, r10 + 0x01);
 	else
 		fn00001A90(r8, r29, r30, r31, lr);
 }
 
-// 00001A90: void fn00001A90(Register word32 r8, Register (ptr32 word32) r29, Register (ptr32 (ptr32 byte)) r30, Register (ptr32 Eq_258) r31, Register word32 lr)
+// 00001A90: void fn00001A90(Register word32 r8, Register (ptr32 word32) r29, Register (ptr32 (ptr32 byte)) r30, Register (ptr32 Eq_257) r31, Register word32 lr)
 // Called from:
 //      fn00001A5C
 //      fn00001A7C
-void fn00001A90(word32 r8, word32 * r29, byte ** r30, struct Eq_258 * r31, word32 lr)
+void fn00001A90(word32 r8, word32 * r29, byte ** r30, struct Eq_257 * r31, word32 lr)
 {
 	if (r8 == 0x00)
 		fn00001AA0(r29, r30, r31, lr);
@@ -646,28 +663,28 @@ void fn00001A90(word32 r8, word32 * r29, byte ** r30, struct Eq_258 * r31, word3
 		fn00001A98(r8, r29, r31, lr);
 }
 
-// 00001A98: void fn00001A98(Register word32 r8, Register (ptr32 word32) r29, Register (ptr32 Eq_258) r31, Register word32 lr)
+// 00001A98: void fn00001A98(Register word32 r8, Register (ptr32 word32) r29, Register (ptr32 Eq_257) r31, Register word32 lr)
 // Called from:
 //      fn00001A90
-void fn00001A98(word32 r8, word32 * r29, struct Eq_258 * r31, word32 lr)
+void fn00001A98(word32 r8, word32 * r29, struct Eq_257 * r31, word32 lr)
 {
 	fn00001AA4(r8 + 0x01, r29, r31, lr);
 }
 
-// 00001AA0: void fn00001AA0(Register (ptr32 word32) r29, Register (ptr32 (ptr32 byte)) r30, Register (ptr32 Eq_258) r31, Register word32 lr)
+// 00001AA0: void fn00001AA0(Register (ptr32 word32) r29, Register (ptr32 (ptr32 byte)) r30, Register (ptr32 Eq_257) r31, Register word32 lr)
 // Called from:
 //      fn00001A90
-void fn00001AA0(word32 * r29, byte ** r30, struct Eq_258 * r31, word32 lr)
+void fn00001AA0(word32 * r29, byte ** r30, struct Eq_257 * r31, word32 lr)
 {
 	byte * r0_5 = *r30;
 	fn00001AA4(r0_5, r29, r31, lr);
 }
 
-// 00001AA4: void fn00001AA4(Register (ptr32 byte) r0, Register (ptr32 word32) r29, Register (ptr32 Eq_258) r31, Register word32 lr)
+// 00001AA4: void fn00001AA4(Register (ptr32 byte) r0, Register (ptr32 word32) r29, Register (ptr32 Eq_257) r31, Register word32 lr)
 // Called from:
 //      fn00001A98
 //      fn00001AA0
-void fn00001AA4(byte * r0, word32 * r29, struct Eq_258 * r31, word32 lr)
+void fn00001AA4(byte * r0, word32 * r29, struct Eq_257 * r31, word32 lr)
 {
 	r31->ptr0698 = r0;
 	fn00001AAC(r29, lr);
@@ -699,7 +716,7 @@ void fn00001AAC(word32 * r29, word32 lr)
 //      fn00001AAC
 void fn00001AC8(word32 lr)
 {
-	_exit(_main(lr));
+	exit(main(lr));
 	fn00001AE0();
 }
 
@@ -709,6 +726,7 @@ void fn00001AC8(word32 lr)
 //      fn00001AC8
 word32 fn00001AE0()
 {
+	<anonymous> * dwLoc20;
 	return fn00001AF8(dwLoc20);
 }
 
@@ -717,7 +735,7 @@ word32 fn00001AE0()
 //      fn00001AE0
 word32 fn00001AF8(<anonymous> * dwArg40)
 {
-	__dyld_func_lookup();
+	_dyld_func_lookup();
 	return fn00001B08(dwArg40);
 }
 
@@ -736,14 +754,18 @@ word32 fn00001B08(<anonymous> * dwArg40)
 //      fn00001B08
 word32 fn00001B14()
 {
+	word32 dwArg5C;
 	return dwArg5C;
 }
 
-// 00001B28: Register word32 __dyld_init_check(Register out ptr32 r4Out, Register out ptr32 r5Out)
+// 00001B28: Register word32 _dyld_init_check(Register out ptr32 r4Out, Register out ptr32 r5Out)
 // Called from:
 //      fn00001984
-word32 __dyld_init_check(ptr32 & r4Out, ptr32 & r5Out)
+word32 _dyld_init_check(ptr32 & r4Out, ptr32 & r5Out)
 {
+	word32 r3;
+	ptr32 r4;
+	ptr32 r5;
 	if (g_ptr2060 == null)
 	{
 		__syscall();
@@ -764,7 +786,7 @@ word32 __dyld_init_check(ptr32 & r4Out, ptr32 & r5Out)
 
 // 00001B64: void dyld_stub_binding_helper()
 // Called from:
-//      __dyld_init_check
+//      _dyld_init_check
 void dyld_stub_binding_helper()
 {
 	<anonymous> * r0_5 = g_ptr2060;
@@ -772,23 +794,24 @@ void dyld_stub_binding_helper()
 	r0_5();
 }
 
-// 00001B7C: void __dyld_func_lookup()
+// 00001B7C: void _dyld_func_lookup()
 // Called from:
 //      fn000019FC
 //      fn00001AF8
-void __dyld_func_lookup()
+void _dyld_func_lookup()
 {
 	<anonymous> * r11_5 = g_ptr2064;
 	word32 ctr_9;
 	r11_5();
 }
 
-// 00001B8C: void _darwin_unwind_dyld_add_image_hook(Register word32 r3, Register word32 r4, Register word32 r29, Register word32 r30, Register word32 r31, Register word32 lr)
-void _darwin_unwind_dyld_add_image_hook(word32 r3, word32 r4, word32 r29, word32 r30, word32 r31, word32 lr)
+// 00001B8C: void darwin_unwind_dyld_add_image_hook(Register word32 r3, Register word32 r4, Register word32 r29, Register word32 r30, Register word32 r31, Register word32 lr)
+void darwin_unwind_dyld_add_image_hook(word32 r3, word32 r4, word32 r29, word32 r30, word32 r31, word32 lr)
 {
-	v5->dw0000 = r29;
-	v5->dw0004 = r30;
-	v5->dw0008 = r31;
+	struct Eq_518 * v6;
+	v6->dw0000 = r29;
+	v6->dw0004 = r30;
+	v6->dw0008 = r31;
 	word32 lr_26 = fn00001FC0(lr);
 	*(word32 *) 0x05 = r3;
 	*(word32 *) 0x09 = r4;
@@ -798,11 +821,13 @@ void _darwin_unwind_dyld_add_image_hook(word32 r3, word32 r4, word32 r29, word32
 	fn00001F80(lr_44);
 }
 
-// 00001C10: void _darwin_unwind_dyld_remove_image_hook(Register word32 r3, Register word32 r4, Register word32 r30, Register word32 r31, Register word32 lr)
-void _darwin_unwind_dyld_remove_image_hook(word32 r3, word32 r4, word32 r30, word32 r31, word32 lr)
+// 00001C10: void darwin_unwind_dyld_remove_image_hook(Register word32 r3, Register word32 r4, Register word32 r30, Register word32 r31, Register word32 lr)
+void darwin_unwind_dyld_remove_image_hook(word32 r3, word32 r4, word32 r30, word32 r31, word32 lr)
 {
-	v5->dw0000 = r30;
-	v5->dw0004 = r31;
+	ptr32 fp;
+	struct Eq_558 * v6;
+	v6->dw0000 = r30;
+	v6->dw0004 = r31;
 	struct Eq_565 * dwLoc18_132 = null;
 	word32 lr_127 = fn00001FA0(lr);
 	struct Eq_565 ** dwLoc1C_134 = fp + ~0x1F;
@@ -833,31 +858,32 @@ void _darwin_unwind_dyld_remove_image_hook(word32 r3, word32 r4, word32 r30, wor
 	}
 }
 
-// 00001D2C: void ___darwin_gcc3_preregister_frame_info(Register word32 r30, Register word32 r31)
-void ___darwin_gcc3_preregister_frame_info(word32 r30, word32 r31)
+// 00001D2C: void __darwin_gcc3_preregister_frame_info(Register word32 r30, Register word32 r31)
+void __darwin_gcc3_preregister_frame_info(word32 r30, word32 r31)
 {
-	v5->dw0000 = r30;
-	v5->dw0004 = r31;
+	struct Eq_638 * v6;
+	v6->dw0000 = r30;
+	v6->dw0004 = r31;
 	word32 lr_19 = fn00001F20(0x1D44);
-	struct Eq_652 * r0_25 = *((char *) __imp_____keymgr_global + 8);
+	struct Eq_651 * r0_25 = *((char *) __imp____keymgr_global + 8);
 	if (r0_25 == null || ((word32) r0_25->w0004 & 0xFFFF) <= 0x02)
 		fn00001EE0(fn00001F00(lr_19));
 }
 
-// 00001DAC: Register word32 _main(Register word32 lr)
+// 00001DAC: Register word32 main(Register word32 lr)
 // Called from:
 //      fn00001AC8
-word32 _main(word32 lr)
+word32 main(word32 lr)
 {
-	<anonymous> * r12_17 = __imp___printf;
+	<anonymous> * r12_17 = __imp__printf;
 	word32 lr_22;
 	word32 ctr_28;
 	r12_17();
 	return lr_22;
 }
 
-// 00001DCC: void _proc1()
-void _proc1()
+// 00001DCC: void proc1()
+void proc1()
 {
 }
 

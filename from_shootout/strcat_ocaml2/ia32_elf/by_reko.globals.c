@@ -4,14 +4,16 @@
 
 #include "subject.h"
 
-Eq_1770 g_t0001;
-Eq_30969 g_t0002;
-Eq_3119 g_t0003;
-Eq_3377 g_t0009;
-Eq_61892 g_t0168;
-Eq_3377 g_t10F7;
+Eq_1633 g_t0001;
+Eq_30095 g_t0002;
+Eq_2951 g_t0003;
+Eq_3207 g_t0009;
+byte g_a00F9[];
+byte g_a00FA[];
+Eq_61605 g_t0168;
+Eq_3207 g_t10F7;
 void g_v1FFF; // 00001FFF
 void g_v2000; // 00002000
-Eq_3377 g_t28F7;
+Eq_3207 g_t28F7;
 real64 g_a3FFFFF[];
 real64 g_rFFFFFFFF; // FFFFFFFF

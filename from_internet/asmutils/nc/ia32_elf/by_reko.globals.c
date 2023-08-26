@@ -4,4 +4,4 @@
 
 #include "subject.h"
 
-byte g_b0001; // 00000001
+byte g_b0010; // 00000010

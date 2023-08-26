@@ -1,11 +1,11 @@
 === Using options:--aggressive-branch-removal
 Error: An error occurred during decompilation.
     Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
-       at System.Collections.Generic.List`1.get_Item(Int32 index) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/List.cs:line 150
-   at Reko.ImageLoaders.Elf.ElfLoader32.GetSectionNameOffset(List`1 sections, UInt32 idxString) in /home/runner/work/reko/reko/src/ImageLoaders/Elf/ElfLoader32.cs:line 319
-   at Reko.ImageLoaders.Elf.ElfLoader32.LoadSectionHeaders() in /home/runner/work/reko/reko/src/ImageLoaders/Elf/ElfLoader32.cs:line 495
-   at Reko.ImageLoaders.Elf.ElfImageLoader.LoadProgram(Address addrLoad) in /home/runner/work/reko/reko/src/ImageLoaders/Elf/ElfImageLoader.cs:line 87
-   at Reko.Core.Loading.ProgramImageLoader.Load(Address addrLoad) in /home/runner/work/reko/reko/src/Core/Loading/ProgramImageLoader.cs:line 46
-   at Reko.Loading.Loader.LoadBinaryImage(ImageLocation imageLocation, Byte[] image, String loader, Address addrLoad) in /home/runner/work/reko/reko/src/Decompiler/Loading/Loader.cs:line 171
-   at Reko.Loading.Loader.Load(ImageLocation imageLocation, String loaderName, Address addrLoad) in /home/runner/work/reko/reko/src/Decompiler/Loading/Loader.cs:line 117
-   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs) in /home/runner/work/reko/reko/src/Drivers/CmdLine/CmdLineDriver.cs:line 166
+       at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at Reko.ImageLoaders.Elf.ElfLoader32.GetSectionNameOffset(List`1 sections, UInt32 idxString) in /home/runner/work/reko/reko/src/ImageLoaders/Elf/ElfLoader32.cs:line 318
+   at Reko.ImageLoaders.Elf.ElfLoader32.LoadSectionHeaders() in /home/runner/work/reko/reko/src/ImageLoaders/Elf/ElfLoader32.cs:line 494
+   at Reko.ImageLoaders.Elf.ElfImageLoader.LoadProgram(Address addrLoad) in /home/runner/work/reko/reko/src/ImageLoaders/Elf/ElfImageLoader.cs:line 79
+   at Reko.Core.Loading.ProgramImageLoader.Load(Address addrLoad) in /home/runner/work/reko/reko/src/Core/Loading/ProgramImageLoader.cs:line 45
+   at Reko.Loading.Loader.LoadBinaryImage(ImageLocation imageLocation, Byte[] image, String loader, Address addrLoad) in /home/runner/work/reko/reko/src/Decompiler/Loading/Loader.cs:line 173
+   at Reko.Loading.Loader.Load(ImageLocation imageLocation, String loaderName, Address addrLoad) in /home/runner/work/reko/reko/src/Decompiler/Loading/Loader.cs:line 133
+   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs) in /home/runner/work/reko/reko/src/Drivers/CmdLine/CmdLineDriver.cs:line 172

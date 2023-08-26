@@ -4,649 +4,150 @@
 
 #include "subject.h"
 
-// 08048066: void fn08048066(Register Eq_2 ebp, Register (ptr16 Eq_3) fs, Register (ptr16 Eq_4) gs)
-void fn08048066(Eq_2 ebp, struct Eq_3 * fs, struct Eq_4 * gs)
+// 08048066: void fn08048066(Stack int32 dwArg00, Stack (ptr32 byte) dwArg08, Stack (ptr32 Eq_4) dwArg0C)
+void fn08048066(int32 dwArg00, byte * dwArg08, <unknown>* dwArg0C)
 {
-fn08048066_entry:
-	struct Eq_5 * esp_2 = fp
-	goto l08048066
-l0804804C:
-	esp_6->dwFFFFFFFC = 0x01
-	esp_6->dwFFFFFFFC = 0x04
-	__syscall(0x80)
-	esp_6->dwFFFFFFFC = 0x01
-	esp_6->dwFFFFFFFC = 0x01
-	__syscall(0x80)
-	esp_2 = esp_6
-l08048066:
-	int32 ecx_5 = esp_2->dw0000
-	struct Eq_5 * esp_6 = esp_2 + 1
-	branch ecx_5 > 0x03 l0804804C
-l0804806C:
-	branch ecx_5 == 0x01 l0804804C
-l08048071:
-	word32 * esi_30 = esp_6 + 1 + ecx_5
-l08048075:
-	struct Eq_65 * eax_33 = *esi_30
-	esi_30 = esi_30 + 1
-	branch eax_33 == null l08048090
-l0804807A:
-	branch eax_33->dw0000 != 0x52455355 l08048075
-l08048082:
-	branch eax_33->b0004 != 0x3D l08048075
-l0804808B:
-	g_ptr8048274 = (struct Eq_48 *) (&eax_33->b0004 + 1)
+	ptr32 fp;
+	if (dwArg00 > 0x03 || dwArg00 == 0x01)
+	{
+		sys_write(0x01, &g_b80481ED, 0x1C);
+		sys_exit(0x01);
+	}
+	else
+	{
+		word32 * esi_32 = fp + 8 + dwArg00 * 0x04;
+		do
+		{
+			struct Eq_38 * eax_35 = *esi_32;
+			++esi_32;
+			if (eax_35 == null)
+				goto l08048090;
+		} while (eax_35->dw0000 != 0x52455355 || eax_35->b0004 != 0x3D);
+		g_ptr8048274 = (byte *) (&eax_35->b0004 + 1);
 l08048090:
-	struct Eq_48 * esi_1273 = esp_6[1]
-	g_ptr8048270 = (struct Eq_48 *) esp_6[2]
-	esp_6[2] = (struct Eq_5) esi_1273
-	struct Eq_48 * edi_1128 = esi_1273
-	struct Eq_61 * esp_104 = esp_6 + 2
-	word32 ecx_57 = 0x20
-l080480A4:
-	branch ecx_57 == 0x00 l080480A6
-l080480A4_1:
-	edi_1128 = edi_1128 + 1
-	ecx_57 = ecx_57 - 0x01
-	branch edi_1128->b0000 == 0x00 l080480A4
-l080480A6:
-	word16 dx_1125
-	struct Eq_48 * esi_1269
-	struct Eq_61 * esp_113
-	struct Eq_48 * ecx_74 = ~(ecx_57 - 0x20)
-	branch ecx_74 == null l080481D4
-l080480B2:
-	esp_6[1] = (struct Eq_5) ecx_74
-	esp_6->dw0000 = 0x05
-	word32 eax_88 = esp_6->dw0000
-	__syscall(0x80)
-	g_dw8048278 = eax_88
-	esp_6->dw0000 = 0x0C
-	__syscall(0x80)
-l080480D0:
-	struct Eq_61 * esp_100 = esp_2 + 2
-	esp_100->dwFFFFFFFC = 0x03
-	int32 eax_103 = esp_100->dwFFFFFFFC
-	__syscall(0x80)
-	esp_104 = esp_100
-	branch eax_103 == 0x00 l080481D4
-l080480ED:
-	edi_1128 = &g_t80482AC
-	struct Eq_48 * esi_117 = esp_100->ptr0004
-	word32 ecx_118 = esp_100->dw0000
-l080480FA:
-	branch ecx_118 == 0x00 l080480FC
-l080480FA_2:
-	esi_117 = esi_117 + 1
-	edi_1128 = edi_1128 + 1
-	ecx_118 = ecx_118 - 0x01
-	branch esi_117->b0000 != edi_1128->b0000 l080480FA
-l080480FC:
-	esi_1273 = esi_117
-	branch ecx_118 != 0x00 l080480D0
-l08048100:
-	esi_1273 = g_ptr8048270
-	struct Eq_48 * esi_1281 = esi_1273
-	branch esi_1273 == null l0804811D
-l08048110:
-	edi_1128 = &g_t8048288
-	word32 ecx_141 = 0x06
-l08048117:
-	branch ecx_141 == 0x00 l08048119
-l08048117_3:
-	esi_1281 = esi_1281 + 1
-	edi_1128 = edi_1128 + 1
-	ecx_141 = ecx_141 - 0x01
-	branch esi_1281->b0000 != edi_1128->b0000 l08048117
-l08048119:
-	esi_1273 = esi_1281
-	esi_1273 = esi_1281
-	branch ecx_141 != 0x00 l080480D0
-l0804811D:
-	esp_100->dwFFFFFFFC = 0x01
-	esp_100->dwFFFFFFFC = 0x05
-	int32 eax_167 = esp_100->dwFFFFFFFC
-	__syscall(0x80)
-	branch eax_167 > 0x00 l08048139
-l0804812A:
-	branch g_ptr8048270 == null l080480D0
-l08048134:
-	esp_100->dwFFFFFFFC = 0x02
-	esp_113 = esp_100
-	dx_1125 = 0x12
-	esi_1269 = esi_1273
-	goto l080481E1
-l08048139:
-	g_dw804827C = eax_167
-	edi_1128 = &g_t8048400
-	byte * esi_173 = g_a804825A
-	word32 ecx_174 = 0x0D
-l0804814D:
-	branch ecx_174 == 0x00 l0804814F
-l0804814D_1:
-	edi_1128->b0000 = *esi_173
-	esi_173 = esi_173 + 1
-	edi_1128 = edi_1128 + 1
-	ecx_174 = ecx_174 - 0x01
-	goto l0804814D
-l0804814F:
-	struct Eq_48 * esi_1277 = g_ptr8048274
-	branch esi_1277 == null l0804817C
-l08048159:
-	byte al_184 = esi_1277->b0000
-	edi_1128->b0000 = al_184
-	esi_1277 = esi_1277 + 1
-	edi_1128 = edi_1128 + 1
-	branch al_184 != 0x00 l08048159
-l0804815F:
-	edi_1128->b0000 = 0x0A
-	esp_100->dwFFFFFFFC = 0x04
-	__syscall(0x80)
-l0804817C:
-	esp_100->dwFFFFFFFC = 0x04
-	__syscall(0x80)
-l08048191:
-	esp_100->dwFFFFFFFC = 0x03
-	int32 eax_222 = esp_100->dwFFFFFFFC
-	__syscall(0x80)
-	esp_113 = esp_100
-	branch eax_222 == 0x00 l080481B9
-l080481AB:
-	esp_100->dwFFFFFFFC = 0x04
-	__syscall(0x80)
-	goto l08048191
-l080481B9:
-	dx_1125 = 0x04
-	esi_1269 = esi_1277
-	goto l080481E1
-l080481C5:
+		g_ptr8048270 = dwArg0C;
+		byte * edi_55 = dwArg08;
+		ptr32 esp_113 = fp + 0x0C;
+		word32 ecx_60 = 0x20;
+		while (ecx_60 != 0x00)
+		{
+			edi_55 = edi_318 + 1;
+			--ecx_60;
+			edi_318 = edi_55;
+			if (*edi_318 != 0x00)
+				break;
+		}
+		Eq_12 edx_126;
+		char * ecx_125;
+		Eq_62 ebx_123;
+		ptr32 esp_124;
+		uint32 ecx_78 = 0x20 - ecx_60 - 1;
+		if (ecx_78 != 0x00)
+		{
+			g_t8048278.u0 = (int32) sys_open(&g_b8048243, 0x00, 0x00);
+			sys_chdir(&g_b8048251);
+			do
+			{
+				esp_113 = fp + 8;
+				if (sys_read(g_t8048278.u0, &g_b8048280, 0x0180) == 0x00)
+					goto l080481D4;
+				memcmp(dwArg08, &g_t80482AC, ecx_78);
+				if (ecx_78 != __find_first_difference__(dwArg08, &g_t80482AC))
+					continue;
+				<unknown>* esi_141 = g_ptr8048270;
+				if (esi_141 != null)
+				{
+					memcmp(esi_141, &g_b8048288, 0x06);
+					if (__find_first_difference__(esi_141, &g_b8048288) != 0x06)
+						continue;
+				}
+				Eq_62 eax_170 = sys_open(&g_b8048288, 0x01, 0x0180);
+				if (eax_170 > 0x00)
+				{
+					g_t804827C.u0 = (int32) eax_170;
+					byte * edi_174 = &g_b8048400;
+					byte * esi_175 = g_a804825A;
+					word32 ecx_176;
+					for (ecx_176 = 0x0D; ecx_176 != 0x00; --ecx_176)
+					{
+						*edi_174 = *esi_175;
+						++esi_175;
+						++edi_174;
+					}
+					byte * esi_179 = g_ptr8048274;
+					byte * esi_180 = esi_179;
+					if (esi_179 != null)
+					{
+						do
+						{
+							byte al_187 = *esi_180;
+							*edi_174 = al_187;
+							++esi_180;
+							++edi_174;
+						} while (al_187 != 0x00);
+						*edi_174 = 0x0A;
+						sys_write(g_t804827C.u0, &g_b8048400, edi_174 - 0x08048400);
+					}
+					sys_write(g_t804827C.u0, &g_b8048267, 0x09);
+					while (true)
+					{
+						Eq_12 eax_233 = sys_read(0x00, &g_b8048400, 0x0100);
+						esp_124 = fp + 8;
+						ebx_123.u0 = g_t804827C.u0;
+						if (eax_233 == 0x00)
+							break;
+						sys_write(ebx_123, &g_b8048400, eax_233);
+					}
+					ecx_125 = &g_b8048256;
+					edx_126.u0 = 0x04;
+					goto l080481E1;
+				}
+			} while (g_ptr8048270 == null);
+			ebx_123.u0 = 0x02;
+			esp_124 = fp + 8;
+			ecx_125 = &g_b8048231;
+			edx_126.u0 = 0x12;
+		}
+		else
+		{
 l080481D4:
-	word32 * esp_110 = esp_104 - 4
-	*esp_110 = 0x02
-	esp_113 = (struct Eq_61 *) (esp_110 + 1)
-	dx_1125 = 0x28
-	esi_1269 = esi_1273
+			union Eq_62 * esp_121 = esp_113 - 4;
+			esp_121->u0 = 0x02;
+			ebx_123.u0 = esp_121->u0;
+			esp_124 = (char *) esp_121 + 4;
+			ecx_125 = &g_b8048209;
+			edx_126.u0 = 0x28;
+		}
 l080481E1:
-	struct Eq_325 * esp_255 = esp_113 - 4
-	&esp_255->t0000.u0->t0000 = 0x04
-	__syscall(0x80)
-	&esp_255->t0000.u0->t0000 = 0x01
-	Eq_2 eax_1115 = esp_255->t0000
-	__syscall(0x80)
-	esp_255->t0000 = ebp
-	cu8 Eq_4::* si_308 = (word16) esi_1269
-	Eq_249 CZ_475 = SLICE(cond(0x00), bool, 2)
-	cu8 ah_287 = SLICE(eax_1115, byte, 8)
-	byte al_335 = (byte) eax_1115
-	struct Eq_325 * esp_1100 = esp_255
-	branch Test(UGE,false) l08048251
-l080481F0:
-	branch ah_287 > gs->*si_308 l08048268
-l080481F6:
-	*(byte *) 116 = 0x00
-	branch *(byte *) 116 == 0x00 l0804827C
-l08048203:
-	bool v399_1264
-	bool v393_1258
-	bool v396_1261
-	__outb(dx_1125, al_335)
-	word32 edx_352 = esp_255->dw0014
-	Eq_2 ecx_354 = esp_255->t0018
-	eax_1115 = esp_255->t001C
-	Eq_2 edi_343 = esp_255->t0000
-	*edi_343 = __in((word16) edx_352)
-	struct Eq_346 * ebp_361 = esp_255->ptr0020
-	byte dh_390 = SLICE(edx_352, byte, 8)
-	byte dl_364 = (byte) edx_352 | ebp_361->b0073
-	byte ch_404 = SLICE(ecx_354, byte, 8)
-	byte al_392 = (byte) eax_1115
-	union Eq_261 * edi_360 = (word32) edi_343 + 4
-	word16 dx_391 = SEQ(dh_390, dl_364)
-	branch Test(ULT,false) l0804822E
-l0804820E:
-	__outb(dx_391, al_392)
-	__outdw(dx_391, eax_1115)
-	branch dl_364 == 0x00 l08048232
-l08048212:
-	*((word32) edi_343 + 4) = __in(dx_391)
-	__outdw(dx_391, eax_1115)
-	fs->*((word32) ecx_354 + 110) = fs->*((word32) ecx_354 + 110) & ch_404
-	*((word32) edi_343 + 0x0077) = *((word32) edi_343 + 0x0077) & ch_404
-	*((word32) eax_1115 + 101) = *((word32) eax_1115 + 101) & dh_390
-	branch Test(ULT,false) l08048290
-l08048223:
-	__outb(dx_391, al_392)
-	*((word32) edi_343 + 5) = __in(dx_391)
-	__outb(dx_391, al_392)
-	esp_1100 = ebp_361->dw0064 *s 1635135242
-	edi_360 = (word32) edi_343 + 9
-	v393_1258 = esp_1100 < null
-	CZ_475.u0 = SLICE(cond(esp_1100), bool, 2)
-	v396_1261 = esp_1100 != null
-	v399_1264 = OVERFLOW(esp_1100)
-	branch esp_1100 < null l08048277
-	goto l08048248
-l0804822E:
-	dx_391 = SEQ(dh_390, dl_364 | fs->*((word32) eax_1115 + 101))
-	branch Test(ULT,false) l080482A2
-	goto l08048235
-l08048232:
-	branch Test(ULT,false) l080482A2
-l08048233:
-l08048234:
-l08048235:
-	__outb(dx_391, al_392)
-	esp_1100 = ebp_361->dw0064 *s 1635135242
-	v393_1258 = esp_1100 < null
-	CZ_475.u0 = SLICE(cond(esp_1100), bool, 2)
-	v396_1261 = esp_1100 != null
-	v399_1264 = OVERFLOW(esp_1100)
-	branch esp_1100 < null l08048277
-l08048248:
-	branch v393_1258 l080482BF
-l0804824A:
-	__outb(dx_391, al_392)
-	branch v396_1261 l080482C2
-l0804824E:
-	*edi_360 = (union Eq_261 *) __in(dx_391)
-l08048251:
-	byte al_473 = (byte) eax_1115
-	branch Test(UGE,false) l080482D1
-	goto l0804825E
-l08048256:
-l0804825E:
-	word32 esp_1103 = esp_1100 + 0x04
-	byte * ebx_1109 = esp_1103->ptr000C
-	eax_1115 = esp_1103->t0018
-	struct Eq_562 Eq_4::* bp_1120 = esp_1103->ptr0004
-	Eq_2 edi_1102 = esp_1100->t0000
-	dx_1125 = esp_1103->w0010
-	(gs->*bp_1120).b0072 = (gs->*bp_1120).b0072 & SLICE(eax_1115, byte, 8)
-	__outdw(dx_1125, eax_1115)
-	*edi_1102 = __in(dx_1125)
-	*ebx_1109 = *ebx_1109 & (byte) ebx_1109
-	edi_1128 = (word32) edi_1102 + 4
-l08048268:
-	edi_1128->b0000 = (byte) __in(dx_1125)
-	edi_1128[4] = (struct Eq_48) __in(dx_1125)
-	byte al_1154 = (byte) eax_1115 | *eax_1115
-	eax_1115 = SEQ(SLICE(eax_1115, word24, 8), al_1154)
-	*eax_1115 = (word32) *eax_1115 + al_1154
-	*eax_1115 = (word32) *eax_1115 + al_1154
-	*eax_1115 = (word32) *eax_1115 + al_1154
-l08048277:
-	byte al_1165 = (byte) eax_1115
-	*eax_1115 = (word32) *eax_1115 + al_1165
-	*eax_1115 = (word32) *eax_1115 + al_1165
-	*eax_1115 = (word32) *eax_1115 + al_1165
-	*eax_1115 = (word32) *eax_1115 + al_1165
-	goto l0804827E
-l0804827C:
-	*eax_1115 = (word32) *eax_1115 + al_335
-	goto l0804827E
-l0804827D:
-l0804827E:
-	byte al_1178 = (byte) eax_1115
-	*eax_1115 = (word32) *eax_1115 + al_1178
-	*eax_1115 = (word32) *eax_1115 + al_1178
-	*eax_1115 = (word32) *eax_1115 + al_1178
-	*eax_1115 = (word32) *eax_1115 + al_1178
-	*eax_1115 = (word32) *eax_1115 + al_1178
-	*eax_1115 = (word32) *eax_1115 + al_1178
-	*eax_1115 = (word32) *eax_1115 + al_1178
-	*eax_1115 = (word32) *eax_1115 + al_1178
-	*eax_1115 = (word32) *eax_1115 + al_1178
-	goto l08048291
-l08048290:
-	*eax_1115 = (word32) *eax_1115 + al_392
-l08048291:
-	byte al_1200 = (byte) eax_1115
-	*eax_1115 = (word32) *eax_1115 + al_1200
-	*eax_1115 = (word32) *eax_1115 + al_1200
-	*eax_1115 = (word32) *eax_1115 + al_1200
-	*eax_1115 = (word32) *eax_1115 + al_1200
-	*eax_1115 = (word32) *eax_1115 + al_1200
-	*eax_1115 = (word32) *eax_1115 + al_1200
-	*eax_1115 = (word32) *eax_1115 + al_1200
-	*eax_1115 = (word32) *eax_1115 + al_1200
-l080482A2:
-	byte al_1220 = (byte) eax_1115
-	*eax_1115 = (word32) *eax_1115 + al_1220
-	*eax_1115 = (word32) *eax_1115 + al_1220
-	*eax_1115 = (word32) *eax_1115 + al_1220
-	*eax_1115 = (word32) *eax_1115 + al_1220
-	*eax_1115 = (word32) *eax_1115 + al_1220
-	*eax_1115 = (word32) *eax_1115 + al_1220
-	*eax_1115 = (word32) *eax_1115 + al_1220
-	*eax_1115 = (word32) *eax_1115 + al_1220
-	*eax_1115 = (word32) *eax_1115 + al_1220
-	*eax_1115 = (word32) *eax_1115 + al_1220
-	*eax_1115 = (word32) *eax_1115 + al_1220
-	*eax_1115 = (word32) *eax_1115 + al_1220
-	*eax_1115 = (word32) *eax_1115 + al_1220
-	*eax_1115 = (word32) *eax_1115 + al_1220
-	*eax_1115 = (word32) *eax_1115 + al_1220
-	*eax_1115 = (word32) *eax_1115 + al_1220
-l080482BF:
-	*eax_1115 = (word32) *eax_1115 + al_392
-	*eax_1115 = (word32) *eax_1115 + al_392
-l080482C0:
-l080482C1:
-l080482C2:
-	*eax_1115 = (word32) *eax_1115 + al_392
-l080482C3:
-	*eax_1115 = (word32) *eax_1115 + al_392
-	*eax_1115 = (word32) *eax_1115 + al_392
-	*eax_1115 = (word32) *eax_1115 + al_392
-	*eax_1115 = (word32) *eax_1115 + al_392
-	*eax_1115 = (word32) *eax_1115 + al_392
-	*eax_1115 = (word32) *eax_1115 + al_392
-	*eax_1115 = (word32) *eax_1115 + al_392
-	goto l080482D2
-l080482D1:
-	*eax_1115 = (word32) *eax_1115 + al_473
-l080482D2:
-	byte al_541 = (byte) eax_1115
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-	*eax_1115 = (word32) *eax_1115 + al_541
-fn08048066_exit:
+		word32 * esp_268 = esp_124 - 4;
+		*esp_268 = 0x04;
+		sys_write(ebx_123, ecx_125, edx_126);
+		*esp_268 = 0x01;
+		sys_exit(0x00);
+	}
 }
 
+char g_b80481ED = 'U'; // 080481ED
+char g_b8048209 = 'U'; // 08048209
+char g_b8048231 = 'P'; // 08048231
+char g_b8048243 = '/'; // 08048243
+char g_b8048251 = '/'; // 08048251
+char g_b8048256 = 'E'; // 08048256
 byte g_a804825A[] = // 0804825A
 	{
 	};
-struct Eq_48 * g_ptr8048270 = null; // 08048270
-struct Eq_48 * g_ptr8048274 = null; // 08048274
-word32 g_dw8048278 = 0x00; // 08048278
-int32 g_dw804827C = 0; // 0804827C
-Eq_48 g_t8048288 = // 08048288
+char g_b8048267 = '\x1B'; // 08048267
+<unknown> * g_ptr8048270 = null; // 08048270
+byte * g_ptr8048274 = null; // 08048274
+Eq_105 g_t8048278 = // 08048278
 	{
-		0x00,
-		0x00,
+		0
 	};
-Eq_48 g_t80482AC = // 080482AC
+Eq_62 g_t804827C = // 0804827C
 	{
-		0x00,
-		0x00,
+		0
 	};
-Eq_48 g_t8048400 = // 08048400
-	{
-		0x00,
-		0x00,
-	};
+char g_b8048280 = '\0'; // 08048280
+char g_b8048288 = '\0'; // 08048288
+Eq_116 g_t80482AC = // 080482AC;
+byte g_b8048400 = 0x00; // 08048400

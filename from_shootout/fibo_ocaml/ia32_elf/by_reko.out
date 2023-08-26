@@ -13,7 +13,6 @@
 08049F54: warning: Unable to resolve imported reference __xstat64.
 0804A054: warning: Unable to resolve imported reference rename.
 0804A4B4: warning: Unable to resolve imported reference chdir.
-08049FE4: warning: Unable to resolve imported reference system.
 08049F54: warning: Unable to resolve imported reference __xstat64.
 0804A154: warning: Unable to resolve imported reference getrusage.
 0804A414: warning: Unable to resolve imported reference getppid.
@@ -22,6 +21,7 @@
 0804A844: warning: Unable to resolve imported reference lseek64.
 0804A844: warning: Unable to resolve imported reference lseek64.
 0804A844: warning: Unable to resolve imported reference lseek64.
+0806838F: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
 08049F94: warning: Unable to resolve imported reference strtod.
 08049F94: warning: Unable to resolve imported reference strtod.
 0804A144: warning: Unable to resolve imported reference exp.
@@ -46,7 +46,14 @@
 0804A8E4: warning: Unable to resolve imported reference ceil.
 0804A174: warning: Unable to resolve imported reference expm1.
 08049EB4: warning: Unable to resolve imported reference log1p.
+08067009: warning: Unable to determine format string for call to 'sprintf'.
+08066FC5: warning: Unable to determine format string for call to 'sprintf'.
 0804A1E4: warning: Unable to resolve imported reference __fpclassify.
+080662E6: warning: Unable to determine format string for call to 'sprintf'.
+080662FD: warning: Unable to determine format string for call to 'sprintf'.
+08066264: warning: Unable to determine format string for call to 'sprintf'.
+080661F9: warning: Unable to determine format string for call to 'sprintf'.
+08066187: warning: Unable to determine format string for call to 'sprintf'.
 08062CD8: warning: Unable to determine format string for call to 'fprintf'.
 08062C90: warning: Unable to determine format string for call to 'fprintf'.
 08062CAB: warning: Unable to determine format string for call to 'fprintf'.
@@ -136,10 +143,6 @@
 08059771: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
 08058E6B: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
 080580C8: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
-08057125: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
-08056F34: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
-08056E55: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
-08056AB8: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
 08055860: error: Parameter 'low' mustn't be larger than 'high'.
 0804A8E4: warning: Unable to resolve imported reference ceil.
 0804A8C4: warning: Unable to resolve imported reference sigsuspend.
@@ -223,7 +226,6 @@
 0804A024: warning: Unable to resolve imported reference pow.
 0804A014: warning: Unable to resolve imported reference sendto.
 08049FF4: warning: Unable to resolve imported reference fchown.
-08049FE4: warning: Unable to resolve imported reference system.
 08049FB4: warning: Unable to resolve imported reference recv.
 08049FA4: warning: Unable to resolve imported reference socketpair.
 08049F74: warning: Unable to resolve imported reference cfgetispeed.
@@ -237,22 +239,348 @@
 08049E34: warning: Unable to resolve imported reference tcflow.
 08049DE4: warning: Unable to resolve imported reference fmod.
 08049DC4: warning: Unable to resolve imported reference ldexp.
+08062D3A: warning: Unable to determine format string for call to 'fprintf'.
+08062D3A: warning: Unable to determine format string for call to 'fprintf'.
+08062D3A: warning: Unable to determine format string for call to 'fprintf'.
+08062D3A: warning: Unable to determine format string for call to 'fprintf'.
+08062D3A: warning: Unable to determine format string for call to 'fprintf'.
+08062D3A: warning: Unable to determine format string for call to 'fprintf'.
+08062C90: warning: Unable to determine format string for call to 'fprintf'.
+08062CAB: warning: Unable to determine format string for call to 'fprintf'.
+08062C90: warning: Unable to determine format string for call to 'fprintf'.
+08062CAB: warning: Unable to determine format string for call to 'fprintf'.
+08062C90: warning: Unable to determine format string for call to 'fprintf'.
+08062CAB: warning: Unable to determine format string for call to 'fprintf'.
+08062C90: warning: Unable to determine format string for call to 'fprintf'.
+08062CAB: warning: Unable to determine format string for call to 'fprintf'.
+08062C90: warning: Unable to determine format string for call to 'fprintf'.
+08062CAB: warning: Unable to determine format string for call to 'fprintf'.
+08062C90: warning: Unable to determine format string for call to 'fprintf'.
+08062CAB: warning: Unable to determine format string for call to 'fprintf'.
+08062CD8: warning: Unable to determine format string for call to 'fprintf'.
+08062CD8: warning: Unable to determine format string for call to 'fprintf'.
+08062CD8: warning: Unable to determine format string for call to 'fprintf'.
+08062CD8: warning: Unable to determine format string for call to 'fprintf'.
+08062CD8: warning: Unable to determine format string for call to 'fprintf'.
+08062CD8: warning: Unable to determine format string for call to 'fprintf'.
+08066187: warning: Unable to determine format string for call to 'sprintf'.
+08066187: warning: Unable to determine format string for call to 'sprintf'.
+08066187: warning: Unable to determine format string for call to 'sprintf'.
+08066187: warning: Unable to determine format string for call to 'sprintf'.
+08066187: warning: Unable to determine format string for call to 'sprintf'.
+08066187: warning: Unable to determine format string for call to 'sprintf'.
+080661F9: warning: Unable to determine format string for call to 'sprintf'.
+080661F9: warning: Unable to determine format string for call to 'sprintf'.
+080661F9: warning: Unable to determine format string for call to 'sprintf'.
+080661F9: warning: Unable to determine format string for call to 'sprintf'.
+080661F9: warning: Unable to determine format string for call to 'sprintf'.
+080661F9: warning: Unable to determine format string for call to 'sprintf'.
+08066264: warning: Unable to determine format string for call to 'sprintf'.
+08066264: warning: Unable to determine format string for call to 'sprintf'.
+08066264: warning: Unable to determine format string for call to 'sprintf'.
+08066264: warning: Unable to determine format string for call to 'sprintf'.
+08066264: warning: Unable to determine format string for call to 'sprintf'.
+08066264: warning: Unable to determine format string for call to 'sprintf'.
+080662E6: warning: Unable to determine format string for call to 'sprintf'.
+080662FD: warning: Unable to determine format string for call to 'sprintf'.
+080662E6: warning: Unable to determine format string for call to 'sprintf'.
+080662FD: warning: Unable to determine format string for call to 'sprintf'.
+080662E6: warning: Unable to determine format string for call to 'sprintf'.
+080662FD: warning: Unable to determine format string for call to 'sprintf'.
+080662E6: warning: Unable to determine format string for call to 'sprintf'.
+080662FD: warning: Unable to determine format string for call to 'sprintf'.
+080662E6: warning: Unable to determine format string for call to 'sprintf'.
+080662FD: warning: Unable to determine format string for call to 'sprintf'.
+080662E6: warning: Unable to determine format string for call to 'sprintf'.
+080662FD: warning: Unable to determine format string for call to 'sprintf'.
+08067009: warning: Unable to determine format string for call to 'sprintf'.
+08066FC5: warning: Unable to determine format string for call to 'sprintf'.
+08067009: warning: Unable to determine format string for call to 'sprintf'.
+08066FC5: warning: Unable to determine format string for call to 'sprintf'.
+08067009: warning: Unable to determine format string for call to 'sprintf'.
+08066FC5: warning: Unable to determine format string for call to 'sprintf'.
+08067009: warning: Unable to determine format string for call to 'sprintf'.
+08066FC5: warning: Unable to determine format string for call to 'sprintf'.
+08067009: warning: Unable to determine format string for call to 'sprintf'.
+08066FC5: warning: Unable to determine format string for call to 'sprintf'.
+08067009: warning: Unable to determine format string for call to 'sprintf'.
+08066FC5: warning: Unable to determine format string for call to 'sprintf'.
+08067009: warning: Unable to determine format string for call to 'sprintf'.
+08066FC5: warning: Unable to determine format string for call to 'sprintf'.
+08067009: warning: Unable to determine format string for call to 'sprintf'.
+08066FC5: warning: Unable to determine format string for call to 'sprintf'.
+08062D3A: warning: Unable to determine format string for call to 'fprintf'.
+08062C90: warning: Unable to determine format string for call to 'fprintf'.
+08062CAB: warning: Unable to determine format string for call to 'fprintf'.
+08062CD8: warning: Unable to determine format string for call to 'fprintf'.
+08066187: warning: Unable to determine format string for call to 'sprintf'.
+080661F9: warning: Unable to determine format string for call to 'sprintf'.
+08066264: warning: Unable to determine format string for call to 'sprintf'.
+080662E6: warning: Unable to determine format string for call to 'sprintf'.
+080662FD: warning: Unable to determine format string for call to 'sprintf'.
+08067009: warning: Unable to determine format string for call to 'sprintf'.
+08066FC5: warning: Unable to determine format string for call to 'sprintf'.
+08062D3A: warning: Unable to determine format string for call to 'fprintf'.
+08062C90: warning: Unable to determine format string for call to 'fprintf'.
+08062CAB: warning: Unable to determine format string for call to 'fprintf'.
+08062CD8: warning: Unable to determine format string for call to 'fprintf'.
+08066187: warning: Unable to determine format string for call to 'sprintf'.
+080661F9: warning: Unable to determine format string for call to 'sprintf'.
+08066264: warning: Unable to determine format string for call to 'sprintf'.
+080662E6: warning: Unable to determine format string for call to 'sprintf'.
+080662FD: warning: Unable to determine format string for call to 'sprintf'.
+08067009: warning: Unable to determine format string for call to 'sprintf'.
+08066FC5: warning: Unable to determine format string for call to 'sprintf'.
 /home/hawk/kza/decompiler-subjects.clean/from_shootout/fibo_ocaml/ia32_elf/subject.exe: error: An internal error occurred while analyzing /home/hawk/kza/decompiler-subjects.clean/from_shootout/fibo_ocaml/ia32_elf/subject.exe.
-    Offsets not matching? SP(0)
-       at Reko.Analysis.CallApplicationBuilder.VisitFpuStackStorage(FpuStackStorage fpu) in /home/runner/work/reko/reko/src/Decompiler/Analysis/CallApplicationBuilder.cs:line 116
-   at Reko.Analysis.CallApplicationBuilder.With(Dictionary`2 map, Storage stg) in /home/runner/work/reko/reko/src/Decompiler/Analysis/CallApplicationBuilder.cs:line 93
-   at Reko.Analysis.CallApplicationBuilder.WithUses(Storage stg) in /home/runner/work/reko/reko/src/Decompiler/Analysis/CallApplicationBuilder.cs:line 81
-   at Reko.Analysis.CallApplicationBuilder.Bind(Identifier id) in /home/runner/work/reko/reko/src/Decompiler/Analysis/CallApplicationBuilder.cs:line 64
-   at Reko.Core.ApplicationBuilder.BindArguments(Identifier[] parameters, Boolean isVariadic, ProcedureCharacteristics chr) in /home/runner/work/reko/reko/src/Core/ApplicationBuilder.cs:line 143
-   at Reko.Core.ApplicationBuilder.CreateInstruction(FunctionType sigCallee, ProcedureCharacteristics chr) in /home/runner/work/reko/reko/src/Core/ApplicationBuilder.cs:line 93
-   at Reko.Analysis.CallRewriter.RewriteCall(SsaState ssaCaller, Statement stm, CallInstruction call) in /home/runner/work/reko/reko/src/Decompiler/Analysis/CallRewriter.cs:line 378
-   at Reko.Analysis.CallRewriter.RewriteCalls(SsaState ssaCaller) in /home/runner/work/reko/reko/src/Decompiler/Analysis/CallRewriter.cs:line 421
-   at Reko.Analysis.CallRewriter.Rewrite(IPlatform platform, List`1 ssts, ProgramDataFlow summaries, DecompilerEventListener eventListener) in /home/runner/work/reko/reko/src/Decompiler/Analysis/CallRewriter.cs:line 84
-   at Reko.Analysis.DataFlowAnalysis.UntangleProcedures() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 156
-   at Reko.Decompiler.AnalyzeDataFlow() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 112
+    Offsets not matching? SP(0).
+       at Reko.Analysis.CallApplicationBuilder.VisitFpuStackStorage(FpuStackStorage fpu, ValueTuple`2 ctx) in /home/runner/work/reko/reko/src/Decompiler/Analysis/CallApplicationBuilder.cs:line 104
+   at Reko.Core.FpuStackStorage.Accept[T,C](StorageVisitor`2 visitor, C context) in /home/runner/work/reko/reko/src/Core/Storage.cs:line 331
+   at Reko.Analysis.CallApplicationBuilder.BindInArg(Storage stg) in /home/runner/work/reko/reko/src/Decompiler/Analysis/CallApplicationBuilder.cs:line 68
+   at Reko.Core.ApplicationBuilder.BindArguments(Identifier[] parameters, Boolean isVariadic, ProcedureCharacteristics chr) in /home/runner/work/reko/reko/src/Core/ApplicationBuilder.cs:line 152
+   at Reko.Core.ApplicationBuilder.CreateInstruction(Expression callee, FunctionType sigCallee, ProcedureCharacteristics chr) in /home/runner/work/reko/reko/src/Core/ApplicationBuilder.cs:line 108
+   at Reko.Analysis.CallRewriter.RewriteCall(SsaState ssaCaller, Statement stm, CallInstruction call) in /home/runner/work/reko/reko/src/Decompiler/Analysis/CallRewriter.cs:line 394
+   at Reko.Analysis.CallRewriter.RewriteCalls(SsaState ssaCaller) in /home/runner/work/reko/reko/src/Decompiler/Analysis/CallRewriter.cs:line 436
+   at Reko.Analysis.CallRewriter.Rewrite(IPlatform platform, IReadOnlyCollection`1 ssts, ProgramDataFlow summaries, IDecompilerEventListener eventListener) in /home/runner/work/reko/reko/src/Decompiler/Analysis/CallRewriter.cs:line 71
+   at Reko.Analysis.DataFlowAnalysis.UntangleProcedures() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 149
+   at Reko.Decompiler.AnalyzeDataFlow() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 111
 l0804A970: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
-08049E0A: warning: Expected sizes of arrays to have been determined by now
-08049E1A: warning: Expected sizes of arrays to have been determined by now
+08063D97: error: An error occurred while processing the statement branch ebx_36 >=u Mem35[0x0807EB24<p32>:word32] l08063E00.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 399
+   at Reko.Typing.TypeCollector.VisitBranch(Branch branch) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 201
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0806487E: error: An error occurred while processing the statement branch dwArg04 <u Mem6[0x080826EC<p32>:word32] l08064887.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 399
+   at Reko.Typing.TypeCollector.VisitBranch(Branch branch) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 201
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Recursion too deep in PtrPrimitiveReplacer
+Warning: Type transformer has looped 51 times, quitting prematurely.
 0805E500: warning: Expected sizes of arrays to have been determined by now
 0805FEC8: warning: Expected sizes of arrays to have been determined by now
 08070950: warning: Expected sizes of arrays to have been determined by now
@@ -263,14 +591,25 @@ l0804A970: warning: Phi functions will be ignored by type analysis. This may be 
 08070D28: warning: Expected sizes of arrays to have been determined by now
 08070E00: warning: Expected sizes of arrays to have been determined by now
 08070E50: warning: Expected sizes of arrays to have been determined by now
-0807116C: warning: Expected sizes of arrays to have been determined by now
-08071190: warning: Expected sizes of arrays to have been determined by now
+080714C2: warning: Expected sizes of arrays to have been determined by now
+080714C3: warning: Expected sizes of arrays to have been determined by now
+080714C4: warning: Expected sizes of arrays to have been determined by now
+080714DA: warning: Expected sizes of arrays to have been determined by now
+080714DB: warning: Expected sizes of arrays to have been determined by now
+080714DC: warning: Expected sizes of arrays to have been determined by now
 08071624: warning: Expected sizes of arrays to have been determined by now
-08071674: warning: Expected sizes of arrays to have been determined by now
 08072008: warning: Expected sizes of arrays to have been determined by now
-0807225C: warning: Expected sizes of arrays to have been determined by now
-08072270: warning: Expected sizes of arrays to have been determined by now
-08072298: warning: Expected sizes of arrays to have been determined by now
+08072028: warning: Expected sizes of arrays to have been determined by now
+0807203C: warning: Expected sizes of arrays to have been determined by now
+0807214C: error: Failed to write global variable g_t807214C.
+    Specified argument was out of the range of valid values.
+       at Reko.Core.Memory.ByteMemoryArea.TryReadLeUInt32(Byte[] abImage, Int64 off, UInt32& value) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 458
+   at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Byte[] abImage, Int64 imageOffset, DataType type, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 276
+   at Reko.Core.Memory.ByteImageReader.TryReadLe(DataType dataType, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteImageReader.cs:line 225
+   at Reko.Core.ProcessorArchitecture.TryRead(EndianImageReader rdr, PrimitiveType dt, Constant& value) in /home/runner/work/reko/reko/src/Core/IProcessorArchitecture.cs:line 628
+   at Reko.Core.Output.GlobalDataWriter.VisitPrimitive(PrimitiveType pt) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 281
+   at Reko.Core.Output.GlobalDataWriter.VisitStructure(StructureType str) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 390
+   at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable(Address address, DataType dataType, String name) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 154
 080728E4: warning: Expected sizes of arrays to have been determined by now
 08077E10: warning: Expected sizes of arrays to have been determined by now
 0807908C: warning: Expected sizes of arrays to have been determined by now
@@ -279,14 +618,15 @@ l0804A970: warning: Phi functions will be ignored by type analysis. This may be 
 08079C44: warning: Expected sizes of arrays to have been determined by now
 08079EB8: warning: Expected sizes of arrays to have been determined by now
 08079F20: warning: Expected sizes of arrays to have been determined by now
+0807B2BC: warning: Expected sizes of arrays to have been determined by now
+0807B2C8: warning: Expected sizes of arrays to have been determined by now
+0807B5A0: warning: Expected sizes of arrays to have been determined by now
 0807DB5C: warning: Expected sizes of arrays to have been determined by now
 0807DB64: warning: Expected sizes of arrays to have been determined by now
 08082080: warning: Expected sizes of arrays to have been determined by now
 080821C0: warning: Expected sizes of arrays to have been determined by now
 080825E0: warning: Expected sizes of arrays to have been determined by now
 08082720: warning: Expected sizes of arrays to have been determined by now
-08049E0A: warning: Expected sizes of arrays to have been determined by now
-08049E1A: warning: Expected sizes of arrays to have been determined by now
 0805E500: warning: Expected sizes of arrays to have been determined by now
 0805FEC8: warning: Expected sizes of arrays to have been determined by now
 08070950: warning: Expected sizes of arrays to have been determined by now
@@ -297,14 +637,25 @@ l0804A970: warning: Phi functions will be ignored by type analysis. This may be 
 08070D28: warning: Expected sizes of arrays to have been determined by now
 08070E00: warning: Expected sizes of arrays to have been determined by now
 08070E50: warning: Expected sizes of arrays to have been determined by now
-0807116C: warning: Expected sizes of arrays to have been determined by now
-08071190: warning: Expected sizes of arrays to have been determined by now
+080714C2: warning: Expected sizes of arrays to have been determined by now
+080714C3: warning: Expected sizes of arrays to have been determined by now
+080714C4: warning: Expected sizes of arrays to have been determined by now
+080714DA: warning: Expected sizes of arrays to have been determined by now
+080714DB: warning: Expected sizes of arrays to have been determined by now
+080714DC: warning: Expected sizes of arrays to have been determined by now
 08071624: warning: Expected sizes of arrays to have been determined by now
-08071674: warning: Expected sizes of arrays to have been determined by now
 08072008: warning: Expected sizes of arrays to have been determined by now
-0807225C: warning: Expected sizes of arrays to have been determined by now
-08072270: warning: Expected sizes of arrays to have been determined by now
-08072298: warning: Expected sizes of arrays to have been determined by now
+08072028: warning: Expected sizes of arrays to have been determined by now
+0807203C: warning: Expected sizes of arrays to have been determined by now
+0807214C: error: Failed to write global variable g_t807214C.
+    Specified argument was out of the range of valid values.
+       at Reko.Core.Memory.ByteMemoryArea.TryReadLeUInt32(Byte[] abImage, Int64 off, UInt32& value) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 458
+   at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Byte[] abImage, Int64 imageOffset, DataType type, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 276
+   at Reko.Core.Memory.ByteImageReader.TryReadLe(DataType dataType, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteImageReader.cs:line 225
+   at Reko.Core.ProcessorArchitecture.TryRead(EndianImageReader rdr, PrimitiveType dt, Constant& value) in /home/runner/work/reko/reko/src/Core/IProcessorArchitecture.cs:line 628
+   at Reko.Core.Output.GlobalDataWriter.VisitPrimitive(PrimitiveType pt) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 281
+   at Reko.Core.Output.GlobalDataWriter.VisitStructure(StructureType str) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 390
+   at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable(Address address, DataType dataType, String name) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 154
 080728E4: warning: Expected sizes of arrays to have been determined by now
 08077E10: warning: Expected sizes of arrays to have been determined by now
 0807908C: warning: Expected sizes of arrays to have been determined by now
@@ -313,6 +664,9 @@ l0804A970: warning: Phi functions will be ignored by type analysis. This may be 
 08079C44: warning: Expected sizes of arrays to have been determined by now
 08079EB8: warning: Expected sizes of arrays to have been determined by now
 08079F20: warning: Expected sizes of arrays to have been determined by now
+0807B2BC: warning: Expected sizes of arrays to have been determined by now
+0807B2C8: warning: Expected sizes of arrays to have been determined by now
+0807B5A0: warning: Expected sizes of arrays to have been determined by now
 0807DB5C: warning: Expected sizes of arrays to have been determined by now
 0807DB64: warning: Expected sizes of arrays to have been determined by now
 08082080: warning: Expected sizes of arrays to have been determined by now

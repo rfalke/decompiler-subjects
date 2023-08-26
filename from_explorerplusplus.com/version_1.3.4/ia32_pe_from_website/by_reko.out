@@ -1,5 +1,6 @@
 === Using options:--aggressive-branch-removal
 Signature of 'Microsoft Visual C++ 8' detected.
+MSVC RTTI scan found 151 complete object locators
 00441A42: warning: Call target address 00000000 is invalid.
 00441A63: warning: Call target address 00000000 is invalid.
 00444140: warning: Call target address 00000000 is invalid.
@@ -47,7 +48,6 @@ Signature of 'Microsoft Visual C++ 8' detected.
 0046C1E3: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
 0046C280: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
 0046C280: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
-0046C2F1: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
 0046C465: warning: Unable to resolve imported reference PSAPI.DLL!GetModuleFileNameExW.
 0046C7AD: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_9.
 0046C7AD: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_9.
@@ -60,71 +60,622 @@ Signature of 'Microsoft Visual C++ 8' detected.
 0046C51C: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
 0046C51C: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
 0046C5E4: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
-00439C08: error: An error occurred while processing the statement (dwArg04 - 4<32>)[(dwArg0C >>u 2<32>) * 4<32>] = (dwArg08 - 4<32>)[(dwArg0C >>u 2<32>) * 4<32>].
-    Not handling (ptr32 (struct (0 (arr T_22740) a0000))) and (union (uint32 u0) (ptr32 u1)) yet
-       at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType(DataType dtDiff, DataType dtMin) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 422
-   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 257
-   at Reko.Core.Expressions.BinaryExpression.Accept[T,C](ExpressionVisitor`2 v, C context) in /home/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 54
-   at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess(ArrayAccess acc, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 188
-   at Reko.Core.Expressions.ArrayAccess.Accept[T,C](ExpressionVisitor`2 v, C context) in /home/runner/work/reko/reko/src/Core/Expressions/ArrayAccess.cs:line 48
-   at Reko.Typing.TypeCollector.VisitStore(Store store) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 285
-   at Reko.Core.Code.Store.Accept(InstructionVisitor v) in /home/runner/work/reko/reko/src/Core/Code/Assignment.cs:line 87
-   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
-00439C00: error: An error occurred while processing the statement (dwArg04 - 8<32>)[(dwArg0C >>u 2<32>) * 4<32>] = (dwArg08 - 8<32>)[(dwArg0C >>u 2<32>) * 4<32>].
-    Not handling (ptr32 (struct (0 (arr T_22742) a0000))) and (union (uint32 u0) (ptr32 u1)) yet
-       at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType(DataType dtDiff, DataType dtMin) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 422
-   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 257
-   at Reko.Core.Expressions.BinaryExpression.Accept[T,C](ExpressionVisitor`2 v, C context) in /home/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 54
-   at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess(ArrayAccess acc, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 188
-   at Reko.Core.Expressions.ArrayAccess.Accept[T,C](ExpressionVisitor`2 v, C context) in /home/runner/work/reko/reko/src/Core/Expressions/ArrayAccess.cs:line 48
-   at Reko.Typing.TypeCollector.VisitStore(Store store) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 289
-   at Reko.Core.Code.Store.Accept(InstructionVisitor v) in /home/runner/work/reko/reko/src/Core/Code/Assignment.cs:line 87
-   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
-0043BB28: error: An error occurred while processing the statement (dwArg04 - 4<32>)[(dwArg0C >>u 2<32>) * 4<32>] = (dwArg08 - 4<32>)[(dwArg0C >>u 2<32>) * 4<32>].
-    Not handling (ptr32 (struct (0 (arr T_22759) a0000))) and (union (uint32 u0) (ptr32 u1)) yet
-       at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType(DataType dtDiff, DataType dtMin) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 422
-   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 257
-   at Reko.Core.Expressions.BinaryExpression.Accept[T,C](ExpressionVisitor`2 v, C context) in /home/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 54
-   at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess(ArrayAccess acc, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 188
-   at Reko.Core.Expressions.ArrayAccess.Accept[T,C](ExpressionVisitor`2 v, C context) in /home/runner/work/reko/reko/src/Core/Expressions/ArrayAccess.cs:line 48
-   at Reko.Typing.TypeCollector.VisitStore(Store store) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 285
-   at Reko.Core.Code.Store.Accept(InstructionVisitor v) in /home/runner/work/reko/reko/src/Core/Code/Assignment.cs:line 87
-   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
-0043BB20: error: An error occurred while processing the statement (dwArg04 - 8<32>)[(dwArg0C >>u 2<32>) * 4<32>] = (dwArg08 - 8<32>)[(dwArg0C >>u 2<32>) * 4<32>].
-    Not handling (ptr32 (struct (0 (arr T_22761) a0000))) and (union (uint32 u0) (ptr32 u1)) yet
-       at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType(DataType dtDiff, DataType dtMin) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 422
-   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 257
-   at Reko.Core.Expressions.BinaryExpression.Accept[T,C](ExpressionVisitor`2 v, C context) in /home/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 54
-   at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess(ArrayAccess acc, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 188
-   at Reko.Core.Expressions.ArrayAccess.Accept[T,C](ExpressionVisitor`2 v, C context) in /home/runner/work/reko/reko/src/Core/Expressions/ArrayAccess.cs:line 48
-   at Reko.Typing.TypeCollector.VisitStore(Store store) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 289
-   at Reko.Core.Code.Store.Accept(InstructionVisitor v) in /home/runner/work/reko/reko/src/Core/Code/Assignment.cs:line 87
-   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
-00439C20: warning: Expected sizes of arrays to have been determined by now
-00439DBC: warning: Expected sizes of arrays to have been determined by now
-0043BB40: warning: Expected sizes of arrays to have been determined by now
-0043BCDC: warning: Expected sizes of arrays to have been determined by now
-004415FF: warning: Expected sizes of arrays to have been determined by now
-004BE364: warning: Expected sizes of arrays to have been determined by now
-004BE7EA: warning: Expected sizes of arrays to have been determined by now
-004BF5C8: warning: Expected sizes of arrays to have been determined by now
-004BF5CC: warning: Expected sizes of arrays to have been determined by now
-004BFB90: warning: Expected sizes of arrays to have been determined by now
-004C5BE0: warning: Expected sizes of arrays to have been determined by now
-004DEA68: warning: Expected sizes of arrays to have been determined by now
-004DEA6C: warning: Expected sizes of arrays to have been determined by now
-004EEE6C: warning: Expected sizes of arrays to have been determined by now
-00439C20: warning: Expected sizes of arrays to have been determined by now
-00439DBC: warning: Expected sizes of arrays to have been determined by now
-0043BB40: warning: Expected sizes of arrays to have been determined by now
-0043BCDC: warning: Expected sizes of arrays to have been determined by now
-004415FF: warning: Expected sizes of arrays to have been determined by now
-004BE364: warning: Expected sizes of arrays to have been determined by now
-004BE7EA: warning: Expected sizes of arrays to have been determined by now
-004BF5C8: warning: Expected sizes of arrays to have been determined by now
-004BF5CC: warning: Expected sizes of arrays to have been determined by now
-004BFB90: warning: Expected sizes of arrays to have been determined by now
-004C5BE0: warning: Expected sizes of arrays to have been determined by now
-004DEA68: warning: Expected sizes of arrays to have been determined by now
-004DEA6C: warning: Expected sizes of arrays to have been determined by now
-004EEE6C: warning: Expected sizes of arrays to have been determined by now
+004183E0: warning: Unable to resolve imported reference gdiplus.dll!GdipDisposeImage.
+004183ED: warning: Unable to resolve imported reference gdiplus.dll!GdipFree.
+0043CB3A: warning: Unable to determine size of call or jump table; there may be more than 2 entries.
+0048F6EE: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0048F6EE: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0048F6F7: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_17.
+0048F6F7: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_17.
+004A95A4: warning: Unable to resolve imported reference SHLWAPI.dll!StrCatW.
+004A9662: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+004A967B: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveExtensionW.
+004A615B: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsDirectoryW.
+004A61B2: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+004A5ED7: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsDirectoryW.
+004A4E02: warning: Unable to resolve imported reference UxTheme.dll!SetWindowTheme.
+0041EFF0: warning: Multiple different values of stack delta in procedure fn0041EEB0 when processing RET instruction; was 12 previously.
+004A3C12: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_71.
+004A3C12: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_71.
+004A3C35: warning: Unable to resolve imported reference UxTheme.dll!SetWindowTheme.
+00407B18: warning: Multiple different values of stack delta in procedure fn004079E0 when processing RET instruction; was 4 previously.
+0046AB07: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripToRootW.
+004A053D: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+004A053D: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00469B12: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveBlanksW.
+00464A76: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00464A76: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00464A82: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_8.
+00464A82: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_8.
+00464A8C: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00464A8C: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00464B2A: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_9.
+00464B2A: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_9.
+0049A2A2: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+004996C3: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveExtensionW.
+004996D6: warning: Unable to resolve imported reference SHLWAPI.dll!PathFindExtensionW.
+0040C3F9: warning: Multiple different values of stack delta in procedure fn0040C0F0 when processing RET instruction; was 16 previously.
+0040C407: warning: Multiple different values of stack delta in procedure fn0040C0F0 when processing RET instruction; was 16 previously.
+00419BBF: warning: Multiple different values of stack delta in procedure fn00419B10 when processing RET instruction; was 8 previously.
+0040A580: warning: Multiple different values of stack delta in procedure fn0040A550 when processing RET instruction; was 4 previously.
+0040B499: warning: Multiple different values of stack delta in procedure fn0040B350 when processing RET instruction; was 24 previously.
+0040B3E5: warning: Multiple different values of stack delta in procedure fn0040B350 when processing RET instruction; was 24 previously.
+0040B3F4: warning: Multiple different values of stack delta in procedure fn0040B350 when processing RET instruction; was 24 previously.
+0040B15D: warning: Multiple different values of stack delta in procedure fn0040B0E0 when processing RET instruction; was 4 previously.
+00499DB7: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+00499ED1: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveFileSpecW.
+004991C9: warning: Unable to resolve imported reference UxTheme.dll!SetWindowTheme.
+004991EE: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_71.
+004991EE: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_71.
+0049939A: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+004665EB: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+0049BCDF: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_727.
+0049BCDF: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_727.
+0049BD35: warning: Unable to resolve imported reference UxTheme.dll!SetWindowTheme.
+004160A5: warning: Multiple different values of stack delta in procedure fn00416060 when processing RET instruction; was 4 previously.
+00415F39: warning: Multiple different values of stack delta in procedure fn00415D90 when processing RET instruction; was 12 previously.
+00482317: warning: Multiple different values of stack delta in procedure fn00482160 when processing RET instruction; was 8 previously.
+00489303: warning: Unable to resolve imported reference SHLWAPI.dll!SHDeleteKeyW.
+00487607: warning: Unable to resolve imported reference SHLWAPI.dll!SHDeleteKeyW.
+004876EB: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
+004876EB: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
+00415CC4: warning: Multiple different values of stack delta in procedure fn00415920 when processing RET instruction; was 8 previously.
+00487171: warning: Unable to resolve imported reference SHLWAPI.dll!SHDeleteKeyW.
+00486BED: warning: Unable to resolve imported reference SHLWAPI.dll!SHDeleteKeyW.
+00485E00: warning: Unable to resolve imported reference SHLWAPI.dll!SHDeleteKeyW.
+00484D6C: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveBlanksW.
+004855CE: warning: Unable to resolve imported reference SHELL32.dll!SHBrowseForFolderW.
+00484474: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_16.
+00484474: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_16.
+0048448E: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0048448E: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+00484497: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_17.
+00484497: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_17.
+0040B02A: warning: Multiple different values of stack delta in procedure fn0040AFF0 when processing RET instruction; was 4 previously.
+0040AEA4: warning: Multiple different values of stack delta in procedure fn0040ACF0 when processing RET instruction; was 12 previously.
+004AD042: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+004AD042: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+004AD082: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+004AD082: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+004AD437: warning: Unable to resolve imported reference COMCTL32.dll!Ordinal_413.
+004AD437: warning: Unable to resolve imported reference COMCTL32.dll!Ordinal_413.
+004AD12D: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+004AD14F: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+004AD0DF: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+004AD1AB: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+004AD19A: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+004AD2E8: warning: Multiple different values of stack delta in procedure fn004AD000 when processing RET instruction; was 16 previously.
+004AD6F3: warning: Unable to resolve imported reference COMCTL32.dll!Ordinal_410.
+004AD6F3: warning: Unable to resolve imported reference COMCTL32.dll!Ordinal_410.
+004AD732: warning: Unable to resolve imported reference COMCTL32.dll!Ordinal_412.
+004AD732: warning: Unable to resolve imported reference COMCTL32.dll!Ordinal_412.
+00484000: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveFileSpecW.
+00417981: warning: Multiple different values of stack delta in procedure fn004178F0 when processing RET instruction; was 4 previously.
+0048389D: warning: Multiple different values of stack delta in procedure fn00483610 when processing RET instruction; was 8 previously.
+00482DF5: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_71.
+00482DF5: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_71.
+00482E12: warning: Unable to resolve imported reference UxTheme.dll!SetWindowTheme.
+004814AE: warning: Multiple different values of stack delta in procedure fn00481330 when processing RET instruction; was 12 previously.
+0048101F: warning: Unable to resolve imported reference UxTheme.dll!SetWindowTheme.
+0047FFA4: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+004800EB: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+004801A2: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+00480259: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+00480310: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+004803C7: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+00420A5F: warning: Multiple different values of stack delta in procedure fn00420A20 when processing RET instruction; was 4 previously.
+0047D753: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveFileSpecW.
+0047DA88: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+004AD8BA: warning: Unable to resolve imported reference SHELL32.dll!SHBrowseForFolderW.
+004AE10E: warning: Unable to resolve imported reference SHELL32.dll!SHGetPathFromIDListW.
+004A79A3: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+004A84B0: warning: Multiple different values of stack delta in procedure fn004A8290 when processing RET instruction; was 4 previously.
+0046A458: warning: Unable to resolve imported reference ADVAPI32.dll!ConvertSidToStringSidW.
+0041DA0B: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0041DA0B: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+00495151: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+00495151: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+004947CF: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+004947CF: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00494751: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+00494751: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+00494ED4: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsUNCW.
+00494EE5: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripToRootW.
+0041DC47: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+0041DC97: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_23.
+0041DC97: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_23.
+00496953: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+0049698A: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+00468488: warning: Unable to resolve imported reference SHLWAPI.dll!PathFindExtensionW.
+00496478: warning: Unable to resolve imported reference gdiplus.dll!GdipAlloc.
+0049649B: warning: Unable to resolve imported reference gdiplus.dll!GdipLoadImageFromFile.
+004158B3: warning: Unable to resolve imported reference gdiplus.dll!GdipGetImageWidth.
+00415883: warning: Unable to resolve imported reference gdiplus.dll!GdipGetImageHeight.
+00496531: warning: Unable to resolve imported reference gdiplus.dll!GdipGetImagePixelFormat.
+004965DF: warning: Unable to resolve imported reference gdiplus.dll!GdipGetImageHorizontalResolution.
+00496637: warning: Unable to resolve imported reference gdiplus.dll!GdipGetImageVerticalResolution.
+00496790: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+0047C00A: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsSameRootW.
+0045F81D: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+004609EF: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+00460524: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveFileSpecW.
+00460B03: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+0045F425: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsSameRootW.
+0046062C: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+0045FAB2: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+0045FAC4: warning: Unable to resolve imported reference SHLWAPI.dll!PathRenameExtensionW.
+0045FB18: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+00460368: warning: Unable to resolve imported reference COMCTL32.dll!Ordinal_410.
+00460368: warning: Unable to resolve imported reference COMCTL32.dll!Ordinal_410.
+0045FE11: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+0045FF71: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+004601C0: warning: Multiple different values of stack delta in procedure fn0045FC80 when processing RET instruction; was 4 previously.
+00460810: warning: Multiple different values of stack delta in procedure fn004603C0 when processing RET instruction; was 12 previously.
+00466840: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+00466402: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+0046124E: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+0046148C: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+00461541: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+0046171F: warning: Multiple different values of stack delta in procedure fn00460EF0 when processing RET instruction; was 12 previously.
+0045F71C: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+00460E71: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+00460D11: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+00461A3A: warning: Multiple different values of stack delta in procedure fn00461780 when processing RET instruction; was 12 previously.
+0047BBD7: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsSameRootW.
+004731AE: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+004731AE: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00473414: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
+00471E30: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
+00472081: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00472081: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+004720CE: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
+0047220C: warning: Call target address 0000:4720 is invalid.
+004721DE: warning: Multiple different values of stack delta in procedure fn00471D90 when processing RET instruction; was 4 previously.
+00472DA6: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00472DA6: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00472DFE: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
+00472E46: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
+00464FCB: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
+0047293B: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0047293B: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0046529E: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0046529E: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0046494D: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0046494D: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00464985: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_8.
+00464985: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_8.
+00464A2E: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_9.
+00464A2E: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_9.
+0047287A: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0047287A: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00417E8D: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00417E8D: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0047228B: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0047228B: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+004722A5: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+004722A5: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0046FDDF: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0046FDDF: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0046FE4E: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0046FE4E: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00471C15: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00471C15: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00471C5E: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
+00464B9E: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
+0046F4F4: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
+0046F744: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
+00464D7E: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
+00464896: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
+00471363: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00471363: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00470505: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00470505: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00470E4B: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00470E4B: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00470907: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00470907: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00470B6C: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00470B6C: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00470BD2: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00470BD2: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00470D5A: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00470D5A: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00471B56: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00471B56: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00471B71: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00471B71: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0047143A: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0047143A: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00471449: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00471449: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+004717B5: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+004717B5: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0047059A: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0047059A: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0047060B: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0047060B: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00471A5A: warning: Call target address 00000000 is invalid.
+00470838: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00470838: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+004701D2: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+004701D2: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+004701ED: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+004701ED: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0047003F: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0047003F: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+004700A6: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+004700A6: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0046D6FF: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0046D6FF: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00464667: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00464667: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+004646C3: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_8.
+004646C3: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_8.
+0046476C: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_9.
+0046476C: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_9.
+0046EB5E: warning: Call target address 00000000 is invalid.
+0046D3D8: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0046D3D8: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0046D1E2: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0046D1E2: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0046D123: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0046D123: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0046D13E: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0046D13E: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0046CF1E: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0046CF1E: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0046C814: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0046C814: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0046C875: warning: Unable to resolve imported reference PSAPI.DLL!GetModuleFileNameExW.
+0046C889: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveFileSpecW.
+0046C89B: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+0046C8A8: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_8.
+0046C8A8: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_8.
+0046CD16: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0046CD16: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0046CD73: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
+0046CDD5: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
+0045E0EE: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
+0045E0AD: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_727.
+0045E0AD: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_727.
+0045C3F4: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_727.
+0045C3F4: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_727.
+0045E5CF: warning: Multiple different values of stack delta in procedure fn0045E4F0 when processing RET instruction; was 8 previously.
+0045C97D: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0045C97D: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0045C8CA: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0045C8CA: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0045C82D: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0045C82D: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0045C5A2: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0045C5A2: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0045C52B: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0045C52B: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0045C4F8: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0045C4F8: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0045BBF2: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+0045AE39: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0045AE39: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0045AE6A: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+004515B7: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+004515E9: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+00451650: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+004398DE: warning: Multiple different values of stack delta in procedure fn004269E0 when processing RET instruction; was 16 previously.
+004267FB: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+004267FB: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0042686E: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0042686E: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0042687E: warning: Unable to resolve imported reference SHELL32.dll!SHGetPathFromIDListW.
+00426892: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+004526C7: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+004526C7: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+004526DF: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+00452717: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+0045272E: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0045272E: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00452746: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+0045277E: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+00452784: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+00453DAA: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpIW.
+00453DF4: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+00453E06: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+00451B67: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00451B67: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00451C09: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpIW.
+00451C5A: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00451C5A: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00451D69: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpIW.
+00451DBA: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00451DBA: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00451EA0: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpIW.
+00452040: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00452040: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00452058: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+00452090: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+004520C6: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+004520C6: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+004520E0: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+00452118: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+00452145: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+00452157: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+004521AB: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+004521AB: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+004521BE: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+004521BE: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+004522A0: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+004522A0: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+004522B8: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+004522F0: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+00452324: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00452324: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0045233C: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+00452374: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+00452389: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+004538F9: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpIW.
+00467716: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+00453A21: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpIW.
+00453A74: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+00453A84: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+00469CB1: warning: Unable to resolve imported reference gdiplus.dll!GdiplusStartup.
+00469CFC: warning: Unable to resolve imported reference gdiplus.dll!GdipAlloc.
+00469D1B: warning: Unable to resolve imported reference gdiplus.dll!GdipLoadImageFromFile.
+00469D6A: warning: Unable to resolve imported reference gdiplus.dll!GdipGetImageWidth.
+00469DB7: warning: Unable to resolve imported reference gdiplus.dll!GdipGetImageHeight.
+00469DFE: warning: Unable to resolve imported reference gdiplus.dll!GdipGetPropertySize.
+00469EC9: warning: Unable to resolve imported reference gdiplus.dll!GdiplusShutdown.
+00469E3C: warning: Unable to resolve imported reference gdiplus.dll!GdipGetAllPropertyItems.
+00453BDA: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpIW.
+00453C24: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+00453C36: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+004524DA: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpIW.
+00452521: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+00452536: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+0045253D: warning: Unable to resolve imported reference SHLWAPI.dll!PathFindExtensionW.
+004532BA: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpIW.
+0045330C: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+0045331E: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+00453EEA: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpIW.
+00453F3F: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+00453F51: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+004540BA: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpIW.
+00454104: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+00454116: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+0046A5EF: warning: Unable to resolve imported reference ADVAPI32.dll!GetSecurityInfo.
+0046A64E: warning: Unable to resolve imported reference ADVAPI32.dll!ConvertSidToStringSidW.
+004525EC: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpIW.
+004533F5: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpIW.
+004534F4: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripToRootW.
+004541F1: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpIW.
+00454244: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+00454257: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+00452B29: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00452B29: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00452B43: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+00452B7B: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+00452BD2: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00452BD2: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00452BEC: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+00452C24: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+00452C70: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+00452C82: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+00452D58: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00452D58: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00452D71: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00452D71: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00452DBF: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+00452DFD: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+00452E13: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+00452E51: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+00452E5F: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+00452E6D: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+0045362F: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0045362F: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00453647: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+0045367F: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+004536B3: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+004536B3: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+004536CB: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+00453703: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+0045371C: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+004537F0: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+0045384F: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpLogicalW.
+00453787: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripToRootW.
+0045AA2E: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpLogicalW.
+004544D0: warning: Unable to resolve imported reference SHLWAPI.dll!PathFindExtensionW.
+00454561: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveExtensionW.
+0044FFC3: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0044FFC3: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0044FFDF: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+00450020: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+0045004D: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+0044FD3F: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+0044F383: warning: Unable to resolve imported reference IPHLPAPI.DLL!GetAdaptersAddresses.
+0044F433: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0044F433: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0044F44F: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+0044F490: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+0044F49D: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+0044FC21: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+004501D1: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+0044F601: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+0044F60E: warning: Unable to resolve imported reference SHLWAPI.dll!PathFindExtensionW.
+0044FE51: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+0044FF14: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+0045040D: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0045040D: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00450429: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+0045046A: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+00450477: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+004502C9: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+004502C9: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+004264F3: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripToRootW.
+00426381: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00426381: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+004263B2: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+004570F1: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripToRootW.
+004567A9: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+00456E7C: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00456E7C: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00456E9C: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+00456EDD: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+00456EEA: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+004575DE: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+00424EDF: warning: Multiple different values of stack delta in procedure fn00424E30 when processing RET instruction; was 8 previously.
+00455064: warning: Unable to resolve imported reference IPHLPAPI.DLL!GetAdaptersAddresses.
+00455271: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00455271: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+004560DC: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+004560DC: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+004560FC: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+0045613D: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+0045614A: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+00456555: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+00456675: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+00455131: warning: Unable to resolve imported reference SHLWAPI.dll!PathFindExtensionW.
+00455F88: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+004568EB: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+0045B7DF: warning: Multiple different values of stack delta in procedure fn0045B650 when processing RET instruction; was 8 previously.
+0045BE48: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0045BE48: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0045C26F: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0045C26F: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0045ACA5: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0045ACA5: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0045B2A8: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0045B2A8: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0045B1BF: warning: Multiple different values of stack delta in procedure fn0045B0F0 when processing RET instruction; was 8 previously.
+0045B04B: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0045B04B: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0045B0EF: warning: Multiple different values of stack delta in procedure fn0045AFD0 when processing RET instruction; was 4 previously.
+00459B43: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+004597C1: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+00459C8D: warning: Multiple different values of stack delta in procedure fn00459A90 when processing RET instruction; was 8 previously.
+00459A1B: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00459A1B: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0045995A: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+004597F9: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+004596D1: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+004596D1: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+00459639: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00459639: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00459662: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+00459414: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+00459414: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+00459146: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+00459146: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+00459080: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+0045909E: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0045909E: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00455903: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+00455931: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+0045595F: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+0045598A: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+00454A43: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+00454A43: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+004548B3: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+004548B3: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+004548BC: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+004548BC: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0046644A: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+0046647C: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_17.
+0046647C: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_17.
+00466483: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+00466483: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+00454625: warning: Unable to resolve imported reference SHELL32.dll!SHGetPathFromIDListW.
+00459CE3: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+0045464A: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+00454669: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+0045469E: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+004546CB: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+004546CB: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+004547DA: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+00455C23: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+00459B43: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+004513C6: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+00450F5B: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+00450F94: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+00450FD2: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+00450FD2: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0041EE3A: warning: Multiple different values of stack delta in procedure fn0041EE00 when processing RET instruction; was 4 previously.
+00450D1A: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveFileSpecW.
+00450D22: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+00450D91: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+0044EFF6: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+0044E2B0: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsSameRootW.
+0044EE3F: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+0044EEC9: warning: Multiple different values of stack delta in procedure fn0044EA90 when processing RET instruction; was 28 previously.
+00420709: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsSameRootW.
+004203DE: warning: Multiple different values of stack delta in procedure fn00420220 when processing RET instruction; was 20 previously.
+0041BD00: warning: Unable to resolve imported reference gdiplus.dll!GdipDeleteBrush.
+0041BD0D: warning: Unable to resolve imported reference gdiplus.dll!GdipFree.
+0041A71B: warning: Unable to resolve imported reference gdiplus.dll!GdiplusShutdown.
+00419DD6: warning: Unable to resolve imported reference gdiplus.dll!GdipCloneBrush.
+00419DE5: warning: Unable to resolve imported reference gdiplus.dll!GdipAlloc.
+00419E0C: warning: Unable to resolve imported reference gdiplus.dll!GdipDeleteBrush.
+004158E6: warning: Unable to resolve imported reference gdiplus.dll!GdipCloneImage.
+004158F5: warning: Unable to resolve imported reference gdiplus.dll!GdipAlloc.
+/home/hawk/kza/decompiler-subjects.clean/from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe: error: An internal error occurred while analyzing /home/hawk/kza/decompiler-subjects.clean/from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.
+    Invalid bit size. (Parameter 'dt')
+       at Reko.Core.Expressions.Constant.Slice(DataType dt, Int32 offset) in /home/runner/work/reko/reko/src/Core/Expressions/Constant.cs:line 435
+   at Reko.Evaluation.SliceConstant_Rule.Match(Slice slice) in /home/runner/work/reko/reko/src/Decompiler/Evaluation/SliceConstant_Rule.cs:line 46
+   at Reko.Evaluation.ExpressionSimplifier.VisitSlice(Slice slice) in /home/runner/work/reko/reko/src/Decompiler/Evaluation/ExpressionSimplifier.Slice.cs:line 65
+   at Reko.Analysis.TrashedRegisterFinder.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Analysis/TrashedRegisterFinder.cs:line 335
+   at Reko.Analysis.TrashedRegisterFinder.ProcessBlock(Block block) in /home/runner/work/reko/reko/src/Decompiler/Analysis/TrashedRegisterFinder.cs:line 262
+   at Reko.Analysis.TrashedRegisterFinder.Compute() in /home/runner/work/reko/reko/src/Decompiler/Analysis/TrashedRegisterFinder.cs:line 99
+   at Reko.Analysis.SccWorker.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/SccWorker.cs:line 91
+   at Reko.Analysis.DataFlowAnalysis.RewriteProceduresToSsa() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 178
+   at Reko.Analysis.DataFlowAnalysis.UntangleProcedures() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 128
+   at Reko.Decompiler.AnalyzeDataFlow() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 111
+fn00401000_exit: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
+00412607: error: An error occurred while processing the statement v26 = Mem0[eax + 0<32>:byte] | dl.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 186
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 194
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+00412863: error: An error occurred while processing the statement v20 = Mem0[eax + 0<32>:byte] | dl.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 186
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 194
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+00412BB7: error: An error occurred while processing the statement v22 = Mem0[eax + 0<32>:byte] | dl.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 186
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 194
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+00459D73: error: An error occurred while processing the statement eax = eax *s 0x250<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 399
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 194
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0046AB32: error: An error occurred while processing the statement eax = eax *s Mem0[ebp + -536<i32>:word32].
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 399
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 194
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0046FBB9: error: An error occurred while processing the statement SZP = cond(edx & edx).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 186
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 194
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+004962B6: error: An error occurred while processing the statement SZP = cond(ecx & ecx).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 186
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 194
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+004A6F5A: error: An error occurred while processing the statement SZP = cond(ebx & ebx).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 186
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 194
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+=== Killed because of CPU time limit

@@ -61,18 +61,20 @@ word32 g_dw401080 = 2311074133; // 00401080
 //      Win32CrtStartup
 void fn00401470(word32 * dwArg04)
 {
-	ptr32 esp_25 = fp - 0x1C;
+	ptr32 fp;
+	ptr32 esp_26 = fp - 0x1C;
 	if (fn00401530(fp - 4, dwArg04, null) != 0x00)
 	{
 l0040149D:
 		cygwin1.dll!dll_crt0__FP11per_process();
+		esp_26 = esp_37;
 	}
-	struct Eq_41 * esp_42 = esp_25 - 0xB0;
-	esp_42->dw0008 = 0x00;
-	esp_42->ptr0004 = (struct Eq_34 *) &esp_42->dw0008;
-	esp_42->ptr0000 = dwArg04;
-	fn00401530(fp - 4, esp_42->ptr0000, esp_42->ptr0004);
-	esp_42->ptr0000 = &esp_42->dw0008;
+	struct Eq_41 * esp_44 = esp_26 - 0xB0;
+	esp_44->dw0008 = 0x00;
+	esp_44->ptr0004 = (struct Eq_34 *) &esp_44->dw0008;
+	esp_44->ptr0000 = dwArg04;
+	fn00401530(fp - 4, esp_44->ptr0000, esp_44->ptr0004);
+	esp_44->ptr0000 = &esp_44->dw0008;
 	goto l0040149D;
 }
 
@@ -81,19 +83,19 @@ l0040149D:
 //      fn00401470
 word32 fn00401530(ptr32 ebp, word32 * dwArg04, struct Eq_34 * dwArg08)
 {
-	word32 eax_106;
-	word32 eax_29 = 0x00;
+	ptr32 fp;
+	word32 eax_108;
+	word32 eax_30 = 0x00;
 	LPCSTR * esp_12 = fp - 0x0C;
 	struct Eq_34 * ebx_13 = dwArg08;
 	if (dwArg08 == null)
 	{
-		struct Eq_34 * eax_19;
-		cygwin1.dll!cygwin_internal();
-		eax_106 = 0x00;
-		if (eax_19 == (struct Eq_34 *) ~0x00)
-			return eax_106;
-		ebx_13 = eax_19;
-		eax_29 = 0x01;
+		struct Eq_34 * eax_20 = cygwin1.dll!cygwin_internal(0x08);
+		eax_108 = 0x00;
+		if (eax_20 == (struct Eq_34 *) ~0x00)
+			return eax_108;
+		ebx_13 = eax_20;
+		eax_30 = 0x01;
 	}
 	ebx_13->dw0004 = 0xA8;
 	ebx_13->dw0008 = 1005;
@@ -103,7 +105,7 @@ word32 fn00401530(ptr32 ebp, word32 * dwArg04, struct Eq_34 * dwArg08)
 	ebx_13->dw002C = 0x004017A0;
 	ebx_13->dw0030 = 4200364;
 	ebx_13->dw0014 = 0x00403020;
-	if (eax_29 != 0x00)
+	if (eax_30 != 0x00)
 		g_dw403024 = ebx_13->dw00A4;
 	else
 		ebx_13->dw0010 = 0x00403024;
@@ -126,16 +128,16 @@ word32 fn00401530(ptr32 ebp, word32 * dwArg04, struct Eq_34 * dwArg08)
 	ebx_13->dw003C = 0x00403000;
 	ebx_13->dw0040 = 0x00403080;
 	fn004016B0();
-	eax_106 = 0x01;
-	return eax_106;
+	eax_108 = 0x01;
+	return eax_108;
 }
 
-// 00401670: void fn00401670(Stack (ptr32 Eq_212) dwArg04, Stack (ptr32 Eq_212) dwArg08, Stack word32 dwArg0C)
+// 00401670: void fn00401670(Stack (ptr32 Eq_216) dwArg04, Stack (ptr32 Eq_216) dwArg08, Stack word32 dwArg0C)
 // Called from:
 //      fn004016B0
-void fn00401670(struct Eq_212 * dwArg04, struct Eq_212 * dwArg08, word32 dwArg0C)
+void fn00401670(struct Eq_216 * dwArg04, struct Eq_216 * dwArg08, word32 dwArg0C)
 {
-	struct Eq_212 * ecx_22 = dwArg04;
+	struct Eq_216 * ecx_22 = dwArg04;
 	if (dwArg04 < dwArg08)
 	{
 		do

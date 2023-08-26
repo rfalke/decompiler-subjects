@@ -28,7 +28,8 @@ define fn00000000007F6840
 	ecx = ecx ^ ecx;
 	rcx = (uint64) ecx;
 	rbp |= ~0x00;
-	SZO = cond(rbp);
+	SZ = cond(rbp);
+	O = false;
 	C = false;
 	fn00000000007F68B0();
 	ebx += ebx;
@@ -36,14 +37,14 @@ define fn00000000007F6840
 	SCZO = cond(ebx);
 	if (Test(NE,Z))
 		return;
-	ebx = *rsi;
+	ebx.u0 = rsi->u0;
 	rbx = (uint64) ebx;
 	rsi -= ~0x03;
 	SCZO = cond(rsi);
 	ebx = ebx + ebx + C;
 	rbx = (uint64) ebx;
 	SCZO = cond(ebx);
-	dl = *rsi;
+	dl.u1 = rsi->u1;
 }
 
 // 00000000007F6872: define fn00000000007F6872
@@ -53,9 +54,9 @@ define fn00000000007F6872
 {
 	rsp = fp;
 	Top = 0;
-	rax = (union Eq_90 *) ((char *) rdi + rbp);
+	rax = &rdi->u0 + rbp;
 	SCZO = cond(ecx - 0x05);
-	dl = *rax;
+	dl.u0 = rax->u0;
 	if (Test(UGT,CZ))
 	{
 		SCZO = cond(rbp - ~0x03);
@@ -66,32 +67,32 @@ define fn00000000007F6872
 			SCZO = cond(ecx);
 			do
 			{
-				edx = *rax;
+				edx.u1 = rax->u1;
 				rdx = (uint64) edx;
-				rax = (union Eq_90 *) ((char *) rax + 4);
+				rax = (union Eq_92 *) ((char *) rax + 4);
 				ecx -= 0x04;
 				rcx = (uint64) ecx;
 				SCZO = cond(ecx);
-				*rdi = (union Eq_90 *) edx;
-				rdi = (union Eq_90 *) ((char *) rdi + 4);
+				rdi->u1 = (word32) edx;
+				rdi = (union Eq_92 *) ((char *) rdi + 4);
 			} while (Test(UGE,C));
 			ecx += 0x04;
 			rcx = (uint64) ecx;
 			SCZO = cond(ecx);
-			dl = *rax;
+			dl.u0 = rax->u0;
 			if (Test(EQ,Z))
 				return;
 		}
 	}
 	do
 	{
-		rax = (union Eq_90 *) ((char *) rax + 1);
-		*rdi = (union Eq_90 *) dl;
+		rax = (union Eq_92 *) ((char *) rax + 1);
+		rdi->u0 = (byte) dl;
 		--ecx;
 		rcx = (uint64) ecx;
 		SCZO = cond(ecx);
-		dl = *rax;
-		rdi = (union Eq_90 *) ((char *) rdi + 1);
+		dl.u0 = rax->u0;
+		rdi = (union Eq_92 *) ((char *) rdi + 1);
 	} while (Test(NE,Z));
 }
 
@@ -129,26 +130,26 @@ l00000000007F696A:
 l00000000007F68C6:
 	while (true)
 	{
-		dl = *rsi;
+		dl.u0 = rsi->u0;
 		ebx += ebx;
 		rbx = (uint64) ebx;
 		SCZO = cond(ebx);
 		if (Test(EQ,Z))
 		{
-			ebx = *rsi;
+			ebx.u1 = rsi->u1;
 			rbx = (uint64) ebx;
 			rsi -= ~0x03;
 			SCZO = cond(rsi);
 			ebx = ebx + ebx + C;
 			rbx = (uint64) ebx;
 			SCZO = cond(ebx);
-			dl = *rsi;
+			dl.u0 = rsi->u0;
 		}
 		if (Test(UGE,C))
 			break;
-		rsi = (union Eq_168 *) ((char *) rsi + 1);
-		*rdi = (union Eq_168 *) dl;
-		rdi = (union Eq_168 *) ((char *) rdi + 1);
+		rsi = (union Eq_170 *) ((char *) rsi + 1);
+		rdi->u0 = (byte) dl;
+		rdi = (union Eq_170 *) ((char *) rdi + 1);
 		SZO = cond(rdi);
 	}
 	eax = (word32) ((char *) rcx + 1);
@@ -163,14 +164,14 @@ l00000000007F68C6:
 		SCZO = cond(ebx);
 		if (Test(EQ,Z))
 		{
-			ebx = *rsi;
+			ebx.u1 = rsi->u1;
 			rbx = (uint64) ebx;
 			rsi -= ~0x03;
 			SCZO = cond(rsi);
 			ebx = ebx + ebx + C;
 			rbx = (uint64) ebx;
 			SCZO = cond(ebx);
-			dl = *rsi;
+			dl.u0 = rsi->u0;
 		}
 		if (Test(ULT,C))
 			break;
@@ -193,16 +194,18 @@ l00000000007F68C6:
 		rdx = (uint64) edx;
 		eax |= edx;
 		rax = (uint64) eax;
-		rsi = (union Eq_168 *) ((char *) rsi + 1);
+		rsi = (union Eq_170 *) ((char *) rsi + 1);
 		eax = eax ^ ~0x00;
 		rax = (uint64) eax;
-		SZO = cond(eax);
+		SZ = cond(eax);
+		O = false;
 		C.u0 = false;
 		if (Test(EQ,Z))
 			goto l00000000007F696A;
 		eax >>= 0x01;
 		rax = (uint64) eax;
-		SCZO = cond(eax);
+		SCZ = cond(eax);
+		O = false;
 		rbp = (int64) eax;
 		if (Test(UGE,C))
 		{
@@ -214,7 +217,7 @@ l00000000007F6929:
 			SCZO = cond(ebx);
 			if (Test(EQ,Z))
 			{
-				ebx = *rsi;
+				ebx.u1 = rsi->u1;
 				rbx = (uint64) ebx;
 				rsi -= ~0x03;
 				SCZO = cond(rsi);
@@ -234,7 +237,7 @@ l00000000007F6929:
 					SCZO = cond(ebx);
 					if (Test(EQ,Z))
 					{
-						ebx = *rsi;
+						ebx.u1 = rsi->u1;
 						rbx = (uint64) ebx;
 						rsi -= ~0x03;
 						SCZO = cond(rsi);
@@ -264,7 +267,7 @@ l00000000007F6956:
 		SCZO = cond(ebx);
 		if (Test(EQ,Z))
 		{
-			ebx = *rsi;
+			ebx.u1 = rsi->u1;
 			rbx = (uint64) ebx;
 			rsi -= ~0x03;
 			SCZO = cond(rsi);
@@ -289,116 +292,159 @@ l00000000007F6951:
 //      fn00000000007F6A57
 define fn00000000007F697B
 {
-	rsp = fp;
-	Top = 0;
-	rsp -= 4;
-	rsp->u1 = 0x1E;
-	rdx = *rsp;
-	rsp = (word64) rsp + 8;
+	ptr64 fp;
+	word64 r12;
+	r12b_117 = (byte) r12;
+	word64 rbp;
+	word64 r14;
+	word32 dwArg00;
+	rsp_2 = fp;
+	Top_3 = 0;
+	rsp_4 = fp - 4;
+	dwLoc04_140 = 0x1E;
+	qwLoc04_142 = SEQ(dwArg00, 0x1E);
+	rdx_6 = qwLoc04_142;
+	rsp_7 = fp + 4;
 	fn00000000007F6A44();
-	rsp -= 8;
-	*rsp = rax;
-	rsp -= 8;
-	*rsp = rdx;
-	rsp -= 8;
-	*rsp = r12;
-	rdi = *rsp;
-	rsp = (word64) rsp + 8;
-	r8 = *rsp;
-	rsp = (word64) rsp + 8;
-	if (Test(LT,SO))
+	SO_26.u0 = SLICE(SCZO_14, bool, 4);
+	Z_27 = SLICE(SCZO_14, bool, 2);
+	O_35 = SLICE(SCZO_14, bool, 4);
+	dl_43 = (byte) rdx_8;
+	dx_47 = (word16) rdx_8;
+	ah_123 = SLICE(rax_9, byte, 8);
+	al_126 = (byte) rax_9;
+	ax_128 = (word16) rax_9;
+	rsp_15 = fp - 4;
+	qwLoc04_143 = rax_9;
+	dwArg00_146 = SLICE(rax_9, word32, 32);
+	rsp_17 = fp - 0x0C;
+	qwLoc0C_144 = rdx_8;
+	rsp_19 = fp - 20;
+	qwLoc14_145 = r12;
+	rdi_22 = r12;
+	rsp_23 = fp - 0x0C;
+	r8_24 = rdx_8;
+	rsp_25 = fp - 4;
+	if (SO_26)
 	{
-		if (Test(EQ,Z))
-			fn00000000007F6A57();
-		else if (Test(OV,O))
+		if (Z_27)
 		{
-			rsp -= 8;
-			*rsp = rbp;
-			rsp -= 8;
-			*rsp = rax;
-			rax = *rsp;
-			rsp = (word64) rsp + 8;
-			v28 = *((word64) rbp + 97) & dl;
-			((word64) rbp + 97)->u0 = v28;
-			SZO = cond(*((word64) rbp + 97));
-			*rdi = __in(dx);
-			rdi = (word64) rdi + 4;
-			v29 = *((word64) rcx + 0x006C) & al;
-			((word64) rcx + 0x006C)->u0 = v29;
-			SZO = cond(*((word64) rcx + 0x006C));
-			*rdi = __in(dx);
-			rdi = (word64) rdi + 1;
-			v30 = *((word64) rdx + 0x0069) & dl;
-			((word64) rdx + 0x0069)->u0 = v30;
-			SZO = cond(*((word64) rdx + 0x0069));
-			C = false;
-			rsp -= 4;
-			rsp->u1 = 0x52207374;
-			if (Test(UGE,C))
+			fn00000000007F6A57();
+			C_160 = SLICE(SCZO_34, bool, 1);
+			O_164 = SLICE(SCZO_34, bool, 4);
+			S_176 = (bool) SCZO_34;
+			Z_181 = SLICE(SCZO_34, bool, 2);
+		}
+		else if (O_35)
+		{
+			rsp_36 = fp - 0x0C;
+			qwLoc0C_147 = rbp;
+			dwLoc0C_150 = (word32) rbp;
+			rsp_39 = fp - 20;
+			qwLoc14_148 = rax_9;
+			rax_41 = rax_9;
+			rax_32_32_91 = SLICE(rax_9, word32, 32);
+			rsp_42 = fp - 0x0C;
+			v29_44 = rbp->b0061 & dl_43;
+			rbp->b0061 = v29_44;
+			SZ_46 = cond(rbp->b0061);
+			eax_48 = __in<word32>(dx_47);
+			al_50 = (byte) eax_48;
+			ah_87 = SLICE(eax_48, byte, 8);
+			eax_24_8_92 = SLICE(eax_48, word24, 8);
+			rdi_49 = r12 + 4;
+			v31_51 = rcx_12->b006C & al_50;
+			rcx_12->b006C = v31_51;
+			SZ_53 = cond(rcx_12->b006C);
+			al_54 = __in<byte>(dx_47);
+			rdi_55 = r12 + 5;
+			edi_65 = (word32) r12 + 0x05;
+			rdi_32_32_74 = SLICE(r12 + 5, word32, 32);
+			v32_56 = rdx_8->b0069 & dl_43;
+			rdx_8->b0069 = v32_56;
+			SZ_58 = cond(rdx_8->b0069);
+			O_59 = false;
+			C_60 = false;
+			rsp_61 = fp - 16;
+			dwLoc10_149 = 0x52207374;
+			rax_93 = SEQ(rax_32_32_91, eax_24_8_92, al_54);
+			qwLoc10_151 = SEQ(dwLoc0C_150, 0x52207374);
+			if (Test(UGE,false))
 				fn00000000007F6A9D();
-			else if (Test(ULT,C))
+			else if (Test(ULT,false))
 			{
-				eax = *rsi;
-				rsi = (word64) rsi + 4;
-				v32 = edi;
-				edi = eax;
-				eax = *rsi;
-				rsi = (word64) rsi + 4;
-				r8d = (word32) al;
-				r8 = (uint64) r8d;
-				v35 = rsi;
-				rsi = rdi;
-				rdi = v35;
+				eax_63 = rsi_13->dw0000;
+				rsi_64 = &rsi_13->dw0004;
+				v33_66 = edi_65;
+				edi_67 = eax_63;
+				eax_68 = rsi_13->dw0004;
+				al_70 = (byte) eax_68;
+				rsi_69 = &rsi_13->dw0004 + 1;
+				r8d_71 = (word32) al_70;
+				r8_72 = (uint64) r8d_71;
+				v36_73 = &rsi_13->dw0004 + 1;
+				rdi_75 = SEQ(rdi_32_32_74, eax_63);
+				rsi_76 = rdi_75;
+				rdi_77 = &rsi_13->dw0004 + 1;
 				rbp();
-				rcx = *rsp;
-				rsp = (word64) rsp + 8;
+				C_161 = SLICE(SCZO_84, bool, 1);
+				O_165 = SLICE(SCZO_84, bool, 4);
+				S_177 = (bool) SCZO_84;
+				Z_182 = SLICE(SCZO_84, bool, 2);
+				rcx_85 = qwLoc10_151;
+				rsp_86 = fp - 8;
 			}
 			else
 			{
-				v36 = Mem0[rdx + rcx:byte] & ah;
-				Mem0[rdx + rcx:byte] = v36;
-				SZO = cond(Mem0[rdx + rcx:byte]);
-				v37 = (byte) ((word64) *((word64) rax + 1784582288) + dl);
-				((word64) rax + 1784582288)->u0 = v37;
-				SCZO = cond(v37);
+				v37_88 = Mem62[rdx_8 + rcx_12:byte] & ah_87;
+				Mem89[rdx_8 + rcx_12:byte] = v37_88;
+				SZ_90 = cond(Mem89[rdx_8 + rcx_12:byte]);
+				v38_94 = rax_93->b6A5E9090 + dl_43;
+				rax_93->b6A5E9090 = v38_94;
+				SCZO_96 = cond(v38_94);
 				fn00000000007F6A46();
+				C_162 = SLICE(SCZO_103, bool, 1);
+				O_166 = SLICE(SCZO_103, bool, 4);
+				S_178 = (bool) SCZO_103;
+				Z_183 = SLICE(SCZO_103, bool, 2);
 			}
 		}
 	}
 	else
 	{
-		rsp -= 8;
-		*rsp = rdx;
-		rsp -= 8;
-		*rsp = r12;
-		rdi = *rsp;
-		rsp = (word64) rsp + 8;
-		rsp -= 8;
-		*rsp = rdi;
-		rsp -= 8;
-		*rsp = rdx;
-		rsp -= 8;
-		*rsp = r12;
-		v11 = r14->b0061 & r12b;
-		r14->b0061 = v11;
-		SZO = cond(r14->b0061);
-		ebp = *((word64) rbp + 100) *s32 0x0A000A2E;
-		rbp = (uint64) ebp;
-		v19 = (byte) ((word64) *((word64) rcx + rcx * 0x02) + ah);
-		((word64) rcx + rcx * 0x02)->u0 = v19;
-		__outb(dx, al);
-		rsi = (word64) rsi + 1;
-		__outw(dx, ax);
-		rsi = (word64) rsi + 2;
-		SCZO = cond(ah - *rax);
-		v24 = rsp;
-		rsp -= 8;
-		*rsp = v24;
-		rsp -= 4;
-		rsp->u1 = 0x66207369;
-		ebp = *((word64) rbp + 32) *s32 1881174889;
-		rbp = (uint64) ebp;
-		SCZO = cond(ebp);
+		rsp_104 = fp - 0x0C;
+		qwLoc0C_152 = rdx_8;
+		rsp_106 = fp - 20;
+		qwLoc14_153 = r12;
+		rdi_108 = r12;
+		rsp_109 = fp - 0x0C;
+		rsp_110 = fp - 20;
+		qwLoc14_154 = r12;
+		rsp_112 = fp - 28;
+		qwLoc1C_155 = rdx_8;
+		rsp_114 = fp - 36;
+		qwLoc24_156 = r12;
+		v12_118 = r14->b0061 & r12b_117;
+		r14->b0061 = v12_118;
+		SZ_120 = cond(r14->b0061);
+		ebp_121 = rbp->dw0064 *s 0x0A000A2E;
+		rbp_122 = (uint64) ebp_121;
+		v21_124 = null[rcx_12].b0000 + ah_123;
+		null[rcx_12].b0000 = v21_124;
+		__out<byte>(dx_47, al_126);
+		rsi_127 = (char *) &rsi_13->dw0000 + 1;
+		__out<word16>(dx_47, ax_128);
+		rsi_129 = (char *) &rsi_13->dw0000 + 3;
+		SCZO_130 = cond(ah_123 - *rax_9);
+		v26_131 = fp - 36;
+		rsp_132 = fp - 44;
+		qwLoc2C_157 = fp - 36;
+		rsp_134 = fp - 48;
+		dwLoc30_158 = 0x66207369;
+		ebp_136 = rbp_122->dw0020 *s 1881174889;
+		rbp_137 = (uint64) ebp_136;
+		ebp_138 = (word32) rbp_137;
+		SCZO_139 = cond(ebp_138);
 	}
 }
 
@@ -407,12 +453,15 @@ define fn00000000007F697B
 //      fn00000000007F697B
 define fn00000000007F6A44
 {
-	rsp = fp;
-	Top = 0;
-	rsi = *rsp;
-	rsp = (union Eq_665 *) ((char *) rsp + 8);
-	rsp -= 4;
-	*rsp = (union Eq_665 *) 0x02;
+	ptr64 fp;
+	<unknown> Mem0;
+	word64 qwArg00;
+	rsp_2 = fp;
+	Top_3 = 0;
+	rsi_5 = qwArg00;
+	rsp_6 = fp + 8;
+	rsp_7 = fp + 4;
+	dwArg04_13 = 0x02;
 	fn00000000007F6A46();
 }
 
@@ -422,16 +471,30 @@ define fn00000000007F6A44
 //      fn00000000007F6A44
 define fn00000000007F6A46
 {
-	rsp = fp;
-	Top = 0;
-	bl = (byte) ((word64) *((word64) rdi + 0x006A) + bl);
-	v8 = (word32) ((word64) *((word64) rax + 0x0F) + ebx);
-	((word64) rax + 0x0F)->u0 = v8;
-	eax += 1784643434;
-	rax = (uint64) eax;
-	SCZO = cond(al - 88);
+	ptr64 fp;
+	byte bl;
+	word64 rdi;
+	<unknown> Mem0;
+	word64 rax;
+	eax_18 = (word32) rax;
+	word24 ebx_24_8;
+	rsp_7 = fp;
+	Top_8 = 0;
+	bl_12 = bl + rdi->b006A;
+	ebx_15 = SEQ(ebx_24_8, bl_12);
+	v9_16 = rax->dw000F + ebx_15;
+	rax->dw000F = v9_16;
+	eax_19 = eax_18 + 1784643434;
+	rax_20 = (uint64) (eax_18 + 1784643434);
+	al_21 = (byte) rax_20;
+	SCZO_22 = cond(al_21 - 88);
 	__syscall();
 	fn00000000007F6A55();
+	C_28 = SLICE(SCZO_25, bool, 1);
+	ebx_29 = SEQ(ebx_24_8, bl_12);
+	O_30 = SLICE(SCZO_25, bool, 4);
+	S_31 = (bool) SCZO_25;
+	Z_32 = SLICE(SCZO_25, bool, 2);
 }
 
 // 00000000007F6A55: define fn00000000007F6A55
@@ -441,13 +504,21 @@ define fn00000000007F6A46
 //      fn00000000007F6AC0
 define fn00000000007F6A55
 {
-	rsp = fp;
-	Top = 0;
-	rbx = *rsp;
-	rsp = (union Eq_759 *) ((char *) rsp + 8);
-	rsp -= 4;
-	*rsp = (union Eq_759 *) 0x00;
+	ptr64 fp;
+	<unknown> Mem0;
+	word64 qwArg00;
+	rsp_2 = fp;
+	Top_3 = 0;
+	rbx_5 = qwArg00;
+	rsp_6 = fp + 8;
+	rsp_7 = fp + 4;
+	dwArg04_18 = 0x00;
 	fn00000000007F6A57();
+	C_19 = SLICE(SCZDO_16, bool, 1);
+	D_20 = SLICE(SCZDO_16, bool, 3);
+	O_21 = SLICE(SCZDO_16, bool, 4);
+	S_22 = (bool) SCZDO_16;
+	Z_23 = SLICE(SCZDO_16, bool, 2);
 }
 
 // 00000000007F6A57: define fn00000000007F6A57
@@ -456,42 +527,67 @@ define fn00000000007F6A55
 //      fn00000000007F6A55
 define fn00000000007F6A57
 {
-	rsp = fp;
-	Top = 0;
-	v5 = (byte) ((word64) *((word64) rax + 0x0C) + ch);
-	*((word64) rax + 0x0C) = v5;
-	v8 = (byte) ((word64) *rax + al);
-	*rax = v8;
-	rsp -= 8;
-	*rsp = (union Eq_774 *) rax;
-	rsp -= 4;
-	*rsp = (union Eq_774 *) 13031768;
-	rsp -= 8;
-	*rsp = (union Eq_774 *) rcx;
-	rsp -= 8;
-	*rsp = (union Eq_774 *) r15;
-	edi = 0x01200000;
-	rdi = (uint64) edi;
-	rsp -= 4;
-	*rsp = (union Eq_774 *) 0x07;
-	rdx = *rsp;
-	rsp = (union Eq_774 *) ((char *) rsp + 8);
-	esi = 13031768;
-	rsi = (uint64) esi;
-	rsp -= 4;
-	*rsp = (union Eq_774 *) 0x32;
-	r10 = *rsp;
-	rsp = (union Eq_774 *) ((char *) rsp + 8);
-	r8d -= r8d;
-	r8 = (uint64) r8d;
-	rsp -= 4;
-	*rsp = (union Eq_774 *) 0x09;
-	rax = *rsp;
-	rsp = (union Eq_774 *) ((char *) rsp + 8);
+	ptr64 fp;
+	word64 rax;
+	al_22 = (byte) rax;
+	<unknown> Mem0;
+	byte ch;
+	byte cl;
+	word48 rcx_48_16;
+	word64 r15;
+	word32 ebx;
+	rsp_15 = fp;
+	Top_16 = 0;
+	v6_20 = rax->b000C + ch;
+	rax->b000C = v6_20;
+	v9_23 = rax->b0000 + al_22;
+	rax->b0000 = v9_23;
+	rsp_25 = fp - 8;
+	qwLoc08_72 = rax;
+	rsp_27 = fp - 0x0C;
+	dwLoc0C_73 = 13031768;
+	rsp_29 = fp - 20;
+	rcx_32 = SEQ(rcx_48_16, ch, cl);
+	qwLoc14_74 = rcx_32;
+	dwLoc14_83 = (word32) rcx_32;
+	rsp_34 = fp - 28;
+	qwLoc1C_75 = r15;
+	dwLoc1C_77 = (word32) r15;
+	dwLoc18_80 = SLICE(r15, word32, 32);
+	edi_37 = 0x01200000;
+	rdi_38 = 0x01200000;
+	edi_55 = 0x01200000;
+	rsp_39 = fp - 32;
+	dwLoc20_76 = 0x07;
+	qwLoc20_78 = SEQ(dwLoc1C_77, 0x07);
+	rdx_41 = qwLoc20_78;
+	rsp_42 = fp - 24;
+	esi_43 = 13031768;
+	rsi_44 = 13031768;
+	rsp_45 = fp - 28;
+	dwLoc1C_79 = 0x32;
+	qwLoc1C_81 = SEQ(dwLoc18_80, 0x32);
+	r10_47 = qwLoc1C_81;
+	rsp_48 = fp - 20;
+	r8d_49 = 0x00;
+	r8_50 = 0x00;
+	rsp_51 = fp - 24;
+	dwLoc18_82 = 0x09;
+	qwLoc18_84 = SEQ(dwLoc14_83, 0x09);
+	rax_53 = qwLoc18_84;
+	eax_56 = 0x09;
+	rsp_54 = fp - 16;
 	__syscall();
-	SCZO = cond(edi - eax);
-	if (Test(NE,Z))
+	SCZO_57 = cond(0x01200000 - 0x09);
+	Z_58 = SLICE(SCZO_57, bool, 2);
+	if (true)
+	{
 		fn00000000007F697B();
+		C_85 = SLICE(SCZO_66, bool, 1);
+		O_86 = SLICE(SCZO_66, bool, 4);
+		S_87 = (bool) SCZO_66;
+		Z_88 = SLICE(SCZO_66, bool, 2);
+	}
 	else
 		fn00000000007F6A87();
 }
@@ -502,28 +598,18 @@ define fn00000000007F6A57
 //      fn00000000007F6A57
 define fn00000000007F6A87
 {
-	rsp = fp;
-	Top = 0;
-	esi = 0x00400000;
-	rsi = (uint64) esi;
-	edx = edi;
-	rdx = (uint64) edx;
-	edx -= esi;
-	rdx = (uint64) edx;
-	SCZO = cond(edx);
-	if (Test(EQ,Z))
+	word32 edi;
+	word64 rcx;
+	word32 ebx;
+	rdx_8 = (uint64) edi;
+	edx_9 = (word32) rdx_8;
+	rdx_12 = (uint64) (edx_9 - 0x00400000);
+	edx_13 = (word32) rdx_12;
+	if (edx_13 == 0x00)
 		fn00000000007F6A9D();
 	else
 	{
-		ebp += edx;
-		rbp = (uint64) ebp;
-		v13 = rsp->dw0008 + edx;
-		rsp->dw0008 = v13;
-		v14 = rsp->dw0018 + edx;
-		rsp->dw0018 = v14;
-		SCZO = cond(v14);
-		ecx = ebx;
-		rcx = (uint64) ecx;
+		rcx_28 = (uint64) ebx;
 		fn00000000007F6A9D();
 	}
 }
@@ -534,12 +620,9 @@ define fn00000000007F6A87
 //      fn00000000007F6A87
 define fn00000000007F6A9D
 {
-	ptr64 fp;
 	word64 rcx;
-	<type-error> Mem0;
-	rsp_57 = fp;
-	Top_58 = 0;
-	__fldcw(*rcx);
+	<unknown> Mem0;
+	__fldcw(rcx->u1);
 }
 
 // 00000000007F6AC0: define fn00000000007F6AC0
@@ -551,7 +634,7 @@ define fn00000000007F6AC0
 	Top = 0;
 	rbp = *rsp;
 	++rsp;
-	rax = rbp - 0x09;
+	rax = rbp - 9;
 	r15d = rax->dw0000;
 	r15 = (uint64) r15d;
 	rax -= r15;
@@ -566,8 +649,8 @@ define fn00000000007F6AC0
 	SCZO = cond(r15d);
 	rcx = rax + rdx;
 	fn00000000007F6A55();
-	v11 = esp;
+	v12 = esp;
 	esp = eax;
-	eax = v11;
+	eax = v12;
 }
 

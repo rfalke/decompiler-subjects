@@ -1,36 +1,21 @@
 === Using options:--aggressive-branch-removal
 0000000000401008: warning: Unable to resolve imported reference __gmon_start__.
-0000000000402947: error: An error occurred while eliminating condition codes in procedure log_size_10_var_001.
-    Argument size mismatch between bool and byte.
-       at Reko.Core.Expressions.Conversion..ctor(Expression exp, DataType dtFrom, DataType dtTo) in /home/runner/work/reko/reko/src/Core/Expressions/Conversion.cs:line 54
-   at Reko.Core.Code.InstructionTransformer.VisitConversion(Conversion conversion) in /home/runner/work/reko/reko/src/Core/Code/InstructionTransformer.cs:line 194
-   at Reko.Core.Expressions.Conversion.Accept[T](ExpressionVisitor`1 visitor) in /home/runner/work/reko/reko/src/Core/Expressions/Conversion.cs:line 82
-   at Reko.Analysis.ConditionCodeEliminator.TransformAssignment(Assignment a) in /home/runner/work/reko/reko/src/Decompiler/Analysis/ConditionCodeEliminator.cs:line 308
-   at Reko.Core.Code.Assignment.Accept(InstructionTransformer xform) in /home/runner/work/reko/reko/src/Core/Code/Assignment.cs:line 44
-   at Reko.Analysis.ConditionCodeEliminator.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/ConditionCodeEliminator.cs:line 102
-0000000000402A13: error: An error occurred while eliminating condition codes in procedure log_size_10_var_001.
-    Argument size mismatch between bool and byte.
-       at Reko.Core.Expressions.Conversion..ctor(Expression exp, DataType dtFrom, DataType dtTo) in /home/runner/work/reko/reko/src/Core/Expressions/Conversion.cs:line 54
-   at Reko.Core.Code.InstructionTransformer.VisitConversion(Conversion conversion) in /home/runner/work/reko/reko/src/Core/Code/InstructionTransformer.cs:line 194
-   at Reko.Core.Expressions.Conversion.Accept[T](ExpressionVisitor`1 visitor) in /home/runner/work/reko/reko/src/Core/Expressions/Conversion.cs:line 82
-   at Reko.Analysis.ConditionCodeEliminator.TransformAssignment(Assignment a) in /home/runner/work/reko/reko/src/Decompiler/Analysis/ConditionCodeEliminator.cs:line 308
-   at Reko.Core.Code.Assignment.Accept(InstructionTransformer xform) in /home/runner/work/reko/reko/src/Core/Code/Assignment.cs:line 44
-   at Reko.Analysis.ConditionCodeEliminator.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/ConditionCodeEliminator.cs:line 102
-0000000000402947: error: An error occurred while eliminating condition codes in procedure log_size_10_var_001.
-    Argument size mismatch between bool and byte.
-       at Reko.Core.Expressions.Conversion..ctor(Expression exp, DataType dtFrom, DataType dtTo) in /home/runner/work/reko/reko/src/Core/Expressions/Conversion.cs:line 54
-   at Reko.Core.Code.InstructionTransformer.VisitConversion(Conversion conversion) in /home/runner/work/reko/reko/src/Core/Code/InstructionTransformer.cs:line 194
-   at Reko.Core.Expressions.Conversion.Accept[T](ExpressionVisitor`1 visitor) in /home/runner/work/reko/reko/src/Core/Expressions/Conversion.cs:line 82
-   at Reko.Analysis.ConditionCodeEliminator.TransformAssignment(Assignment a) in /home/runner/work/reko/reko/src/Decompiler/Analysis/ConditionCodeEliminator.cs:line 308
-   at Reko.Core.Code.Assignment.Accept(InstructionTransformer xform) in /home/runner/work/reko/reko/src/Core/Code/Assignment.cs:line 44
-   at Reko.Analysis.ConditionCodeEliminator.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/ConditionCodeEliminator.cs:line 102
-0000000000402A13: error: An error occurred while eliminating condition codes in procedure log_size_10_var_001.
-    Argument size mismatch between bool and byte.
-       at Reko.Core.Expressions.Conversion..ctor(Expression exp, DataType dtFrom, DataType dtTo) in /home/runner/work/reko/reko/src/Core/Expressions/Conversion.cs:line 54
-   at Reko.Core.Code.InstructionTransformer.VisitConversion(Conversion conversion) in /home/runner/work/reko/reko/src/Core/Code/InstructionTransformer.cs:line 194
-   at Reko.Core.Expressions.Conversion.Accept[T](ExpressionVisitor`1 visitor) in /home/runner/work/reko/reko/src/Core/Expressions/Conversion.cs:line 82
-   at Reko.Analysis.ConditionCodeEliminator.TransformAssignment(Assignment a) in /home/runner/work/reko/reko/src/Decompiler/Analysis/ConditionCodeEliminator.cs:line 308
-   at Reko.Core.Code.Assignment.Accept(InstructionTransformer xform) in /home/runner/work/reko/reko/src/Core/Code/Assignment.cs:line 44
-   at Reko.Analysis.ConditionCodeEliminator.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/ConditionCodeEliminator.cs:line 102
+/home/hawk/kza/decompiler-subjects.clean/from_holdec/stress_int_x64/x64_elf_complex_with_base_10_funcs_of_size_1024/subject.exe: error: An internal error occurred while analyzing /home/hawk/kza/decompiler-subjects.clean/from_holdec/stress_int_x64/x64_elf_complex_with_base_10_funcs_of_size_1024/subject.exe.
+    Constants of type ui80 are not supported.
+       at Reko.Core.Expressions.Constant.Create(DataType dt, Int64 value) in /home/runner/work/reko/reko/src/Core/Expressions/Constant.cs:line 147
+   at Reko.Core.Expressions.Constant.Create(DataType dt, UInt64 value) in /home/runner/work/reko/reko/src/Core/Expressions/Constant.cs:line 46
+   at Reko.Analysis.LongAddRewriter.CreateWideExpression(Expression expLo, Expression expHi, DataType totalSize) in /home/runner/work/reko/reko/src/Decompiler/Analysis/LongAddRewriter.cs:line 560
+   at Reko.Analysis.LongAddRewriter.CreateLongBinaryInstruction(Candidate loCandidate, Candidate hiCandidate) in /home/runner/work/reko/reko/src/Decompiler/Analysis/LongAddRewriter.cs:line 138
+   at Reko.Analysis.LongAddRewriter.ReplaceLongOperations(Block block) in /home/runner/work/reko/reko/src/Decompiler/Analysis/LongAddRewriter.cs:line 357
+   at Reko.Analysis.LongAddRewriter.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/LongAddRewriter.cs:line 331
+   at Reko.Analysis.SccWorker.ConvertToSsa(Procedure proc) in /home/runner/work/reko/reko/src/Decompiler/Analysis/SccWorker.cs:line 178
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Analysis.SccWorker.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/SccWorker.cs:line 85
+   at Reko.Analysis.DataFlowAnalysis.RewriteProceduresToSsa() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 178
+   at Reko.Analysis.DataFlowAnalysis.UntangleProcedures() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 128
+   at Reko.Decompiler.AnalyzeDataFlow() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 111
+l0000000000401016: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
 000000000040CE10: warning: Expected sizes of arrays to have been determined by now
+000000000040CE18: warning: Expected sizes of arrays to have been determined by now
 000000000040CE10: warning: Expected sizes of arrays to have been determined by now
+000000000040CE18: warning: Expected sizes of arrays to have been determined by now

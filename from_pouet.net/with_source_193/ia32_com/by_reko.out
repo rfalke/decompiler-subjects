@@ -1,3 +1,3 @@
 === Using options:--aggressive-branch-removal --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0 --entry 0C00:0100
-: warning: Selector B800 has no known segment.
-: warning: Selector B800 has no known segment.
+Warning: Selector B800 has no known segment.
+Warning: Selector B800 has no known segment.

@@ -4,3 +4,5 @@
 080483D3: warning: Call target address 00000000 is invalid.
 08048396: warning: Call target address 00000000 is invalid.
 080482F0: warning: Unable to resolve imported reference __gmon_start__.
+0804961C: warning: Expected sizes of arrays to have been determined by now
+0804961C: warning: Expected sizes of arrays to have been determined by now

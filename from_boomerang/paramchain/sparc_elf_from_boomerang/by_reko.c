@@ -13,16 +13,17 @@ ptr32 ___Argv = 0x00; // 00020B5C
 
 #include "subject.h"
 
-// 000109C8: void _fini(Register word32 o0, Register word32 o1, Register word32 o2, Register word32 o3, Register word32 o4, Register word32 o5, Register (ptr32 Eq_98) o7)
-void _fini(word32 o0, word32 o1, word32 o2, word32 o3, word32 o4, word32 o5, struct Eq_98 * o7)
+// 000109C8: void _fini(Register word32 o0, Register word32 o1, Register word32 o2, Register word32 o3, Register word32 o4, Register word32 o5, Register (ptr32 Eq_100) o7)
+void _fini(word32 o0, word32 o1, word32 o2, word32 o3, word32 o4, word32 o5, struct Eq_100 * o7)
 {
+	ptr32 fp;
 	fn000109D8(o7, o0, o1, o2, o3, o4, o5, fp, o7);
 }
 
-// 000109D8: void fn000109D8(Register (ptr32 Eq_98) o7, Register word32 i0, Register word32 i1, Register word32 i2, Register word32 i3, Register word32 i4, Register word32 i5, Register ptr32 i6, Register (ptr32 Eq_98) i7)
+// 000109D8: void fn000109D8(Register (ptr32 Eq_100) o7, Register word32 i0, Register word32 i1, Register word32 i2, Register word32 i3, Register word32 i4, Register word32 i5, Register ptr32 i6, Register (ptr32 Eq_100) i7)
 // Called from:
 //      _fini
-void fn000109D8(struct Eq_98 * o7, word32 i0, word32 i1, word32 i2, word32 i3, word32 i4, word32 i5, ptr32 i6, struct Eq_98 * i7)
+void fn000109D8(struct Eq_100 * o7, word32 i0, word32 i1, word32 i2, word32 i3, word32 i4, word32 i5, ptr32 i6, struct Eq_100 * i7)
 {
 	<anonymous> * l0_7 = *((char *) (o7 + o7->dw0008 / 0x0C) - 4);
 	if (l0_7 == null)
@@ -41,6 +42,7 @@ void fn000109D8(struct Eq_98 * o7, word32 i0, word32 i1, word32 i2, word32 i3, w
 //      _start
 void _init(word32 o0, word32 o1, word32 o2, word32 o3, word32 o4, word32 o5, struct Eq_7 * o7)
 {
+	ptr32 fp;
 	fn000109A0(o7, o0, o1, o2, o3, o4, o5, fp, o7);
 }
 
@@ -97,6 +99,7 @@ word32 _lib_version = 0x01; // 00010A04
 // 00010840: void _start(Register (ptr32 Eq_2) g1, Register word32 o2, Register word32 o3, Register word32 o4, Register word32 o5, Register (ptr32 Eq_7) o7, Register word32 fsr, Stack ui32 dwArg40)
 void _start(void (* g1)(), word32 o2, word32 o3, word32 o4, word32 o5, struct Eq_7 * o7, word32 fsr, ui32 dwArg40)
 {
+	ptr32 fp;
 	___Argv = fp + 0x44;
 	environ = fp + 0x44 + ((dwArg40 << 0x02) + 0x04);
 	if (g1 == null)
@@ -129,6 +132,7 @@ void passem(word32 o0, word32 o1, word32 o2, word32 * o3)
 //      _start
 void main()
 {
+	ptr32 fp;
 	passem(0x05, 0x0A, 0x28, fp + ~0x03);
 }
 

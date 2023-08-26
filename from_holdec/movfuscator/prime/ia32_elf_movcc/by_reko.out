@@ -1,13 +1,73 @@
 === Using options:--aggressive-branch-removal
-Error: An error occurred during decompilation.
-    The address 100A800C is invalid.
-       at Reko.Core.Program.CreateImageReader(IProcessorArchitecture arch, Address addr) in /home/runner/work/reko/reko/src/Core/Program.cs:line 445
-   at Reko.ImageLoaders.Elf.Relocators.x86Relocator.RelocateEntry(Program program, ElfSymbol sym, ElfSection referringSection, ElfRelocation rela) in /home/runner/work/reko/reko/src/ImageLoaders/Elf/Relocators/x86Relocator.cs:line 83
-   at Reko.ImageLoaders.Elf.Relocators.ElfRelocator32.Relocate(Program program) in /home/runner/work/reko/reko/src/ImageLoaders/Elf/Relocators/ElfRelocator.cs:line 432
-   at Reko.ImageLoaders.Elf.Relocators.x86Relocator.Relocate(Program program) in /home/runner/work/reko/reko/src/ImageLoaders/Elf/Relocators/x86Relocator.cs:line 37
-   at Reko.ImageLoaders.Elf.ElfLoader.Relocate(Program program, Address addrLoad) in /home/runner/work/reko/reko/src/ImageLoaders/Elf/ElfLoader.cs:line 792
-   at Reko.ImageLoaders.Elf.ElfImageLoader.Relocate(Program program, Address addrLoad) in /home/runner/work/reko/reko/src/ImageLoaders/Elf/ElfImageLoader.cs:line 112
-   at Reko.Loading.Loader.PostProcessProgram(ImageLocation imageLocation, Address addrLoad, ImageLoader imgLoader, Program program) in /home/runner/work/reko/reko/src/Decompiler/Loading/Loader.cs:line 194
-   at Reko.Loading.Loader.LoadBinaryImage(ImageLocation imageLocation, Byte[] image, String loader, Address addrLoad) in /home/runner/work/reko/reko/src/Decompiler/Loading/Loader.cs:line 174
-   at Reko.Loading.Loader.Load(ImageLocation imageLocation, String loaderName, Address addrLoad) in /home/runner/work/reko/reko/src/Decompiler/Loading/Loader.cs:line 117
-   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs) in /home/runner/work/reko/reko/src/Drivers/CmdLine/CmdLineDriver.cs:line 166
+08054070: warning: Expected sizes of arrays to have been determined by now
+08054090: warning: Expected sizes of arrays to have been determined by now
+080540B0: warning: Expected sizes of arrays to have been determined by now
+080540F0: warning: Expected sizes of arrays to have been determined by now
+08054300: warning: Expected sizes of arrays to have been determined by now
+08054510: warning: Expected sizes of arrays to have been determined by now
+08054920: warning: Expected sizes of arrays to have been determined by now
+08054D30: warning: Expected sizes of arrays to have been determined by now
+08055140: warning: Expected sizes of arrays to have been determined by now
+08055550: warning: Expected sizes of arrays to have been determined by now
+08055960: warning: Expected sizes of arrays to have been determined by now
+08055D70: warning: Expected sizes of arrays to have been determined by now
+08056180: warning: Expected sizes of arrays to have been determined by now
+080565B4: warning: Expected sizes of arrays to have been determined by now
+080566B5: warning: Expected sizes of arrays to have been determined by now
+080567B6: warning: Expected sizes of arrays to have been determined by now
+080568B7: warning: Expected sizes of arrays to have been determined by now
+080569B8: warning: Expected sizes of arrays to have been determined by now
+08056AB9: warning: Expected sizes of arrays to have been determined by now
+08056BBA: warning: Expected sizes of arrays to have been determined by now
+08056CBB: warning: Expected sizes of arrays to have been determined by now
+080575F0: warning: Expected sizes of arrays to have been determined by now
+08067F20: warning: Expected sizes of arrays to have been determined by now
+08168040: warning: Expected sizes of arrays to have been determined by now
+081D26C0: warning: Expected sizes of arrays to have been determined by now
+081D2CE0: warning: Expected sizes of arrays to have been determined by now
+081DAD00: warning: Expected sizes of arrays to have been determined by now
+081EB210: warning: Expected sizes of arrays to have been determined by now
+081FC750: warning: Expected sizes of arrays to have been determined by now
+081FCF70: warning: Expected sizes of arrays to have been determined by now
+081FD0A4: warning: Expected sizes of arrays to have been determined by now
+081FD0B4: warning: Expected sizes of arrays to have been determined by now
+083FD140: warning: Expected sizes of arrays to have been determined by now
+083FD150: warning: Expected sizes of arrays to have been determined by now
+083FD160: warning: Expected sizes of arrays to have been determined by now
+085FD1B8: warning: Expected sizes of arrays to have been determined by now
+08054070: warning: Expected sizes of arrays to have been determined by now
+08054090: warning: Expected sizes of arrays to have been determined by now
+080540B0: warning: Expected sizes of arrays to have been determined by now
+080540F0: warning: Expected sizes of arrays to have been determined by now
+08054300: warning: Expected sizes of arrays to have been determined by now
+08054510: warning: Expected sizes of arrays to have been determined by now
+08054920: warning: Expected sizes of arrays to have been determined by now
+08054D30: warning: Expected sizes of arrays to have been determined by now
+08055140: warning: Expected sizes of arrays to have been determined by now
+08055550: warning: Expected sizes of arrays to have been determined by now
+08055960: warning: Expected sizes of arrays to have been determined by now
+08055D70: warning: Expected sizes of arrays to have been determined by now
+08056180: warning: Expected sizes of arrays to have been determined by now
+080565B4: warning: Expected sizes of arrays to have been determined by now
+080566B5: warning: Expected sizes of arrays to have been determined by now
+080567B6: warning: Expected sizes of arrays to have been determined by now
+080568B7: warning: Expected sizes of arrays to have been determined by now
+080569B8: warning: Expected sizes of arrays to have been determined by now
+08056AB9: warning: Expected sizes of arrays to have been determined by now
+08056BBA: warning: Expected sizes of arrays to have been determined by now
+08056CBB: warning: Expected sizes of arrays to have been determined by now
+080575F0: warning: Expected sizes of arrays to have been determined by now
+08067F20: warning: Expected sizes of arrays to have been determined by now
+08168040: warning: Expected sizes of arrays to have been determined by now
+081D26C0: warning: Expected sizes of arrays to have been determined by now
+081D2CE0: warning: Expected sizes of arrays to have been determined by now
+081DAD00: warning: Expected sizes of arrays to have been determined by now
+081EB210: warning: Expected sizes of arrays to have been determined by now
+081FC750: warning: Expected sizes of arrays to have been determined by now
+081FCF70: warning: Expected sizes of arrays to have been determined by now
+081FD0A4: warning: Expected sizes of arrays to have been determined by now
+081FD0B4: warning: Expected sizes of arrays to have been determined by now
+083FD140: warning: Expected sizes of arrays to have been determined by now
+083FD150: warning: Expected sizes of arrays to have been determined by now
+083FD160: warning: Expected sizes of arrays to have been determined by now
+085FD1B8: warning: Expected sizes of arrays to have been determined by now

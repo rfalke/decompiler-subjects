@@ -1,13 +1,14 @@
 === Using options:--aggressive-branch-removal
-error: An error occurred during decompilation. System.IndexOutOfRangeException: Index was outside the bounds of the array.
-  at Reko.Core.MemoryArea.ReadLeInt16 (System.Byte[] abImage, System.Int64 offset) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.MemoryArea.ReadLeUInt16 (System.Byte[] img, System.Int64 off) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.ImageReader.ReadLeUInt16 () [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.ImageLoaders.MzExe.PeImageLoader.ReadOptionalHeader (Reko.Core.EndianImageReader rdr, System.Int16 expectedMagic) [0x000c4] in <f8d4e12fa66a4df390f24a097a0a1f84>:0 
-  at Reko.ImageLoaders.MzExe.PeImageLoader..ctor (System.IServiceProvider services, System.String filename, System.Byte[] img, System.UInt32 peOffset) [0x00070] in <f8d4e12fa66a4df390f24a097a0a1f84>:0 
-  at Reko.ImageLoaders.MzExe.ExeImageLoader.CreateDeferredLoader () [0x00047] in <f8d4e12fa66a4df390f24a097a0a1f84>:0 
-  at Reko.ImageLoaders.MzExe.ExeImageLoader.GetDeferredLoader () [0x00008] in <f8d4e12fa66a4df390f24a097a0a1f84>:0 
-  at Reko.ImageLoaders.MzExe.ExeImageLoader.get_PreferredBaseAddress () [0x00000] in <f8d4e12fa66a4df390f24a097a0a1f84>:0 
-  at Reko.Loading.Loader.LoadExecutable (System.String filename, System.Byte[] image, System.String loader, Reko.Core.Address addrLoad) [0x00037] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Decompiler.Load (System.String fileName, System.String loaderName) [0x0005e] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x00024] in <46a9a108998349f9975ff5dd656c4cb0>:0 
+Error: An error occurred during decompilation.
+    Specified argument was out of the range of valid values.
+       at Reko.Core.Memory.ByteMemoryArea.ReadLeInt16(Byte[] abImage, Int64 offset) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 544
+   at Reko.Core.Memory.ByteMemoryArea.ReadLeUInt16(Byte[] img, Int64 off) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 606
+   at Reko.Core.Memory.ByteImageReader.ReadLeUInt16() in /home/runner/work/reko/reko/src/Core/Memory/ByteImageReader.cs:line 272
+   at Reko.ImageLoaders.MzExe.PeImageLoader.ReadOptionalHeader(EndianImageReader rdr, Int16 expectedMagic) in /home/runner/work/reko/reko/src/ImageLoaders/MzExe/PeImageLoader.cs:line 336
+   at Reko.ImageLoaders.MzExe.PeImageLoader..ctor(IServiceProvider services, ImageLocation imageLocation, Byte[] img, UInt32 peOffset) in /home/runner/work/reko/reko/src/ImageLoaders/MzExe/PeImageLoader.cs:line 96
+   at Reko.ImageLoaders.MzExe.ExeImageLoader.CreateDeferredLoader() in /home/runner/work/reko/reko/src/ImageLoaders/MzExe/ExeImageLoader.cs:line 141
+   at Reko.ImageLoaders.MzExe.ExeImageLoader.GetDeferredLoader() in /home/runner/work/reko/reko/src/ImageLoaders/MzExe/ExeImageLoader.cs:line 92
+   at Reko.ImageLoaders.MzExe.ExeImageLoader.get_PreferredBaseAddress() in /home/runner/work/reko/reko/src/ImageLoaders/MzExe/ExeImageLoader.cs:line 193
+   at Reko.Loading.Loader.LoadBinaryImage(ImageLocation imageLocation, Byte[] image, String loader, Address addrLoad) in /home/runner/work/reko/reko/src/Decompiler/Loading/Loader.cs:line 170
+   at Reko.Loading.Loader.Load(ImageLocation imageLocation, String loaderName, Address addrLoad) in /home/runner/work/reko/reko/src/Decompiler/Loading/Loader.cs:line 133
+   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs) in /home/runner/work/reko/reko/src/Drivers/CmdLine/CmdLineDriver.cs:line 172

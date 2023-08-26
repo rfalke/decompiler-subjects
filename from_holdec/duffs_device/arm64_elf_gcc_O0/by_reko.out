@@ -1,31 +1,5 @@
 === Using options:--aggressive-branch-removal
 0000000000000700: warning: Unable to resolve imported reference __gmon_start__.
 00000000000006D0: warning: Unable to resolve imported reference __cxa_finalize.
-l00000000000008C0: warning: Non-integral switch expression
-copy1_four_times: error: An error occurred while rewriting procedure to high-level language.
-    Specified argument was out of the range of valid values. (Parameter 'bitSize')
-       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 159
-   at Reko.Structure.StructureAnalysis.ReduceIncSwitch(Region n, Region follow) in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 669
-   at Reko.Structure.StructureAnalysis.ReduceSwitchRegion(Region n) in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 409
-   at Reko.Structure.StructureAnalysis.ReduceAcyclic(Region n) in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 236
-   at Reko.Structure.StructureAnalysis.Execute() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 155
-   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 81
-   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 535
-l00000000000009C4: warning: Non-integral switch expression
-copy1_eight_times: error: An error occurred while rewriting procedure to high-level language.
-    Specified argument was out of the range of valid values. (Parameter 'bitSize')
-       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 159
-   at Reko.Structure.StructureAnalysis.ReduceIncSwitch(Region n, Region follow) in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 669
-   at Reko.Structure.StructureAnalysis.ReduceSwitchRegion(Region n) in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 409
-   at Reko.Structure.StructureAnalysis.ReduceAcyclic(Region n) in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 236
-   at Reko.Structure.StructureAnalysis.Execute() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 155
-   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 81
-   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 535
-0000000000000EE0: warning: Expected sizes of arrays to have been determined by now
-0000000000000EF0: warning: Expected sizes of arrays to have been determined by now
-0000000000000F10: warning: Expected sizes of arrays to have been determined by now
 0000000000011DA8: warning: Expected sizes of arrays to have been determined by now
-0000000000000EE0: warning: Expected sizes of arrays to have been determined by now
-0000000000000EF0: warning: Expected sizes of arrays to have been determined by now
-0000000000000F10: warning: Expected sizes of arrays to have been determined by now
 0000000000011DA8: warning: Expected sizes of arrays to have been determined by now

@@ -111,6 +111,7 @@ void __libc_start_main()
 // 100002BC: void _start(Register (ptr32 Eq_15) r3, Register int32 r4, Register (ptr32 (ptr32 char)) r5, Register (ptr32 Eq_18) r6, Register (ptr32 Eq_19) r7)
 void _start(int32 (* r3)(int32 r3, char ** r4, char ** r5), int32 r4, char ** r5, void (* r6)(), void (* r7)())
 {
+	void * fp;
 	(fp & ~0x0F)->dwFFFFFFF0 = fp & ~0x0F;
 	(fp & ~0x0F)->dwFFFFFFF0 = 0x00;
 	__libc_start_main(r3, r4, r5, r6, r7, &g_t100007CC, fp);
@@ -121,6 +122,7 @@ void _start(int32 (* r3)(int32 r3, char ** r4, char ** r5), int32 r4, char ** r5
 //      _init
 struct Eq_3 * call_gmon_start(struct Eq_3 * lr)
 {
+	struct Eq_3 * r30;
 	fn100108E8();
 	if (lr->dw000C == 0x00)
 		return r30;

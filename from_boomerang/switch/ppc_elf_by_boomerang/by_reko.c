@@ -85,7 +85,6 @@ word32 g_dw10010900 = 0x00; // 10010900
 
 Eq_39 g_t10000880 = ??/* Unexpected function type (fn void ()) */ ; // 10000880
 word32 _IO_stdin_used = 0x00020001; // 10000890
-char g_str100008C4[] = "Other!\n"; // 100008C4
 ptr32 g_a100008CC[] = // 100008CC
 	{
 	};
@@ -114,6 +113,7 @@ void printf()
 // 100002C0: void _start(Register (ptr32 Eq_15) r3, Register int32 r4, Register (ptr32 (ptr32 char)) r5, Register (ptr32 Eq_18) r6, Register (ptr32 Eq_19) r7)
 void _start(int32 (* r3)(int32 r3, char ** r4, char ** r5), int32 r4, char ** r5, void (* r6)(), void (* r7)())
 {
+	void * fp;
 	(fp & ~0x0F)->dwFFFFFFF0 = fp & ~0x0F;
 	(fp & ~0x0F)->dwFFFFFFF0 = 0x00;
 	__libc_start_main(r3, r4, r5, r6, r7, &g_t10000880, fp);
@@ -124,6 +124,7 @@ void _start(int32 (* r3)(int32 r3, char ** r4, char ** r5), int32 r4, char ** r5
 //      _init
 struct Eq_3 * call_gmon_start(struct Eq_3 * lr)
 {
+	struct Eq_3 * r30;
 	fn100109E4();
 	if (lr->dw000C == 0x00)
 		return r30;
@@ -168,8 +169,8 @@ void main(int32 r3)
 		printf("Other!\n");
 	else
 	{
-		ptr32 r11_30 = g_a100008CC[r3 * 0x04];
-		(r11_30 + 0x100008CC)();
+		ptr32 r11_29 = g_a100008CC[r3 * 0x04];
+		(*((word32) r11_29 + 0x100008CC))();
 	}
 }
 

@@ -5,13 +5,13 @@
 #include "subject.h"
 
 word32 g_dw0001; // 00000001
-Eq_256 g_t0002;
+Eq_255 g_t0002;
 word32 g_dw0005; // 00000005
 word32 g_dw0009; // 00000009
-Eq_256 g_t000C;
-Eq_256 g_t0010;
+Eq_255 g_t000C;
+Eq_255 g_t0010;
 word32 g_dw0011; // 00000011
-Eq_627 g_t0028;
-Eq_256 g_tFFFFFFA2;
-Eq_256 g_tFFFFFFA9;
-Eq_256 g_tFFFFFFB1;
+Eq_626 g_t0028;
+Eq_255 g_tFFFFFFA2;
+Eq_255 g_tFFFFFFA9;
+Eq_255 g_tFFFFFFB1;

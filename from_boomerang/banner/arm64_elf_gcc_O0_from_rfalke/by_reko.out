@@ -2,4 +2,6 @@
 0000000000000F30: warning: Unable to resolve imported reference __gmon_start__.
 0000000000000F00: warning: Unable to resolve imported reference __cxa_finalize.
 0000000000012DA8: warning: Expected sizes of arrays to have been determined by now
+0000000000013048: warning: Expected sizes of arrays to have been determined by now
 0000000000012DA8: warning: Expected sizes of arrays to have been determined by now
+0000000000013048: warning: Expected sizes of arrays to have been determined by now

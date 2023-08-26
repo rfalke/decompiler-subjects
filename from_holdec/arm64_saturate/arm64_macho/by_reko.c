@@ -4,18 +4,18 @@
 
 #include "subject.h"
 
-// 0000000100008000: void _dest_qc()
-void _dest_qc()
+// 0000000100008000: void dest_qc()
+void dest_qc()
 {
 }
 
-// 0000000100008008: void _dest_signed_output()
-void _dest_signed_output()
+// 0000000100008008: void dest_signed_output()
+void dest_signed_output()
 {
 }
 
-// 0000000100008009: void _dest_unsigned_output()
-void _dest_unsigned_output()
+// 0000000100008009: void dest_unsigned_output()
+void dest_unsigned_output()
 {
 }
 
@@ -25,31 +25,19 @@ void _dest_unsigned_output()
 
 #include "subject.h"
 
-// 0000000100003E84: void _printf()
-// Called from:
-//      _main
-void _printf()
+// 0000000100003E84: void printf()
+void printf()
 {
-	<anonymous> * x16_5 = g_ptr4000;
-	x16_5();
 }
 
-// 0000000100003E90: void _putchar()
-// Called from:
-//      _main
-void _putchar()
+// 0000000100003E90: void putchar()
+void putchar()
 {
-	<anonymous> * x16_5 = g_ptr4008;
-	x16_5();
 }
 
-// 0000000100003E9C: void _puts()
-// Called from:
-//      _main
-void _puts()
+// 0000000100003E9C: void puts()
+void puts()
 {
-	<anonymous> * x16_5 = g_ptr4010;
-	x16_5();
 }
 
 // subject_TEXT_text.c
@@ -58,204 +46,253 @@ void _puts()
 
 #include "subject.h"
 
-// 00000001000034D4: void _main(Register word64 x25, Register word64 q0_64_64, Register word64 q1_64_64, Register word64 sysreg3_3_4_4_1)
-void _main(word64 x25, word64 q0_64_64, word64 q1_64_64, word64 sysreg3_3_4_4_1)
+// 00000001000034D4: void main(Register word32 w3, Register word32 w5, Register word32 w6, Register int64 x7, Register word64 x25, Register word64 q0_64_64, Register word64 q1_64_64, Register word32 fpsr)
+void main(word32 w3, word32 w5, word32 w6, int64 x7, word64 x25, word64 q0_64_64, word64 q1_64_64, word32 fpsr)
 {
-	word32 x25_32_32_1001 = SLICE(x25, word32, 32);
-	_puts();
-	int64 x21_396;
-	for (x21_396 = 0x00; x21_396 != 0x09; ++x21_396)
+	word64 x3;
+	word64 x5;
+	word64 x6;
+	word32 x25_32_32_950 = SLICE(x25, word32, 32);
+	puts("=== signed add with saturation");
+	int64 x21_367;
+	for (x21_367 = 0x00; x21_367 != 0x09; ++x21_367)
 	{
-		int64 x20_56 = (int64) (0x100003EA8 + x21_396);
-		_inst_sqadd(SEQ(q0_64_64, x20_56), SEQ(q1_64_64, ~0x7F), sysreg3_3_4_4_1);
-		_printf();
-		_inst_sqadd(SEQ(q0_64_64, x20_56), SEQ(q1_64_64, ~0x7E), sysreg3_3_4_4_1);
-		_printf();
-		_inst_sqadd(SEQ(q0_64_64, x20_56), SEQ(q1_64_64, ~0x01), sysreg3_3_4_4_1);
-		_printf();
-		_inst_sqadd(SEQ(q0_64_64, x20_56), SEQ(q1_64_64, ~0x00), sysreg3_3_4_4_1);
-		_printf();
-		_inst_sqadd(SEQ(q0_64_64, x20_56), SEQ(q1_64_64, 0x00), sysreg3_3_4_4_1);
-		_printf();
-		_inst_sqadd(SEQ(q0_64_64, x20_56), SEQ(q1_64_64, 0x01), sysreg3_3_4_4_1);
-		_printf();
-		_inst_sqadd(SEQ(q0_64_64, x20_56), SEQ(q1_64_64, 0x02), sysreg3_3_4_4_1);
-		_printf();
-		_inst_sqadd(SEQ(q0_64_64, x20_56), SEQ(q1_64_64, 0x7E), sysreg3_3_4_4_1);
-		_printf();
-		_inst_sqadd(SEQ(q0_64_64, x20_56), SEQ(q1_64_64, 0x7F), sysreg3_3_4_4_1);
-		_printf();
-		word32 x20_32_32_1005 = SLICE(x20_56, word32, 32);
+		int64 x20_50 = (int64) *((word64) 0x100003EA8 + x21_367);
+		word64 x4_63 = <invalid>;
+		word32 w4_1226;
+		printf("%4d + %4d = (%4d/%4d) %4d/0x%02x %ld \n", -0x0080, inst_sqadd(SEQ(q0_64_64, x20_50), SEQ(q1_64_64, ~0x7F), fpsr, out w4_1226), (int32) x3, (int32) x4_63, (int32) x5, (uint32) x6, x7);
+		word64 x4_108 = <invalid>;
+		word32 w4_1227;
+		printf("%4d + %4d = (%4d/%4d) %4d/0x%02x %ld \n", -0x007F, inst_sqadd(SEQ(q0_64_64, x20_50), SEQ(q1_64_64, ~0x7E), fpsr, out w4_1227), (int32) x3, (int32) x4_108, (int32) x5, (uint32) x6, x7);
+		word64 x4_142 = <invalid>;
+		word32 w4_1228;
+		printf("%4d + %4d = (%4d/%4d) %4d/0x%02x %ld \n", -2, inst_sqadd(SEQ(q0_64_64, x20_50), SEQ(q1_64_64, ~0x01), fpsr, out w4_1228), (int32) x3, (int32) x4_142, (int32) x5, (uint32) x6, x7);
+		word64 x4_176 = <invalid>;
+		word32 w4_1229;
+		printf("%4d + %4d = (%4d/%4d) %4d/0x%02x %ld \n", -1, inst_sqadd(SEQ(q0_64_64, x20_50), SEQ(q1_64_64, ~0x00), fpsr, out w4_1229), (int32) x3, (int32) x4_176, (int32) x5, (uint32) x6, x7);
+		word64 x4_210 = <invalid>;
+		word32 w4_1230;
+		printf("%4d + %4d = (%4d/%4d) %4d/0x%02x %ld \n", 0, inst_sqadd(SEQ(q0_64_64, x20_50), SEQ(q1_64_64, 0x00), fpsr, out w4_1230), (int32) x3, (int32) x4_210, (int32) x5, (uint32) x6, x7);
+		word64 x4_240 = <invalid>;
+		word32 w4_1231;
+		printf("%4d + %4d = (%4d/%4d) %4d/0x%02x %ld \n", 1, inst_sqadd(SEQ(q0_64_64, x20_50), SEQ(q1_64_64, 0x01), fpsr, out w4_1231), (int32) x3, (int32) x4_240, (int32) x5, (uint32) x6, x7);
+		word64 x4_275 = <invalid>;
+		word32 w4_1232;
+		printf("%4d + %4d = (%4d/%4d) %4d/0x%02x %ld \n", 2, inst_sqadd(SEQ(q0_64_64, x20_50), SEQ(q1_64_64, 0x02), fpsr, out w4_1232), (int32) x3, (int32) x4_275, (int32) x5, (uint32) x6, x7);
+		word64 x4_309 = <invalid>;
+		word32 w4_1233;
+		printf("%4d + %4d = (%4d/%4d) %4d/0x%02x %ld \n", 0x007E, inst_sqadd(SEQ(q0_64_64, x20_50), SEQ(q1_64_64, 0x7E), fpsr, out w4_1233), (int32) x3, (int32) x4_309, (int32) x5, (uint32) x6, x7);
+		word64 x4_343 = <invalid>;
+		word32 w4_1234;
+		printf("%4d + %4d = (%4d/%4d) %4d/0x%02x %ld \n", 0x007F, inst_sqadd(SEQ(q0_64_64, x20_50), SEQ(q1_64_64, 0x7F), fpsr, out w4_1234), (int32) x3, (int32) x4_343, (int32) x5, (uint32) x6, x7);
+		word32 x20_32_32_954 = SLICE(x20_50, word32, 32);
 	}
-	_puts();
-	int64 x21_401;
-	for (x21_401 = 0x00; x21_401 != 0x09; ++x21_401)
+	puts("=== unsigned add with saturation");
+	int64 x21_372;
+	for (x21_372 = 0x00; x21_372 != 0x09; ++x21_372)
 	{
-		word64 x20_415 = SEQ(x20_32_32_1005, (word32) (0x100003EB1 + x21_401));
-		_inst_uqadd(SEQ(q0_64_64, x20_415), SEQ(q1_64_64, 0x00), sysreg3_3_4_4_1);
-		_printf();
-		_inst_uqadd(SEQ(q0_64_64, x20_415), SEQ(q1_64_64, 0x01), sysreg3_3_4_4_1);
-		_printf();
-		_inst_uqadd(SEQ(q0_64_64, x20_415), SEQ(q1_64_64, 0x02), sysreg3_3_4_4_1);
-		_printf();
-		_inst_uqadd(SEQ(q0_64_64, x20_415), SEQ(q1_64_64, 0x7E), sysreg3_3_4_4_1);
-		_printf();
-		_inst_uqadd(SEQ(q0_64_64, x20_415), SEQ(q1_64_64, 0x7F), sysreg3_3_4_4_1);
-		_printf();
-		_inst_uqadd(SEQ(q0_64_64, x20_415), SEQ(q1_64_64, 0x80), sysreg3_3_4_4_1);
-		_printf();
-		_inst_uqadd(SEQ(q0_64_64, x20_415), SEQ(q1_64_64, 0x81), sysreg3_3_4_4_1);
-		_printf();
-		_inst_uqadd(SEQ(q0_64_64, x20_415), SEQ(q1_64_64, 0xFE), sysreg3_3_4_4_1);
-		_printf();
-		_inst_uqadd(SEQ(q0_64_64, x20_415), SEQ(q1_64_64, 0xFF), sysreg3_3_4_4_1);
-		_printf();
+		word64 x20_386 = SEQ(x20_32_32_954, (word32) *((word64) 0x100003EB1 + x21_372));
+		word64 x4_399 = <invalid>;
+		word32 w4_1235;
+		printf("%4d - %4d = (%4d/%4d) %4d/0x%02x %ld\n", 0, inst_uqadd(SEQ(q0_64_64, x20_386), SEQ(q1_64_64, 0x00), fpsr, out w4_1235), (int32) x3, (int32) x4_399, (int32) x5, (uint32) x6, x7);
+		word64 x4_436 = <invalid>;
+		word32 w4_1236;
+		printf("%4d - %4d = (%4d/%4d) %4d/0x%02x %ld\n", 1, inst_uqadd(SEQ(q0_64_64, x20_386), SEQ(q1_64_64, 0x01), fpsr, out w4_1236), (int32) x3, (int32) x4_436, (int32) x5, (uint32) x6, x7);
+		word64 x4_471 = <invalid>;
+		word32 w4_1237;
+		printf("%4d - %4d = (%4d/%4d) %4d/0x%02x %ld\n", 2, inst_uqadd(SEQ(q0_64_64, x20_386), SEQ(q1_64_64, 0x02), fpsr, out w4_1237), (int32) x3, (int32) x4_471, (int32) x5, (uint32) x6, x7);
+		word64 x4_504 = <invalid>;
+		word32 w4_1238;
+		printf("%4d - %4d = (%4d/%4d) %4d/0x%02x %ld\n", 0x007E, inst_uqadd(SEQ(q0_64_64, x20_386), SEQ(q1_64_64, 0x7E), fpsr, out w4_1238), (int32) x3, (int32) x4_504, (int32) x5, (uint32) x6, x7);
+		word64 x4_537 = <invalid>;
+		word32 w4_1239;
+		printf("%4d - %4d = (%4d/%4d) %4d/0x%02x %ld\n", 0x007F, inst_uqadd(SEQ(q0_64_64, x20_386), SEQ(q1_64_64, 0x7F), fpsr, out w4_1239), (int32) x3, (int32) x4_537, (int32) x5, (uint32) x6, x7);
+		word64 x4_569 = <invalid>;
+		word32 w4_1240;
+		printf("%4d - %4d = (%4d/%4d) %4d/0x%02x %ld\n", 0x0080, inst_uqadd(SEQ(q0_64_64, x20_386), SEQ(q1_64_64, 0x80), fpsr, out w4_1240), (int32) x3, (int32) x4_569, (int32) x5, (uint32) x6, x7);
+		word64 x4_601 = <invalid>;
+		word32 w4_1241;
+		printf("%4d - %4d = (%4d/%4d) %4d/0x%02x %ld\n", 0x0081, inst_uqadd(SEQ(q0_64_64, x20_386), SEQ(q1_64_64, 0x81), fpsr, out w4_1241), (int32) x3, (int32) x4_601, (int32) x5, (uint32) x6, x7);
+		word64 x4_633 = <invalid>;
+		word32 w4_1242;
+		printf("%4d - %4d = (%4d/%4d) %4d/0x%02x %ld\n", 0x00FE, inst_uqadd(SEQ(q0_64_64, x20_386), SEQ(q1_64_64, 0xFE), fpsr, out w4_1242), (int32) x3, (int32) x4_633, (int32) x5, (uint32) x6, x7);
+		word32 w4_1243;
+		Eq_452 x2_664 = (uint64) inst_uqadd(SEQ(q0_64_64, x20_386), SEQ(q1_64_64, 0xFF), fpsr, out w4_1243);
+		word64 x4_665 = <invalid>;
+		printf("%4d - %4d = (%4d/%4d) %4d/0x%02x %ld\n", 0x00FF, (int32) x2_664, (int32) x3, (int32) x4_665, (int32) x5, (uint32) x6, x7);
+		word64 x1_657 = 0xFF;
 	}
-	_puts();
-	int64 x8_744 = 0x00;
+	puts("=== left shift variants with saturation");
+	int64 x8_692 = 0x00;
 	do
 	{
-		word64 x25_756 = SEQ(x25_32_32_1001, (word32) (0x100003EBA + x8_1275));
-		word64 x26_1272 = ~0x07;
+		word64 x25_704 = SEQ(x25_32_32_950, (word32) *((word64) 0x100003EBA + x8_1244));
+		word64 x26_1223 = ~0x07;
 		do
 		{
-			word32 w26_760 = (word32) x26_1276;
-			_printf();
-			_printf();
-			_inst_sshl(SEQ(q0_64_64, x25_756), SEQ(q1_64_64, x26_1276), sysreg3_3_4_4_1);
-			_printf();
-			_inst_srshl(SEQ(q0_64_64, x25_756), SEQ(q1_64_64, x26_1276), sysreg3_3_4_4_1);
-			_printf();
-			_inst_sqshl(SEQ(q0_64_64, x25_756), SEQ(q1_64_64, x26_1276), sysreg3_3_4_4_1);
-			_printf();
-			_inst_sqrshl(SEQ(q0_64_64, x25_756), SEQ(q1_64_64, x26_1276), sysreg3_3_4_4_1);
-			_printf();
-			_printf();
-			_inst_ushl(SEQ(q0_64_64, x25_756), SEQ(q1_64_64, x26_1276), sysreg3_3_4_4_1);
-			_printf();
-			_inst_urshl(SEQ(q0_64_64, x25_756), SEQ(q1_64_64, x26_1276), sysreg3_3_4_4_1);
-			_printf();
-			_inst_uqshl(SEQ(q0_64_64, x25_756), SEQ(q1_64_64, x26_1276), sysreg3_3_4_4_1);
-			_printf();
-			_inst_uqrshl(SEQ(q0_64_64, x25_756), SEQ(q1_64_64, x26_1276), sysreg3_3_4_4_1);
-			_printf();
-			_putchar();
-			x26_1272 = SEQ(SLICE(x26_1276 + 0x01, word32, 32), w26_760 + 0x01);
-			x26_1276 = x26_1272;
-		} while (x26_1276 != 0x08);
-		_putchar();
-		x8_744 = x8_1275 + 0x01;
-		x8_1275 = x8_744;
-	} while (x8_1275 != 0x04);
+			uint32 w26_708 = (word32) x26_1245;
+			printf("0x%02x>>%d", (uint32) x1_657, (int32) x2_664);
+			printf(" || ");
+			inst_sshl(SEQ(q0_64_64, x25_704), SEQ(q1_64_64, x26_1245), fpsr);
+			printf("0x%02x", w26_708);
+			inst_srshl(SEQ(q0_64_64, x25_704), SEQ(q1_64_64, x26_1245), fpsr);
+			printf(" | 0x%02x", w26_708);
+			printf(" | 0x%02x %ld", w26_708, inst_sqshl(SEQ(q0_64_64, x25_704), SEQ(q1_64_64, x26_1245), fpsr));
+			printf(" | 0x%02x %ld", w26_708, inst_sqrshl(SEQ(q0_64_64, x25_704), SEQ(q1_64_64, x26_1245), fpsr));
+			printf(" || ");
+			inst_ushl(SEQ(q0_64_64, x25_704), SEQ(q1_64_64, x26_1245), fpsr);
+			printf("0x%02x", w26_708);
+			inst_urshl(SEQ(q0_64_64, x25_704), SEQ(q1_64_64, x26_1245), fpsr);
+			printf(" | 0x%02x", w26_708);
+			printf(" | 0x%02x %ld", w26_708, inst_uqshl(SEQ(q0_64_64, x25_704), SEQ(q1_64_64, x26_1245), fpsr));
+			x2_664 = inst_uqrshl(SEQ(q0_64_64, x25_704), SEQ(q1_64_64, x26_1245), fpsr);
+			printf(" | 0x%02x %ld", w26_708, x2_664);
+			putchar(0x0A);
+			x1_657 = x26_1245;
+			x26_1223 = SEQ(SLICE(x26_1245 + 0x01, word32, 32), w26_708 + 0x01);
+			x26_1245 = x26_1223;
+		} while (x26_1245 != 0x08);
+		putchar(0x0A);
+		x8_692 = x8_1244 + 0x01;
+		x8_1244 = x8_692;
+	} while (x8_1244 != 0x04);
 }
 
-// 0000000100003B3C: void _inst_sqadd(Sequence Eq_20 q0_64_64_x0, Sequence Eq_21 q1_64_64_x1, Register word64 sysreg3_3_4_4_1)
+// 0000000100003B3C: Register word32 inst_sqadd(Sequence word128 q0_64_64_x0, Sequence word128 q1_64_64_x1, Register word32 fpsr, Register out Eq_47 w4Out)
 // Called from:
-//      _main
-void _inst_sqadd(Eq_20 q0_64_64_x0, Eq_21 q1_64_64_x1, word64 sysreg3_3_4_4_1)
+//      main
+word32 inst_sqadd(word128 q0_64_64_x0, word128 q1_64_64_x1, word32 fpsr, union Eq_47 & w4Out)
 {
-	__msr(sysreg3_3_4_4_1, __mrs(sysreg3_3_4_4_1) & 0xFFFFFFFF0000000);
-	g_b8008 = (byte) (word32) (word64) __sqadd_i8(q0_64_64_x0, q1_64_64_x1);
-	__mrs(sysreg3_3_4_4_1);
+	word64 x0 = (word64) q0_64_64_x0;
+	word64 x1 = (word64) q1_64_64_x1;
+	__msr(fpsr, __mrs(fpsr) & ~0x08000000);
+	g_b8008 = (byte) __sqadd<int8[16]>((uint128) x0, (uint128) x1);
+	__mrs(fpsr);
+	g_b8000 = 0x00;
+	w4Out.u0 = <invalid>;
+	return (word32) &g_b8000;
+}
+
+// 0000000100003B90: Register word32 inst_uqadd(Sequence word128 q0_64_64_x0, Sequence word128 q1_64_64_x1, Register word32 fpsr, Register out Eq_47 w4Out)
+// Called from:
+//      main
+word32 inst_uqadd(word128 q0_64_64_x0, word128 q1_64_64_x1, word32 fpsr, union Eq_47 & w4Out)
+{
+	word64 x0 = (word64) q0_64_64_x0;
+	word64 x1 = (word64) q1_64_64_x1;
+	__msr(fpsr, __mrs(fpsr) & ~0x08000000);
+	g_b8009 = (byte) __uqadd<uint8[16]>((uint128) x0, (uint128) x1);
+	__mrs(fpsr);
+	g_b8000 = 0x00;
+	w4Out.u0 = <invalid>;
+	return (word32) &g_b8000;
+}
+
+// 0000000100003BE4: void inst_sshl(Sequence word128 q0_64_64_x0, Sequence word128 q1_64_64_x1, Register word32 fpsr)
+// Called from:
+//      main
+void inst_sshl(word128 q0_64_64_x0, word128 q1_64_64_x1, word32 fpsr)
+{
+	word64 x0 = (word64) q0_64_64_x0;
+	word64 x1 = (word64) q1_64_64_x1;
+	__msr(fpsr, __mrs(fpsr) & ~0x08000000);
+	g_b8009 = (byte) __sshl<int8[16]>((uint128) x0, (uint128) x1);
+	__mrs(fpsr);
 	g_b8000 = 0x00;
 }
 
-// 0000000100003B90: void _inst_uqadd(Sequence Eq_104 q0_64_64_x0, Sequence Eq_105 q1_64_64_x1, Register word64 sysreg3_3_4_4_1)
+// 0000000100003C38: void inst_srshl(Sequence word128 q0_64_64_x0, Sequence word128 q1_64_64_x1, Register word32 fpsr)
 // Called from:
-//      _main
-void _inst_uqadd(Eq_104 q0_64_64_x0, Eq_105 q1_64_64_x1, word64 sysreg3_3_4_4_1)
+//      main
+void inst_srshl(word128 q0_64_64_x0, word128 q1_64_64_x1, word32 fpsr)
 {
-	__msr(sysreg3_3_4_4_1, __mrs(sysreg3_3_4_4_1) & 0xFFFFFFFF0000000);
-	g_b8009 = (byte) (word32) (word64) __uqadd_u8(q0_64_64_x0, q1_64_64_x1);
-	__mrs(sysreg3_3_4_4_1);
+	word64 x0 = (word64) q0_64_64_x0;
+	word64 x1 = (word64) q1_64_64_x1;
+	__msr(fpsr, __mrs(fpsr) & ~0x08000000);
+	g_b8009 = (byte) __srshl<int8[16]>((uint128) x0, (uint128) x1);
+	__mrs(fpsr);
 	g_b8000 = 0x00;
 }
 
-// 0000000100003BE4: void _inst_sshl(Sequence Eq_195 q0_64_64_x0, Sequence Eq_196 q1_64_64_x1, Register word64 sysreg3_3_4_4_1)
+// 0000000100003C8C: Register (ptr64 byte) inst_sqshl(Sequence word128 q0_64_64_x0, Sequence word128 q1_64_64_x1, Register word32 fpsr)
 // Called from:
-//      _main
-void _inst_sshl(Eq_195 q0_64_64_x0, Eq_196 q1_64_64_x1, word64 sysreg3_3_4_4_1)
+//      main
+byte * inst_sqshl(word128 q0_64_64_x0, word128 q1_64_64_x1, word32 fpsr)
 {
-	__msr(sysreg3_3_4_4_1, __mrs(sysreg3_3_4_4_1) & 0xFFFFFFFF0000000);
-	g_b8009 = (byte) (word32) (word64) __sshl_i8(q0_64_64_x0, q1_64_64_x1);
-	__mrs(sysreg3_3_4_4_1);
+	word64 x0 = (word64) q0_64_64_x0;
+	word64 x1 = (word64) q1_64_64_x1;
+	__msr(fpsr, __mrs(fpsr) & ~0x08000000);
+	g_b8009 = (byte) __sqshl<int8[16]>((uint128) x0, (uint128) x1);
+	__mrs(fpsr);
+	g_b8000 = 0x00;
+	return &g_b8000;
+}
+
+// 0000000100003CE0: Register (ptr64 byte) inst_sqrshl(Sequence word128 q0_64_64_x0, Sequence word128 q1_64_64_x1, Register word32 fpsr)
+// Called from:
+//      main
+byte * inst_sqrshl(word128 q0_64_64_x0, word128 q1_64_64_x1, word32 fpsr)
+{
+	word64 x0 = (word64) q0_64_64_x0;
+	word64 x1 = (word64) q1_64_64_x1;
+	__msr(fpsr, __mrs(fpsr) & ~0x08000000);
+	g_b8009 = (byte) __sqrshl<int8[16]>((uint128) x0, (uint128) x1);
+	__mrs(fpsr);
+	g_b8000 = 0x00;
+	return &g_b8000;
+}
+
+// 0000000100003D34: void inst_ushl(Sequence word128 q0_64_64_x0, Sequence word128 q1_64_64_x1, Register word32 fpsr)
+// Called from:
+//      main
+void inst_ushl(word128 q0_64_64_x0, word128 q1_64_64_x1, word32 fpsr)
+{
+	word64 x0 = (word64) q0_64_64_x0;
+	word64 x1 = (word64) q1_64_64_x1;
+	__msr(fpsr, __mrs(fpsr) & ~0x08000000);
+	g_b8009 = (byte) __ushl<uint8[16]>((uint128) x0, (uint128) x1);
+	__mrs(fpsr);
 	g_b8000 = 0x00;
 }
 
-// 0000000100003C38: void _inst_srshl(Sequence Eq_205 q0_64_64_x0, Sequence Eq_206 q1_64_64_x1, Register word64 sysreg3_3_4_4_1)
+// 0000000100003D88: void inst_urshl(Sequence word128 q0_64_64_x0, Sequence word128 q1_64_64_x1, Register word32 fpsr)
 // Called from:
-//      _main
-void _inst_srshl(Eq_205 q0_64_64_x0, Eq_206 q1_64_64_x1, word64 sysreg3_3_4_4_1)
+//      main
+void inst_urshl(word128 q0_64_64_x0, word128 q1_64_64_x1, word32 fpsr)
 {
-	__msr(sysreg3_3_4_4_1, __mrs(sysreg3_3_4_4_1) & 0xFFFFFFFF0000000);
-	g_b8009 = (byte) (word32) (word64) __srshl_i8(q0_64_64_x0, q1_64_64_x1);
-	__mrs(sysreg3_3_4_4_1);
+	word64 x0 = (word64) q0_64_64_x0;
+	word64 x1 = (word64) q1_64_64_x1;
+	__msr(fpsr, __mrs(fpsr) & ~0x08000000);
+	g_b8009 = (byte) __urshl<uint8[16]>((uint128) x0, (uint128) x1);
+	__mrs(fpsr);
 	g_b8000 = 0x00;
 }
 
-// 0000000100003C8C: void _inst_sqshl(Sequence Eq_215 q0_64_64_x0, Sequence Eq_216 q1_64_64_x1, Register word64 sysreg3_3_4_4_1)
+// 0000000100003DDC: Register (ptr64 byte) inst_uqshl(Sequence word128 q0_64_64_x0, Sequence word128 q1_64_64_x1, Register word32 fpsr)
 // Called from:
-//      _main
-void _inst_sqshl(Eq_215 q0_64_64_x0, Eq_216 q1_64_64_x1, word64 sysreg3_3_4_4_1)
+//      main
+byte * inst_uqshl(word128 q0_64_64_x0, word128 q1_64_64_x1, word32 fpsr)
 {
-	__msr(sysreg3_3_4_4_1, __mrs(sysreg3_3_4_4_1) & 0xFFFFFFFF0000000);
-	g_b8009 = (byte) (word32) (word64) __sqshl_i8(q0_64_64_x0, q1_64_64_x1);
-	__mrs(sysreg3_3_4_4_1);
+	word64 x0 = (word64) q0_64_64_x0;
+	word64 x1 = (word64) q1_64_64_x1;
+	__msr(fpsr, __mrs(fpsr) & ~0x08000000);
+	g_b8009 = (byte) __uqshl<uint8[16]>((uint128) x0, (uint128) x1);
+	__mrs(fpsr);
 	g_b8000 = 0x00;
+	return &g_b8000;
 }
 
-// 0000000100003CE0: void _inst_sqrshl(Sequence Eq_225 q0_64_64_x0, Sequence Eq_226 q1_64_64_x1, Register word64 sysreg3_3_4_4_1)
+// 0000000100003E30: Register (ptr64 byte) inst_uqrshl(Sequence word128 q0_64_64_x0, Sequence word128 q1_64_64_x1, Register word32 fpsr)
 // Called from:
-//      _main
-void _inst_sqrshl(Eq_225 q0_64_64_x0, Eq_226 q1_64_64_x1, word64 sysreg3_3_4_4_1)
+//      main
+byte * inst_uqrshl(word128 q0_64_64_x0, word128 q1_64_64_x1, word32 fpsr)
 {
-	__msr(sysreg3_3_4_4_1, __mrs(sysreg3_3_4_4_1) & 0xFFFFFFFF0000000);
-	g_b8009 = (byte) (word32) (word64) __sqrshl_i8(q0_64_64_x0, q1_64_64_x1);
-	__mrs(sysreg3_3_4_4_1);
+	word64 x0 = (word64) q0_64_64_x0;
+	word64 x1 = (word64) q1_64_64_x1;
+	__msr(fpsr, __mrs(fpsr) & ~0x08000000);
+	g_b8009 = (byte) __uqrshl<uint8[16]>((uint128) x0, (uint128) x1);
+	__mrs(fpsr);
 	g_b8000 = 0x00;
-}
-
-// 0000000100003D34: void _inst_ushl(Sequence Eq_237 q0_64_64_x0, Sequence Eq_238 q1_64_64_x1, Register word64 sysreg3_3_4_4_1)
-// Called from:
-//      _main
-void _inst_ushl(Eq_237 q0_64_64_x0, Eq_238 q1_64_64_x1, word64 sysreg3_3_4_4_1)
-{
-	__msr(sysreg3_3_4_4_1, __mrs(sysreg3_3_4_4_1) & 0xFFFFFFFF0000000);
-	g_b8009 = (byte) (word32) (word64) __ushl_u8(q0_64_64_x0, q1_64_64_x1);
-	__mrs(sysreg3_3_4_4_1);
-	g_b8000 = 0x00;
-}
-
-// 0000000100003D88: void _inst_urshl(Sequence Eq_247 q0_64_64_x0, Sequence Eq_248 q1_64_64_x1, Register word64 sysreg3_3_4_4_1)
-// Called from:
-//      _main
-void _inst_urshl(Eq_247 q0_64_64_x0, Eq_248 q1_64_64_x1, word64 sysreg3_3_4_4_1)
-{
-	__msr(sysreg3_3_4_4_1, __mrs(sysreg3_3_4_4_1) & 0xFFFFFFFF0000000);
-	g_b8009 = (byte) (word32) (word64) __urshl_u8(q0_64_64_x0, q1_64_64_x1);
-	__mrs(sysreg3_3_4_4_1);
-	g_b8000 = 0x00;
-}
-
-// 0000000100003DDC: void _inst_uqshl(Sequence Eq_257 q0_64_64_x0, Sequence Eq_258 q1_64_64_x1, Register word64 sysreg3_3_4_4_1)
-// Called from:
-//      _main
-void _inst_uqshl(Eq_257 q0_64_64_x0, Eq_258 q1_64_64_x1, word64 sysreg3_3_4_4_1)
-{
-	__msr(sysreg3_3_4_4_1, __mrs(sysreg3_3_4_4_1) & 0xFFFFFFFF0000000);
-	g_b8009 = (byte) (word32) (word64) __uqshl_u8(q0_64_64_x0, q1_64_64_x1);
-	__mrs(sysreg3_3_4_4_1);
-	g_b8000 = 0x00;
-}
-
-// 0000000100003E30: void _inst_uqrshl(Sequence Eq_267 q0_64_64_x0, Sequence Eq_268 q1_64_64_x1, Register word64 sysreg3_3_4_4_1)
-// Called from:
-//      _main
-void _inst_uqrshl(Eq_267 q0_64_64_x0, Eq_268 q1_64_64_x1, word64 sysreg3_3_4_4_1)
-{
-	__msr(sysreg3_3_4_4_1, __mrs(sysreg3_3_4_4_1) & 0xFFFFFFFF0000000);
-	g_b8009 = (byte) (word32) (word64) __uqrshl_u8(q0_64_64_x0, q1_64_64_x1);
-	__mrs(sysreg3_3_4_4_1);
-	g_b8000 = 0x00;
+	return &g_b8000;
 }
 

@@ -4,9 +4,37 @@
 
 #include "subject.h"
 
+char g_b804804C = '\r'; // 0804804C
 // 0804804D: void fn0804804D(Stack word32 dwArg00, Stack (ptr32 Eq_3) dwArg04)
 void fn0804804D(word32 dwArg00, struct Eq_3 * dwArg04)
 {
+	ptr32 fp;
+	struct Eq_5 * esp_31 = fp + 4;
+	if (dwArg00 == 0x01)
+	{
+		struct Eq_3 * esi_10 = dwArg04;
+		do
+		{
+			esi_10 = esi_101 + 1;
+			esi_101 = esi_10;
+		} while (esi_101->b0000 != 0x00);
+		while (true)
+		{
+			esp_31 = fp + 8;
+			if (sys_read(0x00, &g_b80480A4, 0x01) == 0x00)
+				break;
+			if (esi_10->wFFFFFFFA != 0x6D6F)
+			{
+				if (g_b80480A4 == 0x0A)
+					sys_write(0x01, &g_b804804C, 0x01);
+			}
+			else if (g_b80480A4 == 0x0D)
+				continue;
+			sys_write(0x01, &g_b80480A4, 0x01);
+		}
+	}
+	esp_31->dwFFFFFFFC = 0x01;
+	sys_exit(0x00);
 }
 
 byte g_b80480A4 = 0x00; // 080480A4

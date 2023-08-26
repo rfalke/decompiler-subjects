@@ -2,3 +2,5 @@
 08049190: warning: Call target address 00000000 is invalid.
 0804913D: warning: Call target address 00000000 is invalid.
 08049103: warning: Call target address 00000000 is invalid.
+0804BF08: warning: Expected sizes of arrays to have been determined by now
+0804BF08: warning: Expected sizes of arrays to have been determined by now

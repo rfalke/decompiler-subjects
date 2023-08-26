@@ -4,100 +4,70 @@
 
 #include "subject.h"
 
-// 0804804C: void fn0804804C(Register word32 edx, Register (ptr32 byte) edi, Stack word32 dwArg00)
-void fn0804804C(word32 edx, byte * edi, word32 dwArg00)
+// 0804804C: void fn0804804C(Register int32 ebx, Stack word32 dwArg00, Stack (ptr32 char) dwArg08)
+void fn0804804C(int32 ebx, word32 dwArg00, char * dwArg08)
 {
+	ptr32 fp;
+	struct Eq_6 * esp_59 = fp + 4;
 	if (dwArg00 == 0x02)
 	{
-		byte * edi_14;
-		ptr32 edx_20 = fn080480B1(fn080480A5(out edi_14), edi_14);
-		word32 edi_28 = edi_14 + edx_20;
+		ptr32 edx_20 = fn080480B1(fn080480A5(dwArg08), dwArg08);
+		word32 edi_28 = dwArg08 + edx_20;
 		byte * edi_30 = edi_28 - 0x01;
-		bool v19_122 = edi_28 != 0x01;
+		bool v19_106 = edi_28 != 0x01;
 		ptr32 ecx_32 = edx_20;
 		while (ecx_32 != 0x00)
 		{
-			v19_122 = *edi_150 != 0x2F;
-			edi_30 = edi_150 + 1;
+			v19_106 = *edi_121 != 0x2F;
+			edi_30 = edi_121 + 1;
 			--ecx_32;
-			edi_150 = edi_30;
-			if (*edi_150 != 0x2F)
+			edi_121 = edi_30;
+			if (*edi_121 != 0x2F)
 				break;
 		}
-		edi = edi_14;
-		if (!v19_122)
+		if (!v19_106)
 		{
 			if (ecx_32 == 0x00)
 				++ecx_32;
-			edi_14[fn080480B1(ecx_32, edi_14)] = 0x0A;
-			__syscall(0x80);
-			__syscall(0x80);
+			ptr32 edx_79 = fn080480B1(ecx_32, dwArg08);
+			dwArg08[edx_79] = 0x0A;
+			sys_write(0x01, dwArg08, edx_79 + 0x01);
+			sys_exit(0x01);
 		}
-		__syscall(0x80);
-		edx = 0x02;
+		sys_write(0x01, ".\n\x89\xFAJB\x80:", 0x02);
+		ebx = 0x01;
+		esp_59 = fp + 0x0C;
 	}
-	__syscall(0x80);
-	word32 edi_149;
-	fn080480AA((byte *) 0x01, edx, edi, out edi_149);
+	esp_59->dwFFFFFFFC = 0x01;
+	sys_exit(ebx);
 }
 
-// 080480A5: Register word32 fn080480A5(Register out ptr32 ediOut)
+char g_str80480A3[] = ".\n\x89\xFAJB\x80:"; // 080480A3
+// 080480A5: Register ptr32 fn080480A5(Register (ptr32 char) edi)
 // Called from:
 //      fn0804804C
-word32 fn080480A5(ptr32 & ediOut)
+ptr32 fn080480A5(char * edi)
 {
-	ptr32 edi_7;
-	word32 edx_8 = fn080480A8(out edi_7);
-	ediOut = edi_7;
-	return edx_8;
+	byte * edx_6 = edi - 0x01;
+	do
+		++edx_6;
+	while (*edx_6 != 0x00);
+	return edx_6 - edi;
 }
 
-// 080480A8: Register word32 fn080480A8(Register out ptr32 ediOut)
-// Called from:
-//      fn080480A5
-//      fn080480AA
-word32 fn080480A8(ptr32 & ediOut)
-{
-	ptr32 edi_9;
-	word32 edx_8 = fn080480AA(eax, edx + 0x01, edi, out edi_9);
-	ediOut = edi_9;
-	return edx_8;
-}
-
-// 080480AA: Register word32 fn080480AA(Register (ptr32 byte) eax, Register word32 edx, Register (ptr32 byte) edi, Register out (ptr32 byte) ediOut)
+// 080480B1: Register ptr32 fn080480B1(Register ptr32 edx, Register (ptr32 char) edi)
 // Called from:
 //      fn0804804C
-//      fn080480A8
-word32 fn080480AA(byte * eax, word32 edx, byte * edi, byte & ediOut)
+ptr32 fn080480B1(ptr32 edx, char * edi)
 {
-	byte al = (byte) eax;
-	if (al != *eax)
+	char * edi_15 = edi + edx - 0x01;
+	while (edi_54 != edi)
 	{
-		byte * edi_22;
-		word32 edx_21 = fn080480A8(out edi_22);
-		ediOut = edi_22;
-		return edx_21;
+		edi_15 = edi_54 - 1;
+		edi_54 = edi_15;
+		if (*edi_54 != 0x2F)
+			return edi_54 - edi + 0x01;
 	}
-	else
-	{
-		ediOut = edi;
-		return edx - edi;
-	}
-}
-
-// 080480B1: Register ptr32 fn080480B1(Register ptr32 edx, Register (ptr32 byte) edi)
-// Called from:
-//      fn0804804C
-ptr32 fn080480B1(ptr32 edx, byte * edi)
-{
-	byte * edi_14 = edi + edx - 0x01;
-	while (edi_51 != edi)
-	{
-		edi_14 = edi_51 - 1;
-		edi_51 = edi_14;
-		if (*edi_51 != 0x2F)
-			return edi_51 - edi + 0x01;
-	}
-	return edi_51 - edi + 0x01;
+	return edi_54 - edi + 0x01;
 }
 

@@ -7,87 +7,54 @@
 byte g_a804804C[] = // 0804804C
 	{
 	};
-// 0804805C: void fn0804805C()
+// 0804805C: void fn0804805C(Register Eq_2 ecx, Register Eq_2 edx)
 // Called from:
 //      fn08048064
-void fn0804805C()
+void fn0804805C(Eq_2 ecx, Eq_2 edx)
 {
-	__syscall(0x80);
+	sys_ioctl(0x00, ecx, edx);
 }
 
 // 08048064: void fn08048064()
 void fn08048064()
 {
-	fn0804805C();
-	struct Eq_10 * esp_20 = SEQ(SLICE(fp - 4, word16, 16), (word16) fp - 0x08);
-	esp_20->dw0000 = 0x08048122;
-	fn0804805C();
+	ptr32 fp;
+	fn0804805C(0x5401, 0x080480FE);
+	struct Eq_17 * esp_21 = SEQ(SLICE(fp - 4, word16, 16), (word16) fp - 0x08);
+	Eq_2 ecx_22 = esp_21->t0000;
+	esp_21->t0000 = 0x08048122;
+	fn0804805C(ecx_22, 0x08048122);
 	g_dw804812E &= ~0x0B;
-	esp_20->dw0000 = 0x5402;
-	fn0804805C();
+	Eq_2 edx_39 = esp_21->t0000;
+	esp_21->t0000 = 0x5402;
+	fn0804805C(0x5402, edx_39);
 	g_dw8048122 = 0x00;
-	esp_20->dwFFFFFFFC = 0x04;
-	esp_20->dwFFFFFFFC = 0x03;
-	__syscall(0x80);
-	fn0804805C();
-	esp_20->ptr0004 = (byte *) 0x08;
-	byte * ecx_72 = esp_20->ptr0004;
-	byte * esi_74 = &g_b8048105;
-	uint32 edx_75 = g_dw8048122;
+	esp_21->tFFFFFFFC = 0x04;
+	Eq_2 edx_53 = esp_21->tFFFFFFFC;
+	esp_21->tFFFFFFFC = 0x03;
+	sys_read(0x00, &g_dw8048122, edx_53);
+	fn0804805C(esp_21->t0000, esp_21->t0004);
+	esp_21->t0004 = 0x08;
+	Eq_2 ecx_77 = esp_21->t0004;
+	byte * esi_79 = &g_b8048105;
+	uint32 edx_80 = g_dw8048122;
 	do
 	{
-		*esi_74 = g_a804804C[(uint32) ((byte) edx_75 & 0x0F)];
-		--esi_74;
-		edx_75 >>= 0x04;
-		--ecx_72;
-	} while (ecx_72 != null);
+		*esi_79 = g_a804804C[(uint32) ((byte) edx_80 & 0x0F)];
+		--esi_79;
+		edx_80 >>= 0x04;
+		--ecx_77;
+	} while (ecx_77 != 0x00);
 	g_b8048106 = 0x0A;
 	g_w80480FC = 0x7830;
-	esp_20->ptr0004 = (byte *) 11;
-	esp_20->ptr0004 = (byte *) 0x01;
-	esp_20->ptr0004 = (byte *) 0x04;
-	__syscall(0x80);
-	esp_20->ptr0004 = (byte *) 0x01;
-	byte * eax_110 = esp_20->ptr0004;
-	__syscall(0x80);
-	byte al_112 = (byte) eax_110;
-	*eax_110 += al_112;
-	*eax_110 += al_112;
-	*eax_110 += al_112;
-	*eax_110 += al_112;
-	*eax_110 += al_112;
-	*eax_110 += al_112;
-	*eax_110 += al_112;
-	*eax_110 += al_112;
-	*eax_110 += al_112;
-	*eax_110 += al_112;
-	*eax_110 += al_112;
-	*eax_110 += al_112;
-	*eax_110 += al_112;
-	*eax_110 += al_112;
-	*eax_110 += al_112;
-	*eax_110 += al_112;
-	*eax_110 += al_112;
-	*eax_110 += al_112;
-	*eax_110 += al_112;
-	*eax_110 += al_112;
-	*eax_110 += al_112;
-	*eax_110 += al_112;
-	*eax_110 += al_112;
-	*eax_110 += al_112;
-	*eax_110 += al_112;
-	*eax_110 += al_112;
-	*eax_110 += al_112;
-	*eax_110 += al_112;
-	*eax_110 += al_112;
-	*eax_110 += al_112;
-	*eax_110 += al_112;
-	*eax_110 += al_112;
-	*eax_110 += al_112;
-	*eax_110 += al_112;
-	*eax_110 += al_112;
-	*eax_110 += al_112;
-	*eax_110 += al_112;
+	esp_21->t0004 = 11;
+	Eq_2 edx_101 = esp_21->t0004;
+	esp_21->t0004 = 0x01;
+	Eq_2 ebx_106 = esp_21->t0004;
+	esp_21->t0004 = 0x04;
+	sys_write(ebx_106, &g_w80480FC, edx_101);
+	esp_21->t0004 = 0x01;
+	sys_exit(0x00);
 }
 
 word16 g_w80480FC = 0x00; // 080480FC

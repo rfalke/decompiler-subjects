@@ -1,50 +1,84 @@
-=== Using options:
-08048AB9: warning: Unable to resolve imported reference __gmon_start__.
+=== Using options:--aggressive-branch-removal
+08048B5C: warning: Unable to resolve imported reference __gmon_start__.
 08048E6F: warning: Call target address 00000000 is invalid.
-0804B483: warning: Unable to resolve imported reference ferror_unlocked.
-0804A114: warning: Unable to resolve imported reference gettext.
-0804B435: warning: Unable to resolve imported reference gettext.
-0804A311: warning: Unable to resolve imported reference gettext.
-0804FCB7: warning: Unable to resolve imported reference __fxstat64.
-0804C161: warning: Unable to resolve imported reference __signbitl.
-08049ED3: warning: Unable to resolve imported reference gettext.
-08049EFE: warning: Unable to resolve imported reference gettext.
-0804A091: warning: Unable to resolve imported reference gettext.
-08049FB0: warning: Unable to resolve imported reference gettext.
-0804A06D: warning: Unable to resolve imported reference gettext.
-0804A049: warning: Unable to resolve imported reference gettext.
-0804A025: warning: Unable to resolve imported reference gettext.
-08049FFE: warning: Unable to resolve imported reference gettext.
-08049FD7: warning: Unable to resolve imported reference gettext.
-08049F89: warning: Unable to resolve imported reference gettext.
-08049F62: warning: Unable to resolve imported reference gettext.
-08049F3B: warning: Unable to resolve imported reference gettext.
-080498FB: warning: Unable to resolve imported reference gettext.
-08048E8F: warning: Unable to resolve imported reference gettext.
+08048BCC: warning: Unable to resolve imported reference ferror_unlocked.
+08048C1C: warning: Unable to resolve imported reference gettext.
+08048C1C: warning: Unable to resolve imported reference gettext.
+08048C1C: warning: Unable to resolve imported reference gettext.
+08048D6C: warning: Unable to resolve imported reference __fxstat64.
+08048CCC: warning: Unable to resolve imported reference __signbitl.
+08048C1C: warning: Unable to resolve imported reference gettext.
+08048C1C: warning: Unable to resolve imported reference gettext.
+08048C1C: warning: Unable to resolve imported reference gettext.
+08048C1C: warning: Unable to resolve imported reference gettext.
+08048C1C: warning: Unable to resolve imported reference gettext.
+08048C1C: warning: Unable to resolve imported reference gettext.
+08048C1C: warning: Unable to resolve imported reference gettext.
+08048C1C: warning: Unable to resolve imported reference gettext.
+08048C1C: warning: Unable to resolve imported reference gettext.
+08048C1C: warning: Unable to resolve imported reference gettext.
+08048C1C: warning: Unable to resolve imported reference gettext.
+08048C1C: warning: Unable to resolve imported reference gettext.
+08048C1C: warning: Unable to resolve imported reference gettext.
+08048C1C: warning: Unable to resolve imported reference gettext.
 08048EA5: warning: Unable to determine format string for call to 'fprintf'.
-08048EBC: warning: Unable to resolve imported reference gettext.
+08048C1C: warning: Unable to resolve imported reference gettext.
 08048EC8: warning: Unable to determine format string for call to 'printf'.
-08048EDA: warning: Unable to resolve imported reference gettext.
-08048EF8: warning: Unable to resolve imported reference gettext.
-08048F16: warning: Unable to resolve imported reference gettext.
-08048F34: warning: Unable to resolve imported reference gettext.
-08048F52: warning: Unable to resolve imported reference gettext.
-08048F76: warning: Unable to resolve imported reference gettext.
+08048C1C: warning: Unable to resolve imported reference gettext.
+08048C1C: warning: Unable to resolve imported reference gettext.
+08048C1C: warning: Unable to resolve imported reference gettext.
+08048C1C: warning: Unable to resolve imported reference gettext.
+08048C1C: warning: Unable to resolve imported reference gettext.
+08048C1C: warning: Unable to resolve imported reference gettext.
 08048F86: warning: Unable to determine format string for call to 'printf'.
-08048FA8: warning: Unable to resolve imported reference gettext.
+08048C1C: warning: Unable to resolve imported reference gettext.
 08048FB8: warning: Unable to determine format string for call to 'printf'.
-08049D68: warning: Unable to resolve imported reference gettext.
-08049B0D: warning: Unable to resolve imported reference gettext.
-080490D7: warning: Unable to resolve imported reference gettext.
-0804919A: warning: Unable to resolve imported reference gettext.
-0804929C: warning: Unable to resolve imported reference gettext.
-08049641: warning: Unable to resolve imported reference gettext.
+08048C1C: warning: Unable to resolve imported reference gettext.
+08048C1C: warning: Unable to resolve imported reference gettext.
+08048C1C: warning: Unable to resolve imported reference gettext.
+08048C1C: warning: Unable to resolve imported reference gettext.
+08048C1C: warning: Unable to resolve imported reference gettext.
+08048C1C: warning: Unable to resolve imported reference gettext.
 08048D6C: warning: Unable to resolve imported reference __fxstat64.
 08048CCC: warning: Unable to resolve imported reference __signbitl.
 08048C1C: warning: Unable to resolve imported reference gettext.
 08048BCC: warning: Unable to resolve imported reference ferror_unlocked.
 08048B5C: warning: Unable to resolve imported reference __gmon_start__.
+08048FB8: warning: Unable to determine format string for call to 'printf'.
+08048FB8: warning: Unable to determine format string for call to 'printf'.
+08048FB8: warning: Unable to determine format string for call to 'printf'.
+08048FB8: warning: Unable to determine format string for call to 'printf'.
+08048FB8: warning: Unable to determine format string for call to 'printf'.
+08048FB8: warning: Unable to determine format string for call to 'printf'.
+08048FB8: warning: Unable to determine format string for call to 'printf'.
+08048EC8: warning: Unable to determine format string for call to 'printf'.
+08048F86: warning: Unable to determine format string for call to 'printf'.
+08048EA5: warning: Unable to determine format string for call to 'fprintf'.
+08048EC8: warning: Unable to determine format string for call to 'printf'.
+08048F86: warning: Unable to determine format string for call to 'printf'.
+08048EA5: warning: Unable to determine format string for call to 'fprintf'.
+08048EC8: warning: Unable to determine format string for call to 'printf'.
+08048F86: warning: Unable to determine format string for call to 'printf'.
+08048EA5: warning: Unable to determine format string for call to 'fprintf'.
+08048EC8: warning: Unable to determine format string for call to 'printf'.
+08048F86: warning: Unable to determine format string for call to 'printf'.
+08048EA5: warning: Unable to determine format string for call to 'fprintf'.
+08048EC8: warning: Unable to determine format string for call to 'printf'.
+08048F86: warning: Unable to determine format string for call to 'printf'.
+08048EA5: warning: Unable to determine format string for call to 'fprintf'.
+08048EC8: warning: Unable to determine format string for call to 'printf'.
+08048F86: warning: Unable to determine format string for call to 'printf'.
+08048EA5: warning: Unable to determine format string for call to 'fprintf'.
+08048EC8: warning: Unable to determine format string for call to 'printf'.
+08048F86: warning: Unable to determine format string for call to 'printf'.
+08048EA5: warning: Unable to determine format string for call to 'fprintf'.
+08048FB8: warning: Unable to determine format string for call to 'printf'.
+08048EC8: warning: Unable to determine format string for call to 'printf'.
+08048F86: warning: Unable to determine format string for call to 'printf'.
+08048EA5: warning: Unable to determine format string for call to 'fprintf'.
+08048FB8: warning: Unable to determine format string for call to 'printf'.
+08048EC8: warning: Unable to determine format string for call to 'printf'.
+08048F86: warning: Unable to determine format string for call to 'printf'.
+08048EA5: warning: Unable to determine format string for call to 'fprintf'.
 08051F10: warning: Expected sizes of arrays to have been determined by now
-08052180: warning: Expected sizes of arrays to have been determined by now
 08051F10: warning: Expected sizes of arrays to have been determined by now
-08052180: warning: Expected sizes of arrays to have been determined by now

@@ -1,3 +1,5 @@
 === Using options:--aggressive-branch-removal
 0804A13D: warning: Call target address 00000000 is invalid.
 0804A0F0: warning: Call target address 00000000 is invalid.
+08058F0C: warning: Expected sizes of arrays to have been determined by now
+08058F0C: warning: Expected sizes of arrays to have been determined by now

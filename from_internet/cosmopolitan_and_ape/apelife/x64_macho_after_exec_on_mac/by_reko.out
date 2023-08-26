@@ -1,6 +1,4 @@
 === Using options:--aggressive-branch-removal
-0000000000412718: warning: Unexpected 2 fstsw mask for jnz mnemonic.
-0000000000412AA3: warning: Unexpected 2 fstsw mask for jz mnemonic.
 00000000004140EB: warning: Call target address 0000000000000000 is invalid.
 00000000004135D1: warning: Call target address 0000000000000000 is invalid.
 000000000040F52E: warning: Call target address 0000000000000000 is invalid.
@@ -8,57 +6,72 @@
 0000000000410EF3: warning: Call target address 0000000000000000 is invalid.
 000000000041023D: warning: Call target address 0000000000000000 is invalid.
 000000000041024D: warning: Call target address 0000000000000000 is invalid.
+0000000000402973: error: The method or operation is not implemented.
+0000000000402992: error: The method or operation is not implemented.
 0000000000411807: warning: Call target address 0000000000000000 is invalid.
 0000000000411816: warning: Call target address 0000000000000000 is invalid.
+0000000000412718: warning: Unexpected 2 fstsw mask for NE mnemonic.
+0000000000412AA3: warning: Unexpected 2 fstsw mask for EQ mnemonic.
 fn0000000000413CC0: error: An internal error occurred while building the expressions of fn0000000000413CC0
-    The given key 'ymm3_2181' was not present in the dictionary.
-       at System.Collections.Generic.Dictionary`2.get_Item(TKey key) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs:line 181
-   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 168
-   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 139
-   at Reko.Analysis.UnreachableBlockRemover.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 75
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 381
+    The given key 'ymm2_2089' was not present in the dictionary.
+       at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 147
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 137
+   at Reko.Analysis.UnreachableBlockRemover.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 73
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees(IReadOnlyCollection`1 ssts) in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 235
 fn000000000040B110: error: An internal error occurred while building the expressions of fn000000000040B110
-    The given key 'eax_278' was not present in the dictionary.
-       at System.Collections.Generic.Dictionary`2.get_Item(TKey key) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs:line 181
-   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 168
-   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 139
-   at Reko.Analysis.UnreachableBlockRemover.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 75
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 381
+    The given key 'eax_290' was not present in the dictionary.
+       at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 147
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 137
+   at Reko.Analysis.UnreachableBlockRemover.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 73
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees(IReadOnlyCollection`1 ssts) in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 235
 l000000000040B1F0: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
+l0000000000401E3C: warning: Non-integral switch expression
 l00000000004031DC: warning: Non-integral switch expression
+fn00000000004031C0: error: An error occurred while rewriting procedure to high-level language.
+    Constants of type word80 are not supported.
+       at Reko.Core.Expressions.Constant.Create(DataType dt, Int64 value) in /home/runner/work/reko/reko/src/Core/Expressions/Constant.cs:line 147
+   at Reko.Structure.StructureAnalysis.MakeSwitchStatement(Region n, Expression switchExp, Region follow, PrimitiveType pt, Int64 offset, Dictionary`2 cases) in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 696
+   at Reko.Structure.StructureAnalysis.ReduceIncSwitch(Region n, Region follow) in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 674
+   at Reko.Structure.StructureAnalysis.ReduceSwitchRegion(Region n) in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 410
+   at Reko.Structure.StructureAnalysis.ReduceAcyclic(Region n) in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 237
+   at Reko.Structure.StructureAnalysis.Execute() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 156
+   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 80
+   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 551
 fn000000000040F830: error: An error occurred while rewriting procedure to high-level language.
     Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
-       at System.Collections.Generic.List`1.get_Item(Int32 index) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/List.cs:line 148
+       at System.Collections.Generic.List`1.get_Item(Int32 index)
    at Reko.Core.Block.get_ThenBlock() in /home/runner/work/reko/reko/src/Core/Block.cs:line 91
    at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block) in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 96
    at Reko.Structure.CompoundConditionCoalescer.Transform() in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 62
-   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 79
-   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 535
+   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 78
+   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 551
 fn0000000000413260: error: An error occurred while rewriting procedure to high-level language.
     Index was outside the bounds of the array.
-       at Reko.Structure.StructureAnalysis.ReduceIfRegion(Region n) in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 323
-   at Reko.Structure.StructureAnalysis.ReduceAcyclic(Region n) in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 233
-   at Reko.Structure.StructureAnalysis.Execute() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 155
-   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 81
-   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 535
+       at Reko.Structure.StructureAnalysis.ReduceIfRegion(Region n) in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 324
+   at Reko.Structure.StructureAnalysis.ReduceAcyclic(Region n) in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 234
+   at Reko.Structure.StructureAnalysis.Execute() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 156
+   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 80
+   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 551
 fn0000000000413CC0: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
 0000000000416033: error: Failed to write global variable g_n416033.
     Primitive type word48 not supported.
-       at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Byte[] abImage, Int64 imageOffset, DataType type, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 288
-   at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Int64 imageOffset, DataType type, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 218
-   at Reko.Core.Memory.ByteImageReader.TryReadLe(DataType dataType, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteImageReader.cs:line 200
-   at Reko.Core.Memory.LeImageReader.TryRead(PrimitiveType dataType, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/EndianImageReader.cs:line 240
-   at Reko.Core.Output.GlobalDataWriter.VisitPrimitive(PrimitiveType pt) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 273
-   at Reko.Core.Types.PrimitiveType.Accept[T](IDataTypeVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 100
-   at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable(Address address, DataType dataType, String name) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 146
+       at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Byte[] abImage, Int64 imageOffset, DataType type, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 276
+   at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Int64 imageOffset, DataType type, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 206
+   at Reko.Core.Memory.ByteImageReader.TryReadLe(DataType dataType, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteImageReader.cs:line 222
+   at Reko.Core.Memory.LeImageReader.TryRead(PrimitiveType dataType, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/EndianImageReader.cs:line 245
+   at Reko.Core.ProcessorArchitecture.TryRead(EndianImageReader rdr, PrimitiveType dt, Constant& value) in /home/runner/work/reko/reko/src/Core/IProcessorArchitecture.cs:line 628
+   at Reko.Core.Output.GlobalDataWriter.VisitPrimitive(PrimitiveType pt) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 281
+   at Reko.Core.Types.PrimitiveType.Accept[T](IDataTypeVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 68
+   at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable(Address address, DataType dataType, String name) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 154
 0000000000417046: warning: Expected sizes of arrays to have been determined by now
 0000000000417068: warning: Expected sizes of arrays to have been determined by now
-0000000000417368: warning: Expected sizes of arrays to have been determined by now
-0000000000417428: warning: Expected sizes of arrays to have been determined by now
+0000000000418757: warning: Expected sizes of arrays to have been determined by now
+00000000004187C3: warning: Expected sizes of arrays to have been determined by now
 000000000041882C: warning: Expected sizes of arrays to have been determined by now
 000000000041887F: warning: Expected sizes of arrays to have been determined by now
 000000000041898B: warning: Expected sizes of arrays to have been determined by now
 00000000004189D2: warning: Expected sizes of arrays to have been determined by now
+0000000000418FE0: warning: Expected sizes of arrays to have been determined by now
 000000000041B040: warning: Expected sizes of arrays to have been determined by now
 000000000041C380: warning: Expected sizes of arrays to have been determined by now
 000000000041C500: warning: Expected sizes of arrays to have been determined by now
@@ -66,20 +79,22 @@ fn0000000000413CC0: warning: Structure analysis stopped making progress, quittin
 000000000041C728: warning: Expected sizes of arrays to have been determined by now
 0000000000416033: error: Failed to write global variable g_n416033.
     Primitive type word48 not supported.
-       at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Byte[] abImage, Int64 imageOffset, DataType type, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 288
-   at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Int64 imageOffset, DataType type, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 218
-   at Reko.Core.Memory.ByteImageReader.TryReadLe(DataType dataType, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteImageReader.cs:line 200
-   at Reko.Core.Memory.LeImageReader.TryRead(PrimitiveType dataType, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/EndianImageReader.cs:line 240
-   at Reko.Core.Output.GlobalDataWriter.VisitPrimitive(PrimitiveType pt) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 273
-   at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable(Address address, DataType dataType, String name) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 146
+       at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Byte[] abImage, Int64 imageOffset, DataType type, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 276
+   at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Int64 imageOffset, DataType type, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 206
+   at Reko.Core.Memory.ByteImageReader.TryReadLe(DataType dataType, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteImageReader.cs:line 222
+   at Reko.Core.Memory.LeImageReader.TryRead(PrimitiveType dataType, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/EndianImageReader.cs:line 245
+   at Reko.Core.ProcessorArchitecture.TryRead(EndianImageReader rdr, PrimitiveType dt, Constant& value) in /home/runner/work/reko/reko/src/Core/IProcessorArchitecture.cs:line 628
+   at Reko.Core.Output.GlobalDataWriter.VisitPrimitive(PrimitiveType pt) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 281
+   at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable(Address address, DataType dataType, String name) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 154
 0000000000417046: warning: Expected sizes of arrays to have been determined by now
 0000000000417068: warning: Expected sizes of arrays to have been determined by now
-0000000000417368: warning: Expected sizes of arrays to have been determined by now
-0000000000417428: warning: Expected sizes of arrays to have been determined by now
+0000000000418757: warning: Expected sizes of arrays to have been determined by now
+00000000004187C3: warning: Expected sizes of arrays to have been determined by now
 000000000041882C: warning: Expected sizes of arrays to have been determined by now
 000000000041887F: warning: Expected sizes of arrays to have been determined by now
 000000000041898B: warning: Expected sizes of arrays to have been determined by now
 00000000004189D2: warning: Expected sizes of arrays to have been determined by now
+0000000000418FE0: warning: Expected sizes of arrays to have been determined by now
 000000000041B040: warning: Expected sizes of arrays to have been determined by now
 000000000041C380: warning: Expected sizes of arrays to have been determined by now
 000000000041C500: warning: Expected sizes of arrays to have been determined by now

@@ -4,6 +4,16 @@
 
 #include "subject.h"
 
-struct Eq_94 * g_ptrFFFA0000;
-struct Eq_14 * g_ptrC000;
-
+struct seg0C00_t * g_ptrC000; // 0000C000
+real32 g_r02C4; // 0C00:03C4
+Eq_8 g_t02D6;
+byte g_b02ED; // 0C00:03ED
+byte Eq_101::* g_ptr3D00; // 0C00:3E00
+byte Eq_114::* g_ptr3D02; // 0C00:3E02
+word16 g_w3D04; // 0C00:3E04
+word16 g_w3D06; // 0C00:3E06
+word16 g_w3D08; // 0C00:3E08
+word16 g_w3D0A; // 0C00:3E0A
+word16 g_w3D0C; // 0C00:3E0C
+word16 g_w3D0E; // 0C00:3E0E
+struct Eq_114 * g_ptrFFFA0000; // FFFA0000

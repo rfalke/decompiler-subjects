@@ -4,139 +4,146 @@
 
 #include "subject.h"
 
-// 0804804C: void fn0804804C(Register word24 edx_24_8, Stack word32 dwArg00)
-void fn0804804C(word24 edx_24_8, word32 dwArg00)
+// 0804804C: void fn0804804C(Register word24 edx_24_8, Stack word32 dwArg00, Stack (ptr32 Eq_4) dwArg04)
+void fn0804804C(word24 edx_24_8, word32 dwArg00, struct Eq_4 * dwArg04)
 {
-	struct Eq_4 * esp_11 = fp + 4;
-	if (dwArg00 == 0x01)
+	ptr32 fp;
+	struct Eq_6 * esp_11 = fp + 4;
+	Eq_9 eax_118 = dwArg00 - 0x01;
+	word24 eax_24_8_178 = SLICE(dwArg00 - 0x01, word24, 8);
+	if (dwArg00 != 0x01)
 	{
-l08048050:
-		word32 * esp_12 = esp_11 - 4;
-		*esp_12 = 0x01;
-		__syscall(0x80);
-		esp_11 = (struct Eq_4 *) (esp_12 + 1);
-	}
-	struct Eq_10 * esi_18 = esp_11->dw0000;
-	++esp_11;
-	do
-	{
-		byte al_22 = esi_18->t0000;
-		++esi_18;
-	} while (al_22 != 0x00);
-	struct Eq_10 * edi_106 = esi_18;
-	word32 ebp_160 = 0x00;
-	do
-	{
-		while (true)
+		struct Eq_4 * esi_10 = dwArg04;
+		esp_11 = fp + 8;
+		do
 		{
-			struct Eq_4 * esp_36 = esp_11 + 1;
-			struct Eq_10 * esi_100 = esp_11->dw0000;
-			esp_36->dwFFFFFFFC = esi_100;
-			struct Eq_4 * esp_107 = esp_36 - 4;
-			if (esi_100->t0000 != 0x702D)
-				break;
-			++ebp_160;
-			esp_11 = esp_36;
-		}
-		if (esi_100->t0000 != 0x6D2D)
+			byte al_14 = esi_10->t0000.u0;
+			++esi_10;
+			eax_118 = SEQ(eax_24_8_178, al_14);
+		} while (al_14 != 0x00);
+		struct Eq_4 * edi_103 = esi_10;
+		Eq_9 ecx_158 = 0x01ED;
+		word32 ebp_170 = 0x00;
+		while (true)
 		{
 			while (true)
 			{
-				struct Eq_10 * ebx_45 = esp_107->dw0000;
-				esp_11 = esp_107 + 1;
-				if (ebx_45 == null)
+				struct Eq_6 * esp_30 = esp_11 + 1;
+				struct Eq_4 * esi_105 = esp_11->dw0000;
+				esp_30->dwFFFFFFFC = esi_105;
+				struct Eq_6 * esp_113 = esp_30 - 4;
+				if (esi_105->t0000.u1 != 0x702D)
 					break;
-				if (edi_106->wFFFFFFFA != 28018)
-				{
-					struct Eq_10 * esi_101;
-					esp_11->dwFFFFFFFC = edi_106;
-					word32 * esp_103 = esp_11 - 4;
-					word32 edx_63 = SEQ(edx_24_8, 0x01);
-					if (ebp_160 == 0x00)
-					{
-						while (true)
-						{
-							word32 * esp_85 = esp_103 - 4;
-							*esp_85 = 0x27;
-							__syscall(0x80);
-							esp_103 = esp_85 + 1;
-							edx_24_8 = SLICE(edx_63, word24, 8);
-							if (edx_63 != 0x00)
-								break;
-							edi_106->t0000.u0 = 0x2F;
-							esi_101 = esi_100 + 1;
-l080480D9:
-							edx_63 = 0x00;
-							if (!fn080480EE(0x2F, esi_101, out esi_100))
-							{
-								edx_63 = 0x01;
-								edx_24_8 = 0x00;
-								if (esi_100 == esi_101)
-									break;
-							}
-							esi_100->t0000.u0 = 0x00;
-							edi_106 = esi_100;
-						}
-						edi_106 = *esp_103;
-						esp_107 = (struct Eq_4 *) (esp_103 + 1);
-						continue;
-					}
-					else
-					{
-						esi_101 = ebx_45;
-						goto l080480D9;
-					}
-				}
-				esp_11->dwFFFFFFFC = 0x28;
-				__syscall(0x80);
-				esp_107 = esp_11;
+				++ebp_170;
+				esp_11 = esp_30;
 			}
-			break;
+			if (esi_105->t0000.u1 != 0x6D2D)
+				break;
+			Eq_76 esi_121 = esp_30->dw0000;
+			esp_11 = esp_30 + 1;
+			Eq_76 esi_123 = esi_121;
+			if (esi_121 == 0x00)
+				goto l08048050;
+			esp_30->dw0000 = (word32) 0x08;
+			eax_118 = 0x00;
+			Eq_76 bl_212 = esp_30->dw0000;
+			esp_11 = esp_30 + 1;
+			while (true)
+			{
+				bu8 al_160 = (byte) eax_118;
+				word16 eax_16_16_162 = SLICE(eax_118, word16, 16);
+				edx_24_8 = SLICE(esi_121, word24, 8);
+				cu8 cl_140 = *esi_123.u1;
+				if (cl_140 < 0x30)
+					break;
+				uint32 ecx_165 = (uint32) (cl_140 - 0x30);
+				if (cl_140 > 55 || cl_140 < 0x30)
+					break;
+				eax_118 = SEQ(eax_16_16_162, bl_212 *16 al_160) + ecx_165;
+				esi_123.u1 = (word32) esi_123 + 1;
+			}
+			if (esi_121 == esi_123 || eax_118 == 0x00)
+				goto l08048050;
+			ecx_158 = eax_118;
 		}
-		Eq_74 esi_114 = esp_36->dw0000;
-		esp_11 = esp_36 + 1;
-		Eq_74 esi_116 = esi_114;
-		if (esi_114 == 0x00)
-			break;
-		esp_36->dw0000 = (word32) 0x08;
-		word32 eax_122 = 0x00;
-		Eq_74 bl_196 = esp_36->dw0000;
-		esp_11 = esp_36 + 1;
 		while (true)
 		{
-			bu8 al_150 = (byte) eax_122;
-			word16 eax_16_16_152 = SLICE(eax_122, word16, 16);
-			edx_24_8 = SLICE(esi_114, word24, 8);
-			cu8 cl_131 = *esi_116;
-			if (cl_131 < 0x30)
+			word24 eax_24_8_200 = SLICE(eax_118, word24, 8);
+			struct Eq_4 * ebx_39 = esp_113->dw0000;
+			esp_11 = esp_113 + 1;
+			if (ebx_39 == null)
 				break;
-			uint32 ecx_155 = (uint32) (cl_131 - 0x30);
-			if (cl_131 > 55)
-				break;
-			eax_122 = SEQ(eax_16_16_152, bl_196 *16 al_150) + ecx_155;
-			esi_116 = (word32) esi_116 + 1;
+			if (edi_103->wFFFFFFFA != 28018)
+			{
+				struct Eq_4 * esi_107;
+				esp_11->dwFFFFFFFC = edi_103;
+				word32 * esp_109 = esp_11 - 4;
+				word32 edx_59 = SEQ(edx_24_8, 0x01);
+				if (ebp_170 == 0x00)
+				{
+					while (true)
+					{
+						word32 * esp_82 = esp_109 - 4;
+						*esp_82 = 0x27;
+						eax_118 = sys_mkdir(ebx_39, ecx_158);
+						esp_109 = esp_82 + 1;
+						eax_24_8_200 = SLICE(eax_118, word24, 8);
+						edx_24_8 = SLICE(edx_59, word24, 8);
+						if (edx_59 != 0x00)
+							break;
+						edi_103->t0000.u0 = 0x2F;
+						esi_107 = esi_105 + 1;
+l080480D9:
+						eax_118 = SEQ(eax_24_8_200, 0x2F);
+						edx_59 = 0x00;
+						if (!fn080480EE(0x2F, esi_107, out esi_105))
+						{
+							edx_59 = 0x01;
+							edx_24_8 = 0x00;
+							if (esi_105 == esi_107)
+								break;
+						}
+						esi_105->t0000.u0 = 0x00;
+						edi_103 = esi_105;
+					}
+					edi_103 = *esp_109;
+					esp_113 = (struct Eq_6 *) (esp_109 + 1);
+					continue;
+				}
+				else
+				{
+					esi_107 = ebx_39;
+					goto l080480D9;
+				}
+			}
+			esp_11->dwFFFFFFFC = 0x28;
+			esp_113 = esp_11;
+			eax_118 = sys_rmdir(ebx_39);
 		}
-	} while (esi_114 != esi_116 && eax_122 != 0x00);
-	goto l08048050;
+	}
+l08048050:
+	esp_11->dwFFFFFFFC = 0x01;
+	sys_exit(eax_118);
 }
 
-// 080480EE: FlagGroup bool fn080480EE(Register byte al, Register (ptr32 Eq_10) esi, Register out (ptr32 Eq_161) esiOut)
+// 080480EE: FlagGroup bool fn080480EE(Register byte al, Register (ptr32 Eq_4) esi, Register out (ptr32 Eq_170) esiOut)
 // Called from:
 //      fn0804804C
-bool fn080480EE(byte al, struct Eq_10 * esi, struct Eq_161 & esiOut)
+bool fn080480EE(byte al, struct Eq_4 * esi, struct Eq_170 & esiOut)
 {
-	byte al_6 = (byte) eax;
+	word32 eax;
+	byte al_7 = (byte) eax;
 	do
 	{
-		byte al_11 = esi->t0000;
+		byte al_12 = esi->t0000.u0;
 		++esi;
-		bool C_15 = false;
-		if (al_11 == 0x00)
+		bool C_17 = false;
+		if (al_12 == 0x00)
 			goto l080480FC;
-	} while (al_11 != al_6);
-	C_15 = true;
+	} while (al_12 != al_7);
+	C_17 = true;
 l080480FC:
 	esiOut = esi - 0x01;
-	return C_15;
+	return C_17;
 }
 

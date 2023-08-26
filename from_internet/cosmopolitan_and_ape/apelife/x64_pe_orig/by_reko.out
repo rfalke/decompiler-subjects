@@ -1,8 +1,6 @@
 === Using options:--aggressive-branch-removal
 subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 0000000000404346: warning: Unable to resolve imported reference kernel32.dll!SetDefaultDllDirectories.
-0000000000412718: warning: Unexpected 2 fstsw mask for jnz mnemonic.
-0000000000412AA3: warning: Unexpected 2 fstsw mask for jz mnemonic.
 00000000004140EB: warning: Call target address 0000000000000000 is invalid.
 00000000004135D1: warning: Call target address 0000000000000000 is invalid.
 000000000040F52E: warning: Call target address 0000000000000000 is invalid.
@@ -13,39 +11,68 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 000000000041024D: warning: Call target address 0000000000000000 is invalid.
 0000000000411807: warning: Call target address 0000000000000000 is invalid.
 0000000000411816: warning: Call target address 0000000000000000 is invalid.
+0000000000412718: warning: Unexpected 2 fstsw mask for NE mnemonic.
+0000000000412AA3: warning: Unexpected 2 fstsw mask for EQ mnemonic.
 /home/hawk/kza/decompiler-subjects.clean/from_internet/cosmopolitan_and_ape/apelife/x64_pe_orig/subject.exe: error: An internal error occurred while analyzing /home/hawk/kza/decompiler-subjects.clean/from_internet/cosmopolitan_and_ape/apelife/x64_pe_orig/subject.exe.
     The given key 'l00000000004031DC' was not present in the dictionary.
-       at System.Collections.Generic.Dictionary`2.get_Item(TKey key) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs:line 181
-   at Reko.Analysis.SsaTransform.IdentifierTransformer.<ReadVariableRecursive>b__14_0(Block p) in /home/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.IdentifierTransformer.cs:line 119
-   at System.Linq.Enumerable.Any[TSource](IEnumerable`1 source, Func`2 predicate) in /_/src/libraries/System.Linq/src/System/Linq/AnyAll.cs:line 61
-   at Reko.Analysis.SsaTransform.IdentifierTransformer.ReadVariableRecursive(SsaBlockState bs) in /home/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.IdentifierTransformer.cs:line 119
-   at Reko.Analysis.SsaTransform.IdentifierTransformer.ReadVariable(SsaBlockState bs) in /home/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.IdentifierTransformer.cs:line 101
-   at Reko.Analysis.SsaTransform.NewUse(Identifier id, Statement stm, Boolean force) in /home/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.cs:line 1060
-   at Reko.Analysis.SsaTransform.VisitIdentifier(Identifier id) in /home/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.cs:line 1015
-   at Reko.Core.Expressions.Identifier.Accept[T](ExpressionVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Expressions/Identifier.cs:line 91
-   at Reko.Analysis.SsaTransform.GenerateUseDefsForKnownCallee(CallInstruction ci, Procedure callee, ProcedureFlow calleeFlow) in /home/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.cs:line 605
-   at Reko.Analysis.SsaTransform.TransformCallInstruction(CallInstruction ci) in /home/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.cs:line 556
-   at Reko.Core.Code.CallInstruction.Accept(InstructionTransformer xform) in /home/runner/work/reko/reko/src/Core/Code/CallInstruction.cs:line 65
-   at Reko.Analysis.SsaTransform.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.cs:line 132
-   at Reko.Analysis.DataFlowAnalysis.ConvertToSsa(Procedure proc) in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 459
-   at System.Linq.Enumerable.SelectListIterator`2.ToArray() in /_/src/libraries/System.Linq/src/System/Linq/Select.SpeedOpt.cs:line 304
-   at Reko.Analysis.DataFlowAnalysis.UntangleProcedureScc(IList`1 procs) in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 190
-   at Reko.Core.Lib.SccFinder`1.FindAll() in /home/runner/work/reko/reko/src/Core/Lib/SccFinder.cs:line 115
-   at Reko.Analysis.DataFlowAnalysis.RewriteProceduresToSsa() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 170
-   at Reko.Analysis.DataFlowAnalysis.UntangleProcedures() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 131
-   at Reko.Decompiler.AnalyzeDataFlow() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 112
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Reko.Analysis.SsaTransform.IdentifierTransformer.<ReadVariableRecursive>b__14_0(Block p) in /home/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.IdentifierTransformer.cs:line 121
+   at System.Linq.Enumerable.Any[TSource](IEnumerable`1 source, Func`2 predicate)
+   at Reko.Analysis.SsaTransform.IdentifierTransformer.ReadVariableRecursive(SsaBlockState bs) in /home/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.IdentifierTransformer.cs:line 121
+   at Reko.Analysis.SsaTransform.IdentifierTransformer.ReadVariable(SsaBlockState bs) in /home/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.IdentifierTransformer.cs:line 103
+   at Reko.Analysis.SsaTransform.VisitIdentifier(Identifier id) in /home/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.cs:line 1085
+   at Reko.Analysis.SsaTransform.GenerateUseDefsForKnownCallee(CallInstruction ci, Procedure callee, ProcedureFlow calleeFlow) in /home/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.cs:line 636
+   at Reko.Analysis.SsaTransform.TransformCallInstruction(CallInstruction ci) in /home/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.cs:line 589
+   at Reko.Core.Code.CallInstruction.Accept(InstructionTransformer xform) in /home/runner/work/reko/reko/src/Core/Code/CallInstruction.cs:line 64
+   at Reko.Analysis.SsaTransform.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.cs:line 142
+   at Reko.Analysis.SccWorker.ConvertToSsa(Procedure proc) in /home/runner/work/reko/reko/src/Decompiler/Analysis/SccWorker.cs:line 167
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Analysis.SccWorker.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/SccWorker.cs:line 85
+   at Reko.Analysis.DataFlowAnalysis.RewriteProceduresToSsa() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 178
+   at Reko.Analysis.DataFlowAnalysis.UntangleProcedures() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 128
+   at Reko.Decompiler.AnalyzeDataFlow() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 111
 l0000000000401238: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
+00000000004050CE: error: An error occurred while processing the statement branch (Mem28[0x00000000004409A8<p64>:word64] & rcx_81) == 0<64> l00000000004050D1.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 99
+   at Reko.Typing.TypeCollector.VisitBranch(Branch branch) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 198
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0000000000405566: error: An error occurred while processing the statement r14_186 = r14_45 + (rax_29 << 3<64>).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 379
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 402
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 188
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+000000000040F3C2: error: An error occurred while processing the statement SZP_48 = cond(Mem21[0x00000000004408C8<p64>:word64] & rax_47).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Core.Expressions.ConditionOf.Accept[T](ExpressionVisitor`1 visitor) in /home/runner/work/reko/reko/src/Core/Expressions/ConditionOf.cs:line 70
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+000000000040F3CF: error: An error occurred while processing the statement dl_55 = CONVERT((Mem21[0x00000000004408C8<p64>:word64] & rax_47) == 0<64>, bool, int8).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 99
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConversion(Conversion conversion) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 354
+   at Reko.Core.Expressions.Conversion.Accept[T](ExpressionVisitor`1 visitor) in /home/runner/work/reko/reko/src/Core/Expressions/Conversion.cs:line 82
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
 0000000000416033: error: Failed to write global variable g_n416033.
     Primitive type word48 not supported.
-       at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Byte[] abImage, Int64 imageOffset, DataType type, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 288
-   at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Int64 imageOffset, DataType type, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 218
-   at Reko.Core.Memory.ByteImageReader.TryReadLe(DataType dataType, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteImageReader.cs:line 200
-   at Reko.Core.Memory.LeImageReader.TryRead(PrimitiveType dataType, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/EndianImageReader.cs:line 240
-   at Reko.Core.Output.GlobalDataWriter.VisitPrimitive(PrimitiveType pt) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 273
-   at Reko.Core.Types.PrimitiveType.Accept[T](IDataTypeVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 100
-   at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable(Address address, DataType dataType, String name) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 146
-0000000000417368: warning: Expected sizes of arrays to have been determined by now
-0000000000417428: warning: Expected sizes of arrays to have been determined by now
+       at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Byte[] abImage, Int64 imageOffset, DataType type, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 276
+   at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Int64 imageOffset, DataType type, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 206
+   at Reko.Core.Memory.ByteImageReader.TryReadLe(DataType dataType, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteImageReader.cs:line 222
+   at Reko.Core.Memory.LeImageReader.TryRead(PrimitiveType dataType, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/EndianImageReader.cs:line 245
+   at Reko.Core.ProcessorArchitecture.TryRead(EndianImageReader rdr, PrimitiveType dt, Constant& value) in /home/runner/work/reko/reko/src/Core/IProcessorArchitecture.cs:line 628
+   at Reko.Core.Output.GlobalDataWriter.VisitPrimitive(PrimitiveType pt) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 281
+   at Reko.Core.Types.PrimitiveType.Accept[T](IDataTypeVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 68
+   at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable(Address address, DataType dataType, String name) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 154
 00000000004187F0: warning: Expected sizes of arrays to have been determined by now
 0000000000418810: warning: Expected sizes of arrays to have been determined by now
 000000000041C500: warning: Expected sizes of arrays to have been determined by now
@@ -55,14 +82,13 @@ l0000000000401238: warning: Phi functions will be ignored by type analysis. This
 0000000000447D60: warning: Expected sizes of arrays to have been determined by now
 0000000000416033: error: Failed to write global variable g_n416033.
     Primitive type word48 not supported.
-       at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Byte[] abImage, Int64 imageOffset, DataType type, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 288
-   at Reko.Core.Memory.ByteImageReader.TryReadLe(DataType dataType, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteImageReader.cs:line 203
-   at Reko.Core.Memory.LeImageReader.TryRead(PrimitiveType dataType, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/EndianImageReader.cs:line 240
-   at Reko.Core.Output.GlobalDataWriter.VisitPrimitive(PrimitiveType pt) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 273
-   at Reko.Core.Types.PrimitiveType.Accept[T](IDataTypeVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 100
-   at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable(Address address, DataType dataType, String name) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 146
-0000000000417368: warning: Expected sizes of arrays to have been determined by now
-0000000000417428: warning: Expected sizes of arrays to have been determined by now
+       at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Byte[] abImage, Int64 imageOffset, DataType type, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 276
+   at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Int64 imageOffset, DataType type, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 206
+   at Reko.Core.Memory.ByteImageReader.TryReadLe(DataType dataType, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteImageReader.cs:line 222
+   at Reko.Core.Memory.LeImageReader.TryRead(PrimitiveType dataType, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/EndianImageReader.cs:line 245
+   at Reko.Core.ProcessorArchitecture.TryRead(EndianImageReader rdr, PrimitiveType dt, Constant& value) in /home/runner/work/reko/reko/src/Core/IProcessorArchitecture.cs:line 628
+   at Reko.Core.Output.GlobalDataWriter.VisitPrimitive(PrimitiveType pt) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 281
+   at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable(Address address, DataType dataType, String name) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 154
 00000000004187F0: warning: Expected sizes of arrays to have been determined by now
 0000000000418810: warning: Expected sizes of arrays to have been determined by now
 000000000041C500: warning: Expected sizes of arrays to have been determined by now

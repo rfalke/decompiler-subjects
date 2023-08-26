@@ -4,23 +4,20 @@
 
 #include "subject.h"
 
-// 00000000004000D4: void fn00000000004000D4(Register word64 rcx, Register (ptr64 word32) rsi, Register (ptr64 word32) rdi)
-void fn00000000004000D4(word64 rcx, word32 * rsi, word32 * rdi)
+// 00000000004000D4: void fn00000000004000D4(Register uint64 rcx, Register (ptr64 Eq_3) rsi, Register (ptr64 Eq_4) rdi)
+void fn00000000004000D4(uint64 rcx, <unknown> * rsi, <unknown>* rdi)
 {
-	while (rcx != 0x00)
-	{
-		rsi = rsi_42 + 1;
-		rdi = rdi_43 + 1;
-		--rcx;
-		rsi_42 = rsi;
-		rdi_43 = rdi;
-		if (*rsi_42 == *rdi_43)
-			break;
-	}
+fn00000000004000D4_entry:
+	memcmp(rsi, rdi, rcx * 0x04)
+	uint64 rcx_9 = rcx - __find_first_difference__(rsi, rdi)
+	branch rcx_9 == 0x00 l00000000004000D7_then
+	fn00000000004000D9()
+	return
+l00000000004000D4:
 l00000000004000D7:
-	word64 rcx_17;
-	word32 * rsi_18;
-	word32 * rdi_19;
-	fn00000000004000D9();
+l00000000004000D7_1:
+	branch *rsi_15 != *rdi_16 TMP!
+l00000000004000D7_then:
+fn00000000004000D4_exit:
 }
 

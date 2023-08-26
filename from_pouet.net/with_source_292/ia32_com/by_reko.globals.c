@@ -4,5 +4,4 @@
 
 #include "subject.h"
 
-real64 g_r0001;
-
+real64 g_r0001; // 00000001

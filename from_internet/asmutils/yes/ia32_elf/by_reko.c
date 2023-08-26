@@ -7,42 +7,45 @@
 // 0804804C: void fn0804804C(Stack word32 dwArg00)
 void fn0804804C(word32 dwArg00)
 {
-	word32 * esp_26 = fp + 8;
-	byte * edi_15 = &g_b8048087;
-	word32 ebp_10 = dwArg00 - 0x01;
+	ptr32 fp;
+	word32 * esp_27 = fp + 8;
+	byte * edi_16 = &g_b8048087;
+	word32 ebp_11 = dwArg00 - 0x01;
 	if (dwArg00 == 0x01)
 	{
 		g_b8048087 = 121;
-		edi_15 = &g_b8048088;
-		ebp_10 = dwArg00;
+		edi_16 = &g_b8048088;
+		ebp_11 = dwArg00;
 l0804805C:
-		--ebp_10;
-		if (ebp_10 == 0x00)
+		--ebp_11;
+		if (ebp_11 == 0x00)
 		{
 l08048071:
-			*edi_15 = 0x0A;
+			*edi_16 = 0x0A;
+			ptr32 edi_49 = edi_16 + 1;
 			while (true)
 			{
-				word32 * esp_58 = esp_26 - 4;
-				*esp_58 = 0x01;
-				*esp_58 = 0x04;
-				__syscall(0x80);
+				uint32 * esp_60 = esp_27 - 4;
+				*esp_60 = 0x01;
+				uint32 ebx_62 = *esp_60;
+				*esp_60 = 0x04;
+				sys_write(ebx_62, &g_b8048087, edi_49 - 0x08048087);
 			}
 		}
-		*edi_15 = 0x20;
-		++edi_15;
+		*edi_16 = 0x20;
+		++edi_16;
 	}
-	byte * esi_29 = *esp_26;
-	++esp_26;
+	byte * esi_30 = *esp_27;
+	++esp_27;
 	do
 	{
-		byte al_33 = *esi_29;
-		++esi_29;
-		if (al_33 == 0x00)
+		byte al_34 = *esi_30;
+		++esi_30;
+		if (al_34 == 0x00)
 			goto l0804805C;
-		*edi_15 = al_33;
-		++edi_15;
-	} while (edi_15 < &g_b8049085);
+		*edi_16 = al_34;
+		++edi_16;
+	} while (edi_16 < &g_b8049085);
 	goto l08048071;
 }
 

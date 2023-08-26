@@ -11,5 +11,8 @@ void gcd(Eq_2 dwArg04, Eq_2 dwArg08)
 {
 	if (dwArg08 != 0x00)
 		gcd(dwArg08, (int32) (SEQ(dwArg04 >> 0x1F, dwArg04) % dwArg08));
+	else
+		g_t80480C1();
 }
 
+<anonymous> g_t80480C1 = <code>; // 080480C1

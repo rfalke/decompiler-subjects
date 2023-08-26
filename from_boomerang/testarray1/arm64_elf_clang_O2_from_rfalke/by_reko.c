@@ -11,11 +11,11 @@ byte g_b411035 = 0x00; // 0000000000411035
 
 #include "subject.h"
 
-Eq_118 g_t411030 = // 0000000000411030
+Eq_109 g_t411030 = // 0000000000411030
 	{
 		0x02
 	};
-Eq_116 g_t411031 = // 0000000000411031
+Eq_107 g_t411031 = // 0000000000411031
 	{
 		0x04
 	};
@@ -46,14 +46,12 @@ word64 g_qw410FE0 = 0x00; // 0000000000410FE0
 
 #include "subject.h"
 
-// 0000000000400418: Register word64 _init(Register out ptr64 x30Out)
+// 0000000000400418: void _init()
 // Called from:
 //      __libc_csu_init
-word64 _init(ptr64 & x30Out)
+void _init()
 {
 	call_weak_fn();
-	x30Out = qwArg00;
-	return x30;
 }
 
 // subject_init_array.c
@@ -78,10 +76,12 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 0000000000400490: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
-void _start(void (* x0)(), word32 dwArg00)
+// 0000000000400490: void _start(Register (ptr64 Eq_5) x0, Stack word32 dwArg00, Stack (ptr64 char) ptrArg08)
+void _start(void (* x0)(), word32 dwArg00, char * ptrArg08)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr4004C0, (int32) qwArg00, (char *) fp + 8, g_ptr4004C8, g_ptr4004D0, x0, fp);
+	void * fp;
+	word64 qwArg00;
+	__libc_start_main(g_ptr4004C0, (int32) qwArg00, &ptrArg08, g_ptr4004C8, g_ptr4004D0, x0, fp);
 	abort();
 }
 
@@ -117,7 +117,7 @@ void deregister_tm_clones()
 //      frame_dummy
 void register_tm_clones()
 {
-	int64 x1_7 = 0x00411038 - 0x00411038;
+	Eq_48 x1_7 = 0x00411038 - 0x00411038;
 	if ((x1_7 >> 3) + ((x1_7 >> 3) >>u 63) >> 1 == 0x00)
 		return;
 	<anonymous> * x2_12 = g_ptr400568;
@@ -138,8 +138,8 @@ void __do_global_dtors_aux()
 	}
 }
 
-// 00000000004005A0: void frame_dummy(Register word64 x29, Register word64 x30)
-void frame_dummy(word64 x29, word64 x30)
+// 00000000004005A0: void frame_dummy()
+void frame_dummy()
 {
 	if (g_qw410DF0 != 0x00 && g_qw4005D8 != 0x00)
 	{
@@ -154,30 +154,31 @@ word64 g_qw4005D8 = 0x00; // 00000000004005D8
 // 00000000004005E0: void main()
 void main()
 {
-	x0_29 = CONVERT(printf("Sum is %d\n", CONVERT(Mem8[0x0000000000411034<p64>:byte], byte, word32) + (CONVERT(Mem8[0x0000000000411033<p64>:byte], byte, word32) + (CONVERT(Mem8[0x0000000000411032<p64>:byte], byte, word32) + (Mem8[0x0000000000411031<p64>:byte] + Mem8[0x0000000000411030<p64>:byte])))), int32, uint64);
+	printf("Sum is %d\n", (word32) g_b411034 + ((word32) g_b411033 + ((byte) (g_t411031.u0 + g_t411030.u0) + (word32) g_b411032)));
 }
 
-// 0000000000400630: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)
-void __libc_csu_init(word32 w0, word64 x1, word64 x2, word64 x24)
+// 0000000000400630: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24, Register word64 x30)
+void __libc_csu_init(word32 w0, word64 x1, word64 x2, word64 x24, word64 x30)
 {
-	word32 x24_32_32_100 = SLICE(x24, word32, 32);
-	int64 x20_26 = 4263400 - 0x00410DE0;
-	<anonymous> * x21_24[] = g_a410DE0;
-	word64 x22_34 = x2;
-	word64 x23_38 = x1;
-	word64 x30_42;
-	word64 x29_41 = _init(out x30_42);
-	int64 x20_43 = x20_26 >> 3;
-	if (x20_26 >> 3 != 0x00)
+	ptr64 fp;
+	word32 x24_32_32_89 = SLICE(x24, word32, 32);
+	_init();
+	int64 x20_23 = 4263400 - g_a410DE0;
+	ptr64 x29_49 = fp + -64;
+	<anonymous> * x21_21[] = g_a410DE0;
+	word64 x22_30 = x2;
+	word64 x23_34 = x1;
+	int64 x20_36 = x20_23 >> 3;
+	if (x20_23 >> 3 != 0x00)
 	{
-		int64 x19_44 = 0x00;
-		word64 x24_145 = SEQ(x24_32_32_100, w0);
+		int64 x19_37 = 0x00;
+		word64 x24_133 = SEQ(x24_32_32_89, w0);
 		do
 		{
-			word64 x3_74;
-			x21_24[x19_44]();
-			int64 x31_77 = x20_43 - x19_44;
-		} while (x31_77 != 0x00);
+			word64 x3_67;
+			x21_21[x19_37]();
+			int64 x31_70 = x20_36 - x19_37;
+		} while (x31_70 != 0x00);
 	}
 }
 

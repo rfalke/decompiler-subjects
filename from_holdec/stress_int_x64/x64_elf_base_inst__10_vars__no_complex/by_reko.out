@@ -1,4 +1,24 @@
 === Using options:--aggressive-branch-removal
 0000000000401008: warning: Unable to resolve imported reference __gmon_start__.
+/home/hawk/kza/decompiler-subjects.clean/from_holdec/stress_int_x64/x64_elf_base_inst__10_vars__no_complex/subject.exe: error: An internal error occurred while analyzing /home/hawk/kza/decompiler-subjects.clean/from_holdec/stress_int_x64/x64_elf_base_inst__10_vars__no_complex/subject.exe.
+    Value was either too large or too small for a UInt64.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToUInt64() in /home/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 130
+   at Reko.Core.Operators.UgeOperator.ApplyConstants(DataType dt, Constant c1, Constant c2) in /home/runner/work/reko/reko/src/Core/Operators/UnsignedIntOperators.cs:line 102
+   at Reko.Evaluation.ConstConstBin_Rule.Match(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Decompiler/Evaluation/ConstConstBin_Rule.cs:line 72
+   at Reko.Evaluation.ExpressionSimplifier.PostVisitBinaryExpression(BinaryExpression binExp, ValueTuple`2[] simpExps) in /home/runner/work/reko/reko/src/Decompiler/Evaluation/ExpressionSimplifier.BinaryExpression.cs:line 100
+   at Reko.Evaluation.ExpressionSimplifier.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Decompiler/Evaluation/ExpressionSimplifier.BinaryExpression.cs:line 83
+   at Reko.Analysis.ValuePropagator.VisitBranch(Branch b) in /home/runner/work/reko/reko/src/Decompiler/Analysis/ValuePropagator.cs:line 137
+   at Reko.Analysis.ValuePropagator.Transform(Statement stm) in /home/runner/work/reko/reko/src/Decompiler/Analysis/ValuePropagator.cs:line 117
+   at Reko.Analysis.ValuePropagator.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/ValuePropagator.cs:line 105
+   at Reko.Analysis.SccWorker.ConvertToSsa(Procedure proc) in /home/runner/work/reko/reko/src/Decompiler/Analysis/SccWorker.cs:line 199
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Analysis.SccWorker.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/SccWorker.cs:line 85
+   at Reko.Analysis.DataFlowAnalysis.RewriteProceduresToSsa() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 178
+   at Reko.Analysis.DataFlowAnalysis.UntangleProcedures() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 128
+   at Reko.Decompiler.AnalyzeDataFlow() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 111
+l0000000000401016: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
 000000000062AE10: warning: Expected sizes of arrays to have been determined by now
+000000000062AE18: warning: Expected sizes of arrays to have been determined by now
 000000000062AE10: warning: Expected sizes of arrays to have been determined by now
+000000000062AE18: warning: Expected sizes of arrays to have been determined by now

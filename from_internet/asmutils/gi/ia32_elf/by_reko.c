@@ -4,9 +4,77 @@
 
 #include "subject.h"
 
-// 0804804C: void fn0804804C(Stack (ptr32 byte) dwArg08)
-void fn0804804C(byte * dwArg08)
+// 0804804C: void fn0804804C(Stack Eq_2 dwArg00, Stack (ptr32 byte) dwArg08)
+void fn0804804C(Eq_2 dwArg00, byte * dwArg08)
 {
+	uint32 * fp;
+	Eq_2 eax_134 = dwArg00;
+	struct Eq_6 * esp_10 = fp + 3;
+	byte * esi_11 = dwArg08;
+	if (dwArg08 != null)
+	{
+		Eq_20 eax_31 = sys_socketcall(0x01, fp);
+		byte * edi_37 = g_a80480D2;
+		do
+		{
+			byte al_41 = *esi_11;
+			*edi_37 = al_41;
+			++esi_11;
+			++edi_37;
+		} while (al_41 != 0x00);
+		Eq_2 eax_56 = sys_ioctl(eax_31, 35093, 0x080480D2);
+		esp_10 = (struct Eq_6 *) (fp + 3);
+		eax_134 = eax_56;
+		if (eax_56 >= 0x00)
+		{
+			byte * edi_109 = g_a80480D2;
+			uint32 ebp_63 = g_dw80480E6;
+			ptr32 esp_116 = fp + 2;
+			word32 ecx_119 = 0x04;
+			do
+			{
+				struct Eq_72 * esp_71 = esp_116 - 4;
+				esp_71->dw0000 = ecx_119;
+				esp_71->dwFFFFFFFC = 0x0A;
+				ebp_63 >>= 0x08;
+				uint32 eax_74 = ebp_63 & 0xFF;
+				word32 ecx_112 = 0x00;
+				uint32 ebx_81 = esp_71->dwFFFFFFFC;
+				struct Eq_72 * esp_104 = esp_71;
+				do
+				{
+					uint64 edx_eax_85 = (uint64) eax_74;
+					uint32 edx_88 = (uint32) (edx_eax_85 % ebx_81);
+					esp_104 -= 4;
+					esp_104->dw0000 = SEQ(SLICE(edx_88, word24, 8), (byte) edx_88 + 0x30);
+					uint32 eax_89 = (uint32) (edx_eax_85 /u ebx_81);
+					++ecx_112;
+					eax_74 = eax_89;
+				} while (eax_89 != 0x00);
+				do
+				{
+					*edi_109 = (byte) esp_104->dw0000;
+					++esp_104;
+					++edi_109;
+					--ecx_112;
+				} while (ecx_112 != 0x00);
+				word32 ecx_115 = esp_104->dw0000;
+				*edi_109 = 0x2E;
+				esp_116 = esp_104 + 1;
+				++edi_109;
+				ecx_119 = ecx_115 - 0x01;
+			} while (ecx_115 != 0x01);
+			*edi_109 = 0x0A;
+			char * ecx_121 = esp_104[1];
+			esp_104[1] = (struct Eq_72) 0x01;
+			uint32 ebx_128 = esp_104[1];
+			esp_104[1] = (struct Eq_72) 0x04;
+			esp_10 = (struct Eq_6 *) (esp_104 + 2);
+			eax_134 = sys_write(ebx_128, ecx_121, edi_109 + 1 - ecx_121);
+		}
+	}
+	esp_10->dwFFFFFFFC = 0x01;
+	sys_exit(eax_134);
 }
 
 byte g_a80480D2[] = // 080480D2

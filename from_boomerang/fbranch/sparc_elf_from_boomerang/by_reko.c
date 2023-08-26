@@ -75,8 +75,6 @@ void puts()
 #include "subject.h"
 
 word32 _lib_version = 0x01; // 000108C0
-char g_str108C8[] = "%f"; // 000108C8
-char g_str108D0[] = "a is %f, b is %f\n"; // 000108D0
 char g_str108E8[] = "Not Equal"; // 000108E8
 char g_str108F8[] = "Equal"; // 000108F8
 char g_str10900[] = "Greater"; // 00010900
@@ -93,11 +91,12 @@ real32 g_r10938 = 5.0F; // 00010938
 // 00010500: void _start(Register (ptr32 Eq_2) g1, Register word32 o1, Register word32 o2, Register word32 o3, Register word32 o4, Register word32 o5, Register word32 o7, Register real32 f2, Register word32 q0_32_0, Register real32 q4_32_32, Register real32 f9, Register real32 q8_32_96)
 void _start(void (* g1)(), word32 o1, word32 o2, word32 o3, word32 o4, word32 o5, word32 o7, real32 f2, word32 q0_32_0, real32 q4_32_32, real32 f9, real32 q8_32_96)
 {
+	ptr32 fp;
 	if (g1 == null)
 	{
 		atexit(&g_t108A8);
 		_environ = fp + 0x44 + ((_init(o1, o2, o3, o4, o5, o7) << 0x02) + 0x04);
-		exit(main(fp + 0x44, f2, q0_32_0, q4_32_32, f9, q8_32_96));
+		exit(main(f2, q0_32_0, q4_32_32, f9, q8_32_96));
 	}
 	else
 		atexit(g1);
@@ -119,8 +118,8 @@ void __do_global_dtors_aux(word32 o3, word32 o4, word32 o5, word32 o7)
 {
 	struct Eq_63 * l7_23 = fn00010574(o7, 66484);
 	ui32 l1_20 = 0x00;
-	ui32 o2_124 = (ui32) *l7_23->ptr000C;
-	if (o2_124 != 0x00)
+	ui32 o2_27 = (ui32) *l7_23->ptr000C;
+	if (o2_27 != 0x00)
 		return;
 	<anonymous> *** o0_34 = l7_23->ptr0010;
 	<anonymous> * o1_36 = **o0_34;
@@ -142,10 +141,7 @@ void __do_global_dtors_aux(word32 o3, word32 o4, word32 o5, word32 o7)
 	if (l7_23->dw0024 == 0x00)
 		l7_23[(l1_20 | 0x0C) / 40].a0000[0] = (byte *) 0x01;
 	else
-	{
-		word32 l0_149;
-		__deregister_frame_info();
-	}
+		__deregister_frame_info(l7_23->dw0004, 0x04);
 }
 
 // 0001062C: void call___do_global_dtors_aux()
@@ -164,10 +160,10 @@ void frame_dummy(word32 o1, word32 o2, word32 o3, word32 o4, word32 o5, word32 o
 		word32 * i0_36 = l7_23->ptr0014;
 		if (*i0_36 == 0x00 || l7_23->dw001C == 0x00)
 			return;
-		_Jv_RegisterClasses();
+		_Jv_RegisterClasses(i0_36, o1, o2, o3, o4, o5);
 	}
 	else
-		__register_frame_info();
+		__register_frame_info(l7_23->dw0004, l7_23->dw0008);
 }
 
 // 000106C0: void call_frame_dummy()
@@ -175,16 +171,19 @@ void call_frame_dummy()
 {
 }
 
-// 000106D0: Register word32 main(Register Eq_45 l1, Register real32 f2, Register word32 q0_32_0, Register real32 q4_32_32, Register real32 f9, Register real32 q8_32_96)
+// 000106D0: Register word32 main(Register real32 f2, Register word32 q0_32_0, Register real32 q4_32_32, Register real32 f9, Register real32 q8_32_96)
 // Called from:
 //      _start
-word32 main(Eq_45 l1, real32 f2, word32 q0_32_0, real32 q4_32_32, real32 f9, real32 q8_32_96)
+word32 main(real32 f2, word32 q0_32_0, real32 q4_32_32, real32 f9, real32 q8_32_96)
 {
+	ptr32 fp;
+	real32 rLoc14;
 	scanf("%f", fp + ~0x13);
-	real64 d0_33 = (real64) q0_32_0;
-	real32 f7_29 = 5.0F;
-	printf("a is %f, b is %f\n", (word32) d0_33, l1);
-	if (SLICE(d0_33, word32, 32) == rLoc14)
+	real64 d0_31 = (real64) q0_32_0;
+	Eq_188 f1_37 = (word32) d0_31;
+	real32 f7_28 = 5.0F;
+	printf("a is %f, b is %f\n", SLICE(f1_37, word32, 32), f1_37);
+	if (SLICE(d0_31, word32, 32) == rLoc14)
 	{
 		puts("Equal");
 		if (f2 == rLoc14)
@@ -192,7 +191,7 @@ word32 main(Eq_45 l1, real32 f2, word32 q0_32_0, real32 q4_32_32, real32 f9, rea
 l00010778:
 			if (q4_32_32 != f2)
 				puts("Greater");
-			if (f7_29 <= f2)
+			if (f7_28 <= f2)
 				puts("Less or Equal");
 			if (q8_32_96 >= f2)
 				puts("Greater or Equal");
@@ -225,7 +224,7 @@ word32 fn00010824(word32 o7, word32 l7)
 word32 * __do_global_ctors_aux(word32 o2, word32 o3, word32 o4, word32 o5, word32 o7)
 {
 	word32 * l0_31;
-	struct Eq_228 * o1_26 = fn00010824(o7, 0x00010104)->ptr0018;
+	struct Eq_254 * o1_26 = fn00010824(o7, 0x00010104)->ptr0018;
 	<anonymous> * o0_27 = o1_26->ptrFFFFFFFC;
 	if (o0_27 != (<anonymous> *) ~0x00)
 	{

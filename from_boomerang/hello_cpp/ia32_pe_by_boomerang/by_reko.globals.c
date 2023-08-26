@@ -4,15 +4,15 @@
 
 #include "subject.h"
 
-Eq_266 g_t0001;
-Eq_223 g_t0004;
-Eq_17523 g_a0011[];
-Eq_14957 g_t0041;
-Eq_14957 g_t005A;
-Eq_14957 g_t0061;
-Eq_14957 g_t007A;
+Eq_278 g_t0001;
+Eq_232 g_t0004;
+Eq_17757 g_a0011[];
+Eq_15193 g_t0041;
+Eq_15193 g_t005A;
+Eq_15193 g_t0061;
+Eq_15193 g_t007A;
 <anonymous> g_t0094; // 00000094
-Eq_266 g_t00FF;
-Eq_14957 g_t0100;
+Eq_278 g_t00FF;
+Eq_15193 g_t0100;
 byte g_bFFBD53C1; // FFBD53C1
-Eq_6852 g_tFFFFFFFF;
+Eq_7053 g_tFFFFFFFF;

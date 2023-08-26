@@ -1,18 +1,3 @@
 === Using options:--aggressive-branch-removal
-fn0804807B: error: An internal error occurred while building the expressions of fn0804807B
-    The given key 'ebp_349' was not present in the dictionary.
-       at System.Collections.Generic.Dictionary`2.get_Item(TKey key) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs:line 181
-   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 168
-   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 139
-   at Reko.Analysis.UnreachableBlockRemover.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 75
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 384
-l080481F4: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
-fn0804807B: error: An error occurred while rewriting procedure to high-level language.
-    Index was outside the bounds of the array.
-       at Reko.Structure.StructureAnalysis.ReduceIfRegion(Region n) in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 323
-   at Reko.Structure.StructureAnalysis.ReduceAcyclic(Region n) in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 233
-   at Reko.Structure.StructureAnalysis.Execute() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 155
-   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 81
-   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 532
 0804828E: warning: Expected sizes of arrays to have been determined by now
 0804828E: warning: Expected sizes of arrays to have been determined by now

@@ -4,12 +4,11 @@
 0000000000000E20: warning: Unable to resolve imported reference isalnum.
 0000000000000D50: warning: Unable to resolve imported reference __cxa_finalize.
 av: error: An internal error occurred while building the expressions of av
-    The given key 'w0_270' was not present in the dictionary.
-       at System.Collections.Generic.Dictionary`2.get_Item(TKey key) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs:line 181
-   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 168
-   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 139
-   at Reko.Analysis.UnreachableBlockRemover.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 75
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 381
+    The given key 'w0_262' was not present in the dictionary.
+       at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 147
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 137
+   at Reko.Analysis.UnreachableBlockRemover.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 73
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees(IReadOnlyCollection`1 ssts) in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 235
 l0000000000001124: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
 0000000000012D00: warning: Expected sizes of arrays to have been determined by now
 0000000000012D00: warning: Expected sizes of arrays to have been determined by now

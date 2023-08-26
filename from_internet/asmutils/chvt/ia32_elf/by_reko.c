@@ -4,28 +4,44 @@
 
 #include "subject.h"
 
-// 0804804C: void fn0804804C(Register (ptr32 byte) esi)
+// 0804804C: Register uipr32 fn0804804C(Register (ptr32 byte) esi)
 // Called from:
 //      fn0804808E
-void fn0804804C(byte * esi)
+uipr32 fn0804804C(byte * esi)
 {
+	uipr32 eax_29 = 0x00;
 	while (true)
 	{
-		cu8 cl_13 = *esi;
-		if (cl_13 < 0x30 || cl_13 > 0x39)
+		word16 eax_16_16_24 = SLICE(eax_29, word16, 16);
+		uint16 ax_22 = (word16) eax_29;
+		cu8 cl_15 = *esi;
+		if (cl_15 < 0x30)
 			break;
+		uint32 ecx_28 = (uint32) (cl_15 - 0x30);
+		if (cl_15 > 0x39 || cl_15 < 0x30)
+			return eax_29;
+		eax_29 = SEQ(eax_16_16_24, ax_22 * 0x0A) + ecx_28;
 		++esi;
 	}
+	return eax_29;
 }
 
-// 08048068: FlagGroup byte fn08048068()
+// 08048068: FlagGroup bool fn08048068(Register Eq_30 edx, Register (ptr32 char) ebx, Register out ptr32 edxOut, Register out Eq_33 ebxOut)
 // Called from:
 //      fn0804808E
-byte fn08048068()
+bool fn08048068(Eq_30 edx, char * ebx, ptr32 & edxOut, union Eq_33 & ebxOut)
 {
-	__syscall(0x80);
-	__syscall(0x80);
-	return <invalid>;
+	ptr32 fp;
+	Eq_33 eax_11 = sys_open(ebx, 0x00, edx);
+	if (eax_11 < 0x00)
+		fn08048086();
+	else
+	{
+		bool Z_32 = SLICE(cond(sys_ioctl(eax_11, 0x4B33, fp - 16)), bool, 2);
+		edxOut = fp - 16;
+		ebxOut = eax_11;
+		return Z_32;
+	}
 }
 
 // 08048086: void fn08048086()
@@ -34,71 +50,60 @@ byte fn08048068()
 //      fn0804808E
 void fn08048086()
 {
-	__syscall(0x80);
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	byte * stackArg0 = (byte *) <invalid>;
-	fn0804808E(stackArg0);
+	sys_exit(0x01);
 }
 
-// 0804808E: void fn0804808E(Stack (ptr32 byte) dwArg00)
-// Called from:
-//      fn08048068
-void fn0804808E(byte * dwArg00)
+// 0804808E: void fn0804808E(Register Eq_30 edx, Stack word32 dwArg00, Stack (ptr32 Eq_68) dwArg04, Stack (ptr32 byte) dwArg08)
+void fn0804808E(Eq_30 edx, word32 dwArg00, struct Eq_68 * dwArg04, byte * dwArg08)
 {
-	if (!SLICE(fn08048068(), bool, 2) && SLICE(fn08048068(), bool, 2))
+	ptr32 fp;
+	Eq_30 edx_8;
+	uint32 ebx_15;
+	if (!fn08048068(edx, "/dev/tty0", out edx_8, out ebx_15))
 	{
-		fn08048086();
-		return;
+		word32 edx_132;
+		if (fn08048068(edx_8, "/dev/console", out edx_132, out ebx_15))
+			fn08048086();
 	}
-	word32 edi_125 = dwLoc08;
-	struct Eq_38 * esi_34 = dwLoc04;
-	word32 * esp_119 = fp;
+	struct Eq_68 * esi_30 = dwArg04;
+	struct Eq_80 * esp_111 = fp + 8;
 	do
 	{
-		esi_34 = esi_161 + 1;
-		esi_161 = esi_34;
-	} while (esi_161->b0000 != 0x00);
-	if (esi_34->dwFFFFFFFB == 0x74766863)
+		esi_30 = esi_133 + 1;
+		esi_133 = esi_30;
+	} while (esi_133->b0000 != 0x00);
+	if (esi_30->dwFFFFFFFB == 0x74766863)
 	{
-		if (dwLoc08 != 0x02)
-		{
+		if (dwArg00 != 0x02)
 			fn08048086();
-			return;
-		}
-		esp_119 = fp + 1;
-		if (dwArg00 != null)
+		esp_111 = fp + 0x0C;
+		if (dwArg08 != null)
 		{
-			fn0804804C(dwArg00);
-			__syscall(0x80);
-			__syscall(0x80);
-			esp_119 = fp + 1;
+			uint32 eax_90 = fn0804804C(dwArg08);
+			sys_ioctl(ebx_15, 22022, eax_90);
+			sys_ioctl(ebx_15, 22023, eax_90);
+			esp_111 = fp + 0x0C;
 		}
 l080480DF:
-		word32 * esp_83 = esp_119 - 4;
-		*esp_83 = 0x01;
-		__syscall(0x80);
-		esp_119 = esp_83 + 1;
+		esp_111->dwFFFFFFFC = 0x01;
+		sys_exit(0x00);
 	}
-	word32 edi_91 = edi_125 - 0x01;
-	if (edi_91 == 0x00)
+	uint32 eax_43 = 0x00;
+	if (dwArg00 != 0x01)
 	{
-l080480F5:
-		word32 * esp_121 = esp_119 - 4;
-		*esp_121 = 0x36;
-		__syscall(0x80);
-		esp_119 = esp_121 + 1;
-		goto l080480EB;
-	}
 l080480EB:
-	edi_125 = edi_91;
-	byte * esi_96 = *esp_119;
-	++esp_119;
-	if (esi_96 != null)
-	{
-		fn0804804C(esi_96);
-		goto l080480F5;
+		byte * esi_51 = esp_111->dw0000;
+		++esp_111;
+		if (esi_51 == null)
+			goto l080480DF;
+		eax_43 = fn0804804C(esi_51);
 	}
-	goto l080480DF;
+	word32 * esp_76 = esp_111 - 4;
+	*esp_76 = 0x36;
+	sys_ioctl(ebx_15, 22024, eax_43);
+	esp_111 = (struct Eq_80 *) (esp_76 + 1);
+	goto l080480EB;
 }
 
+char g_str8048105[] = "/dev/tty0"; // 08048105
+char g_str804810F[] = "/dev/console"; // 0804810F

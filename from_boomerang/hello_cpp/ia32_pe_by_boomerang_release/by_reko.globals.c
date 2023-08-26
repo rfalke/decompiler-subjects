@@ -6,10 +6,10 @@
 
 <anonymous> g_t0001; // 00000001
 <anonymous> g_t0005; // 00000005
-Eq_2169 g_t0041;
-Eq_2169 g_t005A;
-Eq_2169 g_t0061;
-Eq_2169 g_t007A;
-Eq_1907 g_t00FF;
-Eq_2169 g_t0100;
+Eq_2260 g_t0041;
+Eq_2260 g_t005A;
+Eq_2260 g_t0061;
+Eq_2260 g_t007A;
+Eq_2004 g_t00FF;
+Eq_2260 g_t0100;
 byte g_bFFBFAE94; // FFBFAE94

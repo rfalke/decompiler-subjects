@@ -6,19 +6,13 @@
 
 uint32 g_dw0000; // 00000000
 uint32 g_dw0004; // 00000004
-Eq_15355 g_t0005;
+Eq_15968 g_t0005;
 uint32 g_dw0008; // 00000008
 word16 g_w000A; // 0000000A
-Eq_7944 g_t000D;
-word16 g_w0010; // 00000010
-word16 g_w001B; // 0000001B
-word16 g_w001C; // 0000001C
-word16 g_w001E; // 0000001E
-Eq_16153 g_t0028;
-word16 g_w00FC; // 000000FC
-word16 g_w00FF; // 000000FF
-Eq_15355 g_t0101;
+Eq_8358 g_t000D;
+Eq_16796 g_t0028;
+Eq_15380 g_t0100;
 byte g_b1000; // 00001000
 byte g_bFFBE7694; // FFBE7694
-Eq_15595 g_tFFBE7778;
+Eq_16190 g_tFFBE7778;
 word32 g_dwFFFFFFFE; // FFFFFFFE

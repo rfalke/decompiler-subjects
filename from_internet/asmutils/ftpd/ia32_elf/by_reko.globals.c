@@ -4,5 +4,4 @@
 
 #include "subject.h"
 
-Eq_809 g_t0001;
-byte g_b00C0; // 000000C0
+Eq_936 g_t0001;

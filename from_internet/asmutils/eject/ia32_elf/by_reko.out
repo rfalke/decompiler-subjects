@@ -1,5 +1,1 @@
 === Using options:--aggressive-branch-removal
-0804810E: warning: Call target address 08048141 is invalid.
-08048127: warning: Call target address 0804818E is invalid.
-08048129: warning: Call target address 08048169 is invalid.
-fn0804804C: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko

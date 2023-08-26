@@ -5,12 +5,14 @@
 #include "subject.h"
 
 word32 g_dw0001; // 00000001
-Eq_30420 g_t0005;
-Eq_3031 g_t0009;
-Eq_61343 g_t0168;
-Eq_3031 g_t10F7;
+Eq_29528 g_t0005;
+Eq_2845 g_t0009;
+byte g_a00F9[];
+byte g_a00FA[];
+Eq_61038 g_t0168;
+Eq_2845 g_t10F7;
 void g_v1FFF; // 00001FFF
 void g_v2000; // 00002000
-Eq_3031 g_t28F7;
+Eq_2845 g_t28F7;
 real64 g_a3FFFFF[];
 real64 g_rFFFFFFFF; // FFFFFFFF

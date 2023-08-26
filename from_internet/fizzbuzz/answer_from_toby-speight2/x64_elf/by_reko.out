@@ -1,5 +1,4 @@
 === Using options:--aggressive-branch-removal
-0000000000402BF8: warning: Unable to resolve imported reference __libc_start_main.
 0000000000402008: warning: Unable to resolve imported reference __gmon_start__.
 00000000004021C0: warning: Unable to resolve imported reference __pthread_key_create.
 0000000000402D22: warning: Unable to resolve imported reference pthread_mutex_lock.
@@ -8,108 +7,80 @@
 0000000000402DA7: warning: Unable to resolve imported reference _ZNSt18condition_variable10notify_oneEv.
 0000000000402DE1: warning: Unable to resolve imported reference pthread_mutex_lock.
 0000000000402E16: warning: Unable to resolve imported reference pthread_mutex_unlock.
-0000000000402FB0: warning: Unable to resolve imported reference write.
 0000000000402FE6: warning: Unable to resolve imported reference pthread_mutex_unlock.
 0000000000402E26: warning: Unable to resolve imported reference _ZNSt18condition_variable10notify_oneEv.
 0000000000402E45: warning: Unable to resolve imported reference pthread_mutex_lock.
 0000000000402E86: warning: Unable to resolve imported reference _ZNSt18condition_variable4waitERSt11unique_lockISt5mutexE.
-000000000040451A: warning: Unable to resolve imported reference memmove.
-00000000004045B8: warning: Unable to resolve imported reference _ZSt20__throw_length_errorPKc.
-0000000000404538: warning: Unable to resolve imported reference memset.
-0000000000404430: warning: Unable to resolve imported reference _ZSt17__throw_bad_allocv.
 0000000000404361: warning: Unable to resolve imported reference _Znwm.
-0000000000404393: warning: Unable to resolve imported reference memcpy.
-0000000000404495: warning: Unable to resolve imported reference _ZSt20__throw_length_errorPKc.
-00000000004043C5: warning: Unable to resolve imported reference memcpy.
-00000000004043FA: warning: Unable to resolve imported reference memcpy.
-0000000000404414: warning: Unable to resolve imported reference _ZdlPvm.
 0000000000403007: warning: Unable to resolve imported reference pthread_mutex_unlock.
-000000000040306A: warning: Unable to resolve imported reference _ZSt20__throw_system_errori.
-00000000004042D3: warning: Unable to resolve imported reference _ZSt20__throw_length_errorPKc.
 0000000000404296: warning: Unable to resolve imported reference _Znwm.
-0000000000404229: warning: Unable to resolve imported reference memcpy.
-0000000000404234: warning: x86 instruction 'vmovd' is not supported yet.
-0000000000404169: warning: Unable to resolve imported reference _ZSt20__throw_length_errorPKc.
+0000000000404239: warning: x86 instruction 'vpinsrq' is not supported yet.
 00000000004040F6: warning: Unable to resolve imported reference _Znwm.
-000000000040408C: warning: Unable to resolve imported reference memcpy.
-0000000000404097: warning: x86 instruction 'vmovd' is not supported yet.
-0000000000403F79: warning: Unable to resolve imported reference _ZSt20__throw_length_errorPKc.
+000000000040409C: warning: x86 instruction 'vpinsrq' is not supported yet.
 0000000000403F06: warning: Unable to resolve imported reference _Znwm.
-0000000000403E9B: warning: Unable to resolve imported reference memcpy.
-0000000000403EA6: warning: x86 instruction 'vmovd' is not supported yet.
-0000000000403CDA: warning: Unable to resolve imported reference memset.
+0000000000403EAB: warning: x86 instruction 'vpinsrq' is not supported yet.
 0000000000403CC4: warning: Unable to resolve imported reference _Znwm.
 00000000004030F3: warning: Unable to resolve imported reference _ZNSt18condition_variableC1Ev.
-000000000040397B: warning: Unable to resolve imported reference memset.
 0000000000403964: warning: Unable to resolve imported reference _Znwm.
 00000000004032C6: warning: Unable to resolve imported reference _Znwm.
-00000000004032FC: warning: Unable to resolve imported reference _ZdlPvm.
 000000000040334D: warning: Unable to resolve imported reference _Znwm.
-0000000000403B65: warning: Unable to resolve imported reference _ZSt20__throw_length_errorPKc.
-000000000040339C: warning: Unable to resolve imported reference _ZdlPvm.
-00000000004034DC: warning: Unable to resolve imported reference _ZdlPvm.
-00000000004033A4: warning: x86 instruction 'vmovd' is not supported yet.
-0000000000403B53: warning: Unable to resolve imported reference _ZSt20__throw_length_errorPKc.
-00000000004038D7: warning: Unable to resolve imported reference memset.
+00000000004033AC: warning: x86 instruction 'vpinsrq' is not supported yet.
 00000000004038B9: warning: Unable to resolve imported reference _Znwm.
-000000000040374F: warning: Unable to resolve imported reference memcpy.
-000000000040377D: warning: Unable to resolve imported reference _ZdlPvm.
-0000000000403799: warning: Unable to resolve imported reference _ZdlPvm.
-0000000000403A0F: warning: Unable to resolve imported reference memcpy.
 0000000000402CDB: warning: Unable to resolve imported reference _ZNSt6thread6_StateD2Ev.
-0000000000402CE9: warning: Unable to resolve imported reference _ZdlPvm.
 0000000000402CC7: warning: Unable to resolve imported reference _ZNSt6thread6_StateD2Ev.
 0000000000402BA9: warning: Unable to resolve imported reference _ZNSt8ios_base4InitC1Ev.
-0000000000402BC1: warning: Unable to resolve imported reference __cxa_atexit.
 0000000000402233: warning: Unable to resolve imported reference get_nprocs.
-0000000000402251: warning: Unable to resolve imported reference snprintf.
-0000000000402304: warning: Unable to resolve imported reference _ZdlPvm.
-0000000000402461: warning: Unable to resolve imported reference _ZdlPvm.
 00000000004024B5: warning: Unable to resolve imported reference _ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l.
-0000000000402588: warning: Unable to resolve imported reference _ZNSolsEi.
 000000000040259F: warning: Unable to resolve imported reference _ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l.
 00000000004025BF: warning: Unable to resolve imported reference _ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l.
-0000000000402516: warning: Unable to resolve imported reference memset.
 000000000040253F: warning: Unable to resolve imported reference _ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l.
-00000000004025F5: warning: Unable to resolve imported reference _ZNSo5flushEv.
 000000000040262E: warning: Unable to resolve imported reference _Znwm.
-000000000040263D: warning: x86 instruction 'vmovd' is not supported yet.
+0000000000402645: warning: x86 instruction 'vpunpcklqdq' is not supported yet.
 00000000004024ED: warning: Unable to resolve imported reference _Znwm.
 000000000040284A: warning: Unable to resolve imported reference _Znwm.
-0000000000402859: warning: x86 instruction 'vmovd' is not supported yet.
-0000000000402B8A: warning: Unable to resolve imported reference _ZSt20__throw_length_errorPKc.
-0000000000402B8F: warning: Unable to resolve imported reference _ZSt9terminatev.
-0000000000402B96: warning: Unable to resolve imported reference _ZSt20__throw_system_errori.
+0000000000402861: warning: x86 instruction 'vpunpcklqdq' is not supported yet.
 0000000000402932: warning: Unable to resolve imported reference _Znwm.
 0000000000402946: warning: Unable to resolve imported reference _Znwm.
 0000000000402968: warning: Unable to resolve imported reference _ZNSt6thread15_M_start_threadESt10unique_ptrINS_6_StateESt14default_deleteIS1_EEPFvvE.
 00000000004029E5: warning: Unable to resolve imported reference pthread_mutex_lock.
-00000000004029BE: warning: Unable to resolve imported reference _ZdlPvm.
 0000000000402A12: warning: Unable to resolve imported reference pthread_mutex_unlock.
 0000000000402A1E: warning: Unable to resolve imported reference _ZNSt18condition_variable10notify_oneEv.
 0000000000402A2B: warning: Unable to resolve imported reference _ZNSt6thread4joinEv.
-0000000000402A57: warning: Unable to resolve imported reference _ZdlPvm.
-0000000000402A77: warning: Unable to resolve imported reference _ZdlPvm.
 0000000000402A9C: warning: Unable to resolve imported reference _ZNSt18condition_variableD1Ev.
-0000000000402AB1: warning: Unable to resolve imported reference _ZdlPvm.
-0000000000402AF8: warning: Unable to resolve imported reference _ZdlPvm.
-0000000000402ACB: warning: Unable to resolve imported reference _ZdlPvm.
-0000000000402AD8: warning: Unable to resolve imported reference _ZdlPvm.
 0000000000402200: warning: Unable to resolve imported reference _ZNSt8ios_base4InitD1Ev.
 00000000004020C0: warning: Unable to resolve imported reference pthread_create.
+main: error: An internal error occurred while building the expressions of main
+    The given key 'eax_716' was not present in the dictionary.
+       at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 147
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 137
+   at Reko.Analysis.UnreachableBlockRemover.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 73
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees(IReadOnlyCollection`1 ssts) in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 235
+: error: An internal error occurred while building the expressions of 
+    The given key 'r14_190' was not present in the dictionary.
+       at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 147
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 137
+   at Reko.Analysis.UnreachableBlockRemover.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 73
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees(IReadOnlyCollection`1 ssts) in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 235
+l00000000004022D6: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
 main: error: An error occurred while rewriting procedure to high-level language.
     Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
-       at System.Collections.Generic.List`1.get_Item(Int32 index) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/List.cs:line 150
+       at System.Collections.Generic.List`1.get_Item(Int32 index)
    at Reko.Core.Block.get_ThenBlock() in /home/runner/work/reko/reko/src/Core/Block.cs:line 91
    at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block) in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 96
    at Reko.Structure.CompoundConditionCoalescer.Transform() in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 62
-   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 79
-   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 535
+   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 78
+   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 551
+: error: An error occurred while rewriting procedure to high-level language.
+    Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+       at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at Reko.Core.Block.get_ThenBlock() in /home/runner/work/reko/reko/src/Core/Block.cs:line 91
+   at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block) in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 96
+   at Reko.Structure.CompoundConditionCoalescer.Transform() in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 62
+   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 78
+   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 551
 0000000000405140: warning: Expected sizes of arrays to have been determined by now
 0000000000405141: warning: Expected sizes of arrays to have been determined by now
-0000000000405220: warning: Expected sizes of arrays to have been determined by now
 0000000000406D48: warning: Expected sizes of arrays to have been determined by now
 0000000000405140: warning: Expected sizes of arrays to have been determined by now
 0000000000405141: warning: Expected sizes of arrays to have been determined by now
-0000000000405220: warning: Expected sizes of arrays to have been determined by now
 0000000000406D48: warning: Expected sizes of arrays to have been determined by now

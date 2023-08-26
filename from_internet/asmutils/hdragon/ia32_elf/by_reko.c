@@ -4,75 +4,79 @@
 
 #include "subject.h"
 
-// 0804804C: FlagGroup bool fn0804804C(Register byte al, Register word32 edx, Register (ptr32 Eq_5) esi, Register ptr32 edi, Register out ptr32 edxOut, Register out ptr32 esiOut, Register out ptr32 ediOut)
+// 0804804C: Register word32 fn0804804C(Register byte al, Register word32 edx, Register (ptr32 Eq_4) esi, Register Eq_5 edi)
 // Called from:
 //      fn0804804C
 //      fn08048098
-bool fn0804804C(byte al, word32 edx, struct Eq_5 * esi, ptr32 edi, ptr32 & edxOut, ptr32 & esiOut, ptr32 & ediOut)
+word32 fn0804804C(byte al, word32 edx, struct Eq_4 * esi, Eq_5 edi)
 {
-	bool Z_148;
+	word32 eax;
 	if (edx != 0x00)
 	{
-		word32 edx_77;
-		struct Eq_5 * esi_80;
-		ptr32 edi_81;
-		fn0804804C(0x01, edx - 0x01, esi, edi, out edx_77, out esi_80, out edi_81);
-		esi_80->t0000.u1 = (word32) esi_80->t0000 + (byte) eax;
-		esi_80->t0000 &= 0x03;
-		word32 edx_178;
-		word32 esi_179;
-		word32 edi_180;
-		fn0804804C(~0x00, edx_77, esi_80, edi_81, out edx_178, out esi_179, out edi_180);
-		byte SCZO_103 = <invalid>;
-		Z_148 = SLICE(SCZO_103, bool, 2);
+		word32 edx_78 = fn0804804C(0x01, edx - 0x01, esi, edi);
+		esi->dw0000 = (ui32) ((byte) (byte) eax + esi->dw0000);
+		esi->dw0000 &= 0x03;
+		fn0804804C(~0x00, edx_78, esi, edi);
 	}
 	else
 	{
-		Eq_13 eax_33 = esi->t0000;
-		byte al_35 = (byte) eax_33;
-		word16 eax_16_16_49 = SLICE(eax_33, word16, 16);
-		if (al_35 != 0x00)
+		ui32 eax_35 = esi->dw0000;
+		byte al_37 = (byte) eax_35;
+		word16 eax_16_16_51 = SLICE(eax_35, word16, 16);
+		if (al_37 != 0x00)
 		{
-			if (al_35 != 0x02)
+			if (al_37 != 0x02)
 			{
-				if (al_35 != 0x01)
-					eax_33.u1 = ~0x00;
+				if (al_37 != 0x01)
+					eax_35 = ~0x00;
 			}
 			else
-				eax_33 = SEQ(eax_16_16_49, 0x0280);
+				eax_35 = SEQ(eax_16_16_51, 0x0280);
 		}
 		else
-			eax_33.u1 = ~0x027F;
-		int32 eax_53 = (word32) eax_33.u1 + esi->dw0004;
-		edi + eax_53 = (byte *) 0x0E;
-		esi->dw0004 = eax_53;
-		uipr32 ecx_124;
-		Z_148 = SLICE(cond(~0x00), bool, 2);
-		for (ecx_124 = 0xFFFF; ecx_124 != 0x00; --ecx_124)
+			eax_35 = ~0x027F;
+		int32 eax_55 = eax_35 + esi->dw0004;
+		*((word32) edi.u1 + eax_55) = 0x0E;
+		esi->dw0004 = eax_55;
+		uipr32 ecx_117;
+		for (ecx_117 = 0xFFFF; ecx_117 != 0x00; --ecx_117)
 			;
 	}
-	edxOut = <invalid>;
-	esiOut = <invalid>;
-	ediOut = <invalid>;
-	return Z_148;
+	return <invalid>;
 }
 
-// 08048098: void fn08048098()
-void fn08048098()
+// 08048098: void fn08048098(Register Eq_70 edx)
+void fn08048098(Eq_70 edx)
 {
-	__syscall(0x80);
-	__syscall(0x80);
-	byte * edi_106 = (byte *) 0xC0;
-	word32 ecx_109;
-	for (ecx_109 = 0x0004B000; ecx_109 != 0x00; --ecx_109)
+	Eq_71 tLoc0C;
+	Eq_72 ebx_8 = 0x080480FB;
+	Eq_72 eax_14 = sys_open("/dev/fb0", 0x02, edx);
+	if (eax_14 >= 0x00)
 	{
-		*edi_106 = 0x00;
-		++edi_106;
+		tLoc0C.dw0004 = 0x01;
+		tLoc0C.dw0004 = 0x02;
+		byte * eax_34 = sys_mmap2();
+		if (eax_34 >= null)
+		{
+			tLoc0C.ptr0004 = eax_34;
+			byte * edi_100 = eax_34;
+			word32 ecx_101;
+			for (ecx_101 = 0x0004B000; ecx_101 != 0x00; --ecx_101)
+			{
+				*edi_100 = 0x00;
+				++edi_100;
+			}
+			Eq_5 edi_51 = tLoc0C.t0004.u0;
+			tLoc0C.dw0004 = 205120;
+			tLoc0C.dw0000 = 0x00;
+			fn0804804C(0x01, 0x10, &tLoc0C, edi_51);
+			tLoc0C.dw0004 = 0x5B;
+			sys_munmap(edi_51, 0x0004B000);
+		}
+		sys_close(eax_14);
+		ebx_8 = eax_14;
 	}
-	word32 edx_132;
-	word32 esi_133;
-	word32 edi_134;
-	fn0804804C(0x01, 0x10, fp - 0x0C, 0xC0, out edx_132, out esi_133, out edi_134);
-	__syscall(0x80);
+	sys_exit(ebx_8);
 }
 
+char g_str80480FB[] = "/dev/fb0"; // 080480FB

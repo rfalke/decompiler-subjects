@@ -4,10 +4,183 @@
 
 #include "subject.h"
 
-// 0804805A: void fn0804805A(Register int8 Top, Stack up32 dwArg00, Stack word32 dwArg08, Stack (ptr32 byte) dwArg0C)
-void fn0804805A(int8 Top, up32 dwArg00, word32 dwArg08, byte * dwArg0C)
+Eq_419 g_t804804C = // 0804804C
+	{
+		0x69
+	};
+// 0804805A: void fn0804805A(Stack up32 dwArg00, Stack uint32 dwArg04, Stack uint32 dwArg08, Stack off_t tArg0C)
+void fn0804805A(up32 dwArg00, uint32 dwArg04, uint32 dwArg08, off_t tArg0C)
 {
+	uint32 dwLoc04;
+	int32 ebx_323;
+	struct Eq_8 * esp_142;
+	uint32 * esp_113 = &dwArg04;
+	if (dwArg00 >= 0x03)
+	{
+		g_ptr8048410 = dwArg08;
+		byte * esi_13 = tArg0C;
+		int32 ebx_378 = 0x00;
+		while (true)
+		{
+			cu8 al_22 = *esi_13;
+			++esi_13;
+			if (al_22 < 0x30)
+				break;
+			uint32 eax_344 = (uint32) (al_22 - 0x30);
+			if (al_22 > 0x39 || al_22 < 0x30)
+				break;
+			uint32 ebx_345 = ebx_378 *s 0x0A + eax_344;
+			ebx_378 = SEQ(SLICE(ebx_345, word16, 16), (byte) ebx_345, SLICE(ebx_345, byte, 8));
+		}
+		g_dw8048414 = SEQ(SLICE(ebx_378 << 0x10, word24, 8), 0x02);
+		tArg0C = (Eq_5) 0x06;
+		dwArg08 = 0x01;
+		dwArg04 = 0x02;
+		int32 eax_61 = sys_socketcall(0x01, &dwArg04);
+		esp_113 = (uint32 *) ((char *) &tArg0C + 4);
+		if (eax_61 >= 0x00)
+		{
+			tArg0C = (Eq_5) 0x04;
+			dwArg08 = 0x08048056;
+			dwArg04 = 0x02;
+			dwLoc04 = (uint32) eax_61;
+			esp_113 = (uint32 *) ((char *) &tArg0C + 4);
+			if (sys_socketcall(0x0E, &dwLoc04) == 0x00)
+			{
+				tArg0C = (Eq_5) 0x10;
+				dwArg08 = 0x08048414;
+				dwArg04 = (uint32) eax_61;
+				esp_113 = (uint32 *) ((char *) &tArg0C + 4);
+				if (sys_socketcall(0x02, &dwArg04) == 0x00)
+				{
+					tArg0C = (Eq_5) 0x05;
+					dwArg08 = (uint32) eax_61;
+					dwArg04 = 0x04;
+					int32 ebx_126 = dwArg04;
+					dwArg04 = 0x66;
+					esp_113 = (uint32 *) ((char *) &tArg0C + 4);
+					if (sys_socketcall(ebx_126, &dwArg08) == 0x00)
+					{
+						tArg0C = (Eq_5) 0x02;
+						esp_142 = (struct Eq_8 *) ((char *) &tArg0C + 4);
+						if (sys_fork() == 0x00)
+						{
+							while (true)
+							{
+								do
+								{
+									g_b8048311 = 0x10;
+									tArg0C = (Eq_5) 0x08048311;
+									dwArg08 = 0x08048212;
+									dwArg04 = (uint32) eax_61;
+									Eq_218 eax_167 = sys_socketcall(0x05, &dwArg04);
+								} while (eax_167 < 0x00);
+								tArg0C = (Eq_5) 0x01;
+								int32 edx_179 = tArg0C;
+								tArg0C = (Eq_5) 114;
+								sys_wait4(~0x00, null, edx_179, null);
+								tArg0C = (Eq_5) 114;
+								sys_wait4(~0x00, null, edx_179, null);
+								tArg0C = (Eq_5) 0x02;
+								if (sys_fork() == 0x00)
+									break;
+								tArg0C = (Eq_5) 0x06;
+								sys_close(eax_167);
+							}
+							tArg0C = (Eq_5) 0x03;
+							esp_142 = (struct Eq_8 *) ((char *) &tArg0C + 4);
+							Eq_295 eax_210 = sys_read(eax_167, &g_b8049434, 0x0FFF);
+							if (eax_210 >= 0x07)
+							{
+								tArg0C = (Eq_5) eax_210;
+								byte * ecx_216 = g_ptr8048410;
+								struct Eq_321 * ebx_215 = &g_t8048424;
+								word24 edx_24_8_360 = SLICE(ecx_216, word24, 8);
+								ecx_218 = ecx_216;
+								do
+								{
+									byte * ecx_218;
+									ebx_215->b0000 = *ecx_218;
+									++ebx_215;
+									++ecx_218;
+								} while (*ecx_218 != 0x00);
+								esp_142 = (struct Eq_8 *) ((char *) &tArg0C + 4);
+								if ((word64) tArg0C + (ecx_218 - ecx_216) <= 0x0FFF)
+								{
+									byte * ecx_235 = g_a8049438;
+									while (ebx_215->wFFFFFFFE != 0x2E2E)
+									{
+										cu8 dl_241 = *ecx_235;
+										Eq_358 edx_280 = SEQ(edx_24_8_360, dl_241);
+										if (dl_241 == 0x20)
+										{
+l080481C8:
+											ebx_215->b0000 = 0x00;
+											if (ebx_215->bFFFFFFFF == 0x2F)
+												ebx_215->b0000 = (byte) g_t804804C.u1;
+											tArg0C = (Eq_5) 0x05;
+											esp_142 = (struct Eq_8 *) ((char *) &tArg0C + 4);
+											Eq_407 eax_288 = sys_open(&g_t8048424, 0x00, edx_280);
+											if (eax_288 >= 0x00)
+											{
+												tArg0C = (Eq_5) 0x00;
+												sys_sendfile(eax_167, eax_288, &tArg0C, ~0x00);
+												dwArg08 = 0x06;
+												sys_close(eax_288);
+												esp_142 = &tArg0C;
+											}
+											break;
+										}
+										ebx_215->b0000 = dl_241;
+										edx_280 = SEQ(edx_24_8_360, dl_241);
+										if (dl_241 == 0x00)
+											goto l080481C8;
+										if (dl_241 < 0x20)
+											break;
+										edx_280 = SEQ(edx_24_8_360, dl_241);
+										if (dl_241 == 0x20)
+											goto l080481C8;
+										edx_280 = SEQ(edx_24_8_360, dl_241);
+										if (dl_241 == 0x3F)
+											goto l080481C8;
+										edx_280 = SEQ(edx_24_8_360, dl_241);
+										if (dl_241 == 0x0D)
+											goto l080481C8;
+										edx_280 = SEQ(edx_24_8_360, dl_241);
+										if (dl_241 == 0x0A)
+											goto l080481C8;
+										++ebx_215;
+										++ecx_235;
+									}
+								}
+							}
+						}
+						ebx_323 = 0x00;
+l080480C1:
+						esp_142->dwFFFFFFFC = 0x01;
+						sys_exit(ebx_323);
+					}
+				}
+			}
+		}
+	}
+	int32 * esp_328 = esp_113 - 4;
+	*esp_328 = 0x01;
+	ebx_323 = *esp_328;
+	esp_142 = (struct Eq_8 *) (esp_328 + 1);
+	goto l080480C1;
 }
 
-word32 g_dw8048410 = 0x00; // 08048410
+byte g_b8048311 = 0x00; // 08048311
+byte * g_ptr8048410 = null; // 08048410
 word32 g_dw8048414 = 0x00; // 08048414
+Eq_321 g_t8048424 = // 08048424
+	{
+		0x00,
+		0x00,
+		0x00,
+	};
+char g_b8049434 = '\0'; // 08049434
+cu8 g_a8049438[] = // 08049438
+	{
+	};

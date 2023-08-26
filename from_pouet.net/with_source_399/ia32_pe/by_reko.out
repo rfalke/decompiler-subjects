@@ -1,6 +1,5 @@
 === Using options:--aggressive-branch-removal
-Packer 'Microsoft Visual C++ 8' detected.
-warning: Unable to unpack executable file packed with 'Microsoft Visual C++ 8'.
+Signature of 'Microsoft Visual C++ 8' detected.
 00412381: warning: Unable to guess parameters of MSVCR80.dll!__initenv.
 004050E4: warning: Unable to resolve imported reference SDL.dll!SDL_Init.
 004050F6: warning: Unable to resolve imported reference SDL.dll!SDL_ShowCursor.
@@ -16,13 +15,6 @@ warning: Unable to unpack executable file packed with 'Microsoft Visual C++ 8'.
 00408697: warning: Unable to guess parameters of MSVCR80.dll!__iob_func.
 004086C3: warning: Unable to guess parameters of MSVCR80.dll!__iob_func.
 004086EF: warning: Unable to guess parameters of MSVCR80.dll!__iob_func.
-004085D5: warning: Procedure fn00408490 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-00408802: warning: Procedure fn00408740 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-00408807: warning: Procedure fn00408740 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-00408813: warning: Procedure fn00408740 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-00408823: warning: Procedure fn00408740 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-00408825: warning: Procedure fn00408740 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-00408802: warning: Procedure fn00408740 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 00412500: warning: Unable to guess parameters of MSVCR80.dll!_setjmp3.
 00412500: warning: Unable to guess parameters of MSVCR80.dll!_setjmp3.
 0040A78A: warning: Unable to guess parameters of MSVCR80.dll!__iob_func.
@@ -58,131 +50,20 @@ warning: Unable to unpack executable file packed with 'Microsoft Visual C++ 8'.
 004050F0: warning: Unable to resolve imported reference SDL.dll!SDL_PollEvent.
 004039B8: warning: Unable to resolve imported reference libmikmod.dll!MikMod_Exit.
 004123EF: warning: Unable to guess parameters of MSVCR80.dll!_cexit.
-00413FB3: error: An error occurred while processing the statement dwLoc20_3955 = dwLoc20_3955 - eax_1538.
-    Pulling difference uint32 and (ptr32 (struct (0 char b0000) (4 T_12 t0004) (C T_20 t000C)))
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-00414237: error: An error occurred while processing the statement eax_2909 = fn00414630(Mem2899[edi_13 + 0x18<32>:word32], Mem2899[dwArg04 + 0xC<32>:word32] - ebx_2883, ebx_2883).
-    Pulling difference (ptr32 (struct (0 char b0000) (4 T_12 t0004) (C T_20 t000C))) and (union (ui32 u0) (word64 u1))
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitApplication (Reko.Core.Expressions.Application appl) [0x00012] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Expressions.Application.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-00413F0C: error: An error occurred while processing the statement esi_1057 = esi_1057 - ecx_1499.
-    Pulling difference uint32 and (ptr32 (struct (0 char b0000) (4 T_12 t0004) (C T_20 t000C)))
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-00413D4A: error: An error occurred while processing the statement esi_1057 = esi_1057 - ecx_1264.
-    Pulling difference uint32 and (ptr32 (struct (0 char b0000) (4 T_12 t0004) (C T_20 t000C)))
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-00413673: error: An error occurred while processing the statement Mem1762[edi_13 + 0x40<32>:word32] = Mem1755[edi_13 + 0x40<32>:word32] - dwLoc28_4349.
-    Pulling difference (ptr32 (struct (0 char b0000) (4 T_12 t0004) (C T_20 t000C))) and size_t
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x00006] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-0041365E: error: An error occurred while processing the statement word32 v39_1750 = dwLoc2C_3956 - dwLoc28_4349.
-    Pulling difference (ptr32 (struct (0 char b0000) (4 T_12 t0004) (C T_20 t000C))) and size_t
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-00413662: error: An error occurred while processing the statement dwLoc20_3955 = dwLoc20_3955 - dwLoc28_4349.
-    Pulling difference (ptr32 (struct (0 char b0000) (4 T_12 t0004) (C T_20 t000C))) and size_t
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-0041321D: error: An error occurred while processing the statement Mem2412[edi_13 + 0x40<32>:word32] = Mem2410[edi_13 + 0x40<32>:word32] - eax_2300.
-    Pulling difference (ptr32 (struct (0 char b0000) (4 T_12 t0004) (C T_20 t000C))) and size_t
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x00006] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-00413219: error: An error occurred while processing the statement edx_1023 = edx_1023 - eax_2300.
-    Pulling difference (ptr32 (struct (0 char b0000) (4 T_12 t0004) (C T_20 t000C))) and size_t
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-004132C3: error: An error occurred while processing the statement edx_1023 = edx_1023 - eax_2446.
-    Pulling difference (ptr32 (struct (0 char b0000) (4 T_12 t0004) (C T_20 t000C))) and (union (int32 u1) (up32 u0))
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-00413381: error: An error occurred while processing the statement edx_1023 = edx_1023 - eax_2560.
-    Pulling difference (ptr32 (struct (0 char b0000) (4 T_12 t0004) (C T_20 t000C))) and (union (int32 u1) (up32 u0))
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-004148E7: error: An error occurred while processing the statement word32 ebp_337 = edx_281 - eax_291.
-    Pulling difference uint32 and ptr32
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
 l00403770: warning: Non-integral switch expression
 l00409874: warning: Non-integral switch expression
 l0040C631: warning: Non-integral switch expression
-fn0040D5E0: error: An error occurred while rewriting procedure to high-level language.
-    Can't collapse l0040D625 (IncSwitch) => l0040E54A
-      at Reko.Structure.StructureAnalysis.CollapseToTailRegion (Reko.Structure.Region from, Reko.Structure.Region to, Reko.Core.Absyn.AbsynStatement stm) [0x000a2] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Structure.StructureAnalysis.VirtualizeEdge (Reko.Structure.StructureAnalysis+VirtualEdge vEdge) [0x000d8] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Structure.StructureAnalysis.VirtualizeIrregularSwitchEntries (Reko.Structure.Region n) [0x0009a] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Structure.StructureAnalysis.RefineIncSwitch (Reko.Structure.Region n) [0x00000] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () [0x00048] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Structure.StructureAnalysis.Execute () [0x00141] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Structure.StructureAnalysis.Structure () [0x00030] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Decompiler.StructureProgram () [0x00089] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
 l00412DCE: warning: Non-integral switch expression
 004163F0: warning: Expected sizes of arrays to have been determined by now
 004164B4: warning: Expected sizes of arrays to have been determined by now
 004164D0: warning: Expected sizes of arrays to have been determined by now
 00416524: warning: Expected sizes of arrays to have been determined by now
-00417B70: warning: Expected sizes of arrays to have been determined by now
-00418370: warning: Expected sizes of arrays to have been determined by now
 004183F0: warning: Expected sizes of arrays to have been determined by now
 004185D8: warning: Expected sizes of arrays to have been determined by now
 004189D8: warning: Expected sizes of arrays to have been determined by now
 00418DD8: warning: Expected sizes of arrays to have been determined by now
 004191D8: warning: Expected sizes of arrays to have been determined by now
 0041A7CC: warning: Expected sizes of arrays to have been determined by now
-0041AA90: warning: Expected sizes of arrays to have been determined by now
 0041ABA5: warning: Expected sizes of arrays to have been determined by now
 0041C020: warning: Expected sizes of arrays to have been determined by now
 0041CD78: warning: Expected sizes of arrays to have been determined by now
@@ -197,15 +78,12 @@ l00412DCE: warning: Non-integral switch expression
 004164B4: warning: Expected sizes of arrays to have been determined by now
 004164D0: warning: Expected sizes of arrays to have been determined by now
 00416524: warning: Expected sizes of arrays to have been determined by now
-00417B70: warning: Expected sizes of arrays to have been determined by now
-00418370: warning: Expected sizes of arrays to have been determined by now
 004183F0: warning: Expected sizes of arrays to have been determined by now
 004185D8: warning: Expected sizes of arrays to have been determined by now
 004189D8: warning: Expected sizes of arrays to have been determined by now
 00418DD8: warning: Expected sizes of arrays to have been determined by now
 004191D8: warning: Expected sizes of arrays to have been determined by now
 0041A7CC: warning: Expected sizes of arrays to have been determined by now
-0041AA90: warning: Expected sizes of arrays to have been determined by now
 0041ABA5: warning: Expected sizes of arrays to have been determined by now
 0041C020: warning: Expected sizes of arrays to have been determined by now
 0041CD78: warning: Expected sizes of arrays to have been determined by now

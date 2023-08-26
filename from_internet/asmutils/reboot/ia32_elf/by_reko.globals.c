@@ -4,7 +4,4 @@
 
 #include "subject.h"
 
-word16 g_w0001; // 00000001
 word16 g_w0024; // 00000024
-word16 g_w0058; // 00000058
-word16 g_wFEE1DEAD; // FEE1DEAD

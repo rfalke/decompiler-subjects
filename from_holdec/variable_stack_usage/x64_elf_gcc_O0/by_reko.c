@@ -76,12 +76,14 @@ word64 g_qw600E18 = 0x00; // 0000000000600E18
 
 #include "subject.h"
 
-// 0000000000400400: void _start(Register (ptr64 Eq_7) rdx, Stack word32 dwArg00)
-void _start(void (* rdx)(), word32 dwArg00)
+// 0000000000400400: void _start(Register (ptr64 Eq_8) rdx, Stack word32 dwArg00, Stack (ptr64 char) ptrArg08)
+void _start(void (* rdx)(), word32 dwArg00, char * ptrArg08)
 {
-	__align((char *) fp + 8);
-	__libc_start_main(&g_t400698, (int32) qwArg00, (char *) fp + 8, &g_t4006D0, &g_t400740, rdx, fp);
-	__hlt();
+	void * fp;
+	word64 qwArg00;
+	__align_stack<word64>(&ptrArg08);
+	__libc_start_main(&g_t400698, (int32) qwArg00, &ptrArg08, &g_t4006D0, &g_t400740, rdx, fp);
+	__halt();
 }
 
 // 0000000000400430: void deregister_tm_clones()
@@ -137,11 +139,16 @@ void fill(word32 esi, word32 * rdi)
 //      main
 void with_array(word32 edi)
 {
+	ptr64 fp;
+	Eq_74 tLoc30;
+	Eq_75 tLoc2C;
+	tLoc2C = (Eq_75) 0x07;
 	word32 * rax_51 = __align(fp - 0x48 - (uint64) ((uint128) (((int64) edi << 0x02) + 0x12) /u 0x10) *s 0x10 + 0x03, 4);
+	tLoc30 = (Eq_74) 0x08;
 	fill(edi, rax_51);
-	use(fp - 44);
+	use(&tLoc2C);
 	use(rax_51);
-	use(fp - 0x30);
+	use(&tLoc30);
 }
 
 // 0000000000400607: void with_alloca(Register word32 edi)
@@ -149,11 +156,16 @@ void with_array(word32 edi)
 //      main
 void with_alloca(word32 edi)
 {
+	ptr64 fp;
+	Eq_123 tLoc18;
+	Eq_124 tLoc14;
+	tLoc14 = (Eq_124) 0x07;
 	word32 * rax_35 = __align(fp - 0x28 - (uint64) ((uint128) (((int64) edi << 0x02) + 0x1E) /u 0x10) *s 0x10 + 0x0F, 16);
+	tLoc18 = (Eq_123) 0x08;
 	fill(edi, rax_35);
-	use(fp - 0x14);
+	use(&tLoc14);
 	use(rax_35);
-	use(fp - 0x18);
+	use(&tLoc18);
 }
 
 // 0000000000400698: void main(Register word32 edi)
@@ -166,17 +178,18 @@ void main(word32 edi)
 // 00000000004006D0: void __libc_csu_init(Register word64 rdx, Register word64 rsi, Register word32 edi)
 void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 {
+	word64 rdi;
 	word32 edi = (word32) rdi;
 	_init();
-	int64 rbp_31 = 0x00600E10 - 0x00600E08;
+	int64 rbp_31 = 0x00600E10 - g_a600E08;
 	if (rbp_31 >> 0x03 != 0x00)
 	{
-		Eq_172 rbx_44 = 0x00;
+		Eq_191 rbx_47 = 0x00;
 		do
 		{
-			(*((char *) g_a600E08 + rbx_44 * 0x08))();
-			rbx_44 = (word64) rbx_44.u1 + 1;
-		} while (rbp_31 >> 0x03 != rbx_44);
+			(*((char *) g_a600E08 + rbx_47 * 0x08))();
+			rbx_47 = (word64) rbx_47.u1 + 1;
+		} while (rbp_31 >> 0x03 != rbx_47);
 	}
 }
 

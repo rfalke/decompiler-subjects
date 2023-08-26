@@ -11,7 +11,7 @@
 word32 fn00401000(int32 dwArg04)
 {
 	if (dwArg04 >= 0x01)
-		return fn00401000(dwArg04 - 0x01) + fn00401000(dwArg04 - 0x02);
+		return fn00401000(dwArg04 - 0x01) + fn00401000(dwArg04 - 2);
 	return 0x01;
 }
 
@@ -22,7 +22,7 @@ word32 fn00401050(uint32 dwArg04, byte * dwArg08, word32 dwArg0C)
 {
 	byte * ecx_32 = dwArg08;
 	word32 eax_6 = dwArg0C;
-	byte * edi_10 = dwArg08 - 0x01 + dwArg0C;
+	byte * edi_10 = dwArg08 - 1 + dwArg0C;
 	if (dwArg08 < edi_10)
 	{
 		uint32 esi_19 = dwArg04;
@@ -44,6 +44,7 @@ word32 fn00401050(uint32 dwArg04, byte * dwArg08, word32 dwArg0C)
 // 004010A0: Register Eq_61 Win32CrtStartup()
 Eq_61 Win32CrtStartup()
 {
+	ptr32 fp;
 	return fn00401050(fn00401000(0x09) + fn00401000(0x08), fp - 100, 100);
 }
 

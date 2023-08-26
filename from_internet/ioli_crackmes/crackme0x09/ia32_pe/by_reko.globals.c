@@ -4,5 +4,4 @@
 
 #include "subject.h"
 
-Eq_478 g_a405310[];
-char g_bFFFFFFFF; // FFFFFFFF
+Eq_488 g_a405310[];

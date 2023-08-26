@@ -2,4 +2,8 @@
 08048343: warning: Call target address 00000000 is invalid.
 080483D0: warning: Call target address 00000000 is invalid.
 0804837D: warning: Call target address 00000000 is invalid.
+signed_char_modulo: warning: Stopping value propagation after iterating 10000 times.
+signed_short_modulo: warning: Stopping value propagation after iterating 10000 times.
+signed_int_modulo: warning: Stopping value propagation after iterating 10000 times.
+signed_long_int_modulo: warning: Stopping value propagation after iterating 10000 times.
 === Killed because of CPU time limit

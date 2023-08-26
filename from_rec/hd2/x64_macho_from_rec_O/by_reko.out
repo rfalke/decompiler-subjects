@@ -1,1 +1,25 @@
 === Using options:--aggressive-branch-removal
+0000000100000CEE: warning: Unable to resolve imported reference __stack_chk_guard.
+0000000100000E44: warning: Unable to resolve imported reference stat$INODE64.
+0000000100000E44: warning: Unable to resolve imported reference stat$INODE64.
+0000000100000D97: warning: Unable to resolve imported reference __stack_chk_guard.
+0000000100000D97: warning: Unable to resolve imported reference __stack_chk_guard.
+0000000100000B06: warning: Unable to resolve imported reference __stack_chk_guard.
+0000000100000E14: warning: Unable to resolve imported reference __strcat_chk.
+0000000100000E14: warning: Unable to resolve imported reference __strcat_chk.
+0000000100000CB5: warning: Unable to resolve imported reference __stack_chk_guard.
+0000000100000D97: warning: Unable to resolve imported reference __stack_chk_guard.
+0000000100000E08: warning: Unable to determine format string for call to '__sprintf_chk'.
+0000000100000E08: warning: Unable to determine format string for call to '__sprintf_chk'.
+0000000100000E08: warning: Unable to determine format string for call to '__sprintf_chk'.
+0000000100000E08: warning: Unable to determine format string for call to '__sprintf_chk'.
+0000000100000E08: warning: Unable to determine format string for call to '__sprintf_chk'.
+0000000100000E3E: warning: Unable to determine format string for call to 'sprintf'.
+0000000100000E3E: warning: Unable to determine format string for call to 'sprintf'.
+0000000100000E3E: warning: Unable to determine format string for call to 'sprintf'.
+0000000100000E3E: warning: Unable to determine format string for call to 'sprintf'.
+0000000100000E3E: warning: Unable to determine format string for call to 'sprintf'.
+0000000100000E08: warning: Unable to determine format string for call to '__sprintf_chk'.
+0000000100000E3E: warning: Unable to determine format string for call to 'sprintf'.
+0000000100000E08: warning: Unable to determine format string for call to '__sprintf_chk'.
+0000000100000E3E: warning: Unable to determine format string for call to 'sprintf'.

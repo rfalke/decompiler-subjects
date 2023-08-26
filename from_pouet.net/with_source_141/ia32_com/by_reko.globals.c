@@ -4,6 +4,8 @@
 
 #include "subject.h"
 
-struct Eq_44 * g_ptrFFFA0000;
-struct Eq_36 * g_ptrC000;
-
+struct seg0C00_t * g_ptrC000; // 0000C000
+word16 g_w0162; // 0C00:0262
+word16 g_w0164; // 0C00:0264
+word16 g_w0166; // 0C00:0266
+struct Eq_39 * g_ptrFFFA0000; // FFFA0000

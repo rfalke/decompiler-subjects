@@ -4,9 +4,9 @@
 
 #include "subject.h"
 
-<anonymous> * g_ptr4000; // 0000000000004000
-<anonymous> * g_ptr4008; // 0000000000004008
-<anonymous> * g_ptr4010; // 0000000000004010
+<anonymous> * __imp__printf; // 0000000000004000
+<anonymous> * __imp__putchar; // 0000000000004008
+<anonymous> * __imp__puts; // 0000000000004010
 byte g_b8000; // 0000000000008000
 byte g_b8008; // 0000000000008008
 byte g_b8009; // 0000000000008009

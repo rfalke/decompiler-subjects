@@ -4,8 +4,8 @@
 
 #include "subject.h"
 
-// 0000000100008040: void _buffer()
-void _buffer()
+// 0000000100008040: void buffer()
+void buffer()
 {
 }
 
@@ -15,8 +15,8 @@ void _buffer()
 
 #include "subject.h"
 
-// 0000000100008018: void __dyld_private()
-void __dyld_private()
+// 0000000100008018: void _dyld_private()
+void _dyld_private()
 {
 }
 
@@ -26,29 +26,29 @@ void __dyld_private()
 
 #include "subject.h"
 
-// 00000001000037E0: void _printf()
+// 00000001000037E0: void printf()
 // Called from:
-//      _dump
-//      _print_word
-void _printf()
+//      dump
+//      print_word
+void printf()
 {
-	g_ptr8000();
+	__imp__printf();
 }
 
-// 00000001000037EC: void _putchar()
+// 00000001000037EC: void putchar()
 // Called from:
-//      _dump
-void _putchar()
+//      dump
+void putchar()
 {
-	g_ptr8008();
+	__imp__putchar();
 }
 
-// 00000001000037F8: void _puts()
+// 00000001000037F8: void puts()
 // Called from:
-//      _dump
-void _puts()
+//      dump
+void puts()
 {
-	g_ptr8010();
+	__imp__puts();
 }
 
 // subject_TEXT_text.c
@@ -57,257 +57,346 @@ void _puts()
 
 #include "subject.h"
 
-// 0000000100002844: void _main()
-void _main()
+// 0000000100002844: void main()
+void main()
 {
-	Eq_2 q0_18 = __movi_i8(~0x1111111111111111);
-	g_t8060 = q0_18;
-	g_t8070 = q0_18;
-	g_t8040 = q0_18;
-	g_t8050 = q0_18;
-	_full_write_with_str();
+	g_ow8060 = 0EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE;
+	g_ow8070 = 0EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE;
+	g_ow8040 = 0EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE;
+	g_ow8050 = 0EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE;
+	full_write_with_str(&g_ow8040);
+	dump();
+	g_ow8060 = 0EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE;
+	g_ow8070 = 0EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE;
+	g_ow8040 = 0EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE;
+	g_ow8050 = 0EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE;
+	full_store_with_byte_wise_st1(&g_ow8040);
+	dump();
+	g_ow8060 = 0EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE;
+	g_ow8070 = 0EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE;
+	g_ow8040 = 0EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE;
+	g_ow8050 = 0EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE;
+	full_store_with_8byte_wise_st1(&g_ow8040);
+	dump();
+	g_ow8060 = 0EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE;
+	g_ow8070 = 0EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE;
+	g_ow8040 = 0EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE;
+	g_ow8050 = 0EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE;
+	half_store_with_8byte_wise_st1(&g_ow8040);
+	dump();
+	g_ow8060 = 0EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE;
+	g_ow8070 = 0EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE;
+	g_ow8040 = 0EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE;
+	g_ow8050 = 0EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE;
+	full_store_2_regs_with_byte_wise_st1();
 }
 
-// 0000000100002CC8: void _dump()
+// 0000000100002CC8: void dump()
 // Called from:
-//      _main
-void _dump()
+//      main
+void dump()
 {
-	_printf();
-	_puts();
-	_printf();
-	_print_word();
-	_putchar();
-	_print_word();
-	_putchar();
-	_printf();
-	_print_word();
-	_putchar();
-	_print_word();
-	_putchar();
-	_printf();
-	_print_word();
-	_putchar();
-	_print_word();
-	_putchar();
-	_printf();
-	_print_word();
-	_putchar();
-	_print_word();
-	_putchar();
-	_putchar();
+	printf();
+	puts();
+	printf();
+	print_word();
+	putchar();
+	print_word();
+	putchar();
+	printf();
+	print_word();
+	putchar();
+	print_word();
+	putchar();
+	printf();
+	print_word();
+	putchar();
+	print_word();
+	putchar();
+	printf();
+	print_word();
+	putchar();
+	print_word();
+	putchar();
+	putchar();
 }
 
-// 0000000100002DCC: Register ptr64 _print_word()
+// 0000000100002DCC: Register ptr64 print_word()
 // Called from:
-//      _dump
-ptr64 _print_word()
+//      dump
+ptr64 print_word()
 {
-	_printf();
-	_printf();
-	_printf();
-	_printf();
-	_printf();
-	_printf();
-	_printf();
-	_printf();
-	_printf();
+	printf();
+	printf();
+	printf();
+	printf();
+	printf();
+	printf();
+	printf();
+	printf();
+	printf();
 	return 0x100003F93;
 }
 
-// 0000000100002EB0: void _full_write_with_str()
+// 0000000100002EB0: void full_write_with_str(Register (ptr64 word128) x0)
 // Called from:
-//      _main
-void _full_write_with_str()
+//      main
+void full_write_with_str(word128 * x0)
+{
+	*x0 = 1F1E1D1C1B1A19181716151413121110;
+}
+
+// 0000000100002F04: void full_store_with_byte_wise_st1(Register (ptr64 word128) x0)
+// Called from:
+//      main
+void full_store_with_byte_wise_st1(word128 * x0)
+{
+	__st1<word128>(x0, 1F1E1D1C1B1A19181716151413121110);
+}
+
+// 0000000100002F58: void full_store_with_8byte_wise_st1(Register (ptr64 word128) x0)
+// Called from:
+//      main
+void full_store_with_8byte_wise_st1(word128 * x0)
+{
+	__st1<word128>(x0, 1F1E1D1C1B1A19181716151413121110);
+}
+
+// 0000000100002FAC: void half_store_with_8byte_wise_st1(Register (ptr64 word128) x0)
+// Called from:
+//      main
+void half_store_with_8byte_wise_st1(word128 * x0)
+{
+	__st1<word128>(x0, 1F1E1D1C1B1A19181716151413121110);
+}
+
+// 0000000100003000: void full_store_2_regs_with_byte_wise_st1()
+// Called from:
+//      main
+void full_store_2_regs_with_byte_wise_st1()
 {
 }
 
-// 0000000100002F04: void _full_store_with_byte_wise_st1()
+// 0000000100003054: void full_store_4_regs_with_byte_wise_st1()
 // Called from:
-//      _main
-void _full_store_with_byte_wise_st1()
+//      main
+void full_store_4_regs_with_byte_wise_st1()
 {
 }
 
-// 0000000100002F58: void _full_store_with_8byte_wise_st1()
+// 00000001000030A8: void indexed_st1__one_byte_from_index_0(Register (ptr64 byte) x0)
 // Called from:
-//      _main
-void _full_store_with_8byte_wise_st1()
+//      main
+void indexed_st1__one_byte_from_index_0(byte * x0)
+{
+	*x0 = 0x10;
+}
+
+// 00000001000030FC: void indexed_st1__one_byte_from_index_3(Register (ptr64 byte) x0)
+// Called from:
+//      main
+void indexed_st1__one_byte_from_index_3(byte * x0)
+{
+	*x0 = 0x13;
+}
+
+// 0000000100003150: void indexed_st1__8_bytes_from_low(Register (ptr64 word64) x0)
+// Called from:
+//      main
+void indexed_st1__8_bytes_from_low(word64 * x0)
+{
+	*x0 = 0x1716151413121110;
+}
+
+// 00000001000031A4: void indexed_st1__8_bytes_from_high(Register (ptr64 word64) x0)
+// Called from:
+//      main
+void indexed_st1__8_bytes_from_high(word64 * x0)
+{
+	*x0 = 2242261671028070680;
+}
+
+// 00000001000031F8: void write_interleaved_bytes_from_2_regs(Register (ptr64 word128) x0)
+// Called from:
+//      main
+void write_interleaved_bytes_from_2_regs(word128 * x0)
+{
+	__st2<word128>(x0, 1F1E1D1C1B1A19181716151413121110, __simd_add<byte[16]>(1F1E1D1C1B1A19181716151413121110, 10101010101010101010101010101010));
+}
+
+// 000000010000324C: void write_interleaved_bytes_from_2_regs__half_(Register (ptr64 word128) x0)
+// Called from:
+//      main
+void write_interleaved_bytes_from_2_regs__half_(word128 * x0)
+{
+	__st2<word128>(x0, 1F1E1D1C1B1A19181716151413121110, __simd_add<byte[16]>(1F1E1D1C1B1A19181716151413121110, 10101010101010101010101010101010));
+}
+
+// 00000001000032A0: void write_interleaved_8_bytes_from_2_regs(Register (ptr64 word128) x0)
+// Called from:
+//      main
+void write_interleaved_8_bytes_from_2_regs(word128 * x0)
+{
+	__st2<word128>(x0, 1F1E1D1C1B1A19181716151413121110, __simd_add<byte[16]>(1F1E1D1C1B1A19181716151413121110, 10101010101010101010101010101010));
+}
+
+// 00000001000032F4: void indexed_st2__write_2_bytes_from_2_regs(Register (ptr64 Eq_211) x0)
+// Called from:
+//      main
+void indexed_st2__write_2_bytes_from_2_regs(struct Eq_211 * x0)
+{
+	Eq_185 q1_34 = __simd_add<byte[16]>(1F1E1D1C1B1A19181716151413121110, 10101010101010101010101010101010);
+	x0->b0000 = 0x19;
+	x0->t0001.u0 = (byte) *((word128) q1_34 + 9);
+}
+
+// 0000000100003348: void indexed_st2__8_bytes_from_lows(Register (ptr64 Eq_226) x0)
+// Called from:
+//      main
+void indexed_st2__8_bytes_from_lows(struct Eq_226 * x0)
+{
+	Eq_185 q1_34 = __simd_add<byte[16]>(1F1E1D1C1B1A19181716151413121110, 10101010101010101010101010101010);
+	x0->qw0000 = 0x1716151413121110;
+	x0->t0008.u1 = (word64) *q1_34;
+}
+
+// 000000010000339C: void indexed_st2__8_bytes_from_highs(Register (ptr64 Eq_241) x0)
+// Called from:
+//      main
+void indexed_st2__8_bytes_from_highs(struct Eq_241 * x0)
+{
+	Eq_185 q1_34 = __simd_add<byte[16]>(1F1E1D1C1B1A19181716151413121110, 10101010101010101010101010101010);
+	x0->qw0000 = 2242261671028070680;
+	x0->t0008.u1 = (word64) *((word128) q1_34 + 1);
+}
+
+// 00000001000033F0: void write_interleaved_bytes_from_3_regs(Register (ptr64 word128) x0)
+// Called from:
+//      main
+void write_interleaved_bytes_from_3_regs(word128 * x0)
+{
+	Eq_185 q1_34 = __simd_add<byte[16]>(1F1E1D1C1B1A19181716151413121110, 10101010101010101010101010101010);
+	__st3<word128>(x0, 1F1E1D1C1B1A19181716151413121110, q1_34, __simd_add<byte[16]>(q1_34, 10101010101010101010101010101010));
+}
+
+// 0000000100003444: void write_interleaved_bytes_from_3_regs__half_(Register (ptr64 word128) x0)
+// Called from:
+//      main
+void write_interleaved_bytes_from_3_regs__half_(word128 * x0)
+{
+	Eq_185 q1_34 = __simd_add<byte[16]>(1F1E1D1C1B1A19181716151413121110, 10101010101010101010101010101010);
+	__st3<word128>(x0, 1F1E1D1C1B1A19181716151413121110, q1_34, __simd_add<byte[16]>(q1_34, 10101010101010101010101010101010));
+}
+
+// 0000000100003498: void write_interleaved_8_bytes_from_3_regs(Register (ptr64 word128) x0)
+// Called from:
+//      main
+void write_interleaved_8_bytes_from_3_regs(word128 * x0)
+{
+	Eq_185 q1_34 = __simd_add<byte[16]>(1F1E1D1C1B1A19181716151413121110, 10101010101010101010101010101010);
+	__st3<word128>(x0, 1F1E1D1C1B1A19181716151413121110, q1_34, __simd_add<byte[16]>(q1_34, 10101010101010101010101010101010));
+}
+
+// 00000001000034EC: void indexed_st3__write_3_bytes_from_3_regs()
+// Called from:
+//      main
+void indexed_st3__write_3_bytes_from_3_regs()
 {
 }
 
-// 0000000100002FAC: void _half_store_with_8byte_wise_st1()
+// 0000000100003540: void indexed_st3__8_bytes_from_lows(Register (ptr64 Eq_297) x0)
 // Called from:
-//      _main
-void _half_store_with_8byte_wise_st1()
+//      main
+void indexed_st3__8_bytes_from_lows(struct Eq_297 * x0)
 {
+	Eq_185 q1_34 = __simd_add<byte[16]>(1F1E1D1C1B1A19181716151413121110, 10101010101010101010101010101010);
+	Eq_185 q2_37 = __simd_add<byte[16]>(q1_34, 10101010101010101010101010101010);
+	x0->qw0000 = 0x1716151413121110;
+	x0->t0008.u1 = (word64) *q1_34;
+	x0->t0010.u1 = (word64) *q2_37;
 }
 
-// 0000000100003000: void _full_store_2_regs_with_byte_wise_st1()
+// 0000000100003594: void indexed_st3__8_bytes_from_highs(Register (ptr64 Eq_321) x0)
 // Called from:
-//      _main
-void _full_store_2_regs_with_byte_wise_st1()
+//      main
+void indexed_st3__8_bytes_from_highs(struct Eq_321 * x0)
 {
+	Eq_185 q1_34 = __simd_add<byte[16]>(1F1E1D1C1B1A19181716151413121110, 10101010101010101010101010101010);
+	Eq_185 q2_37 = __simd_add<byte[16]>(q1_34, 10101010101010101010101010101010);
+	x0->qw0000 = 2242261671028070680;
+	x0->t0008.u1 = (word64) *((word128) q1_34 + 1);
+	x0->t0010.u1 = (word64) *((word128) q2_37 + 1);
 }
 
-// 0000000100003054: void _full_store_4_regs_with_byte_wise_st1()
+// 00000001000035E8: void write_interleaved_bytes_from_4_regs(Register (ptr64 word128) x0)
 // Called from:
-//      _main
-void _full_store_4_regs_with_byte_wise_st1()
+//      main
+void write_interleaved_bytes_from_4_regs(word128 * x0)
 {
+	Eq_185 q1_34 = __simd_add<byte[16]>(1F1E1D1C1B1A19181716151413121110, 10101010101010101010101010101010);
+	Eq_185 q2_37 = __simd_add<byte[16]>(q1_34, 10101010101010101010101010101010);
+	__st4<word128>(x0, 1F1E1D1C1B1A19181716151413121110, q1_34, q2_37, __simd_add<byte[16]>(q2_37, 10101010101010101010101010101010));
 }
 
-// 00000001000030A8: void _indexed_st1__one_byte_from_index_0()
+// 000000010000363C: void write_interleaved_bytes_from_4_regs__half_(Register (ptr64 word128) x0)
 // Called from:
-//      _main
-void _indexed_st1__one_byte_from_index_0()
+//      main
+void write_interleaved_bytes_from_4_regs__half_(word128 * x0)
 {
+	Eq_185 q1_34 = __simd_add<byte[16]>(1F1E1D1C1B1A19181716151413121110, 10101010101010101010101010101010);
+	Eq_185 q2_37 = __simd_add<byte[16]>(q1_34, 10101010101010101010101010101010);
+	__st4<word128>(x0, 1F1E1D1C1B1A19181716151413121110, q1_34, q2_37, __simd_add<byte[16]>(q2_37, 10101010101010101010101010101010));
 }
 
-// 00000001000030FC: void _indexed_st1__one_byte_from_index_3()
+// 0000000100003690: void write_interleaved_8_bytes_from_4_regs(Register (ptr64 word128) x0)
 // Called from:
-//      _main
-void _indexed_st1__one_byte_from_index_3()
+//      main
+void write_interleaved_8_bytes_from_4_regs(word128 * x0)
 {
+	Eq_185 q1_34 = __simd_add<byte[16]>(1F1E1D1C1B1A19181716151413121110, 10101010101010101010101010101010);
+	Eq_185 q2_37 = __simd_add<byte[16]>(q1_34, 10101010101010101010101010101010);
+	__st4<word128>(x0, 1F1E1D1C1B1A19181716151413121110, q1_34, q2_37, __simd_add<byte[16]>(q2_37, 10101010101010101010101010101010));
 }
 
-// 0000000100003150: void _indexed_st1__8_bytes_from_low()
+// 00000001000036E4: void indexed_st4__write_4_bytes_from_4_regs(Register (ptr64 Eq_399) x0)
 // Called from:
-//      _main
-void _indexed_st1__8_bytes_from_low()
+//      main
+void indexed_st4__write_4_bytes_from_4_regs(struct Eq_399 * x0)
 {
+	Eq_185 q1_34 = __simd_add<byte[16]>(1F1E1D1C1B1A19181716151413121110, 10101010101010101010101010101010);
+	Eq_185 q2_37 = __simd_add<byte[16]>(q1_34, 10101010101010101010101010101010);
+	Eq_185 q3_40 = __simd_add<byte[16]>(q2_37, 10101010101010101010101010101010);
+	x0->b0000 = 0x19;
+	x0->t0001.u0 = (byte) *((word128) q1_34 + 9);
+	x0->t0002.u0 = (byte) *((word128) q2_37 + 9);
+	x0->t0003.u0 = (byte) *((word128) q3_40 + 9);
 }
 
-// 00000001000031A4: void _indexed_st1__8_bytes_from_high()
+// 0000000100003738: void indexed_st4__8_bytes_from_lows(Register (ptr64 Eq_432) x0)
 // Called from:
-//      _main
-void _indexed_st1__8_bytes_from_high()
+//      main
+void indexed_st4__8_bytes_from_lows(struct Eq_432 * x0)
 {
+	Eq_185 q1_34 = __simd_add<byte[16]>(1F1E1D1C1B1A19181716151413121110, 10101010101010101010101010101010);
+	Eq_185 q2_37 = __simd_add<byte[16]>(q1_34, 10101010101010101010101010101010);
+	Eq_185 q3_40 = __simd_add<byte[16]>(q2_37, 10101010101010101010101010101010);
+	x0->qw0000 = 0x1716151413121110;
+	x0->t0008.u1 = (word64) *q1_34;
+	x0->t0010.u1 = (word64) *q2_37;
+	x0->t0018.u1 = (word64) *q3_40;
 }
 
-// 00000001000031F8: void _write_interleaved_bytes_from_2_regs()
+// 000000010000378C: void indexed_st4__8_bytes_from_highs(Register (ptr64 Eq_465) x0)
 // Called from:
-//      _main
-void _write_interleaved_bytes_from_2_regs()
+//      main
+void indexed_st4__8_bytes_from_highs(struct Eq_465 * x0)
 {
-}
-
-// 000000010000324C: void _write_interleaved_bytes_from_2_regs__half_()
-// Called from:
-//      _main
-void _write_interleaved_bytes_from_2_regs__half_()
-{
-}
-
-// 00000001000032A0: void _write_interleaved_8_bytes_from_2_regs()
-// Called from:
-//      _main
-void _write_interleaved_8_bytes_from_2_regs()
-{
-}
-
-// 00000001000032F4: void _indexed_st2__write_2_bytes_from_2_regs()
-// Called from:
-//      _main
-void _indexed_st2__write_2_bytes_from_2_regs()
-{
-}
-
-// 0000000100003348: void _indexed_st2__8_bytes_from_lows()
-// Called from:
-//      _main
-void _indexed_st2__8_bytes_from_lows()
-{
-}
-
-// 000000010000339C: void _indexed_st2__8_bytes_from_highs()
-// Called from:
-//      _main
-void _indexed_st2__8_bytes_from_highs()
-{
-}
-
-// 00000001000033F0: void _write_interleaved_bytes_from_3_regs()
-// Called from:
-//      _main
-void _write_interleaved_bytes_from_3_regs()
-{
-}
-
-// 0000000100003444: void _write_interleaved_bytes_from_3_regs__half_()
-// Called from:
-//      _main
-void _write_interleaved_bytes_from_3_regs__half_()
-{
-}
-
-// 0000000100003498: void _write_interleaved_8_bytes_from_3_regs()
-// Called from:
-//      _main
-void _write_interleaved_8_bytes_from_3_regs()
-{
-}
-
-// 00000001000034EC: void _indexed_st3__write_3_bytes_from_3_regs()
-// Called from:
-//      _main
-void _indexed_st3__write_3_bytes_from_3_regs()
-{
-}
-
-// 0000000100003540: void _indexed_st3__8_bytes_from_lows()
-// Called from:
-//      _main
-void _indexed_st3__8_bytes_from_lows()
-{
-}
-
-// 0000000100003594: void _indexed_st3__8_bytes_from_highs()
-// Called from:
-//      _main
-void _indexed_st3__8_bytes_from_highs()
-{
-}
-
-// 00000001000035E8: void _write_interleaved_bytes_from_4_regs()
-// Called from:
-//      _main
-void _write_interleaved_bytes_from_4_regs()
-{
-}
-
-// 000000010000363C: void _write_interleaved_bytes_from_4_regs__half_()
-// Called from:
-//      _main
-void _write_interleaved_bytes_from_4_regs__half_()
-{
-}
-
-// 0000000100003690: void _write_interleaved_8_bytes_from_4_regs()
-// Called from:
-//      _main
-void _write_interleaved_8_bytes_from_4_regs()
-{
-}
-
-// 00000001000036E4: void _indexed_st4__write_4_bytes_from_4_regs()
-// Called from:
-//      _main
-void _indexed_st4__write_4_bytes_from_4_regs()
-{
-}
-
-// 0000000100003738: void _indexed_st4__8_bytes_from_lows()
-// Called from:
-//      _main
-void _indexed_st4__8_bytes_from_lows()
-{
-}
-
-// 000000010000378C: void _indexed_st4__8_bytes_from_highs()
-// Called from:
-//      _main
-void _indexed_st4__8_bytes_from_highs()
-{
+	Eq_185 q1_34 = __simd_add<byte[16]>(1F1E1D1C1B1A19181716151413121110, 10101010101010101010101010101010);
+	Eq_185 q2_37 = __simd_add<byte[16]>(q1_34, 10101010101010101010101010101010);
+	Eq_185 q3_40 = __simd_add<byte[16]>(q2_37, 10101010101010101010101010101010);
+	x0->qw0000 = 2242261671028070680;
+	x0->t0008.u1 = (word64) *((word128) q1_34 + 1);
+	x0->t0010.u1 = (word64) *((word128) q2_37 + 1);
+	x0->t0018.u1 = (word64) *((word128) q3_40 + 1);
 }
 

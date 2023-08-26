@@ -95,12 +95,13 @@ word32 _IO_stdin_used = 0x00020001; // 08048470
 
 #include "subject.h"
 
-// 08048244: void _start(Register (ptr32 Eq_13) edx, Stack int32 dwArg00)
-void _start(void (* edx)(), int32 dwArg00)
+// 08048244: void _start(Register (ptr32 Eq_13) edx, Stack int32 dwArg00, Stack (ptr32 char) ptrArg04)
+void _start(void (* edx)(), int32 dwArg00, char * ptrArg04)
 {
-	__align((char *) fp + 4);
-	__libc_start_main(&g_t80482F4, dwArg00, (char *) fp + 4, &g_t80483C8, &g_t80483F8, edx, fp);
-	__hlt();
+	void * fp;
+	__align_stack<word32>(&ptrArg04);
+	__libc_start_main(&g_t80482F4, dwArg00, &ptrArg04, &g_t80483C8, &g_t80483F8, edx, fp);
+	__halt();
 }
 
 // 08048268: void call_gmon_start()
@@ -124,8 +125,8 @@ void __do_global_dtors_aux()
 		<anonymous> * edx_12 = *eax_11;
 		while (edx_12 != null)
 		{
-			<anonymous> ** eax_19 = (char *) eax_11 + 4;
-			g_ptr8049480 = eax_19;
+			<anonymous> ** eax_20 = (char *) eax_11 + 4;
+			g_ptr8049480 = eax_20;
 			edx_12();
 			eax_11 = g_ptr8049480;
 			edx_12 = (<anonymous> *) *eax_11;
@@ -144,7 +145,8 @@ void frame_dummy()
 // 080482F4: void main(Stack int32 dwArg04)
 void main(int32 dwArg04)
 {
-	__align(fp - 0x0C);
+	ptr32 fp;
+	__align_stack<word32>(fp - 0x0C);
 	if (dwArg04 != 0x05)
 	{
 		if (dwArg04 <= 0x05)
@@ -166,15 +168,15 @@ l080483B2:
 	{
 		do
 		{
-			int32 v8_19 = dwArg04 - 0x01;
-			dwArg04 = v8_19;
+			int32 v9_19 = dwArg04 - 0x01;
+			dwArg04 = v9_19;
 			if (dwArg04 > 0x01)
 			{
-				dwArg04 = v8_19 - 0x01;
-				if (v8_19 > 0x02)
+				dwArg04 = v9_19 - 0x01;
+				if (v9_19 > 0x02)
 					goto l08048347;
 			}
-			else if (v8_19 == 0x0C)
+			else if (v9_19 == 0x0C)
 				goto l080483B2;
 		} while (dwArg04 > 0x00);
 	}

@@ -4,19 +4,90 @@
 
 #include "subject.h"
 
-// 08048054: void fn08048054()
+// 08048054: void fn08048054(Register uint32 eax)
 // Called from:
 //      fn0804807C
-void fn08048054()
+void fn08048054(uint32 eax)
 {
-	__syscall(0x80);
-	__syscall(0x80);
-	__syscall(0x80);
+	if (sys_ioctl(eax, 0x5401, 0x08048177) >= 0x00)
+	{
+		sys_close(eax);
+		sys_dup(g_t804819B.u0);
+	}
 }
 
-// 0804807C: void fn0804807C(Stack ui32 dwArg00, Stack (ptr32 byte) dwArg08)
-void fn0804807C(ui32 dwArg00, byte * dwArg08)
+// 0804807C: void fn0804807C(Stack ui32 dwArg00, Stack (ptr32 char) ptrArg08)
+void fn0804807C(ui32 dwArg00, char * ptrArg08)
 {
+	ptr32 fp;
+	struct Eq_26 * ebp_7 = fp + 4 + dwArg00 * 0x04;
+	if (dwArg00 != 0x01)
+	{
+		sys_signal(0x01, (int32 (*)()) 0x01);
+		Eq_19 eax_34 = sys_open(&g_b804816E, 0x0442, 0x0180);
+		Eq_19 eax_35 = eax_34;
+		if (eax_34 >= 0x00)
+		{
+l080480E3:
+			g_t804819B.u0 = (int32) eax_35;
+			fn08048054(0x01);
+			fn08048054(0x02);
+			sys_close(g_t804819B.u0);
+			ui32 ecx_104 = 0x00;
+			do
+			{
+				struct Eq_76 * esi_111 = ebp_7->a0004[ecx_104];
+				if (esi_111 == null)
+					goto l0804804C;
+				++ecx_104;
+				if (esi_111->dw0000 != 0x48544150)
+					continue;
+				byte * esi_134 = &esi_111->b0004 + 1;
+			} while (esi_111->b0004 != 0x3D);
+			int32 ecx_150 = ~0x00 - (strlen(ptrArg08) + 1) + (~0x00 - (strlen(&esi_111->b0004 + 1) + 1));
+			while (true)
+			{
+				byte * edi_154 = (char *) &ptrArg08 + ecx_150;
+				do
+				{
+					byte al_157 = *esi_134;
+					++esi_134;
+					if (al_157 == 0x3A)
+						break;
+					*edi_154 = al_157;
+					++edi_154;
+				} while (al_157 != 0x00);
+				byte * esi_174 = ptrArg08;
+				*edi_154 = 0x2F;
+				byte * edi_178 = edi_154 + 1;
+				do
+				{
+					byte al_181 = *esi_174;
+					*edi_178 = al_181;
+					++esi_174;
+					++edi_178;
+				} while (al_181 != 0x00);
+				sys_execve((char *) &ptrArg08 + ecx_150, &ptrArg08, ebp_7->a0004);
+			}
+		}
+		ui32 ecx_40 = 0x00;
+		do
+		{
+			struct Eq_76 * esi_47 = ebp_7->a0004[ecx_40];
+			++ecx_40;
+		} while (esi_47->dw0000 != 0x454D4F48 || esi_47->b0004 != 0x3D);
+		sys_chdir(&esi_47->b0004 + 1);
+		Eq_19 eax_71 = sys_open(&g_b804816E, 0x0442, 0x0180);
+		eax_35 = eax_71;
+		if (eax_71 >= 0x00)
+			goto l080480E3;
+	}
+l0804804C:
+	sys_exit(0x01);
 }
 
-word32 g_dw804819B = 0x00; // 0804819B
+char g_b804816E = 'n'; // 0804816E
+Eq_19 g_t804819B = // 0804819B
+	{
+		0
+	};

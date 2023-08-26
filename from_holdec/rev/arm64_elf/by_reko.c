@@ -13,13 +13,15 @@ int32 (* g_ptr1FFE8)(int32 x0, char ** x1, char ** x2) = &g_t0FC0; // 0000000000
 
 #include "subject.h"
 
-Eq_6 g_t0FC0 = ??/* Unexpected function type (fn int32 (int32, (ptr64 (ptr64 char)), (ptr64 (ptr64 char)))) */ ; // 0000000000000FC0
-// 0000000000001460: void fn0000000000001460(Register (ptr64 Eq_2) x0, Stack word32 dwArg00)
-void fn0000000000001460(void (* x0)(), word32 dwArg00)
+Eq_9 g_t0FC0 = ??/* Unexpected function type (fn int32 (int32, (ptr64 (ptr64 char)), (ptr64 (ptr64 char)))) */ ; // 0000000000000FC0
+// 0000000000001460: void fn0000000000001460(Register (ptr64 Eq_2) x0, Stack word32 dwArg00, Stack (ptr64 char) ptrArg08)
+void fn0000000000001460(void (* x0)(), word32 dwArg00, char * ptrArg08)
 {
-	x0_17 = (uint64) __libc_start_main(g_ptr1FFE8, (int32) qwArg00, (char *) fp + 8, g_ptr1FFE0, g_ptr1FF98, x0, fp);
+	void * fp;
+	word64 qwArg00;
+	__libc_start_main(g_ptr1FFE8, (int32) qwArg00, &ptrArg08, g_ptr1FFE0, g_ptr1FF98, x0, fp);
 	abort();
 }
 
-Eq_9 g_t16B8 = ??/* Unexpected function type (fn void ()) */ ; // 00000000000016B8
-Eq_10 g_t1738 = ??/* Unexpected function type (fn void ()) */ ; // 0000000000001738
+Eq_12 g_t16B8 = ??/* Unexpected function type (fn void ()) */ ; // 00000000000016B8
+Eq_13 g_t1738 = ??/* Unexpected function type (fn void ()) */ ; // 0000000000001738

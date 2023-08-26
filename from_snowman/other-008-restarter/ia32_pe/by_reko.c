@@ -55,14 +55,14 @@ word32 g_dw40237C = 0x2492; // 0040237C
 //      Win32CrtStartup
 void fn00401000(Eq_2 eax)
 {
+	Eq_3 tLoc08;
 	Eq_2 eax_20 = GetLastError();
-	FormatMessageW(0x1300, null, eax_20, 0x0400, fp - 0x08, 0x00, null);
-	int32 ecx_51 = lstrlenW(dwLoc08) + lstrlenW(eax);
-	Eq_2 eax_57 = LocalAlloc(0x40, ecx_51 + 0x2000 + ecx_51);
+	FormatMessageW(0x1300, null, eax_20, 0x0400, &tLoc08, 0x00, null);
+	Eq_2 eax_57 = LocalAlloc(0x40, (lstrlenW(tLoc08) + lstrlenW(eax)) * 0x02 + 0x2000);
 	wsprintfW(eax_57, 0x00402080, 0x00);
-	*((word32) eax_57 + 0x0800) = 0x00;
+	((word32) eax_57 + 0x0800)->u2 = 0x00;
 	MessageBoxW(null, eax_57, 0x00402234, 0x00);
-	LocalFree(dwLoc08);
+	LocalFree(tLoc08);
 	LocalFree(eax_57);
 	ExitProcess(eax_20);
 }
@@ -72,6 +72,7 @@ void fn00401000(Eq_2 eax)
 //      Win32CrtStartup
 word32 fn004010A0(Eq_2 edi)
 {
+	Eq_87 tLoc0254;
 	int32 esi_19 = 0x00;
 	if (DeleteFileW(edi) != 0x00)
 		return 0x01;
@@ -82,14 +83,14 @@ word32 fn004010A0(Eq_2 edi)
 	{
 		if (DeleteFileW(edi) != 0x00)
 			return 0x01;
-		Eq_96 eax_55 = FindFirstFileW(edi, fp - 0x0254);
-		if (eax_55 == (void *) ~0x00)
+		Eq_109 eax_58 = FindFirstFileW(edi, &tLoc0254);
+		if (eax_58 == (void *) ~0x00)
 		{
 			if (GetLastError() == 0x02)
 				return 0x01;
 		}
 		else
-			FindClose(eax_55);
+			FindClose(eax_58);
 		Sleep(100);
 		++esi_19;
 	} while (esi_19 < 0x0A);
@@ -99,76 +100,82 @@ word32 fn004010A0(Eq_2 edi)
 // 00401130: Register Eq_2 Win32CrtStartup()
 Eq_2 Win32CrtStartup()
 {
-	__align(fp - 4);
-	struct Eq_137 * eax_24 = CommandLineToArgvW(GetCommandLineW(), fp - 0x60);
+	ptr32 fp;
+	int32 dwLoc60;
+	Eq_146 tLoc5C;
+	Eq_147 tLoc4C;
+	__align_stack<word32>(fp - 4);
+	struct Eq_154 * eax_24 = CommandLineToArgvW(GetCommandLineW(), &dwLoc60);
 	if (eax_24 != null)
 	{
-		if (dwLoc60 != 0x05)
-			return dwLoc60 + 1000;
-		uint32 edx_239;
-		union Eq_158 * edi_36 = eax_24->ptr0004;
-		if (edi_36 != null)
+		word32 eax_34 = dwLoc60;
+		if (eax_34 != 0x05)
+			return eax_34 + 1000;
+		uint32 edx_252;
+		struct Eq_178 * edi_37 = eax_24->ptr0004;
+		if (edi_37 != null)
 		{
-			word32 esi_41;
-			union Eq_158 * eax_42 = edi_36;
-			for (esi_41 = 0x14; esi_41 != 0x00; --esi_41)
+			int32 esi_43;
+			struct Eq_178 * eax_44 = edi_37;
+			for (esi_43 = 20; esi_43 != 0x00; --esi_43)
 			{
-				if (*eax_42 == 0x00)
+				if (eax_44->a0000[0] == 0x00)
 				{
-					if (esi_41 == 0x00)
+					if (esi_43 == 0x00)
 						break;
-					edx_239 = 0x14 - esi_41;
+					edx_252 = 0x14 - esi_43;
 					goto l00401195;
 				}
-				eax_42 = (union Eq_158 *) ((char *) eax_42 + 2);
+				++eax_44;
 			}
 		}
-		edx_239 = 0x00;
+		edx_252 = 0x00;
 l00401195:
-		Eq_2 ecx_67 = 0x00;
-		uint32 eax_57 = 0x00;
-		if (edx_239 != 0x00)
+		Eq_2 ecx_71 = 0x00;
+		uint32 eax_60 = 0x00;
+		if (edx_252 != 0x00)
 		{
 			do
 			{
-				++eax_57;
-				ecx_67 = (word32) *((char *) edi_36 + eax_57 * 0x02) - 0x30 + ecx_67 * 0x0A;
-			} while (eax_57 < edx_239);
+				++eax_60;
+				ecx_71 = (word32) edi_37[eax_60] - 48 + ecx_71 * 0x0A;
+			} while (eax_60 < edx_252);
 		}
-		Eq_96 eax_84 = OpenProcess(0x01, 0x00, ecx_67);
-		if (eax_84 != null)
+		Eq_109 eax_88 = OpenProcess(0x01, 0x00, ecx_71);
+		if (eax_88 != null)
 		{
-			if (TerminateProcess(eax_84, 0x00) != 0x00)
+			if (TerminateProcess(eax_88, 0x00) != 0x00)
 			{
-				Eq_2 esi_118;
-				CloseHandle(eax_84);
-				if (fn004010A0(eax_24->t000C) == 0x00)
-					esi_118 = eax_24->t0010;
+				Eq_2 esi_126;
+				CloseHandle(eax_88);
+				if (fn004010A0(eax_24->t000C.u0) == 0x00)
+					esi_126.u0 = eax_24->t0010.u0;
 				else
-					esi_118 = eax_24->t000C;
-				if (MoveFileW(eax_24->t0008, esi_118) != 0x00)
+					esi_126.u0 = eax_24->t000C.u0;
+				if (MoveFileW(eax_24->t0008.u0, esi_126) != 0x00)
 				{
-					word32 ecx_138;
-					byte * eax_139 = fp - 0x4C;
-					for (ecx_138 = 0x44; ecx_138 != 0x00; --ecx_138)
+					word32 ecx_147;
+					union Eq_279 * eax_148 = &tLoc4C;
+					for (ecx_147 = 0x44; ecx_147 != 0x00; --ecx_147)
 					{
-						*eax_139 = 0x00;
-						++eax_139;
+						*eax_148 = (union Eq_279 *) 0x00;
+						eax_148 = (union Eq_279 *) ((char *) eax_148 + 1);
 					}
-					Eq_2 ecx_150;
-					byte * eax_151 = fp - 0x5C;
-					for (ecx_150 = 0x10; ecx_150 != 0x00; --ecx_150)
+					tLoc4C.cb = (DWORD) 0x44;
+					Eq_2 ecx_159;
+					union Eq_301 * eax_160 = &tLoc5C;
+					for (ecx_159 = 0x10; ecx_159 != 0x00; --ecx_159)
 					{
-						*eax_151 = 0x00;
-						++eax_151;
+						*eax_160 = (union Eq_301 *) 0x00;
+						eax_160 = (union Eq_301 *) ((char *) eax_160 + 1);
 					}
-					if (CreateProcessW(ecx_150, esi_118, ecx_150, ecx_150, ecx_150, ecx_150, ecx_150, ecx_150, fp - 0x4C, fp - 0x5C) != 0x00)
+					if (CreateProcessW(ecx_159, esi_126, ecx_159, ecx_159, ecx_159, ecx_159, ecx_159, ecx_159, &tLoc4C, &tLoc5C) != 0x00)
 					{
-						if (esi_118 != eax_24->t000C)
+						if (esi_126 != (eax_24->t000C).u0)
 						{
-							word32 esi_196;
-							for (esi_196 = 100; esi_196 != 0x00; --esi_196)
-								fn004010A0(eax_24->t000C);
+							word32 esi_206;
+							for (esi_206 = 100; esi_206 != 0x00; --esi_206)
+								fn004010A0(eax_24->t000C.u0);
 						}
 						return 0x00;
 					}

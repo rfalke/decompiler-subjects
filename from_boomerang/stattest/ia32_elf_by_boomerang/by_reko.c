@@ -107,12 +107,13 @@ char g_str8048460[] = "Stat returns %d; size of file is %d\n"; // 08048460
 
 #include "subject.h"
 
-// 080482AC: void _start(Register (ptr32 Eq_13) edx, Stack int32 dwArg00)
-void _start(void (* edx)(), int32 dwArg00)
+// 080482AC: void _start(Register (ptr32 Eq_13) edx, Stack int32 dwArg00, Stack (ptr32 char) ptrArg04)
+void _start(void (* edx)(), int32 dwArg00, char * ptrArg04)
 {
-	__align((char *) fp + 4);
-	__libc_start_main(&g_t804835C, dwArg00, (char *) fp + 4, &g_t8048394, &g_t80483C4, edx, fp);
-	__hlt();
+	void * fp;
+	__align_stack<word32>(&ptrArg04);
+	__libc_start_main(&g_t804835C, dwArg00, &ptrArg04, &g_t8048394, &g_t80483C4, edx, fp);
+	__halt();
 }
 
 // 080482D0: void call_gmon_start()
@@ -136,8 +137,8 @@ void __do_global_dtors_aux()
 		<anonymous> * edx_12 = *eax_11;
 		while (edx_12 != null)
 		{
-			<anonymous> ** eax_19 = (char *) eax_11 + 4;
-			g_ptr8049494 = eax_19;
+			<anonymous> ** eax_20 = (char *) eax_11 + 4;
+			g_ptr8049494 = eax_20;
 			edx_12();
 			eax_11 = g_ptr8049494;
 			edx_12 = (<anonymous> *) *eax_11;
@@ -156,8 +157,10 @@ void frame_dummy()
 // 0804835C: void main()
 void main()
 {
-	__align(fp - 0x6C);
-	printf("Stat returns %d; size of file is %d\n", __xstat(0x03, "test/source/stattest.c", fp - 0x6C), dwLoc40);
+	word32 dwLoc6C;
+	int32 dwLoc40;
+	__align_stack<word32>(&dwLoc6C);
+	printf("Stat returns %d; size of file is %d\n", __xstat(0x03, "test/source/stattest.c", &dwLoc6C), dwLoc40);
 }
 
 // 08048394: void __libc_csu_init(Register word32 edx)

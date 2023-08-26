@@ -6,8 +6,8 @@
        at Reko.Core.Expressions.Conversion..ctor(Expression exp, DataType dtFrom, DataType dtTo) in /home/runner/work/reko/reko/src/Core/Expressions/Conversion.cs:line 54
    at Reko.Core.Code.InstructionTransformer.VisitConversion(Conversion conversion) in /home/runner/work/reko/reko/src/Core/Code/InstructionTransformer.cs:line 194
    at Reko.Core.Expressions.Conversion.Accept[T](ExpressionVisitor`1 visitor) in /home/runner/work/reko/reko/src/Core/Expressions/Conversion.cs:line 82
-   at Reko.Analysis.ConditionCodeEliminator.TransformAssignment(Assignment a) in /home/runner/work/reko/reko/src/Decompiler/Analysis/ConditionCodeEliminator.cs:line 308
+   at Reko.Analysis.ConditionCodeEliminator.TransformAssignment(Assignment a) in /home/runner/work/reko/reko/src/Decompiler/Analysis/ConditionCodeEliminator.cs:line 353
    at Reko.Core.Code.Assignment.Accept(InstructionTransformer xform) in /home/runner/work/reko/reko/src/Core/Code/Assignment.cs:line 44
-   at Reko.Analysis.ConditionCodeEliminator.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/ConditionCodeEliminator.cs:line 102
+   at Reko.Analysis.ConditionCodeEliminator.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/ConditionCodeEliminator.cs:line 104
 0000000000010DA8: warning: Expected sizes of arrays to have been determined by now
 0000000000010DA8: warning: Expected sizes of arrays to have been determined by now

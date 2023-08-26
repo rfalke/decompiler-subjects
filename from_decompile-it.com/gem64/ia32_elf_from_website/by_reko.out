@@ -1,150 +1,196 @@
-=== Using options:
-08048A61: warning: Unable to resolve imported reference __gmon_start__.
+=== Using options:--aggressive-branch-removal
+08048B14: warning: Unable to resolve imported reference __gmon_start__.
 08048E7F: warning: Call target address 00000000 is invalid.
-08049463: warning: Unable to resolve imported reference vsprintf.
-08053B0C: warning: Unable to resolve imported reference putenv.
-08053B78: warning: Unable to resolve imported reference mkstemp.
-0804D974: warning: Unable to resolve imported reference mkstemp.
-0804DC74: warning: Unable to resolve imported reference rewind.
+08048B44: warning: Unable to resolve imported reference vsprintf.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048C14: warning: Unable to resolve imported reference mkstemp.
+08048C14: warning: Unable to resolve imported reference mkstemp.
+08048B24: warning: Unable to resolve imported reference rewind.
 0804E031: warning: Unable to determine format string for call to 'fprintf'.
-080494DE: warning: Unable to resolve imported reference vsprintf.
-0804F104: warning: Unable to resolve imported reference mkstemp.
-0804F386: warning: Unable to resolve imported reference rewind.
-0804F661: warning: Unable to resolve imported reference __isoc99_sscanf.
+08048B44: warning: Unable to resolve imported reference vsprintf.
+08048C14: warning: Unable to resolve imported reference mkstemp.
+08048B24: warning: Unable to resolve imported reference rewind.
 0804F726: warning: Unable to determine format string for call to 'fprintf'.
-0804AD3A: warning: Unable to resolve imported reference remove.
-0804AD56: warning: Unable to resolve imported reference system.
-0804AC07: warning: Unable to resolve imported reference system.
-08052851: warning: Unable to resolve imported reference putenv.
-080528A4: warning: Unable to resolve imported reference putenv.
-08052918: warning: Unable to resolve imported reference putenv.
-0805296B: warning: Unable to resolve imported reference putenv.
-080529B7: warning: Unable to resolve imported reference putenv.
-08052A03: warning: Unable to resolve imported reference putenv.
-08052A2C: warning: Unable to resolve imported reference putenv.
-0804FB14: warning: Unable to resolve imported reference mkstemp.
-0804FBB3: warning: Unable to resolve imported reference remove.
-08049677: warning: Unable to resolve imported reference system.
-0804FC0A: warning: Unable to resolve imported reference system.
-0804FE92: warning: Unable to resolve imported reference system.
-0804F894: warning: Unable to resolve imported reference chdir.
-0804F930: warning: Unable to resolve imported reference __isoc99_fscanf.
-0804FA7D: warning: Unable to resolve imported reference chdir.
-0804FA3B: warning: Unable to resolve imported reference __isoc99_sscanf.
-0804FFAD: warning: Unable to resolve imported reference chdir.
-0805013D: warning: Unable to resolve imported reference system.
-08053048: warning: Unable to resolve imported reference chdir.
-080530A8: warning: Unable to resolve imported reference system.
-080530FF: warning: Unable to resolve imported reference chdir.
-0805315F: warning: Unable to resolve imported reference system.
-080521F3: warning: Unable to resolve imported reference chdir.
-08052274: warning: Unable to resolve imported reference system.
-080522D9: warning: Unable to resolve imported reference system.
-08052317: warning: Unable to resolve imported reference system.
-080502CC: warning: Unable to resolve imported reference putenv.
-08050318: warning: Unable to resolve imported reference putenv.
-08050364: warning: Unable to resolve imported reference putenv.
-0805038F: warning: Unable to resolve imported reference putenv.
-080504B3: warning: Unable to resolve imported reference chdir.
-08050566: warning: Unable to resolve imported reference system.
-08050648: warning: Unable to resolve imported reference putenv.
-0805069F: warning: Unable to resolve imported reference putenv.
-0804A569: warning: Unable to resolve imported reference mkstemp.
+08048D14: warning: Unable to resolve imported reference remove.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048C14: warning: Unable to resolve imported reference mkstemp.
+08048D14: warning: Unable to resolve imported reference remove.
+08048C94: warning: Unable to resolve imported reference chdir.
+08048AF4: warning: Unable to resolve imported reference __isoc99_fscanf.
+08048C94: warning: Unable to resolve imported reference chdir.
+08048C94: warning: Unable to resolve imported reference chdir.
+08048C94: warning: Unable to resolve imported reference chdir.
+08048C94: warning: Unable to resolve imported reference chdir.
+08048C94: warning: Unable to resolve imported reference chdir.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048C94: warning: Unable to resolve imported reference chdir.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048C14: warning: Unable to resolve imported reference mkstemp.
 0804A670: warning: Unable to determine format string for call to 'fprintf'.
-0805072C: warning: Unable to resolve imported reference putenv.
-08050755: warning: Unable to resolve imported reference putenv.
-0805077E: warning: Unable to resolve imported reference putenv.
-080507A7: warning: Unable to resolve imported reference putenv.
-080507D0: warning: Unable to resolve imported reference putenv.
-0804BB62: warning: Unable to resolve imported reference __isoc99_sscanf.
-0804BBC8: warning: Unable to resolve imported reference __isoc99_sscanf.
-0804BC7C: warning: Unable to resolve imported reference rewind.
-0804BCDE: warning: Unable to resolve imported reference __isoc99_sscanf.
-08050852: warning: Unable to resolve imported reference system.
-080505D3: warning: Unable to resolve imported reference system.
-08050208: warning: Unable to resolve imported reference remove.
-080508B7: warning: Unable to resolve imported reference system.
-0804B11D: warning: Unable to resolve imported reference mkstemp.
-0804B4DF: warning: Unable to resolve imported reference mkstemp.
-0804AF20: warning: Unable to resolve imported reference __isoc99_sscanf.
-0804B204: warning: Unable to resolve imported reference __isoc99_sscanf.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048B24: warning: Unable to resolve imported reference rewind.
+08048D14: warning: Unable to resolve imported reference remove.
+08048C14: warning: Unable to resolve imported reference mkstemp.
+08048C14: warning: Unable to resolve imported reference mkstemp.
 0804B34E: warning: Unable to determine format string for call to 'fprintf'.
-0804C765: warning: Unable to resolve imported reference mkstemp.
-0804C92D: warning: Unable to resolve imported reference rewind.
-0804C98B: warning: Unable to resolve imported reference rewind.
-0804CC4D: warning: Unable to resolve imported reference rewind.
+08048C14: warning: Unable to resolve imported reference mkstemp.
+08048B24: warning: Unable to resolve imported reference rewind.
+08048B24: warning: Unable to resolve imported reference rewind.
+08048B24: warning: Unable to resolve imported reference rewind.
 0804CC15: warning: Unable to determine format string for call to 'fprintf'.
-0804E8D4: warning: Unable to resolve imported reference mkstemp.
-0804EA1D: warning: Unable to resolve imported reference rewind.
+08048C14: warning: Unable to resolve imported reference mkstemp.
+08048B24: warning: Unable to resolve imported reference rewind.
 0804EB61: warning: Unable to determine format string for call to 'fprintf'.
-08051D7A: warning: Unable to resolve imported reference putenv.
-0804B733: warning: Unable to resolve imported reference mkstemp.
-0804B819: warning: Unable to resolve imported reference __isoc99_sscanf.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048C14: warning: Unable to resolve imported reference mkstemp.
 0804B8D4: warning: Unable to determine format string for call to 'fprintf'.
-0804CFAE: warning: Unable to resolve imported reference mkstemp.
-0804D12D: warning: Unable to resolve imported reference rewind.
-0804D64E: warning: Unable to resolve imported reference rewind.
+08048C14: warning: Unable to resolve imported reference mkstemp.
+08048B24: warning: Unable to resolve imported reference rewind.
+08048B24: warning: Unable to resolve imported reference rewind.
 0804D616: warning: Unable to determine format string for call to 'fprintf'.
-0804ECF8: warning: Unable to resolve imported reference mkstemp.
-0804EE41: warning: Unable to resolve imported reference rewind.
+08048C14: warning: Unable to resolve imported reference mkstemp.
+08048B24: warning: Unable to resolve imported reference rewind.
 0804EF70: warning: Unable to determine format string for call to 'fprintf'.
-0805432D: warning: Unable to resolve imported reference __isoc99_fscanf.
-08051536: warning: Unable to resolve imported reference putenv.
-08051582: warning: Unable to resolve imported reference putenv.
-080515CE: warning: Unable to resolve imported reference putenv.
-080515F9: warning: Unable to resolve imported reference putenv.
-0805171D: warning: Unable to resolve imported reference chdir.
-080517D0: warning: Unable to resolve imported reference system.
-080518B2: warning: Unable to resolve imported reference putenv.
-08051909: warning: Unable to resolve imported reference putenv.
-0804A429: warning: Unable to resolve imported reference mkstemp.
+08048AF4: warning: Unable to resolve imported reference __isoc99_fscanf.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048C94: warning: Unable to resolve imported reference chdir.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048C14: warning: Unable to resolve imported reference mkstemp.
 0804A4C3: warning: Unable to determine format string for call to 'fprintf'.
-08051996: warning: Unable to resolve imported reference putenv.
-080519BF: warning: Unable to resolve imported reference putenv.
-080519E8: warning: Unable to resolve imported reference putenv.
-08051A11: warning: Unable to resolve imported reference putenv.
-08051A3A: warning: Unable to resolve imported reference putenv.
-08051ABC: warning: Unable to resolve imported reference system.
-0805183D: warning: Unable to resolve imported reference system.
-08051B21: warning: Unable to resolve imported reference system.
-08050D1C: warning: Unable to resolve imported reference putenv.
-08050D68: warning: Unable to resolve imported reference putenv.
-08050DB4: warning: Unable to resolve imported reference putenv.
-08050DDF: warning: Unable to resolve imported reference putenv.
-08050F0D: warning: Unable to resolve imported reference chdir.
-08050F78: warning: Unable to resolve imported reference putenv.
-08050FCF: warning: Unable to resolve imported reference putenv.
-0805105C: warning: Unable to resolve imported reference putenv.
-08051085: warning: Unable to resolve imported reference putenv.
-080510AE: warning: Unable to resolve imported reference putenv.
-080510D7: warning: Unable to resolve imported reference putenv.
-08051100: warning: Unable to resolve imported reference putenv.
-08048FEA: warning: Unable to resolve imported reference chdir.
-08049054: warning: Unable to resolve imported reference system.
-080490B0: warning: Unable to resolve imported reference system.
-0804910C: warning: Unable to resolve imported reference system.
-08049168: warning: Unable to resolve imported reference system.
-080491C4: warning: Unable to resolve imported reference system.
-08049220: warning: Unable to resolve imported reference system.
-0804927C: warning: Unable to resolve imported reference system.
-080492D8: warning: Unable to resolve imported reference system.
-0804933D: warning: Unable to resolve imported reference system.
-08048ECC: warning: Unable to resolve imported reference chdir.
-08048F2A: warning: Unable to resolve imported reference system.
-08048F5D: warning: Unable to resolve imported reference system.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048C94: warning: Unable to resolve imported reference chdir.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048CA4: warning: Unable to resolve imported reference putenv.
+08048C94: warning: Unable to resolve imported reference chdir.
+08048C94: warning: Unable to resolve imported reference chdir.
 08048D14: warning: Unable to resolve imported reference remove.
 08048CA4: warning: Unable to resolve imported reference putenv.
 08048C94: warning: Unable to resolve imported reference chdir.
 08048C14: warning: Unable to resolve imported reference mkstemp.
-08048B84: warning: Unable to resolve imported reference system.
 08048B44: warning: Unable to resolve imported reference vsprintf.
-08048B34: warning: Unable to resolve imported reference __isoc99_sscanf.
 08048B24: warning: Unable to resolve imported reference rewind.
 08048B14: warning: Unable to resolve imported reference __gmon_start__.
 08048AF4: warning: Unable to resolve imported reference __isoc99_fscanf.
-08056F68: warning: Expected sizes of arrays to have been determined by now
-08057D30: warning: Expected sizes of arrays to have been determined by now
+0804A4C3: warning: Unable to determine format string for call to 'fprintf'.
+0804A4C3: warning: Unable to determine format string for call to 'fprintf'.
+0804A4C3: warning: Unable to determine format string for call to 'fprintf'.
+0804A4C3: warning: Unable to determine format string for call to 'fprintf'.
+0804A4C3: warning: Unable to determine format string for call to 'fprintf'.
+0804A4C3: warning: Unable to determine format string for call to 'fprintf'.
+0804A4C3: warning: Unable to determine format string for call to 'fprintf'.
+0804A670: warning: Unable to determine format string for call to 'fprintf'.
+0804A670: warning: Unable to determine format string for call to 'fprintf'.
+0804A670: warning: Unable to determine format string for call to 'fprintf'.
+0804A670: warning: Unable to determine format string for call to 'fprintf'.
+0804A670: warning: Unable to determine format string for call to 'fprintf'.
+0804A670: warning: Unable to determine format string for call to 'fprintf'.
+0804A670: warning: Unable to determine format string for call to 'fprintf'.
+0804B34E: warning: Unable to determine format string for call to 'fprintf'.
+0804B34E: warning: Unable to determine format string for call to 'fprintf'.
+0804B34E: warning: Unable to determine format string for call to 'fprintf'.
+0804B34E: warning: Unable to determine format string for call to 'fprintf'.
+0804B34E: warning: Unable to determine format string for call to 'fprintf'.
+0804B34E: warning: Unable to determine format string for call to 'fprintf'.
+0804B34E: warning: Unable to determine format string for call to 'fprintf'.
+0804B8D4: warning: Unable to determine format string for call to 'fprintf'.
+0804B8D4: warning: Unable to determine format string for call to 'fprintf'.
+0804B8D4: warning: Unable to determine format string for call to 'fprintf'.
+0804B8D4: warning: Unable to determine format string for call to 'fprintf'.
+0804B8D4: warning: Unable to determine format string for call to 'fprintf'.
+0804B8D4: warning: Unable to determine format string for call to 'fprintf'.
+0804B8D4: warning: Unable to determine format string for call to 'fprintf'.
+0804CC15: warning: Unable to determine format string for call to 'fprintf'.
+0804CC15: warning: Unable to determine format string for call to 'fprintf'.
+0804CC15: warning: Unable to determine format string for call to 'fprintf'.
+0804CC15: warning: Unable to determine format string for call to 'fprintf'.
+0804CC15: warning: Unable to determine format string for call to 'fprintf'.
+0804CC15: warning: Unable to determine format string for call to 'fprintf'.
+0804CC15: warning: Unable to determine format string for call to 'fprintf'.
+0804D616: warning: Unable to determine format string for call to 'fprintf'.
+0804D616: warning: Unable to determine format string for call to 'fprintf'.
+0804D616: warning: Unable to determine format string for call to 'fprintf'.
+0804D616: warning: Unable to determine format string for call to 'fprintf'.
+0804D616: warning: Unable to determine format string for call to 'fprintf'.
+0804D616: warning: Unable to determine format string for call to 'fprintf'.
+0804D616: warning: Unable to determine format string for call to 'fprintf'.
+0804E031: warning: Unable to determine format string for call to 'fprintf'.
+0804E031: warning: Unable to determine format string for call to 'fprintf'.
+0804E031: warning: Unable to determine format string for call to 'fprintf'.
+0804E031: warning: Unable to determine format string for call to 'fprintf'.
+0804E031: warning: Unable to determine format string for call to 'fprintf'.
+0804E031: warning: Unable to determine format string for call to 'fprintf'.
+0804E031: warning: Unable to determine format string for call to 'fprintf'.
+0804EB61: warning: Unable to determine format string for call to 'fprintf'.
+0804EB61: warning: Unable to determine format string for call to 'fprintf'.
+0804EB61: warning: Unable to determine format string for call to 'fprintf'.
+0804EB61: warning: Unable to determine format string for call to 'fprintf'.
+0804EB61: warning: Unable to determine format string for call to 'fprintf'.
+0804EB61: warning: Unable to determine format string for call to 'fprintf'.
+0804EB61: warning: Unable to determine format string for call to 'fprintf'.
+0804EF70: warning: Unable to determine format string for call to 'fprintf'.
+0804EF70: warning: Unable to determine format string for call to 'fprintf'.
+0804EF70: warning: Unable to determine format string for call to 'fprintf'.
+0804EF70: warning: Unable to determine format string for call to 'fprintf'.
+0804EF70: warning: Unable to determine format string for call to 'fprintf'.
+0804EF70: warning: Unable to determine format string for call to 'fprintf'.
+0804EF70: warning: Unable to determine format string for call to 'fprintf'.
+0804F726: warning: Unable to determine format string for call to 'fprintf'.
+0804F726: warning: Unable to determine format string for call to 'fprintf'.
+0804F726: warning: Unable to determine format string for call to 'fprintf'.
+0804F726: warning: Unable to determine format string for call to 'fprintf'.
+0804F726: warning: Unable to determine format string for call to 'fprintf'.
+0804F726: warning: Unable to determine format string for call to 'fprintf'.
+0804F726: warning: Unable to determine format string for call to 'fprintf'.
+0804A4C3: warning: Unable to determine format string for call to 'fprintf'.
+0804A670: warning: Unable to determine format string for call to 'fprintf'.
+0804B34E: warning: Unable to determine format string for call to 'fprintf'.
+0804B8D4: warning: Unable to determine format string for call to 'fprintf'.
+0804CC15: warning: Unable to determine format string for call to 'fprintf'.
+0804D616: warning: Unable to determine format string for call to 'fprintf'.
+0804E031: warning: Unable to determine format string for call to 'fprintf'.
+0804EB61: warning: Unable to determine format string for call to 'fprintf'.
+0804EF70: warning: Unable to determine format string for call to 'fprintf'.
+0804F726: warning: Unable to determine format string for call to 'fprintf'.
+0804A4C3: warning: Unable to determine format string for call to 'fprintf'.
+0804A670: warning: Unable to determine format string for call to 'fprintf'.
+0804B34E: warning: Unable to determine format string for call to 'fprintf'.
+0804B8D4: warning: Unable to determine format string for call to 'fprintf'.
+0804CC15: warning: Unable to determine format string for call to 'fprintf'.
+0804D616: warning: Unable to determine format string for call to 'fprintf'.
+0804E031: warning: Unable to determine format string for call to 'fprintf'.
+0804EB61: warning: Unable to determine format string for call to 'fprintf'.
+0804EF70: warning: Unable to determine format string for call to 'fprintf'.
+0804F726: warning: Unable to determine format string for call to 'fprintf'.
 08058F18: warning: Expected sizes of arrays to have been determined by now
-08056F68: warning: Expected sizes of arrays to have been determined by now
-08057D30: warning: Expected sizes of arrays to have been determined by now
 08058F18: warning: Expected sizes of arrays to have been determined by now

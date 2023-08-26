@@ -7,13 +7,14 @@
 // 0804804C: void fn0804804C(Stack (ptr32 Eq_2) dwArg04)
 void fn0804804C(struct Eq_2 * dwArg04)
 {
-	struct Eq_2 * esi_11 = dwArg04;
+	struct Eq_2 * esi_12 = dwArg04;
 	do
 	{
-		esi_11 = esi_32 + 1;
-		esi_32 = esi_11;
-	} while (esi_32->b0000 != 0x00);
-	esi_11->bFFFFFFFB >>= 0x01;
-	__syscall(0x80);
+		esi_12 = esi_35 + 1;
+		esi_35 = esi_12;
+	} while (esi_35->b0000 != 0x00);
+	uint8 v11_19 = esi_12->bFFFFFFFB >> 0x01;
+	esi_12->bFFFFFFFB = v11_19;
+	sys_exit(__rcl<word32,byte>(0x00, 0x01, SLICE(cond(v11_19), bool, 1)));
 }
 

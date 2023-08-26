@@ -1,18 +1,1 @@
 === Using options:--aggressive-branch-removal
-fn0804804C: error: An error occurred while rewriting procedure to high-level language.
-    Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
-       at System.Collections.Generic.List`1.get_Item(Int32 index) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/List.cs:line 148
-   at Reko.Core.Block.get_ThenBlock() in /home/runner/work/reko/reko/src/Core/Block.cs:line 91
-   at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block) in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 96
-   at Reko.Structure.CompoundConditionCoalescer.Transform() in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 62
-   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 79
-   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 532
-fn080481C7: error: An error occurred while rewriting procedure to high-level language.
-    Can't collapse l08048247 (Tail) => l0804824A) in procedure fn080481C7
-       at Reko.Structure.StructureAnalysis.CollapseToTailRegion(Region from, Region to, AbsynStatement stm) in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 979
-   at Reko.Structure.StructureAnalysis.VirtualizeEdge(VirtualEdge vEdge) in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 929
-   at Reko.Structure.StructureAnalysis.LastResort(Region n) in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 1496
-   at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 292
-   at Reko.Structure.StructureAnalysis.Execute() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 169
-   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 81
-   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 532

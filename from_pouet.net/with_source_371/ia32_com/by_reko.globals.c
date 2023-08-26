@@ -4,4 +4,4 @@
 
 #include "subject.h"
 
-
+<anonymous> g_t10A8; // 0C00:11A8

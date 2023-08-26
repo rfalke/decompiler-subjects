@@ -1,4 +1,14 @@
 === Using options:--aggressive-branch-removal
 0000000000000BC0: warning: Unable to resolve imported reference __gmon_start__.
 0000000000000BA0: warning: Unable to resolve imported reference __cxa_finalize.
+e843419@0005_0000003e_1e2dc: warning: Stopping value propagation after iterating 10000 times.
+signed_char_div: warning: Stopping value propagation after iterating 10000 times.
+e843419@0005_0000003e_2e2dc: warning: Stopping value propagation after iterating 10000 times.
+signed_char_modulo: warning: Stopping value propagation after iterating 10000 times.
+e843419@0005_0000003e_4f2dc: warning: Stopping value propagation after iterating 10000 times.
+e843419@0005_0000003e_5f2d8: warning: Stopping value propagation after iterating 10000 times.
+e843419@0005_0000003e_7d2dc: warning: Stopping value propagation after iterating 10000 times.
+signed_short_div: warning: Stopping value propagation after iterating 10000 times.
+e843419@0005_0000003e_902dc: warning: Stopping value propagation after iterating 10000 times.
+signed_short_modulo: warning: Stopping value propagation after iterating 10000 times.
 === Killed because of CPU time limit

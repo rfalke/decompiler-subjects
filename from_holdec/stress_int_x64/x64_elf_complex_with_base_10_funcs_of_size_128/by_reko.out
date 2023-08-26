@@ -1,4 +1,23 @@
 === Using options:--aggressive-branch-removal
 0000000000401008: warning: Unable to resolve imported reference __gmon_start__.
+/home/hawk/kza/decompiler-subjects.clean/from_holdec/stress_int_x64/x64_elf_complex_with_base_10_funcs_of_size_128/subject.exe: error: An internal error occurred while analyzing /home/hawk/kza/decompiler-subjects.clean/from_holdec/stress_int_x64/x64_elf_complex_with_base_10_funcs_of_size_128/subject.exe.
+    Can't add types of disjoint domains int32 and bool
+       at Reko.Core.Operators.IAddOperator.ApplyConstants(DataType dt, Constant c1, Constant c2) in /home/runner/work/reko/reko/src/Core/Operators/IAddOperator.cs:line 62
+   at Reko.Evaluation.ExpressionSimplifier.PostVisitBinaryExpression(BinaryExpression binExp, ValueTuple`2[] simpExps) in /home/runner/work/reko/reko/src/Decompiler/Evaluation/ExpressionSimplifier.BinaryExpression.cs:line 240
+   at Reko.Evaluation.ExpressionSimplifier.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Decompiler/Evaluation/ExpressionSimplifier.BinaryExpression.cs:line 83
+   at Reko.Core.Expressions.BinaryExpression.Accept[T](ExpressionVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 57
+   at Reko.Analysis.ValuePropagator.VisitAssignment(Assignment a) in /home/runner/work/reko/reko/src/Decompiler/Analysis/ValuePropagator.cs:line 127
+   at Reko.Core.Code.Assignment.Accept[T](InstructionVisitor`1 visitor) in /home/runner/work/reko/reko/src/Core/Code/Assignment.cs:line 49
+   at Reko.Analysis.ValuePropagator.Transform(Statement stm) in /home/runner/work/reko/reko/src/Decompiler/Analysis/ValuePropagator.cs:line 117
+   at Reko.Analysis.ValuePropagator.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/ValuePropagator.cs:line 105
+   at Reko.Analysis.SccWorker.ConvertToSsa(Procedure proc) in /home/runner/work/reko/reko/src/Decompiler/Analysis/SccWorker.cs:line 187
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Analysis.SccWorker.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/SccWorker.cs:line 85
+   at Reko.Analysis.DataFlowAnalysis.RewriteProceduresToSsa() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 178
+   at Reko.Analysis.DataFlowAnalysis.UntangleProcedures() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 128
+   at Reko.Decompiler.AnalyzeDataFlow() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 111
+l0000000000401016: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
 0000000000404E10: warning: Expected sizes of arrays to have been determined by now
+0000000000404E18: warning: Expected sizes of arrays to have been determined by now
 0000000000404E10: warning: Expected sizes of arrays to have been determined by now
+0000000000404E18: warning: Expected sizes of arrays to have been determined by now

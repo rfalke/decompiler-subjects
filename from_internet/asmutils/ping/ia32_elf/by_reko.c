@@ -4,9 +4,50 @@
 
 #include "subject.h"
 
-// 0804805F: void fn0804805F(Register word32 esi, Register word32 edi, Stack word32 dwArg00, Stack ptr32 dwArg08)
-void fn0804805F(word32 esi, word32 edi, word32 dwArg00, ptr32 dwArg08)
+// 0804805F: void fn0804805F(Register int32 eax, Stack word32 dwArg00, Stack ptr32 dwArg08)
+void fn0804805F(int32 eax, word32 dwArg00, ptr32 dwArg08)
 {
+	ptr32 fp;
+	uint32 dwLoc1C;
+	uint32 dwLoc10;
+	word32 dwLoc04;
+	struct Eq_9 * esp_101 = fp + 4;
+	if (dwArg00 != 0x01)
+	{
+		fn0804811E(dwArg08, 0x0804814A);
+		g_dw804814A = 0x02;
+		dwLoc04 = dwArg08;
+		dwLoc10 = 0x02;
+		eax = sys_socketcall(0x01, &dwLoc10);
+		esp_101 = &dwLoc04;
+		if (eax >= 0x00)
+		{
+			dwLoc10 = 0x00;
+			dwLoc1C = (uint32) eax;
+			eax = sys_socketcall(11, &dwLoc1C);
+			esp_101 = &dwLoc04;
+			if (eax >= 0x00)
+			{
+				g_b8048140 = 0x05;
+				do
+				{
+					int32 eax_93 = sys__newselect();
+					esp_101 = &dwLoc04;
+					eax = eax_93;
+					if (eax_93 == 0x00)
+						goto l08048117;
+					dwLoc10 = 0x00;
+					dwLoc1C = (uint32) eax;
+					sys_socketcall(0x0C, &dwLoc1C);
+				} while (*(byte *) 0x0804816E != 0x00);
+				esp_101 = &dwLoc04;
+				eax = sys_writev(0x01, &dwLoc04, 0x02);
+			}
+		}
+	}
+l08048117:
+	esp_101->dwFFFFFFFC = 0x01;
+	sys_exit(eax);
 }
 
 // 0804811E: void fn0804811E(Register ptr32 esi, Register ptr32 edi)
@@ -14,22 +55,22 @@ void fn0804805F(word32 esi, word32 edi, word32 dwArg00, ptr32 dwArg08)
 //      fn0804805F
 void fn0804811E(ptr32 esi, ptr32 edi)
 {
-	int32 edx_12 = 0x00;
-	int32 ecx_23;
-	for (ecx_23 = 0x00; ecx_23 != 0x04; ++ecx_23)
+	int32 edx_15 = 0x00;
+	int32 ecx_26;
+	for (ecx_26 = 0x00; ecx_26 != 0x04; ++ecx_26)
 	{
-		int32 ebx_31 = 0x00;
+		int32 ebx_34 = 0x00;
 		while (true)
 		{
-			cu8 al_14 = esi + edx_12;
-			byte bl_19 = (byte) ebx_31;
-			++edx_12;
-			uint32 eax_30 = (uint32) (al_14 - 0x30);
-			if (al_14 < 0x30)
+			cu8 al_17 = *((word32) esi + edx_15);
+			byte bl_22 = (byte) ebx_34;
+			++edx_15;
+			uint32 eax_33 = (uint32) (al_17 - 0x30);
+			if (al_17 < 0x30)
 				break;
-			ebx_31 = ebx_31 *s 0x0A + eax_30;
+			ebx_34 = ebx_34 *s 0x0A + eax_33;
 		}
-		edi + 0x04 + ecx_23 = (byte *) bl_19;
+		*((word32) (edi + 4) + ecx_26) = (ptr32) bl_22;
 	}
 }
 

@@ -1,116 +1,120 @@
-=== Using options:
-08049499: warning: Unable to resolve imported reference __gmon_start__.
+=== Using options:--aggressive-branch-removal
+0804959C: warning: Unable to resolve imported reference __gmon_start__.
 08049B7F: warning: Call target address 00000000 is invalid.
 0804968C: warning: Unable to resolve imported reference ferror_unlocked.
-0805E467: warning: Unable to resolve imported reference __lxstat64.
-0805E427: warning: Unable to resolve imported reference __fxstat64.
-0805E3E7: warning: Unable to resolve imported reference __xstat64.
-0805A2A1: warning: Unable to resolve imported reference __signbitl.
-080595C3: warning: Unable to resolve imported reference ferror_unlocked.
-08059263: warning: Unable to resolve imported reference strtoumax.
-0805909F: warning: Unable to resolve imported reference strndup.
-080519F1: warning: Unable to resolve imported reference gettext.
-08058B8E: warning: Unable to resolve imported reference gettext.
-08055F3F: warning: Unable to resolve imported reference mbrlen.
-08055BCF: warning: Unable to resolve imported reference tolower.
-08055C11: warning: Unable to resolve imported reference toupper.
-08054EF9: warning: Unable to resolve imported reference gettext.
-08053CDA: error: Unexpected instruction setz	al after fstsw
-08051EB0: warning: Unable to resolve imported reference gettext.
-08051B30: warning: Unable to resolve imported reference gettext.
-08051B41: warning: Unable to resolve imported reference gettext.
-08051BBC: warning: Unable to resolve imported reference gettext.
+0804971C: warning: Unable to resolve imported reference __lxstat64.
+080499EC: warning: Unable to resolve imported reference __fxstat64.
+080495BC: warning: Unable to resolve imported reference __xstat64.
+080498EC: warning: Unable to resolve imported reference __signbitl.
+0804968C: warning: Unable to resolve imported reference ferror_unlocked.
+0804972C: warning: Unable to resolve imported reference strtoumax.
+080499CC: warning: Unable to resolve imported reference strndup.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080498CC: warning: Unable to resolve imported reference mbrlen.
+08049A8C: warning: Unable to resolve imported reference tolower.
+0804963C: warning: Unable to resolve imported reference toupper.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
 08051BCE: warning: Unable to determine format string for call to 'fprintf'.
-08051C8B: warning: Unable to resolve imported reference putc_unlocked.
-08051076: warning: Unable to resolve imported reference gettext.
+080494DC: warning: Unable to resolve imported reference putc_unlocked.
+080496EC: warning: Unable to resolve imported reference gettext.
 0805108C: warning: Unable to determine format string for call to 'fprintf'.
-080510A3: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
 080510AF: warning: Unable to determine format string for call to 'printf'.
-080510C1: warning: Unable to resolve imported reference gettext.
-080510DF: warning: Unable to resolve imported reference gettext.
-080510FD: warning: Unable to resolve imported reference gettext.
-0805111B: warning: Unable to resolve imported reference gettext.
-08051139: warning: Unable to resolve imported reference gettext.
-08051157: warning: Unable to resolve imported reference gettext.
-08051175: warning: Unable to resolve imported reference gettext.
-08051193: warning: Unable to resolve imported reference gettext.
-080511B1: warning: Unable to resolve imported reference gettext.
-080511CF: warning: Unable to resolve imported reference gettext.
-080511ED: warning: Unable to resolve imported reference gettext.
-0805120B: warning: Unable to resolve imported reference gettext.
-08051229: warning: Unable to resolve imported reference gettext.
-08051247: warning: Unable to resolve imported reference gettext.
-08051265: warning: Unable to resolve imported reference gettext.
-08051283: warning: Unable to resolve imported reference gettext.
-080512A1: warning: Unable to resolve imported reference gettext.
-080512BF: warning: Unable to resolve imported reference gettext.
-080512DD: warning: Unable to resolve imported reference gettext.
-080512FB: warning: Unable to resolve imported reference gettext.
-08051319: warning: Unable to resolve imported reference gettext.
-08051337: warning: Unable to resolve imported reference gettext.
-08051355: warning: Unable to resolve imported reference gettext.
-08051373: warning: Unable to resolve imported reference gettext.
-08051391: warning: Unable to resolve imported reference gettext.
-080513BF: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
 080513CF: warning: Unable to determine format string for call to 'printf'.
-080517D3: warning: Unable to resolve imported reference gettext.
-080517FE: warning: Unable to resolve imported reference gettext.
-08051991: warning: Unable to resolve imported reference gettext.
-080518B0: warning: Unable to resolve imported reference gettext.
-0805196D: warning: Unable to resolve imported reference gettext.
-08051949: warning: Unable to resolve imported reference gettext.
-08051925: warning: Unable to resolve imported reference gettext.
-080518FE: warning: Unable to resolve imported reference gettext.
-080518D7: warning: Unable to resolve imported reference gettext.
-08051889: warning: Unable to resolve imported reference gettext.
-08051862: warning: Unable to resolve imported reference gettext.
-0805183B: warning: Unable to resolve imported reference gettext.
-08050B5D: warning: Unable to resolve imported reference putchar_unlocked.
-08050B94: warning: Unable to resolve imported reference putchar_unlocked.
-08050AFE: warning: Unable to resolve imported reference putchar_unlocked.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+08049ABC: warning: Unable to resolve imported reference putchar_unlocked.
+08049ABC: warning: Unable to resolve imported reference putchar_unlocked.
+08049ABC: warning: Unable to resolve imported reference putchar_unlocked.
 0805002D: warning: The format specifier '%*' passed to *printf is not known.
 080500E1: warning: The format specifier '%*' passed to *printf is not known.
 08050139: warning: The format specifier '%*' passed to *printf is not known.
-08050638: warning: Unable to resolve imported reference putchar_unlocked.
-0805039E: warning: Unable to resolve imported reference putchar_unlocked.
-08050AC3: warning: Unable to resolve imported reference putchar_unlocked.
-08050ACF: warning: Unable to resolve imported reference putchar_unlocked.
-08050A4E: warning: Unable to resolve imported reference putchar_unlocked.
-080509C3: warning: Unable to resolve imported reference putchar_unlocked.
-0805091A: warning: Unable to resolve imported reference putchar_unlocked.
-0804EE64: warning: Unable to resolve imported reference putchar_unlocked.
+08049ABC: warning: Unable to resolve imported reference putchar_unlocked.
+08049ABC: warning: Unable to resolve imported reference putchar_unlocked.
+08049ABC: warning: Unable to resolve imported reference putchar_unlocked.
+08049ABC: warning: Unable to resolve imported reference putchar_unlocked.
+08049ABC: warning: Unable to resolve imported reference putchar_unlocked.
+08049ABC: warning: Unable to resolve imported reference putchar_unlocked.
+08049ABC: warning: Unable to resolve imported reference putchar_unlocked.
+0804F21A: warning: The format specifier '%*' passed to *printf is not known.
+0804F389: warning: The format specifier '%*' passed to *printf is not known.
+08049ABC: warning: Unable to resolve imported reference putchar_unlocked.
 0804EE8F: warning: The format specifier '%*' passed to *printf is not known.
-0804F577: warning: Unable to resolve imported reference gnu_dev_minor.
-0804F5B1: warning: Unable to resolve imported reference gnu_dev_major.
-0804EC7B: warning: Unable to resolve imported reference putchar_unlocked.
-0804ECCE: warning: Unable to resolve imported reference putchar_unlocked.
-0804E9B1: warning: Unable to resolve imported reference strverscmp.
+0804962C: warning: Unable to resolve imported reference gnu_dev_minor.
+080499FC: warning: Unable to resolve imported reference gnu_dev_major.
+0804F608: warning: The format specifier '%*' passed to *printf is not known.
+0804F608: warning: The format specifier '%*' passed to *printf is not known.
+0804F877: warning: The format specifier '%*' passed to *printf is not known.
+08049ABC: warning: Unable to resolve imported reference putchar_unlocked.
+08049ABC: warning: Unable to resolve imported reference putchar_unlocked.
+0804976C: warning: Unable to resolve imported reference strverscmp.
 0804E199: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
-0804D720: warning: Unable to resolve imported reference gettext.
-0804D3AC: warning: Unable to resolve imported reference gettext.
-0804CC1C: warning: Unable to resolve imported reference gettext.
-0804D13F: warning: Unable to resolve imported reference gnu_dev_major.
-0804D18E: warning: Unable to resolve imported reference gnu_dev_minor.
-0804BFDF: warning: Unable to resolve imported reference gettext.
-0804C072: warning: Unable to resolve imported reference gettext.
-0804C0E7: warning: Unable to resolve imported reference gettext.
-0804C1AC: warning: Unable to resolve imported reference readdir64.
-0804C299: warning: Unable to resolve imported reference gettext.
-0804C2E0: warning: Unable to resolve imported reference gettext.
-0804C358: warning: Unable to resolve imported reference putchar_unlocked.
-0804C576: warning: Unable to resolve imported reference gettext.
-0804C5B3: warning: Unable to resolve imported reference putchar_unlocked.
-0804C646: warning: Unable to resolve imported reference putchar_unlocked.
-0804BDFE: warning: Unable to resolve imported reference gettext.
-0804BD5F: warning: Unable to resolve imported reference gettext.
-0804A9FF: warning: Unable to resolve imported reference gettext.
-0804AAF2: warning: Unable to resolve imported reference gettext.
-0804ABB3: warning: Unable to resolve imported reference gettext.
-0804AE7C: warning: Unable to resolve imported reference gettext.
-0804B67F: warning: Unable to resolve imported reference gettext.
-0804AFFE: warning: Unable to resolve imported reference gettext.
-0804A5D3: warning: Unable to resolve imported reference putchar_unlocked.
-08049D49: warning: Unable to resolve imported reference putchar_unlocked.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080499FC: warning: Unable to resolve imported reference gnu_dev_major.
+0804962C: warning: Unable to resolve imported reference gnu_dev_minor.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+0804982C: warning: Unable to resolve imported reference readdir64.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+08049ABC: warning: Unable to resolve imported reference putchar_unlocked.
+080496EC: warning: Unable to resolve imported reference gettext.
+08049ABC: warning: Unable to resolve imported reference putchar_unlocked.
+08049ABC: warning: Unable to resolve imported reference putchar_unlocked.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+080496EC: warning: Unable to resolve imported reference gettext.
+08049ABC: warning: Unable to resolve imported reference putchar_unlocked.
+08049ABC: warning: Unable to resolve imported reference putchar_unlocked.
 08049ABC: warning: Unable to resolve imported reference putchar_unlocked.
 08049A8C: warning: Unable to resolve imported reference tolower.
 080499FC: warning: Unable to resolve imported reference gnu_dev_major.
@@ -128,24 +132,933 @@
 080495BC: warning: Unable to resolve imported reference __xstat64.
 0804959C: warning: Unable to resolve imported reference __gmon_start__.
 080494DC: warning: Unable to resolve imported reference putc_unlocked.
-error: An error occurred during decompilation. System.NotSupportedException: Constants of type real80 are not supported.
-  at Reko.Core.Expressions.Constant.Create (Reko.Core.Types.DataType dt, System.Int64 value) [0x0035a] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.Constant.Create (Reko.Core.Types.DataType dt, System.UInt64 value) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Evaluation.ExpressionSimplifier.VisitMkSequence (Reko.Core.Expressions.MkSequence seq) [0x00135] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.MkSequence.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Analysis.ValuePropagator.VisitAssignment (Reko.Core.Code.Assignment a) [0x00007] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Assignment.Accept[T] (Reko.Core.Code.InstructionVisitor`1[T] visitor) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Analysis.ValuePropagator.Transform (Reko.Core.Statement stm) [0x00013] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Analysis.ValuePropagator.Transform () [0x0003a] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Analysis.DataFlowAnalysis.ConvertToSsa (Reko.Core.Procedure proc) [0x0011d] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
-  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
-  at Reko.Analysis.DataFlowAnalysis.UntangleProcedureScc (System.Collections.Generic.IList`1[T] procs) [0x00038] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x0012a] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x00070] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x00070] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Lib.SccFinder`1[TNode].FindAll () [0x00038] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Analysis.DataFlowAnalysis.RewriteProceduresToSsa () [0x00027] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Analysis.DataFlowAnalysis.UntangleProcedures () [0x00067] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Decompiler.AnalyzeDataFlow () [0x0008f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x00183] in <b195e9013e6f4bfe9c4a55d515fad233>:0 
+08051BCE: warning: Unable to determine format string for call to 'fprintf'.
+08051BCE: warning: Unable to determine format string for call to 'fprintf'.
+08051BCE: warning: Unable to determine format string for call to 'fprintf'.
+08051BCE: warning: Unable to determine format string for call to 'fprintf'.
+08051BCE: warning: Unable to determine format string for call to 'fprintf'.
+08051BCE: warning: Unable to determine format string for call to 'fprintf'.
+08051BCE: warning: Unable to determine format string for call to 'fprintf'.
+080513CF: warning: Unable to determine format string for call to 'printf'.
+080513CF: warning: Unable to determine format string for call to 'printf'.
+080513CF: warning: Unable to determine format string for call to 'printf'.
+080513CF: warning: Unable to determine format string for call to 'printf'.
+080513CF: warning: Unable to determine format string for call to 'printf'.
+080513CF: warning: Unable to determine format string for call to 'printf'.
+080513CF: warning: Unable to determine format string for call to 'printf'.
+080510AF: warning: Unable to determine format string for call to 'printf'.
+0805108C: warning: Unable to determine format string for call to 'fprintf'.
+080510AF: warning: Unable to determine format string for call to 'printf'.
+0805108C: warning: Unable to determine format string for call to 'fprintf'.
+080510AF: warning: Unable to determine format string for call to 'printf'.
+0805108C: warning: Unable to determine format string for call to 'fprintf'.
+080510AF: warning: Unable to determine format string for call to 'printf'.
+0805108C: warning: Unable to determine format string for call to 'fprintf'.
+080510AF: warning: Unable to determine format string for call to 'printf'.
+0805108C: warning: Unable to determine format string for call to 'fprintf'.
+080510AF: warning: Unable to determine format string for call to 'printf'.
+0805108C: warning: Unable to determine format string for call to 'fprintf'.
+080510AF: warning: Unable to determine format string for call to 'printf'.
+0805108C: warning: Unable to determine format string for call to 'fprintf'.
+/home/hawk/kza/decompiler-subjects.clean/from_decompile-it.com/ls/ia32_elf_from_website/subject.exe: error: An internal error occurred while analyzing /home/hawk/kza/decompiler-subjects.clean/from_decompile-it.com/ls/ia32_elf_from_website/subject.exe.
+    fstsw: FindUsingBranch: al_509 = CONVERT(Test(EQ,Z_508), bool, int8).
+       at Reko.Arch.X86.Analysis.FstswAnalysis.FindUsingBranch(Identifier dst, Boolean findCond) in /home/runner/work/reko/reko/src/Arch/X86/Analysis/FstswAnalysis.cs:line 277
+   at Reko.Arch.X86.Analysis.FstswAnalysis.TransformFststw(SsaIdentifier sid, SsaIdentifier sidFpuf) in /home/runner/work/reko/reko/src/Arch/X86/Analysis/FstswAnalysis.cs:line 188
+   at Reko.Arch.X86.Analysis.FstswAnalysis.Transform(SsaState ssa) in /home/runner/work/reko/reko/src/Arch/X86/Analysis/FstswAnalysis.cs:line 100
+   at Reko.Analysis.DataFlowAnalysis.RunAnalyses(IAnalysisFactory analysisFactory, AnalysisContext context, AnalysisStage stage, SsaState ssa) in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 299
+   at Reko.Analysis.SccWorker.ConvertToSsa(Procedure proc) in /home/runner/work/reko/reko/src/Decompiler/Analysis/SccWorker.cs:line 167
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Analysis.SccWorker.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/SccWorker.cs:line 85
+   at Reko.Analysis.DataFlowAnalysis.RewriteProceduresToSsa() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 178
+   at Reko.Analysis.DataFlowAnalysis.UntangleProcedures() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 128
+   at Reko.Decompiler.AnalyzeDataFlow() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 111
+l0804949E: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
+0804A33A: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804A199: error: An error occurred while processing the statement edx = 0x805ED40<32>[eax * 4<32>].
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 294
+   at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess(ArrayAccess acc, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 192
+   at Reko.Core.Expressions.ArrayAccess.Accept[T,C](ExpressionVisitor`2 v, C context) in /home/runner/work/reko/reko/src/Core/Expressions/ArrayAccess.cs:line 48
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 188
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804A230: error: An error occurred while processing the statement eax = 0x805ED40<32>[eax * 4<32>].
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 294
+   at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess(ArrayAccess acc, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 192
+   at Reko.Core.Expressions.ArrayAccess.Accept[T,C](ExpressionVisitor`2 v, C context) in /home/runner/work/reko/reko/src/Core/Expressions/ArrayAccess.cs:line 48
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 188
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804A247: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804A1C8: error: An error occurred while processing the statement eax = 0x805ED40<32>[eax * 4<32>].
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 294
+   at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess(ArrayAccess acc, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 192
+   at Reko.Core.Expressions.ArrayAccess.Accept[T,C](ExpressionVisitor`2 v, C context) in /home/runner/work/reko/reko/src/Core/Expressions/ArrayAccess.cs:line 48
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 188
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804A389: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804A24E: error: An error occurred while processing the statement eax = 0x805ED40<32>[eax * 4<32>].
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 294
+   at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess(ArrayAccess acc, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 192
+   at Reko.Core.Expressions.ArrayAccess.Accept[T,C](ExpressionVisitor`2 v, C context) in /home/runner/work/reko/reko/src/Core/Expressions/ArrayAccess.cs:line 48
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 188
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804A27F: error: An error occurred while processing the statement edx = 0x805ED40<32>[eax * 4<32>].
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 294
+   at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess(ArrayAccess acc, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 192
+   at Reko.Core.Expressions.ArrayAccess.Accept[T,C](ExpressionVisitor`2 v, C context) in /home/runner/work/reko/reko/src/Core/Expressions/ArrayAccess.cs:line 48
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 188
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804A3F1: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804A4C5: error: An error occurred while processing the statement eax = eax - edx.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType(DataType dtLeft, DataType dtRight, Domain sign) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 310
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 124
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804A586: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804A5B6: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804A5C4: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804A6E8: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804A637: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804A5F9: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804A609: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804A640: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804A71D: error: An error occurred while processing the statement eax = 0x805ED40<32>[eax * 4<32>].
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 294
+   at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess(ArrayAccess acc, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 192
+   at Reko.Core.Expressions.ArrayAccess.Accept[T,C](ExpressionVisitor`2 v, C context) in /home/runner/work/reko/reko/src/Core/Expressions/ArrayAccess.cs:line 48
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 188
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804A734: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804A73B: error: An error occurred while processing the statement eax = 0x805ED40<32>[eax * 4<32>].
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 294
+   at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess(ArrayAccess acc, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 192
+   at Reko.Core.Expressions.ArrayAccess.Accept[T,C](ExpressionVisitor`2 v, C context) in /home/runner/work/reko/reko/src/Core/Expressions/ArrayAccess.cs:line 48
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 188
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804A7F1: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804A7D5: error: An error occurred while processing the statement eax = 0x8061A00<32>[eax * 4<32>].
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 294
+   at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess(ArrayAccess acc, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 192
+   at Reko.Core.Expressions.ArrayAccess.Accept[T,C](ExpressionVisitor`2 v, C context) in /home/runner/work/reko/reko/src/Core/Expressions/ArrayAccess.cs:line 48
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 188
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804A802: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804C008: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804C059: error: An error occurred while processing the statement eax = eax >>u 0x1F<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 386
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 188
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804C039: error: An error occurred while processing the statement eax = eax >>u 0x1F<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 386
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 188
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804C28E: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804C1F9: error: An error occurred while processing the statement eax = 0x805F880<32>[edx * 4<32>].
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 294
+   at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess(ArrayAccess acc, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 192
+   at Reko.Core.Expressions.ArrayAccess.Accept[T,C](ExpressionVisitor`2 v, C context) in /home/runner/work/reko/reko/src/Core/Expressions/ArrayAccess.cs:line 48
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 188
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804C2D5: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804C339: error: An error occurred while processing the statement eax = eax | edx.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804C33B: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804C51F: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804C65D: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804C80A: error: An error occurred while processing the statement branch dwLoc0C_59 <u eax_12 l0804C7B4.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 347
+   at Reko.Typing.TypeCollector.VisitBranch(Branch branch) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 200
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804C8D0: error: An error occurred while processing the statement eax = eax | edx.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804C8D2: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804C944: error: An error occurred while processing the statement edx = 0<32> + eax * 8<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 294
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 402
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 188
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804CA42: error: An error occurred while processing the statement eax = eax | edx.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804CA44: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804CAE3: error: An error occurred while processing the statement eax = eax >>u 4<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 386
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 188
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804CAFE: error: An error occurred while processing the statement eax = eax >>u 4<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 386
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 188
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804CCA1: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804CBC9: error: An error occurred while processing the statement eax = eax & 0xF000<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804CDFC: error: An error occurred while processing the statement eax = eax & 0xF000<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804CD02: error: An error occurred while processing the statement eax = eax >>u 0x1F<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 386
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 188
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804CD24: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804CEDA: error: An error occurred while processing the statement eax = eax & 0xF000<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804CE11: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804CE89: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804CEA7: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804CEB1: error: An error occurred while processing the statement eax = eax & 0xF000<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804CDB4: error: An error occurred while processing the statement eax = eax | edx.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804CDB6: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804CD6D: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804CD8C: error: An error occurred while processing the statement eax = eax >>u 0x1F<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 386
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 188
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804CF01: error: An error occurred while processing the statement eax = eax & 0xF000<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804CF1F: error: An error occurred while processing the statement eax = eax & 0xF000<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804CF7B: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804CFFD: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804CF3F: error: An error occurred while processing the statement eax = eax & edx.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804CF41: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804D0C2: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804D10D: error: An error occurred while processing the statement eax = eax & 0xF000<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804D11F: error: An error occurred while processing the statement eax = eax & 0xF000<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804D53F: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804EADA: error: An error occurred while processing the statement edx = 0<32> + eax * 8<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 294
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 402
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 188
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804EB10: error: An error occurred while processing the statement edx = edx >>u 1<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 386
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 188
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804EB79: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804EC04: error: An error occurred while processing the statement eax = 0x80642A0<32>[eax * 4<32>].
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 294
+   at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess(ArrayAccess acc, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 192
+   at Reko.Core.Expressions.ArrayAccess.Accept[T,C](ExpressionVisitor`2 v, C context) in /home/runner/work/reko/reko/src/Core/Expressions/ArrayAccess.cs:line 48
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 188
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804F1C2: error: An error occurred while processing the statement eax = eax | edx.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804F1C4: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804F3ED: error: An error occurred while processing the statement edx = edx | eax.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804F3F9: error: An error occurred while processing the statement edx = edx | eax.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804F405: error: An error occurred while processing the statement eax = eax | edx.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804F407: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804F522: error: An error occurred while processing the statement eax = eax & 0xF000<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804F5D8: error: An error occurred while processing the statement eax = eax >> 0x1F<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 393
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 188
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804F5DF: error: An error occurred while processing the statement edx = edx & Mem0[ebp + -40<i32>:word32].
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804F534: error: An error occurred while processing the statement eax = eax & 0xF000<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804F7B4: error: An error occurred while processing the statement eax = 0x8064280<32>[eax * 4<32>].
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 294
+   at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess(ArrayAccess acc, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 192
+   at Reko.Core.Expressions.ArrayAccess.Accept[T,C](ExpressionVisitor`2 v, C context) in /home/runner/work/reko/reko/src/Core/Expressions/ArrayAccess.cs:line 48
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 188
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804F8FF: error: An error occurred while processing the statement eax = eax & edx.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804F901: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804F82B: error: An error occurred while processing the statement ecx = ecx >> 0x1F<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 393
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 188
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804FA22: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804F971: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0804F9F9: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0805017E: error: An error occurred while processing the statement eax = eax & edx.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+08050180: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+080501E0: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+08050260: error: An error occurred while processing the statement eax = eax & 0x49<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+08050263: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+08050282: error: An error occurred while processing the statement eax = eax & 0xF000<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+080502E0: error: An error occurred while processing the statement eax = eax & 0xF000<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0805030D: error: An error occurred while processing the statement eax = eax & 0xF000<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0805033A: error: An error occurred while processing the statement eax = eax & 0xF000<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+080505B8: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+080504C4: error: An error occurred while processing the statement eax = eax & 0xF000<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+08050468: error: An error occurred while processing the statement eax = eax & 0x200<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0805046D: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0805048A: error: An error occurred while processing the statement eax = eax & 2<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0805048D: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+08050474: error: An error occurred while processing the statement eax = eax & 2<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+08050477: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+080504A0: error: An error occurred while processing the statement eax = eax & 0x200<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+080504A5: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+080504FA: error: An error occurred while processing the statement eax = eax & 0xF000<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+080504DB: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+08050512: error: An error occurred while processing the statement eax = eax & 0xF000<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0805052A: error: An error occurred while processing the statement eax = eax & 0xF000<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+08050542: error: An error occurred while processing the statement eax = eax & 0xF000<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+080507CF: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0805086B: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+080509B0: error: An error occurred while processing the statement edx = CONVERT(v11 %u Mem0[ebp + -24<i32>:word32], word64, uint32).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 316
+   at Reko.Typing.ExpressionTypeDescender.VisitConversion(Conversion conversion, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 538
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 188
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+080509B0: error: An error occurred while processing the statement eax = CONVERT(v11 /u Mem0[ebp + -24<i32>:word32], word32, uint32).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 316
+   at Reko.Typing.ExpressionTypeDescender.VisitConversion(Conversion conversion, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 538
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 188
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+08050C75: error: An error occurred while processing the statement eax = eax >>u 1<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 386
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 188
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+08050CF3: error: An error occurred while processing the statement eax = eax *s Mem0[ebp + -16<i32>:word32].
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 304
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 188
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+08050D1A: error: An error occurred while processing the statement eax = eax >>u 1<32>.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 386
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 188
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+08050EEE: error: An error occurred while processing the statement edx = CONVERT(v23 %u ecx, word64, uint32).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 316
+   at Reko.Typing.ExpressionTypeDescender.VisitConversion(Conversion conversion, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 538
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 188
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+08050EEE: error: An error occurred while processing the statement eax = CONVERT(v23 /u ecx, word32, uint32).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 316
+   at Reko.Typing.ExpressionTypeDescender.VisitConversion(Conversion conversion, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 538
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 188
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+08051EA1: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+08051F3C: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+08051EBD: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+08054687: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+080546D5: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+08054887: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+080548D5: error: An error occurred while processing the statement SZP = cond(eax & eax).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /home/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 141
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 131
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf(ConditionOf cof) in /home/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 333
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 186
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 74
+0805E53C: warning: Expected sizes of arrays to have been determined by now
+0805E580: warning: Expected sizes of arrays to have been determined by now
+0805E5E0: warning: Expected sizes of arrays to have been determined by now
+0805EB40: warning: Expected sizes of arrays to have been determined by now
+0805EB80: warning: Expected sizes of arrays to have been determined by now
+0805EBCC: warning: Expected sizes of arrays to have been determined by now
+0805EC60: warning: Expected sizes of arrays to have been determined by now
+0805ED40: warning: Expected sizes of arrays to have been determined by now
+0805F05C: warning: Expected sizes of arrays to have been determined by now
+0805F880: warning: Expected sizes of arrays to have been determined by now
+0805F984: warning: Expected sizes of arrays to have been determined by now
+08061928: warning: Expected sizes of arrays to have been determined by now
+08061A00: warning: Expected sizes of arrays to have been determined by now
+08061A20: warning: Expected sizes of arrays to have been determined by now
+08063F08: warning: Expected sizes of arrays to have been determined by now
+080641E0: warning: Expected sizes of arrays to have been determined by now
+080641E4: warning: Expected sizes of arrays to have been determined by now
+080642A0: warning: Expected sizes of arrays to have been determined by now
+080643A0: warning: Expected sizes of arrays to have been determined by now
+0805E53C: warning: Expected sizes of arrays to have been determined by now
+0805E580: warning: Expected sizes of arrays to have been determined by now
+0805E5E0: warning: Expected sizes of arrays to have been determined by now
+0805EB40: warning: Expected sizes of arrays to have been determined by now
+0805EB80: warning: Expected sizes of arrays to have been determined by now
+0805EBCC: warning: Expected sizes of arrays to have been determined by now
+0805EC60: warning: Expected sizes of arrays to have been determined by now
+0805ED40: warning: Expected sizes of arrays to have been determined by now
+0805F05C: warning: Expected sizes of arrays to have been determined by now
+0805F880: warning: Expected sizes of arrays to have been determined by now
+0805F984: warning: Expected sizes of arrays to have been determined by now
+08061928: warning: Expected sizes of arrays to have been determined by now
+08061A00: warning: Expected sizes of arrays to have been determined by now
+08061A20: warning: Expected sizes of arrays to have been determined by now
+08063F08: warning: Expected sizes of arrays to have been determined by now
+080641E0: warning: Expected sizes of arrays to have been determined by now
+080641E4: warning: Expected sizes of arrays to have been determined by now
+080642A0: warning: Expected sizes of arrays to have been determined by now
+080643A0: warning: Expected sizes of arrays to have been determined by now

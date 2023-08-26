@@ -108,12 +108,13 @@ char g_str80484C2[] = "%d\n"; // 080484C2
 
 #include "subject.h"
 
-// 080482AC: void _start(Register (ptr32 Eq_13) edx, Stack int32 dwArg00)
-void _start(void (* edx)(), int32 dwArg00)
+// 080482AC: void _start(Register (ptr32 Eq_13) edx, Stack int32 dwArg00, Stack (ptr32 char) ptrArg04)
+void _start(void (* edx)(), int32 dwArg00, char * ptrArg04)
 {
-	__align((char *) fp + 4);
-	__libc_start_main(&g_t80483CF, dwArg00, (char *) fp + 4, &g_t804840C, &g_t804843C, edx, fp);
-	__hlt();
+	void * fp;
+	__align_stack<word32>(&ptrArg04);
+	__libc_start_main(&g_t80483CF, dwArg00, &ptrArg04, &g_t804840C, &g_t804843C, edx, fp);
+	__halt();
 }
 
 // 080482D0: void call_gmon_start()
@@ -137,8 +138,8 @@ void __do_global_dtors_aux()
 		<anonymous> * edx_12 = *eax_11;
 		while (edx_12 != null)
 		{
-			<anonymous> ** eax_19 = (char *) eax_11 + 4;
-			g_ptr80494D4 = eax_19;
+			<anonymous> ** eax_20 = (char *) eax_11 + 4;
+			g_ptr80494D4 = eax_20;
 			edx_12();
 			eax_11 = g_ptr80494D4;
 			edx_12 = (<anonymous> *) *eax_11;
@@ -154,16 +155,17 @@ void frame_dummy()
 {
 }
 
-// 0804835C: Register Eq_76 proc1(Stack int32 dwArg04, Stack (ptr32 char) dwArg08)
+// 0804835C: Register Eq_73 proc1(Stack int32 dwArg04, Stack (ptr32 char) dwArg08)
 // Called from:
 //      main
-Eq_76 proc1(int32 dwArg04, char * dwArg08)
+Eq_73 proc1(int32 dwArg04, char * dwArg08)
 {
-	Eq_76 dwArg04_66;
+	Eq_73 dwLoc08;
+	Eq_73 dwArg04_66;
 	if (dwArg04 > 0x02)
 	{
-		Eq_76 eax_23 = strlen(dwArg08);
-		Eq_76 eax_30 = strlen(dwArg08);
+		Eq_73 eax_23 = strlen(dwArg08);
+		Eq_73 eax_30 = strlen(dwArg08);
 		printf("%d", eax_30 + eax_23);
 		dwArg04_66 = eax_23;
 		dwLoc08 = eax_30;
@@ -174,10 +176,11 @@ Eq_76 proc1(int32 dwArg04, char * dwArg08)
 	return dwArg04_66;
 }
 
-// 080483CF: void main(Stack int32 dwArg04, Stack (ptr32 Eq_107) dwArg08)
-void main(int32 dwArg04, struct Eq_107 * dwArg08)
+// 080483CF: void main(Stack int32 dwArg04, Stack (ptr32 Eq_108) dwArg08)
+void main(int32 dwArg04, struct Eq_108 * dwArg08)
 {
-	__align(fp - 0x0C);
+	ptr32 fp;
+	__align_stack<word32>(fp - 0x0C);
 	printf("%d\n", proc1(dwArg04, dwArg08->ptr0004));
 }
 

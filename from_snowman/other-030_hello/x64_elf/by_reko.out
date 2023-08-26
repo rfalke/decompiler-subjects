@@ -5,7 +5,7 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 0000000000402C10: warning: Unable to resolve imported reference msvcrt.dll!vfprintf.
 0000000000401A0F: warning: Unable to resolve imported reference KERNEL32.dll!RtlAddFunctionTable.
 00000000004012B2: warning: Unable to guess parameters of msvcrt.dll!_acmdln.
-00000000004026D2: warning: Call target address 90900000559225FF is invalid.
+00000000004026B0: error: Argument size mismatch between word32 and uint64.
 0000000000402BD0: warning: Unable to guess parameters of msvcrt.dll!_lock.
 0000000000402BE0: warning: Unable to guess parameters of msvcrt.dll!_unlock.
 00000000004013AB: warning: Unable to guess parameters of msvcrt.dll!__initenv.
@@ -22,5 +22,7 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 00000000004015B8: warning: Unable to guess parameters of libstdc++-6.dll!_ZNSt8ios_base4InitD1Ev.
 0000000000400006: warning: Expected sizes of arrays to have been determined by now
 0000000000400090: warning: Expected sizes of arrays to have been determined by now
+0000000000407240: warning: Expected sizes of arrays to have been determined by now
 0000000000400006: warning: Expected sizes of arrays to have been determined by now
 0000000000400090: warning: Expected sizes of arrays to have been determined by now
+0000000000407240: warning: Expected sizes of arrays to have been determined by now

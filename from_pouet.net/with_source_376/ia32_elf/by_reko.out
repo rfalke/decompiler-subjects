@@ -1,8 +1,10 @@
 === Using options:--aggressive-branch-removal
-error: An error occurred during decompilation. System.BadImageFormatException: Endianness is incorrectly specified.
-  at Reko.ImageLoaders.Elf.ElfImageLoader.CreateReader (System.UInt32 fileOffset) [0x0002d] in <e8381b81642a4cd9bbfd7fcd6e289320>:0 
-  at Reko.ImageLoaders.Elf.ElfImageLoader.CreateLoader () [0x00000] in <e8381b81642a4cd9bbfd7fcd6e289320>:0 
-  at Reko.ImageLoaders.Elf.ElfImageLoader.Load (Reko.Core.Address addrLoad) [0x00015] in <e8381b81642a4cd9bbfd7fcd6e289320>:0 
-  at Reko.Loading.Loader.LoadExecutable (System.String filename, System.Byte[] image, System.String loader, Reko.Core.Address addrLoad) [0x0003f] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Decompiler.Load (System.String fileName, System.String loaderName) [0x0005e] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x00024] in <46a9a108998349f9975ff5dd656c4cb0>:0 
+Error: An error occurred during decompilation.
+    Endianness is incorrectly specified.
+       at Reko.ImageLoaders.Elf.ElfImageLoader.CreateReader(UInt32 fileOffset) in /home/runner/work/reko/reko/src/ImageLoaders/Elf/ElfImageLoader.cs:line 138
+   at Reko.ImageLoaders.Elf.ElfImageLoader.CreateLoader() in /home/runner/work/reko/reko/src/ImageLoaders/Elf/ElfImageLoader.cs:line 154
+   at Reko.ImageLoaders.Elf.ElfImageLoader.LoadProgram(Address addrLoad) in /home/runner/work/reko/reko/src/ImageLoaders/Elf/ElfImageLoader.cs:line 75
+   at Reko.Core.Loading.ProgramImageLoader.Load(Address addrLoad) in /home/runner/work/reko/reko/src/Core/Loading/ProgramImageLoader.cs:line 45
+   at Reko.Loading.Loader.LoadBinaryImage(ImageLocation imageLocation, Byte[] image, String loader, Address addrLoad) in /home/runner/work/reko/reko/src/Decompiler/Loading/Loader.cs:line 173
+   at Reko.Loading.Loader.Load(ImageLocation imageLocation, String loaderName, Address addrLoad) in /home/runner/work/reko/reko/src/Decompiler/Loading/Loader.cs:line 133
+   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs) in /home/runner/work/reko/reko/src/Drivers/CmdLine/CmdLineDriver.cs:line 172

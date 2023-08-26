@@ -4,12 +4,10 @@
 
 #include "subject.h"
 
-byte g_b106E = 0x43;
-byte g_bDFF005;
-word16 g_wDFF096;
-word16 g_wDFF09A;
-word16 g_wDFF09C;
-int32 g_dwDFF140;
-int32 g_dwDFF180;
-word16 g_wDFF1DC;
-
+byte g_bDFF005; // 00DFF005
+word16 g_wDFF096; // 00DFF096
+word16 g_wDFF09A; // 00DFF09A
+word16 g_wDFF09C; // 00DFF09C
+int32 g_dwDFF140; // 00DFF140
+int32 g_dwDFF180; // 00DFF180
+word16 g_wDFF1DC; // 00DFF1DC

@@ -4,42 +4,207 @@
 
 #include "subject.h"
 
-// 0804804C: void fn0804804C(Register word16 dx, Register (ptr32 Eq_3) ebp, Register (ptr32 Eq_4) esi, Register (ptr32 Eq_5) edi, Register (ptr16 Eq_6) fs, Stack word32 dwArg00, Stack (ptr32 Eq_4) dwArg04)
-void fn0804804C(word16 dx, struct Eq_3 * ebp, struct Eq_4 * esi, struct Eq_5 * edi, struct Eq_6 * fs, word32 dwArg00, struct Eq_4 * dwArg04)
+// 0804804C: void fn0804804C(Register Eq_2 edx, Stack word32 dwArg00, Stack (ptr32 char) dwArg04, Stack (ptr32 char) dwArg08)
+void fn0804804C(Eq_2 edx, word32 dwArg00, char * dwArg04, char * dwArg08)
 {
-	byte ch_13 = SLICE(dwArg00 - 0x01, byte, 8);
 	if (dwArg00 == 0x01)
-	{
-		word16 dx_33;
-		word32 ebp_34;
-		word32 esi_35;
-		word32 edi_36;
-		struct Eq_48 * fs_37;
-		fn08048144(ch_13, dx, ebp, esi, edi, fs, out dx_33, out ebp_34, out esi_35, out edi_36, out fs_37);
-	}
+		fn08048061(edx, dwArg04);
 	else
 	{
-		__syscall(0x80);
-		word16 dx_28;
-		word32 ebp_29;
-		word32 esi_30;
-		word32 edi_31;
-		struct Eq_23 * fs_32;
-		fn08048144(ch_13, dx, null, dwArg04, edi, fs, out dx_28, out ebp_29, out esi_30, out edi_31, out fs_32);
+		sys_chdir(&g_b804821F);
+		fn08048061(edx, dwArg08);
 	}
 }
 
-// 08048144: Register byte fn08048144(Register byte ch, Register word16 dx, Register (ptr32 Eq_3) ebp, Register (ptr32 Eq_4) esi, Register (ptr32 Eq_5) edi, Register (ptr16 Eq_6) fs, Register out Eq_32 dxOut, Register out ptr32 ebpOut, Register out ptr32 esiOut, Register out (ptr32 Eq_35) ediOut, Register out Eq_36 fsOut)
+// 08048061: void fn08048061(Register Eq_2 edx, Stack (ptr32 char) dwArg00)
 // Called from:
 //      fn0804804C
 //      fn08048144
-byte fn08048144(byte ch, word16 dx, struct Eq_3 * ebp, struct Eq_4 * esi, struct Eq_5 * edi, struct Eq_6 * fs, union Eq_32 & dxOut, ptr32 & ebpOut, ptr32 & esiOut, struct Eq_35 & ediOut, union Eq_36 & fsOut)
+void fn08048061(Eq_2 edx, char * dwArg00)
 {
+	ptr32 fp;
+	struct Eq_21 * dwLoc04;
+	byte * esi;
+	do
+	{
+		if (dwLoc04 == null)
+			goto l08048216;
+		ptr32 esp_170;
+		if (dwLoc04->b0000 != 0x2D)
+		{
+			struct Eq_21 * esi_30 = dwLoc04;
+			byte * edi_32 = &g_b8048256;
+			do
+			{
+				while (true)
+				{
+					byte al_35 = esi_30->b0000;
+					++esi_30;
+					if (al_35 != 0x2E)
+						break;
+					*edi_32 = 0x2F;
+					++edi_32;
+				}
+				*edi_32 = al_35;
+				++edi_32;
+			} while (al_35 != 0x00);
+			esp_170 = fp;
+			Eq_168 eax_59 = sys_open(&g_b8048256, 0x00, edx);
+			if (eax_59 < 0x00)
+				goto l0804820E;
+			sys_write(0x01, &g_b8048256, sys_read(eax_59, &g_b8048256, 0xF000));
+			sys_exit(0x00);
+		}
+		byte al_97 = dwLoc04[1];
+	} while (al_97 == 110);
+	switch (al_97)
+	{
+	case 0x77:
+		if (dwArg00 == null)
+		{
+l08048216:
+			sys_exit(0xFF);
+		}
+		else
+		{
+			// Failed to bind call argument.
+			// Please report this issue at https://github.com/uxmal/reko
+			char * stackArg0 = (char *) <invalid>;
+			fn08048144(edx, esi, edi, stackArg0);
+			return;
+		}
+		break;
+	case 0x70:
+		Eq_51 eax_145;
+		if (dwArg00 != null)
+			eax_145 = sys_open(dwArg00, 0x00, edx);
+		else
+			eax_145 = sys_open(&g_b804822A, 0x00, edx);
+		esp_170 = fp;
+		if (sys_lseek(eax_145, 0x02, dwArg00) >= 0x00)
+		{
+			esp_170 = fp + 4;
+			byte * eax_195 = sys_mmap2();
+			if (eax_195 >= null)
+			{
+				byte * esi_211 = eax_195;
+				while (true)
+				{
+					while (true)
+					{
+						ci8 al_214 = *esi_211;
+						++esi_211;
+						if (al_214 != 0x3B && al_214 != 0x23)
+							break;
+						do
+						{
+							byte al_222 = *esi_211;
+							++esi_211;
+							if (al_222 == 0x00)
+								goto l08048122;
+						} while (al_222 != 0x0A);
+					}
+					if (al_214 == 0x00)
+						break;
+					if (al_214 > 0x20)
+					{
+l08048122:
+						// Failed to bind call argument.
+						// Please report this issue at https://github.com/uxmal/reko
+						char * stackArg0 = (char *) <invalid>;
+						fn08048144(edx, esi, edi, stackArg0);
+						--esi_211;
+					}
+				}
+				sys_exit(0x00);
+			}
+		}
+l0804820E:
+		int32 * esp_202 = esp_170 - 4;
+		*esp_202 = 0x01;
+		int32 ebx_204 = *esp_202;
+		*esp_202 = 0x01;
+		sys_exit(ebx_204);
+		break;
+	default:
+		// Failed to bind call argument.
+		// Please report this issue at https://github.com/uxmal/reko
+		char * stackArg0 = (char *) <invalid>;
+		fn08048144(edx, esi, edi, stackArg0);
+		return;
+	}
 }
 
-Eq_5 g_t8048256 = // 08048256
+char g_b80480A0 = 'U'; // 080480A0
+// 08048144: void fn08048144(Register Eq_2 edx, Register (ptr32 byte) esi, Register (ptr32 byte) edi, Stack (ptr32 char) dwArg00)
+// Called from:
+//      fn0804804C
+void fn08048144(Eq_2 edx, byte * esi, byte * edi, char * dwArg00)
+{
+	do
 	{
-		0x00,
-		0x00,
-		0x00,
-	};
+		while (true)
+		{
+			ci8 al_6 = *esi;
+			++esi;
+			if (al_6 != 0x2E)
+				break;
+			*edi = 0x2F;
+			++edi;
+		}
+		if (al_6 == 0x3D || al_6 <= 0x20)
+		{
+			*edi = 0x00;
+			byte * esi_19 = esi - 0x01;
+			char * edi_27 = edi + 1;
+			do
+			{
+				byte al_30 = *esi_19;
+				++esi_19;
+				if (al_30 == 0x00)
+					goto l080481BC;
+			} while (al_30 != 0x3D);
+			do
+			{
+				esi_19 = esi_217 + 1;
+				esi_217 = esi_19;
+			} while (*esi_217 <= 0x20);
+			byte * esi_45 = esi_19 - 0x01;
+			Eq_2 edx_108 = 0x00;
+			edi_144 = edi_27;
+			while (true)
+			{
+				char * edi_144;
+				ci8 al_55 = *esi_45;
+				++esi_45;
+				edx_108 = (word32) edx_108 + 1;
+				if (al_55 <= 0x20 || (al_55 == 0x3B || al_55 == 0x23))
+					break;
+				*edi_144 = al_55;
+				++edi_144;
+			}
+			*edi_144 = 0x00;
+			Eq_296 eax_87 = sys_open(&g_b8048256, 0x02, edx_108);
+			Eq_296 eax_103 = eax_87;
+			if (eax_87 < 0x00)
+			{
+				edx_108.u0 = 0x18;
+				eax_103 = sys_write(0x01, &g_b804823E, 0x18);
+			}
+			edx = edx_108 - 0x01;
+			sys_write(eax_103, edi_27, edx);
+l080481BC:
+			fn08048061(edx, dwArg00);
+			return;
+		}
+		*edi = al_6;
+		++edi;
+	} while (al_6 != 0x00);
+	sys_write(0x01, &g_b80480A0, 0x0F);
+	sys_exit(0x01);
+}
+
+char g_b804821F = '/'; // 0804821F
+char g_b804822A = '/'; // 0804822A
+char g_b804823E = 'C'; // 0804823E
+byte g_b8048256 = 0x00; // 08048256

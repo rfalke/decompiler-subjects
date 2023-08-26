@@ -4,109 +4,114 @@
 
 #include "subject.h"
 
-// 0804804C: void fn0804804C(Register word32 esi)
-void fn0804804C(word32 esi)
+// 0804804C: void fn0804804C(Register Eq_2 edx, Register uint32 esi)
+void fn0804804C(Eq_2 edx, uint32 esi)
 {
-	__syscall(0x80);
-	__syscall(0x80);
-	__syscall(0x80);
-	__syscall(0x80);
-	__syscall(0x80);
-	*(byte *) 0x08048161 = 0x0A;
-	__syscall(0x80);
-	__syscall(0x80);
-	byte * edi_194 = (byte *) 0x08048161;
-	word32 ecx_115 = 0x13;
-	while (true)
+	int32 eax_11 = sys_getuid();
+	Eq_8 eax_20 = sys_open(&g_b8048155, 0x00, edx);
+	if (eax_20 >= 0x00)
 	{
-		while (ecx_115 != 0x00)
+		Eq_24 eax_38 = sys_lseek(eax_20, 0x02, esi);
+		sys_lseek(eax_20, 0x00, esi);
+		sys_brk((word32) eax_38 + 134512994);
+		*(byte *) 0x08048161 = 0x0A;
+		sys_read(eax_20, (char *) 0x08048162, eax_38);
+		sys_close(eax_20);
+		byte * edi_109 = (byte *) 0x08048161;
+		Eq_24 ecx_100 = eax_38;
+		while (true)
 		{
-			++edi_194;
-			--ecx_115;
-			if (*edi_194 != 0x3A)
+			while (ecx_100 != 0x00)
+			{
+				++edi_109;
+				--ecx_100;
+				if (*edi_109 != 0x3A)
+					break;
+			}
+			while (ecx_100 != 0x00)
+			{
+				++edi_109;
+				--ecx_100;
+				if (*edi_109 != 0x3A)
+					break;
+			}
+			edi_102 = edi_109;
+			do
+			{
+				byte * edi_102;
+				if (ecx_100 == 0x00)
+					break;
+				++edi_102;
+				--ecx_100;
+			} while (*edi_102 == 0x3A);
+			edi_109 = edi_102 - 0x01;
+			*edi_109 = 0x00;
+			if (fn08048120(edi_109) == eax_11)
+				break;
+			while (ecx_100 != 0x00)
+			{
+				++edi_109;
+				--ecx_100;
+				if (*edi_109 != 0x0A)
+					break;
+			}
+		}
+		byte * edi_130 = edi_109;
+		while (ecx_100 != 0x00)
+		{
+			--edi_130;
+			--ecx_100;
+			if (*edi_130 != 0x0A)
 				break;
 		}
-		while (ecx_115 != 0x00)
+		ptr32 edi_140 = edi_130 + 1;
+		struct Eq_122 * edi_141 = edi_140 + 0x01;
+		while (ecx_100 != 0x00)
 		{
-			++edi_194;
-			--ecx_115;
-			if (*edi_194 != 0x3A)
+			++edi_141;
+			--ecx_100;
+			if (edi_141->b0000 != 0x3A)
 				break;
 		}
-		edi_250 = edi_194;
-		do
-		{
-			byte * edi_250;
-			if (ecx_115 == 0x00)
-				break;
-			++edi_250;
-			--ecx_115;
-		} while (*edi_250 == 0x3A);
-		edi_194 = edi_250 - 0x01;
-		*edi_194 = 0x00;
-		if (fn08048120(edi_194) == 0x18)
-			break;
-		while (ecx_115 != 0x00)
-		{
-			++edi_194;
-			--ecx_115;
-			if (*edi_194 != 0x0A)
-				break;
-		}
+		edi_141->wFFFFFFFF = 0x0A;
+		sys_write(0x01, edi_140 + 0x01, fn0804813C(edi_140 + 0x01));
 	}
-	byte * edi_114 = edi_194;
-	while (ecx_115 != 0x00)
-	{
-		--edi_114;
-		--ecx_115;
-		if (*edi_114 != 0x0A)
-			break;
-	}
-	ptr32 edi_124 = edi_114 + 1;
-	struct Eq_94 * edi_125 = edi_124 + 0x01;
-	while (ecx_115 != 0x00)
-	{
-		++edi_125;
-		--ecx_115;
-		if (edi_125->b0000 != 0x3A)
-			break;
-	}
-	edi_125->wFFFFFFFF = 0x0A;
-	fn0804813C(edi_124 + 0x01);
-	__syscall(0x80);
+	sys_exit(0x00);
 }
 
-// 08048120: Register Eq_131 fn08048120(Register (ptr32 byte) esi)
+// 08048120: Register Eq_164 fn08048120(Register (ptr32 byte) esi)
 // Called from:
 //      fn0804804C
-Eq_131 fn08048120(byte * esi)
+Eq_164 fn08048120(byte * esi)
 {
-	Eq_131 eax_27 = 0x00;
+	Eq_164 eax_28 = 0x00;
 	while (true)
 	{
-		byte bl_33 = *esi;
-		if (bl_33 == 0x00)
+		byte bl_35 = *esi;
+		if (bl_35 == 0x00)
 			break;
-		eax_27 = eax_27 *s 0x0A + (uint32) (bl_33 & ~0x30);
+		eax_28 = eax_28 *s 0x0A + (uint32) (bl_35 & ~0x30);
 		++esi;
 	}
-	return eax_27;
+	return eax_28;
 }
 
-// 0804813C: void fn0804813C(Register (ptr32 byte) esi)
+// 0804813C: Register uip32 fn0804813C(Register (ptr32 byte) esi)
 // Called from:
 //      fn0804804C
-void fn0804813C(byte * esi)
+uip32 fn0804813C(byte * esi)
 {
-	byte * edi_30 = esi;
-	uip32 ecx_34 = 200;
-	while (ecx_34 != 0x00)
+	byte * edi_31 = esi;
+	uip32 ecx_36 = 200;
+	while (ecx_36 != 0x00)
 	{
-		edi_30 = edi_99 + 1;
-		--ecx_34;
-		edi_99 = edi_30;
-		if (*edi_99 != 0x00)
-			return;
+		edi_31 = edi_103 + 1;
+		--ecx_36;
+		edi_103 = edi_31;
+		if (*edi_103 != 0x00)
+			return 200 - ecx_36 - 0x01;
 	}
+	return 200 - ecx_36 - 0x01;
 }
 
+char g_b8048155 = '/'; // 08048155

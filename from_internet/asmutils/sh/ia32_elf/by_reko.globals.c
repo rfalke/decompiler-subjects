@@ -4,8 +4,5 @@
 
 #include "subject.h"
 
-byte g_b0001; // 00000001
-word32 g_dw002D; // 0000002D
-word32 g_dw0031; // 00000031
-byte g_a0033[];
-byte g_a0034[];
+Eq_2 g_t0001;
+Eq_191 g_t002D;

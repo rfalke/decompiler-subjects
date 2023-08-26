@@ -23,12 +23,15 @@ void h()
 //      f
 void f(word32 ecx, word32 edx, word32 esi, word32 edi)
 {
+	word64 rsi;
+	word64 rdx;
+	word64 rdi;
 	word32 edi = (word32) rdi;
 	word32 esi = (word32) rsi;
 	word32 edx = (word32) rdx;
-	word32 dwLoc10_162 = esi;
+	word32 dwLoc10_168 = esi;
 	while (edi != 0x00)
-		++dwLoc10_162;
+		++dwLoc10_168;
 	do
 	{
 		if (edi == 0x00)
@@ -36,8 +39,8 @@ void f(word32 ecx, word32 edx, word32 esi, word32 edi)
 			h();
 			g();
 		}
-		word32 v11_29 = dwLoc10_162 + 0x01;
-		dwLoc10_162 = v11_29;
-	} while (v11_29 != edx);
+		word32 v12_29 = dwLoc10_168 + 0x01;
+		dwLoc10_168 = v12_29;
+	} while (v12_29 != edx);
 }
 

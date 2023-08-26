@@ -1,3 +1,5 @@
 === Using options:--aggressive-branch-removal
 subject.exe: warning: Win32 ARM main procedure finder not implemented yet.
 fn000111DC: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+00011988: warning: Expected sizes of arrays to have been determined by now
+00011988: warning: Expected sizes of arrays to have been determined by now

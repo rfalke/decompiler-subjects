@@ -34,14 +34,12 @@ word64 g_qw410FE0 = 0x00; // 0000000000410FE0
 
 #include "subject.h"
 
-// 00000000004003D8: Register word64 _init(Register out ptr64 x30Out)
+// 00000000004003D8: void _init()
 // Called from:
 //      __libc_csu_init
-word64 _init(ptr64 & x30Out)
+void _init()
 {
 	call_weak_fn();
-	x30Out = qwArg00;
-	return x30;
 }
 
 // subject_init_array.c
@@ -66,10 +64,12 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 0000000000400440: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
-void _start(void (* x0)(), word32 dwArg00)
+// 0000000000400440: void _start(Register (ptr64 Eq_5) x0, Stack word32 dwArg00, Stack (ptr64 char) ptrArg08)
+void _start(void (* x0)(), word32 dwArg00, char * ptrArg08)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr400470, (int32) qwArg00, (char *) fp + 8, g_ptr400478, g_ptr400480, x0, fp);
+	void * fp;
+	word64 qwArg00;
+	__libc_start_main(g_ptr400470, (int32) qwArg00, &ptrArg08, g_ptr400478, g_ptr400480, x0, fp);
 	abort();
 }
 
@@ -91,7 +91,7 @@ void call_weak_fn()
 //      __do_global_dtors_aux
 void deregister_tm_clones()
 {
-	if (0x0041102F - 0x00411028 <= 0x0E)
+	if ((char *) &g_dw41102C + 3 - &g_b411028 <= 0x0E)
 		return;
 	<anonymous> * x1_12 = g_ptr4004D8;
 	if (x1_12 == null)
@@ -105,7 +105,7 @@ void deregister_tm_clones()
 //      frame_dummy
 void register_tm_clones()
 {
-	int64 x1_7 = 0x00411028 - 0x00411028;
+	byte * x1_7 = &g_b411028 - &g_b411028;
 	if ((x1_7 >> 3) + ((x1_7 >> 3) >>u 63) >> 1 == 0x00)
 		return;
 	<anonymous> * x2_12 = g_ptr400518;
@@ -126,8 +126,8 @@ void __do_global_dtors_aux()
 	}
 }
 
-// 0000000000400550: void frame_dummy(Register word64 x29, Register word64 x30)
-void frame_dummy(word64 x29, word64 x30)
+// 0000000000400550: void frame_dummy()
+void frame_dummy()
 {
 	if (g_qw410DF0 != 0x00 && g_qw400588 != 0x00)
 	{
@@ -167,52 +167,53 @@ void loop1()
 	g_dw411030 = 0x00;
 	while (g_dw411030 < 100)
 	{
-		g_a411034[(int64) g_dw411030 * 0x00] = g_dw411030;
+		g_a411034[(int64) g_dw411030 * 0x04] = g_dw411030;
 		++g_dw411030;
 	}
 	leave();
 }
 
-// 000000000040061C: void loop2(Register word64 x29)
-void loop2(word64 x29)
+// 000000000040061C: void loop2()
+void loop2()
 {
+	word32 dwLoc14;
 	enter();
-	word32 dwLoc0C_62 = SLICE(x29, word32, 32);
 	do
 	{
 		do
 		{
-			word32 w12_28 = dwLoc0C_62 + (g_a411034[(int64) g_dw411030 * 0x00] + g_dw41102C);
-			dwLoc0C_62 = w12_28;
-			if (w12_28 == 0x0A)
-				dwLoc0C_62 = w12_28 + 0x0C;
+			word32 w12_27 = dwLoc14 + (g_a411034[(int64) g_dw411030 * 0x04] + g_dw41102C);
+			dwLoc14 = w12_27;
+			if (w12_27 == 0x0A)
+				dwLoc14 = w12_27 + 0x0C;
 		} while (g_dw41102C < 100);
 		g_dw41102C = 0x00;
 	} while (g_dw411030 < 100);
 	leave();
 }
 
-// 00000000004006D8: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)
-void __libc_csu_init(word32 w0, word64 x1, word64 x2, word64 x24)
+// 00000000004006D8: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24, Register word64 x30)
+void __libc_csu_init(word32 w0, word64 x1, word64 x2, word64 x24, word64 x30)
 {
-	word32 x24_32_32_100 = SLICE(x24, word32, 32);
-	int64 x20_26 = 4263400 - 0x00410DE0;
-	<anonymous> * x21_24[] = g_a410DE0;
-	word64 x22_34 = x2;
-	word64 x23_38 = x1;
-	word64 x30_42;
-	word64 x29_41 = _init(out x30_42);
-	int64 x20_43 = x20_26 >> 3;
-	if (x20_26 >> 3 != 0x00)
+	ptr64 fp;
+	word32 x24_32_32_89 = SLICE(x24, word32, 32);
+	_init();
+	int64 x20_23 = 4263400 - g_a410DE0;
+	ptr64 x29_49 = fp + -64;
+	<anonymous> * x21_21[] = g_a410DE0;
+	word64 x22_30 = x2;
+	word64 x23_34 = x1;
+	int64 x20_36 = x20_23 >> 3;
+	if (x20_23 >> 3 != 0x00)
 	{
-		int64 x19_44 = 0x00;
-		word64 x24_145 = SEQ(x24_32_32_100, w0);
+		int64 x19_37 = 0x00;
+		word64 x24_133 = SEQ(x24_32_32_89, w0);
 		do
 		{
-			word64 x3_74;
-			x21_24[x19_44]();
-			int64 x31_77 = x20_43 - x19_44;
-		} while (x31_77 != 0x00);
+			word64 x3_67;
+			x21_21[x19_37]();
+			int64 x31_70 = x20_36 - x19_37;
+		} while (x31_70 != 0x00);
 	}
 }
 

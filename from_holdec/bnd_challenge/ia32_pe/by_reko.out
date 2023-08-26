@@ -3,16 +3,20 @@ Signature of 'Microsoft Visual C++ 8' detected.
 00406F02: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
 00407CD9: warning: Call target address 00000000 is invalid.
 00405E49: warning: Unable to determine size of call or jump table; there may be more than 2 entries.
-l00406014: warning: Non-integral switch expression
-fn0040B67E: error: An error occurred while rewriting procedure to high-level language.
-    Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
-       at System.Collections.Generic.List`1.get_Item(Int32 index) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/List.cs:line 148
-   at Reko.Core.Block.get_ThenBlock() in /home/runner/work/reko/reko/src/Core/Block.cs:line 91
-   at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block) in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 96
-   at Reko.Structure.CompoundConditionCoalescer.Transform() in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 62
-   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 79
-   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 535
+l00405E80: warning: Non-integral switch expression
+fn00405C40: error: An error occurred while rewriting procedure to high-level language.
+    Constants of type word512 are not supported.
+       at Reko.Core.Expressions.Constant.Create(DataType dt, Int64 value) in /home/runner/work/reko/reko/src/Core/Expressions/Constant.cs:line 147
+   at Reko.Structure.StructureAnalysis.MakeSwitchStatement(Region n, Expression switchExp, Region follow, PrimitiveType pt, Int64 offset, Dictionary`2 cases) in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 696
+   at Reko.Structure.StructureAnalysis.ReduceIncSwitch(Region n, Region follow) in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 674
+   at Reko.Structure.StructureAnalysis.ReduceSwitchRegion(Region n) in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 410
+   at Reko.Structure.StructureAnalysis.ReduceAcyclic(Region n) in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 237
+   at Reko.Structure.StructureAnalysis.Execute() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 156
+   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 80
+   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 551
+00405E8C: warning: Expected sizes of arrays to have been determined by now
 00405F78: warning: Expected sizes of arrays to have been determined by now
+00406018: warning: Expected sizes of arrays to have been determined by now
 00406114: warning: Expected sizes of arrays to have been determined by now
 00411198: warning: Expected sizes of arrays to have been determined by now
 0041119C: warning: Expected sizes of arrays to have been determined by now
@@ -29,7 +33,9 @@ fn0040B67E: error: An error occurred while rewriting procedure to high-level lan
 00418004: warning: Expected sizes of arrays to have been determined by now
 00418400: warning: Expected sizes of arrays to have been determined by now
 00419A54: warning: Expected sizes of arrays to have been determined by now
+00405E8C: warning: Expected sizes of arrays to have been determined by now
 00405F78: warning: Expected sizes of arrays to have been determined by now
+00406018: warning: Expected sizes of arrays to have been determined by now
 00406114: warning: Expected sizes of arrays to have been determined by now
 00411198: warning: Expected sizes of arrays to have been determined by now
 0041119C: warning: Expected sizes of arrays to have been determined by now

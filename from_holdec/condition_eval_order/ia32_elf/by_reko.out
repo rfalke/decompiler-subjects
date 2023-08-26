@@ -3,3 +3,5 @@
 08048440: warning: Call target address 00000000 is invalid.
 080483ED: warning: Call target address 00000000 is invalid.
 test_6_blocks: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+08089F08: warning: Expected sizes of arrays to have been determined by now
+08089F08: warning: Expected sizes of arrays to have been determined by now

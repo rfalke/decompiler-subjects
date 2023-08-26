@@ -4,8 +4,4 @@
 
 #include "subject.h"
 
-int32 g_dw10E8 = 74752;
-int32 g_dw10EC = 197974;
-word32 g_dw10F0 = 2626131610;
-Eq_17 g_tDFF180;
-
+Eq_19 g_tDFF180;

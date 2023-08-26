@@ -11,17 +11,17 @@ byte g_b601067 = 0x00; // 0000000000601067
 
 #include "subject.h"
 
-Eq_144 g_t601030 = // 0000000000601030
+Eq_137 g_t601030 = // 0000000000601030
 	{
 		0.0F
 	};
 real64 global_double = 11.0; // 0000000000601040
-Eq_144 g_t601048 = // 0000000000601048
+Eq_137 g_t601048 = // 0000000000601048
 	{
 		10.0F
 	};
-word64 global_long_long = 0x05; // 0000000000601050
-word64 global_long = 0x04; // 0000000000601058
+int64 global_long_long = 5; // 0000000000601050
+int64 global_long = 4; // 0000000000601058
 int32 g_dw601060 = 3; // 0000000000601060
 word16 g_w601064 = 0x02; // 0000000000601064
 byte g_b601066 = 0x01; // 0000000000601066
@@ -95,16 +95,12 @@ word64 g_qw600E18 = 0x00; // 0000000000600E18
 
 #include "subject.h"
 
-char g_str400A20[] = "%f"; // 0000000000400A20
-char g_str400A23[] = "%d"; // 0000000000400A23
-char g_str400A26[] = "%zu %zu %zu %zu %zu\n"; // 0000000000400A26
-char g_str400A2E[] = "%zu %zu %zu\n"; // 0000000000400A2E
 real64 g_r400A40 = 0.0; // 0000000000400A40
 real64 g_r400A48 = 3.0; // 0000000000400A48
 real64 g_r400A50 = 3.141592653589793; // 0000000000400A50
 real64 g_r400A58 = 10.0; // 0000000000400A58
 real64 g_r400A60 = 12.345; // 0000000000400A60
-Eq_249 g_t400A70 = // 0000000000400A70
+Eq_227 g_t400A70 = // 0000000000400A70
 	{
 		
 		{
@@ -124,12 +120,14 @@ void main()
 	printf("%zu %zu %zu\n", 0x04, 0x08, 0x10);
 }
 
-// 0000000000400450: void _start(Register (ptr64 Eq_32) rdx, Stack word32 dwArg00)
-void _start(void (* rdx)(), word32 dwArg00)
+// 0000000000400450: void _start(Register (ptr64 Eq_33) rdx, Stack word32 dwArg00, Stack (ptr64 char) ptrArg08)
+void _start(void (* rdx)(), word32 dwArg00, char * ptrArg08)
 {
-	__align((char *) fp + 8);
-	__libc_start_main(&g_t400400, (int32) qwArg00, (char *) fp + 8, &g_t400990, &g_t400A00, rdx, fp);
-	__hlt();
+	void * fp;
+	word64 qwArg00;
+	__align_stack<word64>(&ptrArg08);
+	__libc_start_main(&g_t400400, (int32) qwArg00, &ptrArg08, &g_t400990, &g_t400A00, rdx, fp);
+	__halt();
 }
 
 // 0000000000400480: void deregister_tm_clones()
@@ -180,22 +178,22 @@ void read_ints()
 	printf("%f", (real64) global_long_long + (((real64) g_dw601060 + ((real64) ((int32) g_w601064) + ((real64) ((int32) g_b601066) + 0.0))) + (real64) global_long));
 }
 
-// 00000000004005F0: void write_ints(Register word32 rax_32_32, Register word128 xmm0)
-void write_ints(word32 rax_32_32, word128 xmm0)
+// 00000000004005F0: void write_ints(Register word128 xmm0)
+void write_ints(word128 xmm0)
 {
 	int32 eax_5 = (int32) (real64) xmm0;
 	g_b601066 = (byte) eax_5;
 	g_w601064 = (word16) eax_5;
 	g_dw601060 = eax_5;
-	word64 rax_13 = SEQ(rax_32_32, (int32) (real64) xmm0);
-	global_long = rax_13;
-	global_long_long = rax_13;
+	int64 rax_11 = (int64) (real64) xmm0;
+	global_long = rax_11;
+	global_long_long = rax_11;
 }
 
 // 0000000000400620: void read_floats()
 void read_floats()
 {
-	printf("%f", (real64) g_t601030 + (((real64) g_t601048 + 0.0) + global_double));
+	printf("%f", (real64) g_t601030.u1 + (((real64) g_t601048.u0 + 0.0) + global_double));
 }
 
 // 0000000000400680: void write_floats(Register word128 xmm0)
@@ -215,25 +213,25 @@ void converting_between_floats_f1()
 // 00000000004006D0: void converting_between_floats_f2()
 void converting_between_floats_f2()
 {
-	g_t601048 = g_t601030;
+	g_t601048.u0 = (real32) g_t601030.u1;
 }
 
 // 00000000004006E0: void converting_between_floats_d1()
 void converting_between_floats_d1()
 {
-	global_double = (real64) g_t601048;
+	global_double = (real64) g_t601048.u0;
 }
 
 // 0000000000400700: void converting_between_floats_d2()
 void converting_between_floats_d2()
 {
-	global_double = (real64) g_t601030;
+	global_double = (real64) g_t601030.u1;
 }
 
 // 0000000000400710: void converting_between_floats_l1()
 void converting_between_floats_l1()
 {
-	g_t601030.u1 = (real80) g_t601048;
+	g_t601030.u1 = (real80) g_t601048.u0;
 }
 
 // 0000000000400720: void converting_between_floats_l2()
@@ -253,26 +251,26 @@ void basic_operations(word128 xmm0, word128 xmm1)
 	printf("%f", rLoc18_77 * rLoc10_78);
 	printf("%f", rLoc18_77 / rLoc10_78);
 	printf("%f", rLoc10_78 / rLoc18_77);
-	printf("%f", (real64) __xorpd(SEQ(0x00, rLoc18_77), g_t400A70));
+	printf("%f", (real64) __xorp<word64[2]>(SEQ(0x00, rLoc18_77), g_t400A70.u0));
 }
 
 // 0000000000400810: void compare_floats(Register word128 xmm0, Register word128 xmm1)
 void compare_floats(word128 xmm0, word128 xmm1)
 {
-	Eq_259 rLoc18_115 = (real64) xmm0;
-	Eq_259 rLoc10_116 = (real64) xmm1;
-	uint64 rsi_24 = (uint64) (int8) !PARITY_EVEN((real64) xmm0 - (real64) xmm1);
+	Eq_237 rLoc18_113 = (real64) xmm0;
+	Eq_237 rLoc10_114 = (real64) xmm1;
+	uint64 rsi_23 = (uint64) (int8) !PARITY_EVEN((real64) xmm0 - (real64) xmm1);
 	if ((real64) xmm0 != (real64) xmm1)
-		rsi_24 = 0x00;
-	printf("%d", (int32) rsi_24);
-	uint64 rsi_51 = (uint64) (int8) PARITY_EVEN(rLoc18_115 - rLoc10_116);
-	if (rLoc18_115 != rLoc10_116)
-		rsi_51 = 0x01;
-	printf("%d", (int32) rsi_51);
-	printf("%d", (int32) (int8) (rLoc18_115 > rLoc10_116));
-	printf("%d", (int32) (int8) (rLoc18_115 >= rLoc10_116));
-	printf("%d", (int32) (int8) (rLoc10_116 > rLoc18_115));
-	printf("%d", (int32) (int8) (rLoc10_116 >= rLoc18_115));
+		rsi_23 = 0x00;
+	printf("%d", (int32) rsi_23);
+	uint64 rsi_49 = (uint64) (int8) PARITY_EVEN(rLoc18_113 - rLoc10_114);
+	if (rLoc18_113 != rLoc10_114)
+		rsi_49 = 0x01;
+	printf("%d", (int32) rsi_49);
+	printf("%d", (int32) (int8) (rLoc18_113 > rLoc10_114));
+	printf("%d", (int32) (int8) (rLoc18_113 >= rLoc10_114));
+	printf("%d", (int32) (int8) (rLoc10_114 > rLoc18_113));
+	printf("%d", (int32) (int8) (rLoc10_114 >= rLoc18_113));
 }
 
 // 00000000004008F0: void constants(Register word128 xmm0)
@@ -289,17 +287,18 @@ void constants(word128 xmm0)
 // 0000000000400990: void __libc_csu_init(Register word64 rdx, Register word64 rsi, Register word32 edi)
 void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 {
+	word64 rdi;
 	word32 edi = (word32) rdi;
 	_init();
-	int64 rbp_31 = 0x00600E10 - 0x00600E08;
+	int64 rbp_31 = 0x00600E10 - g_a600E08;
 	if (rbp_31 >> 0x03 != 0x00)
 	{
-		Eq_391 rbx_44 = 0x00;
+		Eq_369 rbx_47 = 0x00;
 		do
 		{
-			(*((char *) g_a600E08 + rbx_44 * 0x08))();
-			rbx_44 = (word64) rbx_44.u1 + 1;
-		} while (rbp_31 >> 0x03 != rbx_44);
+			(*((char *) g_a600E08 + rbx_47 * 0x08))();
+			rbx_47 = (word64) rbx_47.u1 + 1;
+		} while (rbp_31 >> 0x03 != rbx_47);
 	}
 }
 

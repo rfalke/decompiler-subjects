@@ -1,3 +1,65 @@
 === Using options:--aggressive-branch-removal
+0805269E: warning: x86 instruction 'crc32' is not supported yet.
+08052656: warning: x86 instruction 'crc32' is not supported yet.
+080525F7: warning: x86 instruction 'crc32' is not supported yet.
+080525AF: warning: x86 instruction 'crc32' is not supported yet.
+08052550: warning: x86 instruction 'crc32' is not supported yet.
+08052508: warning: x86 instruction 'crc32' is not supported yet.
+080524A9: warning: x86 instruction 'crc32' is not supported yet.
+08052461: warning: x86 instruction 'crc32' is not supported yet.
+08052402: warning: x86 instruction 'crc32' is not supported yet.
+080523BA: warning: x86 instruction 'crc32' is not supported yet.
+0805235B: warning: x86 instruction 'crc32' is not supported yet.
+08052313: warning: x86 instruction 'crc32' is not supported yet.
+080522B4: warning: x86 instruction 'crc32' is not supported yet.
+0805226C: warning: x86 instruction 'crc32' is not supported yet.
+0805220D: warning: x86 instruction 'crc32' is not supported yet.
+080521C5: warning: x86 instruction 'crc32' is not supported yet.
+08052166: warning: x86 instruction 'crc32' is not supported yet.
+0805211E: warning: x86 instruction 'crc32' is not supported yet.
+080520BF: warning: x86 instruction 'crc32' is not supported yet.
+08052077: warning: x86 instruction 'crc32' is not supported yet.
+08052017: warning: x86 instruction 'crc32' is not supported yet.
+08051FCE: warning: x86 instruction 'crc32' is not supported yet.
+08051F6E: warning: x86 instruction 'crc32' is not supported yet.
+08051F25: warning: x86 instruction 'crc32' is not supported yet.
+08051EC5: warning: x86 instruction 'crc32' is not supported yet.
+08051E7C: warning: x86 instruction 'crc32' is not supported yet.
+08051E1C: warning: x86 instruction 'crc32' is not supported yet.
+08051DD3: warning: x86 instruction 'crc32' is not supported yet.
+08051D73: warning: x86 instruction 'crc32' is not supported yet.
+08051D2A: warning: x86 instruction 'crc32' is not supported yet.
+08051CCA: warning: x86 instruction 'crc32' is not supported yet.
+08051C81: warning: x86 instruction 'crc32' is not supported yet.
+08051C21: warning: x86 instruction 'crc32' is not supported yet.
+08051BD8: warning: x86 instruction 'crc32' is not supported yet.
+08051B78: warning: x86 instruction 'crc32' is not supported yet.
+08051B2F: warning: x86 instruction 'crc32' is not supported yet.
+08051ACF: warning: x86 instruction 'crc32' is not supported yet.
+08051A86: warning: x86 instruction 'crc32' is not supported yet.
+08051A26: warning: x86 instruction 'crc32' is not supported yet.
+080519DD: warning: x86 instruction 'crc32' is not supported yet.
+0805197E: warning: x86 instruction 'crc32' is not supported yet.
+08051936: warning: x86 instruction 'crc32' is not supported yet.
+080518D7: warning: x86 instruction 'crc32' is not supported yet.
+0805188F: warning: x86 instruction 'crc32' is not supported yet.
+08051830: warning: x86 instruction 'crc32' is not supported yet.
+080517E8: warning: x86 instruction 'crc32' is not supported yet.
+08051789: warning: x86 instruction 'crc32' is not supported yet.
+08051741: warning: x86 instruction 'crc32' is not supported yet.
+080516E2: warning: x86 instruction 'crc32' is not supported yet.
+0805169A: warning: x86 instruction 'crc32' is not supported yet.
+0805163B: warning: x86 instruction 'crc32' is not supported yet.
+080515F3: warning: x86 instruction 'crc32' is not supported yet.
+08051594: warning: x86 instruction 'crc32' is not supported yet.
+0805154C: warning: x86 instruction 'crc32' is not supported yet.
+080514ED: warning: x86 instruction 'crc32' is not supported yet.
+080514A5: warning: x86 instruction 'crc32' is not supported yet.
+08051446: warning: x86 instruction 'crc32' is not supported yet.
+080513FE: warning: x86 instruction 'crc32' is not supported yet.
+0805139F: warning: x86 instruction 'crc32' is not supported yet.
+08051357: warning: x86 instruction 'crc32' is not supported yet.
 08049D6D: warning: Call target address 00000000 is invalid.
 08049D20: warning: Call target address 00000000 is invalid.
+08055F0C: warning: Expected sizes of arrays to have been determined by now
+08055F0C: warning: Expected sizes of arrays to have been determined by now

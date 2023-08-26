@@ -1,1 +1,20 @@
 === Using options:--aggressive-branch-removal
+0000000100000CA8: warning: Unable to resolve imported reference __stack_chk_guard.
+0000000100000E20: warning: Unable to resolve imported reference stat$INODE64.
+0000000100000E20: warning: Unable to resolve imported reference stat$INODE64.
+0000000100000D86: warning: Unable to resolve imported reference __stack_chk_guard.
+0000000100000A45: warning: Unable to resolve imported reference __stack_chk_guard.
+0000000100000DF6: warning: Unable to resolve imported reference __strcpy_chk.
+0000000100000DF6: warning: Unable to resolve imported reference __strcpy_chk.
+0000000100000DF0: warning: Unable to resolve imported reference __strcat_chk.
+0000000100000DF0: warning: Unable to resolve imported reference __strcat_chk.
+0000000100000DF6: warning: Unable to resolve imported reference __strcpy_chk.
+0000000100000DF6: warning: Unable to resolve imported reference __strcpy_chk.
+0000000100000C59: warning: Unable to resolve imported reference __stack_chk_guard.
+0000000100000DE4: warning: Unable to determine format string for call to '__sprintf_chk'.
+0000000100000DE4: warning: Unable to determine format string for call to '__sprintf_chk'.
+0000000100000DE4: warning: Unable to determine format string for call to '__sprintf_chk'.
+0000000100000DE4: warning: Unable to determine format string for call to '__sprintf_chk'.
+0000000100000DE4: warning: Unable to determine format string for call to '__sprintf_chk'.
+0000000100000DE4: warning: Unable to determine format string for call to '__sprintf_chk'.
+0000000100000DE4: warning: Unable to determine format string for call to '__sprintf_chk'.

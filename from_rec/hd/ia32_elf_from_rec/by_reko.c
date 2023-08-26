@@ -152,11 +152,12 @@ char g_str80489E4[] = "rb"; // 080489E4
 // 080485A0: void _start(Stack int32 dwArg00)
 void _start(int32 dwArg00)
 {
-	__align(fp + 4);
-	__syscall(0x80);
-	__environ = fp + 4 + dwArg00 * 0x04 + 0x04;
-	word32 eax_33 = (word32) g_w8049AC8;
-	__setfpucw();
+	ptr32 fp;
+	__align_stack<word32>(fp + 4);
+	sys_personality(0x00);
+	ptr32 eax_12 = fp + 4 + dwArg00 * 0x04;
+	__environ = eax_12 + 0x04;
+	__setfpucw((word32) g_w8049AC8, dwArg00, fp + 4, eax_12 + 0x04, 0x00, 0x00);
 	__libc_init();
 	atexit(&g_t80489C0);
 	_init();
@@ -185,55 +186,56 @@ void fini_dummy()
 {
 }
 
-// 08048660: void dumpline(Stack Eq_69 dwArg04, Stack Eq_70 dwArg0C)
+// 08048660: void dumpline(Stack (ptr32 (arr word32)) dwArg04, Stack uint32 dwArg08, Stack Eq_77 dwArg0C)
 // Called from:
 //      hexdump
-void dumpline(Eq_69 dwArg04, Eq_70 dwArg0C)
+void dumpline(word32 (* dwArg04)[], uint32 dwArg08, Eq_77 dwArg0C)
 {
-	sprintf(fp - 0x54, "%08lX:", 0x00);
+	char bLoc54;
+	sprintf(&bLoc54, "%08lX:", dwArg08);
 	if (dwArg0C > 0x10)
 		dwArg0C = 0x10;
-	size_t dwLoc58_168 = 0x00;
-	while (dwArg0C > dwLoc58_168)
+	size_t dwLoc58_169 = 0x00;
+	while (dwArg0C > dwLoc58_169)
 	{
-		sprintf(fp - 0x54 + dwLoc58_168 * 0x03 + 0x09, " %02lX", 0x00);
-		dwLoc58_168 = (Eq_70) ((word32) dwLoc58_168 + 1);
+		sprintf(&bLoc54 + dwLoc58_169 * 0x03 + 9, " %02lX", CONVERT(Mem28[dwArg04 + dwLoc58_169:byte], byte, word32));
+		dwLoc58_169 = (Eq_77) ((word32) dwLoc58_169 + 1);
 	}
 	while (true)
 	{
-		dwLoc58_168 = (Eq_70) ((word32) dwLoc58_168 + 1);
-		if (dwLoc58_168 > 0x0F)
+		dwLoc58_169 = (Eq_77) ((word32) dwLoc58_169 + 1);
+		if (dwLoc58_169 > 0x0F)
 			break;
-		strcat(fp - 0x54, "   ");
+		strcat(&bLoc54, "   ");
 	}
-	Eq_70 eax_74 = strlen(fp - 0x54);
-	strcpy(fp - 0x54 + eax_74, 0x080489DA);
-	Eq_70 dwLoc58_184;
-	for (dwLoc58_184 = 0x00; dwArg0C > dwLoc58_184; ++dwLoc58_184)
+	Eq_77 eax_74 = strlen(&bLoc54);
+	strcpy(&bLoc54 + eax_74, 0x080489DA);
+	Eq_77 dwLoc58_185;
+	for (dwLoc58_185 = 0x00; dwArg0C > dwLoc58_185; ++dwLoc58_185)
 	{
-		word32 ecx_246;
-		word32 ecx_97 = dwArg04 + dwLoc58_184;
-		word32 eax_94 = eax_74 + dwLoc58_184;
-		word24 ecx_24_8_232 = SLICE(ecx_97, word24, 8);
+		word32 ecx_247;
+		word32 ecx_97 = dwArg04 + dwLoc58_185;
+		word32 eax_94 = eax_74 + dwLoc58_185;
+		word24 ecx_24_8_233 = SLICE(ecx_97, word24, 8);
 		if (*ecx_97 > 0x1F)
 		{
-			word32 ecx_101 = dwArg04 + dwLoc58_184;
-			ecx_24_8_232 = SLICE(ecx_101, word24, 8);
+			word32 ecx_101 = dwArg04 + dwLoc58_185;
+			ecx_24_8_233 = SLICE(ecx_101, word24, 8);
 			if (*ecx_101 > 0x7E)
 				goto l08048770;
-			ecx_246 = SEQ(ecx_24_8_232, Mem89[dwArg04 + dwLoc58_184:byte]);
+			ecx_247 = SEQ(ecx_24_8_233, Mem89[dwArg04 + dwLoc58_185:byte]);
 		}
 		else
 		{
 l08048770:
-			ecx_246 = SEQ(ecx_24_8_232, 0x2E);
+			ecx_247 = SEQ(ecx_24_8_233, 0x2E);
 		}
-		Mem114[eax_94 + (fp - 0x54):byte] = SLICE(ecx_246, byte, 0);
+		Mem114[eax_94 + &bLoc54:byte] = SLICE(ecx_247, byte, 0);
 	}
-	for (; dwLoc58_184 <= 0x0F; ++dwLoc58_184)
-		Mem128[eax_74 + dwLoc58_184 + (fp - 0x54):byte] = 0x20;
-	strcpy(fp - 0x54 + eax_74 + dwLoc58_184, 134515166);
-	printf("%s\n", fp - 0x54);
+	for (; dwLoc58_185 <= 0x0F; ++dwLoc58_185)
+		Mem128[eax_74 + dwLoc58_185 + &bLoc54:byte] = 0x20;
+	strcpy(&bLoc54 + eax_74 + dwLoc58_185, 134515166);
+	printf("%s\n", &bLoc54);
 }
 
 // 080487F0: Register word32 hexdump(Stack (ptr32 char) dwArg04)
@@ -241,37 +243,40 @@ l08048770:
 //      main
 word32 hexdump(char * dwArg04)
 {
-	word32 eax_102;
-	stat(dwArg04, fp - 0x5C);
+	ptr32 fp;
+	word32 dwLoc14;
+	uint32 dwLoc48;
+	word32 eax_104;
+	stat(dwArg04, fp - 92);
 	if (dwArg04 == null)
 	{
 		perror(dwArg04);
-		eax_102 = 0x01;
+		eax_104 = 0x01;
 	}
 	else
 	{
-		FILE * eax_31 = fopen(dwArg04, "rb");
-		if (eax_31 == null)
+		FILE * eax_32 = fopen(dwArg04, "rb");
+		if (eax_32 == null)
 		{
 			perror(dwArg04);
-			eax_102 = 0x01;
+			eax_104 = 0x01;
 		}
 		else
 		{
-			up32 dwLoc18_115 = 0x00;
-			while (dwLoc48 > dwLoc18_115)
+			uint32 dwLoc18_118 = 0x00;
+			while (dwLoc48 > dwLoc18_118)
 			{
-				size_t eax_54 = fread(fp - 0x14, 0x01, 0x10, eax_31);
-				if (eax_54 == 0x00)
+				size_t eax_55 = fread(&dwLoc14, 0x01, 0x10, eax_32);
+				if (eax_55 == 0x00)
 					break;
-				dumpline(fp - 0x14, eax_54);
-				dwLoc18_115 = (word32) eax_54 + dwLoc18_115;
+				dumpline(&dwLoc14, dwLoc18_118, eax_55);
+				dwLoc18_118 = (word32) eax_55 + dwLoc18_118;
 			}
-			fclose(eax_31);
-			eax_102 = 0x00;
+			fclose(eax_32);
+			eax_104 = 0x00;
 		}
 	}
-	return eax_102;
+	return eax_104;
 }
 
 // 080488E0: Register word32 main(Stack int32 dwArg04, Stack (arr (ptr32 char)) dwArg08)
@@ -279,11 +284,11 @@ word32 hexdump(char * dwArg04)
 //      _start
 word32 main(int32 dwArg04, char * dwArg08[])
 {
-	word32 dwLoc0C_45 = 0x00;
-	int32 dwLoc08_46;
-	for (dwLoc08_46 = 0x01; dwArg04 > dwLoc08_46; ++dwLoc08_46)
-		dwLoc0C_45 += hexdump(dwArg08[dwLoc08_46]);
-	return dwLoc0C_45;
+	word32 dwLoc0C_46 = 0x00;
+	int32 dwLoc08_47;
+	for (dwLoc08_47 = 0x01; dwArg04 > dwLoc08_47; ++dwLoc08_47)
+		dwLoc0C_46 += hexdump(dwArg08[dwLoc08_47]);
+	return dwLoc0C_46;
 }
 
 // 08048950: void stat(Stack (ptr32 char) dwArg04, Stack ptr32 dwArg08)
@@ -291,7 +296,7 @@ word32 main(int32 dwArg04, char * dwArg08[])
 //      hexdump
 void stat(char * dwArg04, ptr32 dwArg08)
 {
-	_xstat();
+	_xstat(0x01, dwArg04, dwArg08);
 }
 
 // 08048980: void __do_global_ctors_aux()

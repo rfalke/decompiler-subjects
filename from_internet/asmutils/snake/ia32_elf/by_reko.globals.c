@@ -4,7 +4,5 @@
 
 #include "subject.h"
 
-Eq_1761 g_t0001;
-Eq_870 g_t0702;
-byte g_b5401; // 00005401
-byte g_b5422; // 00005422
+Eq_271 g_t004C;
+Eq_670 g_t0702;

@@ -4,4 +4,4 @@
 
 #include "subject.h"
 
-Eq_37 g_t000A;
+Eq_34 g_t000A;

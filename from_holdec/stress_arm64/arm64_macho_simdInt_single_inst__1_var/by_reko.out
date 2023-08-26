@@ -1,0 +1,13 @@
+=== Using options:--aggressive-branch-removal
+0000000100047F4C: warning: Unable to resolve imported reference __assert_rtn.
+0000000100047F4C: warning: Unable to resolve imported reference __assert_rtn.
+/home/hawk/kza/decompiler-subjects.clean/from_holdec/stress_arm64/arm64_macho_simdInt_single_inst__1_var/subject.exe: error: An internal error occurred while reconstructing data types in /home/hawk/kza/decompiler-subjects.clean/from_holdec/stress_arm64/arm64_macho_simdInt_single_inst__1_var/subject.exe.
+    Parameter count must match.
+       at Reko.Typing.EquivalenceClassBuilder.VisitApplication(Application appl) in /home/runner/work/reko/reko/src/Decompiler/Typing/EquivalenceClassBuilder.cs:line 148
+   at Reko.Typing.EquivalenceClassBuilder.VisitDeclaration(Declaration decl) in /home/runner/work/reko/reko/src/Decompiler/Typing/EquivalenceClassBuilder.cs:line 250
+   at Reko.Core.Code.Declaration.Accept(InstructionVisitor v) in /home/runner/work/reko/reko/src/Core/Code/Declaration.cs:line 55
+   at Reko.Typing.EquivalenceClassBuilder.Build(Program program) in /home/runner/work/reko/reko/src/Decompiler/Typing/EquivalenceClassBuilder.cs:line 82
+   at Reko.Typing.TypeAnalyzer.<>c__DisplayClass12_0.<RewriteProgram>b__1() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeAnalyzer.cs:line 90
+   at Reko.Typing.TypeAnalyzer.Time(String message, Action action) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeAnalyzer.cs:line 113
+   at Reko.Typing.TypeAnalyzer.RewriteProgram(Program program) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeAnalyzer.cs:line 90
+   at Reko.Decompiler.ReconstructTypes() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 298

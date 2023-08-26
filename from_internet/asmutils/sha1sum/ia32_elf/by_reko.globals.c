@@ -4,5 +4,9 @@
 
 #include "subject.h"
 
-Eq_12 g_t0001;
-Eq_12 g_t0005;
+char g_b0001; // 00000001
+char g_b0004; // 00000004
+Eq_124 g_t0009;
+char g_b000A; // 0000000A
+char g_b0020; // 00000020
+Eq_38 g_t0038;

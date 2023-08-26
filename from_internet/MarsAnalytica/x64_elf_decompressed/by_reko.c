@@ -13,12 +13,13 @@ void _init()
 		fn0000000000000000();
 }
 
-// 0000000000400900: void _start(Register word64 rax)
-void _start(word64 rax)
+// 0000000000400900: void _start()
+void _start()
 {
-	__align(fp + 8);
-	fn0000000000000000();
-	__hlt();
+	ptr64 fp;
+	__align_stack<word64>(fp + 8);
+	fn0000000000000000(14998448, 0x00E4DB40, 0x00400DA9, fp);
+	__halt();
 }
 
 // 00000000004009D0: void fn00000000004009D0()
@@ -41,12 +42,12 @@ void __libc_csu_init()
 	int64 rbp_31 = 17161752 - 17161744;
 	if (rbp_31 >> 0x03 != 0x00)
 	{
-		Eq_32 rbx_44 = 0x00;
+		Eq_36 rbx_47 = 0x00;
 		do
 		{
 			fn00000000004009D0();
-			rbx_44 = (word64) rbx_44.u1 + 1;
-		} while (rbp_31 >> 0x03 != rbx_44);
+			rbx_47 = (word64) rbx_47.u1 + 1;
+		} while (rbp_31 >> 0x03 != rbx_47);
 	}
 }
 

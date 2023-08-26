@@ -1,30 +1,59 @@
-=== Using options:
-08048801: warning: Unable to resolve imported reference __gmon_start__.
+=== Using options:--aggressive-branch-removal
+08048854: warning: Unable to resolve imported reference __gmon_start__.
 08048ADF: warning: Call target address 00000000 is invalid.
-080488F4: warning: Unable to resolve imported reference sqrt.
-08048F7D: warning: Unable to resolve imported reference log.
-08048FAC: warning: Unable to resolve imported reference sqrt.
-08048FCE: warning: Unable to resolve imported reference sqrt.
-08048E0B: warning: Unable to resolve imported reference cos.
-08048E1E: warning: Unable to resolve imported reference sin.
-08051920: warning: Unable to resolve imported reference sqrt.
+080489D4: warning: Unable to resolve imported reference log.
+08048934: warning: Unable to resolve imported reference cos.
+08048A14: warning: Unable to resolve imported reference sin.
 08052392: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
-08050A0E: warning: Unable to resolve imported reference pow.
-0804D48E: warning: Unable to resolve imported reference sqrt.
-0804C3EC: warning: Unable to resolve imported reference cos.
-0804C41B: warning: Unable to resolve imported reference sin.
-0804C44A: warning: Unable to resolve imported reference sin.
-0804C479: warning: Unable to resolve imported reference cos.
-0804C231: warning: Unable to resolve imported reference cos.
-0804C260: warning: Unable to resolve imported reference sin.
-0804C2C8: warning: Unable to resolve imported reference sin.
-0804C330: warning: Unable to resolve imported reference cos.
+080488A4: warning: Unable to resolve imported reference pow.
+08048934: warning: Unable to resolve imported reference cos.
+08048A14: warning: Unable to resolve imported reference sin.
+08048A14: warning: Unable to resolve imported reference sin.
+08048934: warning: Unable to resolve imported reference cos.
+08048934: warning: Unable to resolve imported reference cos.
+08048A14: warning: Unable to resolve imported reference sin.
+08048A14: warning: Unable to resolve imported reference sin.
+08048934: warning: Unable to resolve imported reference cos.
 08048A14: warning: Unable to resolve imported reference sin.
 080489D4: warning: Unable to resolve imported reference log.
 08048934: warning: Unable to resolve imported reference cos.
 080488A4: warning: Unable to resolve imported reference pow.
 08048854: warning: Unable to resolve imported reference __gmon_start__.
-08054380: warning: Expected sizes of arrays to have been determined by now
+08052C2F: warning: Unexpected 2 fstsw mask for EQ mnemonic.
+08053080: warning: Unexpected 2 fstsw mask for EQ mnemonic.
+08053100: warning: Unexpected 2 fstsw mask for EQ mnemonic.
+080531A0: warning: Unexpected 2 fstsw mask for EQ mnemonic.
+08053186: warning: Unexpected 2 fstsw mask for EQ mnemonic.
+0805316C: warning: Unexpected 2 fstsw mask for EQ mnemonic.
+08052D98: warning: Unexpected 2 fstsw mask for NE mnemonic.
+08053152: warning: Unexpected 2 fstsw mask for EQ mnemonic.
+08053138: warning: Unexpected 2 fstsw mask for EQ mnemonic.
+0805311E: warning: Unexpected 2 fstsw mask for EQ mnemonic.
+08053009: warning: Unexpected 2 fstsw mask for EQ mnemonic.
+08052D85: warning: Unexpected 2 fstsw mask for EQ mnemonic.
+08052C97: warning: Unexpected 2 fstsw mask for EQ mnemonic.
+080532E7: warning: Unexpected 2 fstsw mask for EQ mnemonic.
+08053730: warning: Unexpected 2 fstsw mask for EQ mnemonic.
+080537B0: warning: Unexpected 2 fstsw mask for EQ mnemonic.
+08053850: warning: Unexpected 2 fstsw mask for EQ mnemonic.
+08053836: warning: Unexpected 2 fstsw mask for EQ mnemonic.
+0805381C: warning: Unexpected 2 fstsw mask for EQ mnemonic.
+0805344E: warning: Unexpected 2 fstsw mask for NE mnemonic.
+08053802: warning: Unexpected 2 fstsw mask for EQ mnemonic.
+080537E8: warning: Unexpected 2 fstsw mask for EQ mnemonic.
+080537CE: warning: Unexpected 2 fstsw mask for EQ mnemonic.
+080536B9: warning: Unexpected 2 fstsw mask for EQ mnemonic.
+0805343B: warning: Unexpected 2 fstsw mask for EQ mnemonic.
+0805334F: warning: Unexpected 2 fstsw mask for EQ mnemonic.
+08053C8F: warning: Unexpected 2 fstsw mask for EQ mnemonic.
+08053AAF: warning: Unexpected 2 fstsw mask for EQ mnemonic.
+08053BC3: warning: Unexpected 2 fstsw mask for EQ mnemonic.
+08053BFF: warning: Unexpected 2 fstsw mask for EQ mnemonic.
+08053A6D: warning: Unexpected 2 fstsw mask for EQ mnemonic.
+080540FF: warning: Unexpected 2 fstsw mask for EQ mnemonic.
+08053F1F: warning: Unexpected 2 fstsw mask for EQ mnemonic.
+08054033: warning: Unexpected 2 fstsw mask for EQ mnemonic.
+0805406F: warning: Unexpected 2 fstsw mask for EQ mnemonic.
+08053EDD: warning: Unexpected 2 fstsw mask for EQ mnemonic.
 08055F08: warning: Expected sizes of arrays to have been determined by now
-08054380: warning: Expected sizes of arrays to have been determined by now
 08055F08: warning: Expected sizes of arrays to have been determined by now

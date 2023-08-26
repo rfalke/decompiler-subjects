@@ -7,58 +7,58 @@
 // 00001000: void fn00001000(Register word32 a5)
 void fn00001000(word32 a5)
 {
-	int32 d0_171;
+	int32 d0_189;
 	word32 d0_9 = OpenLibrary(0x1164, 39);
 	if (d0_9 == 0x00)
-		d0_171 = 0x0C;
+		d0_189 = 0x0C;
 	else
 	{
-		int32 d0_54;
+		int32 d0_56;
 		g_dw15E8 = d0_9;
 		ui32 d0_22 = SuperState();
 		if (d0_22 == 0x00)
-			d0_54 = -1;
+			d0_56 = -1;
 		else
 		{
-			int32 d0_40;
+			int32 d0_42;
 			(*((word32) (d0_22 << 0x02) + 4))();
-			UserState(d0_40);
-			d0_54 = d0_40;
+			UserState(d0_42);
+			d0_56 = d0_42;
 		}
-		if (d0_54 == 0x00)
+		if (d0_56 == 0x00)
 		{
 l000010EC:
-			word32 d0_138 = g_dw15E8;
-			if (d0_138 != 0x00)
+			word32 d0_152 = g_dw15E8;
+			if (d0_152 != 0x00)
 			{
-				CloseLibrary(d0_138);
+				CloseLibrary(d0_152);
 				g_dw15E8 = 0x00;
 			}
 			return;
 		}
-		d0_171 = -(d0_54 + 0x01);
+		d0_189 = -(d0_56 + 0x01);
 	}
-	struct Eq_24 * a0_158 = &g_t11C8;
+	struct Eq_24 * a0_174 = &g_t11C8;
 	while (true)
 	{
-		int32 v15_71 = a0_158->dw0000;
-		a0_158 += 4;
-		if (v15_71 < 0x00 || v15_71 - d0_171 == 0x00)
+		int32 v15_79 = a0_174->dw0000;
+		a0_174 += 4;
+		if (v15_79 < 0x00 || v15_79 == d0_189)
 			break;
 		do
 		{
-			a0_158 = a0_241 + 1;
-			a0_241 = a0_158;
-		} while (a0_241->dw0000 != 0x00);
-		if (!__btst((byte) a0_158, 0x00))
-			++a0_158;
+			a0_174 = a0_257 + 1;
+			a0_257 = a0_174;
+		} while (a0_257->dw0000 != 0x00);
+		if (!__btst<byte>((byte) a0_174, 0x00))
+			++a0_174;
 	}
-	word32 d0_91 = Supervisor(a0_158);
-	if (d0_91 != 0x00)
+	word32 d0_101 = Supervisor(a0_174);
+	if (d0_101 != 0x00)
 	{
-		g_dw15EC = d0_91;
+		g_dw15EC = d0_101;
 		fn0000112A(&g_t1196);
-		fn0000112A(a0_158);
+		fn0000112A(a0_174);
 		fn0000112A(&g_t11AE);
 		fn0000110C();
 		execPrivate1();
@@ -88,14 +88,14 @@ void fn0000112A(struct Eq_24 * a0)
 //      fn0000112A
 int32 fn00001156(struct Eq_24 * a0)
 {
-	int32 d0_6 = -1;
+	int32 d0_10 = -1;
 	do
 	{
-		++d0_6;
-		a0 = a0_27 + 1;
-		a0_27 = a0;
-	} while (a0_27->dw0000 != 0x00);
-	return d0_6;
+		++d0_10;
+		a0 = a0_29 + 1;
+		a0_29 = a0;
+	} while (a0_29->dw0000 != 0x00);
+	return d0_10;
 }
 
 struct Eq_24 g_t1196 = // 00001196

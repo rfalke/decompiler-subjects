@@ -1,4 +1,16 @@
 === Using options:--aggressive-branch-removal
 0000000000401008: warning: Unable to resolve imported reference __gmon_start__.
+00000000004062A7: warning: x86 instruction 'crc32' is not supported yet.
+00000000004061A6: warning: x86 instruction 'crc32' is not supported yet.
+00000000004060A7: warning: x86 instruction 'crc32' is not supported yet.
+0000000000405FA6: warning: x86 instruction 'crc32' is not supported yet.
+0000000000405EA7: warning: x86 instruction 'crc32' is not supported yet.
+0000000000405DA7: warning: x86 instruction 'crc32' is not supported yet.
+0000000000405CA7: warning: x86 instruction 'crc32' is not supported yet.
+0000000000405BA5: warning: x86 instruction 'crc32' is not supported yet.
+0000000000405AA6: warning: x86 instruction 'crc32' is not supported yet.
+00000000004059A5: warning: x86 instruction 'crc32' is not supported yet.
+00000000004058A7: warning: x86 instruction 'crc32' is not supported yet.
+00000000004057A7: warning: x86 instruction 'crc32' is not supported yet.
 0000000000408E10: warning: Expected sizes of arrays to have been determined by now
 0000000000408E10: warning: Expected sizes of arrays to have been determined by now

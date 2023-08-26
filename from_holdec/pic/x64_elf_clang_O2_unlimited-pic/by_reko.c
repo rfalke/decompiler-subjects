@@ -75,12 +75,14 @@ void _init()
 
 #include "subject.h"
 
-// 0000000000401040: void _start(Register (ptr64 Eq_7) rdx, Stack word32 dwArg00)
-void _start(void (* rdx)(), word32 dwArg00)
+// 0000000000401040: void _start(Register (ptr64 Eq_8) rdx, Stack word32 dwArg00, Stack (ptr64 char) ptrArg08)
+void _start(void (* rdx)(), word32 dwArg00, char * ptrArg08)
 {
-	__align((char *) fp + 8);
-	__libc_start_main(&g_t401150, (int32) qwArg00, (char *) fp + 8, &g_t401190, &g_t401200, rdx, fp);
-	__hlt();
+	void * fp;
+	word64 qwArg00;
+	__align_stack<word64>(&ptrArg08);
+	__libc_start_main(&g_t401150, (int32) qwArg00, &ptrArg08, &g_t401190, &g_t401200, rdx, fp);
+	__halt();
 }
 
 // 0000000000401070: void _dl_relocate_static_pie()
@@ -129,25 +131,26 @@ void a_func()
 void main()
 {
 	printf("in main: %d\n", g_dw404024);
-	uint64 rsi_18 = (uint64) (g_dw404024 + 0x01);
-	g_dw404024 = (word32) rsi_18;
-	printf("in func: %d\n", (int32) rsi_18);
+	uint64 rsi_17 = (uint64) (g_dw404024 + 0x01);
+	g_dw404024 = (word32) rsi_17;
+	printf("in func: %d\n", (int32) rsi_17);
 }
 
 // 0000000000401190: void __libc_csu_init(Register word64 rdx, Register word64 rsi, Register word32 edi)
 void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 {
+	word64 rdi;
 	word32 edi = (word32) rdi;
 	_init();
-	int64 rbp_31 = 4210200 - 0x00403E10;
+	int64 rbp_31 = 4210200 - g_a403E10;
 	if (rbp_31 >> 0x03 != 0x00)
 	{
-		Eq_94 rbx_43 = 0x00;
+		Eq_91 rbx_45 = 0x00;
 		do
 		{
-			(*((char *) g_a403E10 + rbx_43 * 0x08))();
-			rbx_43 = (word64) rbx_43.u1 + 1;
-		} while (rbp_31 >> 0x03 != rbx_43);
+			(*((char *) g_a403E10 + rbx_45 * 0x08))();
+			rbx_45 = (word64) rbx_45.u1 + 1;
+		} while (rbp_31 >> 0x03 != rbx_45);
 	}
 }
 

@@ -7,7 +7,7 @@ Error: An error occurred while writing assembly language output.
        at Reko.ImageLoaders.Elf.DynamicSectionRenderer64.RenderEntry(String name, DtFormat format, ElfDynamicEntry entry, Formatter formatter) in /home/runner/work/reko/reko/src/ImageLoaders/Elf/DynamicSectionRenderer.cs:line 270
    at Reko.ImageLoaders.Elf.DynamicSectionRenderer64.Render(UInt64 fileOffset, Formatter formatter) in /home/runner/work/reko/reko/src/ImageLoaders/Elf/DynamicSectionRenderer.cs:line 221
    at Reko.ImageLoaders.Elf.DynamicSectionRenderer64.Render(ImageSegment segment, Program program, Formatter formatter) in /home/runner/work/reko/reko/src/ImageLoaders/Elf/DynamicSectionRenderer.cs:line 194
-   at Reko.Core.Dumper.Dump(Dictionary`2 segmentItems, Formatter formatter) in /home/runner/work/reko/reko/src/Core/Dumper.cs:line 64
-   at Reko.Decompiler.DumpAssembler(Program program, String filename, Dictionary`2 segmentItems, Formatter wr) in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 141
+   at Reko.Core.Output.Dumper.Dump(Dictionary`2 segmentItems, Formatter formatter) in /home/runner/work/reko/reko/src/Core/Output/Dumper.cs:line 61
+   at Reko.Decompiler.DumpAssembler(Program program, String filename, Dictionary`2 segmentItems, Formatter wr) in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 144
 0000000000600E10: warning: Expected sizes of arrays to have been determined by now
 0000000000600E10: warning: Expected sizes of arrays to have been determined by now

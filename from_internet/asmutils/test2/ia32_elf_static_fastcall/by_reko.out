@@ -1,8 +1,46 @@
 === Using options:--aggressive-branch-removal
-Error: An error occurred during decompilation.
-    Address 00000001 is not within the image range.
-       at Reko.Core.ImageMap.AddItemWithSize(Address addr, ImageMapItem itemNew) in /home/runner/work/reko/reko/src/Core/ImageMap.cs:line 122
-   at Reko.Core.Program.BuildImageMap() in /home/runner/work/reko/reko/src/Core/Program.cs:line 551
-   at Reko.Decompiler.BuildImageMaps() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 191
-   at Reko.Decompiler..ctor(Project project, IServiceProvider services) in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 54
-   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs) in /home/runner/work/reko/reko/src/Drivers/CmdLine/CmdLineDriver.cs:line 180
+main: error: An internal error occurred while building the expressions of main
+    The given key 'l08049215' was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Reko.Core.Graphs.DominatorGraph`1.BuildDominanceFrontiers(DirectedGraph`1 graph, Dictionary`2 idoms) in /home/runner/work/reko/reko/src/Core/Graphs/DominatorGraph.cs:line 193
+   at Reko.Core.Graphs.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode) in /home/runner/work/reko/reko/src/Core/Graphs/DominatorGraph.cs:line 46
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees(IReadOnlyCollection`1 ssts) in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 255
+l0804920D: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
+main: error: An error occurred while rewriting procedure to high-level language.
+    The given key 'l08049215' was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Reko.Core.Graphs.DominatorGraph`1.BuildDominanceFrontiers(DirectedGraph`1 graph, Dictionary`2 idoms) in /home/runner/work/reko/reko/src/Core/Graphs/DominatorGraph.cs:line 193
+   at Reko.Core.Graphs.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode) in /home/runner/work/reko/reko/src/Core/Graphs/DominatorGraph.cs:line 46
+   at Reko.Structure.StructureAnalysis.Execute() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 145
+   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 80
+   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 551
+08048FCC: error: An error occurred while tracing the object at 08049000.
+    An error occurred following a pointer at address 08048FCC.
+       at Reko.Core.Output.GlobalObjectTracer.VisitPointer(Pointer ptr) in /home/runner/work/reko/reko/src/Core/Output/GlobalObjectTracer.cs:line 170
+   at Reko.Core.Types.Pointer.Accept[T](IDataTypeVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Types/Pointer.cs:line 75
+   at Reko.Core.Output.GlobalObjectTracer.VisitStructure(StructureType str) in /home/runner/work/reko/reko/src/Core/Output/GlobalObjectTracer.cs:line 192
+   at Reko.Core.Types.StructureType.Accept[T](IDataTypeVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Types/StructureType.cs:line 60
+   at Reko.Core.Output.GlobalObjectTracer.VisitEquivalenceClass(EquivalenceClass eq) in /home/runner/work/reko/reko/src/Core/Output/GlobalObjectTracer.cs:line 115
+   at Reko.Core.Types.EquivalenceClass.Accept[T](IDataTypeVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Types/EquivalenceClass.cs:line 56
+   at Reko.Core.Output.GlobalObjectTracer.TraceObject(DataType dataType, Address addr) in /home/runner/work/reko/reko/src/Core/Output/GlobalObjectTracer.cs:line 74
+       at Reko.Core.Memory.ByteMemoryArea.TryReadLeUInt32(Byte[] abImage, Int64 off, UInt32& value) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 458
+   at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Byte[] abImage, Int64 imageOffset, DataType type, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 265
+   at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Int64 imageOffset, DataType type, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 206
+   at Reko.Core.Memory.ByteImageReader.TryReadLe(DataType dataType, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteImageReader.cs:line 222
+   at Reko.Core.Memory.LeImageReader.TryRead(PrimitiveType dataType, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/EndianImageReader.cs:line 245
+   at Reko.Core.Output.GlobalObjectTracer.VisitPointer(Pointer ptr) in /home/runner/work/reko/reko/src/Core/Output/GlobalObjectTracer.cs:line 135
+08048FCC: error: An error occurred while tracing the object at 08049000.
+    An error occurred following a pointer at address 08048FCC.
+       at Reko.Core.Output.GlobalObjectTracer.VisitPointer(Pointer ptr) in /home/runner/work/reko/reko/src/Core/Output/GlobalObjectTracer.cs:line 170
+   at Reko.Core.Types.Pointer.Accept[T](IDataTypeVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Types/Pointer.cs:line 75
+   at Reko.Core.Output.GlobalObjectTracer.VisitStructure(StructureType str) in /home/runner/work/reko/reko/src/Core/Output/GlobalObjectTracer.cs:line 192
+   at Reko.Core.Types.StructureType.Accept[T](IDataTypeVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Types/StructureType.cs:line 60
+   at Reko.Core.Output.GlobalObjectTracer.VisitEquivalenceClass(EquivalenceClass eq) in /home/runner/work/reko/reko/src/Core/Output/GlobalObjectTracer.cs:line 115
+   at Reko.Core.Types.EquivalenceClass.Accept[T](IDataTypeVisitor`1 v) in /home/runner/work/reko/reko/src/Core/Types/EquivalenceClass.cs:line 56
+   at Reko.Core.Output.GlobalObjectTracer.TraceObject(DataType dataType, Address addr) in /home/runner/work/reko/reko/src/Core/Output/GlobalObjectTracer.cs:line 74
+       at Reko.Core.Memory.ByteMemoryArea.TryReadLeUInt32(Byte[] abImage, Int64 off, UInt32& value) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 458
+   at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Byte[] abImage, Int64 imageOffset, DataType type, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 265
+   at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Int64 imageOffset, DataType type, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 206
+   at Reko.Core.Memory.ByteImageReader.TryReadLe(DataType dataType, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteImageReader.cs:line 222
+   at Reko.Core.Memory.LeImageReader.TryRead(PrimitiveType dataType, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/EndianImageReader.cs:line 245
+   at Reko.Core.Output.GlobalObjectTracer.VisitPointer(Pointer ptr) in /home/runner/work/reko/reko/src/Core/Output/GlobalObjectTracer.cs:line 135

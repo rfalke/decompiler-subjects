@@ -95,67 +95,56 @@ char g_str40403A[] = "Password OK :)\n"; // 0040403A
 
 #include "subject.h"
 
-LONG g_t401000(struct _EXCEPTION_POINTERS * ExceptionInfo) = ??/* Unexpected function type (fn LONG ((ptr32 (struct "_EXCEPTION_POINTERS")))) */ ; // 00401000
+LONG g_t401000(struct _EXCEPTION_POINTERS * ExceptionInfo) = ??/* Unexpected function type (fn LONG ((ptr32 (struct "_EXCEPTION_POINTERS" 0008)))) */ ; // 00401000
 // 00401140: void fn00401140()
 // Called from:
 //      Win32CrtStartup
 void fn00401140()
 {
+	ptr32 fp;
+	char ** ptrLoc10;
 	SetUnhandledExceptionFilter(&g_t401000);
 	fn004013C0();
-	__getmainargs(&g_dw405004, &g_dw405000, fp - 0x10, g_dw403000);
-	struct Eq_24 * esp_15 = fp - 44;
+	__getmainargs(&g_dw405004, &g_dw405000, &ptrLoc10, g_dw403000);
+	struct Eq_24 * esp_101 = fp - 44;
 	word32 eax_28 = g_dw405030;
 	if (eax_28 != 0x00)
 	{
 		g_dw403010 = eax_28;
-		ptr32 edx_33 = iob;
+		ptr32 edx_34 = iob;
 		if (iob != 0x00)
 		{
-			word32 eax_39 = iob->dw0010;
-			setmode();
-			edx_33 = iob;
+			setmode(iob->dw0010, eax_28);
+			edx_34 = iob;
 		}
-		if (edx_33 != ~0x1F)
+		if (edx_34 != ~0x1F)
 		{
-			esp_15->dw0004 = g_dw405030;
-			word32 eax_55 = iob->dw0030;
-			esp_15->dw0000 = eax_55;
-			setmode();
-			edx_33 = iob;
+			setmode(iob->dw0030, g_dw405030);
+			edx_34 = iob;
 		}
-		if (edx_33 != ~0x3F)
-		{
-			esp_15->dw0004 = g_dw405030;
-			word32 eax_74 = iob->dw0050;
-			esp_15->dw0000 = eax_74;
-			setmode();
-		}
+		if (edx_34 != ~0x3F)
+			setmode(iob->dw0050, g_dw405030);
 	}
 	*__p__fmode() = g_dw403010;
-	fn00401390();
-	__align(esp_15);
-	struct Eq_47 * esp_104;
-	word32 * eax_105;
-	word32 ecx_108;
-	_p__environ();
-	esp_104->dw0008 = *eax_105;
-	esp_104->dw0004 = g_dw405000;
-	esp_104->dw0000 = g_dw405004;
-	UINT * esp_123;
+	word32 ecx_95 = fn00401390();
+	__align_stack<word32>(esp_101);
+	esp_101->dw0008 = *__p__environ();
+	esp_101->dw0004 = g_dw405000;
+	esp_101->dw0000 = g_dw405004;
+	Eq_67 eax_109 = fn00401310(ecx_95);
 	cexit();
-	*esp_123 = (uint32) fn00401310(ecx_108);
-	ExitProcess(*esp_123);
+	*esp_120 = (uint32) eax_109;
+	ExitProcess(*esp_120);
 }
 
-// 00401260: Register Eq_140 Win32CrtStartup()
-Eq_140 Win32CrtStartup()
+// 00401260: Register Eq_126 Win32CrtStartup()
+Eq_126 Win32CrtStartup()
 {
 	__set_app_type(0x01);
 	fn00401140();
 }
 
-// 004012A0: void fn004012A0(Stack (ptr32 Eq_149) ptrArg04)
+// 004012A0: void fn004012A0(Stack (ptr32 Eq_135) ptrArg04)
 // Called from:
 //      Win32CrtStartup
 //      fn00401460
@@ -169,12 +158,15 @@ void fn004012A0(void (* ptrArg04)())
 //      fn00401140
 word32 fn00401310(word32 ecx)
 {
-	__align(fp - 0x1C);
+	ptr32 fp;
+	int32 dwLoc08;
+	<anonymous> * dwLoc20;
+	__align_stack<word32>(fp - 0x1C);
 	fn00402C60(0x10, ecx, dwLoc20);
 	fn00401460();
 	printf("IOLI Crackme Level 0x01\n");
 	printf("Password: ");
-	scanf("%d", fp - 0x08);
+	scanf("%d", &dwLoc08);
 	if (dwLoc08 != 0x149A)
 		printf("Invalid Password!\n");
 	else
@@ -182,17 +174,18 @@ word32 fn00401310(word32 ecx)
 	return 0x00;
 }
 
-// 00401390: void fn00401390()
+// 00401390: Register (ptr32 Eq_189) fn00401390()
 // Called from:
 //      fn00401140
-void fn00401390()
+struct Eq_189 * fn00401390()
 {
-	struct Eq_200 * ecx_15;
-	for (ecx_15 = (struct Eq_200 *) 0x00404300; ecx_15 < (struct Eq_200 *) 0x00404300; ++ecx_15)
+	struct Eq_189 * ecx_15;
+	for (ecx_15 = (struct Eq_189 *) 0x00404300; ecx_15 < (struct Eq_189 *) 0x00404300; ++ecx_15)
 	{
-		struct Eq_204 * edx_13 = ecx_15->dw0004;
+		struct Eq_194 * edx_13 = ecx_15->dw0004;
 		edx_13->dw400000 += ecx_15->dw0000;
 	}
+	return ecx_15;
 }
 
 // 004013C0: void fn004013C0()
@@ -203,7 +196,7 @@ void fn004013C0()
 	__fninit();
 }
 
-Eq_149 g_t4013D0 = ??/* Unexpected function type (fn void ()) */ ; // 004013D0
+Eq_135 g_t4013D0 = ??/* Unexpected function type (fn void ()) */ ; // 004013D0
 // 00401460: void fn00401460()
 // Called from:
 //      fn00401310
@@ -212,26 +205,25 @@ void fn00401460()
 	if (g_dw405040 != 0x00)
 		return;
 	g_dw405040 = 0x01;
-	ui32 eax_23 = g_dw402E40;
-	if (eax_23 == ~0x00)
+	ui32 eax_24 = g_dw402E40;
+	if (eax_24 == ~0x00)
 	{
-		eax_23 = 0x00;
-		bool v14_82 = g_dw402E44 != 0x00;
-		while (v14_82)
+		eax_24 = 0x00;
+		bool v19_85 = g_dw402E44 != 0x00;
+		while (v19_85)
 		{
-			++eax_23;
-			v14_82 = (&g_dw402E44)[eax_23 * 0x04] != 0x00;
+			++eax_24;
+			v19_85 = (&g_dw402E44)[eax_24 * 0x04] != 0x00;
 		}
 	}
-	ui32 ebx_38 = eax_23;
-	if (eax_23 != 0x00)
+	ui32 ebx_41 = eax_24;
+	if (eax_24 != 0x00)
 	{
 		do
 		{
-			word32 ecx_56;
 			fn90909090();
-			--ebx_38;
-		} while (ebx_38 != 0x00);
+			--ebx_41;
+		} while (ebx_41 != 0x00);
 	}
 	fn004012A0(&g_t4013D0);
 }
@@ -241,7 +233,8 @@ void fn00401460()
 //      fn00401310
 void fn00402C60(uint32 eax, word32 ecx, <anonymous> * dwArg00)
 {
-	struct Eq_263 * ecx_13 = fp + 0x04;
+	ptr32 fp;
+	struct Eq_253 * ecx_13 = fp + 0x04;
 	for (; eax >= 0x1000; eax -= 0x1000)
 	{
 		ecx_13 -= 0x1000;

@@ -23,10 +23,10 @@ word32 g(word32 ecx, word32 edx, word32 esi, word32 edi)
 // 0000000000400173: void f()
 void f()
 {
-	word32 dwLoc0C_70 = 0x14;
+	word32 dwLoc0C_71 = 0x14;
 	if (h() != 0x00)
-		dwLoc0C_70 = g(0x04, 0x03, 0x02, 0x01) + 0x14;
-	word32 v19_42 = dwLoc0C_70 + 0x0A;
-	g(v19_42, v19_42, v19_42, v19_42);
+		dwLoc0C_71 = g(0x04, 0x03, 0x02, 0x01) + 0x14;
+	word32 v21_43 = dwLoc0C_71 + 0x0A;
+	g(v21_43, v21_43, v21_43, v21_43);
 }
 

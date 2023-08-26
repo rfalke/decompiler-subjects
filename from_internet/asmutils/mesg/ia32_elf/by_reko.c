@@ -7,27 +7,49 @@
 // 0804804C: void fn0804804C(Stack (ptr32 byte) dwArg08)
 void fn0804804C(byte * dwArg08)
 {
-fn0804804C_entry:
-	__syscall(0x80)
-	__syscall(0x80)
-	ui32 eax_20 = g_dw80481E9
-	branch dwArg08 != null l080480A5
-	goto l0804807F
-l0804804C:
-l08048063:
-l0804807F:
-	__syscall(0x80)
-l08048093:
-l080480A5:
-	Mem53 = Mem17
-	branch *dwArg08 == 110 l080480B4
-l080480AA:
-	branch *dwArg08 != 121 l0804809E
-	goto l080480BA
-l080480AF:
-l080480BA:
-	fp->dw0008 = 0x0F
-	__syscall(0x80)
+	struct Eq_3 * fp;
+	struct Eq_3 * esp_11 = fp;
+	int32 eax_15 = sys_readlink(&g_b80480D2, &g_b80480E1, 0x0100);
+	if (eax_15 >= 0x00)
+	{
+		sys_stat(&g_b80480E1, &g_t80481E1);
+		eax_15 = g_dw80481E9;
+		esp_11 = &fp->dwFFFFFFFC + 4;
+		if (dwArg08 == null)
+		{
+			char * ecx_61;
+			if ((eax_15 & 0x10) == 0x10)
+				ecx_61 = &g_b80480C8;
+			else
+				ecx_61 = &g_b80480CD;
+			esp_11 = &fp->dwFFFFFFFC + 4;
+			eax_15 = sys_write(0x01, ecx_61, 0x05);
+		}
+		else
+		{
+			Eq_38 eax_39;
+			if (*dwArg08 != 110)
+			{
+				if (*dwArg08 != 121)
+					goto l0804809E;
+				eax_39 = eax_15 | 0x10;
+			}
+			else
+				eax_39 = (eax_15 | 0x10) ^ 0x10;
+			esp_11 = &fp->dwFFFFFFFC + 4;
+			eax_15 = sys_chmod(&g_b80480E1, eax_39);
+		}
+	}
+l0804809E:
+	esp_11->dwFFFFFFFC = 0x01;
+	sys_exit(eax_15);
 }
 
-ui32 g_dw80481E9 = 0x00; // 080481E9
+char g_b80480C8 = 'i'; // 080480C8
+char g_b80480CD = 'i'; // 080480CD
+char g_b80480D2 = '/'; // 080480D2
+char g_b80480E1 = '\0'; // 080480E1
+Eq_28 g_t80481E1 = // 080481E1
+	{
+	};
+int32 g_dw80481E9 = 0; // 080481E9

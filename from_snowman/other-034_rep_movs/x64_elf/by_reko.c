@@ -4,19 +4,12 @@
 
 #include "subject.h"
 
-// 00000000004000D4: void fn00000000004000D4(Register word64 rcx, Register (ptr64 word32) rsi, Register (ptr64 word32) rdi)
-void fn00000000004000D4(word64 rcx, word32 * rsi, word32 * rdi)
+// 00000000004000D4: void fn00000000004000D4(Register uint64 rcx, Register (ptr64 Eq_3) rsi, Register (ptr64 Eq_4) rdi)
+void fn00000000004000D4(uint64 rcx, <unknown> * rsi, <unknown>* rdi)
 {
-	for (; rcx != 0x00; --rcx)
-	{
-		*rdi = *rsi;
-		++rsi;
-		++rdi;
-	}
+	memcpy(rdi, rsi, rcx * 0x04);
+	word64 rcx_12 = 0x00;
 l00000000004000D7:
-	word64 rcx_9;
-	word32 * rsi_10;
-	word32 * rdi_11;
 	fn00000000004000D9();
 }
 

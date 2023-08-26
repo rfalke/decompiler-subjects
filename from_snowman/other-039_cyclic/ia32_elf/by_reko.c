@@ -23,6 +23,7 @@ void h()
 //      f
 word32 f(word32 eax, word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 {
+	word32 dwArg10;
 	while (dwArg04 != 0x00)
 		++dwArg08;
 	do
@@ -79,10 +80,10 @@ word32 f(word32 eax, word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 			} while (eax != 0x00);
 			return eax;
 		}
-		word32 v7_21 = dwArg08 + 0x01;
-		dwArg08 = v7_21;
-		eax = v7_21;
-	} while (v7_21 != dwArg0C);
+		word32 v8_21 = dwArg08 + 0x01;
+		dwArg08 = v8_21;
+		eax = v8_21;
+	} while (v8_21 != dwArg0C);
 	return eax;
 }
 

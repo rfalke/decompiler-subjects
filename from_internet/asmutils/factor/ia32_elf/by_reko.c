@@ -4,244 +4,237 @@
 
 #include "subject.h"
 
-// 0804804C: FpuStack real64 fn0804804C(Register (ptr32 Eq_3) edi, Register (ptr8 Eq_4) Top)
+// 0804804C: void fn0804804C(Register (ptr32 Eq_2) edi, FpuStack real64 rArg0)
 // Called from:
 //      fn08048068
-real64 fn0804804C(struct Eq_3 * edi, struct Eq_4 * Top)
+void fn0804804C(struct Eq_2 * edi, real64 rArg0)
 {
-	Top->rFFFFFFFF = (real64) edi->t0000;
+	real64 rLoc1_41 = (real64) edi->t0000.u0;
 	while (true)
 	{
-		Top->rFFFFFFFE = Top->r0000;
-		Top->rFFFFFFFE /= Top->rFFFFFFFF;
-		Top->rFFFFFFFD = Top->rFFFFFFFE;
-		Top->rFFFFFFFD = __rndint(Top->rFFFFFFFD);
-		Eq_28 FPUF_18 = cond(Top->rFFFFFFFD - Top->rFFFFFFFE);
-		if ((FPUF_18 & 0x40) == 0x00)
+		real64 rLoc2_45 = rArg0 / rLoc1_41;
+		Eq_18 FPUF_18 = cond(__rndint(rLoc2_45) - rLoc2_45);
+		if ((SLICE(__fstsw(FPUF_18), byte, 8) & 0x40) == 0x00)
 			break;
-		Top->r0000 = Top->rFFFFFFFE;
-		fn0804814F(edi, FPUF_18, Top - (struct Eq_31 *) 1);
+		fn0804814F(edi, FPUF_18, rLoc1_41);
+		rArg0 = rLoc2_45;
 	}
-	fn0804808B(Top - (struct Eq_15 *) 2);
-	return <invalid>;
+	fn0804808B(rLoc2_45, rLoc1_41);
 }
 
-// 08048068: Register Eq_17 fn08048068(Register (ptr32 byte) esi, Register (ptr32 Eq_3) edi, Register Eq_17 FPUF, Register (ptr8 Eq_81) Top)
+// 08048068: Register int32 fn08048068(Register (ptr32 byte) esi, Register (ptr32 Eq_2) edi, Register Eq_18 FPUF, Register out Eq_14 FPUFOut)
 // Called from:
 //      fn08048195
-Eq_17 fn08048068(byte * esi, struct Eq_3 * edi, Eq_17 FPUF, struct Eq_81 * Top)
+int32 fn08048068(byte * esi, struct Eq_2 * edi, Eq_18 FPUF, union Eq_14 & FPUFOut)
 {
-	Top->rFFFFFFFF = (real64) g_dw80481FD;
-	Top->rFFFFFFFE = 0.0;
+	word24 eax_24_8_271 = 0x00;
+	real64 rLoc1_272 = (real64) g_dw80481FD;
+	real64 rLoc2_273 = 0.0;
 	while (true)
 	{
-		cu8 al_14 = *esi;
+		cu8 al_15 = *esi;
 		++esi;
-		if (al_14 == 0x00)
+		if (al_15 == 0x00)
 			break;
-		Top->rFFFFFFFE *= Top->rFFFFFFFF;
-		if (al_14 < 0x30)
-			return fn0804808B(Top - (struct Eq_440 *) 2);
-		Eq_101 eax_256 = (uint32) (al_14 - 0x30);
-		if (al_14 >= 0x3A)
-			return fn0804808B(Top - (struct Eq_440 *) 2);
-		edi->t000C = eax_256;
-		Top->rFFFFFFFE += (real64) edi->t000C;
+		rLoc2_273 *= rLoc1_272;
+		if (al_15 < 0x30)
+			goto l08048089;
+		Eq_51 eax_264 = (uint32) (al_15 - 0x30);
+		if (al_15 >= 0x3A)
+			goto l08048089;
+		edi->t000C.u0 = (int32) eax_264;
+		rLoc2_273 += (real64) edi->t000C.u0;
 	}
-	Top->rFFFFFFFD = Top->rFFFFFFFE;
-	edi->t000C.u2 = (real80) Top->rFFFFFFFD;
-	if (edi->t0014 >= 0x403F)
-		return fn0804808B(Top - (struct Eq_440 *) 2);
-	real64 rRet0;
-	fn08048151(0x3A, edi, (byte) FPUF, Top - (struct Eq_159 *) 2, out rRet0);
-	Top->rFFFFFFFD = rRet0;
-	real64 v16_44 = Top->rFFFFFFFD;
-	Top->rFFFFFFFD = Top->rFFFFFFFE;
-	Top->rFFFFFFFE = v16_44;
-	Top->rFFFFFFFC = 1.0;
-	__wait();
-	edi->t0000.u0 = 0x02;
-	fn0804804C(edi, Top - (struct Eq_192 *) 2);
-	edi->t0000 = (word64) edi->t0000 + 1;
-	fn0804804C(edi, Top - (struct Eq_204 *) 2);
-	edi->t0000.u3 = 0x05;
-	Top->rFFFFFFFD = fn0804804C(edi, Top - (struct Eq_204 *) 2);
-	Top->rFFFFFFFC = 1.0;
-	Eq_28 FPUF_185 = cond(Top->rFFFFFFFC - Top->rFFFFFFFD);
-	Eq_230 Top_217 = Top - (struct Eq_231 *) 4;
-	if ((FPUF_185 & 0x40) == 0x00)
+	edi->t000C.u2 = (real80) rLoc2_273;
+	word32 eax_30 = edi->dw0014;
+	eax_24_8_271 = SLICE(eax_30, word24, 8);
+	if ((word16) eax_30 >= 0x403F)
 	{
+l08048089:
+		int32 eax_295 = SEQ(eax_24_8_271, 0x01);
+		FPUFOut = fn0804808B(rLoc2_273, rLoc1_272);
+		return eax_295;
+	}
+	Eq_90 Top_223;
+	fn08048151(0x3A, edi, FPUF, rLoc2_273);
+	__wait();
+	Eq_18 FPUF_191 = cond(1.0 - rLoc2_273);
+	Eq_106 Top_102 = ~0x02;
+	if ((SLICE(__fstsw(FPUF_191), byte, 8) & 0x45) == 0x01)
+	{
+		edi->t0000.u0 = 0x02;
+		fn0804804C(edi, rLoc2_273);
+		edi->t0000.u0 = (int32) (edi->t0000.u0 + 0x01);
+		fn0804804C(edi, rLoc2_273);
+		edi->t0000.u3 = 0x05;
+		fn0804804C(edi, rLoc2_273);
+		FPUF_191.u0 = cond(1.0 - rLoc2_273);
+		Top_223.u0 = ~0x01;
+		if ((SLICE(__fstsw(FPUF_191), byte, 8) & 0x40) != 0x00)
+		{
+l08048118:
+			Eq_14 FPUF_226 = cond(*Top_223.u0 - *((byte) Top_223.u0 + 1));
+			int32 eax_250 = sys_write(0x01, &g_dw80481FD, 0x01) - 0x01;
+			FPUFOut = FPUF_226;
+			return eax_250;
+		}
 		edi->t0000.u3 = 0x07;
-		Top->rFFFFFFFB = (real64) edi->t0000;
-		Top->rFFFFFFFB = Top->rFFFFFFFD / Top->rFFFFFFFB;
-		Eq_29 Top_114 = Top - (struct Eq_268 *) 5;
-		ui32 ebp_101 = 0x42424626;
+		Top_102.u0 = -3;
+		ui32 ebp_105 = 0x42424626;
 l080480E3:
-		Eq_7 esi_104 = edi->t0000;
-		ebp_101 = __rol<word32,byte>(ebp_101, 0x04);
-		Eq_7 v24_110 = (word64) edi->t0000 + (ebp_101 & 0x0F);
-		edi->t0000 = v24_110;
-		if (v24_110 >= 0x00)
+		Eq_7 esi_108 = edi->t0000.u0;
+		ebp_105 = __rol<word32,byte>(ebp_105, 0x04);
+		Eq_7 v27_114 = edi->t0000.u0 + (ebp_105 & 0x0F);
+		edi->t0000.u0 = (int32) v27_114;
+		if (v27_114 >= 0x00)
 		{
 			while (true)
 			{
-				*((word32) Top_114 + 1) = *Top_114;
-				edi->t000C.u2 = (real80) *Top_114;
-				Eq_308 Top_119 = (word32) Top_114 + 1;
-				*((word32) Top_119 - 1) = (real64) edi->t0000;
-				*((word32) Top_119 - 1) = *((word32) Top_119 + 1) /64 *((word32) Top_119 - 1);
-				int32 ecx_125 = 16414 - edi->t0014;
-				Top_114 = Top_119 - 1;
-				Eq_101 edx_123 = edi->t0010;
-				byte cl_129 = (byte) ecx_125;
-				if (ecx_125 >= 0x00 && edx_123 >> cl_129 < esi_104)
+				*((byte) Top_102.u0 + 1) = *Top_102.u0;
+				edi->t000C.u2 = (real80) *Top_102.u0;
+				Eq_206 Top_123 = (byte) Top_102.u0 + 1;
+				Top_123.u1->rFFFFFFFF = (real64) edi->t0000.u1;
+				Top_123.u1->rFFFFFFFF = Top_123.u1->r0001 / (Top_123.u1)->rFFFFFFFF;
+				int32 ecx_129 = 16414 - edi->dw0014;
+				Top_102 = Top_123 - 1;
+				Eq_51 edx_127 = edi->t0010.u0;
+				byte cl_133 = (byte) ecx_129;
+				if (ecx_129 >= 0x00 && edx_127 >> cl_133 < esi_108)
 					break;
-				int32 ecx_139 = -ecx_125;
-				Eq_101 eax_136 = edi->t000C;
-				byte cl_152 = (byte) ecx_139;
-				if (ecx_139 >= 0x00)
+				int32 ecx_143 = -ecx_129;
+				Eq_51 eax_140 = edi->t000C.u0;
+				byte cl_157 = (byte) ecx_143;
+				if (ecx_143 >= 0x00)
 				{
-					edx_123 = eax_136;
-					eax_136.u0 = 0x00;
+					edx_127 = eax_140;
+					eax_140.u0 = 0x00;
 				}
-				if ((eax_136 << cl_152 | __shld(edx_123, eax_136, cl_152)) != 0x00)
+				if ((eax_140 << cl_157 | __shld<word32>(edx_127, eax_140, cl_157)) != 0x00)
 					goto l080480E3;
-				if (edi->t0000 != esi_104)
+				if (edi->t0000.u0 != esi_108)
 				{
-					ebp_101 = __ror<word32,byte>(ebp_101, 0x04);
-					edi->t0000 = esi_104;
+					ebp_105 = __ror<word32,byte>(ebp_105, 0x04);
+					edi->t0000.u0 = (int32) esi_108;
 				}
-				__ffree(*((word32) Top_119 + 1));
-				*((word32) Top_119 - 2) = (real64) edi->t0000;
-				FPUF_185 = fn0804814F(edi, FPUF_185, Top_119 - 2);
-				*((word32) Top_119 - 2) = *Top_119 /64 *((word32) Top_119 - 2);
-				Top_114 = Top_119 - 2;
-				esi_104 = edi->t0000;
+				__ffree(Top_123.u1->r0001);
+				Top_123.u1->rFFFFFFFE = (real64) edi->t0000.u1;
+				FPUF_191 = fn0804814F(edi, FPUF_191, Top_123.u1->rFFFFFFFE);
+				Top_123.u1->rFFFFFFFE = Top_123.u1->r0000 / (Top_123.u1)->rFFFFFFFE;
+				Top_102 = Top_123 - 2;
+				esi_108.u0 = edi->t0000.u0;
 			}
 		}
-		real64 v28_201 = *Top_114;
-		*Top_114 = *((word32) Top_114 + 2);
-		*((word32) Top_114 + 2) = v28_201;
-		fn0804814F(edi, FPUF_185, Top_114);
-		*Top_114 = *Top_114;
-		Top_217 = (word32) Top_114 + 1;
 	}
-	Eq_17 FPUF_220 = cond(*Top_217 - *((word32) Top_217 + 1));
-	__syscall(0x80);
-	return FPUF_220;
+	real64 v31_207 = Top_102.u1->r0000;
+	Top_102.u1->r0000 = (real64) Top_102.u1[1];
+	Top_102.u1[1] = (struct Eq_512) v31_207;
+	fn0804814F(edi, FPUF_191, Top_102.u1->r0000);
+	Top_102.u1->r0000 = Top_102.u1->r0000;
+	&Top_223.u1->r0000 = &Top_102.u1->r0001;
+	goto l08048118;
 }
 
-// 0804808B: Register Eq_443 fn0804808B(Register (ptr8 Eq_14) Top)
+// 0804808B: Register Eq_348 fn0804808B(FpuStack real64 rArg0, FpuStack real64 rArg1)
 // Called from:
 //      fn0804804C
 //      fn08048068
-Eq_443 fn0804808B(struct Eq_14 * Top)
+Eq_348 fn0804808B(real64 rArg0, real64 rArg1)
 {
-	return cond(Top->r0000 - Top->r0001);
+	return cond(rArg0 - rArg1);
 }
 
-// 0804814F: Register Eq_28 fn0804814F(Register (ptr32 Eq_3) edi, Register Eq_28 FPUF, Register Eq_29 Top)
+// 0804814F: Register Eq_18 fn0804814F(Register (ptr32 Eq_2) edi, Register Eq_18 FPUF, FpuStack real64 rArg0)
 // Called from:
 //      fn0804804C
 //      fn08048068
-Eq_28 fn0804814F(struct Eq_3 * edi, Eq_28 FPUF, Eq_29 Top)
+Eq_18 fn0804814F(struct Eq_2 * edi, Eq_18 FPUF, real64 rArg0)
 {
-	real64 rLoc1_17;
-	return (uint16) fn08048151(0x20, edi, (byte) FPUF, Top, out rLoc1_17);
+	return fn08048151(0x20, edi, FPUF, rArg0);
 }
 
-// 08048151: Register byte fn08048151(Register Eq_152 bl, Register (ptr32 Eq_3) edi, Register byte FPUF, Register Eq_29 Top, FpuStack out Eq_156 rLoc1Out)
+// 08048151: Register Eq_18 fn08048151(Register Eq_93 bl, Register (ptr32 Eq_2) edi, Register Eq_18 FPUF, FpuStack real64 rArg0)
 // Called from:
 //      fn08048068
 //      fn0804814F
-byte fn08048151(Eq_152 bl, struct Eq_3 * edi, byte FPUF, Eq_29 Top, union Eq_156 & rLoc1Out)
+Eq_18 fn08048151(Eq_93 bl, struct Eq_2 * edi, Eq_18 FPUF, real64 rArg0)
 {
-	*((word32) Top - 1) = *Top;
-	*((word32) Top - 2) = (real64) g_dw80481FD;
-	Eq_471 Top_16 = Top - (struct Eq_472 *) 2 + 1;
-	byte * ecx_14 = (char *) &edi->t0014 + 35;
+	real64 rLoc1_73 = rArg0;
+	real64 rLoc2_74 = (real64) g_dw80481FD;
+	Eq_358 edx_13 = &edi->t0038.u0;
+	char * ecx_14 = (char *) &edi->dw0014 + 35;
 	do
 	{
-		Eq_479 Top_19 = Top_16 - 1;
-		*Top_19 = *Top_16;
-		*Top_19 = __fprem_x87(*Top_19, *((word32) Top_19 + 1));
-		edi->t0038.u0 = (int32) *Top_19;
-		*Top_19 = *((word32) Top_19 + 2) - *Top_19;
+		real64 rLoc3_78 = __fprem_x87(rLoc1_73, rLoc2_74);
+		edi->t0038.u0 = (int32) rLoc3_78;
 		__wait();
-		*((word32) Top_19 + 2) = *Top_19;
-		*((word32) Top_19 + 3) = *((word32) Top_19 + 1);
-		*((word32) Top_19 + 2) = *((word32) Top_19 + 3) /64 *((word32) Top_19 + 2);
-		*ecx_14 = (byte) ((word32) edi->t0038 + 48);
-		Top_16 = (word32) Top_19 + 2;
+		byte ah_37 = SLICE(__fstsw(FPUF), byte, 8);
+		*ecx_14 = (char) (edi->t0038.u1 + 0x30);
+		rLoc1_73 = (rLoc1_73 - rLoc3_78) / rLoc2_74;
 		--ecx_14;
-	} while ((FPUF & 0x40) == 0x00);
-	Eq_556 FPUF_44 = cond(*((word32) Top_19 + 2) - *((word32) Top_19 + 3));
-	*ecx_14 = (byte) bl;
+	} while ((ah_37 & 0x40) == 0x00);
+	*ecx_14 = (char) bl;
+	Eq_18 FPUF_43 = cond(rLoc2_74 - rLoc1_73);
 	if (bl != 0x20)
-		edi->t0038 = bl;
-	__syscall(0x80);
-	rLoc1Out.u1 = <invalid>;
-	return (byte) FPUF_44;
+	{
+		edi->t0038.u1 = (byte) bl;
+		edx_13 = (char *) &edi->t0038 + 1;
+		++ecx_14;
+	}
+	Eq_271 edx_56 = edx_13 - ecx_14;
+	sys_write(0x01, ecx_14, edx_56);
+	return FPUF_43;
 }
 
-// 08048195: void fn08048195(Register Eq_17 FPUF, Register (ptr8 Eq_81) Top, Stack (ptr32 byte) dwArg08)
-void fn08048195(Eq_17 FPUF, struct Eq_81 * Top, byte * dwArg08)
+// 08048195: void fn08048195(Register Eq_18 FPUF, Stack (ptr32 byte) dwArg08)
+void fn08048195(Eq_18 FPUF, byte * dwArg08)
 {
-	word32 * esp_10 = fp + 0x0C;
-	byte * esi_11 = dwArg08;
-	if (dwArg08 != null)
+	ptr32 fp;
+	int32 eax_114;
+	struct Eq_422 * esp_103 = fp + 0x0C;
+	byte * esi_107 = dwArg08;
+	if (dwArg08 == null)
 	{
-		do
+		while (true)
 		{
-			FPUF = fn08048068(esi_11, &g_t8048204, FPUF, Top);
-			byte * esi_32 = *esp_10;
-			++esp_10;
-			esi_11 = esi_32;
-		} while (esi_32 != null);
-l080481AB:
-		word32 * esp_43 = esp_10 - 4;
-		*esp_43 = 0x01;
-		__syscall(0x80);
-		esp_10 = esp_43 + 1;
+			char * ecx_18 = &g_b804821C;
+			word32 esi_22 = 0x5F;
+			do
+			{
+				esp_103 = fp + 0x0C;
+				eax_114 = -sys_read(0x00, &g_b804821C, 0x01);
+				if (eax_114 >= 0x00)
+					goto l080481AB;
+				cu8 al_38 = g_b804821C;
+			} while (al_38 == 0x20 || al_38 >= 0x09 && al_38 < 0x0E);
+			do
+			{
+				++ecx_18;
+				--esi_22;
+				if (esi_22 == 0x00 || -sys_read(0x00, ecx_18, 0x01) >= 0x00)
+					break;
+				char al_63 = *ecx_18;
+			} while (al_63 != 0x20 && (al_63 < 0x09 || al_63 >= 0x0E));
+			*ecx_18 = 0x00;
+			fn08048068(&g_b804821C, &g_t8048204, FPUF, out FPUF);
+		}
 	}
-	while (true)
+	else
 	{
-		word32 * esp_50 = esp_10 - 4;
-		*esp_50 = 0x5F;
-		byte * ecx_48 = &g_b804821C;
-		word32 esi_52 = *esp_50;
 		do
 		{
-			word32 * esp_58 = esp_10 - 4;
-			*esp_58 = 0x03;
-			word32 eax_60 = *esp_58;
-			__syscall(0x80);
-			esp_10 = esp_58 + 1;
-			if (-eax_60 >= 0x00)
-				goto l080481AB;
-			cu8 al_67 = g_b804821C;
-		} while (al_67 == 0x20 || al_67 >= 0x09 && al_67 < 0x0E);
-		do
-		{
-			++ecx_48;
-			--esi_52;
-			if (esi_52 == 0x00)
-				break;
-			word32 * esp_82 = esp_10 - 4;
-			*esp_82 = 0x03;
-			word32 eax_84 = *esp_82;
-			__syscall(0x80);
-			if (-eax_84 >= 0x00)
-				break;
-			cu8 al_90 = *ecx_48;
-		} while (al_90 != 0x20 && (al_90 < 0x09 || al_90 >= 0x0E));
-		*ecx_48 = 0x00;
-		FPUF = fn08048068(&g_b804821C, &g_t8048204, FPUF, Top);
+			eax_114 = fn08048068(esi_107, &g_t8048204, FPUF, out FPUF);
+			byte * esi_105 = esp_103->dw0000;
+			++esp_103;
+			esi_107 = esi_105;
+		} while (esi_105 != null);
+l080481AB:
+		esp_103->dwFFFFFFFC = 0x01;
+		sys_exit(eax_114);
 	}
 }
 
 int32 g_dw80481FD = 0x0A; // 080481FD
-Eq_3 g_t8048204 = // 08048204
+Eq_2 g_t8048204 = // 08048204
 	{
 		
 		{
@@ -255,10 +248,7 @@ Eq_3 g_t8048204 = // 08048204
 		{
 			0
 		},
-		
-		{
-			0x00
-		},
+		0x00,
 		
 		{
 			0

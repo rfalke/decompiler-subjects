@@ -5,4 +5,3 @@
 #include "subject.h"
 
 byte g_bF7FB6A48; // F7FB6A48
-<anonymous> g_tFFFFFFFF; // FFFFFFFF

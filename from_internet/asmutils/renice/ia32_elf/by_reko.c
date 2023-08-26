@@ -4,79 +4,75 @@
 
 #include "subject.h"
 
+char g_b804804C = 'u'; // 0804804C
 // 08048067: void fn08048067(Stack word32 dwArg00, Stack (ptr32 byte) dwArg08, Stack (ptr32 byte) dwArg0C)
 void fn08048067(word32 dwArg00, byte * dwArg08, byte * dwArg0C)
 {
-	ptr32 esp_12;
-	ptr32 esp_56 = fp + 8;
-	if (dwArg00 == 0x01)
+	ptr32 fp;
+	int32 ebx_49;
+	struct Eq_7 * esp_24;
+	if (dwArg00 != 0x01)
 	{
-l080480A9:
-		word32 * esp_58 = esp_56 - 4;
-		*esp_58 = 0x1B;
-		*esp_58 = 0x01;
-		*esp_58 = 0x04;
-		__syscall(0x80);
-		esp_12 = esp_58 + 1;
-		goto l080480B9;
-	}
-	else
-	{
-		esp_12 = fp + 0x0C;
+		esp_24 = fp + 0x0C;
 		if (dwArg08 != null)
 		{
 			g_dw80480E6 = fn080480BE(dwArg08);
-			byte * esi_23 = dwArg0C;
-			esp_12 = fp + 16;
+			byte * esi_40 = dwArg0C;
+			esp_24 = fp + 16;
 			if (dwArg0C != null)
 			{
 				do
 				{
-					g_dw80480E2 = fn080480BE(esi_23);
-					struct Eq_62 * esp_40 = esp_12 - 4;
-					esp_40->dw0000 = 0x61;
-					__syscall(0x80);
-					esi_23 = esp_40->ptr0004;
-					esp_12 = (char *) &esp_40->ptr0004 + 4;
-				} while (esi_23 != null);
+					g_dw80480E2 = fn080480BE(esi_40);
+					int32 edx_60 = g_dw80480E6;
+					int32 ecx_61 = g_dw80480E2;
+					struct Eq_56 * esp_64 = esp_24 - 4;
+					esp_64->dw0000 = 0x61;
+					sys_setpriority(0x00, ecx_61, edx_60);
+					esi_40 = esp_64->ptr0004;
+					esp_24 = (struct Eq_7 *) ((char *) &esp_64->ptr0004 + 4);
+				} while (esi_40 != null);
+				ebx_49 = 0x00;
 l080480A4:
-				word32 * esp_53 = esp_12 - 4;
-				*esp_53 = 0x01;
-				__syscall(0x80);
-				esp_56 = esp_53 + 1;
-				goto l080480A9;
+				esp_24->dwFFFFFFFC = 0x01;
+				sys_exit(ebx_49);
 			}
 		}
-l080480B9:
-		word32 * esp_72 = esp_12 - 4;
-		*esp_72 = 0x01;
-		esp_12 = esp_72 + 1;
-		goto l080480A4;
 	}
+	else
+	{
+		sys_write(0x01, &g_b804804C, 0x1B);
+		esp_24 = fp + 8;
+	}
+	int32 * esp_47 = esp_24 - 4;
+	*esp_47 = 0x01;
+	ebx_49 = *esp_47;
+	esp_24 = (struct Eq_7 *) (esp_47 + 1);
+	goto l080480A4;
 }
 
-// 080480BE: Register Eq_91 fn080480BE(Register (ptr32 byte) esi)
+// 080480BE: Register Eq_86 fn080480BE(Register (ptr32 byte) esi)
 // Called from:
 //      fn08048067
-Eq_91 fn080480BE(byte * esi)
+Eq_86 fn080480BE(byte * esi)
 {
-	byte * esi_11;
-	Eq_91 ebx_19 = 0x00;
-	esi_11 = esi;
+	byte * esi_12;
+	Eq_86 ebx_21 = 0x00;
+	esi_12 = esi;
 	if (*esi == 0x2D)
-		esi_11 = esi + 1;
+		esi_12 = esi + 1;
 	while (true)
 	{
-		byte al_14 = *esi_11;
-		++esi_11;
-		if (al_14 == 0x00)
+		byte al_15 = *esi_12;
+		++esi_12;
+		if (al_15 == 0x00)
 			break;
-		ebx_19 = ebx_19 *s 0x0A + (uint32) (al_14 - 0x30);
+		ebx_21 = ebx_21 *s 0x0A + (uint32) (al_15 - 0x30);
 	}
 	if (*esi == 0x2D)
-		return -ebx_19;
-	return ebx_19;
+		return -ebx_21;
+	return ebx_21;
 }
 
-word32 g_dw80480E2 = 0x00; // 080480E2
-word32 g_dw80480E6 = 0x00; // 080480E6
+int32 g_dw80480E2 = 0; // 080480E2
+int32 g_dw80480E6 = 0; // 080480E6

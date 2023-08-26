@@ -4,6 +4,9 @@
 
 #include "subject.h"
 
-Eq_5 g_t0001;
-Eq_5 g_t0004;
-Eq_112 g_t00C0;
+Eq_4 g_t0001;
+Eq_4 g_t0002;
+Eq_4 g_t0004;
+Eq_4 g_t0005;
+Eq_4 g_t0006;
+Eq_4 g_t0013;

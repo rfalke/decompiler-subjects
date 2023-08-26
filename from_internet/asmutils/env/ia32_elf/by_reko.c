@@ -7,21 +7,26 @@
 // 0804804C: void fn0804804C(Stack ui32 dwArg00)
 void fn0804804C(ui32 dwArg00)
 {
-	ui32 ebp_4 = dwArg00;
+	struct Eq_3 * fp;
+	ui32 ebp_5 = dwArg00;
 	while (true)
 	{
-		++ebp_4;
-		struct Eq_9 * esi_10 = fp->a0004[ebp_4].b0000;
-		if (esi_10 == null)
+		++ebp_5;
+		struct Eq_12 * esi_11 = fp->a0004[ebp_5];
+		if (esi_11 == null)
 			break;
+		word32 edx_28 = ~0x00;
+		esi_32 = esi_11;
 		do
 		{
-			esi_10 = esi_52 + 1;
-			esi_52 = esi_10;
-		} while (esi_52->b0000 != 0x00);
-		esi_10->bFFFFFFFF = 0x0A;
-		__syscall(0x80);
+			struct Eq_12 * esi_32;
+			++edx_28;
+			esi_32 = esi_59 + 1;
+			esi_59 = esi_32;
+		} while (esi_59->b0000 != 0x00);
+		esi_32->bFFFFFFFF = 0x0A;
+		sys_write(0x01, esi_11, edx_28 + 0x01);
 	}
-	__syscall(0x80);
+	sys_exit(0x00);
 }
 

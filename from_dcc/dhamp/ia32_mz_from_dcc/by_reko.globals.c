@@ -4,4 +4,4 @@
 
 #include "subject.h"
 
-Eq_100 g_t0000;
+struct Eq_107 * g_ptr0000; // 00000000

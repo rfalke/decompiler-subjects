@@ -4,84 +4,99 @@
 
 #include "subject.h"
 
-// 0804804C: void fn0804804C()
-void fn0804804C()
+// 0804804C: void fn0804804C(Register word24 edx_24_8)
+void fn0804804C(word24 edx_24_8)
 {
-	__syscall(0x80);
-	fn080480D4(0x18);
-	__syscall(0x80);
-	fn080480D4(0x2F);
-	fn08048083();
-	__syscall(0x80);
-	__syscall(0x80);
-	fn08048083();
+	char bLoc04;
+	bLoc04 = (char) 0x18;
+	fn080480D4(sys_getuid(), 1029990773);
+	bLoc04 = (char) 0x2F;
+	fn080480D4(sys_getgid(), 1029990759);
+	bLoc04 = (char) SEQ(SLICE(fn08048083(edx_24_8), word24, 8), 0x0A);
+	sys_write(0x01, &bLoc04, 0x01);
+	sys_exit(0x00);
 }
 
-// 08048083: void fn08048083()
+// 08048083: Register word32 fn08048083(Register word24 edx_24_8)
 // Called from:
 //      fn0804804C
-void fn08048083()
+word32 fn08048083(word24 edx_24_8)
 {
-fn08048083_entry:
-	__syscall(0x80)
-	__syscall(0x80)
-	word16 * esi_22 = g_a8048127
-	word32 ebp_23 = 0x50
-	goto l080480AA
-l08048083:
-l080480AA:
-	esi_22 = esi_22 + 1
-	byte * edi_41 = fn08048108((uint32) *esi_22, &g_b80481A7)
-	word32 ebp_48 = ebp_23 - 0x01
-	branch ebp_48 == 0x00 l080480C2
-l080480BF:
-	*edi_41 = 44
-l080480C2:
-	__syscall(0x80)
-	ebp_23 = ebp_48
-	branch ebp_48 != 0x00 l080480AA
-	goto l080480AA
+	int32 eax_13 = sys_getgroups(0x40, g_a8048127);
+	word32 ecx_102 = 0x08048120;
+	word16 eax_16_16_43 = SLICE(sys_write(0x01, &g_b8048120, SEQ(edx_24_8, 0x07)), word16, 16);
+	word16 * esi_28 = g_a8048127;
+	int32 ebp_29 = eax_13;
+	if (eax_13 != 0x00)
+	{
+		do
+		{
+			byte * edi_48;
+			fn08048108(SEQ(eax_16_16_43, *esi_28), &g_b80481A7, out edi_48);
+			++esi_28;
+			int32 ebp_56 = ebp_29 - 0x01;
+			if (ebp_56 != 0x00)
+			{
+				*edi_48 = 44;
+				++edi_48;
+			}
+			ecx_102 = 0x080481A7;
+			eax_16_16_43 = SLICE(sys_write(0x01, &g_b80481A7, edi_48 - 0x080481A7), word16, 16);
+			ebp_29 = ebp_56;
+		} while (ebp_56 != 0x00);
+	}
+	return ecx_102;
 }
 
-// 080480D4: void fn080480D4(Register Eq_9 eax)
+// 080480D4: void fn080480D4(Register Eq_11 eax, Register uip32 ebx)
 // Called from:
 //      fn0804804C
-void fn080480D4(Eq_9 eax)
+void fn080480D4(Eq_11 eax, uip32 ebx)
 {
+	char bLoc28;
 	if (eax >= 0x00)
 	{
-		*fn08048108(eax, &g_b80481A7) = 0x09;
-		__syscall(0x80);
-		__syscall(0x80);
+		bLoc28 = (char) ebx;
+		byte * edi_40;
+		word24 edx_24_8_64 = SLICE(fn08048108(eax, &g_b80481A7, out edi_40), word24, 8);
+		*edi_40 = 0x09;
+		bLoc28 = bLoc28;
+		sys_write(0x01, &bLoc28, SEQ(edx_24_8_64, 0x04));
+		sys_write(0x01, &g_b80481A7, edi_40 - 0x080481A6);
 	}
 }
 
-// 08048108: Register (ptr32 byte) fn08048108(Register Eq_9 eax, Register (ptr32 byte) edi)
+// 08048108: Register word32 fn08048108(Register Eq_11 eax, Register (ptr32 byte) edi, Register out (ptr32 byte) ediOut)
 // Called from:
 //      fn08048083
 //      fn080480D4
-byte * fn08048108(Eq_9 eax, byte * edi)
+word32 fn08048108(Eq_11 eax, byte * edi, byte & ediOut)
 {
-	word32 * esp_17 = fp;
-	word32 ecx_22 = 0x00;
+	word32 * fp;
+	word32 dwLoc04;
+	word32 * esp_19 = fp;
+	word32 ecx_24 = 0x00;
 	do
 	{
-		uint64 edx_eax_10 = (uint64) eax;
-		uint32 edx_13 = (uint32) (edx_eax_10 % 0x0A);
-		esp_17 -= 4;
-		*esp_17 = SEQ(SLICE(edx_13, word24, 8), (byte) edx_13 + 0x30);
-		eax.u1 = (uint32) (edx_eax_10 /u 0x0A);
-		++ecx_22;
+		uint64 edx_eax_12 = (uint64) eax;
+		uint32 edx_15 = (uint32) (edx_eax_12 % 0x0A);
+		esp_19 -= 4;
+		word32 edx_22 = SEQ(SLICE(edx_15, word24, 8), (byte) edx_15 + 0x30);
+		*esp_19 = edx_22;
+		eax.u1 = (uint32) (edx_eax_12 /u 0x0A);
+		++ecx_24;
 	} while (eax != 0x00);
 	do
 	{
 		*edi = (byte) dwLoc04;
 		++edi;
-		--ecx_22;
-	} while (ecx_22 != 0x00);
-	return edi;
+		--ecx_24;
+	} while (ecx_24 != 0x00);
+	ediOut = edi;
+	return edx_22;
 }
 
+char g_b8048120 = 'g'; // 08048120
 word16 g_a8048127[] = // 08048127
 	{
 	};

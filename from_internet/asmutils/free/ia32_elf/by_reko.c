@@ -7,64 +7,58 @@
 // 0804804C: Register (ptr32 Eq_2) fn0804804C(Register Eq_3 eax, Register (ptr32 Eq_2) edi)
 // Called from:
 //      fn08048080
-struct Eq_2 * fn0804804C(Eq_3 eax, struct Eq_2 * edi)
+union Eq_2 * fn0804804C(Eq_3 eax, union Eq_2 * edi)
 {
-	int32 ecx_31 = 0x07;
-	Eq_3 eax_12 = eax;
+	int32 ecx_10 = 0x07;
+	Eq_3 eax_13 = eax;
 	if (eax == 0x00)
 	{
-		edi[7] = (struct Eq_2) 0x30;
-		ecx_31 = 0x06;
+		(&edi->u0)[7] = (struct Eq_162) 0x30;
+		ecx_10 = 0x06;
 	}
 	else
 	{
-		while (eax_12 != 0x00)
+		while (eax_13 != 0x00)
 		{
-			Eq_21 edx_eax_22 = (uint64) eax_12;
-			edi[ecx_31] = (struct Eq_2) ((byte) (edx_eax_22 % 0x0A) + 0x30);
-			eax_12.u0 = (int32) (edx_eax_22 /32 0x0A);
-			--ecx_31;
-			if (ecx_31 == 0x00)
+			Eq_21 edx_eax_25 = (uint64) eax_13;
+			(&edi->u1)[ecx_10 / 8] = (struct Eq_163) ((byte) (edx_eax_25 % 0x0A) + 0x30);
+			eax_13.u0 = (int32) (edx_eax_25 /32 0x0A);
+			--ecx_10;
+			if (ecx_10 == 0x00)
 				break;
 		}
 	}
-	byte * edi_42 = edi + ecx_31;
-	int32 ecx_44;
-	for (ecx_44 = ecx_31 + 0x01; ecx_44 != 0x00; --ecx_44)
+	byte * edi_45 = &edi->u0 + ecx_10;
+	int32 ecx_47;
+	for (ecx_47 = ecx_10 + 0x01; ecx_47 != 0x00; --ecx_47)
 	{
-		*edi_42 = 0x20;
-		--edi_42;
+		*edi_45 = 0x20;
+		--edi_45;
 	}
-	struct Eq_2 * edi_51 = edi_42 + 9;
-	word32 ecx_56;
-	for (ecx_56 = 0x03; ecx_56 != 0x00; --ecx_56)
+	union Eq_2 * edi_54 = edi_45 + 9;
+	word32 ecx_59;
+	for (ecx_59 = 0x03; ecx_59 != 0x00; --ecx_59)
 	{
-		edi_51->a0000[0] = 0x20;
-		++edi_51;
+		edi_54->u1.b0000 = 0x20;
+		edi_54 = (union Eq_2 *) ((char *) edi_54 + 1);
 	}
-	return edi_51;
+	return edi_54;
 }
 
-// 08048080: void fn08048080(Stack word32 dwArg00, Stack word32 dwArg04, Stack word32 dwArg08, Stack uint32 dwArg10, Stack uint32 dwArg14, Stack uint32 dwArg18, Stack uint32 dwArg1C, Stack uint32 dwArg20, Stack uint32 dwArg24)
-void fn08048080(word32 dwArg00, word32 dwArg04, word32 dwArg08, uint32 dwArg10, uint32 dwArg14, uint32 dwArg18, uint32 dwArg1C, uint32 dwArg20, uint32 dwArg24)
+// 08048080: void fn08048080(Stack uint32 dwArg10, Stack uint32 dwArg14, Stack uint32 dwArg18, Stack uint32 dwArg1C, Stack uint32 dwArg20, Stack uint32 dwArg24)
+void fn08048080(uint32 dwArg10, uint32 dwArg14, uint32 dwArg18, uint32 dwArg1C, uint32 dwArg20, uint32 dwArg24)
 {
-	__syscall(0x80);
-	__syscall(0x80);
-	fn0804804C(dwArg1C >> 0x0A, fn0804804C(dwArg18 >> 0x0A, fn0804804C(dwArg14 >> 0x0A, fn0804804C(dwArg10 - dwArg14 >> 0x0A, fn0804804C(dwArg10 >> 0x0A, fp - 0x50)))))->a0000[0] = 0x0A;
-	__syscall(0x80);
-	__syscall(0x80);
-	fn0804804C(dwArg24 >> 0x0A, fn0804804C(dwArg20 - dwArg24 >> 0x0A, fn0804804C(dwArg20 >> 0x0A, fp - 0x50)))->a0000[0] = 0x0A;
-	__syscall(0x80);
-	__syscall(0x80);
-	*(union Eq_139 *) 0x01 |= fp - 0x50;
-	((union Eq_139 *) 0x01)->u1 = 0x00;
-	((union Eq_139 *) 0x01)->u1 = 0x00;
-	((union Eq_139 *) 0x01)->u1 = 0x00;
-	((union Eq_139 *) 0x01)->u1 = 0x00;
-	((union Eq_139 *) 0x01)->u1 = 0x00;
-	((union Eq_139 *) 0x01)->u1 = 0x00;
-	byte SCZDO_196;
-	fn080481B8();
-	bool Z_197 = SLICE(SCZDO_196, bool, 2);
+	struct sysinfo * fp;
+	Eq_69 tLoc50;
+	sys_write(0x01, "             total       used       free     shared    buffers\nMem:      Swap:    ", 0x49);
+	sys_sysinfo(fp);
+	fn0804804C(dwArg1C >> 0x0A, fn0804804C(dwArg18 >> 0x0A, fn0804804C(dwArg14 >> 0x0A, fn0804804C(dwArg10 - dwArg14 >> 0x0A, fn0804804C(dwArg10 >> 0x0A, &tLoc50)))))->u1.b0000 = 0x0A;
+	sys_write(0x01, &tLoc50, 0x3C);
+	sys_write(0x01, "Swap:    ", 0x0A);
+	fn0804804C(dwArg24 >> 0x0A, fn0804804C(dwArg20 - dwArg24 >> 0x0A, fn0804804C(dwArg20 >> 0x0A, &tLoc50)))->u1.b0000 = 0x0A;
+	sys_write(0x01, &tLoc50, 0x22);
+	sys_exit(0x00);
 }
 
+char g_str804813A[] = "             total       used       free     shared    buffers\nMem:      Swap:    "; // 0804813A
+char g_str8048183[] = "Swap:    "; // 08048183
